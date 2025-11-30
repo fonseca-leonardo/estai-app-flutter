@@ -1,0 +1,337 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:provider/provider.dart';
+import 'package:geolocator/geolocator.dart';
+import 'dart:math' as math;
+import '../../viewmodels/map_viewmodel.dart';
+import 'widgets/map_actions_buttons.dart';
+import 'widgets/map_navigation_data.dart';
+import 'widgets/route_distance.dart';
+import 'widgets/map_user_marker.dart';
+import 'widgets/map_bottom_sheet.dart';
+import 'widgets/map_direction_line.dart';
+import 'widgets/route_planner.dart';
+import 'widgets/planned_route_line.dart';
+import 'widgets/planned_route_markers.dart';
+import 'widgets/route_point_confirmation.dart';
+import 'widgets/navigation_status.dart';
+import '../../viewmodels/route_planner_viewmodel.dart';
+import '../../viewmodels/navigation_status_viewmodel.dart';
+
+class MapScreen extends StatefulWidget {
+  const MapScreen({super.key});
+
+  @override
+  State<MapScreen> createState() => _MapScreenState();
+}
+
+class _MapScreenState extends State<MapScreen> {
+  final MapController _mapController = MapController();
+  bool _hasMovedToLocation = false;
+
+  static const LatLng _initialPosition = LatLng(-23.5505, -46.6333);
+  static const double _initialZoom = 8.0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<MapViewModel>().getCurrentLocation();
+    });
+  }
+
+  @override
+  void dispose() {
+    _mapController.dispose();
+    super.dispose();
+  }
+
+  void _moveToCurrentLocation(Position position) {
+    _mapController.move(LatLng(position.latitude, position.longitude), 8.0);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Consumer<MapViewModel>(
+        builder: (context, viewModel, child) {
+          LatLng centerPosition;
+          double zoom;
+
+          if (viewModel.currentPosition != null) {
+            final position = viewModel.currentPosition!;
+            centerPosition = LatLng(position.latitude, position.longitude);
+            zoom = 8.0;
+            if (!_hasMovedToLocation) {
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                _moveToCurrentLocation(position);
+                _hasMovedToLocation = true;
+              });
+            }
+          } else {
+            centerPosition = _initialPosition;
+            zoom = _initialZoom;
+          }
+
+          return Stack(
+            children: [
+              Listener(
+                onPointerMove: viewModel.isPlanningRoute
+                    ? (event) {
+                        final routePlannerViewModel = context
+                            .read<RoutePlannerViewModel>();
+                        final draggingIndex =
+                            routePlannerViewModel.draggingIndex;
+                        if (draggingIndex != null) {
+                          final renderBox =
+                              context.findRenderObject() as RenderBox?;
+                          if (renderBox != null) {
+                            final localPosition = renderBox.globalToLocal(
+                              event.position,
+                            );
+                            try {
+                              final camera = _mapController.camera;
+                              final point = math.Point(
+                                localPosition.dx,
+                                localPosition.dy,
+                              );
+                              final newPoint = camera.pointToLatLng(point);
+                              routePlannerViewModel.updateRoutePoint(
+                                draggingIndex,
+                                newPoint,
+                              );
+                            } catch (e) {
+                              // Ignora erros de conversão
+                            }
+                          }
+                        }
+                      }
+                    : null,
+                onPointerUp: viewModel.isPlanningRoute
+                    ? (_) {
+                        context.read<RoutePlannerViewModel>().stopDragging();
+                      }
+                    : null,
+                child: Selector<RoutePlannerViewModel, int?>(
+                  selector: (_, viewModel) => viewModel.draggingIndex,
+                  builder: (context, draggingIndex, child) {
+                    return Selector<MapViewModel, bool>(
+                      selector: (_, viewModel) => viewModel.isPlanningRoute,
+                      builder: (context, isPlanningRoute, child) {
+                        return FlutterMap(
+                          key: const ValueKey('map'),
+                          mapController: _mapController,
+                          options: MapOptions(
+                            initialCenter: centerPosition,
+                            initialZoom: zoom,
+                            minZoom: 3.0,
+                            maxZoom: 20.0,
+                            interactionOptions: InteractionOptions(
+                              flags: draggingIndex != null && isPlanningRoute
+                                  ? InteractiveFlag.none
+                                  : InteractiveFlag.all &
+                                        ~InteractiveFlag.rotate,
+                            ),
+                            onLongPress: viewModel.isPlanningRoute
+                                ? (tapPosition, point) {
+                                    final routePlannerViewModel = context
+                                        .read<RoutePlannerViewModel>();
+                                    if (routePlannerViewModel.draggingIndex ==
+                                        null) {
+                                      routePlannerViewModel.setPendingPoint(
+                                        point,
+                                      );
+                                    }
+                                  }
+                                : null,
+                          ),
+                          children: [
+                            TileLayer(
+                              urlTemplate:
+                                  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                              userAgentPackageName: 'com.br.estai',
+                              maxZoom: 22,
+                              minZoom: 1,
+                            ),
+                            Selector<MapViewModel, bool>(
+                              selector: (_, viewModel) =>
+                                  viewModel.showCustomTiles,
+                              builder: (context, showCustomTiles, child) {
+                                if (showCustomTiles) {
+                                  return TileLayer(
+                                    urlTemplate:
+                                        'https://nizz-web-charter.vercel.app/tiles/{z}/{x}/{y}',
+                                    userAgentPackageName: 'com.br.estai',
+                                    maxZoom: 16,
+                                  );
+                                }
+                                return const SizedBox.shrink();
+                              },
+                            ),
+                            const PlannedRouteLine(),
+                            PlannedRouteMarkers(mapController: _mapController),
+                            MapDirectionLine(mapController: _mapController),
+                            MapUserMarker(mapController: _mapController),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
+              if (viewModel.isLoading)
+                Container(
+                  color: Colors.black.withOpacity(0.3),
+                  child: const Center(child: CircularProgressIndicator()),
+                ),
+              if (viewModel.errorMessage != null)
+                Positioned(
+                  top: 20,
+                  left: 20,
+                  right: 20,
+                  child: Card(
+                    color: Colors.red[50],
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.error_outline, color: Colors.red[700]),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Text(
+                                  viewModel.errorMessage!,
+                                  style: TextStyle(color: Colors.red[900]),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          ElevatedButton(
+                            onPressed: () => viewModel.getCurrentLocation(),
+                            child: const Text('Tentar Novamente'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+              const MapNavigationData(),
+
+              const RouteDistance(),
+
+              const MapActionsButtons(),
+
+              const RoutePlanner(),
+
+              const RoutePointConfirmation(),
+
+              const NavigationStatus(),
+
+              Selector<MapViewModel, bool>(
+                selector: (_, viewModel) => viewModel.isPlanningRoute,
+                builder: (context, isPlanningRoute, child) {
+                  if (isPlanningRoute) {
+                    return const SizedBox.shrink();
+                  }
+                  return Positioned(
+                    bottom: 20,
+                    right: 20,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      spacing: 12,
+                      children: [
+                        Selector<NavigationStatusViewModel, bool>(
+                          selector: (_, viewModel) => viewModel.isNavigating,
+                          builder: (context, isNavigating, child) {
+                            if (!isNavigating) {
+                              return const SizedBox.shrink();
+                            }
+                            return FloatingActionButton(
+                              heroTag: 'stop_navigation_button',
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext dialogContext) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.black.withAlpha(
+                                        180,
+                                      ),
+                                      title: const Text(
+                                        'Finalizar Navegação',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      content: const Text(
+                                        'Deseja realmente finalizar a navegação?',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(dialogContext).pop();
+                                          },
+                                          child: const Text(
+                                            'Cancelar',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            context
+                                                .read<
+                                                  NavigationStatusViewModel
+                                                >()
+                                                .stopNavigation();
+                                            context
+                                                .read<
+                                                  NavigationStatusViewModel
+                                                >()
+                                                .resetNavigation();
+                                            Navigator.of(dialogContext).pop();
+                                          },
+                                          child: const Text(
+                                            'Finalizar',
+                                            style: TextStyle(color: Colors.red),
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              backgroundColor: Colors.orange.withAlpha(200),
+                              child: const Icon(
+                                Icons.flag,
+                                color: Colors.white,
+                              ),
+                            );
+                          },
+                        ),
+                        FloatingActionButton(
+                          heroTag: 'map_bottom_sheet_button',
+                          onPressed: () => MapBottomSheet.show(context),
+                          backgroundColor: Colors.black.withAlpha(140),
+                          child: const Icon(
+                            Icons.keyboard_arrow_up,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+}

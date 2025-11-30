@@ -1,0 +1,88 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flutter (Android)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "emulator-5554",
+            "args": []
+        },
+        {
+            "name": "Flutter (Android - Fisico)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "OR5HEI75OVA6KRYL",
+            "args": []
+        },
+        {
+            "name": "Flutter (Android - Release)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "OR5HEI75OVA6KRYL",
+            "flutterMode": "release",
+            "args": []
+        },
+        {
+            "name": "Flutter (Android - Profile)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "android",
+            "flutterMode": "profile",
+            "args": []
+        },
+        {
+            "name": "Flutter (Primeiro dispositivo Android disponível)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": []
+        },
+        {
+            "name": "Flutter (iOS - Emulador)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "B24D5EDB-76AD-40FE-B720-692B00C5530B",
+            "args": []
+        },
+        {
+            "name": "Flutter (iOS - Físico)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "00008130-001854261AD2001C",
+            "args": []
+        },
+        {
+            "name": "Flutter (iOS - Release)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "00008130-001854261AD2001C",
+            "flutterMode": "release",
+            "args": []
+        },
+        {
+            "name": "Flutter (Web - Chrome)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "chrome",
+            "args": []
+        },
+        {
+            "name": "Flutter (Web - Release)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "chrome",
+            "flutterMode": "release",
+            "args": []
+        }
+    ]
+}

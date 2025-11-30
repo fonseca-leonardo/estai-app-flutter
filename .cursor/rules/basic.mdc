@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+- Priorize usar o padrão MVVM para criação das novas funcionalides e telas
+- Não crie comentários para explicar o código a não ser que seja solicitado
