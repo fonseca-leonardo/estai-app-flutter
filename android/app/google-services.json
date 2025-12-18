@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "952848614020",
+    "project_id": "estai-edb36",
+    "storage_bucket": "estai-edb36.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952848614020:android:ab0760fad12119c333b8d1",
+        "android_client_info": {
+          "package_name": "com.example.estai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcFIGK_PnOmv5wSB8vPaStPxuafw5oWCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

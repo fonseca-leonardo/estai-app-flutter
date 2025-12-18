@@ -16,6 +16,7 @@ import 'widgets/planned_route_line.dart';
 import 'widgets/planned_route_markers.dart';
 import 'widgets/route_point_confirmation.dart';
 import 'widgets/navigation_status.dart';
+import 'widgets/tracked_route_line.dart';
 import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
 
@@ -29,6 +30,7 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   final MapController _mapController = MapController();
   bool _hasMovedToLocation = false;
+  LatLng? _lastTrackedPoint;
 
   static const LatLng _initialPosition = LatLng(-23.5505, -46.6333);
   static const double _initialZoom = 8.0;
@@ -69,6 +71,21 @@ class _MapScreenState extends State<MapScreen> {
                 _hasMovedToLocation = true;
               });
             }
+
+            final currentLatLng = LatLng(position.latitude, position.longitude);
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              final navigationStatusViewModel = context
+                  .read<NavigationStatusViewModel>();
+              if (navigationStatusViewModel.isNavigating) {
+                if (_lastTrackedPoint == null ||
+                    _lastTrackedPoint != currentLatLng) {
+                  navigationStatusViewModel.addTrackedPoint(currentLatLng);
+                  _lastTrackedPoint = currentLatLng;
+                }
+              } else {
+                _lastTrackedPoint = null;
+              }
+            });
           } else {
             centerPosition = _initialPosition;
             zoom = _initialZoom;
@@ -171,6 +188,7 @@ class _MapScreenState extends State<MapScreen> {
                             ),
                             const PlannedRouteLine(),
                             PlannedRouteMarkers(mapController: _mapController),
+                            const TrackedRouteLine(),
                             MapDirectionLine(mapController: _mapController),
                             MapUserMarker(mapController: _mapController),
                           ],

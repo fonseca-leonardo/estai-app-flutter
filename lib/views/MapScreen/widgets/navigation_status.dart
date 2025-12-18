@@ -14,14 +14,27 @@ class NavigationStatus extends StatelessWidget {
         if (!isNavigating) {
           return const SizedBox.shrink();
         }
-        return Selector<NavigationStatusViewModel, String>(
-          selector: (_, viewModel) => viewModel.formattedTime,
-          builder: (context, formattedTime, child) {
+        return Selector<
+          NavigationStatusViewModel,
+          ({String formattedTime, String formattedDistance, int routeLength})
+        >(
+          selector: (_, viewModel) => (
+            formattedTime: viewModel.formattedTime,
+            formattedDistance: viewModel.formattedDistance,
+            routeLength: viewModel.trackedRoute.length,
+          ),
+          builder: (context, data, child) {
             return Positioned(
               bottom: 20,
               left: 20,
               child: NavigationData(
-                data: [NavigationDataItem(title: 'Tempo', data: formattedTime)],
+                data: [
+                  NavigationDataItem(
+                    title: 'DIST',
+                    data: data.formattedDistance,
+                  ),
+                  NavigationDataItem(title: 'TEMPO', data: data.formattedTime),
+                ],
               ),
             );
           },
