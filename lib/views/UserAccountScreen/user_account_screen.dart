@@ -128,7 +128,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Gerencie suas informações de conta',
+                          l10n.manageAccountInfo,
                           style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 14,
@@ -138,7 +138,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                         if (user?.displayName != null)
                           _buildInfoCard(
                             icon: Icons.person_outline,
-                            label: 'Nome',
+                            label: l10n.name,
                             value: user!.displayName ?? '',
                           ),
                         if (user?.displayName != null && user?.email != null)
@@ -146,7 +146,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                         if (user?.email != null)
                           _buildInfoCard(
                             icon: Icons.email_outlined,
-                            label: 'Email',
+                            label: l10n.email,
                             value: user!.email ?? '',
                           ),
                         const SizedBox(height: 32),
@@ -183,7 +183,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Sair da conta',
+                                            l10n.logoutAccount,
                                             style: TextStyle(
                                               color: Colors.red[400],
                                               fontSize: 15,
@@ -192,7 +192,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                                           ),
                                           const SizedBox(height: 2),
                                           Text(
-                                            'Você precisará fazer login novamente',
+                                            l10n.logoutAccountDescription,
                                             style: TextStyle(
                                               color: Colors.grey[600],
                                               fontSize: 12,
@@ -312,7 +312,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Gerencie suas informações de conta',
+                        l10n.manageAccountInfo,
                         style: TextStyle(color: Colors.grey[600], fontSize: 14),
                       ),
                       const SizedBox(height: 32),
@@ -355,7 +355,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    'Faça login para acessar suas informações',
+                                    l10n.loginToAccessInfo,
                                     style: TextStyle(
                                       color: Colors.grey[600],
                                       fontSize: 13,

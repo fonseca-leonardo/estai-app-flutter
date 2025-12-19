@@ -247,4 +247,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get userAccount => 'User Account';
+
+  @override
+  String get manageAccountInfo => 'Manage your account information';
+
+  @override
+  String get logoutAccount => 'Logout';
+
+  @override
+  String get logoutAccountDescription => 'You will need to log in again';
+
+  @override
+  String get loginToAccessInfo => 'Log in to access your information';
 }

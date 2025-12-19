@@ -538,6 +538,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'User Account'**
   String get userAccount;
+
+  /// No description provided for @manageAccountInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage your account information'**
+  String get manageAccountInfo;
+
+  /// No description provided for @logoutAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logoutAccount;
+
+  /// No description provided for @logoutAccountDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'You will need to log in again'**
+  String get logoutAccountDescription;
+
+  /// No description provided for @loginToAccessInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to access your information'**
+  String get loginToAccessInfo;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

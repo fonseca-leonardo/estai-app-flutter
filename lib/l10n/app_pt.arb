@@ -203,6 +203,14 @@
   "navigationSettings": "Configurações de Navegação",
   "@navigationSettings": {},
   "userAccount": "Conta do Usuário",
-  "@userAccount": {}
+  "@userAccount": {},
+  "manageAccountInfo": "Gerencie suas informações de conta",
+  "@manageAccountInfo": {},
+  "logoutAccount": "Sair da conta",
+  "@logoutAccount": {},
+  "logoutAccountDescription": "Você precisará fazer login novamente",
+  "@logoutAccountDescription": {},
+  "loginToAccessInfo": "Faça login para acessar suas informações",
+  "@loginToAccessInfo": {}
 }
 

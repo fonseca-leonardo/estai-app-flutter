@@ -247,4 +247,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get userAccount => 'Conta do Usuário';
+
+  @override
+  String get manageAccountInfo => 'Gerencie suas informações de conta';
+
+  @override
+  String get logoutAccount => 'Sair da conta';
+
+  @override
+  String get logoutAccountDescription => 'Você precisará fazer login novamente';
+
+  @override
+  String get loginToAccessInfo => 'Faça login para acessar suas informações';
 }
