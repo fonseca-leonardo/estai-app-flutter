@@ -1,0 +1,208 @@
+{
+  "@@locale": "en",
+  "appTitle": "Estai - Map",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  "login": "Login",
+  "@login": {},
+  "email": "Email",
+  "@email": {},
+  "password": "Password",
+  "@password": {},
+  "name": "Name",
+  "@name": {},
+  "pleaseEnterEmail": "Please enter your email",
+  "@pleaseEnterEmail": {},
+  "pleaseEnterValidEmail": "Please enter a valid email",
+  "@pleaseEnterValidEmail": {},
+  "pleaseEnterPassword": "Please enter your password",
+  "@pleaseEnterPassword": {},
+  "pleaseEnterName": "Please enter your name",
+  "@pleaseEnterName": {},
+  "nameMinLength": "Name must be at least 2 characters",
+  "@nameMinLength": {},
+  "passwordMinLength": "Password must be at least 6 characters",
+  "@passwordMinLength": {},
+  "forgotPassword": "Forgot password",
+  "@forgotPassword": {},
+  "enter": "Sign In",
+  "@enter": {},
+  "dontHaveAccount": "Don't have an account. ",
+  "@dontHaveAccount": {},
+  "createAccount": "Create account",
+  "@createAccount": {},
+  "continueWithoutLogin": "Continue without login",
+  "@continueWithoutLogin": {},
+  "createAccountTitle": "Create Account",
+  "@createAccountTitle": {},
+  "alreadyHaveAccount": "Already have an account. ",
+  "@alreadyHaveAccount": {},
+  "signIn": "Sign in",
+  "@signIn": {},
+  "recoverPassword": "Recover Password",
+  "@recoverPassword": {},
+  "forgotPasswordTitle": "Forgot your password?",
+  "@forgotPasswordTitle": {},
+  "forgotPasswordDescription": "Enter your email and we'll send you a link to reset your password.",
+  "@forgotPasswordDescription": {},
+  "sendEmail": "Send Email",
+  "@sendEmail": {},
+  "backToLogin": "Back to login",
+  "@backToLogin": {},
+  "passwordResetEmailSent": "Password reset email sent! Check your inbox.",
+  "@passwordResetEmailSent": {},
+  "settings": "Settings",
+  "@settings": {},
+  "account": "Account",
+  "@account": {},
+  "notAuthenticated": "You are not authenticated.",
+  "@notAuthenticated": {},
+  "logout": "Logout",
+  "@logout": {},
+  "minimumDistance": "Minimum distance: {value} m",
+  "@minimumDistance": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "minimumDistanceDescription": "Defines the minimum distance in meters that the user needs to travel for a new point to be added to the tracked route during navigation. Higher values result in routes with fewer points, while lower values create more detailed routes.",
+  "@minimumDistanceDescription": {},
+  "meters": "{value} m",
+  "@meters": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "tryAgain": "Try Again",
+  "@tryAgain": {},
+  "locationServicesDisabled": "Location services are disabled.",
+  "@locationServicesDisabled": {},
+  "locationPermissionDenied": "Location permission denied.",
+  "@locationPermissionDenied": {},
+  "locationPermissionDeniedForever": "Location permission denied permanently.",
+  "@locationPermissionDeniedForever": {},
+  "errorGettingLocation": "Error getting location: {error}",
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUpdatingLocation": "Error updating location: {error}",
+  "@errorUpdatingLocation": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "finishNavigation": "Finish Navigation",
+  "@finishNavigation": {},
+  "finishNavigationQuestion": "Do you really want to finish navigation?",
+  "@finishNavigationQuestion": {},
+  "cancel": "Cancel",
+  "@cancel": {},
+  "finish": "Finish",
+  "@finish": {},
+  "unlockCamera": "Unlock camera",
+  "@unlockCamera": {},
+  "lockCamera": "Lock camera to position",
+  "@lockCamera": {},
+  "hideCustomTiles": "Hide custom tiles",
+  "@hideCustomTiles": {},
+  "showCustomTiles": "Show custom tiles",
+  "@showCustomTiles": {},
+  "navigate": "Navigate",
+  "@navigate": {},
+  "newRoute": "New Route",
+  "@newRoute": {},
+  "tides": "Tides",
+  "@tides": {},
+  "adjustments": "Settings",
+  "@adjustments": {},
+  "addPoint": "Add point?",
+  "@addPoint": {},
+  "confirmPoint": "Confirm point",
+  "@confirmPoint": {},
+  "tideTables": "Tide Tables",
+  "@tideTables": {},
+  "noTideTablesFound": "No tide tables found",
+  "@noTideTablesFound": {},
+  "errorLoadingTideTables": "Error loading tide tables: {error}",
+  "@errorLoadingTideTables": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "velocity": "VEL",
+  "@velocity": {},
+  "heading": "HDG",
+  "@heading": {},
+  "latitude": "LAT",
+  "@latitude": {},
+  "longitude": "LON",
+  "@longitude": {},
+  "distance": "DIST",
+  "@distance": {},
+  "time": "TIME",
+  "@time": {},
+  "invalidEmailOrPassword": "Invalid email or password",
+  "@invalidEmailOrPassword": {},
+  "invalidEmail": "Invalid email",
+  "@invalidEmail": {},
+  "userDisabled": "User disabled",
+  "@userDisabled": {},
+  "tooManyRequests": "Too many attempts. Try again later",
+  "@tooManyRequests": {},
+  "loginError": "Error signing in: {message}",
+  "@loginError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "weakPassword": "Password too weak",
+  "@weakPassword": {},
+  "emailAlreadyInUse": "Email already in use",
+  "@emailAlreadyInUse": {},
+  "signUpError": "Error creating account: {message}",
+  "@signUpError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "emailNotFound": "Email not found",
+  "@emailNotFound": {},
+  "sendEmailError": "Error sending email: {message}",
+  "@sendEmailError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "logoutError": "Error logging out: {error}",
+  "@logoutError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navigationSettings": "Navigation Settings",
+  "@navigationSettings": {},
+  "userAccount": "User Account",
+  "@userAccount": {}
+}
+

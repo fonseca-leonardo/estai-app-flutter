@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
 import '../LoginScreen/login_screen.dart';
 
@@ -48,6 +49,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -58,7 +60,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('Recuperar Senha'),
+          title: Text(l10n.recoverPassword),
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
         ),
@@ -72,130 +74,199 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Text(
-                      'Esqueceu sua senha?',
-                      style: TextStyle(
+                    Text(
+                      l10n.forgotPasswordTitle,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
+                        letterSpacing: -0.5,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 16),
-                    const Text(
-                      'Digite seu email e enviaremos um link para redefinir sua senha.',
+                    const SizedBox(height: 8),
+                    Text(
+                      l10n.forgotPasswordDescription,
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.grey[600],
                         fontSize: 14,
                       ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 32),
-                    TextFormField(
-                      controller: _emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      style: const TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        labelText: 'Email',
-                        labelStyle: const TextStyle(color: Colors.grey),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(8),
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF0A0A0A),
+                        border: Border.all(
+                          color: const Color(0xFF1F1F1F),
+                          width: 1,
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.red),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.red),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Por favor, insira seu email';
-                        }
-                        if (!value.contains('@')) {
-                          return 'Por favor, insira um email válido';
-                        }
-                        return null;
-                      },
-                    ),
-                    const SizedBox(height: 24),
-                    if (_authViewModel != null)
-                      Consumer<AuthViewModel>(
-                        builder: (context, authViewModel, child) {
-                          if (authViewModel.isPasswordResetSent) {
-                            return Padding(
-                              padding: const EdgeInsets.only(bottom: 16),
-                              child: Container(
-                                padding: const EdgeInsets.all(16),
-                                decoration: BoxDecoration(
-                                  color: Colors.green.withOpacity(0.2),
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.green),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          TextFormField(
+                            controller: _emailController,
+                            keyboardType: TextInputType.emailAddress,
+                            style: const TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                              labelText: l10n.email,
+                              labelStyle: const TextStyle(color: Colors.grey),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: Color(0xFF1F1F1F),
                                 ),
-                                child: const Text(
-                                  'Email de recuperação enviado! Verifique sua caixa de entrada.',
-                                  style: TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 14,
-                                  ),
-                                  textAlign: TextAlign.center,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: Colors.white,
+                                  width: 1.5,
                                 ),
+                                borderRadius: BorderRadius.circular(8),
                               ),
-                            );
-                          }
-                          if (authViewModel.errorMessage != null) {
-                            return Padding(
-                              padding: const EdgeInsets.only(bottom: 16),
-                              child: Text(
-                                authViewModel.errorMessage!,
-                                style: const TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
+                              errorBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.red),
+                                borderRadius: BorderRadius.circular(8),
                               ),
-                            );
-                          }
-                          return const SizedBox.shrink();
-                        },
-                      ),
-                    ElevatedButton(
-                      onPressed: _authViewModel?.isLoading == true ||
-                              (_authViewModel?.isPasswordResetSent == true)
-                          ? null
-                          : _handleForgotPassword,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                      child: _authViewModel?.isLoading == true
-                          ? const SizedBox(
-                              height: 20,
-                              width: 20,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                valueColor:
-                                    AlwaysStoppedAnimation<Color>(Colors.black),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.red),
+                                borderRadius: BorderRadius.circular(8),
                               ),
-                            )
-                          : const Text(
-                              'Enviar Email',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              filled: true,
+                              fillColor: const Color(0xFF0A0A0A),
                             ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return l10n.pleaseEnterEmail;
+                              }
+                              if (!value.contains('@')) {
+                                return l10n.pleaseEnterValidEmail;
+                              }
+                              return null;
+                            },
+                          ),
+                          const SizedBox(height: 24),
+                          if (_authViewModel != null)
+                            Consumer<AuthViewModel>(
+                              builder: (context, authViewModel, child) {
+                                if (authViewModel.isPasswordResetSent) {
+                                  return Padding(
+                                    padding: const EdgeInsets.only(bottom: 16),
+                                    child: Container(
+                                      padding: const EdgeInsets.all(16),
+                                      decoration: BoxDecoration(
+                                        color: Colors.green.withOpacity(0.15),
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.green.withOpacity(0.3),
+                                          width: 1,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        l10n.passwordResetEmailSent,
+                                        style: const TextStyle(
+                                          color: Colors.green,
+                                          fontSize: 14,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                if (authViewModel.errorMessage != null) {
+                                  final errorKey = authViewModel.errorMessage!;
+                                  String errorText;
+                                  if (errorKey.contains(':')) {
+                                    final parts = errorKey.split(':');
+                                    final key = parts[0];
+                                    final param =
+                                        parts.length > 1 ? parts[1] : '';
+                                    switch (key) {
+                                      case 'sendEmailError':
+                                        errorText = l10n.sendEmailError(param);
+                                        break;
+                                      default:
+                                        errorText = errorKey;
+                                    }
+                                  } else {
+                                    switch (errorKey) {
+                                      case 'emailNotFound':
+                                        errorText = l10n.emailNotFound;
+                                        break;
+                                      case 'invalidEmail':
+                                        errorText = l10n.invalidEmail;
+                                        break;
+                                      default:
+                                        errorText = errorKey;
+                                    }
+                                  }
+                                  return Padding(
+                                    padding: const EdgeInsets.only(bottom: 16),
+                                    child: Container(
+                                      padding: const EdgeInsets.all(16),
+                                      decoration: BoxDecoration(
+                                        color: Colors.red.withOpacity(0.15),
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.red.withOpacity(0.3),
+                                          width: 1,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        errorText,
+                                        style: const TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                return const SizedBox.shrink();
+                              },
+                            ),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: _authViewModel?.isLoading == true
+                                  ? null
+                                  : _handleForgotPassword,
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                foregroundColor: Colors.black,
+                                padding: const EdgeInsets.symmetric(vertical: 14),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                elevation: 0,
+                              ),
+                              child: _authViewModel?.isLoading == true
+                                  ? const SizedBox(
+                                      height: 20,
+                                      width: 20,
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          Colors.black,
+                                        ),
+                                      ),
+                                    )
+                                  : Text(
+                                      l10n.sendEmail,
+                                      style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 24),
                     TextButton(
@@ -206,9 +277,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           ),
                         );
                       },
-                      child: const Text(
-                        'Voltar para login',
-                        style: TextStyle(color: Colors.white70),
+                      child: Text(
+                        l10n.backToLogin,
+                        style: TextStyle(
+                          color: Colors.grey[400],
+                          fontSize: 14,
+                        ),
                       ),
                     ),
                   ],
@@ -221,5 +295,3 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     );
   }
 }
-
-

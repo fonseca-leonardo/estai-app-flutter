@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import '../../l10n/app_localizations.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/tide_viewmodel.dart';
 import 'pdf_viewer_screen.dart';
@@ -27,6 +28,7 @@ class _TideScreenState extends State<TideScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -37,7 +39,7 @@ class _TideScreenState extends State<TideScreen> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: Text('Tábuas de Maré'),
+          title: Text(l10n.tideTables),
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
         ),
@@ -53,12 +55,28 @@ class _TideScreenState extends State<TideScreen> {
                   }
 
                   if (tideViewModel.errorMessage != null) {
+                    final errorKey = tideViewModel.errorMessage!;
+                    String errorText;
+                    if (errorKey.contains(':')) {
+                      final parts = errorKey.split(':');
+                      final key = parts[0];
+                      final param = parts.length > 1 ? parts[1] : '';
+                      switch (key) {
+                        case 'errorLoadingTideTables':
+                          errorText = l10n.errorLoadingTideTables(param);
+                          break;
+                        default:
+                          errorText = errorKey;
+                      }
+                    } else {
+                      errorText = errorKey;
+                    }
                     return Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            tideViewModel.errorMessage!,
+                            errorText,
                             style: const TextStyle(color: Colors.red),
                             textAlign: TextAlign.center,
                           ),
@@ -70,7 +88,7 @@ class _TideScreenState extends State<TideScreen> {
                                 userPosition: userPosition,
                               );
                             },
-                            child: const Text('Tentar Novamente'),
+                            child: Text(l10n.tryAgain),
                           ),
                         ],
                       ),
@@ -78,10 +96,10 @@ class _TideScreenState extends State<TideScreen> {
                   }
 
                   if (tideViewModel.tideStations.isEmpty) {
-                    return const Center(
+                    return Center(
                       child: Text(
-                        'Nenhuma tábua de maré encontrada',
-                        style: TextStyle(color: Colors.white),
+                        l10n.noTideTablesFound,
+                        style: const TextStyle(color: Colors.white),
                       ),
                     );
                   }

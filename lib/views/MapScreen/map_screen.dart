@@ -3,6 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:geolocator/geolocator.dart';
+import '../../l10n/app_localizations.dart';
 import 'dart:math' as math;
 import '../../viewmodels/map_viewmodel.dart';
 import 'widgets/map_actions_buttons.dart';
@@ -208,33 +209,69 @@ class _MapScreenState extends State<MapScreen> {
                   top: 20,
                   left: 20,
                   right: 20,
-                  child: Card(
-                    color: Colors.red[50],
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Row(
+                  child: Builder(
+                    builder: (context) {
+                      final l10n = AppLocalizations.of(context)!;
+                      final errorKey = viewModel.errorMessage!;
+                      String errorText;
+                      if (errorKey.contains(':')) {
+                        final parts = errorKey.split(':');
+                        final key = parts[0];
+                        final param = parts.length > 1 ? parts[1] : '';
+                        switch (key) {
+                          case 'errorGettingLocation':
+                            errorText = l10n.errorGettingLocation(param);
+                            break;
+                          case 'errorUpdatingLocation':
+                            errorText = l10n.errorUpdatingLocation(param);
+                            break;
+                          default:
+                            errorText = errorKey;
+                        }
+                      } else {
+                        switch (errorKey) {
+                          case 'locationServicesDisabled':
+                            errorText = l10n.locationServicesDisabled;
+                            break;
+                          case 'locationPermissionDenied':
+                            errorText = l10n.locationPermissionDenied;
+                            break;
+                          case 'locationPermissionDeniedForever':
+                            errorText = l10n.locationPermissionDeniedForever;
+                            break;
+                          default:
+                            errorText = errorKey;
+                        }
+                      }
+                      return Card(
+                        color: Colors.red[50],
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(Icons.error_outline, color: Colors.red[700]),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: Text(
-                                  viewModel.errorMessage!,
-                                  style: TextStyle(color: Colors.red[900]),
-                                ),
+                              Row(
+                                children: [
+                                  Icon(Icons.error_outline, color: Colors.red[700]),
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Text(
+                                      errorText,
+                                      style: TextStyle(color: Colors.red[900]),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              ElevatedButton(
+                                onPressed: () => viewModel.getCurrentLocation(),
+                                child: Text(l10n.tryAgain),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 8),
-                          ElevatedButton(
-                            onPressed: () => viewModel.getCurrentLocation(),
-                            child: const Text('Tentar Novamente'),
-                          ),
-                        ],
-                      ),
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 ),
 
@@ -275,26 +312,27 @@ class _MapScreenState extends State<MapScreen> {
                                 showDialog(
                                   context: context,
                                   builder: (BuildContext dialogContext) {
+                                    final l10n = AppLocalizations.of(dialogContext)!;
                                     return AlertDialog(
                                       backgroundColor: Colors.black.withAlpha(
                                         180,
                                       ),
-                                      title: const Text(
-                                        'Finalizar Navegação',
-                                        style: TextStyle(color: Colors.white),
+                                      title: Text(
+                                        l10n.finishNavigation,
+                                        style: const TextStyle(color: Colors.white),
                                       ),
-                                      content: const Text(
-                                        'Deseja realmente finalizar a navegação?',
-                                        style: TextStyle(color: Colors.white),
+                                      content: Text(
+                                        l10n.finishNavigationQuestion,
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                       actions: [
                                         TextButton(
                                           onPressed: () {
                                             Navigator.of(dialogContext).pop();
                                           },
-                                          child: const Text(
-                                            'Cancelar',
-                                            style: TextStyle(
+                                          child: Text(
+                                            l10n.cancel,
+                                            style: const TextStyle(
                                               color: Colors.white,
                                             ),
                                           ),
@@ -313,9 +351,9 @@ class _MapScreenState extends State<MapScreen> {
                                                 .resetNavigation();
                                             Navigator.of(dialogContext).pop();
                                           },
-                                          child: const Text(
-                                            'Finalizar',
-                                            style: TextStyle(color: Colors.red),
+                                          child: Text(
+                                            l10n.finish,
+                                            style: const TextStyle(color: Colors.red),
                                           ),
                                         ),
                                       ],

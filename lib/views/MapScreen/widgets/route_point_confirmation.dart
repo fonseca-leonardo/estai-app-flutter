@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/route_planner_viewmodel.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 
@@ -9,6 +10,7 @@ class RoutePointConfirmation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Selector<MapViewModel, bool>(
       selector: (_, viewModel) => viewModel.isPlanningRoute,
       builder: (context, isPlanningRoute, child) {
@@ -53,11 +55,11 @@ class RoutePointConfirmation extends StatelessWidget {
                                   .read<RoutePlannerViewModel>()
                                   .confirmPendingPoint();
                             },
-                            tooltip: 'Confirmar ponto',
+                            tooltip: l10n.confirmPoint,
                           ),
-                          const Text(
-                            'Adicionar ponto?',
-                            style: TextStyle(
+                          Text(
+                            l10n.addPoint,
+                            style: const TextStyle(
                               fontWeight: FontWeight.w500,
                               color: Colors.white,
                             ),
@@ -69,7 +71,7 @@ class RoutePointConfirmation extends StatelessWidget {
                                   .read<RoutePlannerViewModel>()
                                   .cancelPendingPoint();
                             },
-                            tooltip: 'Cancelar',
+                            tooltip: l10n.cancel,
                           ),
                         ],
                       ),

@@ -3,3 +3,4 @@ alwaysApply: true
 ---
 - Priorize usar o padrão MVVM para criação das novas funcionalides e telas
 - Não crie comentários para explicar o código a não ser que seja solicitado
+- Siga o padrão de UI para seguir o padrão ShadCN, cards com bordas sutis, melhor hierarquia visual e espaçamento mais generoso.

@@ -39,12 +39,12 @@ class TideViewModel extends ChangeNotifier {
         notifyListeners();
       } else {
         _errorMessage =
-            'Erro ao carregar tábuas de maré: ${response.statusCode}';
+            'errorLoadingTideTables:${response.statusCode}';
         _isLoading = false;
         notifyListeners();
       }
     } catch (e) {
-      _errorMessage = 'Erro ao carregar tábuas de maré: $e';
+      _errorMessage = 'errorLoadingTideTables:$e';
       _isLoading = false;
       notifyListeners();
     }

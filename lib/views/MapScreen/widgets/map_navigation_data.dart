@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../components/navigation_data.dart';
 import '../../../utils/coordinate_formatter.dart';
@@ -9,6 +10,7 @@ class MapNavigationData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Positioned(
       top: 48,
       right: 20,
@@ -28,11 +30,11 @@ class MapNavigationData extends StatelessWidget {
               return NavigationData(
                 data: [
                   NavigationDataItem(
-                    title: 'VEL',
+                    title: l10n.velocity,
                     data: CoordinateFormatter.formatSpeedInKnots(data.speed),
                   ),
                   NavigationDataItem(
-                    title: 'HDG',
+                    title: l10n.heading,
                     data: CoordinateFormatter.formatHeading(data.heading),
                   ),
                 ],
@@ -46,7 +48,7 @@ class MapNavigationData extends StatelessWidget {
               return NavigationData(
                 data: [
                   NavigationDataItem(
-                    title: 'LAT',
+                    title: l10n.latitude,
                     data: latitude != null
                         ? CoordinateFormatter.formatLatitude(latitude)
                         : '--º --\' --" --',
@@ -62,7 +64,7 @@ class MapNavigationData extends StatelessWidget {
               return NavigationData(
                 data: [
                   NavigationDataItem(
-                    title: 'LON',
+                    title: l10n.longitude,
                     data: longitude != null
                         ? CoordinateFormatter.formatLongitude(longitude)
                         : '--º --\' --" --',

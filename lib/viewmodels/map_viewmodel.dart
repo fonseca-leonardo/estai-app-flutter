@@ -30,7 +30,7 @@ class MapViewModel extends ChangeNotifier {
       // Verificar permissões
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
-        _errorMessage = 'Serviços de localização estão desabilitados.';
+        _errorMessage = 'locationServicesDisabled';
         _isLoading = false;
         notifyListeners();
         return;
@@ -40,7 +40,7 @@ class MapViewModel extends ChangeNotifier {
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.denied) {
-          _errorMessage = 'Permissão de localização negada.';
+          _errorMessage = 'locationPermissionDenied';
           _isLoading = false;
           notifyListeners();
           return;
@@ -48,7 +48,7 @@ class MapViewModel extends ChangeNotifier {
       }
 
       if (permission == LocationPermission.deniedForever) {
-        _errorMessage = 'Permissão de localização negada permanentemente.';
+        _errorMessage = 'locationPermissionDeniedForever';
         _isLoading = false;
         notifyListeners();
         return;
@@ -65,7 +65,7 @@ class MapViewModel extends ChangeNotifier {
       // Iniciar stream de atualizações contínuas
       _startLocationStream();
     } catch (e) {
-      _errorMessage = 'Erro ao obter localização: $e';
+      _errorMessage = 'errorGettingLocation:$e';
       _isLoading = false;
       notifyListeners();
     }
@@ -87,7 +87,7 @@ class MapViewModel extends ChangeNotifier {
             notifyListeners();
           },
           onError: (error) {
-            _errorMessage = 'Erro ao atualizar localização: $error';
+            _errorMessage = 'errorUpdatingLocation:$error';
             notifyListeners();
           },
         );

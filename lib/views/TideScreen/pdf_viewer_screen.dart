@@ -1,3 +1,4 @@
+import 'package:estai/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -6,11 +7,7 @@ class PdfViewerScreen extends StatefulWidget {
   final String pdfUrl;
   final String title;
 
-  const PdfViewerScreen({
-    super.key,
-    required this.pdfUrl,
-    required this.title,
-  });
+  const PdfViewerScreen({super.key, required this.pdfUrl, required this.title});
 
   @override
   State<PdfViewerScreen> createState() => _PdfViewerScreenState();
@@ -56,6 +53,7 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -88,7 +86,7 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
                         onPressed: () {
                           _initializeWebView();
                         },
-                        child: const Text('Tentar Novamente'),
+                        child: Text(l10n.tryAgain),
                       ),
                     ],
                   ),
@@ -109,4 +107,3 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
     );
   }
 }
-

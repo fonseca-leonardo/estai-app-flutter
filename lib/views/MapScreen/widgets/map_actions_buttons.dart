@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 
 class MapActionsButtons extends StatelessWidget {
@@ -7,6 +8,7 @@ class MapActionsButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Positioned(
       top: 48,
       left: 20,
@@ -29,8 +31,8 @@ class MapActionsButtons extends StatelessWidget {
                   color: Colors.white,
                 ),
                 tooltip: isCameraLocked
-                    ? 'Desbloquear câmera'
-                    : 'Bloquear câmera na posição',
+                    ? l10n.unlockCamera
+                    : l10n.lockCamera,
               );
             },
           ),
@@ -50,8 +52,8 @@ class MapActionsButtons extends StatelessWidget {
                   color: Colors.white,
                 ),
                 tooltip: showCustomTiles
-                    ? 'Ocultar tiles customizados'
-                    : 'Mostrar tiles customizados',
+                    ? l10n.hideCustomTiles
+                    : l10n.showCustomTiles,
               );
             },
           ),

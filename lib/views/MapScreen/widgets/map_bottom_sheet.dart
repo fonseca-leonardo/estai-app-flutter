@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../TideScreen/tide_screen.dart';
 import '../../SettingsScreen/settings_screen.dart';
 import '../../../viewmodels/map_viewmodel.dart';
@@ -13,6 +14,7 @@ class MapBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       decoration: const BoxDecoration(
         color: Color.fromARGB(164, 0, 0, 0),
@@ -48,7 +50,7 @@ class MapBottomSheet extends StatelessWidget {
                   children: [
                     _GridItem(
                       icon: Icons.navigation,
-                      title: 'Navegar',
+                      title: l10n.navigate,
                       onTap: isNavigating
                           ? null
                           : () {
@@ -73,7 +75,7 @@ class MapBottomSheet extends StatelessWidget {
                     ),
                     _GridItem(
                       icon: Icons.route,
-                      title: 'Nova Rota',
+                      title: l10n.newRoute,
                       onTap: isNavigating
                           ? null
                           : () {
@@ -98,7 +100,7 @@ class MapBottomSheet extends StatelessWidget {
                     ),
                     _GridItem(
                       icon: Icons.water_drop,
-                      title: 'Marés',
+                      title: l10n.tides,
                       onTap: () {
                         final navigatorContext = parentContext ?? context;
                         Navigator.pop(context);
@@ -115,7 +117,7 @@ class MapBottomSheet extends StatelessWidget {
                     ),
                     _GridItem(
                       icon: Icons.settings,
-                      title: 'Ajustes',
+                      title: l10n.adjustments,
                       onTap: () {
                         final navigatorContext = parentContext ?? context;
                         Navigator.pop(context);

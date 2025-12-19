@@ -45,25 +45,25 @@ class AuthViewModel extends ChangeNotifier {
         case 'user-not-found':
         case 'wrong-password':
         case 'invalid-credential':
-          _errorMessage = 'Email ou senha inválido';
+          _errorMessage = 'invalidEmailOrPassword';
           break;
         case 'invalid-email':
-          _errorMessage = 'Email inválido';
+          _errorMessage = 'invalidEmail';
           break;
         case 'user-disabled':
-          _errorMessage = 'Usuário desabilitado';
+          _errorMessage = 'userDisabled';
           break;
         case 'too-many-requests':
-          _errorMessage = 'Muitas tentativas. Tente novamente mais tarde';
+          _errorMessage = 'tooManyRequests';
           break;
         default:
-          _errorMessage = 'Erro ao fazer login: ${e.message}';
+          _errorMessage = 'loginError:${e.message ?? ''}';
       }
       notifyListeners();
       return false;
     } catch (e) {
       _isLoading = false;
-      _errorMessage = 'Erro ao fazer login: $e';
+      _errorMessage = 'loginError:$e';
       notifyListeners();
       return false;
     }
@@ -94,22 +94,22 @@ class AuthViewModel extends ChangeNotifier {
       _isLoading = false;
       switch (e.code) {
         case 'weak-password':
-          _errorMessage = 'Senha muito fraca';
+          _errorMessage = 'weakPassword';
           break;
         case 'email-already-in-use':
-          _errorMessage = 'Email já está em uso';
+          _errorMessage = 'emailAlreadyInUse';
           break;
         case 'invalid-email':
-          _errorMessage = 'Email inválido';
+          _errorMessage = 'invalidEmail';
           break;
         default:
-          _errorMessage = 'Erro ao criar conta: ${e.message}';
+          _errorMessage = 'signUpError:${e.message ?? ''}';
       }
       notifyListeners();
       return false;
     } catch (e) {
       _isLoading = false;
-      _errorMessage = 'Erro ao criar conta: $e';
+      _errorMessage = 'signUpError:$e';
       notifyListeners();
       return false;
     }
@@ -132,19 +132,19 @@ class AuthViewModel extends ChangeNotifier {
       _isLoading = false;
       switch (e.code) {
         case 'user-not-found':
-          _errorMessage = 'Email não encontrado';
+          _errorMessage = 'emailNotFound';
           break;
         case 'invalid-email':
-          _errorMessage = 'Email inválido';
+          _errorMessage = 'invalidEmail';
           break;
         default:
-          _errorMessage = 'Erro ao enviar email: ${e.message}';
+          _errorMessage = 'sendEmailError:${e.message ?? ''}';
       }
       notifyListeners();
       return false;
     } catch (e) {
       _isLoading = false;
-      _errorMessage = 'Erro ao enviar email: $e';
+      _errorMessage = 'sendEmailError:$e';
       notifyListeners();
       return false;
     }
@@ -163,7 +163,7 @@ class AuthViewModel extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       _isLoading = false;
-      _errorMessage = 'Erro ao fazer logout: $e';
+      _errorMessage = 'logoutError:$e';
       notifyListeners();
     }
   }

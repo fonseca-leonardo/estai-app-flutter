@@ -1,0 +1,208 @@
+{
+  "@@locale": "pt",
+  "appTitle": "Estai - Mapa",
+  "@appTitle": {
+    "description": "Título do aplicativo"
+  },
+  "login": "Login",
+  "@login": {},
+  "email": "Email",
+  "@email": {},
+  "password": "Senha",
+  "@password": {},
+  "name": "Nome",
+  "@name": {},
+  "pleaseEnterEmail": "Por favor, insira seu email",
+  "@pleaseEnterEmail": {},
+  "pleaseEnterValidEmail": "Por favor, insira um email válido",
+  "@pleaseEnterValidEmail": {},
+  "pleaseEnterPassword": "Por favor, insira sua senha",
+  "@pleaseEnterPassword": {},
+  "pleaseEnterName": "Por favor, insira seu nome",
+  "@pleaseEnterName": {},
+  "nameMinLength": "Nome deve ter pelo menos 2 caracteres",
+  "@nameMinLength": {},
+  "passwordMinLength": "Senha deve ter pelo menos 6 caracteres",
+  "@passwordMinLength": {},
+  "forgotPassword": "Esqueci minha senha",
+  "@forgotPassword": {},
+  "enter": "Entrar",
+  "@enter": {},
+  "dontHaveAccount": "Não tenho uma conta. ",
+  "@dontHaveAccount": {},
+  "createAccount": "Criar conta",
+  "@createAccount": {},
+  "continueWithoutLogin": "Continuar sem login",
+  "@continueWithoutLogin": {},
+  "createAccountTitle": "Criar Conta",
+  "@createAccountTitle": {},
+  "alreadyHaveAccount": "Já tenho uma conta. ",
+  "@alreadyHaveAccount": {},
+  "signIn": "Fazer login",
+  "@signIn": {},
+  "recoverPassword": "Recuperar Senha",
+  "@recoverPassword": {},
+  "forgotPasswordTitle": "Esqueceu sua senha?",
+  "@forgotPasswordTitle": {},
+  "forgotPasswordDescription": "Digite seu email e enviaremos um link para redefinir sua senha.",
+  "@forgotPasswordDescription": {},
+  "sendEmail": "Enviar Email",
+  "@sendEmail": {},
+  "backToLogin": "Voltar para login",
+  "@backToLogin": {},
+  "passwordResetEmailSent": "Email de recuperação enviado! Verifique sua caixa de entrada.",
+  "@passwordResetEmailSent": {},
+  "settings": "Configurações",
+  "@settings": {},
+  "account": "Conta",
+  "@account": {},
+  "notAuthenticated": "Você não está autenticado.",
+  "@notAuthenticated": {},
+  "logout": "Sair",
+  "@logout": {},
+  "minimumDistance": "Distância mínima: {value} m",
+  "@minimumDistance": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "minimumDistanceDescription": "Define a distância mínima em metros que o usuário precisa percorrer para que um novo ponto seja adicionado à rota rastreada durante a navegação. Valores maiores resultam em rotas com menos pontos, enquanto valores menores criam rotas mais detalhadas.",
+  "@minimumDistanceDescription": {},
+  "meters": "{value} m",
+  "@meters": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "tryAgain": "Tentar Novamente",
+  "@tryAgain": {},
+  "locationServicesDisabled": "Serviços de localização estão desabilitados.",
+  "@locationServicesDisabled": {},
+  "locationPermissionDenied": "Permissão de localização negada.",
+  "@locationPermissionDenied": {},
+  "locationPermissionDeniedForever": "Permissão de localização negada permanentemente.",
+  "@locationPermissionDeniedForever": {},
+  "errorGettingLocation": "Erro ao obter localização: {error}",
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUpdatingLocation": "Erro ao atualizar localização: {error}",
+  "@errorUpdatingLocation": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "finishNavigation": "Finalizar Navegação",
+  "@finishNavigation": {},
+  "finishNavigationQuestion": "Deseja realmente finalizar a navegação?",
+  "@finishNavigationQuestion": {},
+  "cancel": "Cancelar",
+  "@cancel": {},
+  "finish": "Finalizar",
+  "@finish": {},
+  "unlockCamera": "Desbloquear câmera",
+  "@unlockCamera": {},
+  "lockCamera": "Bloquear câmera na posição",
+  "@lockCamera": {},
+  "hideCustomTiles": "Ocultar tiles customizados",
+  "@hideCustomTiles": {},
+  "showCustomTiles": "Mostrar tiles customizados",
+  "@showCustomTiles": {},
+  "navigate": "Navegar",
+  "@navigate": {},
+  "newRoute": "Nova Rota",
+  "@newRoute": {},
+  "tides": "Marés",
+  "@tides": {},
+  "adjustments": "Ajustes",
+  "@adjustments": {},
+  "addPoint": "Adicionar ponto?",
+  "@addPoint": {},
+  "confirmPoint": "Confirmar ponto",
+  "@confirmPoint": {},
+  "tideTables": "Tábuas de Maré",
+  "@tideTables": {},
+  "noTideTablesFound": "Nenhuma tábua de maré encontrada",
+  "@noTideTablesFound": {},
+  "errorLoadingTideTables": "Erro ao carregar tábuas de maré: {error}",
+  "@errorLoadingTideTables": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "velocity": "VEL",
+  "@velocity": {},
+  "heading": "HDG",
+  "@heading": {},
+  "latitude": "LAT",
+  "@latitude": {},
+  "longitude": "LON",
+  "@longitude": {},
+  "distance": "DIST",
+  "@distance": {},
+  "time": "TEMPO",
+  "@time": {},
+  "invalidEmailOrPassword": "Email ou senha inválido",
+  "@invalidEmailOrPassword": {},
+  "invalidEmail": "Email inválido",
+  "@invalidEmail": {},
+  "userDisabled": "Usuário desabilitado",
+  "@userDisabled": {},
+  "tooManyRequests": "Muitas tentativas. Tente novamente mais tarde",
+  "@tooManyRequests": {},
+  "loginError": "Erro ao fazer login: {message}",
+  "@loginError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "weakPassword": "Senha muito fraca",
+  "@weakPassword": {},
+  "emailAlreadyInUse": "Email já está em uso",
+  "@emailAlreadyInUse": {},
+  "signUpError": "Erro ao criar conta: {message}",
+  "@signUpError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "emailNotFound": "Email não encontrado",
+  "@emailNotFound": {},
+  "sendEmailError": "Erro ao enviar email: {message}",
+  "@sendEmailError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "logoutError": "Erro ao fazer logout: {error}",
+  "@logoutError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navigationSettings": "Configurações de Navegação",
+  "@navigationSettings": {},
+  "userAccount": "Conta do Usuário",
+  "@userAccount": {}
+}
+

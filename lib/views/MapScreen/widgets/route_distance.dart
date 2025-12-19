@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/route_planner_viewmodel.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../components/navigation_data.dart';
@@ -45,6 +46,7 @@ class RouteDistance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Selector<MapViewModel, bool>(
       selector: (_, viewModel) => viewModel.isPlanningRoute,
       builder: (context, isPlanningRoute, child) {
@@ -68,7 +70,7 @@ class RouteDistance extends StatelessWidget {
               right: 20,
               child: NavigationData(
                 data: [
-                  NavigationDataItem(title: 'DIST', data: formattedDistance),
+                  NavigationDataItem(title: l10n.distance, data: formattedDistance),
                 ],
               ),
             );

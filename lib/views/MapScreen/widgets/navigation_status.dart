@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/navigation_status_viewmodel.dart';
 import '../../../components/navigation_data.dart';
 
@@ -8,6 +9,7 @@ class NavigationStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Selector<NavigationStatusViewModel, bool>(
       selector: (_, viewModel) => viewModel.isNavigating,
       builder: (context, isNavigating, child) {
@@ -30,10 +32,10 @@ class NavigationStatus extends StatelessWidget {
               child: NavigationData(
                 data: [
                   NavigationDataItem(
-                    title: 'DIST',
+                    title: l10n.distance,
                     data: data.formattedDistance,
                   ),
-                  NavigationDataItem(title: 'TEMPO', data: data.formattedTime),
+                  NavigationDataItem(title: l10n.time, data: data.formattedTime),
                 ],
               ),
             );
