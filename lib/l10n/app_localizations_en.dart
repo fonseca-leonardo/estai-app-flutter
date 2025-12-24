@@ -307,4 +307,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get totalDistance => 'Total Distance';
+
+  @override
+  String get maps => 'Maps';
 }

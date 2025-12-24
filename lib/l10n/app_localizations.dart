@@ -658,6 +658,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Total Distance'**
   String get totalDistance;
+
+  /// No description provided for @maps.
+  ///
+  /// In en, this message translates to:
+  /// **'Maps'**
+  String get maps;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

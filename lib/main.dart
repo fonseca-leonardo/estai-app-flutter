@@ -14,6 +14,7 @@ import 'viewmodels/navigation_status_viewmodel.dart';
 import 'viewmodels/settings_viewmodel.dart';
 import 'viewmodels/auth_viewmodel.dart';
 import 'viewmodels/routes_viewmodel.dart';
+import 'viewmodels/maps_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => TideViewModel()),
         ChangeNotifierProvider(create: (_) => RoutePlannerViewModel()),
         ChangeNotifierProvider(create: (_) => RoutesViewModel()),
+        ChangeNotifierProvider(create: (_) => MapsViewModel()),
         ChangeNotifierProvider.value(value: settingsViewModel),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
       ],

@@ -243,6 +243,8 @@
   "routeDetails": "Detalhes da Rota",
   "@routeDetails": {},
   "totalDistance": "Distância Total",
-  "@totalDistance": {}
+  "@totalDistance": {},
+  "maps": "Mapas",
+  "@maps": {}
 }
 
