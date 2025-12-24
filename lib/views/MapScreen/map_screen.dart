@@ -20,6 +20,7 @@ import 'widgets/navigation_status.dart';
 import 'widgets/tracked_route_line.dart';
 import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
+import '../../viewmodels/list_maps_viewmodel.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -137,62 +138,79 @@ class _MapScreenState extends State<MapScreen> {
                     return Selector<MapViewModel, bool>(
                       selector: (_, viewModel) => viewModel.isPlanningRoute,
                       builder: (context, isPlanningRoute, child) {
-                        return FlutterMap(
-                          key: const ValueKey('map'),
-                          mapController: _mapController,
-                          options: MapOptions(
-                            initialCenter: centerPosition,
-                            initialZoom: zoom,
-                            minZoom: 3.0,
-                            maxZoom: 20.0,
-                            interactionOptions: InteractionOptions(
-                              flags: draggingIndex != null && isPlanningRoute
-                                  ? InteractiveFlag.none
-                                  : InteractiveFlag.all &
-                                        ~InteractiveFlag.rotate,
-                            ),
-                            onLongPress: viewModel.isPlanningRoute
-                                ? (tapPosition, point) {
-                                    final routePlannerViewModel = context
-                                        .read<RoutePlannerViewModel>();
-                                    if (routePlannerViewModel.draggingIndex ==
-                                        null) {
-                                      routePlannerViewModel.setPendingPoint(
-                                        point,
-                                      );
-                                    }
-                                  }
-                                : null,
-                          ),
-                          children: [
-                            TileLayer(
-                              urlTemplate:
-                                  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                              userAgentPackageName: 'com.br.estai',
-                              maxZoom: 22,
-                              minZoom: 1,
-                            ),
-                            Selector<MapViewModel, bool>(
-                              selector: (_, viewModel) =>
-                                  viewModel.showCustomTiles,
-                              builder: (context, showCustomTiles, child) {
-                                if (showCustomTiles) {
-                                  return TileLayer(
-                                    urlTemplate:
-                                        'https://nizz-web-charter.vercel.app/tiles/{z}/{x}/{y}',
-                                    userAgentPackageName: 'com.br.estai',
-                                    maxZoom: 16,
-                                  );
-                                }
-                                return const SizedBox.shrink();
-                              },
-                            ),
-                            const PlannedRouteLine(),
-                            PlannedRouteMarkers(mapController: _mapController),
-                            const TrackedRouteLine(),
-                            MapDirectionLine(mapController: _mapController),
-                            MapUserMarker(mapController: _mapController),
-                          ],
+                        return Consumer2<MapViewModel, ListMapsViewModel>(
+                          builder: (context, mapViewModel, mapsViewModel, _) {
+                            final customTileLayers =
+                                mapViewModel.showCustomTiles
+                                ? mapsViewModel.selectedMaps
+                                      .map(
+                                        (mapItem) => TileLayer(
+                                          urlTemplate:
+                                              'https://maps-api.estai.com.br/maps/${mapItem.path}/{z}/{x}/{y}.png',
+                                          userAgentPackageName: 'com.br.estai',
+                                          maxZoom: mapItem.maxZoom.toDouble(),
+                                          minZoom: mapItem.minZoom.toDouble(),
+                                        ),
+                                      )
+                                      .toList()
+                                : <Widget>[];
+
+                            return FlutterMap(
+                              key: const ValueKey('map'),
+                              mapController: _mapController,
+
+                              options: MapOptions(
+                                initialCenter: centerPosition,
+                                initialZoom: zoom,
+                                minZoom: 3.0,
+                                maxZoom: 20.0,
+                                interactionOptions: InteractionOptions(
+                                  flags:
+                                      draggingIndex != null && isPlanningRoute
+                                      ? InteractiveFlag.none
+                                      : InteractiveFlag.all &
+                                            ~InteractiveFlag.rotate,
+                                ),
+                                onLongPress: mapViewModel.isPlanningRoute
+                                    ? (tapPosition, point) {
+                                        final routePlannerViewModel = context
+                                            .read<RoutePlannerViewModel>();
+                                        if (routePlannerViewModel
+                                                .draggingIndex ==
+                                            null) {
+                                          routePlannerViewModel.setPendingPoint(
+                                            point,
+                                          );
+                                        }
+                                      }
+                                    : null,
+                              ),
+                              children: [
+                                TileLayer(
+                                  urlTemplate:
+                                      'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                                  userAgentPackageName: 'com.br.estai',
+                                  maxZoom: 22,
+                                  minZoom: 1,
+                                ),
+                                ...customTileLayers,
+                                TileLayer(
+                                  urlTemplate:
+                                      'https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
+                                  userAgentPackageName: 'com.br.estai',
+                                  maxZoom: 18,
+                                  minZoom: 1,
+                                ),
+                                const PlannedRouteLine(),
+                                PlannedRouteMarkers(
+                                  mapController: _mapController,
+                                ),
+                                const TrackedRouteLine(),
+                                MapDirectionLine(mapController: _mapController),
+                                MapUserMarker(mapController: _mapController),
+                              ],
+                            );
+                          },
                         );
                       },
                     );

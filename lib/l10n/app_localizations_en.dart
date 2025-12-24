@@ -310,4 +310,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get maps => 'Maps';
+
+  @override
+  String get mapsSelectionDescription => 'Select the maps you want to display on the main screen. Selected maps will be overlaid on the base map.';
+
+  @override
+  String get mapsSelectionPerformanceWarning => 'Note: Selecting many maps may impact app performance and increase data usage.';
 }

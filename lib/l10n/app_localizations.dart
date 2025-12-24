@@ -664,6 +664,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Maps'**
   String get maps;
+
+  /// No description provided for @mapsSelectionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Select the maps you want to display on the main screen. Selected maps will be overlaid on the base map.'**
+  String get mapsSelectionDescription;
+
+  /// No description provided for @mapsSelectionPerformanceWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Note: Selecting many maps may impact app performance and increase data usage.'**
+  String get mapsSelectionPerformanceWarning;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

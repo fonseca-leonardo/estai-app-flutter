@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:952848614020:android:ab0760fad12119c333b8d1",
+        "mobilesdk_app_id": "1:952848614020:android:137bdd988cc3004933b8d1",
         "android_client_info": {
-          "package_name": "com.example.estai"
+          "package_name": "com.br.estai"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "952848614020-otvqsp6pru3ur4s4tmls2i5u7eg2k6k3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBcFIGK_PnOmv5wSB8vPaStPxuafw5oWCY"
@@ -20,7 +25,55 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952848614020-otvqsp6pru3ur4s4tmls2i5u7eg2k6k3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "952848614020-scn737uk1re3cn9s4jh70nfec1ah0aun.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.estai"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952848614020:android:ab0760fad12119c333b8d1",
+        "android_client_info": {
+          "package_name": "com.example.estai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "952848614020-otvqsp6pru3ur4s4tmls2i5u7eg2k6k3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcFIGK_PnOmv5wSB8vPaStPxuafw5oWCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952848614020-otvqsp6pru3ur4s4tmls2i5u7eg2k6k3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "952848614020-scn737uk1re3cn9s4jh70nfec1ah0aun.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.estai"
+              }
+            }
+          ]
         }
       }
     }

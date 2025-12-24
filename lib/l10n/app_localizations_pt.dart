@@ -310,4 +310,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get maps => 'Mapas';
+
+  @override
+  String get mapsSelectionDescription => 'Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.';
+
+  @override
+  String get mapsSelectionPerformanceWarning => 'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo e aumentar o uso de dados.';
 }

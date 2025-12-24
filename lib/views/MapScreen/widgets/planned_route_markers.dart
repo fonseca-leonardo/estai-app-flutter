@@ -47,7 +47,7 @@ class PlannedRouteMarkers extends StatelessWidget {
                 final point = entry.value;
                 final color = _getMarkerColor(index, data.count);
                 final isIntermediate = index > 0 && index < data.count - 1;
-                final size = isIntermediate ? 12.0 : 16.0;
+                final size = isIntermediate ? 18.0 : 20.0;
 
                 return Marker(
                   point: point,
@@ -106,7 +106,7 @@ class _DraggableMarker extends StatelessWidget {
               boxShadow: isDragging
                   ? [
                       BoxShadow(
-                        color: color.withOpacity(0.5),
+                        color: color.withValues(alpha: 0.5),
                         blurRadius: 8,
                         spreadRadius: 8,
                       ),

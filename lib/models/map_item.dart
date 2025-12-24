@@ -17,6 +17,17 @@ class MapItem {
     required this.maxZoom,
   });
 
+  factory MapItem.fromJson(Map<String, dynamic> json) {
+    return MapItem(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      path: json['path'] as String,
+      available: json['available'] as bool,
+      minZoom: json['minZoom'] as int,
+      maxZoom: json['maxZoom'] as int,
+    );
+  }
+
   factory MapItem.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
     return MapItem(
@@ -39,4 +50,3 @@ class MapItem {
     };
   }
 }
-

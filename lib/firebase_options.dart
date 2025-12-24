@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBcFIGK_PnOmv5wSB8vPaStPxuafw5oWCY',
-    appId: '1:952848614020:android:ab0760fad12119c333b8d1',
+    appId: '1:952848614020:android:137bdd988cc3004933b8d1',
     messagingSenderId: '952848614020',
     projectId: 'estai-edb36',
     storageBucket: 'estai-edb36.firebasestorage.app',
@@ -66,10 +66,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDv35GDGSeNErQ2D0niIWx1CrJdNx9iKZk',
-    appId: '1:952848614020:ios:cd0dae1d6e7570b933b8d1',
+    appId: '1:952848614020:ios:8e22fb40616355fa33b8d1',
     messagingSenderId: '952848614020',
     projectId: 'estai-edb36',
     storageBucket: 'estai-edb36.firebasestorage.app',
-    iosBundleId: 'com.example.estai',
+    iosClientId: '952848614020-sj7scfh6vp5fa1nrl41p2m7f4f16qk4o.apps.googleusercontent.com',
+    iosBundleId: 'com.br.estai',
   );
+
 }

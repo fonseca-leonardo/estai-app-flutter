@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
@@ -14,11 +16,23 @@ import 'viewmodels/navigation_status_viewmodel.dart';
 import 'viewmodels/settings_viewmodel.dart';
 import 'viewmodels/auth_viewmodel.dart';
 import 'viewmodels/routes_viewmodel.dart';
-import 'viewmodels/maps_viewmodel.dart';
+import 'viewmodels/list_maps_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // if (kDebugMode) {
+  //   await FirebaseAppCheck.instance.activate(
+  //     providerAndroid: AndroidDebugProvider(),
+  //     providerApple: AppleDebugProvider(),
+  //   );
+  // } else {
+  //   await FirebaseAppCheck.instance.activate(
+  //     providerAndroid: AndroidPlayIntegrityProvider(),
+  //     providerApple: AppleAppAttestProvider(),
+  //   );
+  // }
 
   FirebaseFirestore.instance.settings = const Settings(
     persistenceEnabled: true,
@@ -44,7 +58,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => TideViewModel()),
         ChangeNotifierProvider(create: (_) => RoutePlannerViewModel()),
         ChangeNotifierProvider(create: (_) => RoutesViewModel()),
-        ChangeNotifierProvider(create: (_) => MapsViewModel()),
+        ChangeNotifierProvider(create: (_) => ListMapsViewModel()),
         ChangeNotifierProvider.value(value: settingsViewModel),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
       ],
