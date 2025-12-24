@@ -59,6 +59,14 @@
             "args": []
         },
         {
+            "name": "Flutter (iPad - Físico)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "00008103-0016784C3498A01E",
+            "args": []
+        },
+        {
             "name": "Flutter (iOS - Release)",
             "request": "launch",
             "type": "dart",

@@ -259,4 +259,52 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get loginToAccessInfo => 'Faça login para acessar suas informações';
+
+  @override
+  String get myRoutes => 'Minhas Rotas';
+
+  @override
+  String get routesList => 'Lista de Rotas';
+
+  @override
+  String get noRoutesFound => 'Nenhuma rota encontrada';
+
+  @override
+  String get routeName => 'Nome da Rota';
+
+  @override
+  String get saveRoute => 'Salvar Rota';
+
+  @override
+  String get deleteRoute => 'Deletar Rota';
+
+  @override
+  String get routeSaved => 'Rota salva com sucesso';
+
+  @override
+  String get errorSavingRoute => 'Erro ao salvar rota';
+
+  @override
+  String get editRouteName => 'Editar nome da rota';
+
+  @override
+  String get pleaseEnterRouteName => 'Por favor, insira um nome para a rota';
+
+  @override
+  String get loadRoute => 'Carregar Rota';
+
+  @override
+  String get points => 'pontos';
+
+  @override
+  String get confirmRoute => 'Confirmar Rota';
+
+  @override
+  String get startNavigationWithRoute => 'Iniciar Navegação';
+
+  @override
+  String get routeDetails => 'Detalhes da Rota';
+
+  @override
+  String get totalDistance => 'Distância Total';
 }

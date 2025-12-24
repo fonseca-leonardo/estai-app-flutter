@@ -562,6 +562,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Log in to access your information'**
   String get loginToAccessInfo;
+
+  /// No description provided for @myRoutes.
+  ///
+  /// In en, this message translates to:
+  /// **'My Routes'**
+  String get myRoutes;
+
+  /// No description provided for @routesList.
+  ///
+  /// In en, this message translates to:
+  /// **'Routes List'**
+  String get routesList;
+
+  /// No description provided for @noRoutesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No routes found'**
+  String get noRoutesFound;
+
+  /// No description provided for @routeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Route Name'**
+  String get routeName;
+
+  /// No description provided for @saveRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Route'**
+  String get saveRoute;
+
+  /// No description provided for @deleteRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Route'**
+  String get deleteRoute;
+
+  /// No description provided for @routeSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Route saved successfully'**
+  String get routeSaved;
+
+  /// No description provided for @errorSavingRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving route'**
+  String get errorSavingRoute;
+
+  /// No description provided for @editRouteName.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit route name'**
+  String get editRouteName;
+
+  /// No description provided for @pleaseEnterRouteName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a route name'**
+  String get pleaseEnterRouteName;
+
+  /// No description provided for @loadRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Load Route'**
+  String get loadRoute;
+
+  /// No description provided for @points.
+  ///
+  /// In en, this message translates to:
+  /// **'points'**
+  String get points;
+
+  /// No description provided for @confirmRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Route'**
+  String get confirmRoute;
+
+  /// No description provided for @startNavigationWithRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Navigation'**
+  String get startNavigationWithRoute;
+
+  /// No description provided for @routeDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Route Details'**
+  String get routeDetails;
+
+  /// No description provided for @totalDistance.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Distance'**
+  String get totalDistance;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

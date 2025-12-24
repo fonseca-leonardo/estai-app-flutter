@@ -1,5 +1,8 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:provider/provider.dart';
+import 'routes_viewmodel.dart';
 
 class RoutePlannerViewModel extends ChangeNotifier {
   List<LatLng> _routePoints = [];
@@ -47,6 +50,15 @@ class RoutePlannerViewModel extends ChangeNotifier {
       _hasConfirmedRoute = true;
       notifyListeners();
     }
+  }
+
+  Future<void> saveRoute(BuildContext context, String name) async {
+    if (_routePoints.length < 2) {
+      return;
+    }
+    
+    final routesViewModel = Provider.of<RoutesViewModel>(context, listen: false);
+    await routesViewModel.saveRoute(name, _routePoints);
   }
 
   void removeLastPoint() {

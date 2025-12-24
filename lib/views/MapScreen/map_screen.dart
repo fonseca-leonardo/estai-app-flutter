@@ -252,7 +252,10 @@ class _MapScreenState extends State<MapScreen> {
                             children: [
                               Row(
                                 children: [
-                                  Icon(Icons.error_outline, color: Colors.red[700]),
+                                  Icon(
+                                    Icons.error_outline,
+                                    color: Colors.red[700],
+                                  ),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
@@ -312,18 +315,24 @@ class _MapScreenState extends State<MapScreen> {
                                 showDialog(
                                   context: context,
                                   builder: (BuildContext dialogContext) {
-                                    final l10n = AppLocalizations.of(dialogContext)!;
+                                    final l10n = AppLocalizations.of(
+                                      dialogContext,
+                                    )!;
                                     return AlertDialog(
                                       backgroundColor: Colors.black.withAlpha(
                                         180,
                                       ),
                                       title: Text(
                                         l10n.finishNavigation,
-                                        style: const TextStyle(color: Colors.white),
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                        ),
                                       ),
                                       content: Text(
                                         l10n.finishNavigationQuestion,
-                                        style: const TextStyle(color: Colors.white),
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                        ),
                                       ),
                                       actions: [
                                         TextButton(
@@ -349,11 +358,16 @@ class _MapScreenState extends State<MapScreen> {
                                                   NavigationStatusViewModel
                                                 >()
                                                 .resetNavigation();
+                                            context
+                                                .read<RoutePlannerViewModel>()
+                                                .clearRoute();
                                             Navigator.of(dialogContext).pop();
                                           },
                                           child: Text(
                                             l10n.finish,
-                                            style: const TextStyle(color: Colors.red),
+                                            style: const TextStyle(
+                                              color: Colors.red,
+                                            ),
                                           ),
                                         ),
                                       ],

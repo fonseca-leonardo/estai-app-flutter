@@ -259,4 +259,52 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginToAccessInfo => 'Log in to access your information';
+
+  @override
+  String get myRoutes => 'My Routes';
+
+  @override
+  String get routesList => 'Routes List';
+
+  @override
+  String get noRoutesFound => 'No routes found';
+
+  @override
+  String get routeName => 'Route Name';
+
+  @override
+  String get saveRoute => 'Save Route';
+
+  @override
+  String get deleteRoute => 'Delete Route';
+
+  @override
+  String get routeSaved => 'Route saved successfully';
+
+  @override
+  String get errorSavingRoute => 'Error saving route';
+
+  @override
+  String get editRouteName => 'Edit route name';
+
+  @override
+  String get pleaseEnterRouteName => 'Please enter a route name';
+
+  @override
+  String get loadRoute => 'Load Route';
+
+  @override
+  String get points => 'points';
+
+  @override
+  String get confirmRoute => 'Confirm Route';
+
+  @override
+  String get startNavigationWithRoute => 'Start Navigation';
+
+  @override
+  String get routeDetails => 'Route Details';
+
+  @override
+  String get totalDistance => 'Total Distance';
 }

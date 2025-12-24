@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../viewmodels/route_planner_viewmodel.dart';
 
@@ -67,13 +68,128 @@ class RoutePlanner extends StatelessWidget {
                             return FloatingActionButton(
                               heroTag: 'route_planner_confirm_button',
                               onPressed: routePointsCount >= 2
-                                  ? () {
-                                      context
-                                          .read<RoutePlannerViewModel>()
-                                          .confirmRoute();
-                                      context
-                                          .read<MapViewModel>()
-                                          .setIsPlanningRoute(false);
+                                  ? () async {
+                                      final l10n = AppLocalizations.of(
+                                        context,
+                                      )!;
+                                      final routePlannerViewModel = context
+                                          .read<RoutePlannerViewModel>();
+                                      final mapViewModel = context
+                                          .read<MapViewModel>();
+
+                                      final nameController =
+                                          TextEditingController();
+                                      final result = await showDialog<String>(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return AlertDialog(
+                                            backgroundColor: Colors.black
+                                                .withAlpha(200),
+                                            title: Text(
+                                              l10n.saveRoute,
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            content: TextField(
+                                              controller: nameController,
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                              decoration: InputDecoration(
+                                                labelText: l10n.routeName,
+                                                labelStyle: const TextStyle(
+                                                  color: Colors.white70,
+                                                ),
+                                                enabledBorder:
+                                                    const UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color: Colors.white70,
+                                                      ),
+                                                    ),
+                                                focusedBorder:
+                                                    const UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                              ),
+                                              autofocus: true,
+                                            ),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () {
+                                                  Navigator.of(
+                                                    dialogContext,
+                                                  ).pop();
+                                                },
+                                                child: Text(
+                                                  l10n.cancel,
+                                                  style: const TextStyle(
+                                                    color: Colors.white70,
+                                                  ),
+                                                ),
+                                              ),
+                                              TextButton(
+                                                onPressed: () {
+                                                  if (nameController.text
+                                                      .trim()
+                                                      .isNotEmpty) {
+                                                    Navigator.of(
+                                                      dialogContext,
+                                                    ).pop(
+                                                      nameController.text
+                                                          .trim(),
+                                                    );
+                                                  }
+                                                },
+                                                child: Text(
+                                                  l10n.saveRoute,
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+
+                                      if (result != null && result.isNotEmpty) {
+                                        routePlannerViewModel.confirmRoute();
+                                        mapViewModel.setIsPlanningRoute(false);
+
+                                        try {
+                                          await routePlannerViewModel.saveRoute(
+                                            context,
+                                            result,
+                                          );
+
+                                          if (context.mounted) {
+                                            ScaffoldMessenger.of(
+                                              context,
+                                            ).showSnackBar(
+                                              SnackBar(
+                                                content: Text(l10n.routeSaved),
+                                                backgroundColor: Colors.green,
+                                              ),
+                                            );
+                                          }
+                                        } catch (e) {
+                                          if (context.mounted) {
+                                            ScaffoldMessenger.of(
+                                              context,
+                                            ).showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  l10n.errorSavingRoute,
+                                                ),
+                                                backgroundColor: Colors.orange,
+                                              ),
+                                            );
+                                          }
+                                        }
+                                      }
                                     }
                                   : null,
                               backgroundColor: routePointsCount >= 2

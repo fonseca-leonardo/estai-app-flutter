@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../TideScreen/tide_screen.dart';
 import '../../SettingsScreen/settings_screen.dart';
+import '../../RoutesListScreen/routes_list_screen.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../viewmodels/navigation_status_viewmodel.dart';
 import '../../../viewmodels/route_planner_viewmodel.dart';
@@ -97,6 +98,23 @@ class MapBottomSheet extends StatelessWidget {
                                 }
                               });
                             },
+                    ),
+                    _GridItem(
+                      icon: Icons.list,
+                      title: l10n.myRoutes,
+                      onTap: () {
+                        final navigatorContext = parentContext ?? context;
+                        Navigator.pop(context);
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          if (navigatorContext.mounted) {
+                            Navigator.of(navigatorContext).push(
+                              MaterialPageRoute(
+                                builder: (context) => const RoutesListScreen(),
+                              ),
+                            );
+                          }
+                        });
+                      },
                     ),
                     _GridItem(
                       icon: Icons.water_drop,
