@@ -8,6 +8,7 @@ import '../../viewmodels/routes_viewmodel.dart';
 import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
+import '../../widgets/ad_banner_widget.dart';
 
 class RoutesListScreen extends StatelessWidget {
   const RoutesListScreen({super.key});
@@ -62,6 +63,7 @@ class RoutesListScreen extends StatelessWidget {
           );
         },
       ),
+      bottomNavigationBar: const AdBannerWidget(),
     );
   }
 }

@@ -222,7 +222,7 @@
   "@routeName": {},
   "saveRoute": "Salvar Rota",
   "@saveRoute": {},
-  "deleteRoute": "Deletar Rota",
+  "deleteRoute": "Apagar Rota",
   "@deleteRoute": {},
   "routeSaved": "Rota salva com sucesso",
   "@routeSaved": {},
@@ -253,6 +253,14 @@
   "darkMode": "Modo Escuro",
   "@darkMode": {},
   "darkModeDescription": "Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.",
-  "@darkModeDescription": {}
+  "@darkModeDescription": {},
+  "saveRouteForReuse": "Salvar rota para reutilização",
+  "@saveRouteForReuse": {},
+  "saveRouteForReuseDescription": "Salve esta rota para poder usá-la novamente no futuro",
+  "@saveRouteForReuseDescription": {},
+  "confirm": "Confirmar",
+  "@confirm": {},
+  "plannedRoute": "Rota Planejada",
+  "@plannedRoute": {}
 }
 

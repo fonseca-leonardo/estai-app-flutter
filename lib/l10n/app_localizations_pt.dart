@@ -276,7 +276,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get saveRoute => 'Salvar Rota';
 
   @override
-  String get deleteRoute => 'Deletar Rota';
+  String get deleteRoute => 'Apagar Rota';
 
   @override
   String get routeSaved => 'Rota salva com sucesso';
@@ -322,4 +322,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get darkModeDescription => 'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
+
+  @override
+  String get saveRouteForReuse => 'Salvar rota para reutilização';
+
+  @override
+  String get saveRouteForReuseDescription => 'Salve esta rota para poder usá-la novamente no futuro';
+
+  @override
+  String get confirm => 'Confirmar';
+
+  @override
+  String get plannedRoute => 'Rota Planejada';
 }

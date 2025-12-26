@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/navigation_status_viewmodel.dart';
+import '../../../viewmodels/ad_banner_viewmodel.dart';
 import '../../../components/navigation_data.dart';
 
 class NavigationStatus extends StatelessWidget {
@@ -26,18 +27,31 @@ class NavigationStatus extends StatelessWidget {
             routeLength: viewModel.trackedRoute.length,
           ),
           builder: (context, data, child) {
-            return Positioned(
-              bottom: 20,
-              left: 20,
-              child: NavigationData(
-                data: [
-                  NavigationDataItem(
-                    title: l10n.distance,
-                    data: data.formattedDistance,
+            return Consumer<AdBannerViewModel>(
+              builder: (context, adBannerViewModel, child) {
+                const bannerHeight = 60.0;
+                const defaultBottom = 20.0;
+                final bottomOffset = adBannerViewModel.isLoaded
+                    ? defaultBottom + bannerHeight + 8
+                    : defaultBottom;
+
+                return Positioned(
+                  bottom: bottomOffset,
+                  left: 20,
+                  child: NavigationData(
+                    data: [
+                      NavigationDataItem(
+                        title: l10n.distance,
+                        data: data.formattedDistance,
+                      ),
+                      NavigationDataItem(
+                        title: l10n.time,
+                        data: data.formattedTime,
+                      ),
+                    ],
                   ),
-                  NavigationDataItem(title: l10n.time, data: data.formattedTime),
-                ],
-              ),
+                );
+              },
             );
           },
         );

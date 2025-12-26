@@ -688,6 +688,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enable dark mode for custom maps to reduce eye strain in low-light conditions.'**
   String get darkModeDescription;
+
+  /// No description provided for @saveRouteForReuse.
+  ///
+  /// In en, this message translates to:
+  /// **'Save route for reuse'**
+  String get saveRouteForReuse;
+
+  /// No description provided for @saveRouteForReuseDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Save this route to use it again in the future'**
+  String get saveRouteForReuseDescription;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @plannedRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned Route'**
+  String get plannedRoute;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

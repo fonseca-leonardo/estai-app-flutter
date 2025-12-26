@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
+import '../../widgets/ad_banner_widget.dart';
 import 'widgets/maps_selection_info.dart';
 import 'widgets/map_card.dart';
 import 'widgets/dark_mode_toggle.dart';
@@ -102,6 +103,7 @@ class ListMapsScreen extends StatelessWidget {
           );
         },
       ),
+      bottomNavigationBar: const AdBannerWidget(),
     );
   }
 }

@@ -322,4 +322,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get darkModeDescription => 'Enable dark mode for custom maps to reduce eye strain in low-light conditions.';
+
+  @override
+  String get saveRouteForReuse => 'Save route for reuse';
+
+  @override
+  String get saveRouteForReuseDescription => 'Save this route to use it again in the future';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get plannedRoute => 'Planned Route';
 }

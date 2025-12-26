@@ -21,6 +21,8 @@ import 'widgets/tracked_route_line.dart';
 import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
+import '../../viewmodels/ad_banner_viewmodel.dart';
+import '../../widgets/ad_banner_widget.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -150,6 +152,10 @@ class _MapScreenState extends State<MapScreen> {
                                           userAgentPackageName: 'com.br.estai',
                                           maxZoom: mapItem.maxZoom.toDouble(),
                                           minZoom: mapItem.minZoom.toDouble(),
+                                          errorTileCallback:
+                                              (tile, error, stackTrace) {
+                                                return null;
+                                              },
                                         ),
                                       )
                                       .toList()
@@ -192,6 +198,9 @@ class _MapScreenState extends State<MapScreen> {
                                   userAgentPackageName: 'com.br.estai',
                                   maxZoom: 22,
                                   minZoom: 1,
+                                  errorTileCallback: (tile, error, stackTrace) {
+                                    return null;
+                                  },
                                 ),
                                 ...customTileLayers,
                                 TileLayer(
@@ -200,6 +209,9 @@ class _MapScreenState extends State<MapScreen> {
                                   userAgentPackageName: 'com.br.estai',
                                   maxZoom: 18,
                                   minZoom: 1,
+                                  errorTileCallback: (tile, error, stackTrace) {
+                                    return null;
+                                  },
                                 ),
                                 const PlannedRouteLine(),
                                 PlannedRouteMarkers(
@@ -314,111 +326,135 @@ class _MapScreenState extends State<MapScreen> {
                   if (isPlanningRoute) {
                     return const SizedBox.shrink();
                   }
-                  return Positioned(
-                    bottom: 20,
-                    right: 20,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      spacing: 12,
-                      children: [
-                        Selector<NavigationStatusViewModel, bool>(
-                          selector: (_, viewModel) => viewModel.isNavigating,
-                          builder: (context, isNavigating, child) {
-                            if (!isNavigating) {
-                              return const SizedBox.shrink();
-                            }
-                            return FloatingActionButton(
-                              heroTag: 'stop_navigation_button',
-                              onPressed: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext dialogContext) {
-                                    final l10n = AppLocalizations.of(
-                                      dialogContext,
-                                    )!;
-                                    return AlertDialog(
-                                      backgroundColor: Colors.black.withAlpha(
-                                        180,
-                                      ),
-                                      title: Text(
-                                        l10n.finishNavigation,
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                      content: Text(
-                                        l10n.finishNavigationQuestion,
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.of(dialogContext).pop();
-                                          },
-                                          child: Text(
-                                            l10n.cancel,
+                  return Consumer<AdBannerViewModel>(
+                    builder: (context, adBannerViewModel, child) {
+                      const bannerHeight = 60.0;
+                      const defaultBottom = 20.0;
+                      final bottomOffset = adBannerViewModel.isLoaded
+                          ? defaultBottom + bannerHeight + 8
+                          : defaultBottom;
+
+                      return Positioned(
+                        bottom: bottomOffset,
+                        right: 20,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          spacing: 12,
+                          children: [
+                            Selector<NavigationStatusViewModel, bool>(
+                              selector: (_, viewModel) =>
+                                  viewModel.isNavigating,
+                              builder: (context, isNavigating, child) {
+                                if (!isNavigating) {
+                                  return const SizedBox.shrink();
+                                }
+                                return FloatingActionButton(
+                                  heroTag: 'stop_navigation_button',
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext dialogContext) {
+                                        final l10n = AppLocalizations.of(
+                                          dialogContext,
+                                        )!;
+                                        return AlertDialog(
+                                          backgroundColor: Colors.black
+                                              .withAlpha(180),
+                                          title: Text(
+                                            l10n.finishNavigation,
                                             style: const TextStyle(
                                               color: Colors.white,
                                             ),
                                           ),
-                                        ),
-                                        TextButton(
-                                          onPressed: () {
-                                            context
-                                                .read<
-                                                  NavigationStatusViewModel
-                                                >()
-                                                .stopNavigation();
-                                            context
-                                                .read<
-                                                  NavigationStatusViewModel
-                                                >()
-                                                .resetNavigation();
-                                            context
-                                                .read<RoutePlannerViewModel>()
-                                                .clearRoute();
-                                            Navigator.of(dialogContext).pop();
-                                          },
-                                          child: Text(
-                                            l10n.finish,
+                                          content: Text(
+                                            l10n.finishNavigationQuestion,
                                             style: const TextStyle(
-                                              color: Colors.red,
+                                              color: Colors.white,
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.of(
+                                                  dialogContext,
+                                                ).pop();
+                                              },
+                                              child: Text(
+                                                l10n.cancel,
+                                                style: const TextStyle(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                            TextButton(
+                                              onPressed: () {
+                                                context
+                                                    .read<
+                                                      NavigationStatusViewModel
+                                                    >()
+                                                    .stopNavigation();
+                                                context
+                                                    .read<
+                                                      NavigationStatusViewModel
+                                                    >()
+                                                    .resetNavigation();
+                                                context
+                                                    .read<
+                                                      RoutePlannerViewModel
+                                                    >()
+                                                    .clearRoute();
+                                                Navigator.of(
+                                                  dialogContext,
+                                                ).pop();
+                                              },
+                                              child: Text(
+                                                l10n.finish,
+                                                style: const TextStyle(
+                                                  color: Colors.red,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
                                     );
                                   },
+                                  backgroundColor: Colors.orange.withAlpha(200),
+                                  child: const Icon(
+                                    Icons.flag,
+                                    color: Colors.white,
+                                  ),
                                 );
                               },
-                              backgroundColor: Colors.orange.withAlpha(200),
-                              child: const Icon(
-                                Icons.flag,
-                                color: Colors.white,
+                            ),
+                            FloatingActionButton(
+                              heroTag: 'map_bottom_sheet_button',
+                              onPressed: () => MapBottomSheet.show(context),
+                              backgroundColor: Colors.black.withAlpha(140),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: BorderSide(
+                                  color: Colors.white.withAlpha(64),
+                                ),
                               ),
-                            );
-                          },
+                              child: const Icon(
+                                Icons.keyboard_arrow_up,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                            ),
+                          ],
                         ),
-                        FloatingActionButton(
-                          heroTag: 'map_bottom_sheet_button',
-                          onPressed: () => MapBottomSheet.show(context),
-                          backgroundColor: Colors.black.withAlpha(140),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            side: BorderSide(color: Colors.white.withAlpha(64)),
-                          ),
-                          child: const Icon(
-                            Icons.keyboard_arrow_up,
-                            color: Colors.white,
-                            size: 40,
-                          ),
-                        ),
-                      ],
-                    ),
+                      );
+                    },
                   );
                 },
+              ),
+              const Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: AdBannerWidget(),
               ),
             ],
           );

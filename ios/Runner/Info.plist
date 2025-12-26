@@ -49,5 +49,7 @@
 	<string>Este app precisa da sua localização para mostrar sua posição no mapa.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Este app precisa da sua localização para mostrar sua posição no mapa.</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-8668504220912264~9882783278</string>
 </dict>
 </plist>

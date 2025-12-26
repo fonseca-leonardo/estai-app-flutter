@@ -253,6 +253,14 @@
   "darkMode": "Dark Mode",
   "@darkMode": {},
   "darkModeDescription": "Enable dark mode for custom maps to reduce eye strain in low-light conditions.",
-  "@darkModeDescription": {}
+  "@darkModeDescription": {},
+  "saveRouteForReuse": "Save route for reuse",
+  "@saveRouteForReuse": {},
+  "saveRouteForReuseDescription": "Save this route to use it again in the future",
+  "@saveRouteForReuseDescription": {},
+  "confirm": "Confirm",
+  "@confirm": {},
+  "plannedRoute": "Planned Route",
+  "@plannedRoute": {}
 }
 

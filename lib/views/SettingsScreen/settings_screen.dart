@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
+import '../../widgets/ad_banner_widget.dart';
 import '../NavigationSettingsScreen/navigation_settings_screen.dart';
 import '../UserAccountScreen/user_account_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
@@ -144,6 +145,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             },
           ),
         ),
+        bottomNavigationBar: const AdBannerWidget(),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/tide_viewmodel.dart';
+import '../../widgets/ad_banner_widget.dart';
 import 'pdf_viewer_screen.dart';
 
 class TideScreen extends StatefulWidget {
@@ -180,6 +181,7 @@ class _TideScreenState extends State<TideScreen> {
             ],
           ),
         ),
+        bottomNavigationBar: const AdBannerWidget(),
       ),
     );
   }
