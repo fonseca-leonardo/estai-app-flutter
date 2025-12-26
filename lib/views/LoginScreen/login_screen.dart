@@ -6,6 +6,7 @@ import '../../viewmodels/auth_viewmodel.dart';
 import '../MapScreen/map_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 import '../ForgotPasswordScreen/forgot_password_screen.dart';
+import 'widgets/google_sign_in_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -250,6 +251,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                       case 'loginError':
                                         errorText = l10n.loginError(param);
                                         break;
+                                      case 'googleSignInError':
+                                        errorText = l10n.googleSignInError(
+                                          param,
+                                        );
+                                        break;
+                                      case 'googleSignInFailed':
+                                        errorText = l10n.googleSignInFailed(
+                                          param,
+                                        );
+                                        break;
                                       default:
                                         errorText = errorKey;
                                     }
@@ -267,6 +278,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                       case 'tooManyRequests':
                                         errorText = l10n.tooManyRequests;
                                         break;
+                                      case 'googleSignInCancelled':
+                                        errorText = l10n.googleSignInCancelled;
+                                        break;
+                                      case 'networkError':
+                                        errorText = l10n.networkError;
+                                        break;
+                                      case 'accountExistsWithDifferentCredential':
+                                        errorText = l10n
+                                            .accountExistsWithDifferentCredential;
+                                        break;
+                                      case 'operationNotAllowed':
+                                        errorText = l10n.operationNotAllowed;
+                                        break;
                                       default:
                                         errorText = errorKey;
                                     }
@@ -276,10 +300,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: Container(
                                       padding: const EdgeInsets.all(16),
                                       decoration: BoxDecoration(
-                                        color: Colors.red.withOpacity(0.15),
+                                        color: Colors.red.withValues(
+                                          alpha: 0.15,
+                                        ),
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
-                                          color: Colors.red.withOpacity(0.3),
+                                          color: Colors.red.withValues(
+                                            alpha: 0.3,
+                                          ),
                                           width: 1,
                                         ),
                                       ),
@@ -338,6 +366,29 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 24),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Divider(color: Colors.grey[800], thickness: 1),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Text(
+                            l10n.orContinueWith,
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Divider(color: Colors.grey[800], thickness: 1),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 24),
+                    const GoogleSignInButton(),
                     const SizedBox(height: 24),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

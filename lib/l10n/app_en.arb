@@ -263,6 +263,34 @@
   "plannedRoute": "Planned Route",
   "@plannedRoute": {},
   "errorLoadingMaps": "Unable to fetch the maps list now. Check your internet connection and try again later.",
-  "@errorLoadingMaps": {}
+  "@errorLoadingMaps": {},
+  "signInWithGoogle": "Continue with Google",
+  "@signInWithGoogle": {},
+  "orContinueWith": "or continue with",
+  "@orContinueWith": {},
+  "googleSignInError": "Error signing in with Google: {message}",
+  "@googleSignInError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "googleSignInCancelled": "Google sign in cancelled",
+  "@googleSignInCancelled": {},
+  "googleSignInFailed": "Failed to sign in with Google: {error}",
+  "@googleSignInFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "networkError": "Network error. Check your internet connection.",
+  "@networkError": {},
+  "accountExistsWithDifferentCredential": "An account already exists with the same email address, but using a different sign-in method.",
+  "@accountExistsWithDifferentCredential": {},
+  "operationNotAllowed": "Google sign in is not enabled. Please contact support.",
+  "@operationNotAllowed": {}
 }
 

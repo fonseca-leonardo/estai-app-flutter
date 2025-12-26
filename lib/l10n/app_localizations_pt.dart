@@ -72,8 +72,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get forgotPasswordTitle => 'Esqueceu sua senha?';
 
   @override
-  String get forgotPasswordDescription =>
-      'Digite seu email e enviaremos um link para redefinir sua senha.';
+  String get forgotPasswordDescription => 'Digite seu email e enviaremos um link para redefinir sua senha.';
 
   @override
   String get sendEmail => 'Enviar Email';
@@ -82,8 +81,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get backToLogin => 'Voltar para login';
 
   @override
-  String get passwordResetEmailSent =>
-      'Email de recuperação enviado! Verifique sua caixa de entrada.';
+  String get passwordResetEmailSent => 'Email de recuperação enviado! Verifique sua caixa de entrada.';
 
   @override
   String get settings => 'Configurações';
@@ -103,8 +101,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get minimumDistanceDescription =>
-      'Define a distância mínima em metros que o usuário precisa percorrer para que um novo ponto seja adicionado à rota rastreada durante a navegação. Valores maiores resultam em rotas com menos pontos, enquanto valores menores criam rotas mais detalhadas.';
+  String get minimumDistanceDescription => 'Define a distância mínima em metros que o usuário precisa percorrer para que um novo ponto seja adicionado à rota rastreada durante a navegação. Valores maiores resultam em rotas com menos pontos, enquanto valores menores criam rotas mais detalhadas.';
 
   @override
   String meters(String value) {
@@ -115,15 +112,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tryAgain => 'Tentar Novamente';
 
   @override
-  String get locationServicesDisabled =>
-      'Serviços de localização estão desabilitados.';
+  String get locationServicesDisabled => 'Serviços de localização estão desabilitados.';
 
   @override
   String get locationPermissionDenied => 'Permissão de localização negada.';
 
   @override
-  String get locationPermissionDeniedForever =>
-      'Permissão de localização negada permanentemente.';
+  String get locationPermissionDeniedForever => 'Permissão de localização negada permanentemente.';
 
   @override
   String errorGettingLocation(String error) {
@@ -139,8 +134,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get finishNavigation => 'Finalizar Navegação';
 
   @override
-  String get finishNavigationQuestion =>
-      'Deseja realmente finalizar a navegação?';
+  String get finishNavigationQuestion => 'Deseja realmente finalizar a navegação?';
 
   @override
   String get cancel => 'Cancelar';
@@ -318,26 +312,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get maps => 'Mapas';
 
   @override
-  String get mapsSelectionDescription =>
-      'Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.';
+  String get mapsSelectionDescription => 'Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.';
 
   @override
-  String get mapsSelectionPerformanceWarning =>
-      'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo e aumentar o uso de dados.';
+  String get mapsSelectionPerformanceWarning => 'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo e aumentar o uso de dados.';
 
   @override
   String get darkMode => 'Modo Escuro';
 
   @override
-  String get darkModeDescription =>
-      'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
+  String get darkModeDescription => 'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
 
   @override
   String get saveRouteForReuse => 'Salvar rota para reutilização';
 
   @override
-  String get saveRouteForReuseDescription =>
-      'Salve esta rota para poder usá-la novamente no futuro';
+  String get saveRouteForReuseDescription => 'Salve esta rota para poder usá-la novamente no futuro';
 
   @override
   String get confirm => 'Confirmar';
@@ -346,6 +336,33 @@ class AppLocalizationsPt extends AppLocalizations {
   String get plannedRoute => 'Rota Planejada';
 
   @override
-  String get errorLoadingMaps =>
-      'Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.';
+  String get errorLoadingMaps => 'Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.';
+
+  @override
+  String get signInWithGoogle => 'Continuar com Google';
+
+  @override
+  String get orContinueWith => 'ou continuar com';
+
+  @override
+  String googleSignInError(String message) {
+    return 'Erro ao fazer login com Google: $message';
+  }
+
+  @override
+  String get googleSignInCancelled => 'Login com Google cancelado';
+
+  @override
+  String googleSignInFailed(String error) {
+    return 'Falha ao fazer login com Google: $error';
+  }
+
+  @override
+  String get networkError => 'Erro de rede. Verifique sua conexão com a internet.';
+
+  @override
+  String get accountExistsWithDifferentCredential => 'Uma conta já existe com o mesmo endereço de email, mas usando um método de login diferente.';
+
+  @override
+  String get operationNotAllowed => 'Login com Google não está habilitado. Entre em contato com o suporte.';
 }

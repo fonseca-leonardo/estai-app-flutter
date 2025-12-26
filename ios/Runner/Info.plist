@@ -51,5 +51,18 @@
 	<string>Este app precisa da sua localização para mostrar sua posição no mapa.</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-8668504220912264~9882783278</string>
+	<key>GIDClientID</key>
+	<string>952848614020-sj7scfh6vp5fa1nrl41p2m7f4f16qk4o.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.952848614020-sj7scfh6vp5fa1nrl41p2m7f4f16qk4o</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

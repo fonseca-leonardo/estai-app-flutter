@@ -61,6 +61,8 @@ class DefaultFirebaseOptions {
     appId: '1:952848614020:android:137bdd988cc3004933b8d1',
     messagingSenderId: '952848614020',
     projectId: 'estai-edb36',
+    androidClientId:
+        '952848614020-sj7scfh6vp5fa1nrl41p2m7f4f16qk4o.apps.googleusercontent.com',
     storageBucket: 'estai-edb36.firebasestorage.app',
   );
 
@@ -70,8 +72,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '952848614020',
     projectId: 'estai-edb36',
     storageBucket: 'estai-edb36.firebasestorage.app',
-    iosClientId: '952848614020-sj7scfh6vp5fa1nrl41p2m7f4f16qk4o.apps.googleusercontent.com',
+    iosClientId:
+        '952848614020-sj7scfh6vp5fa1nrl41p2m7f4f16qk4o.apps.googleusercontent.com',
     iosBundleId: 'com.br.estai',
   );
-
 }

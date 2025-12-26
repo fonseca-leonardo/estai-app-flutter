@@ -72,8 +72,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get forgotPasswordTitle => 'Forgot your password?';
 
   @override
-  String get forgotPasswordDescription =>
-      'Enter your email and we\'ll send you a link to reset your password.';
+  String get forgotPasswordDescription => 'Enter your email and we\'ll send you a link to reset your password.';
 
   @override
   String get sendEmail => 'Send Email';
@@ -82,8 +81,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backToLogin => 'Back to login';
 
   @override
-  String get passwordResetEmailSent =>
-      'Password reset email sent! Check your inbox.';
+  String get passwordResetEmailSent => 'Password reset email sent! Check your inbox.';
 
   @override
   String get settings => 'Settings';
@@ -103,8 +101,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get minimumDistanceDescription =>
-      'Defines the minimum distance in meters that the user needs to travel for a new point to be added to the tracked route during navigation. Higher values result in routes with fewer points, while lower values create more detailed routes.';
+  String get minimumDistanceDescription => 'Defines the minimum distance in meters that the user needs to travel for a new point to be added to the tracked route during navigation. Higher values result in routes with fewer points, while lower values create more detailed routes.';
 
   @override
   String meters(String value) {
@@ -121,8 +118,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get locationPermissionDenied => 'Location permission denied.';
 
   @override
-  String get locationPermissionDeniedForever =>
-      'Location permission denied permanently.';
+  String get locationPermissionDeniedForever => 'Location permission denied permanently.';
 
   @override
   String errorGettingLocation(String error) {
@@ -138,8 +134,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get finishNavigation => 'Finish Navigation';
 
   @override
-  String get finishNavigationQuestion =>
-      'Do you really want to finish navigation?';
+  String get finishNavigationQuestion => 'Do you really want to finish navigation?';
 
   @override
   String get cancel => 'Cancel';
@@ -317,26 +312,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get maps => 'Maps';
 
   @override
-  String get mapsSelectionDescription =>
-      'Select the maps you want to display on the main screen. Selected maps will be overlaid on the base map.';
+  String get mapsSelectionDescription => 'Select the maps you want to display on the main screen. Selected maps will be overlaid on the base map.';
 
   @override
-  String get mapsSelectionPerformanceWarning =>
-      'Note: Selecting many maps may impact app performance and increase data usage.';
+  String get mapsSelectionPerformanceWarning => 'Note: Selecting many maps may impact app performance and increase data usage.';
 
   @override
   String get darkMode => 'Dark Mode';
 
   @override
-  String get darkModeDescription =>
-      'Enable dark mode for custom maps to reduce eye strain in low-light conditions.';
+  String get darkModeDescription => 'Enable dark mode for custom maps to reduce eye strain in low-light conditions.';
 
   @override
   String get saveRouteForReuse => 'Save route for reuse';
 
   @override
-  String get saveRouteForReuseDescription =>
-      'Save this route to use it again in the future';
+  String get saveRouteForReuseDescription => 'Save this route to use it again in the future';
 
   @override
   String get confirm => 'Confirm';
@@ -345,6 +336,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get plannedRoute => 'Planned Route';
 
   @override
-  String get errorLoadingMaps =>
-      'Unable to fetch the maps list now. Check your internet connection and try again later.';
+  String get errorLoadingMaps => 'Unable to fetch the maps list now. Check your internet connection and try again later.';
+
+  @override
+  String get signInWithGoogle => 'Continue with Google';
+
+  @override
+  String get orContinueWith => 'or continue with';
+
+  @override
+  String googleSignInError(String message) {
+    return 'Error signing in with Google: $message';
+  }
+
+  @override
+  String get googleSignInCancelled => 'Google sign in cancelled';
+
+  @override
+  String googleSignInFailed(String error) {
+    return 'Failed to sign in with Google: $error';
+  }
+
+  @override
+  String get networkError => 'Network error. Check your internet connection.';
+
+  @override
+  String get accountExistsWithDifferentCredential => 'An account already exists with the same email address, but using a different sign-in method.';
+
+  @override
+  String get operationNotAllowed => 'Google sign in is not enabled. Please contact support.';
 }

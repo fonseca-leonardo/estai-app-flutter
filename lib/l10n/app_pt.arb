@@ -263,6 +263,34 @@
   "plannedRoute": "Rota Planejada",
   "@plannedRoute": {},
   "errorLoadingMaps": "Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.",
-  "@errorLoadingMaps": {}
+  "@errorLoadingMaps": {},
+  "signInWithGoogle": "Continuar com Google",
+  "@signInWithGoogle": {},
+  "orContinueWith": "ou continuar com",
+  "@orContinueWith": {},
+  "googleSignInError": "Erro ao fazer login com Google: {message}",
+  "@googleSignInError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "googleSignInCancelled": "Login com Google cancelado",
+  "@googleSignInCancelled": {},
+  "googleSignInFailed": "Falha ao fazer login com Google: {error}",
+  "@googleSignInFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "networkError": "Erro de rede. Verifique sua conexão com a internet.",
+  "@networkError": {},
+  "accountExistsWithDifferentCredential": "Uma conta já existe com o mesmo endereço de email, mas usando um método de login diferente.",
+  "@accountExistsWithDifferentCredential": {},
+  "operationNotAllowed": "Login com Google não está habilitado. Entre em contato com o suporte.",
+  "@operationNotAllowed": {}
 }
 
