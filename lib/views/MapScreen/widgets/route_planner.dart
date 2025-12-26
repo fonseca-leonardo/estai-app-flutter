@@ -87,7 +87,10 @@ class RoutePlanner extends StatelessWidget {
                                           final mapViewModel = context
                                               .read<MapViewModel>();
 
-                                          final result = await SaveRouteDialog.show(context);
+                                          final result =
+                                              await SaveRouteDialog.show(
+                                                context,
+                                              );
 
                                           if (result != null) {
                                             routePlannerViewModel
@@ -99,7 +102,10 @@ class RoutePlanner extends StatelessWidget {
                                             if (result.saveForReuse) {
                                               try {
                                                 await routePlannerViewModel
-                                                    .saveRoute(context, result.routeName);
+                                                    .saveRoute(
+                                                      context,
+                                                      result.routeName,
+                                                    );
 
                                                 if (context.mounted) {
                                                   ScaffoldMessenger.of(

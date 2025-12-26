@@ -261,6 +261,8 @@
   "confirm": "Confirm",
   "@confirm": {},
   "plannedRoute": "Planned Route",
-  "@plannedRoute": {}
+  "@plannedRoute": {},
+  "errorLoadingMaps": "Unable to fetch the maps list now. Check your internet connection and try again later.",
+  "@errorLoadingMaps": {}
 }
 

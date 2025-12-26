@@ -269,7 +269,7 @@ class _RouteCard extends StatelessWidget {
               },
               child: Text(
                 l10n.cancel,
-                style: const TextStyle(color: Colors.white70),
+                style: const TextStyle(color: Colors.redAccent),
               ),
             ),
             TextButton(
@@ -287,7 +287,7 @@ class _RouteCard extends StatelessWidget {
               },
               child: Text(
                 l10n.startNavigationWithRoute,
-                style: const TextStyle(color: Colors.green),
+                style: const TextStyle(color: Colors.greenAccent),
               ),
             ),
           ],
@@ -353,7 +353,7 @@ class _RouteCard extends StatelessWidget {
               },
               child: Text(
                 l10n.cancel,
-                style: const TextStyle(color: Colors.white70),
+                style: const TextStyle(color: Colors.redAccent),
               ),
             ),
             TextButton(
@@ -366,7 +366,10 @@ class _RouteCard extends StatelessWidget {
                   Navigator.of(dialogContext).pop();
                 }
               },
-              child: const Text('Save', style: TextStyle(color: Colors.white)),
+              child: Text(
+                l10n.confirm,
+                style: TextStyle(color: Colors.greenAccent),
+              ),
             ),
           ],
         );

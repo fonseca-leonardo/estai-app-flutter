@@ -261,6 +261,8 @@
   "confirm": "Confirmar",
   "@confirm": {},
   "plannedRoute": "Rota Planejada",
-  "@plannedRoute": {}
+  "@plannedRoute": {},
+  "errorLoadingMaps": "Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.",
+  "@errorLoadingMaps": {}
 }
 

@@ -27,31 +27,45 @@ class ListMapsScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
 
-          if (viewModel.errorMessage != null && viewModel.maps.isEmpty) {
+          if ((viewModel.errorMessage != null || viewModel.isConnectionError) &&
+              viewModel.maps.isEmpty) {
             return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.error_outline,
-                    size: 64,
-                    color: Colors.red.withValues(alpha: 0.7),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    viewModel.errorMessage!,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 16,
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.error_outline,
+                      size: 64,
+                      color: Colors.red.withValues(alpha: 0.7),
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () => viewModel.loadMaps(),
-                    child: Text(l10n.tryAgain),
-                  ),
-                ],
+                    const SizedBox(height: 16),
+                    Text(
+                      viewModel.isConnectionError
+                          ? l10n.errorLoadingMaps
+                          : (viewModel.errorMessage ?? l10n.errorLoadingMaps),
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.7),
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 24),
+                    OutlinedButton(
+                      onPressed: () => viewModel.loadMaps(),
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 32,
+                          vertical: 12,
+                        ),
+                        side: const BorderSide(color: Colors.redAccent),
+                        foregroundColor: Colors.redAccent,
+                      ),
+                      child: Text(l10n.tryAgain),
+                    ),
+                  ],
+                ),
               ),
             );
           }

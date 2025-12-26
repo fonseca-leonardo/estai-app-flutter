@@ -85,8 +85,14 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Estai - Mapa',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.white,
+            primary: Colors.white,
+          ),
           useMaterial3: true,
+          progressIndicatorTheme: const ProgressIndicatorThemeData(
+            color: Colors.white,
+          ),
         ),
         localizationsDelegates: const [
           AppLocalizations.delegate,

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/map_item.dart';
@@ -13,6 +14,7 @@ class ListMapsViewModel extends ChangeNotifier {
   List<MapItem> _maps = [];
   bool _isLoading = false;
   String? _errorMessage;
+  bool _isConnectionError = false;
   Set<String> _selectedMapIds = {};
   bool _darkMode = false;
 
@@ -26,6 +28,7 @@ class ListMapsViewModel extends ChangeNotifier {
   List<MapItem> get maps => _maps;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
+  bool get isConnectionError => _isConnectionError;
   Set<String> get selectedMapIds => Set.unmodifiable(_selectedMapIds);
   bool get darkMode => _darkMode;
 
@@ -40,22 +43,46 @@ class ListMapsViewModel extends ChangeNotifier {
   Future<void> loadMaps() async {
     _isLoading = true;
     _errorMessage = null;
+    _isConnectionError = false;
     notifyListeners();
 
     try {
       _maps = await _mapsService.getMaps();
       _errorMessage = null;
+      _isConnectionError = false;
       _isLoading = false;
       notifyListeners();
     } on ApiException catch (e) {
-      _errorMessage = 'Error loading maps: ${e.message}';
+      _isConnectionError = _isNetworkError(e.message);
+      _errorMessage = _isConnectionError
+          ? null
+          : 'Error loading maps: ${e.message}';
+      _isLoading = false;
+      notifyListeners();
+    } on SocketException {
+      _isConnectionError = true;
+      _errorMessage = null;
       _isLoading = false;
       notifyListeners();
     } catch (e) {
-      _errorMessage = 'Error loading maps: $e';
+      final errorString = e.toString();
+      _isConnectionError = _isNetworkError(errorString);
+      _errorMessage = _isConnectionError ? null : 'Error loading maps: $e';
       _isLoading = false;
       notifyListeners();
     }
+  }
+
+  bool _isNetworkError(String errorMessage) {
+    final lowerMessage = errorMessage.toLowerCase();
+    return lowerMessage.contains('host lookup') ||
+        lowerMessage.contains('failed host lookup') ||
+        lowerMessage.contains('nodename nor servname') ||
+        lowerMessage.contains('network error') ||
+        lowerMessage.contains('connection') ||
+        lowerMessage.contains('socketexception') ||
+        lowerMessage.contains('no internet') ||
+        lowerMessage.contains('network is unreachable');
   }
 
   Future<void> _loadSelectedMaps() async {
