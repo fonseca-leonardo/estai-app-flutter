@@ -23,6 +23,10 @@ class MapActionsButtons extends StatelessWidget {
             builder: (context, isCameraLocked, child) {
               return FloatingActionButton(
                 heroTag: 'camera_lock_button',
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.white.withAlpha(64)),
+                ),
                 onPressed: () =>
                     context.read<MapViewModel>().toggleCameraLock(),
                 backgroundColor: isCameraLocked
@@ -47,6 +51,10 @@ class MapActionsButtons extends StatelessWidget {
 
               return FloatingActionButton(
                 heroTag: 'tiles_toggle_button',
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.white.withAlpha(64)),
+                ),
                 onPressed: () {
                   if (!showCustomTiles) {
                     // Tentando ativar - verificar se há mapas selecionados

@@ -4,6 +4,7 @@ import '../../l10n/app_localizations.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
 import 'widgets/maps_selection_info.dart';
 import 'widgets/map_card.dart';
+import 'widgets/dark_mode_toggle.dart';
 
 class ListMapsScreen extends StatelessWidget {
   const ListMapsScreen({super.key});
@@ -33,13 +34,13 @@ class ListMapsScreen extends StatelessWidget {
                   Icon(
                     Icons.error_outline,
                     size: 64,
-                    color: Colors.red.withOpacity(0.7),
+                    color: Colors.red.withValues(alpha: 0.7),
                   ),
                   const SizedBox(height: 16),
                   Text(
                     viewModel.errorMessage!,
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.7),
+                      color: Colors.white.withValues(alpha: 0.7),
                       fontSize: 16,
                     ),
                     textAlign: TextAlign.center,
@@ -62,13 +63,13 @@ class ListMapsScreen extends StatelessWidget {
                   Icon(
                     Icons.map_outlined,
                     size: 64,
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                   ),
                   const SizedBox(height: 16),
                   Text(
                     'Nenhum mapa disponível',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.7),
+                      color: Colors.white.withValues(alpha: 0.7),
                       fontSize: 16,
                     ),
                   ),
@@ -84,6 +85,8 @@ class ListMapsScreen extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.all(16),
               children: [
+                const DarkModeToggle(),
+                const SizedBox(height: 8),
                 const MapsSelectionInfo(),
                 const SizedBox(height: 8),
                 ...viewModel.maps.map(

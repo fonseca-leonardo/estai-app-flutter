@@ -146,7 +146,7 @@ class _MapScreenState extends State<MapScreen> {
                                       .map(
                                         (mapItem) => TileLayer(
                                           urlTemplate:
-                                              'https://maps-api.estai.com.br/maps/${mapItem.path}/{z}/{x}/{y}.png',
+                                              'https://maps-api.estai.com.br/maps/${mapItem.path}/{z}/{x}/{y}.png${mapsViewModel.darkMode ? '?dark=true' : ''}',
                                           userAgentPackageName: 'com.br.estai',
                                           maxZoom: mapItem.maxZoom.toDouble(),
                                           minZoom: mapItem.minZoom.toDouble(),
@@ -405,6 +405,10 @@ class _MapScreenState extends State<MapScreen> {
                           heroTag: 'map_bottom_sheet_button',
                           onPressed: () => MapBottomSheet.show(context),
                           backgroundColor: Colors.black.withAlpha(140),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.white.withAlpha(64)),
+                          ),
                           child: const Icon(
                             Icons.keyboard_arrow_up,
                             color: Colors.white,

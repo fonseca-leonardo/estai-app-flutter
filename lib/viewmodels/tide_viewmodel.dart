@@ -1,13 +1,18 @@
-import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:http/http.dart' as http;
 import '../models/tide_station.dart';
+import '../services/tide_service.dart';
+import '../services/maps_api_client.dart';
 
 class TideViewModel extends ChangeNotifier {
+  final TideService _tideService;
+
   List<TideStation> _tideStations = [];
   bool _isLoading = false;
   String? _errorMessage;
+
+  TideViewModel({TideService? tideService})
+      : _tideService = tideService ?? TideService();
 
   List<TideStation> get tideStations => _tideStations;
   bool get isLoading => _isLoading;
@@ -19,30 +24,18 @@ class TideViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final response = await http.get(
-        Uri.parse('https://nizz-web-charter.vercel.app/tides/list'),
-      );
+      _tideStations = await _tideService.getTideStations();
 
-      if (response.statusCode == 200) {
-        final jsonData = json.decode(response.body) as Map<String, dynamic>;
-        final data = jsonData['data'] as List<dynamic>;
-
-        _tideStations = data
-            .map((item) => TideStation.fromJson(item as Map<String, dynamic>))
-            .toList();
-
-        if (userPosition != null) {
-          _sortStationsByDistance(userPosition);
-        }
-
-        _isLoading = false;
-        notifyListeners();
-      } else {
-        _errorMessage =
-            'errorLoadingTideTables:${response.statusCode}';
-        _isLoading = false;
-        notifyListeners();
+      if (userPosition != null) {
+        _sortStationsByDistance(userPosition);
       }
+
+      _isLoading = false;
+      notifyListeners();
+    } on ApiException catch (e) {
+      _errorMessage = 'errorLoadingTideTables:${e.statusCode ?? e.message}';
+      _isLoading = false;
+      notifyListeners();
     } catch (e) {
       _errorMessage = 'errorLoadingTideTables:$e';
       _isLoading = false;
@@ -69,7 +62,7 @@ class TideViewModel extends ChangeNotifier {
   }
 
   String getPdfUrl(int stationId) {
-    return 'https://nizz-web-charter.vercel.app/tides/$stationId/pdf';
+    return _tideService.getPdfUrl(stationId);
   }
 
   double? getDistanceToStation(TideStation station, Position? userPosition) {

@@ -249,6 +249,10 @@
   "mapsSelectionDescription": "Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.",
   "@mapsSelectionDescription": {},
   "mapsSelectionPerformanceWarning": "Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo e aumentar o uso de dados.",
-  "@mapsSelectionPerformanceWarning": {}
+  "@mapsSelectionPerformanceWarning": {},
+  "darkMode": "Modo Escuro",
+  "@darkMode": {},
+  "darkModeDescription": "Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.",
+  "@darkModeDescription": {}
 }
 

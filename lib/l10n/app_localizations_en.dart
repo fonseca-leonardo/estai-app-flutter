@@ -316,4 +316,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mapsSelectionPerformanceWarning => 'Note: Selecting many maps may impact app performance and increase data usage.';
+
+  @override
+  String get darkMode => 'Dark Mode';
+
+  @override
+  String get darkModeDescription => 'Enable dark mode for custom maps to reduce eye strain in low-light conditions.';
 }

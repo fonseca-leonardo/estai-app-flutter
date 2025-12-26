@@ -676,6 +676,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Note: Selecting many maps may impact app performance and increase data usage.'**
   String get mapsSelectionPerformanceWarning;
+
+  /// No description provided for @darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Mode'**
+  String get darkMode;
+
+  /// No description provided for @darkModeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable dark mode for custom maps to reduce eye strain in low-light conditions.'**
+  String get darkModeDescription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

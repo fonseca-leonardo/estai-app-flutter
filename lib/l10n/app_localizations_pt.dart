@@ -316,4 +316,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get mapsSelectionPerformanceWarning => 'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo e aumentar o uso de dados.';
+
+  @override
+  String get darkMode => 'Modo Escuro';
+
+  @override
+  String get darkModeDescription => 'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
 }

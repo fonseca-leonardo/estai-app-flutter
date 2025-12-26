@@ -8,15 +8,18 @@ import '../services/maps_api_client.dart';
 class ListMapsViewModel extends ChangeNotifier {
   final MapsService _mapsService;
   static const String _selectedMapIdsKey = 'selected_map_ids';
+  static const String _darkModeKey = 'map_dark_mode';
 
   List<MapItem> _maps = [];
   bool _isLoading = false;
   String? _errorMessage;
   Set<String> _selectedMapIds = {};
+  bool _darkMode = false;
 
   ListMapsViewModel({MapsService? mapsService})
     : _mapsService = mapsService ?? MapsService() {
     _loadSelectedMaps();
+    _loadDarkModePreference();
     loadMaps();
   }
 
@@ -24,6 +27,7 @@ class ListMapsViewModel extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
   Set<String> get selectedMapIds => Set.unmodifiable(_selectedMapIds);
+  bool get darkMode => _darkMode;
 
   List<MapItem> get selectedMaps {
     return _maps.where((map) => _selectedMapIds.contains(map.id)).toList();
@@ -86,6 +90,31 @@ class ListMapsViewModel extends ChangeNotifier {
     }
     notifyListeners();
     await _saveSelectedMaps();
+  }
+
+  Future<void> _loadDarkModePreference() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _darkMode = prefs.getBool(_darkModeKey) ?? false;
+      notifyListeners();
+    } catch (e) {
+      _darkMode = false;
+    }
+  }
+
+  Future<void> _saveDarkModePreference() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool(_darkModeKey, _darkMode);
+    } catch (e) {
+      // Ignora erros de persistência
+    }
+  }
+
+  Future<void> toggleDarkMode() async {
+    _darkMode = !_darkMode;
+    notifyListeners();
+    await _saveDarkModePreference();
   }
 
   @override

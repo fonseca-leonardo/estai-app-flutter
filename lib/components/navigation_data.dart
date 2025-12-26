@@ -60,9 +60,11 @@ class NavigationData extends StatelessWidget {
 
     return Container(
       width: 144,
+
       decoration: BoxDecoration(
         color: Colors.black.withAlpha(140),
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        border: Border.all(color: Colors.white.withAlpha(64), width: 1),
       ),
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: content,

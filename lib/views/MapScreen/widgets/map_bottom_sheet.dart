@@ -185,6 +185,8 @@ class MapBottomSheet extends StatelessWidget {
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       useRootNavigator: false,
+      enableDrag: true,
+      useSafeArea: true,
       builder: (bottomSheetContext) => MapBottomSheet(parentContext: context),
     );
   }

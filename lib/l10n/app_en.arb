@@ -249,6 +249,10 @@
   "mapsSelectionDescription": "Select the maps you want to display on the main screen. Selected maps will be overlaid on the base map.",
   "@mapsSelectionDescription": {},
   "mapsSelectionPerformanceWarning": "Note: Selecting many maps may impact app performance and increase data usage.",
-  "@mapsSelectionPerformanceWarning": {}
+  "@mapsSelectionPerformanceWarning": {},
+  "darkMode": "Dark Mode",
+  "@darkMode": {},
+  "darkModeDescription": "Enable dark mode for custom maps to reduce eye strain in low-light conditions.",
+  "@darkModeDescription": {}
 }
 
