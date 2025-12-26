@@ -76,6 +76,15 @@
             "args": []
         },
         {
+            "name": "Flutter (iPad - Release)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "00008103-0016784C3498A01E",
+            "flutterMode": "release",
+            "args": []
+        },
+        {
             "name": "Flutter (Web - Chrome)",
             "request": "launch",
             "type": "dart",
