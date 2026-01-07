@@ -4,6 +4,7 @@ class TideStation {
   final double lat;
   final double lon;
   final String latLongText;
+  final String url;
 
   TideStation({
     required this.id,
@@ -11,6 +12,7 @@ class TideStation {
     required this.lat,
     required this.lon,
     required this.latLongText,
+    required this.url,
   });
 
   factory TideStation.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class TideStation {
       lat: (json['lat'] as num?)?.toDouble() ?? 0.0,
       lon: (json['lon'] as num?)?.toDouble() ?? 0.0,
       latLongText: json['lat_long_text'] as String? ?? '',
+      url: json['url'] as String? ?? '',
     );
   }
 
@@ -30,6 +33,7 @@ class TideStation {
       'lat': lat,
       'lon': lon,
       'lat_long_text': latLongText,
+      'url': url,
     };
   }
 }

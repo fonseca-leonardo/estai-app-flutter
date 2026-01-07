@@ -533,6 +533,12 @@ abstract class AppLocalizations {
   /// **'Navigation Settings'**
   String get navigationSettings;
 
+  /// No description provided for @navigationSettingsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure navigation and tracking options'**
+  String get navigationSettingsDescription;
+
   /// No description provided for @userAccount.
   ///
   /// In en, this message translates to:
@@ -766,6 +772,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Google sign in is not enabled. Please contact support.'**
   String get operationNotAllowed;
+
+  /// No description provided for @signInWithApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get signInWithApple;
+
+  /// No description provided for @appleSignInError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error signing in with Apple: {message}'**
+  String appleSignInError(String message);
+
+  /// No description provided for @appleSignInCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Apple sign in cancelled'**
+  String get appleSignInCancelled;
+
+  /// No description provided for @appleSignInFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to sign in with Apple: {error}'**
+  String appleSignInFailed(String error);
+
+  /// No description provided for @tideDataDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Official tide data is the responsibility of the Brazilian Navy.'**
+  String get tideDataDisclaimer;
+
+  /// No description provided for @tideExternalBrowserNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'When selecting one of the tables, you will be redirected to the official Brazilian Navy website'**
+  String get tideExternalBrowserNotice;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

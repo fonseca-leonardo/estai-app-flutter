@@ -12,7 +12,7 @@ class TideViewModel extends ChangeNotifier {
   String? _errorMessage;
 
   TideViewModel({TideService? tideService})
-      : _tideService = tideService ?? TideService();
+    : _tideService = tideService ?? TideService();
 
   List<TideStation> get tideStations => _tideStations;
   bool get isLoading => _isLoading;
@@ -59,10 +59,6 @@ class TideViewModel extends ChangeNotifier {
       );
       return distanceA.compareTo(distanceB);
     });
-  }
-
-  String getPdfUrl(int stationId) {
-    return _tideService.getPdfUrl(stationId);
   }
 
   double? getDistanceToStation(TideStation station, Position? userPosition) {

@@ -22,13 +22,13 @@ class MapCard extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
           color: isSelected
-              ? Colors.blue.withOpacity(0.2)
-              : Colors.white.withOpacity(0.1),
+              ? Colors.blue.withValues(alpha: 0.2)
+              : Colors.white.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected
-                ? Colors.blue.withOpacity(0.5)
-                : Colors.white.withOpacity(0.2),
+                ? Colors.blue.withValues(alpha: 0.5)
+                : Colors.white.withValues(alpha: 0.2),
             width: isSelected ? 2 : 1,
           ),
         ),
@@ -41,7 +41,7 @@ class MapCard extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.map,
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                     size: 24,
                   ),
                   const SizedBox(width: 12),
@@ -69,13 +69,13 @@ class MapCard extends StatelessWidget {
                   Icon(
                     Icons.zoom_in,
                     size: 16,
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                   ),
                   const SizedBox(width: 4),
                   Text(
                     'Zoom: ${mapItem.minZoom} - ${mapItem.maxZoom}',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.7),
+                      color: Colors.white.withValues(alpha: 0.7),
                       fontSize: 14,
                     ),
                   ),

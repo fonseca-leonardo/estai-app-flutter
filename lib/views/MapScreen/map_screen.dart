@@ -148,7 +148,7 @@ class _MapScreenState extends State<MapScreen> {
                                       .map(
                                         (mapItem) => TileLayer(
                                           urlTemplate:
-                                              'https://maps-api.estai.com.br/maps/${mapItem.path}/{z}/{x}/{y}.png${mapsViewModel.darkMode ? '?dark=true' : ''}',
+                                              '${mapItem.path}${mapsViewModel.darkMode ? '?dark=true' : ''}',
                                           userAgentPackageName: 'com.br.estai',
                                           maxZoom: mapItem.maxZoom.toDouble(),
                                           minZoom: mapItem.minZoom.toDouble(),
@@ -192,27 +192,7 @@ class _MapScreenState extends State<MapScreen> {
                                     : null,
                               ),
                               children: [
-                                TileLayer(
-                                  urlTemplate:
-                                      'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                                  userAgentPackageName: 'com.br.estai',
-                                  maxZoom: 22,
-                                  minZoom: 1,
-                                  errorTileCallback: (tile, error, stackTrace) {
-                                    return null;
-                                  },
-                                ),
                                 ...customTileLayers,
-                                TileLayer(
-                                  urlTemplate:
-                                      'https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
-                                  userAgentPackageName: 'com.br.estai',
-                                  maxZoom: 18,
-                                  minZoom: 1,
-                                  errorTileCallback: (tile, error, stackTrace) {
-                                    return null;
-                                  },
-                                ),
                                 const PlannedRouteLine(),
                                 PlannedRouteMarkers(
                                   mapController: _mapController,

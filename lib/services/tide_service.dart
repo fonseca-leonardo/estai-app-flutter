@@ -39,8 +39,4 @@ class TideService {
       throw ApiException('Error loading tide stations: $e');
     }
   }
-
-  String getPdfUrl(int stationId) {
-    return '${MapsApiClient.baseUrl}/tides/$stationId.pdf';
-  }
 }

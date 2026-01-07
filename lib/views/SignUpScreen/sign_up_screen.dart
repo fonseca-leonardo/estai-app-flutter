@@ -6,6 +6,7 @@ import '../../viewmodels/auth_viewmodel.dart';
 import '../MapScreen/map_screen.dart';
 import '../LoginScreen/login_screen.dart';
 import '../LoginScreen/widgets/google_sign_in_button.dart';
+import '../LoginScreen/widgets/apple_sign_in_button.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -287,6 +288,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           param,
                                         );
                                         break;
+                                      case 'appleSignInError':
+                                        errorText = l10n.appleSignInError(
+                                          param,
+                                        );
+                                        break;
+                                      case 'appleSignInFailed':
+                                        errorText = l10n.appleSignInFailed(
+                                          param,
+                                        );
+                                        break;
                                       default:
                                         errorText = errorKey;
                                     }
@@ -303,6 +314,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         break;
                                       case 'googleSignInCancelled':
                                         errorText = l10n.googleSignInCancelled;
+                                        break;
+                                      case 'appleSignInCancelled':
+                                        errorText = l10n.appleSignInCancelled;
                                         break;
                                       case 'networkError':
                                         errorText = l10n.networkError;
@@ -412,6 +426,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     const SizedBox(height: 24),
                     const GoogleSignInButton(),
+                    const SizedBox(height: 16),
+                    const AppleSignInButton(),
                     const SizedBox(height: 24),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

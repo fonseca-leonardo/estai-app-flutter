@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "952848614020-bkpc1tafc87k9jbf6d3sk14g0boib4gn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.br.estai",
+            "certificate_hash": "f868d8a301e0806949027e6d143976045e24a24d"
+          }
+        },
+        {
           "client_id": "952848614020-v7ol40dnv7ojb4e14evjeb22r4vmvdpr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

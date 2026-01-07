@@ -32,8 +32,20 @@ class ListMapsViewModel extends ChangeNotifier {
   Set<String> get selectedMapIds => Set.unmodifiable(_selectedMapIds);
   bool get darkMode => _darkMode;
 
+  List<MapItem> get primaryMaps {
+    return _maps.where((map) => map.isPrimary).toList();
+  }
+
+  List<MapItem> get optionalMaps {
+    return _maps.where((map) => !map.isPrimary).toList();
+  }
+
   List<MapItem> get selectedMaps {
-    return _maps.where((map) => _selectedMapIds.contains(map.id)).toList();
+    final selected = _maps
+        .where((map) => _selectedMapIds.contains(map.id))
+        .toList();
+    selected.sort((a, b) => a.priority.compareTo(b.priority));
+    return selected;
   }
 
   bool isMapSelected(String mapId) {
@@ -48,6 +60,7 @@ class ListMapsViewModel extends ChangeNotifier {
 
     try {
       _maps = await _mapsService.getMaps();
+      _ensurePrimaryMapsSelected();
       _errorMessage = null;
       _isConnectionError = false;
       _isLoading = false;
@@ -92,10 +105,11 @@ class ListMapsViewModel extends ChangeNotifier {
       if (selectedIdsJson != null) {
         final List<dynamic> decoded = json.decode(selectedIdsJson);
         _selectedMapIds = decoded.map((id) => id.toString()).toSet();
-        notifyListeners();
       }
+      _ensurePrimaryMapsSelected();
     } catch (e) {
       _selectedMapIds = {};
+      _ensurePrimaryMapsSelected();
     }
   }
 
@@ -109,14 +123,37 @@ class ListMapsViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> toggleMapSelection(String mapId) async {
-    if (_selectedMapIds.contains(mapId)) {
-      _selectedMapIds.remove(mapId);
-    } else {
-      _selectedMapIds.add(mapId);
+  void _ensurePrimaryMapsSelected() {
+    bool hasChanges = false;
+    for (final map in _maps) {
+      if (map.isPrimary && !_selectedMapIds.contains(map.id)) {
+        _selectedMapIds.add(map.id);
+        hasChanges = true;
+      }
     }
-    notifyListeners();
-    await _saveSelectedMaps();
+    if (hasChanges) {
+      notifyListeners();
+      _saveSelectedMaps();
+    }
+  }
+
+  Future<void> toggleMapSelection(String mapId) async {
+    try {
+      final map = _maps.firstWhere((m) => m.id == mapId);
+
+      if (_selectedMapIds.contains(mapId)) {
+        if (map.isPrimary) {
+          return;
+        }
+        _selectedMapIds.remove(mapId);
+      } else {
+        _selectedMapIds.add(mapId);
+      }
+      notifyListeners();
+      await _saveSelectedMaps();
+    } catch (e) {
+      return;
+    }
   }
 
   Future<void> _loadDarkModePreference() async {

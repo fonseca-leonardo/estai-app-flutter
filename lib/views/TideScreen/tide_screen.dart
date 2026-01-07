@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/tide_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
-import 'pdf_viewer_screen.dart';
 
 class TideScreen extends StatefulWidget {
   const TideScreen({super.key});
@@ -114,9 +114,62 @@ class _TideScreenState extends State<TideScreen> {
                       right: 16,
                       bottom: 16,
                     ),
-                    itemCount: tideViewModel.tideStations.length,
+                    itemCount: tideViewModel.tideStations.length + 1,
                     itemBuilder: (context, index) {
-                      final station = tideViewModel.tideStations[index];
+                      if (index == 0) {
+                        return Card(
+                          color: Colors.white.withValues(alpha: 0.1),
+                          margin: const EdgeInsets.only(bottom: 12),
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Icon(
+                                      Icons.info_outline,
+                                      color: Colors.blueAccent,
+                                      size: 20,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            l10n.tideDataDisclaimer,
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 8),
+                                          Text(
+                                            l10n.tideExternalBrowserNotice,
+                                            style: TextStyle(
+                                              color: Colors.white.withValues(
+                                                alpha: 0.7,
+                                              ),
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }
+
+                      final stationIndex = index - 1;
+                      final station = tideViewModel.tideStations[stationIndex];
                       final distance = tideViewModel.getDistanceToStation(
                         station,
                         userPosition,
@@ -126,7 +179,7 @@ class _TideScreenState extends State<TideScreen> {
                           : null;
 
                       return Card(
-                        color: Colors.white.withOpacity(0.1),
+                        color: Colors.white.withValues(alpha: 0.1),
                         margin: const EdgeInsets.only(bottom: 12),
                         child: ListTile(
                           title: Text(
@@ -139,7 +192,7 @@ class _TideScreenState extends State<TideScreen> {
                               Text(
                                 station.latLongText,
                                 style: TextStyle(
-                                  color: Colors.white.withOpacity(0.7),
+                                  color: Colors.white.withValues(alpha: 0.7),
                                 ),
                               ),
                               if (distanceText != null) ...[
@@ -147,7 +200,7 @@ class _TideScreenState extends State<TideScreen> {
                                 Text(
                                   distanceText,
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: Colors.white.withValues(alpha: 0.9),
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -157,19 +210,17 @@ class _TideScreenState extends State<TideScreen> {
                           ),
                           trailing: IconButton(
                             icon: const Icon(
-                              Icons.picture_as_pdf,
+                              Icons.open_in_browser,
                               color: Colors.white,
                             ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PdfViewerScreen(
-                                    pdfUrl: tideViewModel.getPdfUrl(station.id),
-                                    title: station.name,
-                                  ),
-                                ),
-                              );
+                            onPressed: () async {
+                              final uri = Uri.parse(station.url);
+                              if (await canLaunchUrl(uri)) {
+                                await launchUrl(
+                                  uri,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              }
                             },
                           ),
                         ),

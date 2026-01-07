@@ -1,0 +1,12 @@
+# Template para key.properties
+# Copie este arquivo para key.properties e preencha com suas informações
+# IMPORTANTE: O arquivo key.properties NÃO será versionado no git
+
+storePassword=sua_senha_do_keystore_aqui
+keyPassword=sua_senha_do_keystore_aqui
+keyAlias=estai
+storeFile=/caminho/completo/para/estai-release-key.jks
+
+# Exemplo se o keystore estiver na home:
+# storeFile=/Users/seu_usuario/estai-release-key.jks
+

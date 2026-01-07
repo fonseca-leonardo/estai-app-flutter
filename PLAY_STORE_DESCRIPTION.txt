@@ -1,0 +1,25 @@
+Estai - Navegação Náutica
+
+O Estai é seu companheiro completo para navegação náutica. Desenvolvido para navegadores, pescadores e entusiastas do mar.
+
+PRINCIPAIS FUNCIONALIDADES:
+
+• Mapas Náuticos Especializados
+Mapas customizados com múltiplas camadas e modo escuro para navegação noturna.
+
+• Navegação em Tempo Real
+Rastreamento GPS preciso com velocidade em nós, rumo, coordenadas, distância e tempo.
+
+• Planejamento de Rotas
+Crie rotas personalizadas, salve suas favoritas e carregue para navegação rápida.
+
+• Tábuas de Marés
+Acesso a tábuas de marés do mundo todo com visualização de PDFs integrada.
+
+• Sincronização na Nuvem
+Salve rotas na nuvem e acesse de qualquer dispositivo.
+
+• Multilíngue
+Português e Inglês.
+
+Perfeito para navegadores, pescadores e entusiastas do mar. Baixe agora!

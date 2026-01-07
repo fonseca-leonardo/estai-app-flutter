@@ -202,6 +202,8 @@
   },
   "navigationSettings": "Configurações de Navegação",
   "@navigationSettings": {},
+  "navigationSettingsDescription": "Configure as opções de navegação e rastreamento",
+  "@navigationSettingsDescription": {},
   "userAccount": "Conta do Usuário",
   "@userAccount": {},
   "manageAccountInfo": "Gerencie suas informações de conta",
@@ -291,6 +293,30 @@
   "accountExistsWithDifferentCredential": "Uma conta já existe com o mesmo endereço de email, mas usando um método de login diferente.",
   "@accountExistsWithDifferentCredential": {},
   "operationNotAllowed": "Login com Google não está habilitado. Entre em contato com o suporte.",
-  "@operationNotAllowed": {}
+  "@operationNotAllowed": {},
+  "signInWithApple": "Continuar com Apple",
+  "@signInWithApple": {},
+  "appleSignInError": "Erro ao fazer login com Apple: {message}",
+  "@appleSignInError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "appleSignInCancelled": "Login com Apple cancelado",
+  "@appleSignInCancelled": {},
+  "appleSignInFailed": "Falha ao fazer login com Apple: {error}",
+  "@appleSignInFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tideDataDisclaimer": "Os dados oficiais de maré são de responsabilidade da Marinha do Brasil.",
+  "@tideDataDisclaimer": {},
+  "tideExternalBrowserNotice": "Ao selecionar um das tábuas, você será redirecionado para o site oficial da Marinha do Brasil",
+  "@tideExternalBrowserNotice": {}
 }
 

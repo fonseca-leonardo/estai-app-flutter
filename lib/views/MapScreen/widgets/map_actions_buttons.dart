@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/map_viewmodel.dart';
-import '../../../viewmodels/list_maps_viewmodel.dart';
-import '../../ListMapsScreen/list_maps_screen.dart';
 
 class MapActionsButtons extends StatelessWidget {
   const MapActionsButtons({super.key});
@@ -40,50 +38,16 @@ class MapActionsButtons extends StatelessWidget {
               );
             },
           ),
-          // Botão de toggle dos tiles - observa showCustomTiles e mapas selecionados
-          Consumer2<MapViewModel, ListMapsViewModel>(
-            builder: (context, mapViewModel, mapsViewModel, child) {
-              final showCustomTiles = mapViewModel.showCustomTiles;
-              final hasSelectedMaps = mapsViewModel.selectedMaps.isNotEmpty;
-
-              // O botão aparece como "selecionado" apenas se showCustomTiles for true E houver mapas selecionados
-              final isActive = showCustomTiles && hasSelectedMaps;
-
-              return FloatingActionButton(
-                heroTag: 'tiles_toggle_button',
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.white.withAlpha(64)),
-                ),
-                onPressed: () {
-                  if (!showCustomTiles) {
-                    // Tentando ativar - verificar se há mapas selecionados
-                    if (!hasSelectedMaps) {
-                      // Navegar para ListMapsScreen se não houver mapas selecionados
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const ListMapsScreen(),
-                        ),
-                      );
-                    } else {
-                      // Há mapas selecionados, pode ativar
-                      mapViewModel.toggleCustomTiles();
-                    }
-                  } else {
-                    // Desativando - sempre permitir
-                    mapViewModel.toggleCustomTiles();
-                  }
-                },
-                backgroundColor: isActive
-                    ? Colors.black.withAlpha(140)
-                    : Colors.black.withAlpha(64),
-                child: Icon(
-                  isActive ? Icons.layers : Icons.layers_outlined,
-                  color: Colors.white,
-                ),
-                tooltip: isActive ? l10n.hideCustomTiles : l10n.showCustomTiles,
-              );
-            },
+          FloatingActionButton(
+            heroTag: 'weather_forecast_button',
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+              side: BorderSide(color: Colors.white.withAlpha(64)),
+            ),
+            onPressed: () {},
+            backgroundColor: Colors.black.withAlpha(64),
+            child: const Icon(Icons.thermostat_outlined, color: Colors.white),
+            tooltip: 'Previsão do Tempo',
           ),
         ],
       ),

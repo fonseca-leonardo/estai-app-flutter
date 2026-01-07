@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -215,6 +216,81 @@ class AuthViewModel extends ChangeNotifier {
     } catch (e) {
       _isLoading = false;
       _errorMessage = 'googleSignInFailed:$e';
+      notifyListeners();
+      return false;
+    }
+  }
+
+  Future<bool> signInWithApple() async {
+    _isLoading = true;
+    _errorMessage = null;
+    _isPasswordResetSent = false;
+    notifyListeners();
+
+    try {
+      final appleCredential = await SignInWithApple.getAppleIDCredential(
+        scopes: [
+          AppleIDAuthorizationScopes.email,
+          AppleIDAuthorizationScopes.fullName,
+        ],
+      );
+
+      final oauthCredential = OAuthProvider('apple.com').credential(
+        idToken: appleCredential.identityToken,
+        accessToken: appleCredential.authorizationCode,
+      );
+
+      final userCredential = await _auth.signInWithCredential(oauthCredential);
+
+      if (userCredential.user != null) {
+        final givenName = appleCredential.givenName ?? '';
+        final familyName = appleCredential.familyName ?? '';
+        final displayName = '$givenName $familyName'.trim();
+        if (displayName.isNotEmpty) {
+          await userCredential.user!.updateDisplayName(displayName);
+          await userCredential.user!.reload();
+        }
+      }
+
+      _currentUser = userCredential.user;
+      _isLoading = false;
+      _errorMessage = null;
+      notifyListeners();
+      return true;
+    } on SignInWithAppleAuthorizationException catch (e) {
+      _isLoading = false;
+      switch (e.code) {
+        case AuthorizationErrorCode.canceled:
+          _errorMessage = 'appleSignInCancelled';
+          break;
+        default:
+          _errorMessage = 'appleSignInFailed:${e.toString()}';
+      }
+      notifyListeners();
+      return false;
+    } on FirebaseAuthException catch (e) {
+      _isLoading = false;
+      switch (e.code) {
+        case 'network-request-failed':
+          _errorMessage = 'networkError';
+          break;
+        case 'account-exists-with-different-credential':
+          _errorMessage = 'accountExistsWithDifferentCredential';
+          break;
+        case 'operation-not-allowed':
+          _errorMessage = 'operationNotAllowed';
+          break;
+        case 'user-disabled':
+          _errorMessage = 'userDisabled';
+          break;
+        default:
+          _errorMessage = 'appleSignInError:${e.message ?? ''}';
+      }
+      notifyListeners();
+      return false;
+    } catch (e) {
+      _isLoading = false;
+      _errorMessage = 'appleSignInFailed:$e';
       notifyListeners();
       return false;
     }

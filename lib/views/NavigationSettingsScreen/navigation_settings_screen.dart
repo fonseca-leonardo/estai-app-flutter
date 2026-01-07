@@ -85,7 +85,7 @@ class _NavigationSettingsScreenState extends State<NavigationSettingsScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Configure as opções de navegação e rastreamento',
+                        l10n.navigationSettingsDescription,
                         style: TextStyle(color: Colors.grey[600], fontSize: 14),
                       ),
                       const SizedBox(height: 32),

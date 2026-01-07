@@ -202,6 +202,8 @@
   },
   "navigationSettings": "Navigation Settings",
   "@navigationSettings": {},
+  "navigationSettingsDescription": "Configure navigation and tracking options",
+  "@navigationSettingsDescription": {},
   "userAccount": "User Account",
   "@userAccount": {},
   "manageAccountInfo": "Manage your account information",
@@ -291,6 +293,30 @@
   "accountExistsWithDifferentCredential": "An account already exists with the same email address, but using a different sign-in method.",
   "@accountExistsWithDifferentCredential": {},
   "operationNotAllowed": "Google sign in is not enabled. Please contact support.",
-  "@operationNotAllowed": {}
+  "@operationNotAllowed": {},
+  "signInWithApple": "Continue with Apple",
+  "@signInWithApple": {},
+  "appleSignInError": "Error signing in with Apple: {message}",
+  "@appleSignInError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "appleSignInCancelled": "Apple sign in cancelled",
+  "@appleSignInCancelled": {},
+  "appleSignInFailed": "Failed to sign in with Apple: {error}",
+  "@appleSignInFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tideDataDisclaimer": "Official tide data is the responsibility of the Brazilian Navy.",
+  "@tideDataDisclaimer": {},
+  "tideExternalBrowserNotice": "When selecting one of the tables, you will be redirected to the official Brazilian Navy website",
+  "@tideExternalBrowserNotice": {}
 }
 

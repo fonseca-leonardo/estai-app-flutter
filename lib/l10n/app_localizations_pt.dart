@@ -246,6 +246,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get navigationSettings => 'Configurações de Navegação';
 
   @override
+  String get navigationSettingsDescription => 'Configure as opções de navegação e rastreamento';
+
+  @override
   String get userAccount => 'Conta do Usuário';
 
   @override
@@ -365,4 +368,26 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get operationNotAllowed => 'Login com Google não está habilitado. Entre em contato com o suporte.';
+
+  @override
+  String get signInWithApple => 'Continuar com Apple';
+
+  @override
+  String appleSignInError(String message) {
+    return 'Erro ao fazer login com Apple: $message';
+  }
+
+  @override
+  String get appleSignInCancelled => 'Login com Apple cancelado';
+
+  @override
+  String appleSignInFailed(String error) {
+    return 'Falha ao fazer login com Apple: $error';
+  }
+
+  @override
+  String get tideDataDisclaimer => 'Os dados oficiais de maré são de responsabilidade da Marinha do Brasil.';
+
+  @override
+  String get tideExternalBrowserNotice => 'Ao selecionar um das tábuas, você será redirecionado para o site oficial da Marinha do Brasil';
 }

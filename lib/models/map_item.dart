@@ -7,6 +7,8 @@ class MapItem {
   final bool available;
   final int minZoom;
   final int maxZoom;
+  final bool isPrimary;
+  final int priority;
 
   MapItem({
     required this.id,
@@ -15,6 +17,8 @@ class MapItem {
     required this.available,
     required this.minZoom,
     required this.maxZoom,
+    this.isPrimary = false,
+    this.priority = 0,
   });
 
   factory MapItem.fromJson(Map<String, dynamic> json) {
@@ -25,6 +29,8 @@ class MapItem {
       available: json['available'] as bool,
       minZoom: json['minZoom'] as int,
       maxZoom: json['maxZoom'] as int,
+      isPrimary: json['isPrimary'] as bool? ?? false,
+      priority: json['priority'] as int? ?? 0,
     );
   }
 
@@ -37,6 +43,8 @@ class MapItem {
       available: data['available'] as bool,
       minZoom: data['minZoom'] as int,
       maxZoom: data['maxZoom'] as int,
+      isPrimary: data['isPrimary'] as bool? ?? false,
+      priority: data['priority'] as int? ?? 0,
     );
   }
 
@@ -47,6 +55,8 @@ class MapItem {
       'available': available,
       'minZoom': minZoom,
       'maxZoom': maxZoom,
+      'isPrimary': isPrimary,
+      'priority': priority,
     };
   }
 }

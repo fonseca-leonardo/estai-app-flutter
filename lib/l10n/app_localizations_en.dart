@@ -246,6 +246,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navigationSettings => 'Navigation Settings';
 
   @override
+  String get navigationSettingsDescription => 'Configure navigation and tracking options';
+
+  @override
   String get userAccount => 'User Account';
 
   @override
@@ -365,4 +368,26 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get operationNotAllowed => 'Google sign in is not enabled. Please contact support.';
+
+  @override
+  String get signInWithApple => 'Continue with Apple';
+
+  @override
+  String appleSignInError(String message) {
+    return 'Error signing in with Apple: $message';
+  }
+
+  @override
+  String get appleSignInCancelled => 'Apple sign in cancelled';
+
+  @override
+  String appleSignInFailed(String error) {
+    return 'Failed to sign in with Apple: $error';
+  }
+
+  @override
+  String get tideDataDisclaimer => 'Official tide data is the responsibility of the Brazilian Navy.';
+
+  @override
+  String get tideExternalBrowserNotice => 'When selecting one of the tables, you will be redirected to the official Brazilian Navy website';
 }

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class MapsApiClient {
-  static const String baseUrl = 'https://maps-api.estai.com.br/api';
+  static const String baseUrl = 'https://apps.estai.com.br/maps/api';
 
   final http.Client _client;
   final Map<String, String> _defaultHeaders;
