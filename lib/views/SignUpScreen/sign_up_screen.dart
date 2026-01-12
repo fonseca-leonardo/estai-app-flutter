@@ -84,7 +84,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: Text(l10n.createAccountTitle),
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
         ),
@@ -109,299 +108,271 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 32),
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF0A0A0A),
-                        border: Border.all(
-                          color: const Color(0xFF1F1F1F),
-                          width: 1,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        TextFormField(
+                          controller: _nameController,
+                          keyboardType: TextInputType.name,
+                          textCapitalization: TextCapitalization.words,
+                          style: const TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            labelText: l10n.name,
+                            labelStyle: const TextStyle(color: Colors.grey),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.grey),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                                width: 1.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            filled: true,
+                            fillColor: Colors.transparent,
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterName;
+                            }
+                            if (value.trim().length < 2) {
+                              return l10n.nameMinLength;
+                            }
+                            return null;
+                          },
                         ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          TextFormField(
-                            controller: _nameController,
-                            keyboardType: TextInputType.name,
-                            textCapitalization: TextCapitalization.words,
-                            style: const TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              labelText: l10n.name,
-                              labelStyle: const TextStyle(color: Colors.grey),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0xFF1F1F1F),
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Colors.white,
-                                  width: 1.5,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.red),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.red),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              filled: true,
-                              fillColor: const Color(0xFF0A0A0A),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          style: const TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            labelText: l10n.email,
+                            labelStyle: const TextStyle(color: Colors.grey),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.grey),
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return l10n.pleaseEnterName;
-                              }
-                              if (value.trim().length < 2) {
-                                return l10n.nameMinLength;
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(height: 16),
-                          TextFormField(
-                            controller: _emailController,
-                            keyboardType: TextInputType.emailAddress,
-                            style: const TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              labelText: l10n.email,
-                              labelStyle: const TextStyle(color: Colors.grey),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0xFF1F1F1F),
-                                ),
-                                borderRadius: BorderRadius.circular(8),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                                width: 1.5,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Colors.white,
-                                  width: 1.5,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.red),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.red),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              filled: true,
-                              fillColor: const Color(0xFF0A0A0A),
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return l10n.pleaseEnterEmail;
-                              }
-                              if (!value.contains('@')) {
-                                return l10n.pleaseEnterValidEmail;
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(height: 16),
-                          TextFormField(
-                            controller: _passwordController,
-                            obscureText: _obscurePassword,
-                            style: const TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              labelText: l10n.password,
-                              labelStyle: const TextStyle(color: Colors.grey),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0xFF1F1F1F),
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Colors.white,
-                                  width: 1.5,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.red),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.red),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              filled: true,
-                              fillColor: const Color(0xFF0A0A0A),
-                              suffixIcon: IconButton(
-                                icon: Icon(
-                                  _obscurePassword
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                  color: Colors.grey,
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    _obscurePassword = !_obscurePassword;
-                                  });
-                                },
-                              ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return l10n.pleaseEnterPassword;
-                              }
-                              if (value.length < 6) {
-                                return l10n.passwordMinLength;
-                              }
-                              return null;
-                            },
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            filled: true,
+                            fillColor: Colors.transparent,
                           ),
-                          const SizedBox(height: 24),
-                          if (_authViewModel != null)
-                            Consumer<AuthViewModel>(
-                              builder: (context, authViewModel, child) {
-                                if (authViewModel.errorMessage != null) {
-                                  final errorKey = authViewModel.errorMessage!;
-                                  String errorText;
-                                  if (errorKey.contains(':')) {
-                                    final parts = errorKey.split(':');
-                                    final key = parts[0];
-                                    final param = parts.length > 1
-                                        ? parts[1]
-                                        : '';
-                                    switch (key) {
-                                      case 'signUpError':
-                                        errorText = l10n.signUpError(param);
-                                        break;
-                                      case 'googleSignInError':
-                                        errorText = l10n.googleSignInError(
-                                          param,
-                                        );
-                                        break;
-                                      case 'googleSignInFailed':
-                                        errorText = l10n.googleSignInFailed(
-                                          param,
-                                        );
-                                        break;
-                                      case 'appleSignInError':
-                                        errorText = l10n.appleSignInError(
-                                          param,
-                                        );
-                                        break;
-                                      case 'appleSignInFailed':
-                                        errorText = l10n.appleSignInFailed(
-                                          param,
-                                        );
-                                        break;
-                                      default:
-                                        errorText = errorKey;
-                                    }
-                                  } else {
-                                    switch (errorKey) {
-                                      case 'weakPassword':
-                                        errorText = l10n.weakPassword;
-                                        break;
-                                      case 'emailAlreadyInUse':
-                                        errorText = l10n.emailAlreadyInUse;
-                                        break;
-                                      case 'invalidEmail':
-                                        errorText = l10n.invalidEmail;
-                                        break;
-                                      case 'googleSignInCancelled':
-                                        errorText = l10n.googleSignInCancelled;
-                                        break;
-                                      case 'appleSignInCancelled':
-                                        errorText = l10n.appleSignInCancelled;
-                                        break;
-                                      case 'networkError':
-                                        errorText = l10n.networkError;
-                                        break;
-                                      case 'accountExistsWithDifferentCredential':
-                                        errorText = l10n
-                                            .accountExistsWithDifferentCredential;
-                                        break;
-                                      case 'operationNotAllowed':
-                                        errorText = l10n.operationNotAllowed;
-                                        break;
-                                      default:
-                                        errorText = errorKey;
-                                    }
-                                  }
-                                  return Padding(
-                                    padding: const EdgeInsets.only(bottom: 16),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(16),
-                                      decoration: BoxDecoration(
-                                        color: Colors.red.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8),
-                                        border: Border.all(
-                                          color: Colors.red.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                          width: 1,
-                                        ),
-                                      ),
-                                      child: Text(
-                                        errorText,
-                                        style: const TextStyle(
-                                          color: Colors.red,
-                                          fontSize: 14,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  );
-                                }
-                                return const SizedBox.shrink();
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterEmail;
+                            }
+                            if (!value.contains('@')) {
+                              return l10n.pleaseEnterValidEmail;
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: _passwordController,
+                          obscureText: _obscurePassword,
+                          style: const TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            labelText: l10n.password,
+                            labelStyle: const TextStyle(color: Colors.grey),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.grey),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                                width: 1.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            filled: true,
+                            fillColor: Colors.transparent,
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscurePassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: Colors.grey,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _obscurePassword = !_obscurePassword;
+                                });
                               },
                             ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: _authViewModel?.isLoading == true
-                                  ? null
-                                  : _handleSignUp,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 14,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                elevation: 0,
-                              ),
-                              child: _authViewModel?.isLoading == true
-                                  ? const SizedBox(
-                                      height: 20,
-                                      width: 20,
-                                      child: CircularProgressIndicator(
-                                        strokeWidth: 2,
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                              Colors.black,
-                                            ),
-                                      ),
-                                    )
-                                  : Text(
-                                      l10n.createAccountTitle,
-                                      style: const TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600,
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterPassword;
+                            }
+                            if (value.length < 6) {
+                              return l10n.passwordMinLength;
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 24),
+                        if (_authViewModel != null)
+                          Consumer<AuthViewModel>(
+                            builder: (context, authViewModel, child) {
+                              if (authViewModel.errorMessage != null) {
+                                final errorKey = authViewModel.errorMessage!;
+                                String errorText;
+                                if (errorKey.contains(':')) {
+                                  final parts = errorKey.split(':');
+                                  final key = parts[0];
+                                  final param = parts.length > 1
+                                      ? parts[1]
+                                      : '';
+                                  switch (key) {
+                                    case 'signUpError':
+                                      errorText = l10n.signUpError(param);
+                                      break;
+                                    case 'googleSignInError':
+                                      errorText = l10n.googleSignInError(param);
+                                      break;
+                                    case 'googleSignInFailed':
+                                      errorText = l10n.googleSignInFailed(
+                                        param,
+                                      );
+                                      break;
+                                    case 'appleSignInError':
+                                      errorText = l10n.appleSignInError(param);
+                                      break;
+                                    case 'appleSignInFailed':
+                                      errorText = l10n.appleSignInFailed(param);
+                                      break;
+                                    default:
+                                      errorText = errorKey;
+                                  }
+                                } else {
+                                  switch (errorKey) {
+                                    case 'weakPassword':
+                                      errorText = l10n.weakPassword;
+                                      break;
+                                    case 'emailAlreadyInUse':
+                                      errorText = l10n.emailAlreadyInUse;
+                                      break;
+                                    case 'invalidEmail':
+                                      errorText = l10n.invalidEmail;
+                                      break;
+                                    case 'googleSignInCancelled':
+                                      errorText = l10n.googleSignInCancelled;
+                                      break;
+                                    case 'appleSignInCancelled':
+                                      errorText = l10n.appleSignInCancelled;
+                                      break;
+                                    case 'networkError':
+                                      errorText = l10n.networkError;
+                                      break;
+                                    case 'accountExistsWithDifferentCredential':
+                                      errorText = l10n
+                                          .accountExistsWithDifferentCredential;
+                                      break;
+                                    case 'operationNotAllowed':
+                                      errorText = l10n.operationNotAllowed;
+                                      break;
+                                    default:
+                                      errorText = errorKey;
+                                  }
+                                }
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 16),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      color: Colors.red.withValues(alpha: 0.15),
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(
+                                        color: Colors.red.withValues(
+                                          alpha: 0.3,
+                                        ),
+                                        width: 1,
                                       ),
                                     ),
-                            ),
+                                    child: Text(
+                                      errorText,
+                                      style: const TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 14,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                );
+                              }
+                              return const SizedBox.shrink();
+                            },
                           ),
-                        ],
-                      ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: _authViewModel?.isLoading == true
+                                ? null
+                                : _handleSignUp,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              padding: const EdgeInsets.symmetric(vertical: 14),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              elevation: 0,
+                            ),
+                            child: _authViewModel?.isLoading == true
+                                ? const SizedBox(
+                                    height: 20,
+                                    width: 20,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.black,
+                                      ),
+                                    ),
+                                  )
+                                : Text(
+                                    l10n.createAccountTitle,
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 24),
                     Row(

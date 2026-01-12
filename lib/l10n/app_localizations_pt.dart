@@ -390,4 +390,61 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get tideExternalBrowserNotice => 'Ao selecionar um das tábuas, você será redirecionado para o site oficial da Marinha do Brasil';
+
+  @override
+  String get weatherForecast => 'Previsão do Tempo';
+
+  @override
+  String get errorLoadingForecast => 'Erro ao carregar previsões';
+
+  @override
+  String get noForecastAvailable => 'Nenhuma previsão disponível';
+
+  @override
+  String get marine => 'Mar';
+
+  @override
+  String get weather => 'Clima';
+
+  @override
+  String get waveHeight => 'Altura';
+
+  @override
+  String get wavePeriod => 'Período';
+
+  @override
+  String get waveDirection => 'Direção';
+
+  @override
+  String get temperature => 'Temp';
+
+  @override
+  String get dewPoint => 'P. Orvalho';
+
+  @override
+  String get windSpeed => 'Vento';
+
+  @override
+  String get windDirection => 'Direção';
+
+  @override
+  String get windGusts => 'Rajadas';
+
+  @override
+  String get pressure => 'Pressão';
+
+  @override
+  String get humidity => 'Umidade';
+
+  @override
+  String get precipitation => 'Chuva';
+
+  @override
+  String get precipitationProbability => 'Prob. Chuva';
+
+  @override
+  String get loginRequiredForForecast => 'Para acessar a previsão do tempo, você precisa estar logado.';
+
+  @override
+  String get goToLogin => 'Ir para Login';
 }

@@ -59,7 +59,7 @@ class NavigationData extends StatelessWidget {
     }
 
     return Container(
-      width: 144,
+      width: 164,
 
       decoration: BoxDecoration(
         color: Colors.black.withAlpha(140),

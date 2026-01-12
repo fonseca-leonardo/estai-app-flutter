@@ -808,6 +808,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'When selecting one of the tables, you will be redirected to the official Brazilian Navy website'**
   String get tideExternalBrowserNotice;
+
+  /// No description provided for @weatherForecast.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather Forecast'**
+  String get weatherForecast;
+
+  /// No description provided for @errorLoadingForecast.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading forecast'**
+  String get errorLoadingForecast;
+
+  /// No description provided for @noForecastAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No forecast available'**
+  String get noForecastAvailable;
+
+  /// No description provided for @marine.
+  ///
+  /// In en, this message translates to:
+  /// **'Marine'**
+  String get marine;
+
+  /// No description provided for @weather.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather'**
+  String get weather;
+
+  /// No description provided for @waveHeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Height'**
+  String get waveHeight;
+
+  /// No description provided for @wavePeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Period'**
+  String get wavePeriod;
+
+  /// No description provided for @waveDirection.
+  ///
+  /// In en, this message translates to:
+  /// **'Direction'**
+  String get waveDirection;
+
+  /// No description provided for @temperature.
+  ///
+  /// In en, this message translates to:
+  /// **'Temp'**
+  String get temperature;
+
+  /// No description provided for @dewPoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Dew Point'**
+  String get dewPoint;
+
+  /// No description provided for @windSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Wind'**
+  String get windSpeed;
+
+  /// No description provided for @windDirection.
+  ///
+  /// In en, this message translates to:
+  /// **'Direction'**
+  String get windDirection;
+
+  /// No description provided for @windGusts.
+  ///
+  /// In en, this message translates to:
+  /// **'Gusts'**
+  String get windGusts;
+
+  /// No description provided for @pressure.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure'**
+  String get pressure;
+
+  /// No description provided for @humidity.
+  ///
+  /// In en, this message translates to:
+  /// **'Humidity'**
+  String get humidity;
+
+  /// No description provided for @precipitation.
+  ///
+  /// In en, this message translates to:
+  /// **'Rain'**
+  String get precipitation;
+
+  /// No description provided for @precipitationProbability.
+  ///
+  /// In en, this message translates to:
+  /// **'Rain Prob.'**
+  String get precipitationProbability;
+
+  /// No description provided for @loginRequiredForForecast.
+  ///
+  /// In en, this message translates to:
+  /// **'To access weather forecast, you need to be logged in.'**
+  String get loginRequiredForForecast;
+
+  /// No description provided for @goToLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Login'**
+  String get goToLogin;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

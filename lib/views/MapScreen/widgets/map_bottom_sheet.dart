@@ -182,7 +182,7 @@ class MapBottomSheet extends StatelessWidget {
   static void show(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.black.withValues(alpha: 0.65),
       isScrollControlled: true,
       useRootNavigator: false,
       enableDrag: true,

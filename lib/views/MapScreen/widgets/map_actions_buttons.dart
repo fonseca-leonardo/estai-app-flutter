@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/map_viewmodel.dart';
+import './weather_forecast_bottom_sheet.dart';
 
 class MapActionsButtons extends StatelessWidget {
   const MapActionsButtons({super.key});
@@ -44,9 +45,9 @@ class MapActionsButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               side: BorderSide(color: Colors.white.withAlpha(64)),
             ),
-            onPressed: () {},
+            onPressed: () => WeatherForecastBottomSheet.show(context),
             backgroundColor: Colors.black.withAlpha(64),
-            child: const Icon(Icons.thermostat_outlined, color: Colors.white),
+            child: const Icon(Icons.wb_sunny_outlined, color: Colors.white),
             tooltip: 'Previsão do Tempo',
           ),
         ],

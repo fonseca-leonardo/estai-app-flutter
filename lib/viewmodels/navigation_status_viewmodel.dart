@@ -74,7 +74,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
 
     _isNavigating = true;
     _startTime = DateTime.now();
-    _trackedRoute.clear();
+    _trackedRoute = [];
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_startTime != null) {
         _elapsedTime = DateTime.now().difference(_startTime!);
@@ -107,6 +107,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
     _timer?.cancel();
     _timer = null;
     _isNavigating = false;
+    _trackedRoute = [];
     notifyListeners();
   }
 
@@ -116,7 +117,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
     _elapsedTime = Duration.zero;
     _isNavigating = false;
     _startTime = null;
-    _trackedRoute.clear();
+    _trackedRoute = [];
     notifyListeners();
   }
 }

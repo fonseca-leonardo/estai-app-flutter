@@ -390,4 +390,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tideExternalBrowserNotice => 'When selecting one of the tables, you will be redirected to the official Brazilian Navy website';
+
+  @override
+  String get weatherForecast => 'Weather Forecast';
+
+  @override
+  String get errorLoadingForecast => 'Error loading forecast';
+
+  @override
+  String get noForecastAvailable => 'No forecast available';
+
+  @override
+  String get marine => 'Marine';
+
+  @override
+  String get weather => 'Weather';
+
+  @override
+  String get waveHeight => 'Height';
+
+  @override
+  String get wavePeriod => 'Period';
+
+  @override
+  String get waveDirection => 'Direction';
+
+  @override
+  String get temperature => 'Temp';
+
+  @override
+  String get dewPoint => 'Dew Point';
+
+  @override
+  String get windSpeed => 'Wind';
+
+  @override
+  String get windDirection => 'Direction';
+
+  @override
+  String get windGusts => 'Gusts';
+
+  @override
+  String get pressure => 'Pressure';
+
+  @override
+  String get humidity => 'Humidity';
+
+  @override
+  String get precipitation => 'Rain';
+
+  @override
+  String get precipitationProbability => 'Rain Prob.';
+
+  @override
+  String get loginRequiredForForecast => 'To access weather forecast, you need to be logged in.';
+
+  @override
+  String get goToLogin => 'Go to Login';
 }
