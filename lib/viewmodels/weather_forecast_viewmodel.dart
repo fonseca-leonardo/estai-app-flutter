@@ -134,7 +134,8 @@ class WeatherForecastViewModel extends ChangeNotifier {
 
     for (final timeStr in sortedTimes) {
       try {
-        final time = DateTime.parse(timeStr);
+        final timeUtc = DateTime.parse(timeStr + 'Z').toUtc();
+        final time = timeUtc.toLocal();
         if (time.isBefore(minTime) || time.isAfter(maxTime)) {
           continue;
         }

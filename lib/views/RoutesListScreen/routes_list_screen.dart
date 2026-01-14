@@ -9,6 +9,7 @@ import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
+import '../MapScreen/map_screen.dart';
 
 class RoutesListScreen extends StatelessWidget {
   const RoutesListScreen({super.key});
@@ -274,9 +275,13 @@ class _RouteCard extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(dialogContext).pop();
-                Navigator.of(context).pop();
+                if (route.points.isEmpty) {
+                  return;
+                }
 
+                Navigator.of(dialogContext).pop();
+
+                navigationStatusViewModel.resetNavigation();
                 routePlannerViewModel.clearRoute();
                 for (final point in route.points) {
                   routePlannerViewModel.addRoutePoint(point);
@@ -284,6 +289,13 @@ class _RouteCard extends StatelessWidget {
                 routePlannerViewModel.confirmRoute();
                 mapViewModel.setIsPlanningRoute(false);
                 navigationStatusViewModel.startNavigation();
+
+                final routeCenter = _calculateRouteCenter(route.points);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => MapScreen(initialLocation: routeCenter),
+                  ),
+                );
               },
               child: Text(
                 l10n.startNavigationWithRoute,
@@ -315,6 +327,22 @@ class _RouteCard extends StatelessWidget {
     const metersPerNauticalMile = 1852.0;
     final nauticalMiles = distanceInMeters / metersPerNauticalMile;
     return '${nauticalMiles.toStringAsFixed(2)} NM';
+  }
+
+  LatLng _calculateRouteCenter(List<LatLng> points) {
+    if (points.length == 1) {
+      return points.first;
+    }
+
+    double sumLat = 0.0;
+    double sumLng = 0.0;
+
+    for (final point in points) {
+      sumLat += point.latitude;
+      sumLng += point.longitude;
+    }
+
+    return LatLng(sumLat / points.length, sumLng / points.length);
   }
 
   void _editRouteName(BuildContext context) {

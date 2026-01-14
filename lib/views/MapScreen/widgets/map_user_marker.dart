@@ -5,41 +5,83 @@ import 'package:provider/provider.dart';
 import 'package:geolocator/geolocator.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 
-class MapUserMarker extends StatelessWidget {
+class MapUserMarker extends StatefulWidget {
   final MapController mapController;
 
   const MapUserMarker({super.key, required this.mapController});
 
+  @override
+  State<MapUserMarker> createState() => _MapUserMarkerState();
+}
+
+class _MapUserMarkerState extends State<MapUserMarker> {
+  MapViewModel? _mapViewModel;
+  Position? _lastPosition;
+  bool _lastCameraLocked = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        _mapViewModel = context.read<MapViewModel>();
+        _mapViewModel?.addListener(_handlePositionUpdate);
+        _handlePositionUpdate();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _mapViewModel?.removeListener(_handlePositionUpdate);
+    super.dispose();
+  }
+
+  void _handlePositionUpdate() {
+    if (!mounted) return;
+    
+    final position = _mapViewModel?.currentPosition;
+    final isCameraLocked = _mapViewModel?.isCameraLocked ?? false;
+    
+    if (position != null && isCameraLocked) {
+      if (_lastPosition == null || 
+          _lastPosition != position || 
+          _lastCameraLocked != isCameraLocked) {
+        _lastPosition = position;
+        _lastCameraLocked = isCameraLocked;
+        _updateCameraIfLocked(position, isCameraLocked);
+      }
+    } else {
+      _lastPosition = position;
+      _lastCameraLocked = isCameraLocked;
+    }
+    
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
   void _updateCameraIfLocked(Position position, bool isLocked) {
-    if (isLocked) {
-      mapController.move(
+    if (isLocked && mounted) {
+      widget.mapController.move(
         LatLng(position.latitude, position.longitude),
-        mapController.camera.zoom,
+        widget.mapController.camera.zoom,
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Selector<MapViewModel, ({Position? position, bool isCameraLocked})>(
-      selector: (_, viewModel) => (
-        position: viewModel.currentPosition,
-        isCameraLocked: viewModel.isCameraLocked,
-      ),
-      builder: (context, data, child) {
-        if (data.position != null) {
-          // Se a câmera estiver travada, move automaticamente
-          if (data.isCameraLocked) {
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _updateCameraIfLocked(data.position!, data.isCameraLocked);
-            });
-          }
+    return Selector<MapViewModel, Position?>(
+      selector: (_, viewModel) => viewModel.currentPosition,
+      builder: (context, position, child) {
+        if (position != null) {
           return MarkerLayer(
             markers: [
               Marker(
                 point: LatLng(
-                  data.position!.latitude,
-                  data.position!.longitude,
+                  position.latitude,
+                  position.longitude,
                 ),
                 width: 20,
                 height: 20,

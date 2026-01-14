@@ -922,6 +922,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go to Login'**
   String get goToLogin;
+
+  /// No description provided for @addWeatherPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Weather Pin'**
+  String get addWeatherPin;
+
+  /// No description provided for @weatherPinsList.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather Monitor Pins'**
+  String get weatherPinsList;
+
+  /// No description provided for @pinName.
+  ///
+  /// In en, this message translates to:
+  /// **'Pin Name'**
+  String get pinName;
+
+  /// No description provided for @enterPinName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter pin name'**
+  String get enterPinName;
+
+  /// No description provided for @deletePin.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deletePin;
+
+  /// No description provided for @editPinName.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Name'**
+  String get editPinName;
+
+  /// No description provided for @noPinsAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'No pins added'**
+  String get noPinsAdded;
+
+  /// No description provided for @addingPinMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Adding Mode Active'**
+  String get addingPinMode;
+
+  /// No description provided for @tapMapToAddPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold on map to add'**
+  String get tapMapToAddPin;
+
+  /// No description provided for @currentLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Location'**
+  String get currentLocation;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @confirmDeletePin.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to remove the pin \"{pinName}\"?'**
+  String confirmDeletePin(String pinName);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

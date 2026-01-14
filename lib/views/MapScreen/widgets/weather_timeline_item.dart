@@ -48,7 +48,8 @@ class WeatherTimelineItem extends StatelessWidget {
 
   Widget _buildTimeHeader() {
     try {
-      final time = DateTime.parse(data.time);
+      final timeUtc = DateTime.parse(data.time + 'Z').toUtc();
+      final time = timeUtc.toLocal();
       final timeFormat = DateFormat('HH:mm');
       final dateFormat = DateFormat('dd/MM');
       final isToday =

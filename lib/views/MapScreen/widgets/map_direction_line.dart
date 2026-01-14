@@ -109,7 +109,9 @@ class _MapDirectionLineState extends State<MapDirectionLine> {
         heading: viewModel.currentHeading,
       ),
       builder: (context, data, child) {
-        if (data.position != null && data.heading != null) {
+        if (data.position != null &&
+            data.heading != null &&
+            data.heading! >= 0) {
           final startPoint = LatLng(
             data.position!.latitude,
             data.position!.longitude,

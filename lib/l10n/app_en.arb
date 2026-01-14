@@ -355,6 +355,36 @@
   "loginRequiredForForecast": "To access weather forecast, you need to be logged in.",
   "@loginRequiredForForecast": {},
   "goToLogin": "Go to Login",
-  "@goToLogin": {}
+  "@goToLogin": {},
+  "addWeatherPin": "Add Weather Pin",
+  "@addWeatherPin": {},
+  "weatherPinsList": "Weather Monitor Pins",
+  "@weatherPinsList": {},
+  "pinName": "Pin Name",
+  "@pinName": {},
+  "enterPinName": "Enter pin name",
+  "@enterPinName": {},
+  "deletePin": "Delete",
+  "@deletePin": {},
+  "editPinName": "Edit Name",
+  "@editPinName": {},
+  "noPinsAdded": "No pins added",
+  "@noPinsAdded": {},
+  "addingPinMode": "Adding Mode Active",
+  "@addingPinMode": {},
+  "tapMapToAddPin": "Hold on map to add",
+  "@tapMapToAddPin": {},
+  "currentLocation": "Current Location",
+  "@currentLocation": {},
+  "save": "Save",
+  "@save": {},
+  "confirmDeletePin": "Are you sure you want to remove the pin \"{pinName}\"?",
+  "@confirmDeletePin": {
+    "placeholders": {
+      "pinName": {
+        "type": "String"
+      }
+    }
+  }
 }
 

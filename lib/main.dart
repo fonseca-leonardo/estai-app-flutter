@@ -20,6 +20,7 @@ import 'viewmodels/routes_viewmodel.dart';
 import 'viewmodels/list_maps_viewmodel.dart';
 import 'viewmodels/ad_banner_viewmodel.dart';
 import 'viewmodels/weather_forecast_viewmodel.dart';
+import 'viewmodels/weather_monitor_pins_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,9 +61,9 @@ void main() async {
   }
 
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  
+
   await WakelockPlus.enable();
-  
+
   runApp(const MyApp());
 }
 
@@ -85,6 +86,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ListMapsViewModel()),
         ChangeNotifierProvider(create: (_) => AdBannerViewModel()),
         ChangeNotifierProvider(create: (_) => WeatherForecastViewModel()),
+        ChangeNotifierProvider(create: (_) => WeatherMonitorPinsViewModel()),
         ChangeNotifierProvider.value(value: settingsViewModel),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
       ],

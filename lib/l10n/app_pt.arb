@@ -256,7 +256,7 @@
   "@darkMode": {},
   "darkModeDescription": "Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.",
   "@darkModeDescription": {},
-  "saveRouteForReuse": "Salvar rota para reutilização",
+  "saveRouteForReuse": "Salvar para reutilização",
   "@saveRouteForReuse": {},
   "saveRouteForReuseDescription": "Salve esta rota para poder usá-la novamente no futuro",
   "@saveRouteForReuseDescription": {},
@@ -355,6 +355,36 @@
   "loginRequiredForForecast": "Para acessar a previsão do tempo, você precisa estar logado.",
   "@loginRequiredForForecast": {},
   "goToLogin": "Ir para Login",
-  "@goToLogin": {}
+  "@goToLogin": {},
+  "addWeatherPin": "Adicionar Pin de Clima",
+  "@addWeatherPin": {},
+  "weatherPinsList": "Pontos de Monitoramento de Clima",
+  "@weatherPinsList": {},
+  "pinName": "Nome do Pin",
+  "@pinName": {},
+  "enterPinName": "Digite o nome do pin",
+  "@enterPinName": {},
+  "deletePin": "Remover",
+  "@deletePin": {},
+  "editPinName": "Editar Nome",
+  "@editPinName": {},
+  "noPinsAdded": "Nenhum pin adicionado",
+  "@noPinsAdded": {},
+  "addingPinMode": "Modo de Adição Ativo",
+  "@addingPinMode": {},
+  "tapMapToAddPin": "Segure no mapa para adicionar",
+  "@tapMapToAddPin": {},
+  "currentLocation": "Localização atual",
+  "@currentLocation": {},
+  "save": "Salvar",
+  "@save": {},
+  "confirmDeletePin": "Tem certeza que deseja remover o pin \"{pinName}\"?",
+  "@confirmDeletePin": {
+    "placeholders": {
+      "pinName": {
+        "type": "String"
+      }
+    }
+  }
 }
 

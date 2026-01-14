@@ -10,6 +10,8 @@ class MapViewModel extends ChangeNotifier {
   bool _isCameraLocked = false;
   bool _isPlanningRoute = false;
   StreamSubscription<Position>? _positionStreamSubscription;
+  Timer? _throttleTimer;
+  DateTime? _lastNotificationTime;
 
   Position? get currentPosition => _currentPosition;
   bool get isLoading => _isLoading;
@@ -84,7 +86,7 @@ class MapViewModel extends ChangeNotifier {
           (Position position) {
             _currentPosition = position;
             _errorMessage = null;
-            notifyListeners();
+            _throttledNotifyListeners();
           },
           onError: (error) {
             _errorMessage = 'errorUpdatingLocation:$error';
@@ -93,9 +95,31 @@ class MapViewModel extends ChangeNotifier {
         );
   }
 
+  void _throttledNotifyListeners() {
+    final now = DateTime.now();
+    if (_lastNotificationTime == null ||
+        now.difference(_lastNotificationTime!) >=
+            const Duration(milliseconds: 500)) {
+      _lastNotificationTime = now;
+      notifyListeners();
+    } else {
+      _throttleTimer?.cancel();
+      _throttleTimer = Timer(
+        const Duration(milliseconds: 500) -
+            now.difference(_lastNotificationTime!),
+        () {
+          _lastNotificationTime = DateTime.now();
+          notifyListeners();
+        },
+      );
+    }
+  }
+
   void stopLocationStream() {
     _positionStreamSubscription?.cancel();
     _positionStreamSubscription = null;
+    _throttleTimer?.cancel();
+    _throttleTimer = null;
   }
 
   @override

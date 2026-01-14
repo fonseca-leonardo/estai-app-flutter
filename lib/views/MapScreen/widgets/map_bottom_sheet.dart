@@ -8,6 +8,7 @@ import '../../ListMapsScreen/list_maps_screen.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../viewmodels/navigation_status_viewmodel.dart';
 import '../../../viewmodels/route_planner_viewmodel.dart';
+import '../../../viewmodels/weather_monitor_pins_viewmodel.dart';
 
 class MapBottomSheet extends StatelessWidget {
   final BuildContext? parentContext;
@@ -42,133 +43,152 @@ class MapBottomSheet extends StatelessWidget {
             Selector<NavigationStatusViewModel, bool>(
               selector: (_, viewModel) => viewModel.isNavigating,
               builder: (context, isNavigating, child) {
-                return GridView.count(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 0.8,
-                  children: [
-                    _GridItem(
-                      icon: Icons.navigation,
-                      title: l10n.navigate,
-                      onTap: isNavigating
-                          ? null
-                          : () {
-                              final navigatorContext = parentContext ?? context;
-                              Navigator.pop(context);
-                              WidgetsBinding.instance.addPostFrameCallback((_) {
-                                if (navigatorContext.mounted) {
-                                  final navigationStatusViewModel =
-                                      Provider.of<NavigationStatusViewModel>(
-                                        navigatorContext,
-                                        listen: false,
-                                      );
-                                  if (navigationStatusViewModel.isNavigating) {
-                                    navigationStatusViewModel.stopNavigation();
-                                    navigationStatusViewModel.resetNavigation();
-                                  } else {
-                                    navigationStatusViewModel.startNavigation();
-                                  }
-                                }
-                              });
-                            },
-                    ),
-                    _GridItem(
-                      icon: Icons.route,
-                      title: l10n.newRoute,
-                      onTap: isNavigating
-                          ? null
-                          : () {
-                              final navigatorContext = parentContext ?? context;
-                              final viewModel = Provider.of<MapViewModel>(
-                                navigatorContext,
-                                listen: false,
-                              );
-                              final routePlannerViewModel =
-                                  Provider.of<RoutePlannerViewModel>(
+                return Consumer<WeatherMonitorPinsViewModel>(
+                  builder: (context, pinsViewModel, child) {
+                    final isAddingPin = pinsViewModel.isAddingPin;
+                    final isNewRouteDisabled = isNavigating || isAddingPin;
+
+                    return GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      childAspectRatio: 0.8,
+                      children: [
+                        _GridItem(
+                          icon: Icons.navigation,
+                          title: l10n.navigate,
+                          onTap: isNavigating
+                              ? null
+                              : () {
+                                  final navigatorContext =
+                                      parentContext ?? context;
+                                  Navigator.pop(context);
+                                  WidgetsBinding.instance.addPostFrameCallback((
+                                    _,
+                                  ) {
+                                    if (navigatorContext.mounted) {
+                                      final navigationStatusViewModel =
+                                          Provider.of<
+                                            NavigationStatusViewModel
+                                          >(navigatorContext, listen: false);
+                                      if (navigationStatusViewModel
+                                          .isNavigating) {
+                                        navigationStatusViewModel
+                                            .stopNavigation();
+                                        navigationStatusViewModel
+                                            .resetNavigation();
+                                      } else {
+                                        navigationStatusViewModel
+                                            .startNavigation();
+                                      }
+                                    }
+                                  });
+                                },
+                        ),
+                        _GridItem(
+                          icon: Icons.route,
+                          title: l10n.newRoute,
+                          onTap: isNewRouteDisabled
+                              ? null
+                              : () {
+                                  final navigatorContext =
+                                      parentContext ?? context;
+                                  final viewModel = Provider.of<MapViewModel>(
                                     navigatorContext,
                                     listen: false,
                                   );
-                              Navigator.pop(context);
-                              WidgetsBinding.instance.addPostFrameCallback((_) {
-                                if (navigatorContext.mounted) {
-                                  routePlannerViewModel.clearRoute();
-                                  viewModel.setIsPlanningRoute(true);
-                                }
-                              });
-                            },
-                    ),
-                    _GridItem(
-                      icon: Icons.list,
-                      title: l10n.myRoutes,
-                      onTap: () {
-                        final navigatorContext = parentContext ?? context;
-                        Navigator.pop(context);
-                        WidgetsBinding.instance.addPostFrameCallback((_) {
-                          if (navigatorContext.mounted) {
-                            Navigator.of(navigatorContext).push(
-                              MaterialPageRoute(
-                                builder: (context) => const RoutesListScreen(),
-                              ),
-                            );
-                          }
-                        });
-                      },
-                    ),
-                    _GridItem(
-                      icon: Icons.water_drop,
-                      title: l10n.tides,
-                      onTap: () {
-                        final navigatorContext = parentContext ?? context;
-                        Navigator.pop(context);
-                        WidgetsBinding.instance.addPostFrameCallback((_) {
-                          if (navigatorContext.mounted) {
-                            Navigator.of(navigatorContext).push(
-                              MaterialPageRoute(
-                                builder: (context) => const TideScreen(),
-                              ),
-                            );
-                          }
-                        });
-                      },
-                    ),
-                    _GridItem(
-                      icon: Icons.map,
-                      title: l10n.maps,
-                      onTap: () {
-                        final navigatorContext = parentContext ?? context;
-                        Navigator.pop(context);
-                        WidgetsBinding.instance.addPostFrameCallback((_) {
-                          if (navigatorContext.mounted) {
-                            Navigator.of(navigatorContext).push(
-                              MaterialPageRoute(
-                                builder: (context) => const ListMapsScreen(),
-                              ),
-                            );
-                          }
-                        });
-                      },
-                    ),
-                    _GridItem(
-                      icon: Icons.settings,
-                      title: l10n.adjustments,
-                      onTap: () {
-                        final navigatorContext = parentContext ?? context;
-                        Navigator.pop(context);
-                        WidgetsBinding.instance.addPostFrameCallback((_) {
-                          if (navigatorContext.mounted) {
-                            Navigator.of(navigatorContext).push(
-                              MaterialPageRoute(
-                                builder: (context) => const SettingsScreen(),
-                              ),
-                            );
-                          }
-                        });
-                      },
-                    ),
-                  ],
+                                  final routePlannerViewModel =
+                                      Provider.of<RoutePlannerViewModel>(
+                                        navigatorContext,
+                                        listen: false,
+                                      );
+                                  Navigator.pop(context);
+                                  WidgetsBinding.instance.addPostFrameCallback((
+                                    _,
+                                  ) {
+                                    if (navigatorContext.mounted) {
+                                      routePlannerViewModel.clearRoute();
+                                      viewModel.setIsPlanningRoute(true);
+                                    }
+                                  });
+                                },
+                        ),
+                        _GridItem(
+                          icon: Icons.list,
+                          title: l10n.myRoutes,
+                          onTap: () {
+                            final navigatorContext = parentContext ?? context;
+                            Navigator.pop(context);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              if (navigatorContext.mounted) {
+                                Navigator.of(navigatorContext).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const RoutesListScreen(),
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                        ),
+                        _GridItem(
+                          icon: Icons.water_drop,
+                          title: l10n.tides,
+                          onTap: () {
+                            final navigatorContext = parentContext ?? context;
+                            Navigator.pop(context);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              if (navigatorContext.mounted) {
+                                Navigator.of(navigatorContext).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const TideScreen(),
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                        ),
+                        _GridItem(
+                          icon: Icons.map,
+                          title: l10n.maps,
+                          onTap: () {
+                            final navigatorContext = parentContext ?? context;
+                            Navigator.pop(context);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              if (navigatorContext.mounted) {
+                                Navigator.of(navigatorContext).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ListMapsScreen(),
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                        ),
+                        _GridItem(
+                          icon: Icons.settings,
+                          title: l10n.adjustments,
+                          onTap: () {
+                            final navigatorContext = parentContext ?? context;
+                            Navigator.pop(context);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              if (navigatorContext.mounted) {
+                                Navigator.of(navigatorContext).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SettingsScreen(),
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                        ),
+                      ],
+                    );
+                  },
                 );
               },
             ),

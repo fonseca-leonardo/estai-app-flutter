@@ -8,6 +8,7 @@ import '../NavigationSettingsScreen/navigation_settings_screen.dart';
 import '../UserAccountScreen/user_account_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 import '../LoginScreen/login_screen.dart';
+import '../WeatherPinsListScreen/weather_pins_list_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -74,6 +75,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (_) => const NavigationSettingsScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildSettingsTile(
+                        context,
+                        l10n.weatherPinsList,
+                        Icons.thermostat,
+                        () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const WeatherPinsListScreen(),
                             ),
                           );
                         },

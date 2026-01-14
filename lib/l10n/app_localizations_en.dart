@@ -447,4 +447,42 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goToLogin => 'Go to Login';
+
+  @override
+  String get addWeatherPin => 'Add Weather Pin';
+
+  @override
+  String get weatherPinsList => 'Weather Monitor Pins';
+
+  @override
+  String get pinName => 'Pin Name';
+
+  @override
+  String get enterPinName => 'Enter pin name';
+
+  @override
+  String get deletePin => 'Delete';
+
+  @override
+  String get editPinName => 'Edit Name';
+
+  @override
+  String get noPinsAdded => 'No pins added';
+
+  @override
+  String get addingPinMode => 'Adding Mode Active';
+
+  @override
+  String get tapMapToAddPin => 'Hold on map to add';
+
+  @override
+  String get currentLocation => 'Current Location';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String confirmDeletePin(String pinName) {
+    return 'Are you sure you want to remove the pin \"$pinName\"?';
+  }
 }

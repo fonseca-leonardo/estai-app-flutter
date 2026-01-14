@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
-import '../../../utils/coordinate_formatter.dart';
 import '../../../viewmodels/auth_viewmodel.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../viewmodels/weather_forecast_viewmodel.dart';
-import '../../LoginScreen/login_screen.dart';
-import '../../SignUpScreen/sign_up_screen.dart';
+import '../../../viewmodels/weather_monitor_pins_viewmodel.dart';
+import 'login_required_widget.dart';
 import 'weather_timeline_item.dart';
 
 class WeatherForecastBottomSheet extends StatefulWidget {
@@ -111,7 +110,10 @@ class _WeatherForecastBottomSheetState
 
     for (int i = 0; i < viewModel.forecastData.length; i++) {
       try {
-        final time = DateTime.parse(viewModel.forecastData[i].time);
+        final timeUtc = DateTime.parse(
+          viewModel.forecastData[i].time + 'Z',
+        ).toUtc();
+        final time = timeUtc.toLocal();
         if (time.isAfter(now) || time.isAtSameMomentAs(now)) {
           currentHourIndex = i;
           break;
@@ -165,87 +167,70 @@ class _WeatherForecastBottomSheetState
                 ),
               ),
             ),
-            Text(
-              l10n.weatherForecast,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  l10n.weatherForecast,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Consumer<AuthViewModel>(
+                  builder: (context, authViewModel, child) {
+                    if (!authViewModel.isAuthenticated) {
+                      return const SizedBox.shrink();
+                    }
+                    return Consumer2<WeatherMonitorPinsViewModel, MapViewModel>(
+                      builder: (context, pinsViewModel, mapViewModel, child) {
+                        final isPlanningRoute = mapViewModel.isPlanningRoute;
+                        return Opacity(
+                          opacity: isPlanningRoute ? 0.5 : 1.0,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.cyan.withValues(alpha: 0.8),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.cyan, width: 2),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.cyan.withValues(alpha: 0.4),
+                                  blurRadius: 8,
+                                  spreadRadius: 2,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: Material(
+                              color: Colors.transparent,
+                              child: IconButton(
+                                onPressed: isPlanningRoute
+                                    ? null
+                                    : () {
+                                        pinsViewModel.setAddingPinMode(true);
+                                        Navigator.of(context).pop();
+                                      },
+                                icon: const Icon(
+                                  Icons.add_location_alt,
+                                  color: Colors.white,
+                                ),
+                                tooltip: l10n.addWeatherPin,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              ],
             ),
-            const SizedBox(height: 20),
+
             Consumer2<WeatherForecastViewModel, AuthViewModel>(
               builder: (context, viewModel, authViewModel, child) {
                 if (!authViewModel.isAuthenticated) {
-                  return SizedBox(
-                    width: double.infinity,
-                    child: Container(
-                      child: Column(
-                        children: [
-                          const Icon(Icons.lock_outline, color: Colors.white),
-                          const SizedBox(height: 12),
-                          Text(
-                            l10n.loginRequiredForForecast,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (_) => const LoginScreen(),
-                                  ),
-                                );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 24,
-                                  vertical: 12,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                              ),
-                              child: Text(l10n.goToLogin),
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (_) => const SignUpScreen(),
-                                  ),
-                                );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.grey[800],
-                                foregroundColor: Colors.white,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 24,
-                                  vertical: 12,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                              ),
-                              child: Text(l10n.createAccount),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
+                  return const LoginRequiredWidget();
                 }
 
                 if (viewModel.isLoading) {
@@ -337,7 +322,10 @@ class _WeatherForecastBottomSheetState
 
                 for (int i = 0; i < viewModel.forecastData.length; i++) {
                   try {
-                    final time = DateTime.parse(viewModel.forecastData[i].time);
+                    final timeUtc = DateTime.parse(
+                      viewModel.forecastData[i].time + 'Z',
+                    ).toUtc();
+                    final time = timeUtc.toLocal();
                     if (time.isAfter(now) || time.isAtSameMomentAs(now)) {
                       currentHourIndex = i;
                       break;
@@ -356,53 +344,25 @@ class _WeatherForecastBottomSheetState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (latitude != null && longitude != null)
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 8,
-                        ),
-                        margin: const EdgeInsets.only(bottom: 12),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.location_on,
-                              size: 16,
-                              color: Colors.white.withValues(alpha: 0.78),
+                      Row(
+                        spacing: 8,
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            size: 16,
+                            color: Colors.white.withValues(alpha: 0.78),
+                          ),
+                          Text(
+                            l10n.currentLocation,
+                            style: TextStyle(
+                              color: Colors.grey[400],
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
                             ),
-                            const SizedBox(width: 8),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '${l10n.latitude}: ${CoordinateFormatter.formatLatitude(latitude)}',
-                                    style: TextStyle(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.78,
-                                      ),
-                                      fontSize: 11,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 2),
-                                  Text(
-                                    '${l10n.longitude}: ${CoordinateFormatter.formatLongitude(longitude)}',
-                                    style: TextStyle(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.78,
-                                      ),
-                                      fontSize: 11,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
+                    const SizedBox(height: 12),
                     SizedBox(
                       height: 440,
                       child: ListView.builder(

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -17,15 +18,23 @@ import 'widgets/planned_route_line.dart';
 import 'widgets/planned_route_markers.dart';
 import 'widgets/route_point_confirmation.dart';
 import 'widgets/navigation_status.dart';
+import 'widgets/weather_pin_addition_mode.dart';
+import 'widgets/add_pin_dialog.dart';
 import 'widgets/tracked_route_line.dart';
 import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
 import '../../viewmodels/ad_banner_viewmodel.dart';
+import '../../viewmodels/weather_monitor_pins_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
+import 'widgets/weather_monitor_pins_layer.dart';
+import 'widgets/weather_pin_forecast_bottom_sheet.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({super.key});
+  final LatLng? initialLocation;
+  final String? pinIdToOpen;
+
+  const MapScreen({super.key, this.initialLocation, this.pinIdToOpen});
 
   @override
   State<MapScreen> createState() => _MapScreenState();
@@ -34,62 +43,106 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   final MapController _mapController = MapController();
   bool _hasMovedToLocation = false;
+  bool _hasMovedToInitialLocation = false;
+  bool _hasOpenedPinBottomSheet = false;
   LatLng? _lastTrackedPoint;
+  MapViewModel? _mapViewModel;
+  NavigationStatusViewModel? _navigationStatusViewModel;
 
   static const LatLng _initialPosition = LatLng(-23.5505, -46.6333);
-  static const double _initialZoom = 8.0;
+  static const double _initialZoom = 14.0;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<MapViewModel>().getCurrentLocation();
-    });
+    _mapViewModel = context.read<MapViewModel>();
+    _navigationStatusViewModel = context.read<NavigationStatusViewModel>();
+
+    _mapViewModel!.addListener(_handlePositionUpdate);
+
+    if (widget.initialLocation != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && !_hasMovedToInitialLocation) {
+          _mapController.move(widget.initialLocation!, 12.0);
+          _hasMovedToInitialLocation = true;
+
+          if (widget.pinIdToOpen != null) {
+            Future.delayed(const Duration(milliseconds: 500), () {
+              if (mounted && !_hasOpenedPinBottomSheet) {
+                _openPinBottomSheet();
+                _hasOpenedPinBottomSheet = true;
+              }
+            });
+          }
+        }
+      });
+    } else {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _mapViewModel!.getCurrentLocation();
+      });
+    }
+  }
+
+  void _handlePositionUpdate() {
+    if (!mounted) return;
+
+    final position = _mapViewModel?.currentPosition;
+    if (position == null) return;
+
+    if (!_hasMovedToLocation) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          _moveToCurrentLocation(position);
+          _hasMovedToLocation = true;
+        }
+      });
+    }
+
+    if (_navigationStatusViewModel?.isNavigating == true) {
+      final currentLatLng = LatLng(position.latitude, position.longitude);
+      if (_lastTrackedPoint == null || _lastTrackedPoint != currentLatLng) {
+        _navigationStatusViewModel!.addTrackedPoint(currentLatLng);
+        _lastTrackedPoint = currentLatLng;
+      }
+    } else {
+      _lastTrackedPoint = null;
+    }
+  }
+
+  void _openPinBottomSheet() {
+    final pinsViewModel = context.read<WeatherMonitorPinsViewModel>();
+    final pin = pinsViewModel.getPinById(widget.pinIdToOpen!);
+    if (pin != null && mounted) {
+      WeatherPinForecastBottomSheet.show(context, pin);
+    }
   }
 
   @override
   void dispose() {
+    _mapViewModel?.removeListener(_handlePositionUpdate);
     _mapController.dispose();
     super.dispose();
   }
 
   void _moveToCurrentLocation(Position position) {
-    _mapController.move(LatLng(position.latitude, position.longitude), 8.0);
+    _mapController.move(LatLng(position.latitude, position.longitude), 14.0);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Consumer<MapViewModel>(
-        builder: (context, viewModel, child) {
+      body: Selector<MapViewModel, Position?>(
+        selector: (_, viewModel) => viewModel.currentPosition,
+        builder: (context, position, child) {
           LatLng centerPosition;
           double zoom;
 
-          if (viewModel.currentPosition != null) {
-            final position = viewModel.currentPosition!;
+          if (widget.initialLocation != null) {
+            centerPosition = widget.initialLocation!;
+            zoom = 12.0;
+          } else if (position != null) {
             centerPosition = LatLng(position.latitude, position.longitude);
             zoom = 8.0;
-            if (!_hasMovedToLocation) {
-              WidgetsBinding.instance.addPostFrameCallback((_) {
-                _moveToCurrentLocation(position);
-                _hasMovedToLocation = true;
-              });
-            }
-
-            final currentLatLng = LatLng(position.latitude, position.longitude);
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              final navigationStatusViewModel = context
-                  .read<NavigationStatusViewModel>();
-              if (navigationStatusViewModel.isNavigating) {
-                if (_lastTrackedPoint == null ||
-                    _lastTrackedPoint != currentLatLng) {
-                  navigationStatusViewModel.addTrackedPoint(currentLatLng);
-                  _lastTrackedPoint = currentLatLng;
-                }
-              } else {
-                _lastTrackedPoint = null;
-              }
-            });
           } else {
             centerPosition = _initialPosition;
             zoom = _initialZoom;
@@ -97,49 +150,51 @@ class _MapScreenState extends State<MapScreen> {
 
           return Stack(
             children: [
-              Listener(
-                onPointerMove: viewModel.isPlanningRoute
-                    ? (event) {
-                        final routePlannerViewModel = context
-                            .read<RoutePlannerViewModel>();
-                        final draggingIndex =
-                            routePlannerViewModel.draggingIndex;
-                        if (draggingIndex != null) {
-                          final renderBox =
-                              context.findRenderObject() as RenderBox?;
-                          if (renderBox != null) {
-                            final localPosition = renderBox.globalToLocal(
-                              event.position,
-                            );
-                            try {
-                              final camera = _mapController.camera;
-                              final point = math.Point(
-                                localPosition.dx,
-                                localPosition.dy,
-                              );
-                              final newPoint = camera.pointToLatLng(point);
-                              routePlannerViewModel.updateRoutePoint(
-                                draggingIndex,
-                                newPoint,
-                              );
-                            } catch (e) {
-                              // Ignora erros de conversão
+              Selector<MapViewModel, bool>(
+                selector: (_, viewModel) => viewModel.isPlanningRoute,
+                builder: (context, isPlanningRoute, child) {
+                  return Listener(
+                    onPointerMove: isPlanningRoute
+                        ? (event) {
+                            final routePlannerViewModel = context
+                                .read<RoutePlannerViewModel>();
+                            final draggingIndex =
+                                routePlannerViewModel.draggingIndex;
+                            if (draggingIndex != null) {
+                              final renderBox =
+                                  context.findRenderObject() as RenderBox?;
+                              if (renderBox != null) {
+                                final localPosition = renderBox.globalToLocal(
+                                  event.position,
+                                );
+                                try {
+                                  final camera = _mapController.camera;
+                                  final point = math.Point(
+                                    localPosition.dx,
+                                    localPosition.dy,
+                                  );
+                                  final newPoint = camera.pointToLatLng(point);
+                                  routePlannerViewModel.updateRoutePoint(
+                                    draggingIndex,
+                                    newPoint,
+                                  );
+                                } catch (e) {
+                                  // Ignora erros de conversão
+                                }
+                              }
                             }
                           }
-                        }
-                      }
-                    : null,
-                onPointerUp: viewModel.isPlanningRoute
-                    ? (_) {
-                        context.read<RoutePlannerViewModel>().stopDragging();
-                      }
-                    : null,
-                child: Selector<RoutePlannerViewModel, int?>(
-                  selector: (_, viewModel) => viewModel.draggingIndex,
-                  builder: (context, draggingIndex, child) {
-                    return Selector<MapViewModel, bool>(
-                      selector: (_, viewModel) => viewModel.isPlanningRoute,
-                      builder: (context, isPlanningRoute, child) {
+                        : null,
+                    onPointerUp: isPlanningRoute
+                        ? (_) {
+                            context
+                                .read<RoutePlannerViewModel>()
+                                .stopDragging();
+                          }
+                        : null,
+                    child: Selector<RoutePlannerViewModel, int?>(
+                      selector: (_, viewModel) => viewModel.draggingIndex,
+                      builder: (context, draggingIndex, child) {
                         return Consumer2<MapViewModel, ListMapsViewModel>(
                           builder: (context, mapViewModel, mapsViewModel, _) {
                             final customTileLayers =
@@ -177,19 +232,27 @@ class _MapScreenState extends State<MapScreen> {
                                       : InteractiveFlag.all &
                                             ~InteractiveFlag.rotate,
                                 ),
-                                onLongPress: mapViewModel.isPlanningRoute
-                                    ? (tapPosition, point) {
-                                        final routePlannerViewModel = context
-                                            .read<RoutePlannerViewModel>();
-                                        if (routePlannerViewModel
-                                                .draggingIndex ==
-                                            null) {
-                                          routePlannerViewModel.setPendingPoint(
-                                            point,
-                                          );
-                                        }
-                                      }
-                                    : null,
+                                onLongPress: (tapPosition, point) {
+                                  final routePlannerViewModel = context
+                                      .read<RoutePlannerViewModel>();
+                                  final pinsViewModel = context
+                                      .read<WeatherMonitorPinsViewModel>();
+
+                                  if (mapViewModel.isPlanningRoute) {
+                                    if (routePlannerViewModel.draggingIndex ==
+                                        null) {
+                                      routePlannerViewModel.setPendingPoint(
+                                        point,
+                                      );
+                                    }
+                                  } else if (pinsViewModel.isAddingPin) {
+                                    AddPinDialog.show(
+                                      context,
+                                      point,
+                                      pinsViewModel,
+                                    );
+                                  }
+                                },
                               ),
                               children: [
                                 ...customTileLayers,
@@ -200,93 +263,113 @@ class _MapScreenState extends State<MapScreen> {
                                 const TrackedRouteLine(),
                                 MapDirectionLine(mapController: _mapController),
                                 MapUserMarker(mapController: _mapController),
+                                const WeatherMonitorPinsLayer(),
                               ],
                             );
                           },
                         );
                       },
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
-              if (viewModel.isLoading)
-                Container(
-                  color: Colors.black.withOpacity(0.3),
-                  child: const Center(child: CircularProgressIndicator()),
-                ),
-              if (viewModel.errorMessage != null)
-                Positioned(
-                  top: 20,
-                  left: 20,
-                  right: 20,
-                  child: Builder(
-                    builder: (context) {
-                      final l10n = AppLocalizations.of(context)!;
-                      final errorKey = viewModel.errorMessage!;
-                      String errorText;
-                      if (errorKey.contains(':')) {
-                        final parts = errorKey.split(':');
-                        final key = parts[0];
-                        final param = parts.length > 1 ? parts[1] : '';
-                        switch (key) {
-                          case 'errorGettingLocation':
-                            errorText = l10n.errorGettingLocation(param);
-                            break;
-                          case 'errorUpdatingLocation':
-                            errorText = l10n.errorUpdatingLocation(param);
-                            break;
-                          default:
-                            errorText = errorKey;
-                        }
-                      } else {
-                        switch (errorKey) {
-                          case 'locationServicesDisabled':
-                            errorText = l10n.locationServicesDisabled;
-                            break;
-                          case 'locationPermissionDenied':
-                            errorText = l10n.locationPermissionDenied;
-                            break;
-                          case 'locationPermissionDeniedForever':
-                            errorText = l10n.locationPermissionDeniedForever;
-                            break;
-                          default:
-                            errorText = errorKey;
-                        }
-                      }
-                      return Card(
-                        color: Colors.red[50],
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Row(
+              Selector<MapViewModel, bool>(
+                selector: (_, viewModel) => viewModel.isLoading,
+                builder: (context, isLoading, child) {
+                  if (isLoading) {
+                    return Container(
+                      color: Colors.black.withOpacity(0.3),
+                      child: const Center(child: CircularProgressIndicator()),
+                    );
+                  }
+                  return const SizedBox.shrink();
+                },
+              ),
+              Selector<MapViewModel, String?>(
+                selector: (_, viewModel) => viewModel.errorMessage,
+                builder: (context, errorMessage, child) {
+                  if (errorMessage != null) {
+                    return Positioned(
+                      top: 20,
+                      left: 20,
+                      right: 20,
+                      child: Builder(
+                        builder: (context) {
+                          final l10n = AppLocalizations.of(context)!;
+                          final errorKey = errorMessage;
+                          final mapViewModel = context.read<MapViewModel>();
+                          String errorText;
+                          if (errorKey.contains(':')) {
+                            final parts = errorKey.split(':');
+                            final key = parts[0];
+                            final param = parts.length > 1 ? parts[1] : '';
+                            switch (key) {
+                              case 'errorGettingLocation':
+                                errorText = l10n.errorGettingLocation(param);
+                                break;
+                              case 'errorUpdatingLocation':
+                                errorText = l10n.errorUpdatingLocation(param);
+                                break;
+                              default:
+                                errorText = errorKey;
+                            }
+                          } else {
+                            switch (errorKey) {
+                              case 'locationServicesDisabled':
+                                errorText = l10n.locationServicesDisabled;
+                                break;
+                              case 'locationPermissionDenied':
+                                errorText = l10n.locationPermissionDenied;
+                                break;
+                              case 'locationPermissionDeniedForever':
+                                errorText =
+                                    l10n.locationPermissionDeniedForever;
+                                break;
+                              default:
+                                errorText = errorKey;
+                            }
+                          }
+                          return Card(
+                            color: Colors.red[50],
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(
-                                    Icons.error_outline,
-                                    color: Colors.red[700],
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.error_outline,
+                                        color: Colors.red[700],
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: Text(
+                                          errorText,
+                                          style: TextStyle(
+                                            color: Colors.red[900],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  const SizedBox(width: 8),
-                                  Expanded(
-                                    child: Text(
-                                      errorText,
-                                      style: TextStyle(color: Colors.red[900]),
-                                    ),
+                                  const SizedBox(height: 8),
+                                  ElevatedButton(
+                                    onPressed: () =>
+                                        mapViewModel.getCurrentLocation(),
+                                    child: Text(l10n.tryAgain),
                                   ),
                                 ],
                               ),
-                              const SizedBox(height: 8),
-                              ElevatedButton(
-                                onPressed: () => viewModel.getCurrentLocation(),
-                                child: Text(l10n.tryAgain),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  }
+                  return const SizedBox.shrink();
+                },
+              ),
 
               const MapNavigationData(),
 
@@ -297,6 +380,8 @@ class _MapScreenState extends State<MapScreen> {
               const RoutePlanner(),
 
               const RoutePointConfirmation(),
+
+              const WeatherPinAdditionMode(),
 
               const NavigationStatus(),
 

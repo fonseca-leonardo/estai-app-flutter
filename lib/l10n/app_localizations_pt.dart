@@ -327,7 +327,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get darkModeDescription => 'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
 
   @override
-  String get saveRouteForReuse => 'Salvar rota para reutilização';
+  String get saveRouteForReuse => 'Salvar para reutilização';
 
   @override
   String get saveRouteForReuseDescription => 'Salve esta rota para poder usá-la novamente no futuro';
@@ -447,4 +447,42 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get goToLogin => 'Ir para Login';
+
+  @override
+  String get addWeatherPin => 'Adicionar Pin de Clima';
+
+  @override
+  String get weatherPinsList => 'Pontos de Monitoramento de Clima';
+
+  @override
+  String get pinName => 'Nome do Pin';
+
+  @override
+  String get enterPinName => 'Digite o nome do pin';
+
+  @override
+  String get deletePin => 'Remover';
+
+  @override
+  String get editPinName => 'Editar Nome';
+
+  @override
+  String get noPinsAdded => 'Nenhum pin adicionado';
+
+  @override
+  String get addingPinMode => 'Modo de Adição Ativo';
+
+  @override
+  String get tapMapToAddPin => 'Segure no mapa para adicionar';
+
+  @override
+  String get currentLocation => 'Localização atual';
+
+  @override
+  String get save => 'Salvar';
+
+  @override
+  String confirmDeletePin(String pinName) {
+    return 'Tem certeza que deseja remover o pin \"$pinName\"?';
+  }
 }
