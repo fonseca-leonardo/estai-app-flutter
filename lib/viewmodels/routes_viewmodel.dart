@@ -309,6 +309,29 @@ class RoutesViewModel extends ChangeNotifier {
     }
   }
 
+  Future<void> deleteAllUserRoutes(String userId) async {
+    try {
+      // Delete all routes from Firestore
+      final routesSnapshot = await routesCollection(userId).get();
+      final batch = _firestore.batch();
+      for (final doc in routesSnapshot.docs) {
+        batch.delete(doc.reference);
+      }
+      await batch.commit();
+
+      // Clear local routes from SharedPreferences
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(_localRoutesKey);
+
+      // Clear local state
+      _routes = [];
+      notifyListeners();
+    } catch (e) {
+      debugPrint('Error deleting all user routes: $e');
+      rethrow;
+    }
+  }
+
   @override
   void dispose() {
     _routesStreamSubscription?.cancel();

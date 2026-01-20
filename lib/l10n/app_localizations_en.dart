@@ -485,4 +485,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String confirmDeletePin(String pinName) {
     return 'Are you sure you want to remove the pin \"$pinName\"?';
   }
+
+  @override
+  String get deleteAccount => 'Delete Account';
+
+  @override
+  String get deleteAccountDescription => 'Permanently delete your account and all associated data';
+
+  @override
+  String get deleteAccountWarning => 'This action cannot be undone. All your data will be permanently lost.';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Confirm Account Deletion';
+
+  @override
+  String get deleteAccountConfirmMessage => 'Are you sure you want to delete your account? This action is irreversible and will remove:';
+
+  @override
+  String get deleteAccountConfirmItems => '• Your authentication account\n• All saved routes\n• All associated data';
+
+  @override
+  String get deleteAccountSuccess => 'Account deleted successfully';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Error deleting account: $error';
+  }
+
+  @override
+  String get deleteAccountRequiresRecentLogin => 'To delete your account, you need to sign in again for security.';
+
+  @override
+  String get typeDeleteToConfirm => 'Type DELETE to confirm';
 }

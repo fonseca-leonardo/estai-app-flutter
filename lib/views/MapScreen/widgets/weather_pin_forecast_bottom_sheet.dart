@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../utils/coordinate_formatter.dart';
-import '../../../viewmodels/auth_viewmodel.dart';
 import '../../../viewmodels/weather_forecast_viewmodel.dart';
 import '../../../viewmodels/weather_monitor_pins_viewmodel.dart';
 import '../../../models/weather_monitor_pin.dart';
-import 'login_required_widget.dart';
 import 'weather_timeline_item.dart';
 
 class WeatherPinForecastBottomSheet extends StatefulWidget {
@@ -24,10 +22,7 @@ class WeatherPinForecastBottomSheet extends StatefulWidget {
       listen: false,
     );
 
-    if (weatherViewModel.shouldFetchForecasts(
-      pin.latitude,
-      pin.longitude,
-    )) {
+    if (weatherViewModel.shouldFetchForecasts(pin.latitude, pin.longitude)) {
       weatherViewModel.fetchForecasts(pin.latitude, pin.longitude);
     }
 
@@ -38,8 +33,7 @@ class WeatherPinForecastBottomSheet extends StatefulWidget {
       useRootNavigator: false,
       enableDrag: true,
       useSafeArea: true,
-      builder: (bottomSheetContext) =>
-          WeatherPinForecastBottomSheet(pin: pin),
+      builder: (bottomSheetContext) => WeatherPinForecastBottomSheet(pin: pin),
     );
   }
 }
@@ -165,11 +159,7 @@ class _WeatherPinForecastBottomSheetState
             ),
             Row(
               children: [
-                const Icon(
-                  Icons.thermostat,
-                  color: Colors.cyan,
-                  size: 24,
-                ),
+                const Icon(Icons.thermostat, color: Colors.cyan, size: 24),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -210,12 +200,8 @@ class _WeatherPinForecastBottomSheetState
               ],
             ),
             const SizedBox(height: 20),
-            Consumer2<WeatherForecastViewModel, AuthViewModel>(
-              builder: (context, viewModel, authViewModel, child) {
-                if (!authViewModel.isAuthenticated) {
-                  return const LoginRequiredWidget();
-                }
-
+            Consumer<WeatherForecastViewModel>(
+              builder: (context, viewModel, child) {
                 if (viewModel.isLoading) {
                   return const SizedBox(
                     height: 200,
@@ -338,10 +324,11 @@ class _WeatherPinForecastBottomSheetState
               width: double.infinity,
               child: ElevatedButton.icon(
                 onPressed: () {
-                  final pinsViewModel = Provider.of<WeatherMonitorPinsViewModel>(
-                    context,
-                    listen: false,
-                  );
+                  final pinsViewModel =
+                      Provider.of<WeatherMonitorPinsViewModel>(
+                        context,
+                        listen: false,
+                      );
                   pinsViewModel.removePin(widget.pin.id);
                   Navigator.of(context).pop();
                 },

@@ -385,6 +385,32 @@
         "type": "String"
       }
     }
-  }
+  },
+  "deleteAccount": "Excluir Conta",
+  "@deleteAccount": {},
+  "deleteAccountDescription": "Excluir permanentemente sua conta e todos os dados associados",
+  "@deleteAccountDescription": {},
+  "deleteAccountWarning": "Esta ação não pode ser desfeita. Todos os seus dados serão perdidos permanentemente.",
+  "@deleteAccountWarning": {},
+  "deleteAccountConfirmTitle": "Confirmar Exclusão de Conta",
+  "@deleteAccountConfirmTitle": {},
+  "deleteAccountConfirmMessage": "Tem certeza que deseja excluir sua conta? Esta ação é irreversível e removerá:",
+  "@deleteAccountConfirmMessage": {},
+  "deleteAccountConfirmItems": "• Sua conta de autenticação\n• Todas as rotas salvas\n• Todos os dados associados",
+  "@deleteAccountConfirmItems": {},
+  "deleteAccountSuccess": "Conta excluída com sucesso",
+  "@deleteAccountSuccess": {},
+  "deleteAccountError": "Erro ao excluir conta: {error}",
+  "@deleteAccountError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteAccountRequiresRecentLogin": "Para excluir sua conta, você precisa fazer login novamente por segurança.",
+  "@deleteAccountRequiresRecentLogin": {},
+  "typeDeleteToConfirm": "Digite EXCLUIR para confirmar",
+  "@typeDeleteToConfirm": {}
 }
 

@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -324,5 +326,82 @@ class AuthViewModel extends ChangeNotifier {
   void resetPasswordResetState() {
     _isPasswordResetSent = false;
     notifyListeners();
+  }
+
+  Future<bool> deleteAccount(String userId) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final user = _currentUser;
+      if (user == null) {
+        _isLoading = false;
+        _errorMessage = 'deleteAccountError:No user logged in';
+        notifyListeners();
+        return false;
+      }
+
+      // 1. Delete all routes from Firestore
+      try {
+        final firestore = FirebaseFirestore.instance;
+        final routesCollection = firestore
+            .collection('estai')
+            .doc(userId)
+            .collection('routes');
+        
+        final routesSnapshot = await routesCollection.get();
+        final batch = firestore.batch();
+        for (final doc in routesSnapshot.docs) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+      } catch (e) {
+        debugPrint('Error deleting routes from Firestore: $e');
+        // Continue even if routes deletion fails
+      }
+
+      // 2. Delete local routes from SharedPreferences
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.remove('local_routes');
+      } catch (e) {
+        debugPrint('Error deleting local routes: $e');
+        // Continue even if local deletion fails
+      }
+
+      // 3. Delete Firebase Auth account (last step)
+      await user.delete();
+
+      // Sign out Google if applicable
+      try {
+        final GoogleSignIn googleSignIn = GoogleSignIn.instance;
+        await googleSignIn.signOut();
+      } catch (e) {
+        debugPrint('Error signing out from Google: $e');
+      }
+
+      _currentUser = null;
+      _isLoading = false;
+      _errorMessage = null;
+      notifyListeners();
+      return true;
+    } on FirebaseAuthException catch (e) {
+      _isLoading = false;
+      switch (e.code) {
+        case 'requires-recent-login':
+          _errorMessage = 'deleteAccountRequiresRecentLogin';
+          break;
+        default:
+          _errorMessage = 'deleteAccountError:${e.message ?? e.code}';
+      }
+      notifyListeners();
+      return false;
+    } catch (e) {
+      _isLoading = false;
+      _errorMessage = 'deleteAccountError:$e';
+      notifyListeners();
+      return false;
+    }
   }
 }

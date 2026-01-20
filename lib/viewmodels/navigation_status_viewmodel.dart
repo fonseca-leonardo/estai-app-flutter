@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:geolocator/geolocator.dart';
 import 'settings_viewmodel.dart';
 
 class NavigationStatusViewModel extends ChangeNotifier {
@@ -10,6 +11,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
   DateTime? _startTime;
   List<LatLng> _trackedRoute = [];
   SettingsViewModel? _settingsViewModel;
+  StreamSubscription<Position>? _backgroundLocationSubscription;
 
   Duration get elapsedTime => _elapsedTime;
   bool get isNavigating => _isNavigating;
@@ -32,6 +34,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
   @override
   void dispose() {
     _timer?.cancel();
+    _backgroundLocationSubscription?.cancel();
     _settingsViewModel?.removeListener(_onSettingsChanged);
     super.dispose();
   }
@@ -41,6 +44,13 @@ class NavigationStatusViewModel extends ChangeNotifier {
     final minutes = (_elapsedTime.inMinutes % 60).toString().padLeft(2, '0');
     final seconds = (_elapsedTime.inSeconds % 60).toString().padLeft(2, '0');
     return '$hours:$minutes:$seconds';
+  }
+
+  void syncElapsedTime() {
+    if (_isNavigating && _startTime != null) {
+      _elapsedTime = DateTime.now().difference(_startTime!);
+      notifyListeners();
+    }
   }
 
   double _calculateTotalDistance() {
@@ -81,7 +91,50 @@ class NavigationStatusViewModel extends ChangeNotifier {
         notifyListeners();
       }
     });
+    _startBackgroundLocationTracking();
     notifyListeners();
+  }
+
+  Future<void> _startBackgroundLocationTracking() async {
+    try {
+      LocationPermission permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied ||
+          permission == LocationPermission.deniedForever) {
+        permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied ||
+            permission == LocationPermission.deniedForever) {
+          return;
+        }
+      }
+
+      if (permission != LocationPermission.whileInUse &&
+          permission != LocationPermission.always) {
+        permission = await Geolocator.requestPermission();
+      }
+
+      final locationSettings = LocationSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: _minimumDistanceMeters.toInt(),
+      );
+
+      _backgroundLocationSubscription?.cancel();
+      _backgroundLocationSubscription =
+          Geolocator.getPositionStream(
+            locationSettings: locationSettings,
+          ).listen(
+            (Position position) {
+              if (_isNavigating) {
+                final point = LatLng(position.latitude, position.longitude);
+                addTrackedPoint(point);
+              }
+            },
+            onError: (error) {
+              debugPrint('Background location error: $error');
+            },
+          );
+    } catch (e) {
+      debugPrint('Error starting background location tracking: $e');
+    }
   }
 
   void addTrackedPoint(LatLng point) {
@@ -106,6 +159,8 @@ class NavigationStatusViewModel extends ChangeNotifier {
   void stopNavigation() {
     _timer?.cancel();
     _timer = null;
+    _backgroundLocationSubscription?.cancel();
+    _backgroundLocationSubscription = null;
     _isNavigating = false;
     _trackedRoute = [];
     notifyListeners();
@@ -114,6 +169,8 @@ class NavigationStatusViewModel extends ChangeNotifier {
   void resetNavigation() {
     _timer?.cancel();
     _timer = null;
+    _backgroundLocationSubscription?.cancel();
+    _backgroundLocationSubscription = null;
     _elapsedTime = Duration.zero;
     _isNavigating = false;
     _startTime = null;

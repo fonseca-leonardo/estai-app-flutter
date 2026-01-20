@@ -28,10 +28,7 @@ class LoginRequiredWidget extends StatelessWidget {
                 Text(
                   l10n.loginRequiredForForecast,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                  ),
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
                 const SizedBox(height: 16),
                 SizedBox(
@@ -39,9 +36,7 @@ class LoginRequiredWidget extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => const LoginScreen(),
-                        ),
+                        MaterialPageRoute(builder: (_) => const LoginScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -64,9 +59,7 @@ class LoginRequiredWidget extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => const SignUpScreen(),
-                        ),
+                        MaterialPageRoute(builder: (_) => const SignUpScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(

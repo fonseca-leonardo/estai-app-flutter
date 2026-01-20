@@ -485,4 +485,36 @@ class AppLocalizationsPt extends AppLocalizations {
   String confirmDeletePin(String pinName) {
     return 'Tem certeza que deseja remover o pin \"$pinName\"?';
   }
+
+  @override
+  String get deleteAccount => 'Excluir Conta';
+
+  @override
+  String get deleteAccountDescription => 'Excluir permanentemente sua conta e todos os dados associados';
+
+  @override
+  String get deleteAccountWarning => 'Esta ação não pode ser desfeita. Todos os seus dados serão perdidos permanentemente.';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Confirmar Exclusão de Conta';
+
+  @override
+  String get deleteAccountConfirmMessage => 'Tem certeza que deseja excluir sua conta? Esta ação é irreversível e removerá:';
+
+  @override
+  String get deleteAccountConfirmItems => '• Sua conta de autenticação\n• Todas as rotas salvas\n• Todos os dados associados';
+
+  @override
+  String get deleteAccountSuccess => 'Conta excluída com sucesso';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Erro ao excluir conta: $error';
+  }
+
+  @override
+  String get deleteAccountRequiresRecentLogin => 'Para excluir sua conta, você precisa fazer login novamente por segurança.';
+
+  @override
+  String get typeDeleteToConfirm => 'Digite EXCLUIR para confirmar';
 }

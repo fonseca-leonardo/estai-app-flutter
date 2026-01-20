@@ -994,6 +994,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Are you sure you want to remove the pin \"{pinName}\"?'**
   String confirmDeletePin(String pinName);
+
+  /// No description provided for @deleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get deleteAccount;
+
+  /// No description provided for @deleteAccountDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently delete your account and all associated data'**
+  String get deleteAccountDescription;
+
+  /// No description provided for @deleteAccountWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'This action cannot be undone. All your data will be permanently lost.'**
+  String get deleteAccountWarning;
+
+  /// No description provided for @deleteAccountConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Account Deletion'**
+  String get deleteAccountConfirmTitle;
+
+  /// No description provided for @deleteAccountConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete your account? This action is irreversible and will remove:'**
+  String get deleteAccountConfirmMessage;
+
+  /// No description provided for @deleteAccountConfirmItems.
+  ///
+  /// In en, this message translates to:
+  /// **'• Your authentication account\n• All saved routes\n• All associated data'**
+  String get deleteAccountConfirmItems;
+
+  /// No description provided for @deleteAccountSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deleted successfully'**
+  String get deleteAccountSuccess;
+
+  /// No description provided for @deleteAccountError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error deleting account: {error}'**
+  String deleteAccountError(String error);
+
+  /// No description provided for @deleteAccountRequiresRecentLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'To delete your account, you need to sign in again for security.'**
+  String get deleteAccountRequiresRecentLogin;
+
+  /// No description provided for @typeDeleteToConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Type DELETE to confirm'**
+  String get typeDeleteToConfirm;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

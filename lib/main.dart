@@ -67,15 +67,41 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final settingsViewModel = SettingsViewModel();
-    final navigationStatusViewModel = NavigationStatusViewModel();
-    navigationStatusViewModel.setSettingsViewModel(settingsViewModel);
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  late final SettingsViewModel settingsViewModel;
+  late final NavigationStatusViewModel navigationStatusViewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    settingsViewModel = SettingsViewModel();
+    navigationStatusViewModel = NavigationStatusViewModel();
+    navigationStatusViewModel.setSettingsViewModel(settingsViewModel);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      navigationStatusViewModel.syncElapsedTime();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthViewModel()),

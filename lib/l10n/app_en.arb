@@ -385,6 +385,32 @@
         "type": "String"
       }
     }
-  }
+  },
+  "deleteAccount": "Delete Account",
+  "@deleteAccount": {},
+  "deleteAccountDescription": "Permanently delete your account and all associated data",
+  "@deleteAccountDescription": {},
+  "deleteAccountWarning": "This action cannot be undone. All your data will be permanently lost.",
+  "@deleteAccountWarning": {},
+  "deleteAccountConfirmTitle": "Confirm Account Deletion",
+  "@deleteAccountConfirmTitle": {},
+  "deleteAccountConfirmMessage": "Are you sure you want to delete your account? This action is irreversible and will remove:",
+  "@deleteAccountConfirmMessage": {},
+  "deleteAccountConfirmItems": "• Your authentication account\n• All saved routes\n• All associated data",
+  "@deleteAccountConfirmItems": {},
+  "deleteAccountSuccess": "Account deleted successfully",
+  "@deleteAccountSuccess": {},
+  "deleteAccountError": "Error deleting account: {error}",
+  "@deleteAccountError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteAccountRequiresRecentLogin": "To delete your account, you need to sign in again for security.",
+  "@deleteAccountRequiresRecentLogin": {},
+  "typeDeleteToConfirm": "Type DELETE to confirm",
+  "@typeDeleteToConfirm": {}
 }
 
