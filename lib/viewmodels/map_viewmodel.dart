@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class MapViewModel extends ChangeNotifier {
   Position? _currentPosition;
@@ -56,6 +58,10 @@ class MapViewModel extends ChangeNotifier {
         return;
       }
 
+      if (permission == LocationPermission.whileInUse) {
+        await _requestAlwaysPermission();
+      }
+
       // Obter localização atual uma vez para inicialização rápida
       _currentPosition = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
@@ -76,10 +82,33 @@ class MapViewModel extends ChangeNotifier {
   void _startLocationStream() {
     _positionStreamSubscription?.cancel();
 
-    const locationSettings = LocationSettings(
-      accuracy: LocationAccuracy.high,
-      distanceFilter: 5,
-    );
+    late LocationSettings locationSettings;
+
+    if (Platform.isAndroid) {
+      locationSettings = AndroidSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: 5,
+        foregroundNotificationConfig: const ForegroundNotificationConfig(
+          notificationTitle: "Estai",
+          notificationText: "Rastreando sua localização em segundo plano",
+          enableWakeLock: true,
+        ),
+      );
+    } else if (Platform.isIOS) {
+      locationSettings = AppleSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: 5,
+        activityType: ActivityType.otherNavigation,
+        pauseLocationUpdatesAutomatically: false,
+        showBackgroundLocationIndicator: true,
+        allowBackgroundLocationUpdates: true,
+      );
+    } else {
+      locationSettings = const LocationSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: 5,
+      );
+    }
 
     _positionStreamSubscription =
         Geolocator.getPositionStream(locationSettings: locationSettings).listen(
@@ -145,5 +174,18 @@ class MapViewModel extends ChangeNotifier {
   void setIsPlanningRoute(bool isPlanning) {
     _isPlanningRoute = isPlanning;
     notifyListeners();
+  }
+
+  Future<void> _requestAlwaysPermission() async {
+    try {
+      final status = await Permission.locationAlways.request();
+      if (kDebugMode) {
+        print('Location always permission status: $status');
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('Error requesting always permission: $e');
+      }
+    }
   }
 }

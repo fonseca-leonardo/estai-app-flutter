@@ -94,13 +94,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      navigationStatusViewModel.syncElapsedTime();
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [

@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsViewModel extends ChangeNotifier {
   static const String _minimumDistanceKey = 'minimum_distance_meters';
-  static const double _defaultMinimumDistance = 15.0;
+  static const double _defaultMinimumDistance = 1.0;
 
   double _minimumDistanceMeters = _defaultMinimumDistance;
   bool _isLoading = true;

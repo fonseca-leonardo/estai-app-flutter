@@ -184,7 +184,7 @@ class _NavigationSettingsScreenState extends State<NavigationSettingsScreen> {
                               ),
                               child: Slider(
                                 value: distanceValue,
-                                min: 5.0,
+                                min: 1.0,
                                 max: 50.0,
                                 divisions: 90,
                                 label: l10n.meters(
@@ -211,7 +211,7 @@ class _NavigationSettingsScreenState extends State<NavigationSettingsScreen> {
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   child: Text(
-                                    '5 m',
+                                    '1 m',
                                     style: TextStyle(
                                       color: Colors.grey[500],
                                       fontSize: 12,
