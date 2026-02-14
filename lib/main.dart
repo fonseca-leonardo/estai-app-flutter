@@ -21,6 +21,7 @@ import 'viewmodels/list_maps_viewmodel.dart';
 import 'viewmodels/ad_banner_viewmodel.dart';
 import 'viewmodels/weather_forecast_viewmodel.dart';
 import 'viewmodels/weather_monitor_pins_viewmodel.dart';
+import 'viewmodels/watch_connectivity_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -77,6 +78,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final SettingsViewModel settingsViewModel;
   late final NavigationStatusViewModel navigationStatusViewModel;
+  late final MapViewModel mapViewModel;
+  late final WatchConnectivityViewModel watchConnectivityViewModel;
 
   @override
   void initState() {
@@ -85,6 +88,19 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     settingsViewModel = SettingsViewModel();
     navigationStatusViewModel = NavigationStatusViewModel();
     navigationStatusViewModel.setSettingsViewModel(settingsViewModel);
+    
+    mapViewModel = MapViewModel();
+    watchConnectivityViewModel = WatchConnectivityViewModel();
+    
+    _initializeWatchConnectivity();
+  }
+  
+  Future<void> _initializeWatchConnectivity() async {
+    await watchConnectivityViewModel.initialize();
+    watchConnectivityViewModel.setViewModels(
+      mapViewModel: mapViewModel,
+      navigationViewModel: navigationStatusViewModel,
+    );
   }
 
   @override
@@ -98,7 +114,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
-        ChangeNotifierProvider(create: (_) => MapViewModel()),
+        ChangeNotifierProvider.value(value: mapViewModel),
         ChangeNotifierProvider(create: (_) => TideViewModel()),
         ChangeNotifierProvider(create: (_) => RoutePlannerViewModel()),
         ChangeNotifierProvider(create: (_) => RoutesViewModel()),
@@ -108,6 +124,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => WeatherMonitorPinsViewModel()),
         ChangeNotifierProvider.value(value: settingsViewModel),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
+        ChangeNotifierProvider.value(value: watchConnectivityViewModel),
       ],
       child: MaterialApp(
         title: 'Estai - Mapa',
