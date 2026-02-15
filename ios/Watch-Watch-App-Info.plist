@@ -8,5 +8,9 @@
 		<array>
 			<integer>4</integer>
 		</array>
+		<key>WKBackgroundModes</key>
+		<array>
+			<string>self-care</string>
+		</array>
 	</dict>
 </plist>
