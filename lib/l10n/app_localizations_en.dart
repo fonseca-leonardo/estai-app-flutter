@@ -167,6 +167,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get adjustments => 'Settings';
 
   @override
+  String get improvementsAndSuggestions => 'Feedback';
+
+  @override
+  String get feedbackSuggestionPlaceholder => 'Share your suggestion or improvement (max 500 characters)';
+
+  @override
+  String get feedbackSentSuccess => 'Thank you! Your feedback was sent.';
+
+  @override
+  String get feedbackError => 'Could not send feedback. Try again later.';
+
+  @override
+  String feedbackMaxCharacters(String current, String max) {
+    return '$current/$max';
+  }
+
+  @override
   String get addPoint => 'Add point?';
 
   @override
@@ -247,6 +264,39 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get navigationSettingsDescription => 'Configure navigation and tracking options';
+
+  @override
+  String get navigationPermission => 'GPS Permissions';
+
+  @override
+  String get navigationPermissionDescription => 'View the current location permission status and change it in system settings if needed.';
+
+  @override
+  String get locationPermissionAlways => 'Always allow';
+
+  @override
+  String get locationPermissionAlwaysSubtitle => 'Location available in foreground and background.';
+
+  @override
+  String get locationPermissionWhileInUse => 'While using the app';
+
+  @override
+  String get locationPermissionWhileInUseSubtitle => 'Enable \"Always\" to track during navigation.';
+
+  @override
+  String get openAppSettings => 'Open settings';
+
+  @override
+  String get locationPermissionChecking => 'Checking...';
+
+  @override
+  String get locationPermissionCheckingSubtitle => 'Please wait while we check.';
+
+  @override
+  String get locationPermissionDeniedSubtitle => 'The app cannot access your location.';
+
+  @override
+  String get locationPermissionDeniedForeverSubtitle => 'You denied the permission. Change it in system settings.';
 
   @override
   String get userAccount => 'User Account';
@@ -446,13 +496,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginRequiredForForecast => 'To access weather forecast, you need to be logged in.';
 
   @override
+  String get loginRequiredForAction => 'To perform this action you need to be logged in.';
+
+  @override
   String get goToLogin => 'Go to Login';
 
   @override
   String get addWeatherPin => 'Add Weather Pin';
 
   @override
-  String get weatherPinsList => 'Weather Monitor Pins';
+  String get weatherPinsList => 'Weather';
 
   @override
   String get pinName => 'Pin Name';

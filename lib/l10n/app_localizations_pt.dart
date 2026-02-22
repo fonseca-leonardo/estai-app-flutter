@@ -167,6 +167,23 @@ class AppLocalizationsPt extends AppLocalizations {
   String get adjustments => 'Ajustes';
 
   @override
+  String get improvementsAndSuggestions => 'Sugestões';
+
+  @override
+  String get feedbackSuggestionPlaceholder => 'Compartilhe sua sugestão ou melhoria (máx. 500 caracteres)';
+
+  @override
+  String get feedbackSentSuccess => 'Obrigado! Seu feedback foi enviado.';
+
+  @override
+  String get feedbackError => 'Não foi possível enviar o feedback. Tente novamente.';
+
+  @override
+  String feedbackMaxCharacters(String current, String max) {
+    return '$current/$max';
+  }
+
+  @override
   String get addPoint => 'Adicionar ponto?';
 
   @override
@@ -247,6 +264,39 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get navigationSettingsDescription => 'Configure as opções de navegação e rastreamento';
+
+  @override
+  String get navigationPermission => 'Permissões GPS';
+
+  @override
+  String get navigationPermissionDescription => 'Veja o status atual da permissão de localização e altere nas configurações do sistema se necessário.';
+
+  @override
+  String get locationPermissionAlways => 'Sempre permitir';
+
+  @override
+  String get locationPermissionAlwaysSubtitle => 'Localização disponível em primeiro e segundo plano.';
+
+  @override
+  String get locationPermissionWhileInUse => 'Enquanto usa o app';
+
+  @override
+  String get locationPermissionWhileInUseSubtitle => 'Ative \"Sempre\" para rastrear durante a navegação.';
+
+  @override
+  String get openAppSettings => 'Abrir configurações';
+
+  @override
+  String get locationPermissionChecking => 'Verificando...';
+
+  @override
+  String get locationPermissionCheckingSubtitle => 'Aguarde enquanto verificamos.';
+
+  @override
+  String get locationPermissionDeniedSubtitle => 'O app não pode acessar sua localização.';
+
+  @override
+  String get locationPermissionDeniedForeverSubtitle => 'Você negou a permissão. Altere nas configurações do sistema.';
 
   @override
   String get userAccount => 'Conta do Usuário';
@@ -446,13 +496,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get loginRequiredForForecast => 'Para acessar a previsão do tempo, você precisa estar logado.';
 
   @override
+  String get loginRequiredForAction => 'Para realizar esta ação é preciso estar logado.';
+
+  @override
   String get goToLogin => 'Ir para Login';
 
   @override
   String get addWeatherPin => 'Adicionar Pin de Clima';
 
   @override
-  String get weatherPinsList => 'Pontos de Monitoramento de Clima';
+  String get weatherPinsList => 'Clima';
 
   @override
   String get pinName => 'Nome do Pin';

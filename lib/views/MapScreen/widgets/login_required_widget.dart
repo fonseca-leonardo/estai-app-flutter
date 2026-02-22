@@ -6,7 +6,14 @@ import '../../LoginScreen/login_screen.dart';
 import '../../SignUpScreen/sign_up_screen.dart';
 
 class LoginRequiredWidget extends StatelessWidget {
-  const LoginRequiredWidget({super.key});
+  final VoidCallback? onNavigateToLogin;
+  final VoidCallback? onNavigateToSignUp;
+
+  const LoginRequiredWidget({
+    super.key,
+    this.onNavigateToLogin,
+    this.onNavigateToSignUp,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +33,7 @@ class LoginRequiredWidget extends StatelessWidget {
                 const Icon(Icons.lock_outline, color: Colors.white),
                 const SizedBox(height: 12),
                 Text(
-                  l10n.loginRequiredForForecast,
+                  l10n.loginRequiredForAction,
                   textAlign: TextAlign.center,
                   style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
@@ -35,9 +42,15 @@ class LoginRequiredWidget extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const LoginScreen()),
-                      );
+                      if (onNavigateToLogin != null) {
+                        onNavigateToLogin!();
+                      } else {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const LoginScreen(),
+                          ),
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -58,9 +71,15 @@ class LoginRequiredWidget extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const SignUpScreen()),
-                      );
+                      if (onNavigateToSignUp != null) {
+                        onNavigateToSignUp!();
+                      } else {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const SignUpScreen(),
+                          ),
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[800],

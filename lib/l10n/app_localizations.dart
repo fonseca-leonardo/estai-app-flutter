@@ -395,6 +395,36 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get adjustments;
 
+  /// No description provided for @improvementsAndSuggestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback'**
+  String get improvementsAndSuggestions;
+
+  /// No description provided for @feedbackSuggestionPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your suggestion or improvement (max 500 characters)'**
+  String get feedbackSuggestionPlaceholder;
+
+  /// No description provided for @feedbackSentSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you! Your feedback was sent.'**
+  String get feedbackSentSuccess;
+
+  /// No description provided for @feedbackError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not send feedback. Try again later.'**
+  String get feedbackError;
+
+  /// No description provided for @feedbackMaxCharacters.
+  ///
+  /// In en, this message translates to:
+  /// **'{current}/{max}'**
+  String feedbackMaxCharacters(String current, String max);
+
   /// No description provided for @addPoint.
   ///
   /// In en, this message translates to:
@@ -538,6 +568,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Configure navigation and tracking options'**
   String get navigationSettingsDescription;
+
+  /// No description provided for @navigationPermission.
+  ///
+  /// In en, this message translates to:
+  /// **'GPS Permissions'**
+  String get navigationPermission;
+
+  /// No description provided for @navigationPermissionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'View the current location permission status and change it in system settings if needed.'**
+  String get navigationPermissionDescription;
+
+  /// No description provided for @locationPermissionAlways.
+  ///
+  /// In en, this message translates to:
+  /// **'Always allow'**
+  String get locationPermissionAlways;
+
+  /// No description provided for @locationPermissionAlwaysSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location available in foreground and background.'**
+  String get locationPermissionAlwaysSubtitle;
+
+  /// No description provided for @locationPermissionWhileInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'While using the app'**
+  String get locationPermissionWhileInUse;
+
+  /// No description provided for @locationPermissionWhileInUseSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable \"Always\" to track during navigation.'**
+  String get locationPermissionWhileInUseSubtitle;
+
+  /// No description provided for @openAppSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get openAppSettings;
+
+  /// No description provided for @locationPermissionChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking...'**
+  String get locationPermissionChecking;
+
+  /// No description provided for @locationPermissionCheckingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Please wait while we check.'**
+  String get locationPermissionCheckingSubtitle;
+
+  /// No description provided for @locationPermissionDeniedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The app cannot access your location.'**
+  String get locationPermissionDeniedSubtitle;
+
+  /// No description provided for @locationPermissionDeniedForeverSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You denied the permission. Change it in system settings.'**
+  String get locationPermissionDeniedForeverSubtitle;
 
   /// No description provided for @userAccount.
   ///
@@ -917,6 +1013,12 @@ abstract class AppLocalizations {
   /// **'To access weather forecast, you need to be logged in.'**
   String get loginRequiredForForecast;
 
+  /// No description provided for @loginRequiredForAction.
+  ///
+  /// In en, this message translates to:
+  /// **'To perform this action you need to be logged in.'**
+  String get loginRequiredForAction;
+
   /// No description provided for @goToLogin.
   ///
   /// In en, this message translates to:
@@ -932,7 +1034,7 @@ abstract class AppLocalizations {
   /// No description provided for @weatherPinsList.
   ///
   /// In en, this message translates to:
-  /// **'Weather Monitor Pins'**
+  /// **'Weather'**
   String get weatherPinsList;
 
   /// No description provided for @pinName.

@@ -15,6 +15,7 @@ import 'viewmodels/tide_viewmodel.dart';
 import 'viewmodels/route_planner_viewmodel.dart';
 import 'viewmodels/navigation_status_viewmodel.dart';
 import 'viewmodels/settings_viewmodel.dart';
+import 'viewmodels/navigation_permission_viewmodel.dart';
 import 'viewmodels/auth_viewmodel.dart';
 import 'viewmodels/routes_viewmodel.dart';
 import 'viewmodels/list_maps_viewmodel.dart';
@@ -123,6 +124,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => WeatherForecastViewModel()),
         ChangeNotifierProvider(create: (_) => WeatherMonitorPinsViewModel()),
         ChangeNotifierProvider.value(value: settingsViewModel),
+        ChangeNotifierProvider(create: (_) => NavigationPermissionViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
       ],

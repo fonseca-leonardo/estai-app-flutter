@@ -5,6 +5,7 @@ import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../NavigationSettingsScreen/navigation_settings_screen.dart';
+import '../NavigationPermissionScreen/navigation_permission_screen.dart';
 import '../UserAccountScreen/user_account_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 import '../LoginScreen/login_screen.dart';
@@ -75,6 +76,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (_) => const NavigationSettingsScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildSettingsTile(
+                        context,
+                        l10n.navigationPermission,
+                        Icons.location_on,
+                        () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  const NavigationPermissionScreen(),
                             ),
                           );
                         },

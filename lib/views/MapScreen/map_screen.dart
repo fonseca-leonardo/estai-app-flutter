@@ -29,6 +29,7 @@ import '../../viewmodels/weather_monitor_pins_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
 import 'widgets/weather_monitor_pins_layer.dart';
 import 'widgets/weather_pin_forecast_bottom_sheet.dart';
+import 'widgets/location_error_dialog.dart';
 
 class MapScreen extends StatefulWidget {
   final LatLng? initialLocation;
@@ -40,11 +41,12 @@ class MapScreen extends StatefulWidget {
   State<MapScreen> createState() => _MapScreenState();
 }
 
-class _MapScreenState extends State<MapScreen> {
+class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
   final MapController _mapController = MapController();
   bool _hasMovedToLocation = false;
   bool _hasMovedToInitialLocation = false;
   bool _hasOpenedPinBottomSheet = false;
+  bool _locationErrorDialogShown = false;
   LatLng? _lastTrackedPoint;
   MapViewModel? _mapViewModel;
   NavigationStatusViewModel? _navigationStatusViewModel;
@@ -55,6 +57,7 @@ class _MapScreenState extends State<MapScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _mapViewModel = context.read<MapViewModel>();
     _navigationStatusViewModel = context.read<NavigationStatusViewModel>();
 
@@ -118,7 +121,16 @@ class _MapScreenState extends State<MapScreen> {
   }
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed &&
+        _mapViewModel?.errorMessage != null) {
+      _mapViewModel!.getCurrentLocation();
+    }
+  }
+
+  @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _mapViewModel?.removeListener(_handlePositionUpdate);
     _mapController.dispose();
     super.dispose();
@@ -288,84 +300,39 @@ class _MapScreenState extends State<MapScreen> {
               Selector<MapViewModel, String?>(
                 selector: (_, viewModel) => viewModel.errorMessage,
                 builder: (context, errorMessage, child) {
-                  if (errorMessage != null) {
-                    return Positioned(
-                      top: 20,
-                      left: 20,
-                      right: 20,
-                      child: Builder(
-                        builder: (context) {
-                          final l10n = AppLocalizations.of(context)!;
-                          final errorKey = errorMessage;
-                          final mapViewModel = context.read<MapViewModel>();
-                          String errorText;
-                          if (errorKey.contains(':')) {
-                            final parts = errorKey.split(':');
-                            final key = parts[0];
-                            final param = parts.length > 1 ? parts[1] : '';
-                            switch (key) {
-                              case 'errorGettingLocation':
-                                errorText = l10n.errorGettingLocation(param);
-                                break;
-                              case 'errorUpdatingLocation':
-                                errorText = l10n.errorUpdatingLocation(param);
-                                break;
-                              default:
-                                errorText = errorKey;
-                            }
-                          } else {
-                            switch (errorKey) {
-                              case 'locationServicesDisabled':
-                                errorText = l10n.locationServicesDisabled;
-                                break;
-                              case 'locationPermissionDenied':
-                                errorText = l10n.locationPermissionDenied;
-                                break;
-                              case 'locationPermissionDeniedForever':
-                                errorText =
-                                    l10n.locationPermissionDeniedForever;
-                                break;
-                              default:
-                                errorText = errorKey;
-                            }
-                          }
-                          return Card(
-                            color: Colors.red[50],
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.error_outline,
-                                        color: Colors.red[700],
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Expanded(
-                                        child: Text(
-                                          errorText,
-                                          style: TextStyle(
-                                            color: Colors.red[900],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 8),
-                                  ElevatedButton(
-                                    onPressed: () =>
-                                        mapViewModel.getCurrentLocation(),
-                                    child: Text(l10n.tryAgain),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    );
+                  if (errorMessage == null) {
+                    if (_locationErrorDialogShown) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        if (mounted) {
+                          setState(() => _locationErrorDialogShown = false);
+                        }
+                      });
+                    }
+                    return const SizedBox.shrink();
+                  }
+                  if (!_locationErrorDialogShown) {
+                    final errorKey = errorMessage;
+                    WidgetsBinding.instance.addPostFrameCallback((_) async {
+                      if (!mounted) return;
+                      final mapViewModel = context.read<MapViewModel>();
+                      if (mapViewModel.errorMessage == null) return;
+                      final permission = await Geolocator.checkPermission();
+                      if (permission == LocationPermission.whileInUse ||
+                          permission == LocationPermission.always) {
+                        mapViewModel.getCurrentLocation();
+                        return;
+                      }
+                      if (!mounted) return;
+                      setState(() => _locationErrorDialogShown = true);
+                      LocationErrorDialog.show(
+                        context,
+                        errorKey: errorKey,
+                      ).then((_) {
+                        if (mounted) {
+                          setState(() => _locationErrorDialogShown = false);
+                        }
+                      });
+                    });
                   }
                   return const SizedBox.shrink();
                 },

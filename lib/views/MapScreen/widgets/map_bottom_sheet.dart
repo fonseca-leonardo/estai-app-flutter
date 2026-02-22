@@ -5,6 +5,9 @@ import '../../TideScreen/tide_screen.dart';
 import '../../SettingsScreen/settings_screen.dart';
 import '../../RoutesListScreen/routes_list_screen.dart';
 import '../../ListMapsScreen/list_maps_screen.dart';
+import '../../NavigationPermissionScreen/navigation_permission_screen.dart';
+import '../../WeatherPinsListScreen/weather_pins_list_screen.dart';
+import 'feedback_suggestion_dialog.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../viewmodels/navigation_status_viewmodel.dart';
 import '../../../viewmodels/route_planner_viewmodel.dart';
@@ -186,6 +189,55 @@ class MapBottomSheet extends StatelessWidget {
                             });
                           },
                         ),
+                        _GridItem(
+                          icon: Icons.lightbulb,
+                          title: l10n.improvementsAndSuggestions,
+                          onTap: () {
+                            final navigatorContext = parentContext ?? context;
+                            Navigator.pop(context);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              if (navigatorContext.mounted) {
+                                FeedbackSuggestionDialog.show(navigatorContext);
+                              }
+                            });
+                          },
+                        ),
+                        _GridItem(
+                          icon: Icons.cloud,
+                          title: l10n.weatherPinsList,
+                          onTap: () {
+                            final navigatorContext = parentContext ?? context;
+                            Navigator.pop(context);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              if (navigatorContext.mounted) {
+                                Navigator.of(navigatorContext).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const WeatherPinsListScreen(),
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                        ),
+                        _GridItem(
+                          icon: Icons.location_on,
+                          title: l10n.navigationPermission,
+                          onTap: () {
+                            final navigatorContext = parentContext ?? context;
+                            Navigator.pop(context);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              if (navigatorContext.mounted) {
+                                Navigator.of(navigatorContext).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NavigationPermissionScreen(),
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                        ),
                       ],
                     );
                   },
@@ -229,7 +281,7 @@ class _GridItem extends StatelessWidget {
         opacity: isDisabled ? 0.5 : 1.0,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1),
+            color: Colors.white.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(

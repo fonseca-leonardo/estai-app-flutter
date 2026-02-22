@@ -2,10 +2,13 @@ import 'package:estai/widgets/ad_banner_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
+import '../../viewmodels/auth_viewmodel.dart';
 import '../../viewmodels/weather_monitor_pins_viewmodel.dart';
 import '../../models/weather_monitor_pin.dart';
 import '../../utils/coordinate_formatter.dart';
 import '../MapScreen/map_screen.dart';
+import '../MapScreen/widgets/login_required_widget.dart';
+import '../../viewmodels/map_viewmodel.dart';
 
 class WeatherPinsListScreen extends StatelessWidget {
   const WeatherPinsListScreen({super.key});
@@ -21,43 +24,105 @@ class WeatherPinsListScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
       ),
-      body: Consumer<WeatherMonitorPinsViewModel>(
-        builder: (context, pinsViewModel, child) {
-          if (pinsViewModel.isLoading) {
+      body: Consumer<AuthViewModel>(
+        builder: (context, authViewModel, _) {
+          if (!authViewModel.isAuthenticated) {
             return const Center(
-              child: CircularProgressIndicator(color: Colors.white),
-            );
-          }
-
-          if (pinsViewModel.pins.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.thermostat, size: 64, color: Colors.grey[600]),
-                  const SizedBox(height: 16),
-                  Text(
-                    l10n.noPinsAdded,
-                    style: TextStyle(color: Colors.grey[400], fontSize: 16),
-                  ),
-                ],
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: LoginRequiredWidget(),
               ),
             );
           }
 
-          return ListView.builder(
-            padding: const EdgeInsets.all(20),
-            itemCount: pinsViewModel.pins.length,
-            itemBuilder: (context, index) {
-              final pin = pinsViewModel.pins[index];
-              return _PinCard(
-                pin: pin,
-                onEdit: () => _showEditPinDialog(context, pin, pinsViewModel),
-                onDelete: () =>
-                    _showDeleteConfirmation(context, pin, pinsViewModel),
-                onNavigateToMap: () => _navigateToMap(context, pin),
+          return Consumer<WeatherMonitorPinsViewModel>(
+            builder: (context, pinsViewModel, child) {
+              if (pinsViewModel.isLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(color: Colors.white),
+                );
+              }
+
+              if (pinsViewModel.pins.isEmpty) {
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.thermostat, size: 64, color: Colors.grey[600]),
+                      const SizedBox(height: 16),
+                      Text(
+                        l10n.noPinsAdded,
+                        style: TextStyle(color: Colors.grey[400], fontSize: 16),
+                      ),
+                    ],
+                  ),
+                );
+              }
+
+              return ListView.builder(
+                padding: const EdgeInsets.all(20),
+                itemCount: pinsViewModel.pins.length,
+                itemBuilder: (context, index) {
+                  final pin = pinsViewModel.pins[index];
+                  return _PinCard(
+                    pin: pin,
+                    onEdit: () => _showEditPinDialog(context, pin, pinsViewModel),
+                    onDelete: () =>
+                        _showDeleteConfirmation(context, pin, pinsViewModel),
+                    onNavigateToMap: () => _navigateToMap(context, pin),
+                  );
+                },
               );
             },
+          );
+        },
+      ),
+      floatingActionButton: Consumer<AuthViewModel>(
+        builder: (context, authViewModel, _) {
+          if (!authViewModel.isAuthenticated) {
+            return const SizedBox.shrink();
+          }
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.cyan.withValues(alpha: 0.8),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.cyan, width: 2),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.cyan.withValues(alpha: 0.4),
+                  blurRadius: 8,
+                  spreadRadius: 2,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Material(
+              color: Colors.transparent,
+              child: IconButton(
+                onPressed: () {
+                  final pinsViewModel = Provider.of<WeatherMonitorPinsViewModel>(
+                    context,
+                    listen: false,
+                  );
+                  final mapViewModel = Provider.of<MapViewModel>(
+                    context,
+                    listen: false,
+                  );
+                  if (mapViewModel.isPlanningRoute) return;
+                  pinsViewModel.setAddingPinMode(true);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const MapScreen(),
+                    ),
+                  );
+                },
+                icon: const Icon(
+                  Icons.add_location_alt,
+                  color: Colors.white,
+                ),
+                tooltip: l10n.addWeatherPin,
+              ),
+            ),
           );
         },
       ),

@@ -39,6 +39,9 @@ class CoordinateFormatter {
   /// Exemplo: 5.14 m/s -> "10.0 kt"
   static String formatSpeedInKnots(double? speedMs) {
     if (speedMs == null || speedMs < 0) {
+      return '-- kt';
+    }
+    if (speedMs == 0) {
       return '0.0 kt';
     }
     final knots = metersPerSecondToKnots(speedMs);
