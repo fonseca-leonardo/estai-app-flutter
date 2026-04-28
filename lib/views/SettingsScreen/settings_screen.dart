@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
@@ -167,6 +168,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           child: Text(l10n.createAccount),
                         ),
                       ],
+                      const SizedBox(height: 32),
+                      FutureBuilder<PackageInfo>(
+                        future: PackageInfo.fromPlatform(),
+                        builder: (context, snapshot) {
+                          final version = snapshot.data?.version ?? '—';
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 16),
+                            child: Text(
+                              l10n.appVersion(version),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.grey[500],
+                                fontSize: 13,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),

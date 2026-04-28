@@ -11,9 +11,12 @@ class MapViewModel extends ChangeNotifier {
   bool _showCustomTiles = true;
   bool _isCameraLocked = false;
   bool _isPlanningRoute = false;
+  bool _needsBackgroundLocationConsent = false;
+  bool _userRespondedToBackgroundDisclosure = false;
   StreamSubscription<Position>? _positionStreamSubscription;
   Timer? _throttleTimer;
   DateTime? _lastNotificationTime;
+  VoidCallback? onPermissionError;
 
   Position? get currentPosition => _currentPosition;
   bool get isLoading => _isLoading;
@@ -21,6 +24,7 @@ class MapViewModel extends ChangeNotifier {
   bool get showCustomTiles => _showCustomTiles;
   bool get isCameraLocked => _isCameraLocked;
   bool get isPlanningRoute => _isPlanningRoute;
+  bool get needsBackgroundLocationConsent => _needsBackgroundLocationConsent;
 
   double? get currentSpeed => _currentPosition?.speed;
   double? get currentHeading => _currentPosition?.heading;
@@ -58,8 +62,9 @@ class MapViewModel extends ChangeNotifier {
         return;
       }
 
-      if (permission == LocationPermission.whileInUse) {
-        await _requestAlwaysPermission();
+      if (permission == LocationPermission.whileInUse &&
+          !_userRespondedToBackgroundDisclosure) {
+        _needsBackgroundLocationConsent = true;
       }
 
       // Obter localização atual uma vez para inicialização rápida
@@ -176,7 +181,46 @@ class MapViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> _requestAlwaysPermission() async {
+  Future<void> requestLocationPermissionAtInit() async {
+    try {
+      bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      if (!serviceEnabled) {
+        _errorMessage = 'locationServicesDisabled';
+        notifyListeners();
+        return;
+      }
+
+      LocationPermission permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied) {
+          _errorMessage = 'locationPermissionDenied';
+          notifyListeners();
+          return;
+        }
+      }
+
+      if (permission == LocationPermission.deniedForever) {
+        _errorMessage = 'locationPermissionDeniedForever';
+        notifyListeners();
+        return;
+      }
+
+      if (permission == LocationPermission.whileInUse &&
+          !_userRespondedToBackgroundDisclosure) {
+        _needsBackgroundLocationConsent = true;
+        notifyListeners();
+      }
+    } catch (e) {
+      _errorMessage = 'errorGettingLocation:$e';
+      notifyListeners();
+    }
+  }
+
+  Future<void> requestBackgroundLocation() async {
+    _needsBackgroundLocationConsent = false;
+    _userRespondedToBackgroundDisclosure = true;
+    notifyListeners();
     try {
       final status = await Permission.locationAlways.request();
       if (kDebugMode) {
@@ -186,6 +230,13 @@ class MapViewModel extends ChangeNotifier {
       if (kDebugMode) {
         print('Error requesting always permission: $e');
       }
+      onPermissionError?.call();
     }
+  }
+
+  void dismissBackgroundLocationConsent() {
+    _needsBackgroundLocationConsent = false;
+    _userRespondedToBackgroundDisclosure = true;
+    notifyListeners();
   }
 }

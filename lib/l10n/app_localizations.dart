@@ -1156,6 +1156,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Type DELETE to confirm'**
   String get typeDeleteToConfirm;
+
+  /// No description provided for @backgroundLocationDisclosureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Background Location Access'**
+  String get backgroundLocationDisclosureTitle;
+
+  /// No description provided for @backgroundLocationDisclosureBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This app collects your location data to enable route tracking and navigation even when the app is running in the background or the screen is off.\n\nThis allows you to:\n• Track your route during navigation without keeping the screen on\n• Receive accurate position updates continuously\n\nYour location data is only used for navigation and is not shared with third parties.'**
+  String get backgroundLocationDisclosureBody;
+
+  /// No description provided for @backgroundLocationAllow.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow'**
+  String get backgroundLocationAllow;
+
+  /// No description provided for @backgroundLocationNotNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get backgroundLocationNotNow;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String appVersion(String version);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

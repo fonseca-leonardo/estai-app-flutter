@@ -570,4 +570,21 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get typeDeleteToConfirm => 'Digite EXCLUIR para confirmar';
+
+  @override
+  String get backgroundLocationDisclosureTitle => 'Acesso à Localização em Segundo Plano';
+
+  @override
+  String get backgroundLocationDisclosureBody => 'Este aplicativo coleta seus dados de localização para permitir o rastreamento de rotas e navegação mesmo quando o app está em segundo plano ou a tela está desligada.\n\nIsso permite que você:\n• Rastreie sua rota durante a navegação sem manter a tela ligada\n• Receba atualizações de posição precisas continuamente\n\nSeus dados de localização são usados apenas para navegação e não são compartilhados com terceiros.';
+
+  @override
+  String get backgroundLocationAllow => 'Permitir';
+
+  @override
+  String get backgroundLocationNotNow => 'Agora não';
+
+  @override
+  String appVersion(String version) {
+    return 'Versão $version';
+  }
 }

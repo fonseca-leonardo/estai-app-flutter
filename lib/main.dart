@@ -10,6 +10,7 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
 import 'views/LoginScreen/login_screen.dart';
+import 'widgets/location_init_wrapper.dart';
 import 'viewmodels/map_viewmodel.dart';
 import 'viewmodels/tide_viewmodel.dart';
 import 'viewmodels/route_planner_viewmodel.dart';
@@ -147,7 +148,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: const [Locale('pt', 'BR'), Locale('en', 'US')],
-        home: const LoginScreen(),
+        home: const LocationInitWrapper(child: LoginScreen()),
       ),
     );
   }

@@ -570,4 +570,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get typeDeleteToConfirm => 'Type DELETE to confirm';
+
+  @override
+  String get backgroundLocationDisclosureTitle => 'Background Location Access';
+
+  @override
+  String get backgroundLocationDisclosureBody => 'This app collects your location data to enable route tracking and navigation even when the app is running in the background or the screen is off.\n\nThis allows you to:\n• Track your route during navigation without keeping the screen on\n• Receive accurate position updates continuously\n\nYour location data is only used for navigation and is not shared with third parties.';
+
+  @override
+  String get backgroundLocationAllow => 'Allow';
+
+  @override
+  String get backgroundLocationNotNow => 'Not now';
+
+  @override
+  String appVersion(String version) {
+    return 'Version $version';
+  }
 }

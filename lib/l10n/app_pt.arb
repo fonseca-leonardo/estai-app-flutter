@@ -450,5 +450,21 @@
   "deleteAccountRequiresRecentLogin": "Para excluir sua conta, você precisa fazer login novamente por segurança.",
   "@deleteAccountRequiresRecentLogin": {},
   "typeDeleteToConfirm": "Digite EXCLUIR para confirmar",
-  "@typeDeleteToConfirm": {}
+  "@typeDeleteToConfirm": {},
+  "backgroundLocationDisclosureTitle": "Acesso à Localização em Segundo Plano",
+  "@backgroundLocationDisclosureTitle": {},
+  "backgroundLocationDisclosureBody": "Este aplicativo coleta seus dados de localização para permitir o rastreamento de rotas e navegação mesmo quando o app está em segundo plano ou a tela está desligada.\n\nIsso permite que você:\n• Rastreie sua rota durante a navegação sem manter a tela ligada\n• Receba atualizações de posição precisas continuamente\n\nSeus dados de localização são usados apenas para navegação e não são compartilhados com terceiros.",
+  "@backgroundLocationDisclosureBody": {},
+  "backgroundLocationAllow": "Permitir",
+  "@backgroundLocationAllow": {},
+  "backgroundLocationNotNow": "Agora não",
+  "@backgroundLocationNotNow": {},
+  "appVersion": "Versão {version}",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  }
 }

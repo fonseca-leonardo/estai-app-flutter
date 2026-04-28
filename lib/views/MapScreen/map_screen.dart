@@ -26,10 +26,12 @@ import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
 import '../../viewmodels/ad_banner_viewmodel.dart';
 import '../../viewmodels/weather_monitor_pins_viewmodel.dart';
+import '../../services/cached_tile_provider.dart';
+import '../../services/tile_cache_service.dart';
 import '../../widgets/ad_banner_widget.dart';
 import 'widgets/weather_monitor_pins_layer.dart';
 import 'widgets/weather_pin_forecast_bottom_sheet.dart';
-import 'widgets/location_error_dialog.dart';
+import '../NavigationPermissionScreen/navigation_permission_screen.dart';
 
 class MapScreen extends StatefulWidget {
   final LatLng? initialLocation;
@@ -46,7 +48,6 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
   bool _hasMovedToLocation = false;
   bool _hasMovedToInitialLocation = false;
   bool _hasOpenedPinBottomSheet = false;
-  bool _locationErrorDialogShown = false;
   LatLng? _lastTrackedPoint;
   MapViewModel? _mapViewModel;
   NavigationStatusViewModel? _navigationStatusViewModel;
@@ -61,6 +62,7 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
     _mapViewModel = context.read<MapViewModel>();
     _navigationStatusViewModel = context.read<NavigationStatusViewModel>();
 
+    _mapViewModel!.onPermissionError = _navigateToPermissionScreen;
     _mapViewModel!.addListener(_handlePositionUpdate);
 
     if (widget.initialLocation != null) {
@@ -132,12 +134,23 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _mapViewModel?.removeListener(_handlePositionUpdate);
+    _mapViewModel?.onPermissionError = null;
     _mapController.dispose();
     super.dispose();
   }
 
   void _moveToCurrentLocation(Position position) {
     _mapController.move(LatLng(position.latitude, position.longitude), 14.0);
+  }
+
+  void _navigateToPermissionScreen() {
+    if (mounted) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const NavigationPermissionScreen(),
+        ),
+      );
+    }
   }
 
   @override
@@ -219,6 +232,18 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
                                           userAgentPackageName: 'com.br.estai',
                                           maxZoom: mapItem.maxZoom.toDouble(),
                                           minZoom: mapItem.minZoom.toDouble(),
+                                          tileProvider:
+                                              mapsViewModel.isMapCached(
+                                                mapItem.id,
+                                              )
+                                              ? CachedTileProvider(
+                                                  mapId: mapItem.id,
+                                                  darkMode:
+                                                      mapsViewModel.darkMode,
+                                                  cacheService:
+                                                      TileCacheService.instance,
+                                                )
+                                              : NetworkTileProvider(),
                                           errorTileCallback:
                                               (tile, error, stackTrace) {
                                                 return null;
@@ -293,46 +318,6 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
                       color: Colors.black.withOpacity(0.3),
                       child: const Center(child: CircularProgressIndicator()),
                     );
-                  }
-                  return const SizedBox.shrink();
-                },
-              ),
-              Selector<MapViewModel, String?>(
-                selector: (_, viewModel) => viewModel.errorMessage,
-                builder: (context, errorMessage, child) {
-                  if (errorMessage == null) {
-                    if (_locationErrorDialogShown) {
-                      WidgetsBinding.instance.addPostFrameCallback((_) {
-                        if (mounted) {
-                          setState(() => _locationErrorDialogShown = false);
-                        }
-                      });
-                    }
-                    return const SizedBox.shrink();
-                  }
-                  if (!_locationErrorDialogShown) {
-                    final errorKey = errorMessage;
-                    WidgetsBinding.instance.addPostFrameCallback((_) async {
-                      if (!mounted) return;
-                      final mapViewModel = context.read<MapViewModel>();
-                      if (mapViewModel.errorMessage == null) return;
-                      final permission = await Geolocator.checkPermission();
-                      if (permission == LocationPermission.whileInUse ||
-                          permission == LocationPermission.always) {
-                        mapViewModel.getCurrentLocation();
-                        return;
-                      }
-                      if (!mounted) return;
-                      setState(() => _locationErrorDialogShown = true);
-                      LocationErrorDialog.show(
-                        context,
-                        errorKey: errorKey,
-                      ).then((_) {
-                        if (mounted) {
-                          setState(() => _locationErrorDialogShown = false);
-                        }
-                      });
-                    });
                   }
                   return const SizedBox.shrink();
                 },

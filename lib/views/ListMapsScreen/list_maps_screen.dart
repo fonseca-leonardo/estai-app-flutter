@@ -131,7 +131,14 @@ class ListMapsScreen extends StatelessWidget {
                     ),
                   ),
                   ...primaryMaps.map(
-                    (mapItem) => PrimaryMapCard(mapItem: mapItem),
+                    (mapItem) => PrimaryMapCard(
+                      mapItem: mapItem,
+                      isCached: viewModel.isMapCached(mapItem.id),
+                      onToggleCache: () =>
+                          viewModel.toggleMapCache(mapItem.id),
+                      onClearCache: () =>
+                          viewModel.clearMapCache(mapItem.id),
+                    ),
                   ),
                   if (optionalMaps.isNotEmpty) const SizedBox(height: 16),
                 ],
@@ -161,8 +168,13 @@ class ListMapsScreen extends StatelessWidget {
                     (mapItem) => MapCard(
                       mapItem: mapItem,
                       isSelected: viewModel.isMapSelected(mapItem.id),
+                      isCached: viewModel.isMapCached(mapItem.id),
                       onToggleSelection: () =>
                           viewModel.toggleMapSelection(mapItem.id),
+                      onToggleCache: () =>
+                          viewModel.toggleMapCache(mapItem.id),
+                      onClearCache: () =>
+                          viewModel.clearMapCache(mapItem.id),
                     ),
                   ),
                 ],

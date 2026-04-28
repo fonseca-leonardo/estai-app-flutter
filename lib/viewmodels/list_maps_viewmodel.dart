@@ -5,23 +5,27 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/map_item.dart';
 import '../services/maps_service.dart';
 import '../services/maps_api_client.dart';
+import '../services/tile_cache_service.dart';
 
 class ListMapsViewModel extends ChangeNotifier {
   final MapsService _mapsService;
   static const String _selectedMapIdsKey = 'selected_map_ids';
   static const String _darkModeKey = 'map_dark_mode';
+  static const String _cachedMapIdsKey = 'cached_map_ids';
 
   List<MapItem> _maps = [];
   bool _isLoading = false;
   String? _errorMessage;
   bool _isConnectionError = false;
   Set<String> _selectedMapIds = {};
+  Set<String> _cachedMapIds = {};
   bool _darkMode = false;
 
   ListMapsViewModel({MapsService? mapsService})
     : _mapsService = mapsService ?? MapsService() {
     _loadSelectedMaps();
     _loadDarkModePreference();
+    _loadCachedMapIds();
     loadMaps();
   }
 
@@ -156,6 +160,44 @@ class ListMapsViewModel extends ChangeNotifier {
     }
   }
 
+  bool isMapCached(String mapId) => _cachedMapIds.contains(mapId);
+
+  Future<void> _loadCachedMapIds() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final json = prefs.getString(_cachedMapIdsKey);
+      if (json != null) {
+        final List<dynamic> decoded = jsonDecode(json);
+        _cachedMapIds = decoded.map((id) => id.toString()).toSet();
+        notifyListeners();
+      }
+    } catch (_) {
+      _cachedMapIds = {};
+    }
+  }
+
+  Future<void> _saveCachedMapIds() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_cachedMapIdsKey, jsonEncode(_cachedMapIds.toList()));
+    } catch (_) {}
+  }
+
+  Future<void> toggleMapCache(String mapId) async {
+    if (_cachedMapIds.contains(mapId)) {
+      _cachedMapIds.remove(mapId);
+      await TileCacheService.instance.clearCache(mapId);
+    } else {
+      _cachedMapIds.add(mapId);
+    }
+    notifyListeners();
+    await _saveCachedMapIds();
+  }
+
+  Future<void> clearMapCache(String mapId) async {
+    await TileCacheService.instance.clearCache(mapId);
+  }
+
   Future<void> _loadDarkModePreference() async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -181,8 +223,4 @@ class ListMapsViewModel extends ChangeNotifier {
     await _saveDarkModePreference();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 }

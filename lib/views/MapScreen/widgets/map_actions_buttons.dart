@@ -1,3 +1,4 @@
+import 'package:estai/views/NavigationPermissionScreen/navigation_permission_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -49,6 +50,34 @@ class MapActionsButtons extends StatelessWidget {
             backgroundColor: Colors.black.withAlpha(140),
             child: const Icon(Icons.thermostat, color: Colors.white),
             tooltip: 'Previsão do Tempo',
+          ),
+          Selector<MapViewModel, bool>(
+            selector: (_, viewModel) {
+              final error = viewModel.errorMessage;
+              return error != null &&
+                  (error.contains('locationPermissionDenied') ||
+                      error.contains('locationPermissionDeniedForever'));
+            },
+            builder: (context, isLocationPermissionDenied, child) {
+              if (!isLocationPermissionDenied) {
+                return const SizedBox.shrink();
+              }
+              return FloatingActionButton(
+                heroTag: 'gps_availability_button',
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.white.withAlpha(64)),
+                ),
+                backgroundColor: Colors.redAccent.withAlpha(140),
+                tooltip: 'Disponibilidade do GPS',
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const NavigationPermissionScreen(),
+                  ),
+                ),
+                child: const Icon(Icons.gps_off, color: Colors.white),
+              );
+            },
           ),
         ],
       ),
