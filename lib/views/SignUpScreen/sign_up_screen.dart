@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import '../MapScreen/map_screen.dart';
 import '../LoginScreen/login_screen.dart';
 import '../LoginScreen/widgets/google_sign_in_button.dart';
@@ -15,7 +16,11 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUpScreenState extends State<SignUpScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'SignUpScreen';
+
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();

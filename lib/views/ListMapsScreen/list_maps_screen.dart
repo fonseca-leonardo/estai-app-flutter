@@ -3,13 +3,23 @@ import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import 'widgets/maps_selection_info.dart';
 import 'widgets/map_card.dart';
 import 'widgets/primary_map_card.dart';
 import 'widgets/dark_mode_toggle.dart';
 
-class ListMapsScreen extends StatelessWidget {
+class ListMapsScreen extends StatefulWidget {
   const ListMapsScreen({super.key});
+
+  @override
+  State<ListMapsScreen> createState() => _ListMapsScreenState();
+}
+
+class _ListMapsScreenState extends State<ListMapsScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'ListMapsScreen';
 
   @override
   Widget build(BuildContext context) {

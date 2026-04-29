@@ -12,6 +12,8 @@ class RoutePlanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Selector<MapViewModel, bool>(
       selector: (_, viewModel) => viewModel.isPlanningRoute,
       builder: (context, isPlanningRoute, child) {
@@ -27,7 +29,7 @@ class RoutePlanner extends StatelessWidget {
             return Consumer<AdBannerViewModel>(
               builder: (context, adBannerViewModel, child) {
                 const bannerHeight = 60.0;
-                const defaultBottom = 20.0;
+                const defaultBottom = 32.0;
                 final bottomOffset = adBannerViewModel.isLoaded
                     ? defaultBottom + bannerHeight + 8
                     : defaultBottom;
@@ -41,6 +43,32 @@ class RoutePlanner extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       spacing: 4,
                       children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black.withAlpha(140),
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.2),
+                                blurRadius: 8,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0,
+                              vertical: 8,
+                            ),
+                            child: Text(
+                              l10n.tapMapToAddPin,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.end,

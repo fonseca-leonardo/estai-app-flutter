@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/settings_viewmodel.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 
 class NavigationSettingsScreen extends StatefulWidget {
   const NavigationSettingsScreen({super.key});
@@ -12,7 +13,11 @@ class NavigationSettingsScreen extends StatefulWidget {
       _NavigationSettingsScreenState();
 }
 
-class _NavigationSettingsScreenState extends State<NavigationSettingsScreen> {
+class _NavigationSettingsScreenState extends State<NavigationSettingsScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'NavigationSettingsScreen';
+
   SettingsViewModel? _settingsViewModel;
 
   @override

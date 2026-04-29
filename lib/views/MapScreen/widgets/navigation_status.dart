@@ -30,7 +30,7 @@ class NavigationStatus extends StatelessWidget {
             return Consumer<AdBannerViewModel>(
               builder: (context, adBannerViewModel, child) {
                 const bannerHeight = 60.0;
-                const defaultBottom = 20.0;
+                const defaultBottom = 32.0;
                 final bottomOffset = adBannerViewModel.isLoaded
                     ? defaultBottom + bannerHeight + 8
                     : defaultBottom;

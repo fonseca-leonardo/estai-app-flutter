@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import '../MapScreen/map_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 import '../ForgotPasswordScreen/forgot_password_screen.dart';
@@ -16,7 +17,11 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'LoginScreen';
+
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();

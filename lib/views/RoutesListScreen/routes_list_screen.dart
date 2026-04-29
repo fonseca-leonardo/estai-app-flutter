@@ -9,10 +9,20 @@ import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import '../MapScreen/map_screen.dart';
 
-class RoutesListScreen extends StatelessWidget {
+class RoutesListScreen extends StatefulWidget {
   const RoutesListScreen({super.key});
+
+  @override
+  State<RoutesListScreen> createState() => _RoutesListScreenState();
+}
+
+class _RoutesListScreenState extends State<RoutesListScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'RoutesListScreen';
 
   @override
   Widget build(BuildContext context) {

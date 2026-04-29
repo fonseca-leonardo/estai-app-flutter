@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/navigation_permission_viewmodel.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import 'widgets/open_settings_button.dart';
 import 'widgets/permission_status_card.dart';
 
@@ -15,7 +16,10 @@ class NavigationPermissionScreen extends StatefulWidget {
 }
 
 class _NavigationPermissionScreenState extends State<NavigationPermissionScreen>
-    with WidgetsBindingObserver {
+    with WidgetsBindingObserver, AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'NavigationPermissionScreen';
+
   NavigationPermissionViewModel? _viewModel;
 
   @override

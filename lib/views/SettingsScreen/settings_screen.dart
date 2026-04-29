@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import '../NavigationSettingsScreen/navigation_settings_screen.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
 import '../UserAccountScreen/user_account_screen.dart';
@@ -19,7 +20,11 @@ class SettingsScreen extends StatefulWidget {
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class _SettingsScreenState extends State<SettingsScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'SettingsScreen';
+
   AuthViewModel? _authViewModel;
 
   @override

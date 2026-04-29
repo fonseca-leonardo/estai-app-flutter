@@ -9,9 +9,19 @@ import '../../utils/coordinate_formatter.dart';
 import '../MapScreen/map_screen.dart';
 import '../MapScreen/widgets/login_required_widget.dart';
 import '../../viewmodels/map_viewmodel.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 
-class WeatherPinsListScreen extends StatelessWidget {
+class WeatherPinsListScreen extends StatefulWidget {
   const WeatherPinsListScreen({super.key});
+
+  @override
+  State<WeatherPinsListScreen> createState() => _WeatherPinsListScreenState();
+}
+
+class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'WeatherPinsListScreen';
 
   @override
   Widget build(BuildContext context) {

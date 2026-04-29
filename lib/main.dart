@@ -1,3 +1,5 @@
+import 'package:estai/views/LoginScreen/login_screen.dart';
+import 'package:estai/widgets/location_init_wrapper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,8 +11,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
-import 'views/LoginScreen/login_screen.dart';
-import 'widgets/location_init_wrapper.dart';
+import 'services/analytics_service.dart';
+import 'views/MbtilesTestScreen/mbtiles_test_screen.dart';
 import 'viewmodels/map_viewmodel.dart';
 import 'viewmodels/tide_viewmodel.dart';
 import 'viewmodels/route_planner_viewmodel.dart';
@@ -39,6 +41,8 @@ void main() async {
   };
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await AnalyticsService.instance.initialize();
 
   // if (kDebugMode) {
   //   await FirebaseAppCheck.instance.activate(
@@ -90,13 +94,13 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     settingsViewModel = SettingsViewModel();
     navigationStatusViewModel = NavigationStatusViewModel();
     navigationStatusViewModel.setSettingsViewModel(settingsViewModel);
-    
+
     mapViewModel = MapViewModel();
     watchConnectivityViewModel = WatchConnectivityViewModel();
-    
+
     _initializeWatchConnectivity();
   }
-  
+
   Future<void> _initializeWatchConnectivity() async {
     await watchConnectivityViewModel.initialize();
     watchConnectivityViewModel.setViewModels(

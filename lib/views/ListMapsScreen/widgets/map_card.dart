@@ -121,13 +121,6 @@ class _MapCardState extends State<MapCard> {
                   ),
                 ],
               ),
-              const SizedBox(height: 8),
-              _CacheRow(
-                isCached: widget.isCached,
-                cacheSizeFuture: _cacheSizeFuture,
-                onToggle: widget.onToggleCache,
-                onClear: _onClearCache,
-              ),
             ],
           ),
         ),

@@ -29,6 +29,8 @@ import '../../viewmodels/weather_monitor_pins_viewmodel.dart';
 import '../../services/cached_tile_provider.dart';
 import '../../services/tile_cache_service.dart';
 import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/analytics_screen_mixin.dart';
+import 'widgets/offline_basemap_layer.dart';
 import 'widgets/weather_monitor_pins_layer.dart';
 import 'widgets/weather_pin_forecast_bottom_sheet.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
@@ -43,7 +45,11 @@ class MapScreen extends StatefulWidget {
   State<MapScreen> createState() => _MapScreenState();
 }
 
-class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
+class _MapScreenState extends State<MapScreen>
+    with WidgetsBindingObserver, AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'MapScreen';
+
   final MapController _mapController = MapController();
   bool _hasMovedToLocation = false;
   bool _hasMovedToInitialLocation = false;
@@ -292,6 +298,7 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
                                 },
                               ),
                               children: [
+                                const OfflineBasemapLayer(),
                                 ...customTileLayers,
                                 const PlannedRouteLine(),
                                 PlannedRouteMarkers(
@@ -346,7 +353,7 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
                   return Consumer<AdBannerViewModel>(
                     builder: (context, adBannerViewModel, child) {
                       const bannerHeight = 60.0;
-                      const defaultBottom = 20.0;
+                      const defaultBottom = 32.0;
                       final bottomOffset = adBannerViewModel.isLoaded
                           ? defaultBottom + bannerHeight + 8
                           : defaultBottom;

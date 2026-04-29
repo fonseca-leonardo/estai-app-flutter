@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import '../LoginScreen/login_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -12,7 +13,11 @@ class ForgotPasswordScreen extends StatefulWidget {
   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
 }
 
-class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'ForgotPasswordScreen';
+
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   AuthViewModel? _authViewModel;

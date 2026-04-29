@@ -6,6 +6,7 @@ import '../../l10n/app_localizations.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/tide_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 
 class TideScreen extends StatefulWidget {
   const TideScreen({super.key});
@@ -14,7 +15,10 @@ class TideScreen extends StatefulWidget {
   State<TideScreen> createState() => _TideScreenState();
 }
 
-class _TideScreenState extends State<TideScreen> {
+class _TideScreenState extends State<TideScreen> with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'TideScreen';
+
   @override
   void initState() {
     super.initState();

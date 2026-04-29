@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
+import '../../widgets/analytics_screen_mixin.dart';
 import '../LoginScreen/login_screen.dart';
 import 'delete_account_dialog.dart';
 
@@ -13,7 +14,11 @@ class UserAccountScreen extends StatefulWidget {
   State<UserAccountScreen> createState() => _UserAccountScreenState();
 }
 
-class _UserAccountScreenState extends State<UserAccountScreen> {
+class _UserAccountScreenState extends State<UserAccountScreen>
+    with AnalyticsScreenMixin {
+  @override
+  String get analyticsScreenName => 'UserAccountScreen';
+
   AuthViewModel? _authViewModel;
   final TextEditingController _confirmDeleteController =
       TextEditingController();
