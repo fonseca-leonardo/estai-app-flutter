@@ -3,8 +3,12 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MapViewModel extends ChangeNotifier {
+  static const String _backgroundDisclosureRespondedKey =
+      'background_location_disclosure_responded';
+
   Position? _currentPosition;
   bool _isLoading = false;
   String? _errorMessage;
@@ -13,6 +17,7 @@ class MapViewModel extends ChangeNotifier {
   bool _isPlanningRoute = false;
   bool _needsBackgroundLocationConsent = false;
   bool _userRespondedToBackgroundDisclosure = false;
+  bool _disclosureStateLoaded = false;
   StreamSubscription<Position>? _positionStreamSubscription;
   Timer? _throttleTimer;
   DateTime? _lastNotificationTime;
@@ -29,12 +34,26 @@ class MapViewModel extends ChangeNotifier {
   double? get currentSpeed => _currentPosition?.speed;
   double? get currentHeading => _currentPosition?.heading;
 
+  Future<void> _loadDisclosureState() async {
+    if (_disclosureStateLoaded) return;
+    final prefs = await SharedPreferences.getInstance();
+    _userRespondedToBackgroundDisclosure =
+        prefs.getBool(_backgroundDisclosureRespondedKey) ?? false;
+    _disclosureStateLoaded = true;
+  }
+
+  Future<void> _persistDisclosureResponded() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_backgroundDisclosureRespondedKey, true);
+  }
+
   Future<void> getCurrentLocation() async {
     _isLoading = true;
     _errorMessage = null;
     notifyListeners();
 
     try {
+      await _loadDisclosureState();
       // Verificar permissões
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
@@ -183,6 +202,7 @@ class MapViewModel extends ChangeNotifier {
 
   Future<void> requestLocationPermissionAtInit() async {
     try {
+      await _loadDisclosureState();
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
         _errorMessage = 'locationServicesDisabled';
@@ -191,8 +211,23 @@ class MapViewModel extends ChangeNotifier {
       }
 
       LocationPermission permission = await Geolocator.checkPermission();
+
+      if (Platform.isAndroid) {
+        if (permission == LocationPermission.deniedForever) {
+          _errorMessage = 'locationPermissionDeniedForever';
+          notifyListeners();
+          return;
+        }
+        if (!_userRespondedToBackgroundDisclosure) {
+          _needsBackgroundLocationConsent = true;
+          notifyListeners();
+        }
+        return;
+      }
+
       if (permission == LocationPermission.denied) {
-        permission = await Geolocator.requestPermission();
+        await Permission.locationWhenInUse.request();
+        permission = await Geolocator.checkPermission();
         if (permission == LocationPermission.denied) {
           _errorMessage = 'locationPermissionDenied';
           notifyListeners();
@@ -221,22 +256,43 @@ class MapViewModel extends ChangeNotifier {
     _needsBackgroundLocationConsent = false;
     _userRespondedToBackgroundDisclosure = true;
     notifyListeners();
+    await _persistDisclosureResponded();
     try {
+      if (Platform.isAndroid) {
+        LocationPermission permission = await Geolocator.checkPermission();
+        if (permission == LocationPermission.denied) {
+          permission = await Geolocator.requestPermission();
+        }
+        if (permission == LocationPermission.denied ||
+            permission == LocationPermission.deniedForever) {
+          return;
+        }
+        final status = await Permission.locationAlways.request();
+
+        return;
+      }
+
+      // iOS: o CoreLocation precisa de um instante para estabilizar o estado
+      // de whileInUse recém-concedido antes de aceitar o pedido de upgrade
+      // para always — sem esse delay o sistema engole o request silenciosamente.
+      try {
+        await Geolocator.getCurrentPosition(
+          locationSettings: const LocationSettings(
+            accuracy: LocationAccuracy.low,
+          ),
+        );
+      } catch (_) {}
+      await Future.delayed(const Duration(milliseconds: 800));
       final status = await Permission.locationAlways.request();
-      if (kDebugMode) {
-        print('Location always permission status: $status');
-      }
     } catch (e) {
-      if (kDebugMode) {
-        print('Error requesting always permission: $e');
-      }
       onPermissionError?.call();
     }
   }
 
-  void dismissBackgroundLocationConsent() {
+  Future<void> dismissBackgroundLocationConsent() async {
     _needsBackgroundLocationConsent = false;
     _userRespondedToBackgroundDisclosure = true;
+    await _persistDisclosureResponded();
     notifyListeners();
   }
 }

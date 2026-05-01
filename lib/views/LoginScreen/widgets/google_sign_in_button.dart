@@ -15,7 +15,7 @@ class GoogleSignInButton extends StatelessWidget {
       builder: (context, authViewModel, child) {
         return SizedBox(
           width: double.infinity,
-          height: 50,
+          height: 44,
           child: OutlinedButton(
             onPressed: authViewModel.isLoading
                 ? null

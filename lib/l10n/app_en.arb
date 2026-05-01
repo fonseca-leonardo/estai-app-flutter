@@ -466,5 +466,23 @@
         "type": "String"
       }
     }
-  }
+  },
+  "signalKConfiguration": "SignalK Configuration",
+  "@signalKConfiguration": {},
+  "signalKConfigurationDescription": "Configure your local SignalK server to receive boat navigation data.",
+  "@signalKConfigurationDescription": {},
+  "signalKHost": "Server address",
+  "@signalKHost": {},
+  "signalKHostHint": "e.g. este.signalk.local:3000",
+  "@signalKHostHint": {},
+  "signalKHostRequired": "Please enter the server address",
+  "@signalKHostRequired": {},
+  "signalKToken": "Access token",
+  "@signalKToken": {},
+  "signalKTokenHint": "Paste the token generated in SignalK",
+  "@signalKTokenHint": {},
+  "signalKConfigurationSaved": "SignalK configuration saved",
+  "@signalKConfigurationSaved": {},
+  "signalKClearConfiguration": "Clear configuration",
+  "@signalKClearConfiguration": {}
 }

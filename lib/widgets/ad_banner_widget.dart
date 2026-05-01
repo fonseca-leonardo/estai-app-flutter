@@ -60,13 +60,6 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
 
     final adUnitId = Platform.isAndroid ? _androidAdUnitId : _iosAdUnitId;
 
-    if (kDebugMode) {
-      debugPrint('AdBannerWidget: Loading banner with adUnitId: $adUnitId');
-      debugPrint(
-        'AdBannerWidget: Using ${kDebugMode ? "TEST" : "PRODUCTION"} ad unit ID',
-      );
-    }
-
     _isLoading = true;
 
     _bannerAd = BannerAd(
@@ -75,9 +68,6 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
       request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (ad) {
-          if (kDebugMode) {
-            debugPrint('AdBannerWidget: Ad loaded successfully');
-          }
           if (!mounted) return;
           Future.microtask(() {
             if (!mounted) return;
@@ -93,11 +83,6 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
           });
         },
         onAdFailedToLoad: (ad, error) {
-          if (kDebugMode) {
-            debugPrint('AdBannerWidget: Failed to load ad: ${error.message}');
-            debugPrint('AdBannerWidget: Error code: ${error.code}');
-            debugPrint('AdBannerWidget: Error domain: ${error.domain}');
-          }
           if (!mounted) return;
           Future.microtask(() {
             if (!mounted) return;
@@ -114,16 +99,8 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
           });
           ad.dispose();
         },
-        onAdOpened: (_) {
-          if (kDebugMode) {
-            debugPrint('AdBannerWidget: Ad opened');
-          }
-        },
-        onAdClosed: (_) {
-          if (kDebugMode) {
-            debugPrint('AdBannerWidget: Ad closed');
-          }
-        },
+        onAdOpened: (_) {},
+        onAdClosed: (_) {},
       ),
     );
 
@@ -139,18 +116,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
   @override
   Widget build(BuildContext context) {
     if (!_isBannerAdReady || _bannerAd == null) {
-      if (kDebugMode) {
-        debugPrint(
-          'AdBannerWidget: Banner not ready yet. isReady: $_isBannerAdReady, bannerAd: ${_bannerAd != null}',
-        );
-      }
       return const SizedBox.shrink();
-    }
-
-    if (kDebugMode) {
-      debugPrint(
-        'AdBannerWidget: Building banner widget. Size: ${_bannerAd!.size.width}x${_bannerAd!.size.height}',
-      );
     }
 
     return SafeArea(

@@ -466,5 +466,23 @@
         "type": "String"
       }
     }
-  }
+  },
+  "signalKConfiguration": "Configuração SignalK",
+  "@signalKConfiguration": {},
+  "signalKConfigurationDescription": "Configure o servidor SignalK local para receber dados de navegação do barco.",
+  "@signalKConfigurationDescription": {},
+  "signalKHost": "Endereço do servidor",
+  "@signalKHost": {},
+  "signalKHostHint": "ex: este.signalk.local:3000",
+  "@signalKHostHint": {},
+  "signalKHostRequired": "Informe o endereço do servidor",
+  "@signalKHostRequired": {},
+  "signalKToken": "Token de acesso",
+  "@signalKToken": {},
+  "signalKTokenHint": "Cole aqui o token gerado no SignalK",
+  "@signalKTokenHint": {},
+  "signalKConfigurationSaved": "Configuração SignalK salva",
+  "@signalKConfigurationSaved": {},
+  "signalKClearConfiguration": "Limpar configuração",
+  "@signalKClearConfiguration": {}
 }

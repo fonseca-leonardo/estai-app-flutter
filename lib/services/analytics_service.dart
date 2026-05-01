@@ -34,9 +34,7 @@ class AnalyticsService {
         name: 'auth_status',
         value: isAnonymous ? 'anonymous' : 'authenticated',
       );
-    } catch (e) {
-      if (kDebugMode) debugPrint('AnalyticsService.syncCurrentUser error: $e');
-    }
+    } catch (e) {}
   }
 
   Future<void> logScreenView(String screenName) async {
@@ -48,22 +46,15 @@ class AnalyticsService {
         screenClass: screenName,
         parameters: {'user_id': userId},
       );
-    } catch (e) {
-      if (kDebugMode) debugPrint('AnalyticsService.logScreenView error: $e');
-    }
+    } catch (e) {}
   }
 
-  Future<void> logEvent(
-    String name, {
-    Map<String, Object>? parameters,
-  }) async {
+  Future<void> logEvent(String name, {Map<String, Object>? parameters}) async {
     final user = FirebaseAuth.instance.currentUser;
     final userId = user?.uid ?? anonymousUserId;
     final params = <String, Object>{'user_id': userId, ...?parameters};
     try {
       await _analytics.logEvent(name: name, parameters: params);
-    } catch (e) {
-      if (kDebugMode) debugPrint('AnalyticsService.logEvent error: $e');
-    }
+    } catch (e) {}
   }
 }

@@ -19,41 +19,20 @@ class WatchConnectivityService {
       _isSupported = await _watch.isSupported;
 
       if (!_isSupported) {
-        if (kDebugMode) {
-          print('Watch Connectivity is not supported on this device');
-        }
         return;
       }
 
       _isPaired = await _watch.isPaired;
       _isReachable = await _watch.isReachable;
 
-      if (kDebugMode) {
-        print(
-          'Watch - Supported: $_isSupported, Paired: $_isPaired, Reachable: $_isReachable',
-        );
-      }
-
       _messageSubscription = _watch.messageStream.listen(
         _handleMessage,
-        onError: (error) {
-          if (kDebugMode) {
-            print('Error receiving message from watch: $error');
-          }
-        },
+        onError: (error) {},
       );
-    } catch (e) {
-      if (kDebugMode) {
-        print('Error initializing Watch Connectivity: $e');
-      }
-    }
+    } catch (e) {}
   }
 
-  void _handleMessage(Map<String, dynamic> message) {
-    if (kDebugMode) {
-      print('Received message from watch: $message');
-    }
-  }
+  void _handleMessage(Map<String, dynamic> message) {}
 
   Future<void> sendNavigationData({
     required double? heading,
@@ -62,9 +41,6 @@ class WatchConnectivityService {
     required bool isNavigating,
   }) async {
     if (!_isSupported || !_isPaired) {
-      if (kDebugMode) {
-        print('Cannot send data: Watch not supported or paired');
-      }
       return;
     }
 
@@ -78,15 +54,7 @@ class WatchConnectivityService {
       };
 
       await _watch.sendMessage(data);
-
-      if (kDebugMode) {
-        print('Sent navigation data to watch: $data');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print('Error sending data to watch: $e');
-      }
-    }
+    } catch (e) {}
   }
 
   Future<void> updateApplicationContext({
@@ -109,15 +77,7 @@ class WatchConnectivityService {
       };
 
       await _watch.updateApplicationContext(context);
-
-      if (kDebugMode) {
-        print('Updated application context on watch');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print('Error updating application context: $e');
-      }
-    }
+    } catch (e) {}
   }
 
   Future<void> checkReachability() async {
@@ -126,15 +86,7 @@ class WatchConnectivityService {
     try {
       _isPaired = await _watch.isPaired;
       _isReachable = await _watch.isReachable;
-
-      if (kDebugMode) {
-        print('Watch status - Paired: $_isPaired, Reachable: $_isReachable');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print('Error checking watch reachability: $e');
-      }
-    }
+    } catch (e) {}
   }
 
   void dispose() {

@@ -1186,6 +1186,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Version {version}'**
   String appVersion(String version);
+
+  /// No description provided for @signalKConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'SignalK Configuration'**
+  String get signalKConfiguration;
+
+  /// No description provided for @signalKConfigurationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure your local SignalK server to receive boat navigation data.'**
+  String get signalKConfigurationDescription;
+
+  /// No description provided for @signalKHost.
+  ///
+  /// In en, this message translates to:
+  /// **'Server address'**
+  String get signalKHost;
+
+  /// No description provided for @signalKHostHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. este.signalk.local:3000'**
+  String get signalKHostHint;
+
+  /// No description provided for @signalKHostRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the server address'**
+  String get signalKHostRequired;
+
+  /// No description provided for @signalKToken.
+  ///
+  /// In en, this message translates to:
+  /// **'Access token'**
+  String get signalKToken;
+
+  /// No description provided for @signalKTokenHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste the token generated in SignalK'**
+  String get signalKTokenHint;
+
+  /// No description provided for @signalKConfigurationSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'SignalK configuration saved'**
+  String get signalKConfigurationSaved;
+
+  /// No description provided for @signalKClearConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear configuration'**
+  String get signalKClearConfiguration;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -17,8 +17,7 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>
-    with AnalyticsScreenMixin {
+class _LoginScreenState extends State<LoginScreen> with AnalyticsScreenMixin {
   @override
   String get analyticsScreenName => 'LoginScreen';
 
@@ -323,6 +322,7 @@ class _LoginScreenState extends State<LoginScreen>
                           ),
                         SizedBox(
                           width: double.infinity,
+
                           child: ElevatedButton(
                             onPressed: _authViewModel?.isLoading == true
                                 ? null
@@ -330,7 +330,7 @@ class _LoginScreenState extends State<LoginScreen>
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                               foregroundColor: Colors.black,
-                              padding: const EdgeInsets.symmetric(vertical: 14),
+                              padding: const EdgeInsets.symmetric(vertical: 8),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),

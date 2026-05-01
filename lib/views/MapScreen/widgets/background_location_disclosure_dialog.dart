@@ -13,7 +13,7 @@ class BackgroundLocationDisclosureDialog {
           backgroundColor: Colors.black.withValues(alpha: 0.9),
           icon: Icon(
             Icons.location_on_rounded,
-            size: 48,
+            size: 24,
             color: Colors.blue.withValues(alpha: 0.9),
           ),
           title: Text(
@@ -37,7 +37,7 @@ class BackgroundLocationDisclosureDialog {
                   fontSize: 14,
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
                 child: FilledButton(

@@ -12,7 +12,6 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
 import 'services/analytics_service.dart';
-import 'views/MbtilesTestScreen/mbtiles_test_screen.dart';
 import 'viewmodels/map_viewmodel.dart';
 import 'viewmodels/tide_viewmodel.dart';
 import 'viewmodels/route_planner_viewmodel.dart';
@@ -26,6 +25,7 @@ import 'viewmodels/ad_banner_viewmodel.dart';
 import 'viewmodels/weather_forecast_viewmodel.dart';
 import 'viewmodels/weather_monitor_pins_viewmodel.dart';
 import 'viewmodels/watch_connectivity_viewmodel.dart';
+import 'viewmodels/signalk_configuration_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -61,11 +61,6 @@ void main() async {
   );
 
   final initializationStatus = await MobileAds.instance.initialize();
-  if (kDebugMode) {
-    debugPrint(
-      'MobileAds initialized: ${initializationStatus.adapterStatuses}',
-    );
-  }
 
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
@@ -132,6 +127,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => NavigationPermissionViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
+        ChangeNotifierProvider(create: (_) => SignalKConfigurationViewModel()),
       ],
       child: MaterialApp(
         title: 'Estai - Mapa',

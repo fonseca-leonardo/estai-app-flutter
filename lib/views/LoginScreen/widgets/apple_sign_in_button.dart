@@ -19,7 +19,7 @@ class AppleSignInButton extends StatelessWidget {
       builder: (context, authViewModel, child) {
         return SizedBox(
           width: double.infinity,
-          height: 50,
+          height: 44,
           child: ElevatedButton(
             onPressed: authViewModel.isLoading
                 ? null
@@ -34,14 +34,17 @@ class AppleSignInButton extends StatelessWidget {
                     }
                   },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.black,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(6),
               ),
               elevation: 0,
-              disabledBackgroundColor: Colors.black.withValues(alpha: 0.5),
+              shadowColor: Colors.transparent,
+              surfaceTintColor: Colors.white,
+              disabledBackgroundColor: Colors.white.withValues(alpha: 0.6),
+              disabledForegroundColor: Colors.black.withValues(alpha: 0.6),
             ),
             child: authViewModel.isLoading
                 ? const SizedBox(
@@ -49,21 +52,26 @@ class AppleSignInButton extends StatelessWidget {
                     width: 20,
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
                     ),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.apple, color: Colors.white, size: 20),
-                      const SizedBox(width: 8),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 3),
+                        child: Icon(Icons.apple, color: Colors.black, size: 22),
+                      ),
+                      const SizedBox(width: 6),
                       Text(
                         l10n.signInWithApple,
                         style: const TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
-                          letterSpacing: 0.3,
+                          fontFamily: '.SF Pro Text',
+                          fontSize: 19,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: -0.41,
+                          color: Colors.black,
                         ),
                       ),
                     ],

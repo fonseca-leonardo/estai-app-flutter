@@ -587,4 +587,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String appVersion(String version) {
     return 'Version $version';
   }
+
+  @override
+  String get signalKConfiguration => 'SignalK Configuration';
+
+  @override
+  String get signalKConfigurationDescription => 'Configure your local SignalK server to receive boat navigation data.';
+
+  @override
+  String get signalKHost => 'Server address';
+
+  @override
+  String get signalKHostHint => 'e.g. este.signalk.local:3000';
+
+  @override
+  String get signalKHostRequired => 'Please enter the server address';
+
+  @override
+  String get signalKToken => 'Access token';
+
+  @override
+  String get signalKTokenHint => 'Paste the token generated in SignalK';
+
+  @override
+  String get signalKConfigurationSaved => 'SignalK configuration saved';
+
+  @override
+  String get signalKClearConfiguration => 'Clear configuration';
 }
