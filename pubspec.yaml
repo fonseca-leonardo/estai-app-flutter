@@ -42,6 +42,7 @@ dependencies:
   vector_map_tiles_mbtiles: ^1.2.0
   vector_tile_renderer: ^5.2.1
   mbtiles: ^0.4.2
+  web_socket_channel: ^3.0.1
 
 dev_dependencies:
   flutter_test:

@@ -614,4 +614,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get signalKClearConfiguration => 'Limpar configuração';
+
+  @override
+  String get signalKIosLocalNetworkNotice => 'Na primeira conexão, o iOS solicitará permissão de acesso à rede local. Permita para que o app possa se comunicar com o servidor SignalK.';
 }

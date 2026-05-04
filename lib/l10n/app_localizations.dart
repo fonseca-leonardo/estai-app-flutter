@@ -1240,6 +1240,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Clear configuration'**
   String get signalKClearConfiguration;
+
+  /// No description provided for @signalKIosLocalNetworkNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'On the first connection, iOS will request local network access. Allow it so the app can communicate with the SignalK server.'**
+  String get signalKIosLocalNetworkNotice;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

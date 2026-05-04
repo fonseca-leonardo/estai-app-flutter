@@ -12,6 +12,7 @@ import '../UserAccountScreen/user_account_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 import '../LoginScreen/login_screen.dart';
 import '../WeatherPinsListScreen/weather_pins_list_screen.dart';
+import '../SignalKConfigurationScreen/signalk_configuration_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -109,6 +110,20 @@ class _SettingsScreenState extends State<SettingsScreen>
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (_) => const WeatherPinsListScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildSettingsTile(
+                        context,
+                        l10n.signalKConfiguration,
+                        Icons.sensors,
+                        () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  const SignalKConfigurationScreen(),
                             ),
                           );
                         },

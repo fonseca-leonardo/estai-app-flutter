@@ -484,5 +484,7 @@
   "signalKConfigurationSaved": "Configuração SignalK salva",
   "@signalKConfigurationSaved": {},
   "signalKClearConfiguration": "Limpar configuração",
-  "@signalKClearConfiguration": {}
+  "@signalKClearConfiguration": {},
+  "signalKIosLocalNetworkNotice": "Na primeira conexão, o iOS solicitará permissão de acesso à rede local. Permita para que o app possa se comunicar com o servidor SignalK.",
+  "@signalKIosLocalNetworkNotice": {}
 }

@@ -26,6 +26,7 @@ import 'viewmodels/weather_forecast_viewmodel.dart';
 import 'viewmodels/weather_monitor_pins_viewmodel.dart';
 import 'viewmodels/watch_connectivity_viewmodel.dart';
 import 'viewmodels/signalk_configuration_viewmodel.dart';
+import 'viewmodels/signalk_connection_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -81,6 +82,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final NavigationStatusViewModel navigationStatusViewModel;
   late final MapViewModel mapViewModel;
   late final WatchConnectivityViewModel watchConnectivityViewModel;
+  late final SignalKConfigurationViewModel signalKConfigurationViewModel;
+  late final SignalKConnectionViewModel signalKConnectionViewModel;
 
   @override
   void initState() {
@@ -92,6 +95,12 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     mapViewModel = MapViewModel();
     watchConnectivityViewModel = WatchConnectivityViewModel();
+
+    signalKConfigurationViewModel = SignalKConfigurationViewModel();
+    signalKConnectionViewModel = SignalKConnectionViewModel(
+      config: signalKConfigurationViewModel,
+      map: mapViewModel,
+    );
 
     _initializeWatchConnectivity();
   }
@@ -127,7 +136,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => NavigationPermissionViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
-        ChangeNotifierProvider(create: (_) => SignalKConfigurationViewModel()),
+        ChangeNotifierProvider.value(value: signalKConfigurationViewModel),
+        ChangeNotifierProvider.value(value: signalKConnectionViewModel),
       ],
       child: MaterialApp(
         title: 'Estai - Mapa',
