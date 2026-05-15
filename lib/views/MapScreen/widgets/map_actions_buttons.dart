@@ -40,6 +40,28 @@ class MapActionsButtons extends StatelessWidget {
               );
             },
           ),
+          Selector<MapViewModel, bool>(
+            selector: (_, viewModel) => viewModel.isChartplotterMode,
+            builder: (context, isChartplotterMode, child) {
+              return FloatingActionButton(
+                heroTag: 'chartplotter_mode_button',
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.white.withAlpha(64)),
+                ),
+                onPressed: () =>
+                    context.read<MapViewModel>().toggleChartplotterMode(),
+                backgroundColor: isChartplotterMode
+                    ? Colors.black.withAlpha(140)
+                    : Colors.black.withAlpha(64),
+                tooltip: 'Modo Chartplotter',
+                child: Icon(
+                  isChartplotterMode ? Icons.grid_on : Icons.grid_off,
+                  color: Colors.white,
+                ),
+              );
+            },
+          ),
           FloatingActionButton(
             heroTag: 'weather_forecast_button',
             shape: RoundedRectangleBorder(

@@ -484,5 +484,39 @@
   "signalKConfigurationSaved": "SignalK configuration saved",
   "@signalKConfigurationSaved": {},
   "signalKClearConfiguration": "Clear configuration",
-  "@signalKClearConfiguration": {}
+  "@signalKClearConfiguration": {},
+  "rasterCharts": "Raster Charts (BSB/KAP)",
+  "@rasterCharts": {},
+  "rasterChartsEmptyTitle": "No charts imported",
+  "@rasterChartsEmptyTitle": {},
+  "rasterChartsEmptyMessage": "Import a raster chart .zip (BSB/KAP) from the Brazilian Navy to display it over the map.",
+  "@rasterChartsEmptyMessage": {},
+  "rasterChartImport": "Import chart",
+  "@rasterChartImport": {},
+  "rasterChartImporting": "Importing chart...",
+  "@rasterChartImporting": {},
+  "rasterChartImportSuccess": "Chart imported successfully",
+  "@rasterChartImportSuccess": {},
+  "rasterChartRemoveTitle": "Remove chart",
+  "@rasterChartRemoveTitle": {},
+  "rasterChartRemoveMessage": "Are you sure you want to remove \"{name}\"?",
+  "@rasterChartRemoveMessage": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "remove": "Remove",
+  "@remove": {},
+  "rasterChartCount": "{count, plural, =1{chart} other{charts}}",
+  "@rasterChartCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "rasterChartProjectionWarning": "Projection {projection} not fully supported — approximate alignment.",
+  "@rasterChartProjectionWarning": {
+    "placeholders": {
+      "projection": {"type": "String"}
+    }
+  }
 }

@@ -143,7 +143,10 @@ class _ListMapsScreenState extends State<ListMapsScreen>
                   ...primaryMaps.map(
                     (mapItem) => PrimaryMapCard(
                       mapItem: mapItem,
+                      isSelected: viewModel.isMapSelected(mapItem.id),
                       isCached: viewModel.isMapCached(mapItem.id),
+                      onToggleSelection: () =>
+                          viewModel.toggleMapSelection(mapItem.id),
                       onToggleCache: () =>
                           viewModel.toggleMapCache(mapItem.id),
                       onClearCache: () =>

@@ -14,6 +14,7 @@ class MapViewModel extends ChangeNotifier {
   String? _errorMessage;
   bool _showCustomTiles = true;
   bool _isCameraLocked = false;
+  bool _isChartplotterMode = false;
   bool _isPlanningRoute = false;
   bool _needsBackgroundLocationConsent = false;
   bool _userRespondedToBackgroundDisclosure = false;
@@ -28,6 +29,7 @@ class MapViewModel extends ChangeNotifier {
   String? get errorMessage => _errorMessage;
   bool get showCustomTiles => _showCustomTiles;
   bool get isCameraLocked => _isCameraLocked;
+  bool get isChartplotterMode => _isChartplotterMode;
   bool get isPlanningRoute => _isPlanningRoute;
   bool get needsBackgroundLocationConsent => _needsBackgroundLocationConsent;
 
@@ -192,6 +194,11 @@ class MapViewModel extends ChangeNotifier {
 
   void toggleCameraLock() {
     _isCameraLocked = !_isCameraLocked;
+    notifyListeners();
+  }
+
+  void toggleChartplotterMode() {
+    _isChartplotterMode = !_isChartplotterMode;
     notifyListeners();
   }
 

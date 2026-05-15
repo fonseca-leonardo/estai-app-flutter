@@ -1,0 +1,5898 @@
+[
+  {
+    "id": "1001",
+    "name": "PORTO DE BARRA DOS COQUEIROS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-barra-dos-coqueiros",
+    "bbox": {
+      "min_lat": -10.933333299888,
+      "max_lat": -10.7666666985,
+      "min_lon": -37.000000000043,
+      "max_lon": -36.766666700857
+    }
+  },
+  {
+    "id": "1003",
+    "name": "BARRA DO RIO SERGIPE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-381",
+    "bbox": {
+      "min_lat": -11.133333333227,
+      "max_lat": -10.883333038314,
+      "min_lon": -37.1,
+      "max_lon": -36.916666567577
+    }
+  },
+  {
+    "id": "11",
+    "name": "ARQUIPELAGO DE SÃO PEDRO E SÃO PAULO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-118",
+    "bbox": {
+      "min_lat": 0.874999999988,
+      "max_lat": 1.036666700917,
+      "min_lon": -29.395,
+      "max_lon": -29.281666707473
+    }
+  },
+  {
+    "id": "110",
+    "name": "BAÍA DO OIAPOQUE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-213",
+    "bbox": {
+      "min_lat": 4.199999999946,
+      "max_lat": 4.833333323542,
+      "min_lon": -51.9171667,
+      "max_lon": -51.417166712546
+    }
+  },
+  {
+    "id": "1101",
+    "name": "PROXIMIDADES DO PORTO DE SALVADOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-do-porto-de-salvador",
+    "bbox": {
+      "min_lat": -13.125166668834,
+      "max_lat": -12.833500001636,
+      "min_lon": -38.666666672438,
+      "max_lon": -38.466666679088
+    }
+  },
+  {
+    "id": "1103",
+    "name": "BAIA DO ARATU E ADJACÊNCIAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-do-aratu-e-adjacencias",
+    "bbox": {
+      "min_lat": -12.838333299888,
+      "max_lat": -12.750000004851,
+      "min_lon": -38.541666700066,
+      "max_lon": -38.413333297173
+    }
+  },
+  {
+    "id": "1104",
+    "name": "BAÍA DE TODOS OS SANTOS PARTE NORDESTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-todos-os-santos-parte-nordeste",
+    "bbox": {
+      "min_lat": -12.869999999884,
+      "max_lat": -12.683333302934,
+      "min_lon": -38.666666700066,
+      "max_lon": -38.408333296679
+    }
+  },
+  {
+    "id": "1106",
+    "name": "BAÍA DE TODOS OS SANTOS PARTE NORTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-386",
+    "bbox": {
+      "min_lat": -12.760666699891,
+      "max_lat": -12.585666699204,
+      "min_lon": -38.7723333,
+      "max_lon": -38.6306667084
+    }
+  },
+  {
+    "id": "1107",
+    "name": "BAÍA DE TODOS OS SANTOS PARTE OESTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-todos-os-santos-parte-oeste",
+    "bbox": {
+      "min_lat": -12.901000000115,
+      "max_lat": -12.716833308821,
+      "min_lon": -38.916649097791,
+      "max_lon": -38.616680595032
+    }
+  },
+  {
+    "id": "1108",
+    "name": "BAÍA DE TODOS OS SANTOS PORTO DE SÃO ROQUE E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-125",
+    "bbox": {
+      "min_lat": -12.886833304079,
+      "max_lat": -12.800166702668,
+      "min_lon": -38.875000000067,
+      "max_lon": -38.746666700539
+    }
+  },
+  {
+    "id": "1110",
+    "name": "BAÍA DE TODOS OS SANTOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-todos-os-santos",
+    "bbox": {
+      "min_lat": -13.183333358552,
+      "max_lat": -12.583333350295,
+      "min_lon": -38.825000000067,
+      "max_lon": -38.433333328866
+    }
+  },
+  {
+    "id": "1112",
+    "name": "PORTO DE SALVADOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-salvador",
+    "bbox": {
+      "min_lat": -13.031666699888,
+      "max_lat": -12.925000005725,
+      "min_lon": -38.566666672349,
+      "max_lon": -38.496666696673
+    }
+  },
+  {
+    "id": "1115",
+    "name": "PORTO DE MADRE DE DEUS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-madre-de-deus",
+    "bbox": {
+      "min_lat": -12.769999999888,
+      "max_lat": -12.718333300484,
+      "min_lon": -38.6666667,
+      "max_lon": -38.596666667261
+    }
+  },
+  {
+    "id": "1205",
+    "name": "BAÍAS CABRALIA E DE PORTO SEGURO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-384",
+    "bbox": {
+      "min_lat": -16.499999999898,
+      "max_lat": -16.208332110762,
+      "min_lon": -39.09,
+      "max_lon": -38.910000801452
+    }
+  },
+  {
+    "id": "1210",
+    "name": "PROXIMIDADE DO PORTO DE ILHÉUS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidade-do-porto-de-ilheus",
+    "bbox": {
+      "min_lat": -14.999999999879,
+      "max_lat": -14.583333322324,
+      "min_lon": -39.133333300091,
+      "max_lon": -38.833333286213
+    }
+  },
+  {
+    "id": "1211",
+    "name": "PORTO DE ILHÉUS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-ilheus",
+    "bbox": {
+      "min_lat": -14.82833329989,
+      "max_lat": -14.726666669833,
+      "min_lon": -39.0883333,
+      "max_lon": -38.938333294863
+    }
+  },
+  {
+    "id": "1310",
+    "name": "CANAL DOS ABROLHOS E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-385",
+    "bbox": {
+      "min_lat": -18.250333299908,
+      "max_lat": -17.267000043964,
+      "min_lon": -39.376666669317,
+      "max_lon": -38.575000065972
+    }
+  },
+  {
+    "id": "1311",
+    "name": "FUNDEADOUROS DE ABROLHOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-411",
+    "bbox": {
+      "min_lat": -17.999833299906,
+      "max_lat": -17.94149999659,
+      "min_lon": -38.7408333,
+      "max_lon": -38.66583329984
+    }
+  },
+  {
+    "id": "1312",
+    "name": "PORTO DE CARAVELAS E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-412",
+    "bbox": {
+      "min_lat": -17.866666699905,
+      "max_lat": -17.68333331292,
+      "min_lon": -39.2833333,
+      "max_lon": -39.011666704723
+    }
+  },
+  {
+    "id": "1401",
+    "name": "PORTOS DE VITORIA E TUBARÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/portos-de-vitoria-e-tubarao",
+    "bbox": {
+      "min_lat": -20.361666672831,
+      "max_lat": -20.253333328506,
+      "min_lon": -40.366666671456,
+      "max_lon": -40.216666669381
+    }
+  },
+  {
+    "id": "1402",
+    "name": "DO PONTAL DA REGÊNCIA À PONTA DO UBU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-180",
+    "bbox": {
+      "min_lat": -20.916666699885,
+      "max_lat": -19.583333292507,
+      "min_lon": -40.66666670018,
+      "max_lon": -39.666666607176
+    }
+  },
+  {
+    "id": "1403",
+    "name": "DA BARRA DO ITAPEMIRIM AO CABO DE SAO TOMÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-barra-do-itapemirim-ao-cabo-de-sao-tome",
+    "bbox": {
+      "min_lat": -22.133333299897,
+      "max_lat": -20.799999999141,
+      "min_lon": -41.150000000205,
+      "max_lon": -40.166666648343
+    }
+  },
+  {
+    "id": "1404",
+    "name": "PROXIMIDADES DA PONTA DO UBU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-383",
+    "bbox": {
+      "min_lat": -20.891666699918,
+      "max_lat": -20.600000016193,
+      "min_lon": -40.716666700189,
+      "max_lon": -40.333333321113
+    }
+  },
+  {
+    "id": "1405",
+    "name": "PORTO DE AÇU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-acu",
+    "bbox": {
+      "min_lat": -21.916666677366,
+      "max_lat": -21.766666656929,
+      "min_lon": -41.041666676028,
+      "max_lon": -40.808333331509
+    }
+  },
+  {
+    "id": "1406",
+    "name": "PROXIMIDADES DO PORTO DE AÇU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-do-porto-de-acu",
+    "bbox": {
+      "min_lat": -22.074999999923,
+      "max_lat": -21.599999703718,
+      "min_lon": -41.083333300211,
+      "max_lon": -40.383333454222
+    }
+  },
+  {
+    "id": "1410",
+    "name": "PROXIMIDADES DOS PORTOS DE VITORIA E TUBARÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-dos-portos-de-vitoria-e-tubarao",
+    "bbox": {
+      "min_lat": -20.55000999991,
+      "max_lat": -20.083323294973,
+      "min_lon": -40.38333710018,
+      "max_lon": -40.033329493046
+    }
+  },
+  {
+    "id": "1420",
+    "name": "PROXIMIDADES DE BARRA DO RIACHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-de-barra-do-riacho",
+    "bbox": {
+      "min_lat": -19.899999999968,
+      "max_lat": -19.60000001994,
+      "min_lon": -40.208333300185,
+      "max_lon": -39.716666691995
+    }
+  },
+  {
+    "id": "1501",
+    "name": "BAÍA DE GUANABARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-guanabara",
+    "bbox": {
+      "min_lat": -23.091666699934,
+      "max_lat": -22.666666703524,
+      "min_lon": -43.318333300244,
+      "max_lon": -42.999999996709
+    }
+  },
+  {
+    "id": "1503",
+    "name": "ENSEADA DO CABO FRIO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/enseada-do-cabo-frio",
+    "bbox": {
+      "min_lat": -23.050378094087,
+      "max_lat": -22.933709407986,
+      "min_lon": -42.04179359138,
+      "max_lon": -41.956789693982
+    }
+  },
+  {
+    "id": "1504",
+    "name": "ENSEADA DE BÚZIOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-370",
+    "bbox": {
+      "min_lat": -22.78666666661,
+      "max_lat": -22.706667025062,
+      "min_lon": -41.966666666667,
+      "max_lon": -41.849999677669
+    }
+  },
+  {
+    "id": "1505",
+    "name": "DO CABO BÚZIOS AO CABO FRIO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-368",
+    "bbox": {
+      "min_lat": -23.050378099946,
+      "max_lat": -22.708705284853,
+      "min_lon": -42.0417936,
+      "max_lon": -41.783448301222
+    }
+  },
+  {
+    "id": "1506",
+    "name": "PROXIMIDADE DA BAÍA DE GUANABARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidade-da-baia-de-guanabara",
+    "bbox": {
+      "min_lat": -23.308333299935,
+      "max_lat": -22.858333302085,
+      "min_lon": -43.416666700249,
+      "max_lon": -42.666666717777
+    }
+  },
+  {
+    "id": "1507",
+    "name": "ENSEADA DE MACAÉ E PORTO DE IMBETIBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/enseada-de-macae-e-porto-de-imbetiba",
+    "bbox": {
+      "min_lat": -22.433333299936,
+      "max_lat": -22.29999998887,
+      "min_lon": -41.87,
+      "max_lon": -41.633333341477
+    }
+  },
+  {
+    "id": "1508",
+    "name": "DO CABO FRIO À PONTA NEGRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-371",
+    "bbox": {
+      "min_lat": -23.308333299935,
+      "max_lat": -22.858333302085,
+      "min_lon": -42.700000000245,
+      "max_lon": -41.950000017773
+    }
+  },
+  {
+    "id": "1511",
+    "name": "BARRA DO RIO DE JANEIRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/barra-do-rio-de-janeiro",
+    "bbox": {
+      "min_lat": -22.999999997017,
+      "max_lat": -22.86666670302,
+      "min_lon": -43.233333300245,
+      "max_lon": -43.040000007911
+    }
+  },
+  {
+    "id": "1512",
+    "name": "PORTO DO RIO DE JANEIRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-do-rio-de-janeiro",
+    "bbox": {
+      "min_lat": -22.914999999941,
+      "max_lat": -22.794999998412,
+      "min_lon": -43.276666700244,
+      "max_lon": -43.089999997211
+    }
+  },
+  {
+    "id": "1513",
+    "name": "TERMINAIS DA BAÍA DE GUANABARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/terminais-da-baia-de-guanabara",
+    "bbox": {
+      "min_lat": -22.826666699941,
+      "max_lat": -22.733333295957,
+      "min_lon": -43.180000000241,
+      "max_lon": -43.0800000011
+    }
+  },
+  {
+    "id": "1515",
+    "name": "BAÍA DE GUANABARA - ILHA DO MOCANGUÊ E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-guanabara-ilha-do-mocangue-e-proximidades",
+    "bbox": {
+      "min_lat": -22.899999999943,
+      "max_lat": -22.84999999931,
+      "min_lon": -43.178333300243,
+      "max_lon": -43.108333299044
+    }
+  },
+  {
+    "id": "1550",
+    "name": "BACIA DE CAMPOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/bacia-de-campos",
+    "bbox": {
+      "min_lat": -23.416666699892,
+      "max_lat": -21.499999924527,
+      "min_lon": -41.833333300227,
+      "max_lon": -39.166666701164
+    }
+  },
+  {
+    "id": "1620",
+    "name": "DO PONTAL DE SERNAMBETIBA À ILHA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-pontal-de-sernambetiba-ilha-grande",
+    "bbox": {
+      "min_lat": -23.349999999934,
+      "max_lat": -22.849999968292,
+      "min_lon": -44.200000000254,
+      "max_lon": -43.433333367261
+    }
+  },
+  {
+    "id": "1623",
+    "name": "PORTO DE ITAGUAÍ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-itaguai",
+    "bbox": {
+      "min_lat": -23.044999999942,
+      "max_lat": -22.895000005463,
+      "min_lon": -44.00000000025,
+      "max_lon": -43.775000001901
+    }
+  },
+  {
+    "id": "1624",
+    "name": "TERMINAL MARÍTIMO DA ILHA GUAÍBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/terminal-maritimo-da-ilha-guaiba",
+    "bbox": {
+      "min_lat": -23.100000001008,
+      "max_lat": -22.94999999171,
+      "min_lon": -44.188336121715,
+      "max_lon": -43.966666656669
+    }
+  },
+  {
+    "id": "1625",
+    "name": "ENSEADAS DA ILHA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/enseadas-da-ilha-grande",
+    "bbox": {
+      "min_lat": -23.229166699943,
+      "max_lat": -23.081666705231,
+      "min_lon": -44.220000000255,
+      "max_lon": -43.991666698255
+    }
+  },
+  {
+    "id": "1631",
+    "name": "BAÍA DA ILHA GRANDE - PARTE CENTRAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-da-ilha-grande-parte-central",
+    "bbox": {
+      "min_lat": -23.308333299941,
+      "max_lat": -23.041666692702,
+      "min_lon": -44.566666700258,
+      "max_lon": -44.200000015666
+    }
+  },
+  {
+    "id": "1632",
+    "name": "BAÍA DA ILHA GRANDE - PARTE CENTRO NORTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-da-ilha-grande-parte-centro-norte",
+    "bbox": {
+      "min_lat": -23.15833329994,
+      "max_lat": -22.908333311341,
+      "min_lon": -44.550000000255,
+      "max_lon": -44.183333314031
+    }
+  },
+  {
+    "id": "1633",
+    "name": "BAÍA DA ILHA GRANDE - PARTE OESTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-da-ilha-grande-parte-oeste",
+    "bbox": {
+      "min_lat": -23.316999999939,
+      "max_lat": -22.983666701254,
+      "min_lon": -44.733500000258,
+      "max_lon": -44.466833293551
+    }
+  },
+  {
+    "id": "1634",
+    "name": "DA PONTA DE JUATINGA À ILHA DAS COUVES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-184",
+    "bbox": {
+      "min_lat": -23.52533329995,
+      "max_lat": -23.275333284147,
+      "min_lon": -44.8668333,
+      "max_lon": -44.483499987445
+    }
+  },
+  {
+    "id": "1635",
+    "name": "DA ILHA DAS COUVES A ILHA DO MAR VIRADO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-363",
+    "bbox": {
+      "min_lat": -23.583333333284,
+      "max_lat": -23.333331696518,
+      "min_lon": -45.233333333333,
+      "max_lon": -44.833331633293
+    }
+  },
+  {
+    "id": "1636",
+    "name": "PORTO DE ANGRA DOS REIS E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-angra-dos-reis-e-proximidades",
+    "bbox": {
+      "min_lat": -23.133333299943,
+      "max_lat": -22.991666709044,
+      "min_lon": -44.3833333,
+      "max_lon": -44.171666707138
+    }
+  },
+  {
+    "id": "1637",
+    "name": "BAÍA DA RIBEIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-372",
+    "bbox": {
+      "min_lat": -23.060000011005,
+      "max_lat": -22.916666673506,
+      "min_lon": -44.521666664462,
+      "max_lon": -44.296666656452
+    }
+  },
+  {
+    "id": "1640",
+    "name": "PROXIMIDADES DO PORTO DE SÃO SEBASTIÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-56",
+    "bbox": {
+      "min_lat": -24.121666699956,
+      "max_lat": -23.62166669271,
+      "min_lon": -45.7466667,
+      "max_lon": -44.979999966072
+    }
+  },
+  {
+    "id": "1643",
+    "name": "CANAL DE SÃO SEBASTIÃO (PARTE NORTE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/canal-de-sao-sebastiao-parte-norte",
+    "bbox": {
+      "min_lat": -23.81666669995,
+      "max_lat": -23.700000003944,
+      "min_lon": -45.433333300276,
+      "max_lon": -45.333333329108
+    }
+  },
+  {
+    "id": "1644",
+    "name": "CANAL DE SÃO SEBASTIÃO (PARTE SUL)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/canal-de-sao-sebastiao-parte-sul",
+    "bbox": {
+      "min_lat": -23.893333327027,
+      "max_lat": -23.796666662882,
+      "min_lon": -45.500000000278,
+      "max_lon": -45.358333329815
+    }
+  },
+  {
+    "id": "1703",
+    "name": "PORTO DE CANANÉIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-85",
+    "bbox": {
+      "min_lat": -25.199999999966,
+      "max_lat": -24.991666854236,
+      "min_lon": -47.966666666667,
+      "max_lon": -47.766665966512
+    }
+  },
+  {
+    "id": "1711",
+    "name": "PROXIMIDADE DO PORTO DE SANTOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidade-do-porto-de-santos",
+    "bbox": {
+      "min_lat": -24.53333329994,
+      "max_lat": -23.841666664147,
+      "min_lon": -46.716666700294,
+      "max_lon": -46.108333293468
+    }
+  },
+  {
+    "id": "1712",
+    "name": "PORTO DE SANTOS (PARTE NORTE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-santos-parte-norte",
+    "bbox": {
+      "min_lat": -23.966666699952,
+      "max_lat": -23.866666733401,
+      "min_lon": -46.400000000285,
+      "max_lon": -46.266666620165
+    }
+  },
+  {
+    "id": "1713",
+    "name": "PORTO DE SANTOS (PARTE SUL)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-santos-parte-sul",
+    "bbox": {
+      "min_lat": -24.083333299952,
+      "max_lat": -23.949999960676,
+      "min_lon": -46.393333300288,
+      "max_lon": -46.278333365394
+    }
+  },
+  {
+    "id": "1803",
+    "name": "BAÍA DE GUARATUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-367",
+    "bbox": {
+      "min_lat": -25.899999999972,
+      "max_lat": -25.799999995564,
+      "min_lon": -48.6383333,
+      "max_lon": -48.483333303172
+    }
+  },
+  {
+    "id": "1820",
+    "name": "PROXIMIDADES DA BARRA DE PARANAGUÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-da-barra-de-paranagua",
+    "bbox": {
+      "min_lat": -25.999999999957,
+      "max_lat": -25.399999980344,
+      "min_lon": -48.716666700344,
+      "max_lon": -47.700000030022
+    }
+  },
+  {
+    "id": "1821",
+    "name": "BARRA DE PARANAGUÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/barra-de-paranagua",
+    "bbox": {
+      "min_lat": -25.636666699965,
+      "max_lat": -25.466666708925,
+      "min_lon": -48.491666675123,
+      "max_lon": -48.233333339576
+    }
+  },
+  {
+    "id": "1822",
+    "name": "PORTOS DE PARANAGUÁ E ANTONINA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/portos-de-paranagua-e-antonina",
+    "bbox": {
+      "min_lat": -25.546666699965,
+      "max_lat": -25.400000009154,
+      "min_lon": -48.720000000338,
+      "max_lon": -48.466666664098
+    }
+  },
+  {
+    "id": "1830",
+    "name": "PROXIMIDADES DO PORTO DE SÃO FRANCISCO DO SUL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-do-porto-de-sao-francisco-do-sul",
+    "bbox": {
+      "min_lat": -26.483333299973,
+      "max_lat": -25.98333332563,
+      "min_lon": -48.6916667,
+      "max_lon": -48.016666722916
+    }
+  },
+  {
+    "id": "1831",
+    "name": "PORTO DE SÃO FRANCISCO DO SUL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-sao-francisco-do-sul",
+    "bbox": {
+      "min_lat": -26.281666699971,
+      "max_lat": -26.111669998415,
+      "min_lon": -48.6916667,
+      "max_lon": -48.41666668935
+    }
+  },
+  {
+    "id": "1841",
+    "name": "PORTO DE ITAJAÍ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-itajai",
+    "bbox": {
+      "min_lat": -26.949999999271,
+      "max_lat": -26.843333331725,
+      "min_lon": -48.730000000375,
+      "max_lon": -48.550003463687
+    }
+  },
+  {
+    "id": "1901",
+    "name": "PORTO DE LAGUNA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-laguna",
+    "bbox": {
+      "min_lat": -28.525499996717,
+      "max_lat": -28.467166667717,
+      "min_lon": -48.79383333209,
+      "max_lon": -48.697166665913
+    }
+  },
+  {
+    "id": "1902",
+    "name": "PROXIMIDADES DA ILHA DE SANTA CATARINA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-433",
+    "bbox": {
+      "min_lat": -27.966666698155,
+      "max_lat": -27.066666694415,
+      "min_lon": -48.683333299991,
+      "max_lon": -48.033333335158
+    }
+  },
+  {
+    "id": "1910",
+    "name": "DA ILHA DE CORAL AO CABO DE SANTA MARTA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-de-coral-ao-cabo-de-santa-marta-grande",
+    "bbox": {
+      "min_lat": -28.749999999973,
+      "max_lat": -27.833333277268,
+      "min_lon": -48.883333300415,
+      "max_lon": -48.23333333926
+    }
+  },
+  {
+    "id": "1921",
+    "name": "PORTO DE IMBITUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-446",
+    "bbox": {
+      "min_lat": -28.254999999992,
+      "max_lat": -28.191666664091,
+      "min_lon": -48.6716667,
+      "max_lon": -48.623333335127
+    }
+  },
+  {
+    "id": "2010",
+    "name": "PROXIMIDADES DE TRAMANDAÍ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-29",
+    "bbox": {
+      "min_lat": -30.167333299997,
+      "max_lat": -29.750666713688,
+      "min_lon": -50.218000000474,
+      "max_lon": -49.834666705449
+    }
+  },
+  {
+    "id": "2011",
+    "name": "TRAMANDAÍ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-189",
+    "bbox": {
+      "min_lat": -30.090000000005,
+      "max_lat": -29.920000010525,
+      "min_lon": -50.2266667,
+      "max_lon": -49.958333337792
+    }
+  },
+  {
+    "id": "21",
+    "name": "ILHA DA TRINDADE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/ilha-da-trindade",
+    "bbox": {
+      "min_lat": -20.602999999925,
+      "max_lat": -20.402999926168,
+      "min_lon": -29.5008333,
+      "max_lon": -28.742499957674
+    }
+  },
+  {
+    "id": "2101",
+    "name": "PORTO DO RIO GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-do-rio-grande",
+    "bbox": {
+      "min_lat": -32.216666700015,
+      "max_lat": -32.000000009062,
+      "min_lon": -52.183333300559,
+      "max_lon": -51.999999995316
+    }
+  },
+  {
+    "id": "2110",
+    "name": "PROXIMIDADES DO PORTO DE RIO GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-68",
+    "bbox": {
+      "min_lat": -32.350000000013,
+      "max_lat": -32.000000006412,
+      "min_lon": -52.216666700562,
+      "max_lon": -51.666666690509
+    }
+  },
+  {
+    "id": "21100 (INT.4194)",
+    "name": "DO CABO ORANGE À PONTA TUCUMÃ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-359",
+    "bbox": {
+      "min_lat": 2.749999999964,
+      "max_lat": 4.74998857639,
+      "min_lon": -51.916666666667,
+      "max_lon": -48.949990604807
+    }
+  },
+  {
+    "id": "21200 (INT.4195)",
+    "name": "DA PONTA TUCUMÃ À PONTA DO GUARÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-34",
+    "bbox": {
+      "min_lat": 1.083333300172,
+      "max_lat": 3.083333206327,
+      "min_lon": -50.999999999998,
+      "max_lon": -48.033333387957
+    }
+  },
+  {
+    "id": "21300 (INT.4196)",
+    "name": "DO CABO NORTE AO CABO MAGUARI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-cabo-norte-ao-cabo-maguari",
+    "bbox": {
+      "min_lat": -0.33333302843,
+      "max_lat": 1.666666667564,
+      "min_lon": -51.249999999998,
+      "max_lon": -48.283333387957
+    }
+  },
+  {
+    "id": "21400 (INT.4197)",
+    "name": "DO CABO MAGUARI À PONTA BOIUÇUCANGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-53",
+    "bbox": {
+      "min_lat": -1.583333300127,
+      "max_lat": 1.416666798946,
+      "min_lon": -48.583333299998,
+      "max_lon": -46.583333185142
+    }
+  },
+  {
+    "id": "21500 (INT.2108)",
+    "name": "DA PONTA BOIUÇUCANGA À ILHA MANGUNÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-91",
+    "bbox": {
+      "min_lat": -1.666666699978,
+      "max_lat": 0.333333267967,
+      "min_lon": -46.75,
+      "max_lon": -43.783333387959
+    }
+  },
+  {
+    "id": "21600 (INT.2109)",
+    "name": "DA ILHA MAIAÚ À TUTÓIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-72",
+    "bbox": {
+      "min_lat": -2.833333300015,
+      "max_lat": -0.833333289052,
+      "min_lon": -44.999999999998,
+      "max_lon": -42.083333188332
+    }
+  },
+  {
+    "id": "21700 (INT.2110)",
+    "name": "DE TUTÓIA À PONTA DOS PATOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-tutoia-ponta-dos-patos",
+    "bbox": {
+      "min_lat": -3.333333299956,
+      "max_lat": -1.33333334114,
+      "min_lon": -42.4166667,
+      "max_lon": -39.50000010652
+    }
+  },
+  {
+    "id": "21800 (INT.2111)",
+    "name": "DA PONTA DE ITAPAGÉ A FORTALEZA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-7",
+    "bbox": {
+      "min_lat": -4.316666699883,
+      "max_lat": -1.333333143043,
+      "min_lon": -39.966666969993,
+      "max_lon": -37.933333294894
+    }
+  },
+  {
+    "id": "21900 (INT.2112)",
+    "name": "DA PONTA MACEIÓ AO CABO CALCANHAR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-427",
+    "bbox": {
+      "min_lat": -5.249999999801,
+      "max_lat": -3.216666756606,
+      "min_lon": -38.099999999998,
+      "max_lon": -35.133333387958
+    }
+  },
+  {
+    "id": "22000 (INT.2113)",
+    "name": "ATOL DAS ROCAS E ARQUIPÉLAGO DE FERNANDO DE NORONHA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-362",
+    "bbox": {
+      "min_lat": -4.999999999938,
+      "max_lat": -3.000000130131,
+      "min_lon": -35.3,
+      "max_lon": -32.333333387959
+    }
+  },
+  {
+    "id": "22100 (INT.2114)",
+    "name": "DO CABO CALCANHAR A CABEDELO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-350",
+    "bbox": {
+      "min_lat": -7.24999999963,
+      "max_lat": -4.333333381366,
+      "min_lon": -35.583333299998,
+      "max_lon": -33.549999894894
+    }
+  },
+  {
+    "id": "22200 (INT.2115)",
+    "name": "DE CABEDELO A MACEIÓ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-cabedelo-maceio",
+    "bbox": {
+      "min_lat": -9.916666700158,
+      "max_lat": -6.916666639049,
+      "min_lon": -36.000000000069,
+      "max_lon": -33.916666625259
+    }
+  },
+  {
+    "id": "22300 (INT.2116)",
+    "name": "DE MACEIÓ A ARACAJU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-63",
+    "bbox": {
+      "min_lat": -11.250000000055,
+      "max_lat": -9.499999899141,
+      "min_lon": -37.333333300071,
+      "max_lon": -34.583333256406
+    }
+  },
+  {
+    "id": "22400 (INT2117)",
+    "name": "DE ARACAJU À PONTA ITAPUÃ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-156",
+    "bbox": {
+      "min_lat": -12.966666699891,
+      "max_lat": -10.900000030354,
+      "min_lon": -38.4166667,
+      "max_lon": -35.416666828708
+    }
+  },
+  {
+    "id": "22500 (INT.2118)",
+    "name": "DE SALVADOR A BARRA DO POXIM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-207",
+    "bbox": {
+      "min_lat": -15.583333333228,
+      "max_lat": -12.666677873499,
+      "min_lon": -39.25,
+      "max_lon": -37.166665793888
+    }
+  },
+  {
+    "id": "22600 (INT2119)",
+    "name": "DA BARRA DO POXIM À PONTA CUMURUXATIBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-195",
+    "bbox": {
+      "min_lat": -17.333333333236,
+      "max_lat": -15.333322825704,
+      "min_lon": -39.416666666667,
+      "max_lon": -36.416679819158
+    }
+  },
+  {
+    "id": "22700 (INT.2120)",
+    "name": "DA PONTA CUMURUXATIBA A CONCEIÇÃO DA BARRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-73",
+    "bbox": {
+      "min_lat": -18.816666699911,
+      "max_lat": -16.833333323452,
+      "min_lon": -39.8333333,
+      "max_lon": -36.833333160856
+    }
+  },
+  {
+    "id": "22800 (INT.2121)",
+    "name": "DE CONCEIÇÃO DA BARRA A VITÓRIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-74",
+    "bbox": {
+      "min_lat": -20.416666699458,
+      "max_lat": -18.500000041512,
+      "min_lon": -40.333333300077,
+      "max_lon": -37.416666797024
+    }
+  },
+  {
+    "id": "22900 (INT.2122)",
+    "name": "DE VITÓRIA AO CABO DE SÃO TOMÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-204",
+    "bbox": {
+      "min_lat": -22.083333299369,
+      "max_lat": -20.166666636056,
+      "min_lon": -41.250000000079,
+      "max_lon": -38.333333219924
+    }
+  },
+  {
+    "id": "23000 (INT.2123)",
+    "name": "DO CABO DE SÃO TOMÉ AO RIO DE JANEIRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-cabo-de-sao-tome-ao-rio-de-janeiro",
+    "bbox": {
+      "min_lat": -24.000000000209,
+      "max_lat": -21.916666812123,
+      "min_lon": -43.350000000377,
+      "max_lon": -40.000000095111
+    }
+  },
+  {
+    "id": "23100 (INT.2124)",
+    "name": "DO RIO DE JANEIRO À SANTOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-rio-de-janeiro-santos",
+    "bbox": {
+      "min_lat": -24.783333300171,
+      "max_lat": -22.666666784297,
+      "min_lon": -46.366666700403,
+      "max_lon": -42.999999970145
+    }
+  },
+  {
+    "id": "23200 (INT.2125)",
+    "name": "DE SANTOS A PARANAGUÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-santos-paranagua",
+    "bbox": {
+      "min_lat": -25.633333300131,
+      "max_lat": -23.749999990941,
+      "min_lon": -48.633333300423,
+      "max_lon": -45.633333344033
+    }
+  },
+  {
+    "id": "23300 (INT.2126)",
+    "name": "DE PARANAGUÁ A IMBITUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-360",
+    "bbox": {
+      "min_lat": -28.33333330001,
+      "max_lat": -25.333333175457,
+      "min_lon": -48.916666700425,
+      "max_lon": -46.616666641788
+    }
+  },
+  {
+    "id": "23400 (INT.2127)",
+    "name": "DE IMBITUBA A PINHAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-imbituba-pinhal",
+    "bbox": {
+      "min_lat": -30.583333299916,
+      "max_lat": -28.000000084124,
+      "min_lon": -50.250000000437,
+      "max_lon": -48.000000109871
+    }
+  },
+  {
+    "id": "23500 (INT.2128)",
+    "name": "DE PINHAL AO RIO GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-75",
+    "bbox": {
+      "min_lat": -32.21666669985,
+      "max_lat": -30.233333233888,
+      "min_lon": -52.250000000454,
+      "max_lon": -48.916666613275
+    }
+  },
+  {
+    "id": "23600 (INT.2129)",
+    "name": "DO RIO GRANDE AO ARROIO CHUÍ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-76",
+    "bbox": {
+      "min_lat": -33.916666699784,
+      "max_lat": -32.000000129099,
+      "min_lon": -53.666666700467,
+      "max_lon": -50.333333313287
+    }
+  },
+  {
+    "id": "410",
+    "name": "PROXIMIDADES DA BAÍA DE SÃO MARCOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-da-baia-de-sao-marcos",
+    "bbox": {
+      "min_lat": -2.616666699933,
+      "max_lat": -1.766666720119,
+      "min_lon": -44.5500336,
+      "max_lon": -43.416666723015
+    }
+  },
+  {
+    "id": "411",
+    "name": "BAÍA DE SÃO MARCOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-sao-marcos",
+    "bbox": {
+      "min_lat": -2.583333299948,
+      "max_lat": -2.100000015095,
+      "min_lon": -44.449999999994,
+      "max_lon": -44.083333288405
+    }
+  },
+  {
+    "id": "412",
+    "name": "BAÍA DE SÃO MARCOS PROXIMIDADES DO TERMINAL DA PONTA DA MADEIRA E ITAQUI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-sao-marcos-proximidades-do-terminal-da-ponta-da-madeira-e",
+    "bbox": {
+      "min_lat": -2.591666699959,
+      "max_lat": -2.399999992502,
+      "min_lon": -44.433333299995,
+      "max_lon": -44.200000001523
+    }
+  },
+  {
+    "id": "413",
+    "name": "TERMINAL DA PONTA DA MADEIRA E PORTO DE ITAQUI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/terminal-da-ponta-da-madeira-e-porto-de-itaqui",
+    "bbox": {
+      "min_lat": -2.616666699961,
+      "max_lat": -2.5000000066,
+      "min_lon": -44.433333299995,
+      "max_lon": -44.345000005993
+    }
+  },
+  {
+    "id": "414",
+    "name": "BAÍA DE SÃO MARCOS DE ITAQUI AO TERMINAL DA ALUMAR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/baia-de-sao-marcos-de-itaqui-ao-terminal-da-alumar",
+    "bbox": {
+      "min_lat": -2.68333329996,
+      "max_lat": -2.570833301532,
+      "min_lon": -44.408333299995,
+      "max_lon": -44.341666706716
+    }
+  },
+  {
+    "id": "51",
+    "name": "PROXIMIDADES DO ATOL DAS ROCAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-405",
+    "bbox": {
+      "min_lat": -4.083333299948,
+      "max_lat": -3.356452507931,
+      "min_lon": -34.0833333,
+      "max_lon": -33.549999981527
+    }
+  },
+  {
+    "id": "515",
+    "name": "PORTO DE LUIS CORREIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-luis-correia",
+    "bbox": {
+      "min_lat": -2.913333299957,
+      "max_lat": -2.766666698881,
+      "min_lon": -41.750166699996,
+      "max_lon": -41.536833301204
+    }
+  },
+  {
+    "id": "52",
+    "name": "ARQUIPÉLAGO DE FERNANDO DE NORONHA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-120",
+    "bbox": {
+      "min_lat": -4.150166699947,
+      "max_lat": -3.708500016232,
+      "min_lon": -32.8113333,
+      "max_lon": -32.233000044724
+    }
+  },
+  {
+    "id": "701",
+    "name": "PORTO DE MUCURIPE (Fortaleza)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-437",
+    "bbox": {
+      "min_lat": -3.746666699952,
+      "max_lat": -3.666666699577,
+      "min_lon": -38.5566667,
+      "max_lon": -38.446666696864
+    }
+  },
+  {
+    "id": "702",
+    "name": "PORTO DE MACAU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-388",
+    "bbox": {
+      "min_lat": -5.116666666602,
+      "max_lat": -4.983332813512,
+      "min_lon": -36.773333333333,
+      "max_lon": -36.578334079822
+    }
+  },
+  {
+    "id": "703",
+    "name": "PORTO DE AREIA BRANCA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-378",
+    "bbox": {
+      "min_lat": -4.976666666603,
+      "max_lat": -4.799999453482,
+      "min_lon": -37.2,
+      "max_lon": -36.983333565154
+    }
+  },
+  {
+    "id": "704",
+    "name": "PORTO DE GUAMARÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-guamare",
+    "bbox": {
+      "min_lat": -5.124999999936,
+      "max_lat": -5.055000002399,
+      "min_lon": -36.35,
+      "max_lon": -36.258333298093
+    }
+  },
+  {
+    "id": "710",
+    "name": "PROXIMIDADES DO TERMINAL DO PECÉM E DO PORTO DE MUCURIPE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-do-terminal-do-pecem-e-do-porto-de-mucuripe",
+    "bbox": {
+      "min_lat": -3.783333299952,
+      "max_lat": -3.466666709887,
+      "min_lon": -38.8416667,
+      "max_lon": -38.350000014223
+    }
+  },
+  {
+    "id": "711",
+    "name": "TERMINAL PORTUÁRIO DO PECÉM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/terminal-portuario-do-pecem",
+    "bbox": {
+      "min_lat": -3.583333557669,
+      "max_lat": -3.466665649005,
+      "min_lon": -38.841667996008,
+      "max_lon": -38.766666016613
+    }
+  },
+  {
+    "id": "720",
+    "name": "DE AREIA BRANCA A GUAMARÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-areia-branca-guamare",
+    "bbox": {
+      "min_lat": -5.166666699912,
+      "max_lat": -4.53333326005,
+      "min_lon": -37.166666700003,
+      "max_lon": -36.18333331825
+    }
+  },
+  {
+    "id": "806",
+    "name": "PROXIMIDADES DO PORTO DE CABEDELO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-142",
+    "bbox": {
+      "min_lat": -7.182166699917,
+      "max_lat": -6.732166693289,
+      "min_lon": -34.9505,
+      "max_lon": -34.633833293535
+    }
+  },
+  {
+    "id": "810",
+    "name": "PROXIMIDADES DO PORTO DE NATAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-do-porto-de-natal",
+    "bbox": {
+      "min_lat": -5.916666699911,
+      "max_lat": -5.466666709963,
+      "min_lon": -35.283333300007,
+      "max_lon": -34.916666683092
+    }
+  },
+  {
+    "id": "811",
+    "name": "PORTO DE NATAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-natal",
+    "bbox": {
+      "min_lat": -5.796666699928,
+      "max_lat": -5.738333302684,
+      "min_lon": -35.2333333,
+      "max_lon": -35.158333298718
+    }
+  },
+  {
+    "id": "821",
+    "name": "PORTO DE CABEDELO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-cabedelo",
+    "bbox": {
+      "min_lat": -6.999999999917,
+      "max_lat": -6.899999994422,
+      "min_lon": -34.9,
+      "max_lon": -34.76666670612
+    }
+  },
+  {
+    "id": "902",
+    "name": "PORTO DO RECIFE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-132",
+    "bbox": {
+      "min_lat": -8.118333327232,
+      "max_lat": -7.990000002702,
+      "min_lon": -34.893333329241,
+      "max_lon": -34.803333328635
+    }
+  },
+  {
+    "id": "912",
+    "name": "PORTO DE SUAPE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-suape",
+    "bbox": {
+      "min_lat": -8.424999999906,
+      "max_lat": -8.325000000914,
+      "min_lon": -35.0,
+      "max_lon": -34.866666700915
+    }
+  },
+  {
+    "id": "920",
+    "name": "PROXIMIDADES DO PORTO DE MACEIÓ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-380",
+    "bbox": {
+      "min_lat": -9.999999999896,
+      "max_lat": -9.500000005781,
+      "min_lon": -36.0833333,
+      "max_lon": -35.333333318819
+    }
+  },
+  {
+    "id": "921",
+    "name": "PORTO DE MACEIÓ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-maceio",
+    "bbox": {
+      "min_lat": -9.749999999897,
+      "max_lat": -9.64999999937,
+      "min_lon": -35.8,
+      "max_lon": -35.649999995002
+    }
+  },
+  {
+    "id": "930",
+    "name": "PROXIMIDADES DO PORTO DO RECIFE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/proximidades-do-porto-do-recife",
+    "bbox": {
+      "min_lat": -8.416666699876,
+      "max_lat": -7.58333327634,
+      "min_lon": -35.000000000019,
+      "max_lon": -34.400000007518
+    }
+  },
+  {
+    "id": "111",
+    "name": "DA BAÍA DO OIAPOQUE ÀS ILHAS TAPARABÔ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-121",
+    "bbox": {
+      "min_lat": 3.978333299949,
+      "max_lat": 4.299500007328,
+      "min_lon": -51.7548333,
+      "max_lon": -51.541166696799
+    }
+  },
+  {
+    "id": "112",
+    "name": "DAS ILHAS TAPARABÔ À CLEVELÂNDIA DO NORTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/das-ilhas-taparabo-clevelandia-do-norte",
+    "bbox": {
+      "min_lat": 3.761333299964,
+      "max_lat": 4.067333309703,
+      "min_lon": -51.9318333,
+      "max_lon": -51.668999993192
+    }
+  },
+  {
+    "id": "204",
+    "name": "DAS ILHAS PEDREIRA À ILHA DE SANTANA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/das-ilhas-pedreira-ilha-de-santana",
+    "bbox": {
+      "min_lat": -0.083333300003,
+      "max_lat": 0.366666729126,
+      "min_lon": -51.18333329999,
+      "max_lon": -50.508333265287
+    }
+  },
+  {
+    "id": "206",
+    "name": "CANAL DE SANTANA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-84",
+    "bbox": {
+      "min_lat": -0.074999999997,
+      "max_lat": -0.033333302916,
+      "min_lon": -51.20833329999,
+      "max_lon": -51.130000001764
+    }
+  },
+  {
+    "id": "221",
+    "name": "BARRA NORTE DO RIO AMAZONAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/barra-norte-do-rio-amazonas",
+    "bbox": {
+      "min_lat": 0.590166700018,
+      "max_lat": 1.256666714905,
+      "min_lon": -50.126499999991,
+      "max_lon": -49.249999971438
+    }
+  },
+  {
+    "id": "222",
+    "name": "DO CANAL GRANDE DO CURUÁ À BAÍA DE MACAPÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-398",
+    "bbox": {
+      "min_lat": 0.039999999999,
+      "max_lat": 0.77166666934,
+      "min_lon": -51.0666667,
+      "max_lon": -50.0900000059
+    }
+  },
+  {
+    "id": "231",
+    "name": "DA ILHA DO MACHADINHO AO CABO MAGUARI (P. DA BARRA SUL DO AMAZONAS)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-41",
+    "bbox": {
+      "min_lat": -0.333333299996,
+      "max_lat": 0.183333291932,
+      "min_lon": -48.8333333,
+      "max_lon": -48.150000026932
+    }
+  },
+  {
+    "id": "232",
+    "name": "BARRA SUL DO RIO AMAZONAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-345",
+    "bbox": {
+      "min_lat": -0.250037799997,
+      "max_lat": 0.249968605695,
+      "min_lon": -49.4170889,
+      "max_lon": -48.73372752763
+    }
+  },
+  {
+    "id": "233",
+    "name": "DE CHAVES À PONTA DA ANUNCIAÇÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-349",
+    "bbox": {
+      "min_lat": -0.249999999997,
+      "max_lat": 0.250000752882,
+      "min_lon": -50.0,
+      "max_lon": -49.31666767489
+    }
+  },
+  {
+    "id": "241",
+    "name": "DA BAÍA DO VIEIRA GRANDE A CHAVES (BRAÇO SUL DO RIO AMAZONAS)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-399",
+    "bbox": {
+      "min_lat": -0.249999999976,
+      "max_lat": 0.283333306982,
+      "min_lon": -50.633333333615,
+      "max_lon": -49.916666712306
+    }
+  },
+  {
+    "id": "242",
+    "name": "DA ILHA DOS PORCOS À BAÍA DO VIEIRA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-dos-porcos-baia-do-vieira-grande",
+    "bbox": {
+      "min_lat": -0.466666699973,
+      "max_lat": 0.083333307544,
+      "min_lon": -51.26666669999,
+      "max_lon": -50.550000006453
+    }
+  },
+  {
+    "id": "243",
+    "name": "DA ILHA ITAQUARA À ILHA DOS PORCOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-itaquara-ilha-dos-porcos",
+    "bbox": {
+      "min_lat": -1.033333299959,
+      "max_lat": -0.333333274868,
+      "min_lon": -51.267166699991,
+      "max_lon": -50.700500030262
+    }
+  },
+  {
+    "id": "244",
+    "name": "DE GURUPÁ A ILHA ITAQUARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-152",
+    "bbox": {
+      "min_lat": -1.416666699981,
+      "max_lat": -0.883333281714,
+      "min_lon": -51.75,
+      "max_lon": -51.033333284244
+    }
+  },
+  {
+    "id": "4011",
+    "name": "DE MACAPÁ À ILHA SALVADOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-macapa-ilha-salvador",
+    "bbox": {
+      "min_lat": -0.313333299996,
+      "max_lat": 0.064166721556,
+      "min_lon": -51.3975,
+      "max_lon": -50.856666665761
+    }
+  },
+  {
+    "id": "4016",
+    "name": "DE ALMEIRIM À ILHA DO PARANAQUARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-almeirim-ilha-do-paranaquara",
+    "bbox": {
+      "min_lat": -1.800833299976,
+      "max_lat": -1.422500000898,
+      "min_lon": -52.9716667,
+      "max_lon": -52.429999976946
+    }
+  },
+  {
+    "id": "4017",
+    "name": "DA ILHA DO PARANAQUARA À PRAINHA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-paranaquara-prainha",
+    "bbox": {
+      "min_lat": -1.943333299974,
+      "max_lat": -1.565000043799,
+      "min_lon": -53.485,
+      "max_lon": -52.943333324862
+    }
+  },
+  {
+    "id": "4018",
+    "name": "DE PRAINHA A MONTE ALEGRE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-445",
+    "bbox": {
+      "min_lat": -2.115833299972,
+      "max_lat": -1.737499979296,
+      "min_lon": -53.9966667,
+      "max_lon": -53.455277770078
+    }
+  },
+  {
+    "id": "4019",
+    "name": "DE MONTE ALEGRE À ILHA DO ITUQUI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-185",
+    "bbox": {
+      "min_lat": -2.466666699967,
+      "max_lat": -1.931666706487,
+      "min_lon": -54.3425,
+      "max_lon": -53.96249998907
+    }
+  },
+  {
+    "id": "4020",
+    "name": "DA ILHA DO ITUQUI A ARAPIXUNA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-ituqui-arapixuna",
+    "bbox": {
+      "min_lat": -2.594166699966,
+      "max_lat": -2.216666738391,
+      "min_lon": -54.8291667,
+      "max_lon": -54.294166715332
+    }
+  },
+  {
+    "id": "4020A",
+    "name": "PORTO DE SANTARÉM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-santarem",
+    "bbox": {
+      "min_lat": -2.448333299964,
+      "max_lat": -2.335000011148,
+      "min_lon": -54.799999999993,
+      "max_lon": -54.640000001985
+    }
+  },
+  {
+    "id": "4021",
+    "name": "DE ARAPIXUNA À ILHA DO PATACHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-arapixuna-ilha-do-patacho",
+    "bbox": {
+      "min_lat": -2.256666699956,
+      "max_lat": -1.878333261042,
+      "min_lon": -55.001666699992,
+      "max_lon": -54.465833306543
+    }
+  },
+  {
+    "id": "4022",
+    "name": "DA ILHA DO PATACHO A ILHA DO AMADOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-112",
+    "bbox": {
+      "min_lat": -2.257499999956,
+      "max_lat": -1.879166655467,
+      "min_lon": -55.503333299992,
+      "max_lon": -54.968333353995
+    }
+  },
+  {
+    "id": "4023",
+    "name": "DE ÓBIDOS À ILHA DE SANTA RITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-113",
+    "bbox": {
+      "min_lat": -2.240833299956,
+      "max_lat": -1.86249996647,
+      "min_lon": -56.014166699992,
+      "max_lon": -55.479166741163
+    }
+  },
+  {
+    "id": "4023A",
+    "name": "PARANÁ DE SANTA RITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/parana-de-santa-rita",
+    "bbox": {
+      "min_lat": -2.093333299965,
+      "max_lat": -1.903333333508,
+      "min_lon": -56.116666699992,
+      "max_lon": -55.84999998833
+    }
+  },
+  {
+    "id": "4024",
+    "name": "DA ILHA DE SANTA RITA ÀS ILHAS DO CALDERÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-114",
+    "bbox": {
+      "min_lat": -2.399138899948,
+      "max_lat": -1.863333375575,
+      "min_lon": -56.367499999992,
+      "max_lon": -55.988333319406
+    }
+  },
+  {
+    "id": "4025",
+    "name": "DAS ILHAS DO CALDERÃO À PARANÁ DO RAMOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-115",
+    "bbox": {
+      "min_lat": -2.715833299944,
+      "max_lat": -2.180000023016,
+      "min_lon": -56.716666699993,
+      "max_lon": -56.337499993232
+    }
+  },
+  {
+    "id": "4026",
+    "name": "DE PARINTINS À ILHA DO MOCAMBO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-153",
+    "bbox": {
+      "min_lat": -2.816673300511,
+      "max_lat": -2.443333373233,
+      "min_lon": -57.224999999994,
+      "max_lon": -56.689997110731
+    }
+  },
+  {
+    "id": "4026A",
+    "name": "PARANÁ DO MOCAMBO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-147",
+    "bbox": {
+      "min_lat": -2.644999999954,
+      "max_lat": -2.454999981187,
+      "min_lon": -57.316666655035,
+      "max_lon": -57.050000012534
+    }
+  },
+  {
+    "id": "4027",
+    "name": "DA ILHA DO MOCAMBO À PONTA DOS MUNDURUCUS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-38",
+    "bbox": {
+      "min_lat": -2.666666699952,
+      "max_lat": -2.288333342622,
+      "min_lon": -57.728333299993,
+      "max_lon": -57.193333322063
+    }
+  },
+  {
+    "id": "4028",
+    "name": "DA PONTA DOS MUNDURUCUS À ILHA PANUMÃ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-39",
+    "bbox": {
+      "min_lat": -2.930833299944,
+      "max_lat": -2.55333332493,
+      "min_lon": -58.185833299994,
+      "max_lon": -57.650833344168
+    }
+  },
+  {
+    "id": "4029",
+    "name": "DA ILHA PANUMÃ A ITACOATIARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-panuma-itacoatiara",
+    "bbox": {
+      "min_lat": -3.253333299944,
+      "max_lat": -2.8800000011,
+      "min_lon": -58.543333299995,
+      "max_lon": -58.009999988618
+    }
+  },
+  {
+    "id": "4029A",
+    "name": "PARANÁ DO SERPA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-209",
+    "bbox": {
+      "min_lat": -3.196666699952,
+      "max_lat": -3.008333346283,
+      "min_lon": -58.403333299995,
+      "max_lon": -58.136666684222
+    }
+  },
+  {
+    "id": "4030",
+    "name": "DE ITACOATIARA A NOVO REMANSO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-itacoatiara-novo-remanso",
+    "bbox": {
+      "min_lat": -3.449999999897,
+      "max_lat": -3.076666673388,
+      "min_lon": -59.0433088264,
+      "max_lon": -58.513333378221
+    }
+  },
+  {
+    "id": "4031",
+    "name": "DE NOVO REMANSO À ILHA DAS ONÇAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-210",
+    "bbox": {
+      "min_lat": -3.379999999942,
+      "max_lat": -3.003333304735,
+      "min_lon": -59.539999999996,
+      "max_lon": -59.009999962775
+    }
+  },
+  {
+    "id": "4032",
+    "name": "DA ILHA DAS ONÇAS A MANAUS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-59",
+    "bbox": {
+      "min_lat": -3.379999999942,
+      "max_lat": -3.003333033384,
+      "min_lon": -60.053333299996,
+      "max_lon": -59.519999778692
+    }
+  },
+  {
+    "id": "4032A",
+    "name": "PORTO DE MANAUS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-manaus",
+    "bbox": {
+      "min_lat": -3.216666699951,
+      "max_lat": -3.033333324576,
+      "min_lon": -60.124999999996,
+      "max_lon": -59.866666663958
+    }
+  },
+  {
+    "id": "4101A",
+    "name": "DE MACAPÁ À ILHA MANGABAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-macapa-ilha-mangabal",
+    "bbox": {
+      "min_lat": -0.899998786626,
+      "max_lat": 0.129978477999,
+      "min_lon": -51.794659218814,
+      "max_lon": -50.765631456471
+    }
+  },
+  {
+    "id": "4101B",
+    "name": "DA ILHA MANGABAL À ILHA DO COMANDAI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-129",
+    "bbox": {
+      "min_lat": -1.620000022893,
+      "max_lat": -0.6050000196,
+      "min_lon": -52.267499998573,
+      "max_lon": -51.38583334285
+    }
+  },
+  {
+    "id": "4102A",
+    "name": "DE GURUPÁ A ALMEIRIM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-130",
+    "bbox": {
+      "min_lat": -1.666666699978,
+      "max_lat": -1.333333317972,
+      "min_lon": -52.65,
+      "max_lon": -51.63500002551
+    }
+  },
+  {
+    "id": "4342A",
+    "name": "DA ILHA PRACAXI AO RIO DOS VEADOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-128",
+    "bbox": {
+      "min_lat": -1.695243999978,
+      "max_lat": -1.169407619447,
+      "min_lon": -50.6947534,
+      "max_lon": -50.294552877626
+    }
+  },
+  {
+    "id": "4342B",
+    "name": "DO RIO DOS VEADOS AO RIO JACARÉ GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-37",
+    "bbox": {
+      "min_lat": -1.289900099983,
+      "max_lat": -0.89438549231,
+      "min_lon": -50.8735582,
+      "max_lon": -50.349521006518
+    }
+  },
+  {
+    "id": "4343A",
+    "name": "FURO DO TAJAPURU E DA COMPANHIA DA ILHA PRACAXI À ILHA MUTUNQUARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/furo-do-tajapuru-e-da-companhia-da-ilha-pracaxi-ilha-mutunquara",
+    "bbox": {
+      "min_lat": -1.639644699978,
+      "max_lat": -1.102428593373,
+      "min_lon": -50.9233503,
+      "max_lon": -50.590750792529
+    }
+  },
+  {
+    "id": "4343B",
+    "name": "FUROS DO TAJAPURU, DA COMPANHIA, DO LIMÃO E ITUQUARA DA ILHA MUTUNQUARA AO CANAL DO VIEIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/furos-do-tajapuru-da-companhia-do-limao-e-ituquara-da-ilha-mutunquara",
+    "bbox": {
+      "min_lat": -1.187520299984,
+      "max_lat": -1.01702390844,
+      "min_lon": -51.2342272,
+      "max_lon": -50.725607491398
+    }
+  },
+  {
+    "id": "4351",
+    "name": "DA ILHA DO SIRIRI À BREVES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-siriri-breves",
+    "bbox": {
+      "min_lat": -1.919164258388,
+      "max_lat": -1.650833281889,
+      "min_lon": -50.47,
+      "max_lon": -50.281671209482
+    }
+  },
+  {
+    "id": "4352",
+    "name": "DE BREVES AO FURO DO TAJAPURU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-breves-ao-furo-do-tajapuru",
+    "bbox": {
+      "min_lat": -1.878333299975,
+      "max_lat": -1.609999989748,
+      "min_lon": -50.6525,
+      "max_lon": -50.463333342535
+    }
+  },
+  {
+    "id": "4353",
+    "name": "DA ILHA DO MEIO À ILHA MACUJUBIM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-meio-ilha-macujubim",
+    "bbox": {
+      "min_lat": -1.711666699977,
+      "max_lat": -1.44333329727,
+      "min_lon": -50.81,
+      "max_lon": -50.623333293319
+    }
+  },
+  {
+    "id": "2102",
+    "name": "DE SÃO JOSÉ DO NORTE AO CANAL DA SETIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-sao-jose-do-norte-ao-canal-da-setia",
+    "bbox": {
+      "min_lat": -32.033333341439,
+      "max_lat": -31.80000001044,
+      "min_lon": -52.216666663043,
+      "max_lon": -52.000000000532
+    }
+  },
+  {
+    "id": "2103",
+    "name": "DA BARRA DO CANAL SÃO GONÇALO AS PORTEIRAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-barra-do-canal-sao-goncalo-porteiras",
+    "bbox": {
+      "min_lat": -31.833333336316,
+      "max_lat": -31.666666665378,
+      "min_lon": -52.250000010213,
+      "max_lon": -51.983333323665
+    }
+  },
+  {
+    "id": "2104",
+    "name": "CANAL SÃO GONÇALO DA BARRA A PELOTAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/canal-sao-goncalo-da-barra-pelotas",
+    "bbox": {
+      "min_lat": -31.816634700012,
+      "max_lat": -31.766599604486,
+      "min_lon": -52.35,
+      "max_lon": -52.17170360329
+    }
+  },
+  {
+    "id": "2105",
+    "name": "CANAL DA FEITORIA E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/canal-da-feitoria-e-proximidades",
+    "bbox": {
+      "min_lat": -31.766666700011,
+      "max_lat": -31.599999993718,
+      "min_lon": -52.05,
+      "max_lon": -51.800000006234
+    }
+  },
+  {
+    "id": "2106",
+    "name": "SACO DO RINCÃO E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/saco-do-rincao-e-proximidades",
+    "bbox": {
+      "min_lat": -31.884166700014,
+      "max_lat": -31.709166690627,
+      "min_lon": -52.052000000548,
+      "max_lon": -51.785333304909
+    }
+  },
+  {
+    "id": "2107",
+    "name": "BARRA DO RIO GUAÍBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/barra-do-rio-guaiba",
+    "bbox": {
+      "min_lat": -30.566666658852,
+      "max_lat": -30.333333328621,
+      "min_lon": -51.166666668254,
+      "max_lon": -50.966666654056
+    }
+  },
+  {
+    "id": "2108",
+    "name": "DE ITAPUÃ À PONTA DO ARADO VELHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-itapua-ponta-do-arado-velho",
+    "bbox": {
+      "min_lat": -30.400000008467,
+      "max_lat": -30.216666673596,
+      "min_lon": -51.303333342956,
+      "max_lon": -51.016666671155
+    }
+  },
+  {
+    "id": "2111",
+    "name": "DE ITAPUÃ A PORTO ALEGRE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-itapua-porto-alegre",
+    "bbox": {
+      "min_lat": -30.438333324895,
+      "max_lat": -29.966666655699,
+      "min_lon": -51.399999979273,
+      "max_lon": -51.000000023335
+    }
+  },
+  {
+    "id": "2112",
+    "name": "DE RIO GRANDE A FEITORIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-69",
+    "bbox": {
+      "min_lat": -32.250833300005,
+      "max_lat": -31.600833325557,
+      "min_lon": -52.368833300556,
+      "max_lon": -51.802166669679
+    }
+  },
+  {
+    "id": "2113",
+    "name": "DE PORTO ALEGRE AO TERMINAL SANTA CLARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-porto-alegre-ao-terminal-santa-clara",
+    "bbox": {
+      "min_lat": -30.028333339243,
+      "max_lat": -29.891666668402,
+      "min_lon": -51.383333330966,
+      "max_lon": -51.20000000028
+    }
+  },
+  {
+    "id": "2133",
+    "name": "DA PONTA GROSSA À PORTO ALEGRE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ponta-grossa-porto-alegre",
+    "bbox": {
+      "min_lat": -30.233334996362,
+      "max_lat": -29.983336096769,
+      "min_lon": -51.361663900489,
+      "max_lon": -51.166664987958
+    }
+  },
+  {
+    "id": "2140",
+    "name": "LAGOA DOS PATOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-347",
+    "bbox": {
+      "min_lat": -32.339379319367,
+      "max_lat": -29.95620831941,
+      "min_lon": -52.354943613425,
+      "max_lon": -50.179939804213
+    }
+  },
+  {
+    "id": "25110 (INT.9150)",
+    "name": "ILHA ELEFANTE E PROXIMIDADES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-354",
+    "bbox": {
+      "min_lat": -62.08333330005,
+      "max_lat": -60.750000017083,
+      "min_lon": -57.75,
+      "max_lon": -53.500000048446
+    }
+  },
+  {
+    "id": "25115",
+    "name": "ILHAS SHETLAND DO SUL - ILHA ELEFANTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-355",
+    "bbox": {
+      "min_lat": -61.433333300051,
+      "max_lat": -60.833333326829,
+      "min_lon": -56.25,
+      "max_lon": -54.333333271481
+    }
+  },
+  {
+    "id": "25119 (INT.9127)",
+    "name": "ILHAS SHETLAND DO SUL - BAÍA DE SERRATT (I. REI GEORGE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-414",
+    "bbox": {
+      "min_lat": -62.20000000005,
+      "max_lat": -61.966666696089,
+      "min_lon": -57.8833333,
+      "max_lon": -57.199999985109
+    }
+  },
+  {
+    "id": "25120 (INT.9126)",
+    "name": "ILHAS SHETLAND DO SUL - BAÍA REI GEORGE (I. REI GEORGE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-77",
+    "bbox": {
+      "min_lat": -62.33333330005,
+      "max_lat": -62.000000016126,
+      "min_lon": -58.2666667,
+      "max_lon": -57.749999982915
+    }
+  },
+  {
+    "id": "25121 (INT.9125)",
+    "name": "ILHAS SHETLAND DO SUL - BAÍA DO ALMIRANTADO (ILHA REI GEORGE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-6",
+    "bbox": {
+      "min_lat": -62.325000000048,
+      "max_lat": -62.054999986804,
+      "min_lon": -58.6666667,
+      "max_lon": -58.199999974039
+    }
+  },
+  {
+    "id": "2791",
+    "name": "LAGO DE BRASÍLIA - PARTE CENTRAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-352",
+    "bbox": {
+      "min_lat": -15.836833333227,
+      "max_lat": -15.766666805061,
+      "min_lon": -47.866666666667,
+      "max_lon": -47.774999944668
+    }
+  },
+  {
+    "id": "2792",
+    "name": "LAGO DE BRASÍLIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-358",
+    "bbox": {
+      "min_lat": -15.86666666656,
+      "max_lat": -15.713334058051,
+      "min_lon": -47.941666666667,
+      "max_lon": -47.775000455586
+    }
+  },
+  {
+    "id": "302",
+    "name": "DE SALINÓPOLIS AO CANAL DO ESPADARTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-42",
+    "bbox": {
+      "min_lat": -0.74999999999,
+      "max_lat": -0.133333282094,
+      "min_lon": -48.1166667,
+      "max_lon": -47.166666657625
+    }
+  },
+  {
+    "id": "303",
+    "name": "DO CABO MAGUARI À MOSQUEIRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-43",
+    "bbox": {
+      "min_lat": -1.149999999985,
+      "max_lat": -0.166666739418,
+      "min_lon": -48.6666667,
+      "max_lon": -48.000000013858
+    }
+  },
+  {
+    "id": "304",
+    "name": "DE MOSQUEIRO A VILA DO CONDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-mosqueiro-vila-do-conde",
+    "bbox": {
+      "min_lat": -1.666666699978,
+      "max_lat": -0.999999979385,
+      "min_lon": -48.9166667,
+      "max_lon": -48.416666730332
+    }
+  },
+  {
+    "id": "305",
+    "name": "DA ILHA DO CAPIM À ILHA DA CONCEIÇÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-capim-ilha-da-conceicao",
+    "bbox": {
+      "min_lat": -1.866666699975,
+      "max_lat": -1.349999981703,
+      "min_lon": -49.6666667,
+      "max_lon": -48.858333259975
+    }
+  },
+  {
+    "id": "306",
+    "name": "DA ILHA DA CONCEIÇÃO AOS ESTREITOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-da-conceicao-aos-estreitos",
+    "bbox": {
+      "min_lat": -2.049999999956,
+      "max_lat": -1.60000002108,
+      "min_lon": -50.367166664389,
+      "max_lon": -49.533833285747
+    }
+  },
+  {
+    "id": "320",
+    "name": "PORTO DE BELÉM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-belem",
+    "bbox": {
+      "min_lat": -1.499999999975,
+      "max_lat": -1.366666700851,
+      "min_lon": -48.549999999992,
+      "max_lon": -48.44999999794
+    }
+  },
+  {
+    "id": "321",
+    "name": "PORTO DE VILA DO CONDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/porto-de-vila-do-conde",
+    "bbox": {
+      "min_lat": -1.6166666638,
+      "max_lat": -1.466458695892,
+      "min_lon": -48.816666664047,
+      "max_lon": -48.71666670488
+    }
+  },
+  {
+    "id": "3300",
+    "name": "DA ISLA BANCO MORALES À BAHÍA DE ASUNCIÓN",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-188",
+    "bbox": {
+      "min_lat": -25.357790822523,
+      "max_lat": -25.227476665956,
+      "min_lon": -57.691379724824,
+      "max_lon": -57.596012497068
+    }
+  },
+  {
+    "id": "3301",
+    "name": "DO PUERTO BOTÁNICO À PUENTE REMANSO CASTILLO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-417",
+    "bbox": {
+      "min_lat": -25.258109699964,
+      "max_lat": -25.17135243886,
+      "min_lon": -57.668590600393,
+      "max_lon": -57.525251633179
+    }
+  },
+  {
+    "id": "3302",
+    "name": "DO RIACHO SAN FRANSISCO (BOCA INFERIOR) À VILLA HAYES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-408",
+    "bbox": {
+      "min_lat": -25.180004999962,
+      "max_lat": -25.04950000813,
+      "min_lon": -57.586839700389,
+      "max_lon": -57.491471672283
+    }
+  },
+  {
+    "id": "3303",
+    "name": "DE PIQUETE-CUÉ À VUELTA ARECUTACUÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-418",
+    "bbox": {
+      "min_lat": -25.135648899963,
+      "max_lat": -25.048803941071,
+      "min_lon": -57.500000000388,
+      "max_lon": -57.356637529865
+    }
+  },
+  {
+    "id": "3304",
+    "name": "DA ISLA ARECUTACUÁ A ESTANCIA OLIVARES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-126",
+    "bbox": {
+      "min_lat": -25.057291099962,
+      "max_lat": -24.970389457432,
+      "min_lon": -57.445985300385,
+      "max_lon": -57.302646361064
+    }
+  },
+  {
+    "id": "3305",
+    "name": "DA ESTANCIA OLIVARES AO PASO MERCEDES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-319",
+    "bbox": {
+      "min_lat": -24.978882199961,
+      "max_lat": -24.891924506086,
+      "min_lon": -57.345934700382,
+      "max_lon": -57.202595836422
+    }
+  },
+  {
+    "id": "3306",
+    "name": "DO PASO MERCEDES AO PASO PALMA SOLA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-419",
+    "bbox": {
+      "min_lat": -24.90059764206,
+      "max_lat": -24.769792296312,
+      "min_lon": -57.312891160032,
+      "max_lon": -57.217544656228
+    }
+  },
+  {
+    "id": "3307",
+    "name": "DA ISLA POYBÍ A ISLA URUGUAYTÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-320",
+    "bbox": {
+      "min_lat": -24.77269749996,
+      "max_lat": -24.68559330062,
+      "min_lon": -57.298155300376,
+      "max_lon": -57.15481610689
+    }
+  },
+  {
+    "id": "3308",
+    "name": "DO PASO VILLA REY AO PASO SAN JUAN",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-321",
+    "bbox": {
+      "min_lat": -24.702096099959,
+      "max_lat": -24.614918880597,
+      "min_lon": -57.25449082507,
+      "max_lon": -57.111154992697
+    }
+  },
+  {
+    "id": "3309",
+    "name": "DA ISLA PITO-CANY A ISLA OCULTO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-333",
+    "bbox": {
+      "min_lat": -24.621422222515,
+      "max_lat": -24.490450002995,
+      "min_lon": -57.208222225047,
+      "max_lon": -57.113105550648
+    }
+  },
+  {
+    "id": "3310",
+    "name": "DA ISLA ESPERANZA A ISLA YSYPO-I",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-322",
+    "bbox": {
+      "min_lat": -24.499458299956,
+      "max_lat": -24.368313893118,
+      "min_lon": -57.208222200367,
+      "max_lon": -57.11287260315
+    }
+  },
+  {
+    "id": "3311",
+    "name": "DO PASO CABALLEROA ISLA YSYPO-I",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-420",
+    "bbox": {
+      "min_lat": -24.376222222514,
+      "max_lat": -24.24496388614,
+      "min_lon": -57.227441675734,
+      "max_lon": -57.132216666419
+    }
+  },
+  {
+    "id": "3312",
+    "name": "DA ISLA COMPARADA A PUERTO BARRANQUERITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-393",
+    "bbox": {
+      "min_lat": -24.253375554828,
+      "max_lat": -24.166258057757,
+      "min_lon": -57.291322775751,
+      "max_lon": -57.148126939238
+    }
+  },
+  {
+    "id": "3313",
+    "name": "DA ISLA COMPARADA A VUELTA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-330",
+    "bbox": {
+      "min_lat": -24.174586677393,
+      "max_lat": -24.043411390276,
+      "min_lon": -57.291322775767,
+      "max_lon": -57.195858898483
+    }
+  },
+  {
+    "id": "3314",
+    "name": "DA VUELTA GRANDE AO PASO CURUZU JUANITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-331",
+    "bbox": {
+      "min_lat": -24.053196099952,
+      "max_lat": -23.921500008664,
+      "min_lon": -57.284346949489,
+      "max_lon": -57.188978622559
+    }
+  },
+  {
+    "id": "3315",
+    "name": "DO PASO CURUZU JUANITA AO PASO SAN ANTONIO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-332",
+    "bbox": {
+      "min_lat": -23.938333322511,
+      "max_lat": -23.806388887122,
+      "min_lon": -57.325293900351,
+      "max_lon": -57.229925827998
+    }
+  },
+  {
+    "id": "3316",
+    "name": "DA ISLA PEDERNAL AO PASO CAA-PUCU-MI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-isla-pedernal-ao-paso-caa-pucu-mi",
+    "bbox": {
+      "min_lat": -23.813333299949,
+      "max_lat": -23.681666739982,
+      "min_lon": -57.342333300348,
+      "max_lon": -57.247333328202
+    }
+  },
+  {
+    "id": "3317",
+    "name": "DA ISLA DEL LOCO AO PASO SIETE PUNTAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-isla-del-loco-ao-paso-siete-puntas",
+    "bbox": {
+      "min_lat": -23.684999999949,
+      "max_lat": -23.596666720641,
+      "min_lon": -57.443833300345,
+      "max_lon": -57.300666699388
+    }
+  },
+  {
+    "id": "3318",
+    "name": "DO PASO SIETE PUNTAS AO PASO MILAGRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-80",
+    "bbox": {
+      "min_lat": -23.612499999947,
+      "max_lat": -23.480166694898,
+      "min_lon": -57.499833300343,
+      "max_lon": -57.404666683033
+    }
+  },
+  {
+    "id": "3319",
+    "name": "DO RIO YPANÉ AO PASO SALADILLO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-rio-ypane-ao-paso-saladillo",
+    "bbox": {
+      "min_lat": -23.485215287137,
+      "max_lat": -23.352833329765,
+      "min_lon": -57.518368322644,
+      "max_lon": -57.423185837647
+    }
+  },
+  {
+    "id": "3320",
+    "name": "DO PASO SIETE PUNTAS AO PASO MILAGRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-337",
+    "bbox": {
+      "min_lat": -23.366499999945,
+      "max_lat": -23.234166636352,
+      "min_lon": -57.551833300336,
+      "max_lon": -57.456500043814
+    }
+  },
+  {
+    "id": "3321",
+    "name": "DO PASO ROMERO-CUÉ A ISLA SAN ALFREDO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-325",
+    "bbox": {
+      "min_lat": -23.241111099945,
+      "max_lat": -23.15222221927,
+      "min_lon": -57.641595275914,
+      "max_lon": -57.498734175434
+    }
+  },
+  {
+    "id": "3322",
+    "name": "DA ISLA SAN ALFREDO A ISLA SAN JUAN",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-326",
+    "bbox": {
+      "min_lat": -23.154425299944,
+      "max_lat": -23.066210261521,
+      "min_lon": -57.741502500332,
+      "max_lon": -57.598163648921
+    }
+  },
+  {
+    "id": "3323",
+    "name": "DO PUERTO SAN JUAN AO PUERTO LA NOVIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-327",
+    "bbox": {
+      "min_lat": -23.075273099942,
+      "max_lat": -22.942584390758,
+      "min_lon": -57.793677800329,
+      "max_lon": -57.698836293359
+    }
+  },
+  {
+    "id": "3324",
+    "name": "DO PUERTO LA NOVIA A ISLA SAN CARLOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-107",
+    "bbox": {
+      "min_lat": -22.952451945069,
+      "max_lat": -22.819642105707,
+      "min_lon": -57.849341100326,
+      "max_lon": -57.754116093508
+    }
+  },
+  {
+    "id": "3325",
+    "name": "DA ISLA SAN CARLOS A ISLA PIQUETE-CAMBÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-421",
+    "bbox": {
+      "min_lat": -22.827999999942,
+      "max_lat": -22.739833298658,
+      "min_lon": -57.935500000324,
+      "max_lon": -57.792500024034
+    }
+  },
+  {
+    "id": "3326",
+    "name": "DA ISLA PIQUETE-CAMBÁ AO PASO ITÁ-PUCÚ-MÍ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-339",
+    "bbox": {
+      "min_lat": -22.749333299939,
+      "max_lat": -22.616500055883,
+      "min_lon": -57.969833300321,
+      "max_lon": -57.874499918909
+    }
+  },
+  {
+    "id": "3327",
+    "name": "DO PASO ITÁ-PUCÚ-MÍ AO PUERTO MAX",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-340",
+    "bbox": {
+      "min_lat": -22.70516669994,
+      "max_lat": -22.616833345813,
+      "min_lon": -57.895666700321,
+      "max_lon": -57.752333307484
+    }
+  },
+  {
+    "id": "3328",
+    "name": "DA ISLA CAÁ-PUCÚ-MÍ A ISLA CARAYACITO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-458",
+    "bbox": {
+      "min_lat": -22.624166699938,
+      "max_lat": -22.490999991479,
+      "min_lon": -57.870000000318,
+      "max_lon": -57.774499971679
+    }
+  },
+  {
+    "id": "3329",
+    "name": "DE ITACUÁ AO PUERTO RISSO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-335",
+    "bbox": {
+      "min_lat": -22.499499999937,
+      "max_lat": -22.366166673259,
+      "min_lon": -57.896500000314,
+      "max_lon": -57.801166659311
+    }
+  },
+  {
+    "id": "3330",
+    "name": "DO PUERTO RISSO A ISLA DALMACIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-334",
+    "bbox": {
+      "min_lat": -22.374499999937,
+      "max_lat": -22.28583335958,
+      "min_lon": -57.949333300312,
+      "max_lon": -57.806000037629
+    }
+  },
+  {
+    "id": "3331",
+    "name": "DA ISLA DALMACIA A ISLA SAN ROQUE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-328",
+    "bbox": {
+      "min_lat": -22.294833299937,
+      "max_lat": -22.206000008242,
+      "min_lon": -58.00450000031,
+      "max_lon": -57.861166708685
+    }
+  },
+  {
+    "id": "3332",
+    "name": "PUERTO VALLEMI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/puerto-vallemi",
+    "bbox": {
+      "min_lat": -22.214333299936,
+      "max_lat": -22.125833383106,
+      "min_lon": -58.038978281952,
+      "max_lon": -57.895666654914
+    }
+  },
+  {
+    "id": "3333",
+    "name": "FOZ DO RIO APA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/foz-do-rio-apa",
+    "bbox": {
+      "min_lat": -22.137833299935,
+      "max_lat": -22.049000036523,
+      "min_lon": -58.005666700306,
+      "max_lon": -57.862333388694
+    }
+  },
+  {
+    "id": "3334",
+    "name": "DO PORTO SASTRE À CANCHA ESTRELA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-porto-sastre-cancha-estrela",
+    "bbox": {
+      "min_lat": -22.063118599933,
+      "max_lat": -21.929577299946,
+      "min_lon": -58.034535000303,
+      "max_lon": -57.939309999519
+    }
+  },
+  {
+    "id": "3335",
+    "name": "DO RIACHO GUAICURUS À ILHA SANTA MARIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-312",
+    "bbox": {
+      "min_lat": -21.938760299932,
+      "max_lat": -21.804966953372,
+      "min_lon": -57.999799200299,
+      "max_lon": -57.904431123531
+    }
+  },
+  {
+    "id": "3336",
+    "name": "DA ILHA SANTA MARIA A PORTO MURTINHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-99",
+    "bbox": {
+      "min_lat": -21.813533299935,
+      "max_lat": -21.679621602516,
+      "min_lon": -57.9664489,
+      "max_lon": -57.871080858437
+    }
+  },
+  {
+    "id": "3337",
+    "name": "DA I. MARGARITA À I. DO TIGRE OU ONÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-97",
+    "bbox": {
+      "min_lat": -21.688821099934,
+      "max_lat": -21.554791698081,
+      "min_lon": -57.9728992,
+      "max_lon": -57.877531753776
+    }
+  },
+  {
+    "id": "3338",
+    "name": "DA ILHA DO TIGRE OU ONÇA A I.FECHO DOS MORROS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-100",
+    "bbox": {
+      "min_lat": -21.563954699933,
+      "max_lat": -21.429541436667,
+      "min_lon": -57.9901,
+      "max_lon": -57.89484671143
+    }
+  },
+  {
+    "id": "3339",
+    "name": "DA ILHA CAMBÁ NUPÁ À ILHA JOSÉ KIRÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-166",
+    "bbox": {
+      "min_lat": -21.438980299932,
+      "max_lat": -21.304627463464,
+      "min_lon": -57.9435139,
+      "max_lon": -57.848200078935
+    }
+  },
+  {
+    "id": "3340",
+    "name": "DO PORTO GUARANI A VOLTA JENIPAPO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-317",
+    "bbox": {
+      "min_lat": -21.313895599931,
+      "max_lat": -21.179517216758,
+      "min_lon": -57.9333333,
+      "max_lon": -57.83796527152
+    }
+  },
+  {
+    "id": "3341",
+    "name": "DA BAIA DA SUCURI AO PASSO OLIMPO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-314",
+    "bbox": {
+      "min_lat": -21.18870389993,
+      "max_lat": -21.054210476855,
+      "min_lon": -57.9142736,
+      "max_lon": -57.81890548297
+    }
+  },
+  {
+    "id": "3342",
+    "name": "DE FORTE OLIMPO AO PASSO CURUÇU CANCHA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-315",
+    "bbox": {
+      "min_lat": -21.063404699929,
+      "max_lat": -20.928798057846,
+      "min_lon": -57.8996531,
+      "max_lon": -57.804284731745
+    }
+  },
+  {
+    "id": "3343",
+    "name": "DO PASSO CURUÇU CANCHA À ILHA SPENILLO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-316",
+    "bbox": {
+      "min_lat": -20.937370599928,
+      "max_lat": -20.802646742743,
+      "min_lon": -57.9427503,
+      "max_lon": -57.847382504283
+    }
+  },
+  {
+    "id": "3344",
+    "name": "DA ILHA DO RABO DA EMA À ILHA DO ALGODOAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-25",
+    "bbox": {
+      "min_lat": -20.810999999926,
+      "max_lat": -20.72133325995,
+      "min_lon": -57.9913333,
+      "max_lon": -57.850000062193
+    }
+  },
+  {
+    "id": "3345",
+    "name": "DA ILHA DO ALGODOAL À VOLTA RÁPIDA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-algodoal-volta-rapida",
+    "bbox": {
+      "min_lat": -20.730499999923,
+      "max_lat": -20.640833370207,
+      "min_lon": -58.005333300268,
+      "max_lon": -57.863886614913
+    }
+  },
+  {
+    "id": "3346",
+    "name": "DA VOLTA RÁPIDA À ILHA DO CHAPÉU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-volta-rapida-ilha-do-chapeu",
+    "bbox": {
+      "min_lat": -20.649999999921,
+      "max_lat": -20.516666676314,
+      "min_lon": -58.047000000266,
+      "max_lon": -57.951666630138
+    }
+  },
+  {
+    "id": "3347",
+    "name": "DA ILHA PORTO NOVO À ILHA CAPÃO QUEIMADO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-porto-novo-ilha-capao-queimado",
+    "bbox": {
+      "min_lat": -20.52427689992,
+      "max_lat": -20.39099500615,
+      "min_lon": -58.073197200263,
+      "max_lon": -57.978286665402
+    }
+  },
+  {
+    "id": "3348",
+    "name": "DO PUERTO ESPERANZA À ILHA CABEÇA DE BOI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-puerto-esperanza-ilha-cabeca-de-boi",
+    "bbox": {
+      "min_lat": -20.423832199919,
+      "max_lat": -20.28872333905,
+      "min_lon": -58.13257890026,
+      "max_lon": -58.03720917805
+    }
+  },
+  {
+    "id": "3349",
+    "name": "DA ILHA SEPUTÁ À FOZ DO RIO NEGRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-seputa-foz-do-rio-negro",
+    "bbox": {
+      "min_lat": -20.295006699918,
+      "max_lat": -20.161922700153,
+      "min_lon": -58.178160000257,
+      "max_lon": -58.083334521138
+    }
+  },
+  {
+    "id": "3350",
+    "name": "DA FOZ DO RIO NEGRO À ISLA PATATIVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-foz-do-rio-negro-isla-patativa",
+    "bbox": {
+      "min_lat": -20.171046699919,
+      "max_lat": -20.081566699232,
+      "min_lon": -58.182705000255,
+      "max_lon": -58.041680058179
+    }
+  },
+  {
+    "id": "3351",
+    "name": "DA ILHA SANTA FÉ AO PASSO REBOJO GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-santa-fe-ao-passo-rebojo-grande",
+    "bbox": {
+      "min_lat": -20.106122499918,
+      "max_lat": -20.015966372492,
+      "min_lon": -58.048210600252,
+      "max_lon": -57.904857288332
+    }
+  },
+  {
+    "id": "3352",
+    "name": "DO PASSO DO REBOJO GRANDE À ILHA DO MARCO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-174",
+    "bbox": {
+      "min_lat": -20.086643599921,
+      "max_lat": -19.951163608261,
+      "min_lon": -57.9282253,
+      "max_lon": -57.832857743919
+    }
+  },
+  {
+    "id": "3353",
+    "name": "DO ESTIRÃO DE COIMBRA À ILHA PARATUDAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-61",
+    "bbox": {
+      "min_lat": -19.960244999786,
+      "max_lat": -19.87004714192,
+      "min_lon": -57.8811622002,
+      "max_lon": -57.73782360852
+    }
+  },
+  {
+    "id": "3354",
+    "name": "DO PASSO PIÚVA INFERIOR À ILHA DOS BUGRES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-62",
+    "bbox": {
+      "min_lat": -19.878995799916,
+      "max_lat": -19.788749158816,
+      "min_lon": -57.784121900246,
+      "max_lon": -57.64078222764
+    }
+  },
+  {
+    "id": "3355",
+    "name": "DA ILHA DOS BUGRES À ILHA NABILEQUE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-389",
+    "bbox": {
+      "min_lat": -19.800757799919,
+      "max_lat": -19.71046531578,
+      "min_lon": -57.6798883,
+      "max_lon": -57.536549367043
+    }
+  },
+  {
+    "id": "3356",
+    "name": "DO PASSO DO CONSELHO À VOLTA DO ACURIZAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-409",
+    "bbox": {
+      "min_lat": -19.713761099918,
+      "max_lat": -19.623418056811,
+      "min_lon": -57.603179447681,
+      "max_lon": -57.459842220317
+    }
+  },
+  {
+    "id": "3357",
+    "name": "DA VOLTA DO ACURIZAL AO RIACHO DO ABRIGO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-98",
+    "bbox": {
+      "min_lat": -19.635901099917,
+      "max_lat": -19.500031665496,
+      "min_lon": -57.4931439,
+      "max_lon": -57.397776669742
+    }
+  },
+  {
+    "id": "3358",
+    "name": "DA ORÇADA DE SÃO JOSÉ À ILHA CARAGUATÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-301",
+    "bbox": {
+      "min_lat": -19.538035599912,
+      "max_lat": -19.402085042207,
+      "min_lon": -57.467063100235,
+      "max_lon": -57.371696726149
+    }
+  },
+  {
+    "id": "3359",
+    "name": "DA ILHA CARAGUATÁ À ILHA CAMBARÁ FERRADO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-79",
+    "bbox": {
+      "min_lat": -19.455658899913,
+      "max_lat": -19.365836917464,
+      "min_lon": -57.401992500233,
+      "max_lon": -57.261655552076
+    }
+  },
+  {
+    "id": "3360",
+    "name": "DO ESTIRÃO CAMBARÁ FERRADO AO PASSO ABOBRAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-108",
+    "bbox": {
+      "min_lat": -19.373313899912,
+      "max_lat": -19.283446365817,
+      "min_lon": -57.368925600231,
+      "max_lon": -57.228589193118
+    }
+  },
+  {
+    "id": "3361",
+    "name": "DA ILHA DA MANGA À ILHA TIRA CATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-279",
+    "bbox": {
+      "min_lat": -19.292520599915,
+      "max_lat": -19.156359934445,
+      "min_lon": -57.3025028,
+      "max_lon": -57.207134240587
+    }
+  },
+  {
+    "id": "3362",
+    "name": "DA ILHA TIRA CATINGA À VOLTA BARROS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-406",
+    "bbox": {
+      "min_lat": -19.165487799911,
+      "max_lat": -19.074838346717,
+      "min_lon": -57.370445800226,
+      "max_lon": -57.227106939511
+    }
+  },
+  {
+    "id": "3363",
+    "name": "DA VOLTA BARROS AO PASSO DE SANTANA OU JATOBÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-422",
+    "bbox": {
+      "min_lat": -19.08265169991,
+      "max_lat": -18.991956691782,
+      "min_lon": -57.399639200225,
+      "max_lon": -57.256300270001
+    }
+  },
+  {
+    "id": "3364",
+    "name": "DA VOLTA DO JATOBÁ AO PORTO ARROZAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-109",
+    "bbox": {
+      "min_lat": -19.04607999991,
+      "max_lat": -18.955364713014,
+      "min_lon": -57.533333300224,
+      "max_lon": -57.390035197417
+    }
+  },
+  {
+    "id": "3365",
+    "name": "DO PORTO TARUMÃ A CORUMBÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-92",
+    "bbox": {
+      "min_lat": -19.046261677334,
+      "max_lat": -18.955546663314,
+      "min_lon": -57.666631947487,
+      "max_lon": -57.52329306383
+    }
+  },
+  {
+    "id": "3366",
+    "name": "DE CORUMBÁ AO ESTIRÃO DA ÁGUA BRANCA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-101",
+    "bbox": {
+      "min_lat": -19.000432499913,
+      "max_lat": -18.948076944233,
+      "min_lon": -57.669016662016,
+      "max_lon": -57.632538056291
+    }
+  },
+  {
+    "id": "3367",
+    "name": "DA VOLTA BARROS AO PASSO DE SANTANA OU JATOBÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-175",
+    "bbox": {
+      "min_lat": -18.955148336043,
+      "max_lat": -18.902797222682,
+      "min_lon": -57.701765837973,
+      "max_lon": -57.665321943893
+    }
+  },
+  {
+    "id": "3368",
+    "name": "DO PASSO DO PESCADOR A ILHA PASSARINHO PRETO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-261",
+    "bbox": {
+      "min_lat": -18.90339696314,
+      "max_lat": -18.851049723289,
+      "min_lon": -57.688391633789,
+      "max_lon": -57.651918076164
+    }
+  },
+  {
+    "id": "3369",
+    "name": "DA CANCHA DO TUIUIU A CANCHA DO PIUVAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-260",
+    "bbox": {
+      "min_lat": -18.852542199911,
+      "max_lat": -18.818246101336,
+      "min_lon": -57.684040600221,
+      "max_lon": -57.628726098171
+    }
+  },
+  {
+    "id": "3370",
+    "name": "DA VOLTA MORCEGUEIRO AO PASSO DA FAIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-259",
+    "bbox": {
+      "min_lat": -18.854913890879,
+      "max_lat": -18.802500004067,
+      "min_lon": -57.629477218975,
+      "max_lon": -57.59304222615
+    }
+  },
+  {
+    "id": "3371",
+    "name": "DO PASSO DA FAIA A VOLTA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-258",
+    "bbox": {
+      "min_lat": -18.809561945078,
+      "max_lat": -18.775228611949,
+      "min_lon": -57.593886390514,
+      "max_lon": -57.53860916584
+    }
+  },
+  {
+    "id": "3372",
+    "name": "DA VOLTA GRANDE A ILHA ESTREITA OU PIMENTEIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-257",
+    "bbox": {
+      "min_lat": -18.775792199911,
+      "max_lat": -18.741477471022,
+      "min_lon": -57.5938211,
+      "max_lon": -57.538553353443
+    }
+  },
+  {
+    "id": "3373",
+    "name": "DA VOLTA DA SARACURA AO ESTIRÃO DOMINGOS RAMOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-262",
+    "bbox": {
+      "min_lat": -18.741913363145,
+      "max_lat": -18.707605529854,
+      "min_lon": -57.5936578,
+      "max_lon": -57.538399413212
+    }
+  },
+  {
+    "id": "3374",
+    "name": "DO PASSO DOMINGOS RAMOS INFERIOR AO PASSO DOMINGOS RAMOS SUPERIOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-256",
+    "bbox": {
+      "min_lat": -18.732918054746,
+      "max_lat": -18.680538059259,
+      "min_lon": -57.539224447405,
+      "max_lon": -57.502863333292
+    }
+  },
+  {
+    "id": "3375",
+    "name": "DA VOLTA DO CARANDAZINHO A VOLTA DO CURURU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-255",
+    "bbox": {
+      "min_lat": -18.680967499911,
+      "max_lat": -18.646638068531,
+      "min_lon": -57.565864162086,
+      "max_lon": -57.5106325019
+    }
+  },
+  {
+    "id": "3376",
+    "name": "DA BOCA DO CURURU A ILHA DO CASTELO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-55",
+    "bbox": {
+      "min_lat": -18.646975299909,
+      "max_lat": -18.59457723564,
+      "min_lon": -57.546610533882,
+      "max_lon": -57.510251666984
+    }
+  },
+  {
+    "id": "3377",
+    "name": "DA BAÍA DO CASTELO À VOLTA FANDANGO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-baia-do-castelo-volta-fandango",
+    "bbox": {
+      "min_lat": -18.596014136674,
+      "max_lat": -18.561678893771,
+      "min_lon": -57.546305000214,
+      "max_lon": -57.491105015871
+    }
+  },
+  {
+    "id": "3378",
+    "name": "DO PASSO DO TUCANO A ORÇADA LARANJEIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-passo-do-tucano-orcada-laranjeira",
+    "bbox": {
+      "min_lat": -18.582705299973,
+      "max_lat": -18.53033139703,
+      "min_lon": -57.494284466944,
+      "max_lon": -57.457912520326
+    }
+  },
+  {
+    "id": "3379",
+    "name": "DA ORÇADA LARANJEIRA A ILHA LARANJEIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-247",
+    "bbox": {
+      "min_lat": -18.570150536678,
+      "max_lat": -18.51775362695,
+      "min_lon": -57.461274133697,
+      "max_lon": -57.424953614441
+    }
+  },
+  {
+    "id": "3380",
+    "name": "DA VOLTA DA BAÍA VERMELHA A ILHA VERDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-236",
+    "bbox": {
+      "min_lat": -18.518353761681,
+      "max_lat": -18.483983887687,
+      "min_lon": -57.466666662122,
+      "max_lon": -57.411589439817
+    }
+  },
+  {
+    "id": "3381",
+    "name": "DA ILHA VERDE AO PASSO PARAGUAI MIRIM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-253",
+    "bbox": {
+      "min_lat": -18.500745599908,
+      "max_lat": -18.466392746145,
+      "min_lon": -57.412513600212,
+      "max_lon": -57.357353337565
+    }
+  },
+  {
+    "id": "3382",
+    "name": "DO PASSO PARAGUAI MIRIM A ILHA BAGUARI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-245",
+    "bbox": {
+      "min_lat": -18.466797217974,
+      "max_lat": -18.414367221192,
+      "min_lon": -57.396244447542,
+      "max_lon": -57.359974444463
+    }
+  },
+  {
+    "id": "3383",
+    "name": "DO PASSO BAGUARI AO CORICHO SÃO FRANCISCO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-244",
+    "bbox": {
+      "min_lat": -18.415076399907,
+      "max_lat": -18.362646109058,
+      "min_lon": -57.393658100209,
+      "max_lon": -57.357391662744
+    }
+  },
+  {
+    "id": "3384",
+    "name": "JUSANTE E MONTANTE DO BRAÇO ANTIGO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-243",
+    "bbox": {
+      "min_lat": -18.372000299907,
+      "max_lat": -18.319585790671,
+      "min_lon": -57.381395533981,
+      "max_lon": -57.345124780284
+    }
+  },
+  {
+    "id": "3385",
+    "name": "DA ILHA DO COQUEIRO A ILHA SANTA FÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-242",
+    "bbox": {
+      "min_lat": -18.320164699906,
+      "max_lat": -18.26773833281,
+      "min_lon": -57.404360000207,
+      "max_lon": -57.368149701131
+    }
+  },
+  {
+    "id": "3386",
+    "name": "CORREGO BONFIM (JUSANTE E MONTANTE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-241",
+    "bbox": {
+      "min_lat": -18.282156899906,
+      "max_lat": -18.22975111379,
+      "min_lon": -57.430707500206,
+      "max_lon": -57.394497498758
+    }
+  },
+  {
+    "id": "3387",
+    "name": "DA CANCHA RUFINO AO PASSO RUFINO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-cancha-rufino-ao-passo-rufino",
+    "bbox": {
+      "min_lat": -18.230133036672,
+      "max_lat": -18.177710288036,
+      "min_lon": -57.406501966379,
+      "max_lon": -57.370251945067
+    }
+  },
+  {
+    "id": "3388",
+    "name": "DA ILHA DA FIGUEIRA AO RIO BOCA DO JOÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-da-figueira-ao-rio-boca-do-joao",
+    "bbox": {
+      "min_lat": -18.178049136671,
+      "max_lat": -18.125609470961,
+      "min_lon": -57.401460866358,
+      "max_lon": -57.365251104559
+    }
+  },
+  {
+    "id": "3389",
+    "name": "JUSANTE DA ILHA PIUVA AO PASSO PIUVA SUPERIOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/jusante-da-ilha-piuva-ao-passo-piuva-superior",
+    "bbox": {
+      "min_lat": -18.131581699906,
+      "max_lat": -18.097264997042,
+      "min_lon": -57.455564400203,
+      "max_lon": -57.400495830037
+    }
+  },
+  {
+    "id": "3390",
+    "name": "DO MORRO DOURADOS À BOCA DO AMOLAR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-morro-dourados-boca-do-amolar",
+    "bbox": {
+      "min_lat": -18.106269699905,
+      "max_lat": -18.053913633092,
+      "min_lon": -57.491061700203,
+      "max_lon": -57.454798897857
+    }
+  },
+  {
+    "id": "3391",
+    "name": "DO AMOLAR À BOCA SÃO GONÇALO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-amolar-boca-sao-goncalo",
+    "bbox": {
+      "min_lat": -18.054935536669,
+      "max_lat": -18.002517781045,
+      "min_lon": -57.493126100201,
+      "max_lon": -57.456917224154
+    }
+  },
+  {
+    "id": "3392",
+    "name": "DA BOCA SÃO GONÇALO AO ESTIRÃO ZÉ DIAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-boca-sao-goncalo-ao-estirao-ze-dias",
+    "bbox": {
+      "min_lat": -18.009342799905,
+      "max_lat": -17.956928890748,
+      "min_lon": -57.4702625002,
+      "max_lon": -57.434091944848
+    }
+  },
+  {
+    "id": "3393",
+    "name": "DO ESTIRÃO ZÉ DIAS A BOCA INFERIOR DO CORIXO DO MOQUÉM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-estirao-ze-dias-boca-inferior-do-corixo-do-moquem",
+    "bbox": {
+      "min_lat": -17.957680299904,
+      "max_lat": -17.905260501422,
+      "min_lon": -57.486117200199,
+      "max_lon": -57.449911900485
+    }
+  },
+  {
+    "id": "3394",
+    "name": "DA FOZ DO RIO CUIABÁ AO REFÚGIO DAS TRÊS BOCAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-250",
+    "bbox": {
+      "min_lat": -17.905943336041,
+      "max_lat": -17.853533197965,
+      "min_lon": -57.49164305282,
+      "max_lon": -57.45547859587
+    }
+  },
+  {
+    "id": "3395",
+    "name": "DO CORIXO DO MOQUÉM À BAÍA DO ACURIZAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-251",
+    "bbox": {
+      "min_lat": -17.874682499905,
+      "max_lat": -17.840341135449,
+      "min_lon": -57.5458936,
+      "max_lon": -57.490919708573
+    }
+  },
+  {
+    "id": "3396",
+    "name": "DA ILHA ACURIZAL À BOCA DA FIGUEIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-acurizal-boca-da-figueira",
+    "bbox": {
+      "min_lat": -17.841259199904,
+      "max_lat": -17.806941106456,
+      "min_lon": -57.584629700197,
+      "max_lon": -57.52965917522
+    }
+  },
+  {
+    "id": "3397",
+    "name": "DO ESTIRÃO DO CARANDÁ GRANDE A VOLTA DO ARGOLÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-235",
+    "bbox": {
+      "min_lat": -17.807198099904,
+      "max_lat": -17.772870286332,
+      "min_lon": -57.626657800196,
+      "max_lon": -57.571711922985
+    }
+  },
+  {
+    "id": "3398",
+    "name": "DA VOLTA DO ARGOLÃO À VOLTA CANAFRISTA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-volta-do-argolao-volta-canafrista",
+    "bbox": {
+      "min_lat": -17.773972799903,
+      "max_lat": -17.721588067122,
+      "min_lon": -57.634820534192,
+      "max_lon": -57.59865224082
+    }
+  },
+  {
+    "id": "3399",
+    "name": "LAGOA GAÍVA DA BOCA DO CARANDÁ A BOCA BRAVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-227",
+    "bbox": {
+      "min_lat": -17.738504699904,
+      "max_lat": -17.704214467899,
+      "min_lon": -57.688710000195,
+      "max_lon": -57.633761123573
+    }
+  },
+  {
+    "id": "3400",
+    "name": "LAGOA GAÍVA - VOLTA DO CACHORRO E VOLTA DO GATA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-400",
+    "bbox": {
+      "min_lat": -17.705683363141,
+      "max_lat": -17.653301112876,
+      "min_lon": -57.688686634215,
+      "max_lon": -57.652491644162
+    }
+  },
+  {
+    "id": "3401",
+    "name": "DE BELA VISTA DO NORTE AO ESTIRÃO DOM PEDRO II",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-226",
+    "bbox": {
+      "min_lat": -17.654520299904,
+      "max_lat": -17.602152767743,
+      "min_lon": -57.6958889,
+      "max_lon": -57.65969832625
+    }
+  },
+  {
+    "id": "3402",
+    "name": "DA BOCA DA ANTA A VOLTA DA PRAINHA INFERIOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-151",
+    "bbox": {
+      "min_lat": -17.622374199904,
+      "max_lat": -17.58806420149,
+      "min_lon": -57.6604308,
+      "max_lon": -57.605514198601
+    }
+  },
+  {
+    "id": "3403",
+    "name": "DO ESTIRÃO DA PRAINHA À VOLTA DO BOI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-229",
+    "bbox": {
+      "min_lat": -17.589044199904,
+      "max_lat": -17.554730003072,
+      "min_lon": -57.6094389,
+      "max_lon": -57.554541899248
+    }
+  },
+  {
+    "id": "3404",
+    "name": "RIO CARÁ-CARAZINHO E BOCA DO FADIL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-233",
+    "bbox": {
+      "min_lat": -17.565516099904,
+      "max_lat": -17.53116518149,
+      "min_lon": -57.555649134069,
+      "max_lon": -57.500789383119
+    }
+  },
+  {
+    "id": "3405",
+    "name": "DA VOLTA DA FIGUEIRA PRETA AO PORTO MACACO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-403",
+    "bbox": {
+      "min_lat": -17.537746399904,
+      "max_lat": -17.485352800028,
+      "min_lon": -57.5017486,
+      "max_lon": -57.465636403501
+    }
+  },
+  {
+    "id": "3406",
+    "name": "DO ESTIRÃO INFERIOR DA BOCA DO CARÁ-CARÁ A VOLTA IGUAL INFERIOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-404",
+    "bbox": {
+      "min_lat": -17.486058299903,
+      "max_lat": -17.433621904398,
+      "min_lon": -57.4850164,
+      "max_lon": -57.448941096242
+    }
+  },
+  {
+    "id": "3407",
+    "name": "DA VOLTA IGUAL SUPERIOR AO ESTIRÃO SUPERIOR DA BOCA DO CARÁ-CARÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-232",
+    "bbox": {
+      "min_lat": -17.461315599903,
+      "max_lat": -17.408911692226,
+      "min_lon": -57.4500433,
+      "max_lon": -57.413961134484
+    }
+  },
+  {
+    "id": "3408",
+    "name": "DO ESTIRÃO SUPERIOR DA BOCA DO CARÁ-CARÁ A CANCHA DO RONCADOR",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-234",
+    "bbox": {
+      "min_lat": -17.419951899903,
+      "max_lat": -17.36752000134,
+      "min_lon": -57.4153025,
+      "max_lon": -57.379238295362
+    }
+  },
+  {
+    "id": "3409",
+    "name": "ESTIRÃO DO RONCADOR (JUSANTE E MONTANTE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-230",
+    "bbox": {
+      "min_lat": -17.385884399903,
+      "max_lat": -17.351503897902,
+      "min_lon": -57.3811253,
+      "max_lon": -57.326351897778
+    }
+  },
+  {
+    "id": "3410",
+    "name": "ESTIRÃO CAPITÃO FERNANDES E PASSO CAPITÃO FERNANDES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/estirao-capitao-fernandes-e-passo-capitao-fernandes",
+    "bbox": {
+      "min_lat": -17.352761399901,
+      "max_lat": -17.300328596487,
+      "min_lon": -57.347401100185,
+      "max_lon": -57.311391701042
+    }
+  },
+  {
+    "id": "3411",
+    "name": "DO PIQUITITO OU GRAMACHO A CANCHA DO JATOBEIRÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-231",
+    "bbox": {
+      "min_lat": -17.301072499902,
+      "max_lat": -17.248661101876,
+      "min_lon": -57.3555214,
+      "max_lon": -57.319434699121
+    }
+  },
+  {
+    "id": "3412",
+    "name": "DO JATOBEIRÃO AO MACHADINHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-415",
+    "bbox": {
+      "min_lat": -17.249519199902,
+      "max_lat": -17.197103598176,
+      "min_lon": -57.3627289,
+      "max_lon": -57.326741403046
+    }
+  },
+  {
+    "id": "3413",
+    "name": "TAPERA DO PAPAGAIO (JUSANTE E MONTANTE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-225",
+    "bbox": {
+      "min_lat": -17.198011899902,
+      "max_lat": -17.145557200543,
+      "min_lon": -57.3745628,
+      "max_lon": -57.338521397392
+    }
+  },
+  {
+    "id": "3414",
+    "name": "DO PORTO CONCEIÇÃO AO RIO CASSANGE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-402",
+    "bbox": {
+      "min_lat": -17.146755799901,
+      "max_lat": -17.094302501831,
+      "min_lon": -57.3843983,
+      "max_lon": -57.348424995821
+    }
+  },
+  {
+    "id": "3415",
+    "name": "VOLTA DA PRAINHA SUPERIOR (JUSANTE E MONTANTE)",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-224",
+    "bbox": {
+      "min_lat": -17.094629999901,
+      "max_lat": -17.042181396355,
+      "min_lon": -57.4128086,
+      "max_lon": -57.376837802576
+    }
+  },
+  {
+    "id": "3416",
+    "name": "DA BOCA INFERIOR DA BAÍA BRANCA AO ATERRO DO CARAMUJO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-102",
+    "bbox": {
+      "min_lat": -17.042966099901,
+      "max_lat": -17.008599416541,
+      "min_lon": -57.421840534255,
+      "max_lon": -57.367141970406
+    }
+  },
+  {
+    "id": "3417",
+    "name": "ILHA GAMELA E FOZ DO RIO SARARÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-394",
+    "bbox": {
+      "min_lat": -17.009635299901,
+      "max_lat": -16.957167249052,
+      "min_lon": -57.4041439,
+      "max_lon": -57.368192251535
+    }
+  },
+  {
+    "id": "3418",
+    "name": "DA VOLTA DO SEMA AO ESTIRÃO DO SAPIQUÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-223",
+    "bbox": {
+      "min_lat": -16.958380863143,
+      "max_lat": -16.90592918443,
+      "min_lon": -57.403791965713,
+      "max_lon": -57.367850586601
+    }
+  },
+  {
+    "id": "3419",
+    "name": "DO ESTIRÃO DO SAPIQUÁ AO ESTIRÃO DA TAQUAREIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-395",
+    "bbox": {
+      "min_lat": -16.9064446999,
+      "max_lat": -16.854038613356,
+      "min_lon": -57.431806634305,
+      "max_lon": -57.395867930267
+    }
+  },
+  {
+    "id": "3420",
+    "name": "DO ESTIRÃO DA TAQUAREIRA A VOLTA DO BUGIO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-222",
+    "bbox": {
+      "min_lat": -16.8810332999,
+      "max_lat": -16.84667581329,
+      "min_lon": -57.4847242,
+      "max_lon": -57.430061916787
+    }
+  },
+  {
+    "id": "3421",
+    "name": "DA VOLTA DO JAU AO ESTIRÃO DA CAPIVARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-221",
+    "bbox": {
+      "min_lat": -16.847623899898,
+      "max_lat": -16.813300405245,
+      "min_lon": -57.523144400175,
+      "max_lon": -57.468503586052
+    }
+  },
+  {
+    "id": "3422",
+    "name": "DO ESTIRÃO DA CAPIVARA A VOLTA DA ANTA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-estirao-da-capivara-volta-da-anta",
+    "bbox": {
+      "min_lat": -16.840326099899,
+      "max_lat": -16.805934700305,
+      "min_lon": -57.5768141345,
+      "max_lon": -57.522148040935
+    }
+  },
+  {
+    "id": "3423",
+    "name": "DA VOLTA E CAPÃO DA MUTUCA AO CASTELO DE AREIA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-104",
+    "bbox": {
+      "min_lat": -16.833474463147,
+      "max_lat": -16.799156097636,
+      "min_lon": -57.6304625,
+      "max_lon": -57.575765260899
+    }
+  },
+  {
+    "id": "3424",
+    "name": "DA VOLTA DO SINIMBU AO PASSO PIUVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-220",
+    "bbox": {
+      "min_lat": -16.8217624999,
+      "max_lat": -16.769375021017,
+      "min_lon": -57.6654933,
+      "max_lon": -57.62950779093
+    }
+  },
+  {
+    "id": "3425",
+    "name": "DA BOCA DA PIUVA AO PASSO JATOBÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-218",
+    "bbox": {
+      "min_lat": -16.7849216999,
+      "max_lat": -16.73252305501,
+      "min_lon": -57.7002881,
+      "max_lon": -57.664239997773
+    }
+  },
+  {
+    "id": "3426",
+    "name": "DA BOCA DO PERIQUITO A DESCALVADO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-217",
+    "bbox": {
+      "min_lat": -16.7566799999,
+      "max_lat": -16.722394017568,
+      "min_lon": -57.7542119,
+      "max_lon": -57.699558282673
+    }
+  },
+  {
+    "id": "3427",
+    "name": "DA ILHA SÃO JOÃO AO PASSO DESCALVADINHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-219",
+    "bbox": {
+      "min_lat": -16.722634999899,
+      "max_lat": -16.688343591479,
+      "min_lon": -57.8001747,
+      "max_lon": -57.745523625357
+    }
+  },
+  {
+    "id": "3428",
+    "name": "DA BOCA DO PAPAGAIO AO PASSO DO MORRO PELADO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-boca-do-papagaio-ao-passo-do-morro-pelado",
+    "bbox": {
+      "min_lat": -16.728532799898,
+      "max_lat": -16.694255832792,
+      "min_lon": -57.853837500173,
+      "max_lon": -57.79917503093
+    }
+  },
+  {
+    "id": "3429",
+    "name": "DA ILHA DO RIO VELHO AO PASSO BAÍA DAS ÉGUAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-177",
+    "bbox": {
+      "min_lat": -16.694941099899,
+      "max_lat": -16.642568349273,
+      "min_lon": -57.8744658,
+      "max_lon": -57.838431698806
+    }
+  },
+  {
+    "id": "3430",
+    "name": "DO PASSO BAÍA DAS ÉGUAS A MONTANTE DO PASSO CORIXÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-passo-baia-das-eguas-montante-do-passo-corixao",
+    "bbox": {
+      "min_lat": -16.644478899897,
+      "max_lat": -16.59212860308,
+      "min_lon": -57.874243034566,
+      "max_lon": -57.838230299092
+    }
+  },
+  {
+    "id": "3431",
+    "name": "DA ILHA DA BAIAZINHA A ILHA DO BEIÇUDO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-da-baiazinha-ilha-do-beicudo",
+    "bbox": {
+      "min_lat": -16.595595863142,
+      "max_lat": -16.543237793431,
+      "min_lon": -57.85165860017,
+      "max_lon": -57.815659161544
+    }
+  },
+  {
+    "id": "3432",
+    "name": "DO PASSO DO BEIÇUDO AO BARRANCO VERMELHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-215",
+    "bbox": {
+      "min_lat": -16.545195863143,
+      "max_lat": -16.492823055458,
+      "min_lon": -57.833857800169,
+      "max_lon": -57.797861940189
+    }
+  },
+  {
+    "id": "3433",
+    "name": "DO PASSO DO SOLDADO A FIGUEIRA DO TUCUM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-216",
+    "bbox": {
+      "min_lat": -16.493750299897,
+      "max_lat": -16.441383623804,
+      "min_lon": -57.809626900168,
+      "max_lon": -57.773643630177
+    }
+  },
+  {
+    "id": "3434",
+    "name": "DA ILHA DO POTE AO PASSO CAMBARÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-110",
+    "bbox": {
+      "min_lat": -16.442379199896,
+      "max_lat": -16.390001134728,
+      "min_lon": -57.798077500167,
+      "max_lon": -57.762116406433
+    }
+  },
+  {
+    "id": "3435",
+    "name": "DA ILHA DO JAURU VELHO A BAÍA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-179",
+    "bbox": {
+      "min_lat": -16.390830001539,
+      "max_lat": -16.338500000042,
+      "min_lon": -57.791333334979,
+      "max_lon": -57.755333297498
+    }
+  },
+  {
+    "id": "3436",
+    "name": "DO PASSO SIMÃO NUNES INFERIOR AO FURADO JATOBÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-214",
+    "bbox": {
+      "min_lat": -16.339047199896,
+      "max_lat": -16.304765414343,
+      "min_lon": -57.798065800165,
+      "max_lon": -57.743504672909
+    }
+  },
+  {
+    "id": "3437",
+    "name": "DO FURADO DO TUIUIU AO ESTIRÃO DO ALEGRE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-191",
+    "bbox": {
+      "min_lat": -16.307190299896,
+      "max_lat": -16.254819977025,
+      "min_lon": -57.803323300164,
+      "max_lon": -57.767386671741
+    }
+  },
+  {
+    "id": "3438",
+    "name": "DA BOCA DO ALEGRE AO PASSO PASSAGEM VELHA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-boca-do-alegre-ao-passo-passagem-velha",
+    "bbox": {
+      "min_lat": -16.256780299896,
+      "max_lat": -16.222496666717,
+      "min_lon": -57.785281100163,
+      "max_lon": -57.730745587979
+    }
+  },
+  {
+    "id": "3439",
+    "name": "DO PASSO PASSAGEM VELHA AO FURADO RETIRO VELHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-202",
+    "bbox": {
+      "min_lat": -16.228653899897,
+      "max_lat": -16.176281301017,
+      "min_lon": -57.7870769,
+      "max_lon": -57.751165603423
+    }
+  },
+  {
+    "id": "3440",
+    "name": "DA FAZENDA SÃO MATEUS A CANCHA PIUVAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-416",
+    "bbox": {
+      "min_lat": -16.181733299897,
+      "max_lat": -16.12936052458,
+      "min_lon": -57.7902119,
+      "max_lon": -57.754301414913
+    }
+  },
+  {
+    "id": "3441",
+    "name": "DA CANCHA PIUVAL A BOCA DO CAIÇARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-cancha-piuval-boca-do-caicara",
+    "bbox": {
+      "min_lat": -16.149486945072,
+      "max_lat": -16.097099733612,
+      "min_lon": -57.758064700161,
+      "max_lon": -57.722182212423
+    }
+  },
+  {
+    "id": "3442",
+    "name": "DO POSTO AGRÍCOLA A CÁCERES",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-200",
+    "bbox": {
+      "min_lat": -16.107797199897,
+      "max_lat": -16.055411667137,
+      "min_lon": -57.722410534578,
+      "max_lon": -57.68652218866
+    }
+  },
+  {
+    "id": "4051",
+    "name": "DA ILHA DO BAIXIO À ILHA DO CARROSO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-170",
+    "bbox": {
+      "min_lat": -3.578333299954,
+      "max_lat": -3.199999967306,
+      "min_lon": -60.5783333,
+      "max_lon": -60.042500022674
+    }
+  },
+  {
+    "id": "4052",
+    "name": "DE MANACAPURU À ILHA PERIQUITOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-473",
+    "bbox": {
+      "min_lat": -3.644999999939,
+      "max_lat": -3.267499996536,
+      "min_lon": -61.099999999997,
+      "max_lon": -60.564166707235
+    }
+  },
+  {
+    "id": "4053",
+    "name": "DA ILHA DO PURUS À ILHA AJARATUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-478",
+    "bbox": {
+      "min_lat": -3.90332009965,
+      "max_lat": -3.525845860886,
+      "min_lon": -61.621659048355,
+      "max_lon": -61.086681676404
+    }
+  },
+  {
+    "id": "4054",
+    "name": "DE ANORI A CODAJÁS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-474",
+    "bbox": {
+      "min_lat": -4.036666699934,
+      "max_lat": -3.659166710183,
+      "min_lon": -62.143333299999,
+      "max_lon": -61.607500013936
+    }
+  },
+  {
+    "id": "4055",
+    "name": "DA ILHA DE CODAJÁS À ILHA TROCARI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-477",
+    "bbox": {
+      "min_lat": -4.024981596922,
+      "max_lat": -3.647512991078,
+      "min_lon": -62.66248823207,
+      "max_lon": -62.127512734288
+    }
+  },
+  {
+    "id": "4056",
+    "name": "DA ILHA TROCARI À COARI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-469",
+    "bbox": {
+      "min_lat": -4.139166699933,
+      "max_lat": -3.761666662414,
+      "min_lon": -63.1841667,
+      "max_lon": -62.648333335157
+    }
+  },
+  {
+    "id": "HS-B1",
+    "name": "COARÍ - TEFÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/coari-tefe",
+    "bbox": {
+      "min_lat": -4.121666699948,
+      "max_lat": -3.886666663049,
+      "min_lon": -63.3883333,
+      "max_lon": -63.05999998156
+    }
+  },
+  {
+    "id": "HS-B2",
+    "name": "COARÍ - TEFÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/coari-tefe-0",
+    "bbox": {
+      "min_lat": -3.943333333283,
+      "max_lat": -3.708329122264,
+      "min_lon": -63.591666666667,
+      "max_lon": -63.263334968196
+    }
+  },
+  {
+    "id": "HS-B3",
+    "name": "COARÍ - TEFÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/coari-tefe-1",
+    "bbox": {
+      "min_lat": -3.928333333283,
+      "max_lat": -3.693334002136,
+      "min_lon": -63.881666666667,
+      "max_lon": -63.553334968196
+    }
+  },
+  {
+    "id": "HS-B4",
+    "name": "COARÍ - TEFÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/coari-tefe-2",
+    "bbox": {
+      "min_lat": -3.893333333284,
+      "max_lat": -3.658333397496,
+      "min_lon": -64.17,
+      "max_lon": -63.841668301529
+    }
+  },
+  {
+    "id": "HS-B5",
+    "name": "COARÍ - TEFÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/coari-tefe-3",
+    "bbox": {
+      "min_lat": -3.699999999953,
+      "max_lat": -3.465002644976,
+      "min_lon": -64.475,
+      "max_lon": -64.146668301529
+    }
+  },
+  {
+    "id": "HS-B6",
+    "name": "COARÍ - TEFÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/coari-tefe-4",
+    "bbox": {
+      "min_lat": -3.491666666622,
+      "max_lat": -3.256670942667,
+      "min_lon": -64.666666666667,
+      "max_lon": -64.338334968196
+    }
+  },
+  {
+    "id": "HS-C1",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica",
+    "bbox": {
+      "min_lat": -3.404999999956,
+      "max_lat": -3.170001401769,
+      "min_lon": -64.941666666667,
+      "max_lon": -64.613334968196
+    }
+  },
+  {
+    "id": "HS-C10",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-8",
+    "bbox": {
+      "min_lat": -2.80166666663,
+      "max_lat": -2.566663938969,
+      "min_lon": -66.881666666667,
+      "max_lon": -66.553334968196
+    }
+  },
+  {
+    "id": "HS-C11",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-9",
+    "bbox": {
+      "min_lat": -2.80166666663,
+      "max_lat": -2.566663938969,
+      "min_lon": -67.161666666667,
+      "max_lon": -66.833334968196
+    }
+  },
+  {
+    "id": "HS-C12",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-10",
+    "bbox": {
+      "min_lat": -2.701666666632,
+      "max_lat": -2.466662917985,
+      "min_lon": -67.436666666667,
+      "max_lon": -67.108334968196
+    }
+  },
+  {
+    "id": "HS-C13",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-11",
+    "bbox": {
+      "min_lat": -2.849999999963,
+      "max_lat": -2.614997725201,
+      "min_lon": -67.645,
+      "max_lon": -67.316668301529
+    }
+  },
+  {
+    "id": "HS-C14",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-12",
+    "bbox": {
+      "min_lat": -2.933333333295,
+      "max_lat": -2.698329742483,
+      "min_lon": -67.9,
+      "max_lon": -67.571668301529
+    }
+  },
+  {
+    "id": "HS-C15",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-13",
+    "bbox": {
+      "min_lat": -3.091666666627,
+      "max_lat": -2.856669209741,
+      "min_lon": -68.025,
+      "max_lon": -67.696668301529
+    }
+  },
+  {
+    "id": "HS-C2",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-0",
+    "bbox": {
+      "min_lat": -3.191666666625,
+      "max_lat": -2.956664024159,
+      "min_lon": -65.02,
+      "max_lon": -64.691668301529
+    }
+  },
+  {
+    "id": "HS-C3",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-1",
+    "bbox": {
+      "min_lat": -3.083333333293,
+      "max_lat": -2.848334079225,
+      "min_lon": -65.305,
+      "max_lon": -64.976668301529
+    }
+  },
+  {
+    "id": "HS-C4",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-2",
+    "bbox": {
+      "min_lat": -2.863333333296,
+      "max_lat": -2.628333710204,
+      "min_lon": -65.438333333333,
+      "max_lon": -65.110001634863
+    }
+  },
+  {
+    "id": "HS-C5",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-3",
+    "bbox": {
+      "min_lat": -2.648333333299,
+      "max_lat": -2.41333778679,
+      "min_lon": -65.531666666667,
+      "max_lon": -65.203334968196
+    }
+  },
+  {
+    "id": "HS-C6",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-4",
+    "bbox": {
+      "min_lat": -2.704999999965,
+      "max_lat": -2.46999687708,
+      "min_lon": -65.836666666667,
+      "max_lon": -65.508334968196
+    }
+  },
+  {
+    "id": "HS-C7",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-5",
+    "bbox": {
+      "min_lat": -2.649999999965,
+      "max_lat": -2.414995707438,
+      "min_lon": -66.083333333333,
+      "max_lon": -65.755001634863
+    }
+  },
+  {
+    "id": "HS-C8",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-6",
+    "bbox": {
+      "min_lat": -2.609999999966,
+      "max_lat": -2.374997464005,
+      "min_lon": -66.373333333333,
+      "max_lon": -66.045001634863
+    }
+  },
+  {
+    "id": "HS-C9",
+    "name": "TEFÉ - SANTO ANTÔNIO DE IÇA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/tefe-santo-antonio-de-ica-7",
+    "bbox": {
+      "min_lat": -2.603333333299,
+      "max_lat": -2.368329592665,
+      "min_lon": -66.666666666667,
+      "max_lon": -66.338334968196
+    }
+  },
+  {
+    "id": "HS-D1",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga",
+    "bbox": {
+      "min_lat": -3.284999999958,
+      "max_lat": -3.050000414699,
+      "min_lon": -68.145,
+      "max_lon": -67.816668301529
+    }
+  },
+  {
+    "id": "HS-D10",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-8",
+    "bbox": {
+      "min_lat": -4.274999999946,
+      "max_lat": -4.04000159931,
+      "min_lon": -69.583333333333,
+      "max_lon": -69.255001634863
+    }
+  },
+  {
+    "id": "HS-D11",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-9",
+    "bbox": {
+      "min_lat": -4.409999999944,
+      "max_lat": -4.174997870555,
+      "min_lon": -69.795,
+      "max_lon": -69.466668301529
+    }
+  },
+  {
+    "id": "HS-D12",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-10",
+    "bbox": {
+      "min_lat": -4.434726388833,
+      "max_lat": -4.200003071199,
+      "min_lon": -70.083333333333,
+      "max_lon": -69.755001634863
+    }
+  },
+  {
+    "id": "HS-D2",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-0",
+    "bbox": {
+      "min_lat": -3.474999999955,
+      "max_lat": -3.240000201541,
+      "min_lon": -68.233333333333,
+      "max_lon": -67.883334968196
+    }
+  },
+  {
+    "id": "HS-D3",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-1",
+    "bbox": {
+      "min_lat": -3.474999999955,
+      "max_lat": -3.240000201541,
+      "min_lon": -68.511666666667,
+      "max_lon": -68.183334968196
+    }
+  },
+  {
+    "id": "HS-D4",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-2",
+    "bbox": {
+      "min_lat": -3.499999999955,
+      "max_lat": -3.26499727521,
+      "min_lon": -68.778333333333,
+      "max_lon": -68.450001634863
+    }
+  },
+  {
+    "id": "HS-D5",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-3",
+    "bbox": {
+      "min_lat": -3.568333333288,
+      "max_lat": -3.333329476588,
+      "min_lon": -69.04,
+      "max_lon": -68.711668301529
+    }
+  },
+  {
+    "id": "HS-D6",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-4",
+    "bbox": {
+      "min_lat": -3.556666666621,
+      "max_lat": -3.321668935519,
+      "min_lon": -69.211666666667,
+      "max_lon": -68.883334968196
+    }
+  },
+  {
+    "id": "HS-D7",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-5",
+    "bbox": {
+      "min_lat": -3.66666666662,
+      "max_lat": -3.431669721156,
+      "min_lon": -69.511666666667,
+      "max_lon": -69.183334968196
+    }
+  },
+  {
+    "id": "HS-D8",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-6",
+    "bbox": {
+      "min_lat": -3.866666666617,
+      "max_lat": -3.631668483157,
+      "min_lon": -69.545,
+      "max_lon": -69.216668301529
+    }
+  },
+  {
+    "id": "HS-D9",
+    "name": "SANTO ANTÔNIO DE IÇA - TABATINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/santo-antonio-de-ica-tabatinga-7",
+    "bbox": {
+      "min_lat": -4.071333333282,
+      "max_lat": -3.836663615013,
+      "min_lon": -69.578333333333,
+      "max_lon": -69.250001634863
+    }
+  },
+  {
+    "id": "4203",
+    "name": "DA FAZENDA CAIÇARA A ARAPIRANGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-193",
+    "bbox": {
+      "min_lat": -1.029166699986,
+      "max_lat": -0.825000002715,
+      "min_lon": -52.4591667,
+      "max_lon": -52.392499991887
+    }
+  },
+  {
+    "id": "4211",
+    "name": "DA FOZ DO RIO JARI A VIDA NOVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-131",
+    "bbox": {
+      "min_lat": -1.186666699984,
+      "max_lat": -1.109999996935,
+      "min_lon": -51.9733333,
+      "max_lon": -51.8666667071
+    }
+  },
+  {
+    "id": "4212",
+    "name": "DE JARILÂNDIA À ILHA SAUDADE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-158",
+    "bbox": {
+      "min_lat": -1.188333299984,
+      "max_lat": -1.111666706357,
+      "min_lon": -52.0766667,
+      "max_lon": -51.969999991366
+    }
+  },
+  {
+    "id": "4213",
+    "name": "DA ILHA CAROLINA À ILHA XAVIER",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-159",
+    "bbox": {
+      "min_lat": -1.263333299983,
+      "max_lat": -1.186666693855,
+      "min_lon": -52.135,
+      "max_lon": -52.028333291675
+    }
+  },
+  {
+    "id": "4214",
+    "name": "DA ILHA XAVIER À ILHA XINGUI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-xavier-ilha-xingui",
+    "bbox": {
+      "min_lat": -1.19166666381,
+      "max_lat": -1.114999999633,
+      "min_lon": -52.19166666406,
+      "max_lon": -52.084999993238
+    }
+  },
+  {
+    "id": "4215",
+    "name": "DE PAGA DÍVIDAS À ILHA MARAPI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-160",
+    "bbox": {
+      "min_lat": -1.164999999985,
+      "max_lat": -1.08499999126,
+      "min_lon": -52.295,
+      "max_lon": -52.188333292849
+    }
+  },
+  {
+    "id": "4216",
+    "name": "DA ILHA OJUARA À ILHA JUPATITUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-161",
+    "bbox": {
+      "min_lat": -1.149999999985,
+      "max_lat": -1.043333338132,
+      "min_lon": -52.3683333,
+      "max_lon": -52.292222229868
+    }
+  },
+  {
+    "id": "4217",
+    "name": "DO PARAGUAI À FAZENDA CAIÇARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-162",
+    "bbox": {
+      "min_lat": -1.069999999986,
+      "max_lat": -0.963333337243,
+      "min_lon": -52.44,
+      "max_lon": -52.365000002519
+    }
+  },
+  {
+    "id": "4218",
+    "name": "DO IGARAPÉ FURINHO AO IGARAPÉ DE POCÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-igarape-furinho-ao-igarape-de-pocao",
+    "bbox": {
+      "min_lat": -0.966666663813,
+      "max_lat": -0.889999998344,
+      "min_lon": -52.475,
+      "max_lon": -52.36833334134
+    }
+  },
+  {
+    "id": "4361",
+    "name": "DA BAÍA DO MARAPATÁ À ILHA DO JOROCAZINHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-396",
+    "bbox": {
+      "min_lat": -2.082297199973,
+      "max_lat": -1.70430001584,
+      "min_lon": -49.467525,
+      "max_lon": -48.93248889232
+    }
+  },
+  {
+    "id": "4362",
+    "name": "DA ILHA DO JOROCAZINHO A MOCAJUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-397",
+    "bbox": {
+      "min_lat": -2.593736099966,
+      "max_lat": -2.0580749772,
+      "min_lon": -49.6329972,
+      "max_lon": -49.253727765801
+    }
+  },
+  {
+    "id": "4363",
+    "name": "DE MOCAJUBA À ILHA ARARAIM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-344",
+    "bbox": {
+      "min_lat": -3.09759719996,
+      "max_lat": -2.562297180919,
+      "min_lon": -49.8343194,
+      "max_lon": -49.455130513062
+    }
+  },
+  {
+    "id": "4364",
+    "name": "DA ILHA ARARAIM À ILHA DA RAINHA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-343",
+    "bbox": {
+      "min_lat": -3.355433299957,
+      "max_lat": -3.087027777181,
+      "min_lon": -49.7328556,
+      "max_lon": -49.544130545734
+    }
+  },
+  {
+    "id": "4365",
+    "name": "DA ILHA DA RAINHA A MURU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-342",
+    "bbox": {
+      "min_lat": -3.611613899954,
+      "max_lat": -3.343294429019,
+      "min_lon": -49.732855555002,
+      "max_lon": -49.544130524524
+    }
+  },
+  {
+    "id": "4366",
+    "name": "DA ILHA TAUÁ A TUCURUÍ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-341",
+    "bbox": {
+      "min_lat": -3.867899999951,
+      "max_lat": -3.599700012176,
+      "min_lon": -49.7422222,
+      "max_lon": -49.55313328655
+    }
+  },
+  {
+    "id": "4361A",
+    "name": "DA I. DE URUCURICAIA À PTA. ITAPINIMA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-198",
+    "bbox": {
+      "min_lat": -2.360408583302,
+      "max_lat": -1.33790366211,
+      "min_lon": -52.332731777778,
+      "max_lon": -51.999999966615
+    }
+  },
+  {
+    "id": "4361B",
+    "name": "DA PTA. ITAPIMINA À BELO MONTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-70",
+    "bbox": {
+      "min_lat": -3.232613320417,
+      "max_lat": -2.166799664001,
+      "min_lon": -52.333468112302,
+      "max_lon": -51.592389719459
+    }
+  },
+  {
+    "id": "4381A",
+    "name": "DE SANTARÉM A SURUCUÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-santarem-surucua",
+    "bbox": {
+      "min_lat": -3.143295599919,
+      "max_lat": -2.092223623874,
+      "min_lon": -55.392325799994,
+      "max_lon": -54.589417479972
+    }
+  },
+  {
+    "id": "4381B",
+    "name": "DE SURUCUÁ A AVEIRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-194",
+    "bbox": {
+      "min_lat": -3.847017799951,
+      "max_lat": -2.779635634174,
+      "min_lon": -55.6220644,
+      "max_lon": -54.88925667452
+    }
+  },
+  {
+    "id": "4382A",
+    "name": "DE AVEIRO ÀS ILHAS DO PRADO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-208",
+    "bbox": {
+      "min_lat": -4.068435799948,
+      "max_lat": -3.551302792315,
+      "min_lon": -55.6907417,
+      "max_lon": -55.268235305855
+    }
+  },
+  {
+    "id": "4382B",
+    "name": "DAS ILHAS DO PRADO À ITAITUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-428",
+    "bbox": {
+      "min_lat": -4.329512499945,
+      "max_lat": -3.919705308645,
+      "min_lon": -56.0625792,
+      "max_lon": -55.541985800506
+    }
+  },
+  {
+    "id": "4383",
+    "name": "DE ITAITUBA À SÃO LUÍS DO TAPAJÓS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-212",
+    "bbox": {
+      "min_lat": -4.547222199928,
+      "max_lat": -4.162223383596,
+      "min_lon": -56.380550900002,
+      "max_lon": -55.852777700897
+    }
+  },
+  {
+    "id": "4411",
+    "name": "DA FOZ DO RIO TROMBETAS AO LAGO QUIRIQUIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-17",
+    "bbox": {
+      "min_lat": -1.916666677363,
+      "max_lat": -1.821666672804,
+      "min_lon": -55.723333322462,
+      "max_lon": -55.58999998932
+    }
+  },
+  {
+    "id": "4412",
+    "name": "DO LAGO QUIRIQUIRI AO LAGO PARU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-117",
+    "bbox": {
+      "min_lat": -1.881666677363,
+      "max_lat": -1.786666664054,
+      "min_lon": -55.843333322461,
+      "max_lon": -55.709999989882
+    }
+  },
+  {
+    "id": "4413",
+    "name": "DE ORIXIMINÁ À ILHA JACITARA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-18",
+    "bbox": {
+      "min_lat": -1.832904399976,
+      "max_lat": -1.701341097111,
+      "min_lon": -55.9202492,
+      "max_lon": -55.833512807484
+    }
+  },
+  {
+    "id": "4414",
+    "name": "DA ILHA JACITARA AO LAGO AXIPICA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-19",
+    "bbox": {
+      "min_lat": -1.727596899977,
+      "max_lat": -1.596032196753,
+      "min_lon": -55.9910911,
+      "max_lon": -55.904399201149
+    }
+  },
+  {
+    "id": "4415",
+    "name": "DO ESTIRÃO DO FRANÇA AO LAGO ARACUÃ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-426",
+    "bbox": {
+      "min_lat": -1.634024999978,
+      "max_lat": -1.502417811194,
+      "min_lon": -56.0734658,
+      "max_lon": -55.986766101014
+    }
+  },
+  {
+    "id": "4416",
+    "name": "DO LAGO ARACUÃ AO LAGO BACABAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-20",
+    "bbox": {
+      "min_lat": -1.55092189998,
+      "max_lat": -1.463434700444,
+      "min_lon": -56.1984828,
+      "max_lon": -56.067998591083
+    }
+  },
+  {
+    "id": "4417",
+    "name": "DO LAGO SAMAÚMA AO LAGO MUSSURÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-21",
+    "bbox": {
+      "min_lat": -1.54792139998,
+      "max_lat": -1.4604388923,
+      "min_lon": -56.3230131,
+      "max_lon": -56.192671702018
+    }
+  },
+  {
+    "id": "4418",
+    "name": "PORTO TROMBETAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-22",
+    "bbox": {
+      "min_lat": -1.503024999978,
+      "max_lat": -1.415525008896,
+      "min_lon": -56.448388899991,
+      "max_lon": -56.317855598622
+    }
+  },
+  {
+    "id": "4711",
+    "name": "DA FOZ DO RIO MADEIRA À ILHA DO CAPITARI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-foz-do-rio-madeira-ilha-do-capitari",
+    "bbox": {
+      "min_lat": -3.484999999949,
+      "max_lat": -3.334999995175,
+      "min_lon": -58.898333299997,
+      "max_lon": -58.685000000424
+    }
+  },
+  {
+    "id": "4712",
+    "name": "DA COSTA DA FAZENDINHA À ILHA DO URUCURITUBA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-471",
+    "bbox": {
+      "min_lat": -3.623333299948,
+      "max_lat": -3.473333337866,
+      "min_lon": -58.971666699998,
+      "max_lon": -58.758333325209
+    }
+  },
+  {
+    "id": "4713",
+    "name": "DA ILHA IPIRANGA À ILHA DO ROSARINHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-479",
+    "bbox": {
+      "min_lat": -3.718335687182,
+      "max_lat": -3.568340379366,
+      "min_lon": -59.171663027499,
+      "max_lon": -58.958331694705
+    }
+  },
+  {
+    "id": "4714",
+    "name": "DO PORTO IDEAL À NOVA OLINDA DO NORTE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-porto-ideal-nova-olinda-do-norte",
+    "bbox": {
+      "min_lat": -3.921669123243,
+      "max_lat": -3.708335513999,
+      "min_lon": -59.149998343454,
+      "max_lon": -58.999999867653
+    }
+  },
+  {
+    "id": "4715",
+    "name": "DA ILHA DO MARACÁ À ENSEADA DO AXINIM",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-maraca-enseada-do-axinim",
+    "bbox": {
+      "min_lat": -4.025000831852,
+      "max_lat": -3.87500369516,
+      "min_lon": -59.351663818592,
+      "max_lon": -59.138333057399
+    }
+  },
+  {
+    "id": "4716",
+    "name": "DE NOVO AXINIM À ILHA DAS GUARIBAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-novo-axinim-ilha-das-guaribas",
+    "bbox": {
+      "min_lat": -4.226670533715,
+      "max_lat": -4.01333354545,
+      "min_lon": -59.441666988198,
+      "max_lon": -59.291665282128
+    }
+  },
+  {
+    "id": "4717",
+    "name": "DA ILHA DAS GUARIBAS À ILHA NOVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-das-guaribas-ilha-nova",
+    "bbox": {
+      "min_lat": -4.344999674423,
+      "max_lat": -4.195000412268,
+      "min_lon": -59.574999891904,
+      "max_lon": -59.361665645894
+    }
+  },
+  {
+    "id": "4718",
+    "name": "DE BORBA À ILHA GUAJARÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-borba-ilha-guajara",
+    "bbox": {
+      "min_lat": -4.461666699944,
+      "max_lat": -4.311666669583,
+      "min_lon": -59.755,
+      "max_lon": -59.541666678909
+    }
+  },
+  {
+    "id": "4719",
+    "name": "DO IGARAPÉ ARAZINHO À ILHA DO MANDII",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-igarape-arazinho-ilha-do-mandii",
+    "bbox": {
+      "min_lat": -4.524999999943,
+      "max_lat": -4.311666654739,
+      "min_lon": -59.898333336039,
+      "max_lon": -59.748333288041
+    }
+  },
+  {
+    "id": "4720",
+    "name": "DA ILHA DO MANDII À ILHA DOS GANCHOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-do-mandii-ilha-dos-ganchos",
+    "bbox": {
+      "min_lat": -4.726666699941,
+      "max_lat": -4.513333345737,
+      "min_lon": -59.97,
+      "max_lon": -59.819999986967
+    }
+  },
+  {
+    "id": "4721",
+    "name": "DO PORTO SÃO JOAQUIM À ILHA DO JACARÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-porto-sao-joaquim-ilha-do-jacare",
+    "bbox": {
+      "min_lat": -4.928333336105,
+      "max_lat": -4.714999989121,
+      "min_lon": -60.033333336059,
+      "max_lon": -59.883333350334
+    }
+  },
+  {
+    "id": "4722",
+    "name": "DE VISTA ALEGRE AO PORTO DE SANTO AMARO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-vista-alegre-ao-porto-de-santo-amaro",
+    "bbox": {
+      "min_lat": -4.999999999938,
+      "max_lat": -4.850000016969,
+      "min_lon": -60.235,
+      "max_lon": -60.021666684151
+    }
+  },
+  {
+    "id": "4723",
+    "name": "DO PORTO DE SANTO AMARO AO PORTO TABOCAL",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-porto-de-santo-amaro-ao-porto-tabocal",
+    "bbox": {
+      "min_lat": -5.083333299937,
+      "max_lat": -4.86999999887,
+      "min_lon": -60.358333336068,
+      "max_lon": -60.208333347891
+    }
+  },
+  {
+    "id": "4724",
+    "name": "DE NOVO ARIPUANÃ À ILHA DAS ARARAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-novo-aripuana-ilha-das-araras",
+    "bbox": {
+      "min_lat": -5.221666663768,
+      "max_lat": -5.071666687178,
+      "min_lon": -60.5083333,
+      "max_lon": -60.294999988748
+    }
+  },
+  {
+    "id": "4725",
+    "name": "DA ILHA DAS ARARAS A SÃO MIGUEL DO URUÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-das-araras-sao-miguel-do-urua",
+    "bbox": {
+      "min_lat": -5.321666663767,
+      "max_lat": -5.171681197881,
+      "min_lon": -60.6933333,
+      "max_lon": -60.480000012703
+    }
+  },
+  {
+    "id": "4726",
+    "name": "DA ILHA URUÁ GRANDE AO PORTO ITAPENIMA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-urua-grande-ao-porto-itapenima",
+    "bbox": {
+      "min_lat": -5.479999999933,
+      "max_lat": -5.273333339818,
+      "min_lon": -60.82666666391,
+      "max_lon": -60.676666707322
+    }
+  },
+  {
+    "id": "4727",
+    "name": "DA VILA BELMONTE À ILHA DO JENIPAPO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-vila-belmonte-ilha-do-jenipapo",
+    "bbox": {
+      "min_lat": -5.616666663765,
+      "max_lat": -5.466666660008,
+      "min_lon": -60.9416666639,
+      "max_lon": -60.728333317673
+    }
+  },
+  {
+    "id": "4728",
+    "name": "DE CURRALINHO AO FURO MATUPIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-curralinho-ao-furo-matupiri",
+    "bbox": {
+      "min_lat": -5.683333299931,
+      "max_lat": -5.533333345755,
+      "min_lon": -61.1433333,
+      "max_lon": -60.930000001464
+    }
+  },
+  {
+    "id": "4729",
+    "name": "DO IGARAPÉ JATURANA À ENSEADA DO MANIVÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-igarape-jaturana-enseada-do-manivao",
+    "bbox": {
+      "min_lat": -5.73333329993,
+      "max_lat": -5.583333349396,
+      "min_lon": -61.345,
+      "max_lon": -61.131666657224
+    }
+  },
+  {
+    "id": "4730",
+    "name": "DE IGARAPÉ-AÇÚ A MANICORÉ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-igarape-acu-manicore",
+    "bbox": {
+      "min_lat": -5.934999999928,
+      "max_lat": -5.721666664652,
+      "min_lon": -61.4,
+      "max_lon": -61.249999991026
+    }
+  },
+  {
+    "id": "4731",
+    "name": "DE DEMOCRACIA À ILHA DA ONÇA GRANDE",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-democracia-ilha-da-onca-grande",
+    "bbox": {
+      "min_lat": -5.926666699928,
+      "max_lat": -5.77666667855,
+      "min_lon": -61.6016667,
+      "max_lon": -61.388333335667
+    }
+  },
+  {
+    "id": "4732",
+    "name": "DA ILHA DA ONÇA GRANDE AO PORTO CURUÇÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-da-onca-grande-ao-porto-curuca",
+    "bbox": {
+      "min_lat": -6.038333336083,
+      "max_lat": -5.824999992634,
+      "min_lon": -61.740000000014,
+      "max_lon": -61.589999983887
+    }
+  },
+  {
+    "id": "4733",
+    "name": "DO PORTO CURUÇÁ À ILHA DOS MARMELOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-porto-curuca-ilha-dos-marmelos",
+    "bbox": {
+      "min_lat": -6.16499999992,
+      "max_lat": -6.015000009164,
+      "min_lon": -61.87333333615,
+      "max_lon": -61.660000006415
+    }
+  },
+  {
+    "id": "4734",
+    "name": "DO PORTO GONDOMAR À ILHA DE SANTA CRUZ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-porto-gondomar-ilha-de-santa-cruz",
+    "bbox": {
+      "min_lat": -6.358333336079,
+      "max_lat": -6.14499998611,
+      "min_lon": -61.950000000017,
+      "max_lon": -61.799999989115
+    }
+  },
+  {
+    "id": "4735",
+    "name": "DA COSTA DE SANTA CRUZ À COSTA SANTA ROSA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-costa-de-santa-cruz-costa-santa-rosa",
+    "bbox": {
+      "min_lat": -6.299999999919,
+      "max_lat": -6.15000000663,
+      "min_lon": -62.146666700016,
+      "max_lon": -61.933333348792
+    }
+  },
+  {
+    "id": "4736",
+    "name": "DA COSTA VALPARAÍSO À ILHA DA MEDITAÇÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-costa-valparaiso-ilha-da-meditacao",
+    "bbox": {
+      "min_lat": -6.363333299916,
+      "max_lat": -6.149999990437,
+      "min_lon": -62.283333300017,
+      "max_lon": -62.13333330991
+    }
+  },
+  {
+    "id": "4737",
+    "name": "DA ILHA DA MEDITAÇÃO À ILHA ITAPURU",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-da-meditacao-ilha-itapuru",
+    "bbox": {
+      "min_lat": -6.553333336085,
+      "max_lat": -6.344999996727,
+      "min_lon": -62.38,
+      "max_lon": -62.229999983675
+    }
+  },
+  {
+    "id": "4738",
+    "name": "DA BOCA DO JURARÁ À ENSEADA DO LAGO DO ANTÔNIO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-boca-do-jurara-enseada-do-lago-do-antonio",
+    "bbox": {
+      "min_lat": -6.75499999992,
+      "max_lat": -6.541666670067,
+      "min_lon": -62.433333336174,
+      "max_lon": -62.283333316574
+    }
+  },
+  {
+    "id": "4739",
+    "name": "DA ILHA DA CONCEIÇÃO À ILHA DO CARARÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-da-conceicao-ilha-do-carara",
+    "bbox": {
+      "min_lat": -6.875000013981,
+      "max_lat": -6.724999991754,
+      "min_lon": -62.546666676653,
+      "max_lon": -62.333333347425
+    }
+  },
+  {
+    "id": "4740",
+    "name": "DA ILHA CARAPANATUBA À COSTA CAMUJA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-carapanatuba-costa-camuja",
+    "bbox": {
+      "min_lat": -6.946666663954,
+      "max_lat": -6.733333342121,
+      "min_lon": -62.683333336189,
+      "max_lon": -62.53333334591
+    }
+  },
+  {
+    "id": "4741",
+    "name": "DA ILHA DAS TRÊS CASAS AO PORTO SÃO BENEDITO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-das-tres-casas-ao-porto-sao-benedito",
+    "bbox": {
+      "min_lat": -7.083333299918,
+      "max_lat": -6.933333319129,
+      "min_lon": -62.836666702551,
+      "max_lon": -62.623333335844
+    }
+  },
+  {
+    "id": "4742",
+    "name": "DA COSTA SANTA JÚLIA `A COSTA SÃO PEDRO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-costa-santa-julia-costa-sao-pedro",
+    "bbox": {
+      "min_lat": -7.193333299917,
+      "max_lat": -6.979999991879,
+      "min_lon": -62.975,
+      "max_lon": -62.824999990844
+    }
+  },
+  {
+    "id": "4743",
+    "name": "DA COSTA SÃO PEDRO À ILHA DAS PUPUNHAS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-costa-sao-pedro-ilha-das-pupunhas",
+    "bbox": {
+      "min_lat": -7.394999999915,
+      "max_lat": -7.181666683451,
+      "min_lon": -63.023333336223,
+      "max_lon": -62.873333351144
+    }
+  },
+  {
+    "id": "4744",
+    "name": "DO FURO DO PURUZINHO À HUMAITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-furo-do-puruzinho-humaita",
+    "bbox": {
+      "min_lat": -7.596666663754,
+      "max_lat": -7.383333317913,
+      "min_lon": -63.045,
+      "max_lon": -62.895000003523
+    }
+  },
+  {
+    "id": "4745",
+    "name": "DA ILHA DO SALOMÃO À MIRARI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-23",
+    "bbox": {
+      "min_lat": -7.793333299912,
+      "max_lat": -7.579999998764,
+      "min_lon": -63.016666482463,
+      "max_lon": -62.866666890317
+    }
+  },
+  {
+    "id": "4746",
+    "name": "DA ILHA TAMBAQUI AO PORTO BANDEIRA BRANCA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-tambaqui-ao-porto-bandeira-branca",
+    "bbox": {
+      "min_lat": -7.99499999991,
+      "max_lat": -7.781666662164,
+      "min_lon": -62.965,
+      "max_lon": -62.815000011043
+    }
+  },
+  {
+    "id": "4747",
+    "name": "DE CALAMA À ILHA ASSUNÇÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/de-calama-ilha-assuncao",
+    "bbox": {
+      "min_lat": -8.193333336067,
+      "max_lat": -7.980000014282,
+      "min_lon": -62.983333336291,
+      "max_lon": -62.833333350647
+    }
+  },
+  {
+    "id": "4748",
+    "name": "DA ILHA ASSUNÇÃO AO ESTIRÃO DOS PAPAGAIOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-24",
+    "bbox": {
+      "min_lat": -8.223333336069,
+      "max_lat": -8.07333334333,
+      "min_lon": -63.17,
+      "max_lon": -62.95666666767
+    }
+  },
+  {
+    "id": "4749",
+    "name": "DA ILHA TIRA-FOGO À ILHA DOS PERIQUITOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-32",
+    "bbox": {
+      "min_lat": -8.304999999908,
+      "max_lat": -8.154999997823,
+      "min_lon": -63.3716667,
+      "max_lon": -63.158333346978
+    }
+  },
+  {
+    "id": "4750",
+    "name": "DA ILHA DOS PERIQUITOS À BOCA DO MURIQUI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-dos-periquitos-boca-do-muriqui",
+    "bbox": {
+      "min_lat": -8.446666663742,
+      "max_lat": -8.233333344762,
+      "min_lon": -63.480000000039,
+      "max_lon": -63.329999988855
+    }
+  },
+  {
+    "id": "4751",
+    "name": "DA ILHA SOBRAL A COSTA VACURANGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-sobral-costa-vacuranga",
+    "bbox": {
+      "min_lat": -8.623333299904,
+      "max_lat": -8.40999999701,
+      "min_lon": -63.620052,
+      "max_lon": -63.470052015333
+    }
+  },
+  {
+    "id": "4752",
+    "name": "DA ILHA DOS VEADOS À COSTA DA SILVEIRA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/da-ilha-dos-veados-costa-da-silveira",
+    "bbox": {
+      "min_lat": -8.661665000408,
+      "max_lat": -8.511666698514,
+      "min_lon": -63.818333300043,
+      "max_lon": -63.605000011043
+    }
+  },
+  {
+    "id": "4753",
+    "name": "DO PORTO DE AMPARO A PORTO VELHO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster/do-porto-de-amparo-porto-velho",
+    "bbox": {
+      "min_lat": -8.811666266025,
+      "max_lat": -8.598337274747,
+      "min_lon": -63.958331446267,
+      "max_lon": -63.808334468479
+    }
+  },
+  {
+    "id": "BA-1",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-447",
+    "bbox": {
+      "min_lat": -22.191666699938,
+      "max_lat": -22.145333297692,
+      "min_lon": -48.7666667,
+      "max_lon": -48.696000002399
+    }
+  },
+  {
+    "id": "BA-10",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-307",
+    "bbox": {
+      "min_lat": -22.519999999941,
+      "max_lat": -22.496833298702,
+      "min_lon": -48.6068333,
+      "max_lon": -48.571499999277
+    }
+  },
+  {
+    "id": "BA-11",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-136",
+    "bbox": {
+      "min_lat": -22.519999999941,
+      "max_lat": -22.496833298702,
+      "min_lon": -48.5743333,
+      "max_lon": -48.538999999277
+    }
+  },
+  {
+    "id": "BA-2",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-133",
+    "bbox": {
+      "min_lat": -22.230833299939,
+      "max_lat": -22.184499997251,
+      "min_lon": -48.7475,
+      "max_lon": -48.676833302399
+    }
+  },
+  {
+    "id": "BA-3",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-134",
+    "bbox": {
+      "min_lat": -22.269999999939,
+      "max_lat": -22.204166694927,
+      "min_lon": -48.7916667,
+      "max_lon": -48.742000004425
+    }
+  },
+  {
+    "id": "BA-4",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-303",
+    "bbox": {
+      "min_lat": -22.33083329994,
+      "max_lat": -22.265000000904,
+      "min_lon": -48.7691667,
+      "max_lon": -48.719500004425
+    }
+  },
+  {
+    "id": "BA-5",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-304",
+    "bbox": {
+      "min_lat": -22.39166669994,
+      "max_lat": -22.325833292372,
+      "min_lon": -48.735,
+      "max_lon": -48.685333304425
+    }
+  },
+  {
+    "id": "BA-6",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-135",
+    "bbox": {
+      "min_lat": -22.451666699941,
+      "max_lat": -22.385833295892,
+      "min_lon": -48.6983333,
+      "max_lon": -48.64866670058
+    }
+  },
+  {
+    "id": "BA-7",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-448",
+    "bbox": {
+      "min_lat": -22.479666699941,
+      "max_lat": -22.446666698967,
+      "min_lon": -48.675,
+      "max_lon": -48.65016670029
+    }
+  },
+  {
+    "id": "BA-8",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-305",
+    "bbox": {
+      "min_lat": -22.498833299941,
+      "max_lat": -22.465833297527,
+      "min_lon": -48.6525,
+      "max_lon": -48.62766670029
+    }
+  },
+  {
+    "id": "BA-9",
+    "name": "BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-306",
+    "bbox": {
+      "min_lat": -22.516666699941,
+      "max_lat": -22.483833297973,
+      "min_lon": -48.63,
+      "max_lon": -48.60516670029
+    }
+  },
+  {
+    "id": "BA-BB",
+    "name": "BARIRI - BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-137",
+    "bbox": {
+      "min_lat": -22.532999999941,
+      "max_lat": -22.51000000389,
+      "min_lon": -48.5513333,
+      "max_lon": -48.515999999277
+    }
+  },
+  {
+    "id": "BB-1",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-138",
+    "bbox": {
+      "min_lat": -22.559999999942,
+      "max_lat": -22.513833292407,
+      "min_lon": -48.5401667,
+      "max_lon": -48.469500002399
+    }
+  },
+  {
+    "id": "BB-10",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-271",
+    "bbox": {
+      "min_lat": -22.835999999944,
+      "max_lat": -22.803166701103,
+      "min_lon": -48.0883333,
+      "max_lon": -48.06350000029
+    }
+  },
+  {
+    "id": "BB-11",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-464",
+    "bbox": {
+      "min_lat": -22.839666699944,
+      "max_lat": -22.816500003959,
+      "min_lon": -48.0658333,
+      "max_lon": -48.030499999277
+    }
+  },
+  {
+    "id": "BB-12",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-272",
+    "bbox": {
+      "min_lat": -22.859999999944,
+      "max_lat": -22.836833303258,
+      "min_lon": -48.05,
+      "max_lon": -48.014666699277
+    }
+  },
+  {
+    "id": "BB-13",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-273",
+    "bbox": {
+      "min_lat": -22.881833299945,
+      "max_lat": -22.848999997064,
+      "min_lon": -48.0183333,
+      "max_lon": -47.99350000029
+    }
+  },
+  {
+    "id": "BB-14",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-465",
+    "bbox": {
+      "min_lat": -22.902999999945,
+      "max_lat": -22.879999996764,
+      "min_lon": -48.0185,
+      "max_lon": -47.983166699277
+    }
+  },
+  {
+    "id": "BB-15",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-449",
+    "bbox": {
+      "min_lat": -22.890166699945,
+      "max_lat": -22.867166698068,
+      "min_lon": -48.0,
+      "max_lon": -47.964666699277
+    }
+  },
+  {
+    "id": "BB-2",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-308",
+    "bbox": {
+      "min_lat": -22.609166699942,
+      "max_lat": -22.516833300177,
+      "min_lon": -48.4866667,
+      "max_lon": -48.345333304797
+    }
+  },
+  {
+    "id": "BB-3",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-309",
+    "bbox": {
+      "min_lat": -22.694333299943,
+      "max_lat": -22.602166693222,
+      "min_lon": -48.3966667,
+      "max_lon": -48.255333304797
+    }
+  },
+  {
+    "id": "BB-4",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-310",
+    "bbox": {
+      "min_lat": -22.724999999943,
+      "max_lat": -22.659333307761,
+      "min_lon": -48.26,
+      "max_lon": -48.210333304425
+    }
+  },
+  {
+    "id": "BB-5",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-311",
+    "bbox": {
+      "min_lat": -22.719999999943,
+      "max_lat": -22.673833303821,
+      "min_lon": -48.2135,
+      "max_lon": -48.142999995944
+    }
+  },
+  {
+    "id": "BB-6",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-460",
+    "bbox": {
+      "min_lat": -22.749999999943,
+      "max_lat": -22.684333300011,
+      "min_lon": -48.1733333,
+      "max_lon": -48.12366670058
+    }
+  },
+  {
+    "id": "BB-7",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-461",
+    "bbox": {
+      "min_lat": -22.781333299944,
+      "max_lat": -22.735166704243,
+      "min_lon": -48.1833333,
+      "max_lon": -48.112666698553
+    }
+  },
+  {
+    "id": "BB-8",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-462",
+    "bbox": {
+      "min_lat": -22.802999999944,
+      "max_lat": -22.77983330024,
+      "min_lon": -48.1333333,
+      "max_lon": -48.097999999277
+    }
+  },
+  {
+    "id": "BB-9",
+    "name": "BARRA BONITA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-463",
+    "bbox": {
+      "min_lat": -22.806333299944,
+      "max_lat": -22.783166700544,
+      "min_lon": -48.1005,
+      "max_lon": -48.065166699277
+    }
+  },
+  {
+    "id": "IB-1",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-139",
+    "bbox": {
+      "min_lat": -21.874333299879,
+      "max_lat": -21.742333302966,
+      "min_lon": -49.000000000232,
+      "max_lon": -48.900666686006
+    }
+  },
+  {
+    "id": "IB-2",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-280",
+    "bbox": {
+      "min_lat": -21.930999999936,
+      "max_lat": -21.865000005387,
+      "min_lon": -48.9233333,
+      "max_lon": -48.87366670058
+    }
+  },
+  {
+    "id": "IB-3",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-281",
+    "bbox": {
+      "min_lat": -21.973333299936,
+      "max_lat": -21.927000002395,
+      "min_lon": -48.9216667,
+      "max_lon": -48.851000002399
+    }
+  },
+  {
+    "id": "IB-4",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-140",
+    "bbox": {
+      "min_lat": -22.034166699937,
+      "max_lat": -21.968166693413,
+      "min_lon": -48.8983333,
+      "max_lon": -48.84866670058
+    }
+  },
+  {
+    "id": "IB-5",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-282",
+    "bbox": {
+      "min_lat": -22.095833299938,
+      "max_lat": -22.029833306346,
+      "min_lon": -48.88,
+      "max_lon": -48.830333304425
+    }
+  },
+  {
+    "id": "IB-6",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-283",
+    "bbox": {
+      "min_lat": -22.138333299938,
+      "max_lat": -22.092000008273,
+      "min_lon": -48.8908333,
+      "max_lon": -48.820166698553
+    }
+  },
+  {
+    "id": "IB-7",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-450",
+    "bbox": {
+      "min_lat": -22.148333299938,
+      "max_lat": -22.082333291399,
+      "min_lon": -48.825,
+      "max_lon": -48.775333304425
+    }
+  },
+  {
+    "id": "IB-8",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-284",
+    "bbox": {
+      "min_lat": -22.121833299938,
+      "max_lat": -22.098666696567,
+      "min_lon": -48.7866667,
+      "max_lon": -48.751333303122
+    }
+  },
+  {
+    "id": "IB-9",
+    "name": "IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-285",
+    "bbox": {
+      "min_lat": -22.149999999938,
+      "max_lat": -22.116999996336,
+      "min_lon": -48.7666667,
+      "max_lon": -48.741833304135
+    }
+  },
+  {
+    "id": "IB-BA",
+    "name": "IBITINGA - BARIRI",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-466",
+    "bbox": {
+      "min_lat": -22.168499999938,
+      "max_lat": -22.135666696878,
+      "min_lon": -48.7626667,
+      "max_lon": -48.737833304135
+    }
+  },
+  {
+    "id": "JU-1",
+    "name": "JUPIÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-263",
+    "bbox": {
+      "min_lat": -20.807166699926,
+      "max_lat": -20.713666706773,
+      "min_lon": -51.6916667,
+      "max_lon": -51.550333304797
+    }
+  },
+  {
+    "id": "JU-2",
+    "name": "JUPIÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-264",
+    "bbox": {
+      "min_lat": -20.721499999926,
+      "max_lat": -20.588500005375,
+      "min_lon": -51.6518333,
+      "max_lon": -51.552499985774
+    }
+  },
+  {
+    "id": "JU-3",
+    "name": "JUPIÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-451",
+    "bbox": {
+      "min_lat": -20.650166699925,
+      "max_lat": -20.603333304249,
+      "min_lon": -51.5791667,
+      "max_lon": -51.508500002399
+    }
+  },
+  {
+    "id": "JU-4",
+    "name": "JUPIÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-265",
+    "bbox": {
+      "min_lat": -20.691833299926,
+      "max_lat": -20.645000000233,
+      "min_lon": -51.5416667,
+      "max_lon": -51.471000002399
+    }
+  },
+  {
+    "id": "JU-5",
+    "name": "JUPIÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-467",
+    "bbox": {
+      "min_lat": -20.699999999926,
+      "max_lat": -20.653166696611,
+      "min_lon": -51.475,
+      "max_lon": -51.404333302399
+    }
+  },
+  {
+    "id": "JU-6",
+    "name": "JUPIÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-266",
+    "bbox": {
+      "min_lat": -20.708333299926,
+      "max_lat": -20.661499991951,
+      "min_lon": -51.4088333,
+      "max_lon": -51.338166698553
+    }
+  },
+  {
+    "id": "JU-7",
+    "name": "JUPIÁ",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-468",
+    "bbox": {
+      "min_lat": -20.690499999926,
+      "max_lat": -20.667000000159,
+      "min_lon": -51.3483333,
+      "max_lon": -51.312999999277
+    }
+  },
+  {
+    "id": "JU-TI",
+    "name": "JUPIÁ - TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-267",
+    "bbox": {
+      "min_lat": -20.687999999925,
+      "max_lat": -20.641333297436,
+      "min_lon": -51.3351667,
+      "max_lon": -51.264500002399
+    }
+  },
+  {
+    "id": "NA-1",
+    "name": "NOVA AVANHANDAVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-452",
+    "bbox": {
+      "min_lat": -21.161666699929,
+      "max_lat": -21.068500010162,
+      "min_lon": -50.2283333,
+      "max_lon": -50.086999981721
+    }
+  },
+  {
+    "id": "NA-2",
+    "name": "NOVA AVANHANDAVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-274",
+    "bbox": {
+      "min_lat": -21.24666669993,
+      "max_lat": -21.153500007158,
+      "min_lon": -50.1833333,
+      "max_lon": -50.041999981721
+    }
+  },
+  {
+    "id": "NA-3",
+    "name": "NOVA AVANHANDAVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-286",
+    "bbox": {
+      "min_lat": -21.27099999993,
+      "max_lat": -21.17683331241,
+      "min_lon": -50.0583333,
+      "max_lon": -49.916999981721
+    }
+  },
+  {
+    "id": "NA-4",
+    "name": "NOVA AVANHANDAVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-275",
+    "bbox": {
+      "min_lat": -21.308333299931,
+      "max_lat": -21.21516670992,
+      "min_lon": -49.938,
+      "max_lon": -49.796666681721
+    }
+  },
+  {
+    "id": "NA-PR",
+    "name": "NOVA AVANHANDAVA - PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-287",
+    "bbox": {
+      "min_lat": -21.330166699931,
+      "max_lat": -21.283666692871,
+      "min_lon": -49.8188333,
+      "max_lon": -49.748166698553
+    }
+  },
+  {
+    "id": "PB-1",
+    "name": "CANAL PEREIRA BARRETO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-288",
+    "bbox": {
+      "min_lat": -20.673333299925,
+      "max_lat": -20.639999999392,
+      "min_lon": -51.1146667,
+      "max_lon": -51.08999999768
+    }
+  },
+  {
+    "id": "PB-2",
+    "name": "CANAL PEREIRA BARRETO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-289",
+    "bbox": {
+      "min_lat": -20.649166699925,
+      "max_lat": -20.615833298784,
+      "min_lon": -51.0958333,
+      "max_lon": -51.07100000029
+    }
+  },
+  {
+    "id": "PB-3",
+    "name": "CANAL PEREIRA BARRETO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-290",
+    "bbox": {
+      "min_lat": -20.618333299925,
+      "max_lat": -20.584999996324,
+      "min_lon": -51.091,
+      "max_lon": -51.06616670029
+    }
+  },
+  {
+    "id": "PB-4",
+    "name": "CANAL PEREIRA BARRETO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-291",
+    "bbox": {
+      "min_lat": -20.586666699925,
+      "max_lat": -20.553333304236,
+      "min_lon": -51.0863333,
+      "max_lon": -51.06166670345
+    }
+  },
+  {
+    "id": "PR-1",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-276",
+    "bbox": {
+      "min_lat": -21.376833299931,
+      "max_lat": -21.283666694362,
+      "min_lon": -49.8216667,
+      "max_lon": -49.680333304797
+    }
+  },
+  {
+    "id": "PR-10",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-186",
+    "bbox": {
+      "min_lat": -21.788333299883,
+      "max_lat": -21.741999993352,
+      "min_lon": -49.067166700233,
+      "max_lon": -48.996500002631
+    }
+  },
+  {
+    "id": "PR-2",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-292",
+    "bbox": {
+      "min_lat": -21.412499999932,
+      "max_lat": -21.319499983241,
+      "min_lon": -49.695,
+      "max_lon": -49.553666681721
+    }
+  },
+  {
+    "id": "PR-3",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-277",
+    "bbox": {
+      "min_lat": -21.479999999932,
+      "max_lat": -21.387000015461,
+      "min_lon": -49.5866667,
+      "max_lon": -49.445333304797
+    }
+  },
+  {
+    "id": "PR-4",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-293",
+    "bbox": {
+      "min_lat": -21.563333299933,
+      "max_lat": -21.470333290008,
+      "min_lon": -49.523,
+      "max_lon": -49.381666681721
+    }
+  },
+  {
+    "id": "PR-5",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-278",
+    "bbox": {
+      "min_lat": -21.615833299933,
+      "max_lat": -21.523000016219,
+      "min_lon": -49.4066667,
+      "max_lon": -49.265333304797
+    }
+  },
+  {
+    "id": "PR-6",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-294",
+    "bbox": {
+      "min_lat": -21.701666699934,
+      "max_lat": -21.608833295878,
+      "min_lon": -49.3246667,
+      "max_lon": -49.183333304797
+    }
+  },
+  {
+    "id": "PR-7",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-453",
+    "bbox": {
+      "min_lat": -21.676666699934,
+      "max_lat": -21.630166698017,
+      "min_lon": -49.2038333,
+      "max_lon": -49.133166698553
+    }
+  },
+  {
+    "id": "PR-8",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-295",
+    "bbox": {
+      "min_lat": -21.738333299934,
+      "max_lat": -21.672333299713,
+      "min_lon": -49.1583333,
+      "max_lon": -49.10866670058
+    }
+  },
+  {
+    "id": "PR-9",
+    "name": "PROMISSÃO",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-268",
+    "bbox": {
+      "min_lat": -21.779166699935,
+      "max_lat": -21.732833292468,
+      "min_lon": -49.1321667,
+      "max_lon": -49.061500002399
+    }
+  },
+  {
+    "id": "PR-IB",
+    "name": "PROMISSÃO - IBITINGA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-187",
+    "bbox": {
+      "min_lat": -21.772499999884,
+      "max_lat": -21.748999997015,
+      "min_lon": -49.009333300232,
+      "max_lon": -48.973999999509
+    }
+  },
+  {
+    "id": "RP-1",
+    "name": "RIO PIRACICABA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-296",
+    "bbox": {
+      "min_lat": -22.640333299942,
+      "max_lat": -22.547999985885,
+      "min_lon": -48.35,
+      "max_lon": -48.208666681721
+    }
+  },
+  {
+    "id": "RP-2",
+    "name": "RIO PIRACICABA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-297",
+    "bbox": {
+      "min_lat": -22.646666699942,
+      "max_lat": -22.600500004749,
+      "min_lon": -48.2133333,
+      "max_lon": -48.142666698553
+    }
+  },
+  {
+    "id": "SJD-1",
+    "name": "SÃO JOSÉ DOS DOURADOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-298",
+    "bbox": {
+      "min_lat": -20.408333299923,
+      "max_lat": -20.314666705447,
+      "min_lon": -51.4493333,
+      "max_lon": -51.307999981721
+    }
+  },
+  {
+    "id": "SJD-2",
+    "name": "SÃO JOSÉ DOS DOURADOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-454",
+    "bbox": {
+      "min_lat": -20.412166699923,
+      "max_lat": -20.3653332989,
+      "min_lon": -51.3216667,
+      "max_lon": -51.251000002399
+    }
+  },
+  {
+    "id": "SJD-3",
+    "name": "SÃO JOSÉ DOS DOURADOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-299",
+    "bbox": {
+      "min_lat": -20.473333299924,
+      "max_lat": -20.406666696556,
+      "min_lon": -51.28,
+      "max_lon": -51.230333304425
+    }
+  },
+  {
+    "id": "SJD-4",
+    "name": "SÃO JOSÉ DOS DOURADOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-269",
+    "bbox": {
+      "min_lat": -20.513333299924,
+      "max_lat": -20.446666702657,
+      "min_lon": -51.235,
+      "max_lon": -51.185333304425
+    }
+  },
+  {
+    "id": "SJD-5",
+    "name": "SÃO JOSÉ DOS DOURADOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-455",
+    "bbox": {
+      "min_lat": -20.533333299924,
+      "max_lat": -20.486499997291,
+      "min_lon": -51.1916667,
+      "max_lon": -51.121000002399
+    }
+  },
+  {
+    "id": "SJD-6",
+    "name": "SÃO JOSÉ DOS DOURADOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-270",
+    "bbox": {
+      "min_lat": -20.559999999924,
+      "max_lat": -20.513166691673,
+      "min_lon": -51.1266667,
+      "max_lon": -51.056000002399
+    }
+  },
+  {
+    "id": "TI-1",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-300",
+    "bbox": {
+      "min_lat": -20.698499999926,
+      "max_lat": -20.605000010636,
+      "min_lon": -51.3246667,
+      "max_lon": -51.183333304797
+    }
+  },
+  {
+    "id": "TI-10",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-440",
+    "bbox": {
+      "min_lat": -21.076666699929,
+      "max_lat": -21.030000002029,
+      "min_lon": -50.3983333,
+      "max_lon": -50.327666698553
+    }
+  },
+  {
+    "id": "TI-11",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-441",
+    "bbox": {
+      "min_lat": -21.097499999929,
+      "max_lat": -21.050833306791,
+      "min_lon": -50.3325,
+      "max_lon": -50.261833302399
+    }
+  },
+  {
+    "id": "TI-12",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-442",
+    "bbox": {
+      "min_lat": -21.136833299929,
+      "max_lat": -21.090166692119,
+      "min_lon": -50.2871667,
+      "max_lon": -50.216500002399
+    }
+  },
+  {
+    "id": "TI-2",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-456",
+    "bbox": {
+      "min_lat": -20.721833299926,
+      "max_lat": -20.628333287151,
+      "min_lon": -51.1933333,
+      "max_lon": -51.051999981721
+    }
+  },
+  {
+    "id": "TI-3",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-457",
+    "bbox": {
+      "min_lat": -20.785166699926,
+      "max_lat": -20.691666694028,
+      "min_lon": -51.0966667,
+      "max_lon": -50.955333304797
+    }
+  },
+  {
+    "id": "TI-4",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-459",
+    "bbox": {
+      "min_lat": -20.844333299927,
+      "max_lat": -20.750833295546,
+      "min_lon": -50.9946667,
+      "max_lon": -50.853333304797
+    }
+  },
+  {
+    "id": "TI-5",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-429",
+    "bbox": {
+      "min_lat": -20.924999999927,
+      "max_lat": -20.791999997131,
+      "min_lon": -50.875,
+      "max_lon": -50.775666685774
+    }
+  },
+  {
+    "id": "TI-6",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-430",
+    "bbox": {
+      "min_lat": -20.943499999928,
+      "max_lat": -20.850166683425,
+      "min_lon": -50.7866667,
+      "max_lon": -50.645333304797
+    }
+  },
+  {
+    "id": "TI-7",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-431",
+    "bbox": {
+      "min_lat": -20.996833299928,
+      "max_lat": -20.90350001722,
+      "min_lon": -50.655,
+      "max_lon": -50.513666681721
+    }
+  },
+  {
+    "id": "TI-8",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-141",
+    "bbox": {
+      "min_lat": -21.083333299929,
+      "max_lat": -20.989999997683,
+      "min_lon": -50.58,
+      "max_lon": -50.438333294631
+    }
+  },
+  {
+    "id": "TI-9",
+    "name": "TRÊS IRMÃOS",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-432",
+    "bbox": {
+      "min_lat": -21.078166699929,
+      "max_lat": -21.011833293602,
+      "min_lon": -50.4433333,
+      "max_lon": -50.39366670058
+    }
+  },
+  {
+    "id": "TI-NA",
+    "name": "TRÊS IRMÃOS - NOVA AVANHANDAVA",
+    "link": "https://www.marinha.mil.br/chm/dados-do-segnav-cartas-raster-443",
+    "bbox": {
+      "min_lat": -21.139999999929,
+      "max_lat": -21.093333299002,
+      "min_lon": -50.2441667,
+      "max_lon": -50.173500002399
+    }
+  }
+]

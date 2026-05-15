@@ -4,14 +4,18 @@ import '../../../services/tile_cache_service.dart';
 
 class PrimaryMapCard extends StatefulWidget {
   final MapItem mapItem;
+  final bool isSelected;
   final bool isCached;
+  final VoidCallback onToggleSelection;
   final VoidCallback onToggleCache;
   final VoidCallback onClearCache;
 
   const PrimaryMapCard({
     super.key,
     required this.mapItem,
+    required this.isSelected,
     required this.isCached,
+    required this.onToggleSelection,
     required this.onToggleCache,
     required this.onClearCache,
   });
@@ -51,46 +55,55 @@ class _PrimaryMapCardState extends State<PrimaryMapCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        color: Colors.green.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: Colors.green.withValues(alpha: 0.5),
-          width: 2,
+    final selected = widget.isSelected;
+    return InkWell(
+      onTap: widget.onToggleSelection,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        decoration: BoxDecoration(
+          color: selected
+              ? Colors.green.withValues(alpha: 0.1)
+              : Colors.white.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: selected
+                ? Colors.green.withValues(alpha: 0.5)
+                : Colors.white.withValues(alpha: 0.2),
+            width: selected ? 2 : 1,
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(
-                  Icons.star,
-                  color: Colors.amber.withValues(alpha: 0.9),
-                  size: 24,
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    widget.mapItem.name,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber.withValues(alpha: 0.9),
+                    size: 24,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      widget.mapItem.name,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                ),
-                Icon(
-                  Icons.check_circle,
-                  color: Colors.green.withValues(alpha: 0.8),
-                  size: 24,
-                ),
-              ],
-            ),
+                  Checkbox(
+                    value: selected,
+                    onChanged: (_) => widget.onToggleSelection(),
+                    activeColor: Colors.green,
+                    checkColor: Colors.white,
+                  ),
+                ],
+              ),
             const SizedBox(height: 8),
             Row(
               children: [
@@ -110,13 +123,14 @@ class _PrimaryMapCardState extends State<PrimaryMapCard> {
               ],
             ),
             const SizedBox(height: 8),
-            _CacheRow(
-              isCached: widget.isCached,
-              cacheSizeFuture: _cacheSizeFuture,
-              onToggle: widget.onToggleCache,
-              onClear: _onClearCache,
-            ),
-          ],
+              _CacheRow(
+                isCached: widget.isCached,
+                cacheSizeFuture: _cacheSizeFuture,
+                onToggle: widget.onToggleCache,
+                onClear: _onClearCache,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -20,10 +20,12 @@ class ListMapsViewModel extends ChangeNotifier {
   Set<String> _selectedMapIds = {};
   Set<String> _cachedMapIds = {};
   bool _darkMode = false;
+  bool _hasSavedSelection = false;
+  Future<void>? _selectionLoaded;
 
   ListMapsViewModel({MapsService? mapsService})
     : _mapsService = mapsService ?? MapsService() {
-    _loadSelectedMaps();
+    _selectionLoaded = _loadSelectedMaps();
     _loadDarkModePreference();
     _loadCachedMapIds();
     loadMaps();
@@ -64,6 +66,7 @@ class ListMapsViewModel extends ChangeNotifier {
 
     try {
       _maps = await _mapsService.getMaps();
+      await _selectionLoaded;
       _ensurePrimaryMapsSelected();
       _errorMessage = null;
       _isConnectionError = false;
@@ -107,6 +110,7 @@ class ListMapsViewModel extends ChangeNotifier {
       final prefs = await SharedPreferences.getInstance();
       final selectedIdsJson = prefs.getString(_selectedMapIdsKey);
       if (selectedIdsJson != null) {
+        _hasSavedSelection = true;
         final List<dynamic> decoded = json.decode(selectedIdsJson);
         _selectedMapIds = decoded.map((id) => id.toString()).toSet();
       }
@@ -128,6 +132,7 @@ class ListMapsViewModel extends ChangeNotifier {
   }
 
   void _ensurePrimaryMapsSelected() {
+    if (_hasSavedSelection) return;
     bool hasChanges = false;
     for (final map in _maps) {
       if (map.isPrimary && !_selectedMapIds.contains(map.id)) {
@@ -142,22 +147,16 @@ class ListMapsViewModel extends ChangeNotifier {
   }
 
   Future<void> toggleMapSelection(String mapId) async {
-    try {
-      final map = _maps.firstWhere((m) => m.id == mapId);
+    if (!_maps.any((m) => m.id == mapId)) return;
 
-      if (_selectedMapIds.contains(mapId)) {
-        if (map.isPrimary) {
-          return;
-        }
-        _selectedMapIds.remove(mapId);
-      } else {
-        _selectedMapIds.add(mapId);
-      }
-      notifyListeners();
-      await _saveSelectedMaps();
-    } catch (e) {
-      return;
+    if (_selectedMapIds.contains(mapId)) {
+      _selectedMapIds.remove(mapId);
+    } else {
+      _selectedMapIds.add(mapId);
     }
+    _hasSavedSelection = true;
+    notifyListeners();
+    await _saveSelectedMaps();
   }
 
   bool isMapCached(String mapId) => _cachedMapIds.contains(mapId);

@@ -287,7 +287,7 @@
   "@maps": {},
   "mapsSelectionDescription": "Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.",
   "@mapsSelectionDescription": {},
-  "mapsSelectionPerformanceWarning": "Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo e aumentar o uso de dados.",
+  "mapsSelectionPerformanceWarning": "Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo.",
   "@mapsSelectionPerformanceWarning": {},
   "darkMode": "Modo Escuro",
   "@darkMode": {},
@@ -484,5 +484,39 @@
   "signalKConfigurationSaved": "Configuração SignalK salva",
   "@signalKConfigurationSaved": {},
   "signalKClearConfiguration": "Limpar configuração",
-  "@signalKClearConfiguration": {}
+  "@signalKClearConfiguration": {},
+  "rasterCharts": "Cartas Raster (BSB/KAP)",
+  "@rasterCharts": {},
+  "rasterChartsEmptyTitle": "Nenhuma carta importada",
+  "@rasterChartsEmptyTitle": {},
+  "rasterChartsEmptyMessage": "Importe um .zip de carta raster (BSB/KAP) da Marinha do Brasil para visualizá-la sobre o mapa.",
+  "@rasterChartsEmptyMessage": {},
+  "rasterChartImport": "Importar carta",
+  "@rasterChartImport": {},
+  "rasterChartImporting": "Importando carta...",
+  "@rasterChartImporting": {},
+  "rasterChartImportSuccess": "Carta importada com sucesso",
+  "@rasterChartImportSuccess": {},
+  "rasterChartRemoveTitle": "Remover carta",
+  "@rasterChartRemoveTitle": {},
+  "rasterChartRemoveMessage": "Tem certeza que deseja remover \"{name}\"?",
+  "@rasterChartRemoveMessage": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "remove": "Remover",
+  "@remove": {},
+  "rasterChartCount": "{count, plural, =1{carta} other{cartas}}",
+  "@rasterChartCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "rasterChartProjectionWarning": "Projeção {projection} não totalmente suportada — alinhamento aproximado.",
+  "@rasterChartProjectionWarning": {
+    "placeholders": {
+      "projection": {"type": "String"}
+    }
+  }
 }

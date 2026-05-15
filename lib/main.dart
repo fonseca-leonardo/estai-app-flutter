@@ -25,7 +25,8 @@ import 'viewmodels/ad_banner_viewmodel.dart';
 import 'viewmodels/weather_forecast_viewmodel.dart';
 import 'viewmodels/weather_monitor_pins_viewmodel.dart';
 import 'viewmodels/watch_connectivity_viewmodel.dart';
-import 'viewmodels/signalk_configuration_viewmodel.dart';
+import 'viewmodels/raster_charts_viewmodel.dart';
+import 'viewmodels/chartplotter_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -123,11 +124,12 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => AdBannerViewModel()),
         ChangeNotifierProvider(create: (_) => WeatherForecastViewModel()),
         ChangeNotifierProvider(create: (_) => WeatherMonitorPinsViewModel()),
+        ChangeNotifierProvider(create: (_) => RasterChartsViewModel()),
+        ChangeNotifierProvider(create: (_) => ChartplotterViewModel()),
         ChangeNotifierProvider.value(value: settingsViewModel),
         ChangeNotifierProvider(create: (_) => NavigationPermissionViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
-        ChangeNotifierProvider(create: (_) => SignalKConfigurationViewModel()),
       ],
       child: MaterialApp(
         title: 'Estai - Mapa',

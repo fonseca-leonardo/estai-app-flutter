@@ -1,7 +1,3 @@
----
-alwaysApply: true
----
-
 - Priorize usar o padrão MVVM para criação das novas funcionalides e telas
 - Siga o padrão de UI para seguir o padrão ShadCN, cards com bordas sutis, melhor hierarquia visual e espaçamento mais generoso. A não ser que seja falado para aplicar outro tipo de estilos
 - Não crie mais de uma widget dentro do arquivo de views, priorize separar em novos arquivos para melhor organização do codigo, essas widgets ficam na pasta widget que estao no mesmo nivel da view

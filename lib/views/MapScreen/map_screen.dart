@@ -31,6 +31,11 @@ import '../../services/tile_cache_service.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import 'widgets/offline_basemap_layer.dart';
+import 'widgets/raster_charts_layer.dart';
+import 'widgets/chartplotter_layer.dart';
+import 'widgets/chartplotter_crosshair.dart';
+import 'widgets/chartplotter_camera_sync.dart';
+import 'widgets/chartplotter_actions_bar.dart';
 import 'widgets/weather_monitor_pins_layer.dart';
 import 'widgets/weather_pin_forecast_bottom_sheet.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
@@ -300,6 +305,9 @@ class _MapScreenState extends State<MapScreen>
                               children: [
                                 const OfflineBasemapLayer(),
                                 ...customTileLayers,
+                                const RasterChartsLayer(),
+                                const ChartplotterLayer(),
+                                const ChartplotterCameraSync(),
                                 const PlannedRouteLine(),
                                 PlannedRouteMarkers(
                                   mapController: _mapController,
@@ -329,6 +337,10 @@ class _MapScreenState extends State<MapScreen>
                   return const SizedBox.shrink();
                 },
               ),
+
+              const ChartplotterCrosshair(),
+
+              const ChartplotterActionsBar(),
 
               const MapNavigationData(),
 

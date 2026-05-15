@@ -1240,6 +1240,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Clear configuration'**
   String get signalKClearConfiguration;
+
+  /// No description provided for @rasterCharts.
+  ///
+  /// In en, this message translates to:
+  /// **'Raster Charts (BSB/KAP)'**
+  String get rasterCharts;
+
+  /// No description provided for @rasterChartsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No charts imported'**
+  String get rasterChartsEmptyTitle;
+
+  /// No description provided for @rasterChartsEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Import a raster chart .zip (BSB/KAP) from the Brazilian Navy to display it over the map.'**
+  String get rasterChartsEmptyMessage;
+
+  /// No description provided for @rasterChartImport.
+  ///
+  /// In en, this message translates to:
+  /// **'Import chart'**
+  String get rasterChartImport;
+
+  /// No description provided for @rasterChartImporting.
+  ///
+  /// In en, this message translates to:
+  /// **'Importing chart...'**
+  String get rasterChartImporting;
+
+  /// No description provided for @rasterChartImportSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Chart imported successfully'**
+  String get rasterChartImportSuccess;
+
+  /// No description provided for @rasterChartRemoveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove chart'**
+  String get rasterChartRemoveTitle;
+
+  /// No description provided for @rasterChartRemoveMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to remove \"{name}\"?'**
+  String rasterChartRemoveMessage(String name);
+
+  /// No description provided for @remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// No description provided for @rasterChartCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{chart} other{charts}}'**
+  String rasterChartCount(int count);
+
+  /// No description provided for @rasterChartProjectionWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Projection {projection} not fully supported — approximate alignment.'**
+  String rasterChartProjectionWarning(String projection);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

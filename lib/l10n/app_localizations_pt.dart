@@ -72,7 +72,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get forgotPasswordTitle => 'Esqueceu sua senha?';
 
   @override
-  String get forgotPasswordDescription => 'Digite seu email e enviaremos um link para redefinir sua senha.';
+  String get forgotPasswordDescription =>
+      'Digite seu email e enviaremos um link para redefinir sua senha.';
 
   @override
   String get sendEmail => 'Enviar Email';
@@ -81,7 +82,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get backToLogin => 'Voltar para login';
 
   @override
-  String get passwordResetEmailSent => 'Email de recuperação enviado! Verifique sua caixa de entrada.';
+  String get passwordResetEmailSent =>
+      'Email de recuperação enviado! Verifique sua caixa de entrada.';
 
   @override
   String get settings => 'Configurações';
@@ -101,7 +103,8 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get minimumDistanceDescription => 'Define a distância mínima em metros que o usuário precisa percorrer para que um novo ponto seja adicionado à rota rastreada durante a navegação. Valores maiores resultam em rotas com menos pontos, enquanto valores menores criam rotas mais detalhadas.';
+  String get minimumDistanceDescription =>
+      'Define a distância mínima em metros que o usuário precisa percorrer para que um novo ponto seja adicionado à rota rastreada durante a navegação. Valores maiores resultam em rotas com menos pontos, enquanto valores menores criam rotas mais detalhadas.';
 
   @override
   String meters(String value) {
@@ -112,13 +115,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tryAgain => 'Tentar Novamente';
 
   @override
-  String get locationServicesDisabled => 'Serviços de localização estão desabilitados.';
+  String get locationServicesDisabled =>
+      'Serviços de localização estão desabilitados.';
 
   @override
   String get locationPermissionDenied => 'Permissão de localização negada.';
 
   @override
-  String get locationPermissionDeniedForever => 'Permissão de localização negada permanentemente.';
+  String get locationPermissionDeniedForever =>
+      'Permissão de localização negada permanentemente.';
 
   @override
   String errorGettingLocation(String error) {
@@ -134,7 +139,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get finishNavigation => 'Finalizar Navegação';
 
   @override
-  String get finishNavigationQuestion => 'Deseja realmente finalizar a navegação?';
+  String get finishNavigationQuestion =>
+      'Deseja realmente finalizar a navegação?';
 
   @override
   String get cancel => 'Cancelar';
@@ -170,13 +176,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get improvementsAndSuggestions => 'Sugestões';
 
   @override
-  String get feedbackSuggestionPlaceholder => 'Compartilhe sua sugestão ou melhoria (máx. 500 caracteres)';
+  String get feedbackSuggestionPlaceholder =>
+      'Compartilhe sua sugestão ou melhoria (máx. 500 caracteres)';
 
   @override
   String get feedbackSentSuccess => 'Obrigado! Seu feedback foi enviado.';
 
   @override
-  String get feedbackError => 'Não foi possível enviar o feedback. Tente novamente.';
+  String get feedbackError =>
+      'Não foi possível enviar o feedback. Tente novamente.';
 
   @override
   String feedbackMaxCharacters(String current, String max) {
@@ -263,25 +271,29 @@ class AppLocalizationsPt extends AppLocalizations {
   String get navigationSettings => 'Configurações de Navegação';
 
   @override
-  String get navigationSettingsDescription => 'Configure as opções de navegação e rastreamento';
+  String get navigationSettingsDescription =>
+      'Configure as opções de navegação e rastreamento';
 
   @override
   String get navigationPermission => 'Permissões GPS';
 
   @override
-  String get navigationPermissionDescription => 'Veja o status atual da permissão de localização e altere nas configurações do sistema se necessário.';
+  String get navigationPermissionDescription =>
+      'Veja o status atual da permissão de localização e altere nas configurações do sistema se necessário.';
 
   @override
   String get locationPermissionAlways => 'Sempre permitir';
 
   @override
-  String get locationPermissionAlwaysSubtitle => 'Localização disponível em primeiro e segundo plano.';
+  String get locationPermissionAlwaysSubtitle =>
+      'Localização disponível em primeiro e segundo plano.';
 
   @override
   String get locationPermissionWhileInUse => 'Enquanto usa o app';
 
   @override
-  String get locationPermissionWhileInUseSubtitle => 'Ative \"Sempre\" para rastrear durante a navegação.';
+  String get locationPermissionWhileInUseSubtitle =>
+      'Ative \"Sempre\" para rastrear durante a navegação.';
 
   @override
   String get openAppSettings => 'Abrir configurações';
@@ -290,13 +302,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get locationPermissionChecking => 'Verificando...';
 
   @override
-  String get locationPermissionCheckingSubtitle => 'Aguarde enquanto verificamos.';
+  String get locationPermissionCheckingSubtitle =>
+      'Aguarde enquanto verificamos.';
 
   @override
-  String get locationPermissionDeniedSubtitle => 'O app não pode acessar sua localização.';
+  String get locationPermissionDeniedSubtitle =>
+      'O app não pode acessar sua localização.';
 
   @override
-  String get locationPermissionDeniedForeverSubtitle => 'Você negou a permissão. Altere nas configurações do sistema.';
+  String get locationPermissionDeniedForeverSubtitle =>
+      'Você negou a permissão. Altere nas configurações do sistema.';
 
   @override
   String get userAccount => 'Conta do Usuário';
@@ -365,22 +380,26 @@ class AppLocalizationsPt extends AppLocalizations {
   String get maps => 'Mapas';
 
   @override
-  String get mapsSelectionDescription => 'Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.';
+  String get mapsSelectionDescription =>
+      'Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.';
 
   @override
-  String get mapsSelectionPerformanceWarning => 'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo e aumentar o uso de dados.';
+  String get mapsSelectionPerformanceWarning =>
+      'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo.';
 
   @override
   String get darkMode => 'Modo Escuro';
 
   @override
-  String get darkModeDescription => 'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
+  String get darkModeDescription =>
+      'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
 
   @override
   String get saveRouteForReuse => 'Salvar para reutilização';
 
   @override
-  String get saveRouteForReuseDescription => 'Salve esta rota para poder usá-la novamente no futuro';
+  String get saveRouteForReuseDescription =>
+      'Salve esta rota para poder usá-la novamente no futuro';
 
   @override
   String get confirm => 'Confirmar';
@@ -389,7 +408,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get plannedRoute => 'Rota Planejada';
 
   @override
-  String get errorLoadingMaps => 'Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.';
+  String get errorLoadingMaps =>
+      'Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.';
 
   @override
   String get signInWithGoogle => 'Continuar com Google';
@@ -411,13 +431,16 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get networkError => 'Erro de rede. Verifique sua conexão com a internet.';
+  String get networkError =>
+      'Erro de rede. Verifique sua conexão com a internet.';
 
   @override
-  String get accountExistsWithDifferentCredential => 'Uma conta já existe com o mesmo endereço de email, mas usando um método de login diferente.';
+  String get accountExistsWithDifferentCredential =>
+      'Uma conta já existe com o mesmo endereço de email, mas usando um método de login diferente.';
 
   @override
-  String get operationNotAllowed => 'Login com Google não está habilitado. Entre em contato com o suporte.';
+  String get operationNotAllowed =>
+      'Login com Google não está habilitado. Entre em contato com o suporte.';
 
   @override
   String get signInWithApple => 'Continuar com Apple';
@@ -436,10 +459,12 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get tideDataDisclaimer => 'Os dados oficiais de maré são de responsabilidade da Marinha do Brasil.';
+  String get tideDataDisclaimer =>
+      'Os dados oficiais de maré são de responsabilidade da Marinha do Brasil.';
 
   @override
-  String get tideExternalBrowserNotice => 'Ao selecionar um das tábuas, você será redirecionado para o site oficial da Marinha do Brasil';
+  String get tideExternalBrowserNotice =>
+      'Ao selecionar um das tábuas, você será redirecionado para o site oficial da Marinha do Brasil';
 
   @override
   String get weatherForecast => 'Previsão do Tempo';
@@ -493,10 +518,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get precipitationProbability => 'Prob. Chuva';
 
   @override
-  String get loginRequiredForForecast => 'Para acessar a previsão do tempo, você precisa estar logado.';
+  String get loginRequiredForForecast =>
+      'Para acessar a previsão do tempo, você precisa estar logado.';
 
   @override
-  String get loginRequiredForAction => 'Para realizar esta ação é preciso estar logado.';
+  String get loginRequiredForAction =>
+      'Para realizar esta ação é preciso estar logado.';
 
   @override
   String get goToLogin => 'Ir para Login';
@@ -543,19 +570,23 @@ class AppLocalizationsPt extends AppLocalizations {
   String get deleteAccount => 'Excluir Conta';
 
   @override
-  String get deleteAccountDescription => 'Excluir permanentemente sua conta e todos os dados associados';
+  String get deleteAccountDescription =>
+      'Excluir permanentemente sua conta e todos os dados associados';
 
   @override
-  String get deleteAccountWarning => 'Esta ação não pode ser desfeita. Todos os seus dados serão perdidos permanentemente.';
+  String get deleteAccountWarning =>
+      'Esta ação não pode ser desfeita. Todos os seus dados serão perdidos permanentemente.';
 
   @override
   String get deleteAccountConfirmTitle => 'Confirmar Exclusão de Conta';
 
   @override
-  String get deleteAccountConfirmMessage => 'Tem certeza que deseja excluir sua conta? Esta ação é irreversível e removerá:';
+  String get deleteAccountConfirmMessage =>
+      'Tem certeza que deseja excluir sua conta? Esta ação é irreversível e removerá:';
 
   @override
-  String get deleteAccountConfirmItems => '• Sua conta de autenticação\n• Todas as rotas salvas\n• Todos os dados associados';
+  String get deleteAccountConfirmItems =>
+      '• Sua conta de autenticação\n• Todas as rotas salvas\n• Todos os dados associados';
 
   @override
   String get deleteAccountSuccess => 'Conta excluída com sucesso';
@@ -566,16 +597,19 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get deleteAccountRequiresRecentLogin => 'Para excluir sua conta, você precisa fazer login novamente por segurança.';
+  String get deleteAccountRequiresRecentLogin =>
+      'Para excluir sua conta, você precisa fazer login novamente por segurança.';
 
   @override
   String get typeDeleteToConfirm => 'Digite EXCLUIR para confirmar';
 
   @override
-  String get backgroundLocationDisclosureTitle => 'Acesso à Localização em Segundo Plano';
+  String get backgroundLocationDisclosureTitle =>
+      'Acesso à Localização em Segundo Plano';
 
   @override
-  String get backgroundLocationDisclosureBody => 'Este aplicativo coleta seus dados de localização para permitir o rastreamento de rotas e navegação mesmo quando o app está em segundo plano ou a tela está desligada.\n\nIsso permite que você:\n• Rastreie sua rota durante a navegação sem manter a tela ligada\n• Receba atualizações de posição precisas continuamente\n\nSeus dados de localização são usados apenas para navegação e não são compartilhados com terceiros.';
+  String get backgroundLocationDisclosureBody =>
+      'Este aplicativo coleta seus dados de localização para permitir o rastreamento de rotas e navegação mesmo quando o app está em segundo plano ou a tela está desligada.\n\nIsso permite que você:\n• Rastreie sua rota durante a navegação sem manter a tela ligada\n• Receba atualizações de posição precisas continuamente\n\nSeus dados de localização são usados apenas para navegação e não são compartilhados com terceiros.';
 
   @override
   String get backgroundLocationAllow => 'Permitir';
@@ -592,7 +626,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get signalKConfiguration => 'Configuração SignalK';
 
   @override
-  String get signalKConfigurationDescription => 'Configure o servidor SignalK local para receber dados de navegação do barco.';
+  String get signalKConfigurationDescription =>
+      'Configure o servidor SignalK local para receber dados de navegação do barco.';
 
   @override
   String get signalKHost => 'Endereço do servidor';
@@ -614,4 +649,50 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get signalKClearConfiguration => 'Limpar configuração';
+
+  @override
+  String get rasterCharts => 'Cartas Raster (BSB/KAP)';
+
+  @override
+  String get rasterChartsEmptyTitle => 'Nenhuma carta importada';
+
+  @override
+  String get rasterChartsEmptyMessage =>
+      'Importe um .zip de carta raster (BSB/KAP) da Marinha do Brasil para visualizá-la sobre o mapa.';
+
+  @override
+  String get rasterChartImport => 'Importar carta';
+
+  @override
+  String get rasterChartImporting => 'Importando carta...';
+
+  @override
+  String get rasterChartImportSuccess => 'Carta importada com sucesso';
+
+  @override
+  String get rasterChartRemoveTitle => 'Remover carta';
+
+  @override
+  String rasterChartRemoveMessage(String name) {
+    return 'Tem certeza que deseja remover \"$name\"?';
+  }
+
+  @override
+  String get remove => 'Remover';
+
+  @override
+  String rasterChartCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'cartas',
+      one: 'carta',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String rasterChartProjectionWarning(String projection) {
+    return 'Projeção $projection não totalmente suportada — alinhamento aproximado.';
+  }
 }
