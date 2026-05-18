@@ -724,6 +724,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get onboardingRoutesDescription => 'Inicie uma nova rota pelo menu de ações, segure no mapa para adicionar pontos e salve para reutilizar em outras viagens.';
 
   @override
+  String get onboardingNavigationTitle => 'Inicie a navegação';
+
+  @override
+  String get onboardingNavigationDescription => 'Inicie a navegação para acompanhar o andamento da viagem em tempo real: mantenha o rumo, veja distância, velocidade e o trajeto percorrido no mapa.';
+
+  @override
   String get onboardingRasterChartsTitle => 'Cartas raster da Marinha';
 
   @override

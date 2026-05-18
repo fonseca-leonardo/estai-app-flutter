@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/map_viewmodel.dart';
@@ -20,13 +19,7 @@ class RoutePlanner extends StatelessWidget {
         if (!isPlanningRoute) {
           return const SizedBox.shrink();
         }
-        return Selector<RoutePlannerViewModel, LatLng?>(
-          selector: (_, viewModel) => viewModel.pendingPoint,
-          builder: (context, pendingPoint, child) {
-            if (pendingPoint != null) {
-              return const SizedBox.shrink();
-            }
-            return Consumer<AdBannerViewModel>(
+        return Consumer<AdBannerViewModel>(
               builder: (context, adBannerViewModel, child) {
                 const bannerHeight = 60.0;
                 const defaultBottom = 32.0;
@@ -203,8 +196,6 @@ class RoutePlanner extends StatelessWidget {
                 );
               },
             );
-          },
-        );
       },
     );
   }

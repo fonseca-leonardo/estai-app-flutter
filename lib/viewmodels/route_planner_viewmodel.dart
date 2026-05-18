@@ -6,32 +6,12 @@ import 'routes_viewmodel.dart';
 
 class RoutePlannerViewModel extends ChangeNotifier {
   List<LatLng> _routePoints = [];
-  LatLng? _pendingPoint;
   int? _draggingIndex;
   bool _hasConfirmedRoute = false;
 
   List<LatLng> get routePoints => _routePoints;
-  LatLng? get pendingPoint => _pendingPoint;
   int? get draggingIndex => _draggingIndex;
   bool get hasConfirmedRoute => _hasConfirmedRoute;
-
-  void setPendingPoint(LatLng point) {
-    _pendingPoint = point;
-    notifyListeners();
-  }
-
-  void confirmPendingPoint() {
-    if (_pendingPoint != null) {
-      _routePoints = [..._routePoints, _pendingPoint!];
-      _pendingPoint = null;
-      notifyListeners();
-    }
-  }
-
-  void cancelPendingPoint() {
-    _pendingPoint = null;
-    notifyListeners();
-  }
 
   void addRoutePoint(LatLng point) {
     _routePoints = [..._routePoints, point];
@@ -40,7 +20,6 @@ class RoutePlannerViewModel extends ChangeNotifier {
 
   void clearRoute() {
     _routePoints.clear();
-    _pendingPoint = null;
     _hasConfirmedRoute = false;
     notifyListeners();
   }

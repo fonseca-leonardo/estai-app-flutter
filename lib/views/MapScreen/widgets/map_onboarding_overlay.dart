@@ -48,6 +48,11 @@ class _MapOnboardingOverlayState extends State<MapOnboardingOverlay> {
         description: l10n.onboardingRoutesDescription,
       ),
       _OnboardingStepData(
+        icon: Icons.navigation_rounded,
+        title: l10n.onboardingNavigationTitle,
+        description: l10n.onboardingNavigationDescription,
+      ),
+      _OnboardingStepData(
         icon: Icons.grid_on,
         title: l10n.onboardingRasterChartsTitle,
         description: l10n.onboardingRasterChartsDescription,

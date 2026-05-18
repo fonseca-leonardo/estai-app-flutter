@@ -1433,6 +1433,18 @@ abstract class AppLocalizations {
   /// **'Start a new route from the actions menu, long-press the map to add waypoints and save it for future trips.'**
   String get onboardingRoutesDescription;
 
+  /// No description provided for @onboardingNavigationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start navigation'**
+  String get onboardingNavigationTitle;
+
+  /// No description provided for @onboardingNavigationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin navigation to track your trip in real time: stay on course, monitor distance, speed and your path on the map.'**
+  String get onboardingNavigationDescription;
+
   /// No description provided for @onboardingRasterChartsTitle.
   ///
   /// In en, this message translates to:

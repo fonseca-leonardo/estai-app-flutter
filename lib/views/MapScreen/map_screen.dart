@@ -16,7 +16,6 @@ import 'widgets/map_direction_line.dart';
 import 'widgets/route_planner.dart';
 import 'widgets/planned_route_line.dart';
 import 'widgets/planned_route_markers.dart';
-import 'widgets/route_point_confirmation.dart';
 import 'widgets/navigation_status.dart';
 import 'widgets/weather_pin_addition_mode.dart';
 import 'widgets/add_pin_dialog.dart';
@@ -313,8 +312,8 @@ class _MapScreenState extends State<MapScreen>
                                             ~InteractiveFlag.rotate,
                                 ),
                                 onTap: (tapPosition, point) {
-                                  final anchorVm =
-                                      context.read<AnchorAlarmViewModel>();
+                                  final anchorVm = context
+                                      .read<AnchorAlarmViewModel>();
                                   if (anchorVm.isSettingAnchor) {
                                     AnchorAlarmSetRadiusDialog.show(
                                       context,
@@ -332,7 +331,7 @@ class _MapScreenState extends State<MapScreen>
                                   if (mapViewModel.isPlanningRoute) {
                                     if (routePlannerViewModel.draggingIndex ==
                                         null) {
-                                      routePlannerViewModel.setPendingPoint(
+                                      routePlannerViewModel.addRoutePoint(
                                         point,
                                       );
                                     }
@@ -393,8 +392,6 @@ class _MapScreenState extends State<MapScreen>
               const MapActionsButtons(),
 
               const RoutePlanner(),
-
-              const RoutePointConfirmation(),
 
               const WeatherPinAdditionMode(),
 
@@ -505,7 +502,7 @@ class _MapScreenState extends State<MapScreen>
                                   },
                                   backgroundColor: Colors.orange.withAlpha(200),
                                   child: const Icon(
-                                    Icons.flag,
+                                    Icons.square,
                                     color: Colors.white,
                                   ),
                                 );

@@ -724,6 +724,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingRoutesDescription => 'Start a new route from the actions menu, long-press the map to add waypoints and save it for future trips.';
 
   @override
+  String get onboardingNavigationTitle => 'Start navigation';
+
+  @override
+  String get onboardingNavigationDescription => 'Begin navigation to track your trip in real time: stay on course, monitor distance, speed and your path on the map.';
+
+  @override
   String get onboardingRasterChartsTitle => 'Brazilian Navy raster charts';
 
   @override
