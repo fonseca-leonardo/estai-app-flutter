@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
+		1A58D3802FB7D3370084E947 /* anchor_alarm 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A58D37F2FB7D3370084E947 /* anchor_alarm 2.wav */; };
 		1A7D3B2D2F414ACC000BF86F /* Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A7D3B232F414ACA000BF86F /* Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
+		1A58D37F2FB7D3370084E947 /* anchor_alarm 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "anchor_alarm 2.wav"; sourceTree = "<group>"; };
 		1A7D3B232F414ACA000BF86F /* Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AED82D12EFF3CCC00548301 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
+				1A58D37F2FB7D3370084E947 /* anchor_alarm 2.wav */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
+				1A58D3802FB7D3370084E947 /* anchor_alarm 2.wav in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 				9771746AE9B58B78171ECFF8 /* GoogleService-Info.plist in Resources */,
 			);

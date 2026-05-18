@@ -38,6 +38,14 @@ import 'widgets/chartplotter_camera_sync.dart';
 import 'widgets/chartplotter_actions_bar.dart';
 import 'widgets/weather_monitor_pins_layer.dart';
 import 'widgets/weather_pin_forecast_bottom_sheet.dart';
+import 'widgets/anchor_alarm_layer.dart';
+import 'widgets/anchor_alarm_selection_banner.dart';
+import 'widgets/anchor_alarm_set_radius_dialog.dart';
+import 'widgets/anchor_alarm_triggered_overlay.dart';
+import 'widgets/map_onboarding_overlay.dart';
+import '../../viewmodels/anchor_alarm_viewmodel.dart';
+import '../../viewmodels/onboarding_viewmodel.dart';
+import '../../services/anchor_alarm_notification_service.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
 
 class MapScreen extends StatefulWidget {
@@ -62,6 +70,7 @@ class _MapScreenState extends State<MapScreen>
   LatLng? _lastTrackedPoint;
   MapViewModel? _mapViewModel;
   NavigationStatusViewModel? _navigationStatusViewModel;
+  AnchorAlarmViewModel? _anchorAlarmViewModel;
 
   static const LatLng _initialPosition = LatLng(-23.5505, -46.6333);
   static const double _initialZoom = 14.0;
@@ -72,9 +81,15 @@ class _MapScreenState extends State<MapScreen>
     WidgetsBinding.instance.addObserver(this);
     _mapViewModel = context.read<MapViewModel>();
     _navigationStatusViewModel = context.read<NavigationStatusViewModel>();
+    _anchorAlarmViewModel = context.read<AnchorAlarmViewModel>();
 
     _mapViewModel!.onPermissionError = _navigateToPermissionScreen;
     _mapViewModel!.addListener(_handlePositionUpdate);
+
+    _anchorAlarmViewModel!.onAlarmTriggered =
+        AnchorAlarmNotificationService.instance.triggerAlarm;
+    _anchorAlarmViewModel!.onAlarmRestored =
+        AnchorAlarmNotificationService.instance.stopAlarm;
 
     if (widget.initialLocation != null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -97,6 +112,20 @@ class _MapScreenState extends State<MapScreen>
         _mapViewModel!.getCurrentLocation();
       });
     }
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _maybeShowOnboarding();
+    });
+  }
+
+  Future<void> _maybeShowOnboarding() async {
+    if (!mounted) return;
+    final onboardingViewModel = context.read<OnboardingViewModel>();
+    await onboardingViewModel.loadMapOnboardingState();
+    if (!mounted) return;
+    if (onboardingViewModel.shouldShowMapOnboarding) {
+      await MapOnboardingOverlay.show(context);
+    }
   }
 
   void _handlePositionUpdate() {
@@ -114,8 +143,9 @@ class _MapScreenState extends State<MapScreen>
       });
     }
 
+    final currentLatLng = LatLng(position.latitude, position.longitude);
+
     if (_navigationStatusViewModel?.isNavigating == true) {
-      final currentLatLng = LatLng(position.latitude, position.longitude);
       if (_lastTrackedPoint == null || _lastTrackedPoint != currentLatLng) {
         _navigationStatusViewModel!.addTrackedPoint(currentLatLng);
         _lastTrackedPoint = currentLatLng;
@@ -123,6 +153,8 @@ class _MapScreenState extends State<MapScreen>
     } else {
       _lastTrackedPoint = null;
     }
+
+    _anchorAlarmViewModel?.checkPosition(currentLatLng);
   }
 
   void _openPinBottomSheet() {
@@ -146,6 +178,8 @@ class _MapScreenState extends State<MapScreen>
     WidgetsBinding.instance.removeObserver(this);
     _mapViewModel?.removeListener(_handlePositionUpdate);
     _mapViewModel?.onPermissionError = null;
+    _anchorAlarmViewModel?.onAlarmTriggered = null;
+    _anchorAlarmViewModel?.onAlarmRestored = null;
     _mapController.dispose();
     super.dispose();
   }
@@ -256,9 +290,7 @@ class _MapScreenState extends State<MapScreen>
                                                 )
                                               : NetworkTileProvider(),
                                           errorTileCallback:
-                                              (tile, error, stackTrace) {
-                                                return null;
-                                              },
+                                              (tile, error, stackTrace) {},
                                         ),
                                       )
                                       .toList()
@@ -280,6 +312,17 @@ class _MapScreenState extends State<MapScreen>
                                       : InteractiveFlag.all &
                                             ~InteractiveFlag.rotate,
                                 ),
+                                onTap: (tapPosition, point) {
+                                  final anchorVm =
+                                      context.read<AnchorAlarmViewModel>();
+                                  if (anchorVm.isSettingAnchor) {
+                                    AnchorAlarmSetRadiusDialog.show(
+                                      context,
+                                      point,
+                                      (r) => anchorVm.setAlarm(point, r),
+                                    );
+                                  }
+                                },
                                 onLongPress: (tapPosition, point) {
                                   final routePlannerViewModel = context
                                       .read<RoutePlannerViewModel>();
@@ -316,6 +359,7 @@ class _MapScreenState extends State<MapScreen>
                                 MapDirectionLine(mapController: _mapController),
                                 MapUserMarker(mapController: _mapController),
                                 const WeatherMonitorPinsLayer(),
+                                const AnchorAlarmLayer(),
                               ],
                             );
                           },
@@ -330,7 +374,7 @@ class _MapScreenState extends State<MapScreen>
                 builder: (context, isLoading, child) {
                   if (isLoading) {
                     return Container(
-                      color: Colors.black.withOpacity(0.3),
+                      color: Colors.black.withValues(alpha: 0.3),
                       child: const Center(child: CircularProgressIndicator()),
                     );
                   }
@@ -353,6 +397,10 @@ class _MapScreenState extends State<MapScreen>
               const RoutePointConfirmation(),
 
               const WeatherPinAdditionMode(),
+
+              const AnchorAlarmSelectionBanner(),
+
+              const AnchorAlarmTriggeredOverlay(),
 
               const NavigationStatus(),
 

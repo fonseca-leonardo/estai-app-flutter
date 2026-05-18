@@ -1306,6 +1306,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Projection {projection} not fully supported — approximate alignment.'**
   String rasterChartProjectionWarning(String projection);
+
+  /// No description provided for @anchorAlarm.
+  ///
+  /// In en, this message translates to:
+  /// **'Anchor Alarm'**
+  String get anchorAlarm;
+
+  /// No description provided for @anchorAlarmActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Anchor alarm active'**
+  String get anchorAlarmActive;
+
+  /// No description provided for @anchorAlarmSetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Anchor Alarm'**
+  String get anchorAlarmSetTitle;
+
+  /// No description provided for @anchorAlarmRadius.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety radius (meters)'**
+  String get anchorAlarmRadius;
+
+  /// No description provided for @anchorAlarmRadiusHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 50'**
+  String get anchorAlarmRadiusHint;
+
+  /// No description provided for @anchorAlarmRadiusError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a value between 1 and 9999'**
+  String get anchorAlarmRadiusError;
+
+  /// No description provided for @anchorAlarmUseCurrentPosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Use current position'**
+  String get anchorAlarmUseCurrentPosition;
+
+  /// No description provided for @anchorAlarmTapToSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the map to place the anchor'**
+  String get anchorAlarmTapToSet;
+
+  /// No description provided for @anchorAlarmTriggered.
+  ///
+  /// In en, this message translates to:
+  /// **'Anchor Dragged!'**
+  String get anchorAlarmTriggered;
+
+  /// No description provided for @anchorAlarmTriggeredMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You left the safety radius defined for the anchor.'**
+  String get anchorAlarmTriggeredMessage;
+
+  /// No description provided for @anchorAlarmDisable.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable Alarm'**
+  String get anchorAlarmDisable;
+
+  /// No description provided for @anchorAlarmDismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get anchorAlarmDismiss;
+
+  /// No description provided for @anchorAlarmNotificationRationaleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification Permission'**
+  String get anchorAlarmNotificationRationaleTitle;
+
+  /// No description provided for @anchorAlarmNotificationRationaleBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The anchor alarm needs to send notifications to alert you when the anchor drags, even when the app is in the background or the screen is off.'**
+  String get anchorAlarmNotificationRationaleBody;
+
+  /// No description provided for @anchorAlarmNotificationBlockedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications Blocked'**
+  String get anchorAlarmNotificationBlockedTitle;
+
+  /// No description provided for @anchorAlarmNotificationBlockedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are blocked for this app. To receive the anchor alarm, enable notifications in your system settings.'**
+  String get anchorAlarmNotificationBlockedBody;
+
+  /// No description provided for @notNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get notNow;
+
+  /// No description provided for @onboardingWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Estai'**
+  String get onboardingWelcomeTitle;
+
+  /// No description provided for @onboardingWelcomeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A quick tour of what you can do from the map screen.'**
+  String get onboardingWelcomeDescription;
+
+  /// No description provided for @onboardingRoutesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan your routes'**
+  String get onboardingRoutesTitle;
+
+  /// No description provided for @onboardingRoutesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a new route from the actions menu, long-press the map to add waypoints and save it for future trips.'**
+  String get onboardingRoutesDescription;
+
+  /// No description provided for @onboardingRasterChartsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Brazilian Navy raster charts'**
+  String get onboardingRasterChartsTitle;
+
+  /// No description provided for @onboardingRasterChartsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Import official BSB/KAP nautical charts from the Brazilian Navy and overlay them on your map for accurate navigation.'**
+  String get onboardingRasterChartsDescription;
+
+  /// No description provided for @onboardingWeatherTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather forecast'**
+  String get onboardingWeatherTitle;
+
+  /// No description provided for @onboardingWeatherDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Add weather pins along your route to check marine forecast, wind, waves and rain in advance.'**
+  String get onboardingWeatherDescription;
+
+  /// No description provided for @onboardingAnchorAlarmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Anchor alarm'**
+  String get onboardingAnchorAlarmTitle;
+
+  /// No description provided for @onboardingAnchorAlarmDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Define a safety radius after anchoring and get notified if the boat drifts beyond it, even with the screen off.'**
+  String get onboardingAnchorAlarmDescription;
+
+  /// No description provided for @onboardingMapsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom maps'**
+  String get onboardingMapsTitle;
+
+  /// No description provided for @onboardingMapsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick additional map layers from the catalog and download them for offline use during your trips.'**
+  String get onboardingMapsDescription;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get onboardingNext;
+
+  /// No description provided for @onboardingPrevious.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get onboardingPrevious;
+
+  /// No description provided for @onboardingFinish.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get onboardingFinish;
+
+  /// No description provided for @onboardingStepProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} of {total}'**
+  String onboardingStepProgress(String current, String total);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -27,6 +27,9 @@ import 'viewmodels/weather_monitor_pins_viewmodel.dart';
 import 'viewmodels/watch_connectivity_viewmodel.dart';
 import 'viewmodels/raster_charts_viewmodel.dart';
 import 'viewmodels/chartplotter_viewmodel.dart';
+import 'viewmodels/anchor_alarm_viewmodel.dart';
+import 'viewmodels/onboarding_viewmodel.dart';
+import 'services/anchor_alarm_notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +47,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await AnalyticsService.instance.initialize();
+  await AnchorAlarmNotificationService.instance.setupChannel();
 
   // if (kDebugMode) {
   //   await FirebaseAppCheck.instance.activate(
@@ -128,6 +132,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => ChartplotterViewModel()),
         ChangeNotifierProvider.value(value: settingsViewModel),
         ChangeNotifierProvider(create: (_) => NavigationPermissionViewModel()),
+        ChangeNotifierProvider(create: (_) => AnchorAlarmViewModel()),
+        ChangeNotifierProvider(create: (_) => OnboardingViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
       ],

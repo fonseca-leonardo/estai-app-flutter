@@ -6,12 +6,13 @@ import '../../SettingsScreen/settings_screen.dart';
 import '../../RoutesListScreen/routes_list_screen.dart';
 import '../../ListMapsScreen/list_maps_screen.dart';
 import '../../NavigationPermissionScreen/navigation_permission_screen.dart';
-import '../../WeatherPinsListScreen/weather_pins_list_screen.dart';
 import 'feedback_suggestion_dialog.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../viewmodels/navigation_status_viewmodel.dart';
 import '../../../viewmodels/route_planner_viewmodel.dart';
 import '../../../viewmodels/weather_monitor_pins_viewmodel.dart';
+import '../../../viewmodels/anchor_alarm_viewmodel.dart';
+import '../../../services/anchor_alarm_notification_service.dart';
 
 class MapBottomSheet extends StatelessWidget {
   final BuildContext? parentContext;
@@ -202,22 +203,35 @@ class MapBottomSheet extends StatelessWidget {
                             });
                           },
                         ),
-                        _GridItem(
-                          icon: Icons.cloud,
-                          title: l10n.weatherPinsList,
-                          onTap: () {
-                            final navigatorContext = parentContext ?? context;
-                            Navigator.pop(context);
-                            WidgetsBinding.instance.addPostFrameCallback((_) {
-                              if (navigatorContext.mounted) {
-                                Navigator.of(navigatorContext).push(
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const WeatherPinsListScreen(),
-                                  ),
-                                );
-                              }
-                            });
+                        Consumer<AnchorAlarmViewModel>(
+                          builder: (context, anchorVm, child) {
+                            final isActive = anchorVm.isActive;
+                            return _GridItem(
+                              icon: Icons.anchor,
+                              title: isActive
+                                  ? l10n.anchorAlarmActive
+                                  : l10n.anchorAlarm,
+                              isHighlighted: isActive,
+                              onTap: () {
+                                final navigatorContext =
+                                    parentContext ?? context;
+                                Navigator.pop(context);
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) async {
+                                  if (!navigatorContext.mounted) return;
+                                  if (isActive) {
+                                    anchorVm.clearAlarm();
+                                  } else {
+                                    await AnchorAlarmNotificationService
+                                        .requestPermissionIfNeeded(
+                                            navigatorContext);
+                                    if (navigatorContext.mounted) {
+                                      anchorVm.setSettingAnchorMode(true);
+                                    }
+                                  }
+                                });
+                              },
+                            );
                           },
                         ),
                         _GridItem(
@@ -268,8 +282,14 @@ class _GridItem extends StatelessWidget {
   final IconData icon;
   final String title;
   final VoidCallback? onTap;
+  final bool isHighlighted;
 
-  const _GridItem({required this.icon, required this.title, this.onTap});
+  const _GridItem({
+    required this.icon,
+    required this.title,
+    this.onTap,
+    this.isHighlighted = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -281,8 +301,13 @@ class _GridItem extends StatelessWidget {
         opacity: isDisabled ? 0.5 : 1.0,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.1),
+            color: isHighlighted
+                ? Colors.white.withValues(alpha: 0.2)
+                : Colors.white.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
+            border: isHighlighted
+                ? Border.all(color: Colors.white.withValues(alpha: 0.6))
+                : null,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
