@@ -110,6 +110,20 @@
   "@cancel": {},
   "finish": "Finish",
   "@finish": {},
+  "resumeNavigationTitle": "Resume navigation?",
+  "@resumeNavigationTitle": {},
+  "resumeNavigationQuestion": "We detected an ongoing navigation started {duration} ago. Do you want to resume?",
+  "@resumeNavigationQuestion": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "resume": "Resume",
+  "@resume": {},
+  "discard": "Discard",
+  "@discard": {},
   "unlockCamera": "Unlock camera",
   "@unlockCamera": {},
   "lockCamera": "Lock camera to position",

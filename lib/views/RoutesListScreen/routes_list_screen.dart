@@ -298,7 +298,9 @@ class _RouteCard extends StatelessWidget {
                 }
                 routePlannerViewModel.confirmRoute();
                 mapViewModel.setIsPlanningRoute(false);
-                navigationStatusViewModel.startNavigation();
+                navigationStatusViewModel.startNavigation(
+                  plannedRoute: routePlannerViewModel.routePoints,
+                );
 
                 final routeCenter = _calculateRouteCenter(route.points);
                 Navigator.of(context).push(

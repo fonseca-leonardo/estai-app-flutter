@@ -31,6 +31,12 @@ class RoutePlannerViewModel extends ChangeNotifier {
     }
   }
 
+  void restoreRoute(List<LatLng> points) {
+    _routePoints = List<LatLng>.from(points);
+    _hasConfirmedRoute = _routePoints.length >= 2;
+    notifyListeners();
+  }
+
   Future<void> saveRoute(BuildContext context, String name) async {
     if (_routePoints.length < 2) {
       return;

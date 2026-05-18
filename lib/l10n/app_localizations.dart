@@ -347,6 +347,30 @@ abstract class AppLocalizations {
   /// **'Finish'**
   String get finish;
 
+  /// No description provided for @resumeNavigationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume navigation?'**
+  String get resumeNavigationTitle;
+
+  /// No description provided for @resumeNavigationQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'We detected an ongoing navigation started {duration} ago. Do you want to resume?'**
+  String resumeNavigationQuestion(String duration);
+
+  /// No description provided for @resume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get resume;
+
+  /// No description provided for @discard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get discard;
+
   /// No description provided for @unlockCamera.
   ///
   /// In en, this message translates to:

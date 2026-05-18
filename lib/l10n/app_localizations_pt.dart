@@ -143,6 +143,20 @@ class AppLocalizationsPt extends AppLocalizations {
   String get finish => 'Finalizar';
 
   @override
+  String get resumeNavigationTitle => 'Retomar navegação?';
+
+  @override
+  String resumeNavigationQuestion(String duration) {
+    return 'Detectamos uma navegação iniciada há $duration. Deseja retomar?';
+  }
+
+  @override
+  String get resume => 'Retomar';
+
+  @override
+  String get discard => 'Descartar';
+
+  @override
   String get unlockCamera => 'Desbloquear câmera';
 
   @override

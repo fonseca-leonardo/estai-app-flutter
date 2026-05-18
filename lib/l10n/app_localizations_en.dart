@@ -143,6 +143,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get finish => 'Finish';
 
   @override
+  String get resumeNavigationTitle => 'Resume navigation?';
+
+  @override
+  String resumeNavigationQuestion(String duration) {
+    return 'We detected an ongoing navigation started $duration ago. Do you want to resume?';
+  }
+
+  @override
+  String get resume => 'Resume';
+
+  @override
+  String get discard => 'Discard';
+
+  @override
   String get unlockCamera => 'Unlock camera';
 
   @override

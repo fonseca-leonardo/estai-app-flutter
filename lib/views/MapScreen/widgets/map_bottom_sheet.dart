@@ -84,8 +84,17 @@ class MapBottomSheet extends StatelessWidget {
                                         navigationStatusViewModel
                                             .resetNavigation();
                                       } else {
+                                        final routePlannerViewModel =
+                                            Provider.of<RoutePlannerViewModel>(
+                                              navigatorContext,
+                                              listen: false,
+                                            );
                                         navigationStatusViewModel
-                                            .startNavigation();
+                                            .startNavigation(
+                                              plannedRoute:
+                                                  routePlannerViewModel
+                                                      .routePoints,
+                                            );
                                       }
                                     }
                                   });

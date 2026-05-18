@@ -42,6 +42,7 @@ import 'widgets/anchor_alarm_selection_banner.dart';
 import 'widgets/anchor_alarm_set_radius_dialog.dart';
 import 'widgets/anchor_alarm_triggered_overlay.dart';
 import 'widgets/map_onboarding_overlay.dart';
+import 'widgets/resume_navigation_dialog.dart';
 import '../../viewmodels/anchor_alarm_viewmodel.dart';
 import '../../viewmodels/onboarding_viewmodel.dart';
 import '../../services/anchor_alarm_notification_service.dart';
@@ -124,6 +125,33 @@ class _MapScreenState extends State<MapScreen>
     if (!mounted) return;
     if (onboardingViewModel.shouldShowMapOnboarding) {
       await MapOnboardingOverlay.show(context);
+    }
+    if (!mounted) return;
+    await _maybeResumeNavigation();
+  }
+
+  Future<void> _maybeResumeNavigation() async {
+    if (!mounted) return;
+    final navigationStatusViewModel = context
+        .read<NavigationStatusViewModel>();
+    if (navigationStatusViewModel.isNavigating) return;
+
+    final snapshot = await navigationStatusViewModel
+        .loadPersistedNavigation();
+    if (snapshot == null || !mounted) return;
+
+    final shouldResume = await ResumeNavigationDialog.show(context, snapshot);
+    if (!mounted) return;
+
+    if (shouldResume == true) {
+      if (snapshot.plannedRoute.isNotEmpty) {
+        context.read<RoutePlannerViewModel>().restoreRoute(
+          snapshot.plannedRoute,
+        );
+      }
+      navigationStatusViewModel.resumeFromPersisted(snapshot);
+    } else if (shouldResume == false) {
+      await navigationStatusViewModel.discardPersisted();
     }
   }
 

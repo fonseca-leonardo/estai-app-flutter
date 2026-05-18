@@ -110,6 +110,20 @@
   "@cancel": {},
   "finish": "Finalizar",
   "@finish": {},
+  "resumeNavigationTitle": "Retomar navegação?",
+  "@resumeNavigationTitle": {},
+  "resumeNavigationQuestion": "Detectamos uma navegação iniciada há {duration}. Deseja retomar?",
+  "@resumeNavigationQuestion": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "resume": "Retomar",
+  "@resume": {},
+  "discard": "Descartar",
+  "@discard": {},
   "unlockCamera": "Desbloquear câmera",
   "@unlockCamera": {},
   "lockCamera": "Bloquear câmera na posição",
