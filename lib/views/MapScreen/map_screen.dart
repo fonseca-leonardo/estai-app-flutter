@@ -198,6 +198,12 @@ class _MapScreenState extends State<MapScreen>
         _mapViewModel?.errorMessage != null) {
       _mapViewModel!.getCurrentLocation();
     }
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.inactive ||
+        state == AppLifecycleState.detached ||
+        state == AppLifecycleState.hidden) {
+      _navigationStatusViewModel?.flushTrackedRoute();
+    }
   }
 
   @override

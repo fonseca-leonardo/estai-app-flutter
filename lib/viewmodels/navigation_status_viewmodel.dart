@@ -212,8 +212,19 @@ class NavigationStatusViewModel extends ChangeNotifier {
   Future<void> _maybePersistTracked() async {
     if (_pointsSinceLastSave < _trackedSaveEveryNPoints) return;
     _pointsSinceLastSave = 0;
+    if (!_isNavigating) return;
     final prefs = await SharedPreferences.getInstance();
     if (!_isNavigating) return;
+    await prefs.setString(
+      _kTrackedRoute,
+      PersistedNavigation.encodePoints(_trackedRoute),
+    );
+  }
+
+  Future<void> flushTrackedRoute() async {
+    if (!_isNavigating) return;
+    _pointsSinceLastSave = 0;
+    final prefs = await SharedPreferences.getInstance();
     await prefs.setString(
       _kTrackedRoute,
       PersistedNavigation.encodePoints(_trackedRoute),
