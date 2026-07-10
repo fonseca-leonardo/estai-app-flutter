@@ -62,8 +62,7 @@ import 'app_localizations_pt.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,18 +82,17 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('pt'),
+    Locale('pt')
   ];
 
   /// Application title
@@ -1601,7 +1598,7 @@ abstract class AppLocalizations {
   /// No description provided for @boatLength.
   ///
   /// In en, this message translates to:
-  /// **'Length (m)'**
+  /// **'Length (feet)'**
   String get boatLength;
 
   /// No description provided for @pleaseEnterBoatName.
@@ -1664,15 +1661,116 @@ abstract class AppLocalizations {
   /// **'Yacht'**
   String get boatTypeYacht;
 
+  /// No description provided for @editBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Boat'**
+  String get editBoat;
+
+  /// No description provided for @loadBoatsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load your boats.'**
+  String get loadBoatsError;
+
+  /// No description provided for @saveBoatError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save the boat. Try again.'**
+  String get saveBoatError;
+
+  /// No description provided for @deleteBoatError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not delete the boat. Try again.'**
+  String get deleteBoatError;
+
   /// No description provided for @signalKIosLocalNetworkNotice.
   ///
   /// In en, this message translates to:
   /// **'On the first connection, iOS will request local network access. Allow it so the app can communicate with the SignalK server.'**
   String get signalKIosLocalNetworkNotice;
+
+  /// No description provided for @marinaAccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Marina'**
+  String get marinaAccessTitle;
+
+  /// No description provided for @marinaAccessInviteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve been invited to join this marina. Select the boats you want to link.'**
+  String get marinaAccessInviteMessage;
+
+  /// No description provided for @selectBoatsToAssociate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your boats'**
+  String get selectBoatsToAssociate;
+
+  /// No description provided for @noBoatsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have any boats registered yet. You can continue without selecting any.'**
+  String get noBoatsAvailable;
+
+  /// No description provided for @confirmAssociation.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm association'**
+  String get confirmAssociation;
+
+  /// No description provided for @associationSuccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Association complete!'**
+  String get associationSuccessTitle;
+
+  /// No description provided for @associationSuccessMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You are now associated with {marinaName}.'**
+  String associationSuccessMessage(String marinaName);
+
+  /// No description provided for @backToApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to app'**
+  String get backToApp;
+
+  /// No description provided for @loadMarinaError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load the marina data.'**
+  String get loadMarinaError;
+
+  /// No description provided for @associationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not complete the association. Try again.'**
+  String get associationError;
+
+  /// No description provided for @marinaAccessToggleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Marina access'**
+  String get marinaAccessToggleLabel;
+
+  /// No description provided for @marinaAccessToggleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow the marina to view and manage this boat.'**
+  String get marinaAccessToggleDescription;
+
+  /// No description provided for @marinaAccessToggleError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not update marina access. Try again.'**
+  String get marinaAccessToggleError;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -1681,26 +1779,25 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'pt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'pt'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en':
-      return AppLocalizationsEn();
-    case 'pt':
-      return AppLocalizationsPt();
+    case 'en': return AppLocalizationsEn();
+    case 'pt': return AppLocalizationsPt();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
+    'that was used.'
   );
 }

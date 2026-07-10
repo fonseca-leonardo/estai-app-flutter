@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 
 import '../models/estai_session.dart';
+import '../models/marina.dart';
 import '../services/estai_api_client.dart';
+import '../services/marina_storage_service.dart';
 
 /// Orquestra o fluxo de sessão do Estai na camada de UI.
 ///
@@ -9,10 +11,14 @@ import '../services/estai_api_client.dart';
 /// services consomem diretamente [EstaiApiClient.instance] — esta view model
 /// apenas expõe o estado da sessão e o carregamento para a UI.
 class EstaiSessionViewModel extends ChangeNotifier {
-  EstaiSessionViewModel({EstaiApiClient? client})
-    : _client = client ?? EstaiApiClient.instance;
+  EstaiSessionViewModel({
+    EstaiApiClient? client,
+    MarinaStorageService? marinaStorageService,
+  }) : _client = client ?? EstaiApiClient.instance,
+       _marinaStorageService = marinaStorageService ?? MarinaStorageService();
 
   final EstaiApiClient _client;
+  final MarinaStorageService _marinaStorageService;
 
   bool _isLoading = false;
   String? _errorMessage;
@@ -36,7 +42,13 @@ class EstaiSessionViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      await _client.authenticate();
+      final session = await _client.authenticate();
+      final marina = session.user.marina;
+      if (marina != null) {
+        await _marinaStorageService.save(
+          Marina(id: marina.id, name: marina.name),
+        );
+      }
       _isLoading = false;
       notifyListeners();
       return true;

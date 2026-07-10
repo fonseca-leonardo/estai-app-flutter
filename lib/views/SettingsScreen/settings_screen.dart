@@ -128,9 +128,10 @@ class _SettingsScreenState extends State<SettingsScreen>
                           );
                         },
                       ),
+                      const SizedBox(height: 16),
                       _buildSettingsTile(
                         context,
-                        l10n.rasterCharts,
+                        l10n.signalKConfiguration,
                         Icons.layers_outlined,
                         () {
                           Navigator.of(context).push(

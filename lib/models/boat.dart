@@ -7,6 +7,7 @@ class Boat {
   final BoatType type;
   final int year;
   final double length;
+  final String? marinaId;
 
   Boat({
     required this.id,
@@ -15,7 +16,10 @@ class Boat {
     required this.type,
     required this.year,
     required this.length,
+    this.marinaId,
   });
+
+  bool get hasMarinaAccess => marinaId != null;
 
   Boat copyWith({
     String? name,
@@ -23,6 +27,8 @@ class Boat {
     BoatType? type,
     int? year,
     double? length,
+    String? marinaId,
+    bool clearMarinaId = false,
   }) {
     return Boat(
       id: id,
@@ -31,6 +37,7 @@ class Boat {
       type: type ?? this.type,
       year: year ?? this.year,
       length: length ?? this.length,
+      marinaId: clearMarinaId ? null : (marinaId ?? this.marinaId),
     );
   }
 
@@ -42,6 +49,7 @@ class Boat {
       type: BoatType.fromApiValue(json['type'] as String),
       year: json['year'] as int,
       length: (json['length'] as num).toDouble(),
+      marinaId: json['marinaId'] as String?,
     );
   }
 
@@ -53,6 +61,7 @@ class Boat {
       'type': type.apiValue,
       'year': year,
       'length': length,
+      'marinaId': marinaId,
     };
   }
 }

@@ -1,4 +1,7 @@
+import 'dart:async';
+import 'package:app_links/app_links.dart';
 import 'package:estai/views/LoginScreen/login_screen.dart';
+import 'package:estai/views/MarinaAccessScreen/marina_access_screen.dart';
 import 'package:estai/widgets/location_init_wrapper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +33,7 @@ import 'viewmodels/chartplotter_viewmodel.dart';
 import 'viewmodels/anchor_alarm_viewmodel.dart';
 import 'viewmodels/onboarding_viewmodel.dart';
 import 'viewmodels/boat_viewmodel.dart';
+import 'viewmodels/marina_access_viewmodel.dart';
 import 'viewmodels/estai_session_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
 import 'viewmodels/signalk_configuration_viewmodel.dart';
@@ -85,6 +89,8 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final SettingsViewModel settingsViewModel;
   late final NavigationStatusViewModel navigationStatusViewModel;
@@ -92,6 +98,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final WatchConnectivityViewModel watchConnectivityViewModel;
   late final SignalKConfigurationViewModel signalKConfigurationViewModel;
   late final SignalKConnectionViewModel signalKConnectionViewModel;
+  late final AuthViewModel authViewModel;
+
+  final AppLinks _appLinks = AppLinks();
+  StreamSubscription<Uri>? _linkSubscription;
+  String? _pendingMarinaId;
 
   @override
   void initState() {
@@ -110,7 +121,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       map: mapViewModel,
     );
 
+    authViewModel = AuthViewModel();
+    authViewModel.addListener(_onAuthChanged);
+
     _initializeWatchConnectivity();
+    _initializeDeepLinks();
   }
 
   Future<void> _initializeWatchConnectivity() async {
@@ -121,9 +136,49 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     );
   }
 
+  Future<void> _initializeDeepLinks() async {
+    final initialUri = await _appLinks.getInitialLink();
+    if (initialUri != null) {
+      _handleDeepLink(initialUri);
+    }
+
+    _linkSubscription = _appLinks.uriLinkStream.listen(_handleDeepLink);
+  }
+
+  void _handleDeepLink(Uri uri) {
+    if (uri.scheme != 'estai' || uri.host != 'marina') return;
+
+    final marinaId = uri.pathSegments.isNotEmpty ? uri.pathSegments.first : null;
+    if (marinaId == null || marinaId.isEmpty) return;
+
+    if (authViewModel.isAuthenticated) {
+      _openMarinaAccessScreen(marinaId);
+    } else {
+      _pendingMarinaId = marinaId;
+    }
+  }
+
+  void _onAuthChanged() {
+    final marinaId = _pendingMarinaId;
+    if (marinaId != null && authViewModel.isAuthenticated) {
+      _pendingMarinaId = null;
+      _openMarinaAccessScreen(marinaId);
+    }
+  }
+
+  void _openMarinaAccessScreen(String marinaId) {
+    navigatorKey.currentState?.push(
+      MaterialPageRoute(
+        builder: (_) => MarinaAccessScreen(marinaId: marinaId),
+      ),
+    );
+  }
+
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    authViewModel.removeListener(_onAuthChanged);
+    _linkSubscription?.cancel();
     super.dispose();
   }
 
@@ -131,7 +186,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthViewModel()),
+        ChangeNotifierProvider.value(value: authViewModel),
         ChangeNotifierProvider.value(value: mapViewModel),
         ChangeNotifierProvider(create: (_) => TideViewModel()),
         ChangeNotifierProvider(create: (_) => RoutePlannerViewModel()),
@@ -148,12 +203,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => OnboardingViewModel()),
         ChangeNotifierProvider(create: (_) => BoatViewModel()),
         ChangeNotifierProvider(create: (_) => EstaiSessionViewModel()),
+        ChangeNotifierProvider(create: (_) => MarinaAccessViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
         ChangeNotifierProvider.value(value: signalKConfigurationViewModel),
         ChangeNotifierProvider.value(value: signalKConnectionViewModel),
       ],
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         title: 'Estai - Mapa',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(

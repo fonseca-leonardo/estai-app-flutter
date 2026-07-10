@@ -5,6 +5,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../services/estai_api_client.dart';
+import '../services/marina_storage_service.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -309,6 +310,7 @@ class AuthViewModel extends ChangeNotifier {
       await googleSignIn.signOut();
       await _auth.signOut();
       EstaiApiClient.instance.clearSession();
+      await MarinaStorageService().clear();
       _currentUser = null;
       _isLoading = false;
       _errorMessage = null;
@@ -377,6 +379,7 @@ class AuthViewModel extends ChangeNotifier {
 
       // Limpa a sessão do Estai
       EstaiApiClient.instance.clearSession();
+      await MarinaStorageService().clear();
 
       // Sign out Google if applicable
       try {

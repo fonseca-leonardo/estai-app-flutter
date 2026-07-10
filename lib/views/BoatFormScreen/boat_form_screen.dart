@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
+import '../../models/boat.dart';
 import '../../models/boat_type.dart';
 import '../../viewmodels/boat_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import 'widgets/boat_type_dropdown.dart';
+import 'widgets/marina_access_toggle.dart';
 
 class BoatFormScreen extends StatefulWidget {
-  const BoatFormScreen({super.key});
+  final Boat? boat;
+
+  const BoatFormScreen({super.key, this.boat});
+
+  bool get isEditing => boat != null;
 
   @override
   State<BoatFormScreen> createState() => _BoatFormScreenState();
@@ -19,11 +25,17 @@ class _BoatFormScreenState extends State<BoatFormScreen>
   String get analyticsScreenName => 'BoatFormScreen';
 
   final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController();
-  final _modelController = TextEditingController();
-  final _yearController = TextEditingController();
-  final _lengthController = TextEditingController();
-  BoatType _selectedType = BoatType.boat;
+  late final _nameController = TextEditingController(text: widget.boat?.name);
+  late final _modelController = TextEditingController(text: widget.boat?.model);
+  late final _yearController = TextEditingController(
+    text: widget.boat?.year.toString(),
+  );
+  late final _lengthController = TextEditingController(
+    text: widget.boat?.length.toString(),
+  );
+  late BoatType _selectedType = widget.boat?.type ?? BoatType.boat;
+  String? _errorMessage;
+  bool _isUpdatingMarinaAccess = false;
 
   @override
   void dispose() {
@@ -55,18 +67,65 @@ class _BoatFormScreenState extends State<BoatFormScreen>
     );
   }
 
-  void _save() {
+  Future<void> _save() async {
     if (!_formKey.currentState!.validate()) return;
 
-    context.read<BoatViewModel>().addBoat(
-      name: _nameController.text.trim(),
-      model: _modelController.text.trim(),
-      type: _selectedType,
-      year: int.parse(_yearController.text.trim()),
-      length: double.parse(_lengthController.text.trim().replaceAll(',', '.')),
+    setState(() => _errorMessage = null);
+
+    final viewModel = context.read<BoatViewModel>();
+    final name = _nameController.text.trim();
+    final model = _modelController.text.trim();
+    final year = int.parse(_yearController.text.trim());
+    final length = double.parse(
+      _lengthController.text.trim().replaceAll(',', '.'),
     );
 
-    Navigator.of(context).pop();
+    final boat = widget.boat;
+    final success = boat == null
+        ? await viewModel.addBoat(
+            name: name,
+            model: model,
+            type: _selectedType,
+            year: year,
+            length: length,
+          )
+        : await viewModel.updateBoat(
+            boat.id,
+            name: name,
+            model: model,
+            type: _selectedType,
+            year: year,
+            length: length,
+          );
+
+    if (!mounted) return;
+
+    if (success) {
+      Navigator.of(context).pop();
+    } else {
+      setState(() {
+        _errorMessage = AppLocalizations.of(context)!.saveBoatError;
+      });
+    }
+  }
+
+  Future<void> _toggleMarinaAccess(bool access) async {
+    final boat = widget.boat;
+    if (boat == null) return;
+
+    setState(() => _isUpdatingMarinaAccess = true);
+
+    final viewModel = context.read<BoatViewModel>();
+    final success = await viewModel.setMarinaAccess(boat.id, access);
+
+    if (!mounted) return;
+
+    setState(() {
+      _isUpdatingMarinaAccess = false;
+      if (!success) {
+        _errorMessage = AppLocalizations.of(context)!.marinaAccessToggleError;
+      }
+    });
   }
 
   @override
@@ -76,7 +135,7 @@ class _BoatFormScreenState extends State<BoatFormScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(l10n.addBoat),
+        title: Text(widget.isEditing ? l10n.editBoat : l10n.addBoat),
         backgroundColor: Colors.black.withAlpha(200),
         foregroundColor: Colors.white,
       ),
@@ -84,15 +143,6 @@ class _BoatFormScreenState extends State<BoatFormScreen>
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Container(
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.2),
-              width: 1,
-            ),
-          ),
           child: Form(
             key: _formKey,
             child: Column(
@@ -159,21 +209,57 @@ class _BoatFormScreenState extends State<BoatFormScreen>
                     return null;
                   },
                 ),
-                const SizedBox(height: 24),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: _save,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: Text(l10n.save),
+                if (widget.isEditing) ...[
+                  const SizedBox(height: 16),
+                  Consumer<BoatViewModel>(
+                    builder: (context, viewModel, child) {
+                      final currentBoat = viewModel.boats.firstWhere(
+                        (boat) => boat.id == widget.boat!.id,
+                        orElse: () => widget.boat!,
+                      );
+                      return MarinaAccessToggle(
+                        value: currentBoat.hasMarinaAccess,
+                        isUpdating: _isUpdatingMarinaAccess,
+                        onChanged: _toggleMarinaAccess,
+                      );
+                    },
                   ),
+                ],
+                if (_errorMessage != null) ...[
+                  const SizedBox(height: 16),
+                  Text(
+                    _errorMessage!,
+                    style: const TextStyle(color: Colors.redAccent),
+                  ),
+                ],
+                const SizedBox(height: 24),
+                Consumer<BoatViewModel>(
+                  builder: (context, viewModel, child) {
+                    return SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: viewModel.isSaving ? null : _save,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.black,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: viewModel.isSaving
+                            ? const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: Colors.black,
+                                ),
+                              )
+                            : Text(l10n.save),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

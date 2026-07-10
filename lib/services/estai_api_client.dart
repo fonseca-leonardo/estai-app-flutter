@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/estai_session.dart';
@@ -20,7 +21,14 @@ export 'api_exception.dart';
 /// construtor público existe para permitir injeção de um [http.Client] em
 /// testes.
 class EstaiApiClient {
-  static const String baseUrl = 'https://api.estai.com.br/estai-api';
+  /// Liga/desliga os logs de request/response no console. Altere aqui
+  /// manualmente conforme a necessidade de debug.
+  static bool enableRequestLogs = true;
+
+  static const String baseUrl = kDebugMode
+      ? 'http://192.168.68.105:3333/estai-app'
+      : 'http://192.168.68.105:3333/estai-app';
+  // : 'https://api.estai.com.br/estai-api'; // 'https://api.estai.com.br/estai-api';
 
   /// Instância compartilhada usada pelos services da aplicação.
   static final EstaiApiClient instance = EstaiApiClient();
@@ -66,10 +74,13 @@ class EstaiApiClient {
       }
       final headers = Map<String, String>.from(_defaultHeaders)
         ..['Authorization'] = 'Bearer $firebaseToken';
+      _logRequest('GET', uri);
       response = await _client.get(uri, headers: headers);
+      _logResponse('GET', uri, response);
     } on ApiException {
       rethrow;
     } catch (e) {
+      _logError('GET', uri, e);
       throw ApiException('Network error: $e', uri: uri);
     }
 
@@ -121,15 +132,36 @@ class EstaiApiClient {
     return uri;
   }
 
+  void _logRequest(String method, Uri uri, {Object? body}) {
+    if (!enableRequestLogs) return;
+    debugPrint('[EstaiApiClient] → $method $uri${body != null ? ' | body: $body' : ''}');
+  }
+
+  void _logResponse(String method, Uri uri, http.Response response) {
+    if (!enableRequestLogs) return;
+    debugPrint(
+      '[EstaiApiClient] ← $method $uri | status: ${response.statusCode} | body: ${response.body}',
+    );
+  }
+
+  void _logError(String method, Uri uri, Object error) {
+    if (!enableRequestLogs) return;
+    debugPrint('[EstaiApiClient] ✗ $method $uri | error: $error');
+  }
+
   Future<http.Response> get(
     String endpoint, {
     Map<String, String>? headers,
     Map<String, dynamic>? queryParameters,
   }) async {
     final uri = _uri(endpoint, queryParameters);
+    _logRequest('GET', uri);
     try {
-      return await _client.get(uri, headers: _buildHeaders(headers));
+      final response = await _client.get(uri, headers: _buildHeaders(headers));
+      _logResponse('GET', uri, response);
+      return response;
     } catch (e) {
+      _logError('GET', uri, e);
       throw ApiException('Network error: $e', uri: uri);
     }
   }
@@ -140,13 +172,17 @@ class EstaiApiClient {
     Object? body,
   }) async {
     final uri = _uri(endpoint);
+    _logRequest('POST', uri, body: body);
     try {
-      return await _client.post(
+      final response = await _client.post(
         uri,
         headers: _buildHeaders(headers),
         body: body != null ? json.encode(body) : null,
       );
+      _logResponse('POST', uri, response);
+      return response;
     } catch (e) {
+      _logError('POST', uri, e);
       throw ApiException('Network error: $e', uri: uri);
     }
   }
@@ -157,13 +193,17 @@ class EstaiApiClient {
     Object? body,
   }) async {
     final uri = _uri(endpoint);
+    _logRequest('PUT', uri, body: body);
     try {
-      return await _client.put(
+      final response = await _client.put(
         uri,
         headers: _buildHeaders(headers),
         body: body != null ? json.encode(body) : null,
       );
+      _logResponse('PUT', uri, response);
+      return response;
     } catch (e) {
+      _logError('PUT', uri, e);
       throw ApiException('Network error: $e', uri: uri);
     }
   }
@@ -174,13 +214,17 @@ class EstaiApiClient {
     Object? body,
   }) async {
     final uri = _uri(endpoint);
+    _logRequest('DELETE', uri, body: body);
     try {
-      return await _client.delete(
+      final response = await _client.delete(
         uri,
         headers: _buildHeaders(headers),
         body: body != null ? json.encode(body) : null,
       );
+      _logResponse('DELETE', uri, response);
+      return response;
     } catch (e) {
+      _logError('DELETE', uri, e);
       throw ApiException('Network error: $e', uri: uri);
     }
   }
