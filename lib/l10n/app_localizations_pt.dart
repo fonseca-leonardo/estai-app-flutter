@@ -783,4 +783,61 @@ class AppLocalizationsPt extends AppLocalizations {
   String onboardingStepProgress(String current, String total) {
     return '$current de $total';
   }
+
+  @override
+  String get myBoats => 'Meus Barcos';
+
+  @override
+  String get myBoatsTooltip => 'Meus Barcos';
+
+  @override
+  String get addBoat => 'Adicionar Barco';
+
+  @override
+  String get noBoatsFound => 'Nenhum barco cadastrado';
+
+  @override
+  String get boatName => 'Nome';
+
+  @override
+  String get boatModel => 'Modelo';
+
+  @override
+  String get boatYear => 'Ano';
+
+  @override
+  String get boatType => 'Tipo';
+
+  @override
+  String get boatLength => 'Comprimento (m)';
+
+  @override
+  String get pleaseEnterBoatName => 'Por favor, insira o nome do barco';
+
+  @override
+  String get pleaseEnterBoatModel => 'Por favor, insira o modelo do barco';
+
+  @override
+  String get pleaseEnterValidYear => 'Por favor, insira um ano válido';
+
+  @override
+  String get pleaseEnterValidLength => 'Por favor, insira um comprimento válido';
+
+  @override
+  String get deleteBoat => 'Excluir Barco';
+
+  @override
+  String get confirmDeleteBoat => 'Tem certeza que deseja excluir este barco?';
+
+  @override
+  String get boatTypeJetski => 'Jet Ski';
+
+  @override
+  String get boatTypeSailboat => 'Veleiro';
+
+  @override
+  String get boatTypeBoat => 'Barco';
+
+  @override
+  String get boatTypeYacht => 'Iate';
 }

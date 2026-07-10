@@ -1546,6 +1546,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{current} of {total}'**
   String onboardingStepProgress(String current, String total);
+
+  /// No description provided for @myBoats.
+  ///
+  /// In en, this message translates to:
+  /// **'My Boats'**
+  String get myBoats;
+
+  /// No description provided for @myBoatsTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'My Boats'**
+  String get myBoatsTooltip;
+
+  /// No description provided for @addBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Boat'**
+  String get addBoat;
+
+  /// No description provided for @noBoatsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No boats registered'**
+  String get noBoatsFound;
+
+  /// No description provided for @boatName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get boatName;
+
+  /// No description provided for @boatModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Model'**
+  String get boatModel;
+
+  /// No description provided for @boatYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get boatYear;
+
+  /// No description provided for @boatType.
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get boatType;
+
+  /// No description provided for @boatLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Length (m)'**
+  String get boatLength;
+
+  /// No description provided for @pleaseEnterBoatName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the boat name'**
+  String get pleaseEnterBoatName;
+
+  /// No description provided for @pleaseEnterBoatModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the boat model'**
+  String get pleaseEnterBoatModel;
+
+  /// No description provided for @pleaseEnterValidYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid year'**
+  String get pleaseEnterValidYear;
+
+  /// No description provided for @pleaseEnterValidLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid length'**
+  String get pleaseEnterValidLength;
+
+  /// No description provided for @deleteBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Boat'**
+  String get deleteBoat;
+
+  /// No description provided for @confirmDeleteBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this boat?'**
+  String get confirmDeleteBoat;
+
+  /// No description provided for @boatTypeJetski.
+  ///
+  /// In en, this message translates to:
+  /// **'Jet Ski'**
+  String get boatTypeJetski;
+
+  /// No description provided for @boatTypeSailboat.
+  ///
+  /// In en, this message translates to:
+  /// **'Sailboat'**
+  String get boatTypeSailboat;
+
+  /// No description provided for @boatTypeBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat'**
+  String get boatTypeBoat;
+
+  /// No description provided for @boatTypeYacht.
+  ///
+  /// In en, this message translates to:
+  /// **'Yacht'**
+  String get boatTypeYacht;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

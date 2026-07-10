@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../services/estai_api_client.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -307,6 +308,7 @@ class AuthViewModel extends ChangeNotifier {
       final GoogleSignIn googleSignIn = GoogleSignIn.instance;
       await googleSignIn.signOut();
       await _auth.signOut();
+      EstaiApiClient.instance.clearSession();
       _currentUser = null;
       _isLoading = false;
       _errorMessage = null;
@@ -372,6 +374,9 @@ class AuthViewModel extends ChangeNotifier {
 
       // 3. Delete Firebase Auth account (last step)
       await user.delete();
+
+      // Limpa a sessão do Estai
+      EstaiApiClient.instance.clearSession();
 
       // Sign out Google if applicable
       try {

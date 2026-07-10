@@ -47,7 +47,7 @@
             "request": "launch",
             "type": "dart",
             "program": "lib/main.dart",
-            "deviceId": "B24D5EDB-76AD-40FE-B720-692B00C5530B",
+            "deviceId": "CEA41BBE-52D0-4550-B780-1139AAA132D2",
             "args": []
         },
         {

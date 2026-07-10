@@ -2,6 +2,10 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 
+import 'api_exception.dart';
+
+export 'api_exception.dart';
+
 class MapsApiClient {
   static const String baseUrl = 'https://apps.estai.com.br/maps/api';
 
@@ -124,21 +128,5 @@ class MapsApiClient {
 
   void dispose() {
     _client.close();
-  }
-}
-
-class ApiException implements Exception {
-  final String message;
-  final Uri? uri;
-  final int? statusCode;
-
-  ApiException(this.message, {this.uri, this.statusCode});
-
-  @override
-  String toString() {
-    if (uri != null) {
-      return 'ApiException: $message (URI: $uri)';
-    }
-    return 'ApiException: $message';
   }
 }

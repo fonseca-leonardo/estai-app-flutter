@@ -47,6 +47,8 @@
 	<string>Este app precisa da sua localização para mostrar sua posição no mapa.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Este app precisa da sua localização para mostrar sua posição no mapa.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Este app pode acessar seus arquivos para importar cartas náuticas no formato .zip.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

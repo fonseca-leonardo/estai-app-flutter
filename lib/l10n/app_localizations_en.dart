@@ -783,4 +783,61 @@ class AppLocalizationsEn extends AppLocalizations {
   String onboardingStepProgress(String current, String total) {
     return '$current of $total';
   }
+
+  @override
+  String get myBoats => 'My Boats';
+
+  @override
+  String get myBoatsTooltip => 'My Boats';
+
+  @override
+  String get addBoat => 'Add Boat';
+
+  @override
+  String get noBoatsFound => 'No boats registered';
+
+  @override
+  String get boatName => 'Name';
+
+  @override
+  String get boatModel => 'Model';
+
+  @override
+  String get boatYear => 'Year';
+
+  @override
+  String get boatType => 'Type';
+
+  @override
+  String get boatLength => 'Length (m)';
+
+  @override
+  String get pleaseEnterBoatName => 'Please enter the boat name';
+
+  @override
+  String get pleaseEnterBoatModel => 'Please enter the boat model';
+
+  @override
+  String get pleaseEnterValidYear => 'Please enter a valid year';
+
+  @override
+  String get pleaseEnterValidLength => 'Please enter a valid length';
+
+  @override
+  String get deleteBoat => 'Delete Boat';
+
+  @override
+  String get confirmDeleteBoat => 'Are you sure you want to delete this boat?';
+
+  @override
+  String get boatTypeJetski => 'Jet Ski';
+
+  @override
+  String get boatTypeSailboat => 'Sailboat';
+
+  @override
+  String get boatTypeBoat => 'Boat';
+
+  @override
+  String get boatTypeYacht => 'Yacht';
 }

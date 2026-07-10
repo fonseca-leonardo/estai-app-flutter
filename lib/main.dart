@@ -29,6 +29,8 @@ import 'viewmodels/raster_charts_viewmodel.dart';
 import 'viewmodels/chartplotter_viewmodel.dart';
 import 'viewmodels/anchor_alarm_viewmodel.dart';
 import 'viewmodels/onboarding_viewmodel.dart';
+import 'viewmodels/boat_viewmodel.dart';
+import 'viewmodels/estai_session_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
 
 void main() async {
@@ -134,6 +136,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => NavigationPermissionViewModel()),
         ChangeNotifierProvider(create: (_) => AnchorAlarmViewModel()),
         ChangeNotifierProvider(create: (_) => OnboardingViewModel()),
+        ChangeNotifierProvider(create: (_) => BoatViewModel()),
+        ChangeNotifierProvider(create: (_) => EstaiSessionViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
       ],

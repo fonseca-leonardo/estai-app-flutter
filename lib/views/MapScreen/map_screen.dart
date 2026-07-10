@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -45,6 +46,7 @@ import 'widgets/map_onboarding_overlay.dart';
 import 'widgets/resume_navigation_dialog.dart';
 import '../../viewmodels/anchor_alarm_viewmodel.dart';
 import '../../viewmodels/onboarding_viewmodel.dart';
+import '../../viewmodels/estai_session_viewmodel.dart';
 import '../../services/anchor_alarm_notification_service.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
 
@@ -116,6 +118,31 @@ class _MapScreenState extends State<MapScreen>
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _maybeShowOnboarding();
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _authenticateEstai();
+    });
+  }
+
+  Future<void> _authenticateEstai() async {
+    if (!mounted) return;
+    final estaiSession = context.read<EstaiSessionViewModel>();
+    final success = await estaiSession.authenticate();
+    if (!success && kDebugMode && mounted) {
+      showDialog(
+        context: context,
+        builder: (dialogContext) => AlertDialog(
+          title: const Text('Falha na autenticação Estai (debug)'),
+          content: Text(estaiSession.errorMessage ?? 'Erro desconhecido'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(dialogContext).pop(),
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   Future<void> _maybeShowOnboarding() async {
