@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
+import 'package:estai/widgets/signalk_status_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -159,12 +160,10 @@ class _MapScreenState extends State<MapScreen>
 
   Future<void> _maybeResumeNavigation() async {
     if (!mounted) return;
-    final navigationStatusViewModel = context
-        .read<NavigationStatusViewModel>();
+    final navigationStatusViewModel = context.read<NavigationStatusViewModel>();
     if (navigationStatusViewModel.isNavigating) return;
 
-    final snapshot = await navigationStatusViewModel
-        .loadPersistedNavigation();
+    final snapshot = await navigationStatusViewModel.loadPersistedNavigation();
     if (snapshot == null || !mounted) return;
 
     final shouldResume = await ResumeNavigationDialog.show(context, snapshot);
@@ -591,6 +590,11 @@ class _MapScreenState extends State<MapScreen>
                     },
                   );
                 },
+              ),
+              const Positioned(
+                top: -14,
+                left: 18,
+                child: SafeArea(child: SignalKStatusIndicator()),
               ),
               const Positioned(
                 bottom: 0,

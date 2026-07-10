@@ -32,6 +32,8 @@ import 'viewmodels/onboarding_viewmodel.dart';
 import 'viewmodels/boat_viewmodel.dart';
 import 'viewmodels/estai_session_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
+import 'viewmodels/signalk_configuration_viewmodel.dart';
+import 'viewmodels/signalk_connection_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -88,6 +90,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final NavigationStatusViewModel navigationStatusViewModel;
   late final MapViewModel mapViewModel;
   late final WatchConnectivityViewModel watchConnectivityViewModel;
+  late final SignalKConfigurationViewModel signalKConfigurationViewModel;
+  late final SignalKConnectionViewModel signalKConnectionViewModel;
 
   @override
   void initState() {
@@ -99,6 +103,12 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     mapViewModel = MapViewModel();
     watchConnectivityViewModel = WatchConnectivityViewModel();
+
+    signalKConfigurationViewModel = SignalKConfigurationViewModel();
+    signalKConnectionViewModel = SignalKConnectionViewModel(
+      config: signalKConfigurationViewModel,
+      map: mapViewModel,
+    );
 
     _initializeWatchConnectivity();
   }
@@ -140,6 +150,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => EstaiSessionViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
+        ChangeNotifierProvider.value(value: signalKConfigurationViewModel),
+        ChangeNotifierProvider.value(value: signalKConnectionViewModel),
       ],
       child: MaterialApp(
         title: 'Estai - Mapa',

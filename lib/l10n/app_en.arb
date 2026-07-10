@@ -647,5 +647,7 @@
   "boatTypeBoat": "Boat",
   "@boatTypeBoat": {},
   "boatTypeYacht": "Yacht",
-  "@boatTypeYacht": {}
+  "@boatTypeYacht": {},
+  "signalKIosLocalNetworkNotice": "On the first connection, iOS will request local network access. Allow it so the app can communicate with the SignalK server.",
+  "@signalKIosLocalNetworkNotice": {}
 }

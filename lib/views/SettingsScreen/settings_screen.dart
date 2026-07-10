@@ -13,6 +13,7 @@ import '../SignUpScreen/sign_up_screen.dart';
 import '../LoginScreen/login_screen.dart';
 import '../WeatherPinsListScreen/weather_pins_list_screen.dart';
 import '../RasterChartsScreen/raster_charts_screen.dart';
+import '../SignalKConfigurationScreen/signalk_configuration_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -123,6 +124,19 @@ class _SettingsScreenState extends State<SettingsScreen>
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (_) => const RasterChartsScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      _buildSettingsTile(
+                        context,
+                        l10n.rasterCharts,
+                        Icons.layers_outlined,
+                        () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  const SignalKConfigurationScreen(),
                             ),
                           );
                         },

@@ -41,6 +41,13 @@
 	<string>952848614020-sj7scfh6vp5fa1nrl41p2m7f4f16qk4o.apps.googleusercontent.com</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Este app precisa de acesso à rede local para conectar ao seu servidor SignalK e receber dados de navegação do barco.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Este app precisa da sua localização para rastrear sua navegação mesmo quando o aplicativo está em segundo plano.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
