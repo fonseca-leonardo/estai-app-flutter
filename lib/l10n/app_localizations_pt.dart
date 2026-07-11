@@ -896,4 +896,124 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get marinaAccessToggleError => 'Não foi possível atualizar o acesso da marina. Tente novamente.';
+
+  @override
+  String get marinaHubTooltip => 'Minha marina';
+
+  @override
+  String get marinaHomeTitle => 'Minha Marina';
+
+  @override
+  String get marinaHomeMyBoatsSubtitle => 'Gerencie suas embarcações';
+
+  @override
+  String get newServiceOrder => 'Nova ordem de serviço';
+
+  @override
+  String get newServiceOrderSubtitle => 'Solicite um serviço para o seu barco';
+
+  @override
+  String get myServiceOrders => 'Minhas ordens de serviço';
+
+  @override
+  String get myServiceOrdersSubtitle => 'Acompanhe o andamento das suas ordens';
+
+  @override
+  String get recentServiceOrders => 'Ordens recentes';
+
+  @override
+  String get seeAllServiceOrders => 'Ver todas';
+
+  @override
+  String get noServiceOrders => 'Nenhuma ordem de serviço ainda';
+
+  @override
+  String get noServiceOrdersWithFilter => 'Nenhuma ordem de serviço com esse status';
+
+  @override
+  String get loadServiceOrdersError => 'Não foi possível carregar suas ordens de serviço.';
+
+  @override
+  String get serviceOrderStatusAll => 'Todas';
+
+  @override
+  String get serviceOrderStatusPending => 'Pendente';
+
+  @override
+  String get serviceOrderStatusScheduled => 'Agendada';
+
+  @override
+  String get serviceOrderStatusInProgress => 'Em andamento';
+
+  @override
+  String get serviceOrderStatusCompleted => 'Concluída';
+
+  @override
+  String get serviceOrderStatusCancelled => 'Cancelada';
+
+  @override
+  String get selectBoat => 'Barco';
+
+  @override
+  String get pleaseSelectBoat => 'Selecione um barco';
+
+  @override
+  String get selectService => 'Serviço';
+
+  @override
+  String get pleaseSelectService => 'Selecione um serviço';
+
+  @override
+  String get notesOptional => 'Observações (opcional)';
+
+  @override
+  String get estimatedPrice => 'Preço de tabela';
+
+  @override
+  String get createServiceOrder => 'Criar ordem';
+
+  @override
+  String get serviceOrderCreated => 'Ordem de serviço criada';
+
+  @override
+  String get createServiceOrderError => 'Não foi possível criar a ordem de serviço. Tente novamente.';
+
+  @override
+  String get noMarinaBoats => 'Nenhum barco vinculado à marina';
+
+  @override
+  String get noMarinaBoatsDescription => 'Vincule um barco à marina para poder solicitar serviços.';
+
+  @override
+  String get manageBoatsCta => 'Gerenciar meus barcos';
+
+  @override
+  String get emptyServiceCatalog => 'A marina ainda não cadastrou serviços';
+
+  @override
+  String get loadPriceItemsError => 'Não foi possível carregar os serviços disponíveis.';
+
+  @override
+  String get cancelServiceOrder => 'Cancelar ordem';
+
+  @override
+  String get cancelServiceOrderConfirm => 'Cancelar esta ordem de serviço?';
+
+  @override
+  String get cancelServiceOrderError => 'Não foi possível cancelar a ordem de serviço. Tente novamente.';
+
+  @override
+  String get keepOrder => 'Manter';
+
+  @override
+  String get unitPerUnit => 'un.';
+
+  @override
+  String get unitPerHour => 'hora';
+
+  @override
+  String get unitPerDay => 'dia';
+
+  @override
+  String get unitPerMonth => 'mês';
 }

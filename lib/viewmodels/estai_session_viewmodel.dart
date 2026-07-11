@@ -22,6 +22,7 @@ class EstaiSessionViewModel extends ChangeNotifier {
 
   bool _isLoading = false;
   String? _errorMessage;
+  Marina? _storedMarina;
 
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
@@ -30,6 +31,27 @@ class EstaiSessionViewModel extends ChangeNotifier {
   EstaiUser? get user => _client.session?.user;
   EstaiMarina? get marina => _client.session?.user.marina;
   bool get isAuthenticated => _client.isAuthenticated;
+
+  /// Marina associada ao usuário, combinando a sessão atual com o que está
+  /// persistido localmente (cobre o caso de associação feita durante a
+  /// sessão, sem precisar reautenticar).
+  Marina? get activeMarina {
+    final sessionMarina = marina;
+    if (sessionMarina != null) {
+      return Marina(id: sessionMarina.id, name: sessionMarina.name);
+    }
+    return _storedMarina;
+  }
+
+  bool get hasMarina => activeMarina != null;
+
+  /// Recarrega a marina persistida localmente e notifica os observadores.
+  /// Chamar após qualquer fluxo que possa ter associado o usuário a uma
+  /// marina durante a sessão (ex.: [MarinaAccessScreen]).
+  Future<void> refreshStoredMarina() async {
+    _storedMarina = await _marinaStorageService.getSaved();
+    notifyListeners();
+  }
 
   /// Autentica no Estai. É idempotente: se já houver sessão ativa não refaz a
   /// chamada, a menos que [force] seja `true`.
@@ -45,9 +67,8 @@ class EstaiSessionViewModel extends ChangeNotifier {
       final session = await _client.authenticate();
       final marina = session.user.marina;
       if (marina != null) {
-        await _marinaStorageService.save(
-          Marina(id: marina.id, name: marina.name),
-        );
+        _storedMarina = Marina(id: marina.id, name: marina.name);
+        await _marinaStorageService.save(_storedMarina!);
       }
       _isLoading = false;
       notifyListeners();
@@ -63,6 +84,7 @@ class EstaiSessionViewModel extends ChangeNotifier {
   /// Limpa a sessão do Estai (usar no logout).
   void clear() {
     _client.clearSession();
+    _storedMarina = null;
     _errorMessage = null;
     notifyListeners();
   }

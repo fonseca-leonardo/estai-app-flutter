@@ -35,6 +35,7 @@ import 'viewmodels/onboarding_viewmodel.dart';
 import 'viewmodels/boat_viewmodel.dart';
 import 'viewmodels/marina_access_viewmodel.dart';
 import 'viewmodels/estai_session_viewmodel.dart';
+import 'viewmodels/service_order_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
 import 'viewmodels/signalk_configuration_viewmodel.dart';
 import 'viewmodels/signalk_connection_viewmodel.dart';
@@ -204,6 +205,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => BoatViewModel()),
         ChangeNotifierProvider(create: (_) => EstaiSessionViewModel()),
         ChangeNotifierProvider(create: (_) => MarinaAccessViewModel()),
+        ChangeNotifierProvider(create: (_) => ServiceOrderViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
         ChangeNotifierProvider.value(value: signalKConfigurationViewModel),

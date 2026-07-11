@@ -2,8 +2,10 @@ import 'package:estai/views/NavigationPermissionScreen/navigation_permission_scr
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../../viewmodels/estai_session_viewmodel.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../BoatsListScreen/boats_list_screen.dart';
+import '../../MarinaHomeScreen/marina_home_screen.dart';
 import './weather_forecast_bottom_sheet.dart';
 
 class MapActionsButtons extends StatelessWidget {
@@ -74,18 +76,30 @@ class MapActionsButtons extends StatelessWidget {
             child: const Icon(Icons.thermostat, color: Colors.white),
             tooltip: 'Previsão do Tempo',
           ),
-          FloatingActionButton(
-            heroTag: 'my_boats_button',
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-              side: BorderSide(color: Colors.white.withAlpha(64)),
-            ),
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const BoatsListScreen()),
-            ),
-            backgroundColor: Colors.black.withAlpha(140),
-            tooltip: l10n.myBoatsTooltip,
-            child: const Icon(Icons.directions_boat, color: Colors.white),
+          Selector<EstaiSessionViewModel, bool>(
+            selector: (_, viewModel) => viewModel.hasMarina,
+            builder: (context, hasMarina, child) {
+              return FloatingActionButton(
+                heroTag: 'my_boats_button',
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.white.withAlpha(64)),
+                ),
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => hasMarina
+                        ? const MarinaHomeScreen()
+                        : const BoatsListScreen(),
+                  ),
+                ),
+                backgroundColor: Colors.black.withAlpha(140),
+                tooltip: hasMarina ? l10n.marinaHubTooltip : l10n.myBoatsTooltip,
+                child: Icon(
+                  hasMarina ? Icons.anchor : Icons.directions_boat,
+                  color: Colors.white,
+                ),
+              );
+            },
           ),
           Selector<MapViewModel, bool>(
             selector: (_, viewModel) {

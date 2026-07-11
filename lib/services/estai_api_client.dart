@@ -4,7 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/estai_session.dart';
+import '../models/marina.dart';
 import 'api_exception.dart';
+import 'marina_storage_service.dart';
 
 export 'api_exception.dart';
 
@@ -97,6 +99,14 @@ class EstaiApiClient {
       final data = json['data'] as Map<String, dynamic>;
       final session = EstaiSession.fromJson(data);
       _session = session;
+
+      final marina = session.user.marina;
+      if (marina != null) {
+        await MarinaStorageService().save(
+          Marina(id: marina.id, name: marina.name),
+        );
+      }
+
       return session;
     } catch (e) {
       throw ApiException('Resposta inválida do endpoint /me: $e', uri: uri);
@@ -204,6 +214,27 @@ class EstaiApiClient {
       return response;
     } catch (e) {
       _logError('PUT', uri, e);
+      throw ApiException('Network error: $e', uri: uri);
+    }
+  }
+
+  Future<http.Response> patch(
+    String endpoint, {
+    Map<String, String>? headers,
+    Object? body,
+  }) async {
+    final uri = _uri(endpoint);
+    _logRequest('PATCH', uri, body: body);
+    try {
+      final response = await _client.patch(
+        uri,
+        headers: _buildHeaders(headers),
+        body: body != null ? json.encode(body) : null,
+      );
+      _logResponse('PATCH', uri, response);
+      return response;
+    } catch (e) {
+      _logError('PATCH', uri, e);
       throw ApiException('Network error: $e', uri: uri);
     }
   }

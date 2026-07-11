@@ -50,7 +50,6 @@ class MapViewModel extends ChangeNotifier {
   }
 
   Future<void> getCurrentLocation() async {
-    _isLoading = true;
     _errorMessage = null;
     notifyListeners();
 

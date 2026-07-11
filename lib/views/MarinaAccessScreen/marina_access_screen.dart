@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
+import '../../viewmodels/estai_session_viewmodel.dart';
 import '../../viewmodels/marina_access_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../MarinaSuccessScreen/marina_success_screen.dart';
@@ -37,6 +38,8 @@ class _MarinaAccessScreenState extends State<MarinaAccessScreen>
     if (!mounted) return;
 
     if (success) {
+      await context.read<EstaiSessionViewModel>().refreshStoredMarina();
+      if (!mounted) return;
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (_) => MarinaSuccessScreen(marina: viewModel.associationResult!),

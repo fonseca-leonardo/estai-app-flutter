@@ -1768,6 +1768,246 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not update marina access. Try again.'**
   String get marinaAccessToggleError;
+
+  /// No description provided for @marinaHubTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'My marina'**
+  String get marinaHubTooltip;
+
+  /// No description provided for @marinaHomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Marina'**
+  String get marinaHomeTitle;
+
+  /// No description provided for @marinaHomeMyBoatsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage your boats'**
+  String get marinaHomeMyBoatsSubtitle;
+
+  /// No description provided for @newServiceOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'New service order'**
+  String get newServiceOrder;
+
+  /// No description provided for @newServiceOrderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Request a service for your boat'**
+  String get newServiceOrderSubtitle;
+
+  /// No description provided for @myServiceOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'My service orders'**
+  String get myServiceOrders;
+
+  /// No description provided for @myServiceOrdersSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Track the progress of your orders'**
+  String get myServiceOrdersSubtitle;
+
+  /// No description provided for @recentServiceOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent orders'**
+  String get recentServiceOrders;
+
+  /// No description provided for @seeAllServiceOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeAllServiceOrders;
+
+  /// No description provided for @noServiceOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'No service orders yet'**
+  String get noServiceOrders;
+
+  /// No description provided for @noServiceOrdersWithFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'No service orders with this status'**
+  String get noServiceOrdersWithFilter;
+
+  /// No description provided for @loadServiceOrdersError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load your service orders.'**
+  String get loadServiceOrdersError;
+
+  /// No description provided for @serviceOrderStatusAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get serviceOrderStatusAll;
+
+  /// No description provided for @serviceOrderStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get serviceOrderStatusPending;
+
+  /// No description provided for @serviceOrderStatusScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled'**
+  String get serviceOrderStatusScheduled;
+
+  /// No description provided for @serviceOrderStatusInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get serviceOrderStatusInProgress;
+
+  /// No description provided for @serviceOrderStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get serviceOrderStatusCompleted;
+
+  /// No description provided for @serviceOrderStatusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get serviceOrderStatusCancelled;
+
+  /// No description provided for @selectBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat'**
+  String get selectBoat;
+
+  /// No description provided for @pleaseSelectBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a boat'**
+  String get pleaseSelectBoat;
+
+  /// No description provided for @selectService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get selectService;
+
+  /// No description provided for @pleaseSelectService.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a service'**
+  String get pleaseSelectService;
+
+  /// No description provided for @notesOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes (optional)'**
+  String get notesOptional;
+
+  /// No description provided for @estimatedPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'List price'**
+  String get estimatedPrice;
+
+  /// No description provided for @createServiceOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Create order'**
+  String get createServiceOrder;
+
+  /// No description provided for @serviceOrderCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Service order created'**
+  String get serviceOrderCreated;
+
+  /// No description provided for @createServiceOrderError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not create the service order. Try again.'**
+  String get createServiceOrderError;
+
+  /// No description provided for @noMarinaBoats.
+  ///
+  /// In en, this message translates to:
+  /// **'No boats linked to the marina'**
+  String get noMarinaBoats;
+
+  /// No description provided for @noMarinaBoatsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Link a boat to the marina to request services.'**
+  String get noMarinaBoatsDescription;
+
+  /// No description provided for @manageBoatsCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage my boats'**
+  String get manageBoatsCta;
+
+  /// No description provided for @emptyServiceCatalog.
+  ///
+  /// In en, this message translates to:
+  /// **'The marina has no services yet'**
+  String get emptyServiceCatalog;
+
+  /// No description provided for @loadPriceItemsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load available services.'**
+  String get loadPriceItemsError;
+
+  /// No description provided for @cancelServiceOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel order'**
+  String get cancelServiceOrder;
+
+  /// No description provided for @cancelServiceOrderConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel this service order?'**
+  String get cancelServiceOrderConfirm;
+
+  /// No description provided for @cancelServiceOrderError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not cancel the service order. Try again.'**
+  String get cancelServiceOrderError;
+
+  /// No description provided for @keepOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep'**
+  String get keepOrder;
+
+  /// No description provided for @unitPerUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'unit'**
+  String get unitPerUnit;
+
+  /// No description provided for @unitPerHour.
+  ///
+  /// In en, this message translates to:
+  /// **'hour'**
+  String get unitPerHour;
+
+  /// No description provided for @unitPerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'day'**
+  String get unitPerDay;
+
+  /// No description provided for @unitPerMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'month'**
+  String get unitPerMonth;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

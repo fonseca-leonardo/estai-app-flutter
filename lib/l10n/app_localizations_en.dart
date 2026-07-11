@@ -896,4 +896,124 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get marinaAccessToggleError => 'Could not update marina access. Try again.';
+
+  @override
+  String get marinaHubTooltip => 'My marina';
+
+  @override
+  String get marinaHomeTitle => 'My Marina';
+
+  @override
+  String get marinaHomeMyBoatsSubtitle => 'Manage your boats';
+
+  @override
+  String get newServiceOrder => 'New service order';
+
+  @override
+  String get newServiceOrderSubtitle => 'Request a service for your boat';
+
+  @override
+  String get myServiceOrders => 'My service orders';
+
+  @override
+  String get myServiceOrdersSubtitle => 'Track the progress of your orders';
+
+  @override
+  String get recentServiceOrders => 'Recent orders';
+
+  @override
+  String get seeAllServiceOrders => 'See all';
+
+  @override
+  String get noServiceOrders => 'No service orders yet';
+
+  @override
+  String get noServiceOrdersWithFilter => 'No service orders with this status';
+
+  @override
+  String get loadServiceOrdersError => 'Could not load your service orders.';
+
+  @override
+  String get serviceOrderStatusAll => 'All';
+
+  @override
+  String get serviceOrderStatusPending => 'Pending';
+
+  @override
+  String get serviceOrderStatusScheduled => 'Scheduled';
+
+  @override
+  String get serviceOrderStatusInProgress => 'In progress';
+
+  @override
+  String get serviceOrderStatusCompleted => 'Completed';
+
+  @override
+  String get serviceOrderStatusCancelled => 'Cancelled';
+
+  @override
+  String get selectBoat => 'Boat';
+
+  @override
+  String get pleaseSelectBoat => 'Select a boat';
+
+  @override
+  String get selectService => 'Service';
+
+  @override
+  String get pleaseSelectService => 'Select a service';
+
+  @override
+  String get notesOptional => 'Notes (optional)';
+
+  @override
+  String get estimatedPrice => 'List price';
+
+  @override
+  String get createServiceOrder => 'Create order';
+
+  @override
+  String get serviceOrderCreated => 'Service order created';
+
+  @override
+  String get createServiceOrderError => 'Could not create the service order. Try again.';
+
+  @override
+  String get noMarinaBoats => 'No boats linked to the marina';
+
+  @override
+  String get noMarinaBoatsDescription => 'Link a boat to the marina to request services.';
+
+  @override
+  String get manageBoatsCta => 'Manage my boats';
+
+  @override
+  String get emptyServiceCatalog => 'The marina has no services yet';
+
+  @override
+  String get loadPriceItemsError => 'Could not load available services.';
+
+  @override
+  String get cancelServiceOrder => 'Cancel order';
+
+  @override
+  String get cancelServiceOrderConfirm => 'Cancel this service order?';
+
+  @override
+  String get cancelServiceOrderError => 'Could not cancel the service order. Try again.';
+
+  @override
+  String get keepOrder => 'Keep';
+
+  @override
+  String get unitPerUnit => 'unit';
+
+  @override
+  String get unitPerHour => 'hour';
+
+  @override
+  String get unitPerDay => 'day';
+
+  @override
+  String get unitPerMonth => 'month';
 }
