@@ -33,7 +33,10 @@ class AnchorAlarmNotificationService {
     );
 
     await _notifications.initialize(
-      const InitializationSettings(android: androidSettings, iOS: iosSettings),
+      settings: const InitializationSettings(
+        android: androidSettings,
+        iOS: iosSettings,
+      ),
     );
     _pluginInitialized = true;
 
@@ -228,7 +231,7 @@ class AnchorAlarmNotificationService {
 
   Future<void> stopAlarm() async {
     await _player.stop();
-    await _notifications.cancel(_notificationId);
+    await _notifications.cancel(id: _notificationId);
   }
 
   Future<void> _sendNotification() async {
@@ -259,10 +262,13 @@ class AnchorAlarmNotificationService {
     );
 
     await _notifications.show(
-      _notificationId,
-      'Âncora Arrastou!',
-      'Você saiu do raio de segurança da âncora.',
-      NotificationDetails(android: androidDetails, iOS: iosDetails),
+      id: _notificationId,
+      title: 'Âncora Arrastou!',
+      body: 'Você saiu do raio de segurança da âncora.',
+      notificationDetails: NotificationDetails(
+        android: androidDetails,
+        iOS: iosDetails,
+      ),
     );
   }
 

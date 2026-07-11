@@ -13,7 +13,7 @@ class TileCacheService {
   }
 
   String _filename(int z, int x, int y, bool darkMode) =>
-      darkMode ? '${z}_${x}_${y}_dark.png' : '${z}_${x}_${y}.png';
+      darkMode ? '${z}_${x}_${y}_dark.png' : '${z}_${x}_$y.png';
 
   Future<File?> getTileFile(
       String mapId, int z, int x, int y, bool darkMode) async {

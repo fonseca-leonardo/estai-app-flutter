@@ -111,7 +111,7 @@ class _WeatherForecastBottomSheetState
     for (int i = 0; i < viewModel.forecastData.length; i++) {
       try {
         final timeUtc = DateTime.parse(
-          viewModel.forecastData[i].time + 'Z',
+          '${viewModel.forecastData[i].time}Z',
         ).toUtc();
         final time = timeUtc.toLocal();
         if (time.isAfter(now) || time.isAtSameMomentAs(now)) {
@@ -123,9 +123,7 @@ class _WeatherForecastBottomSheetState
       }
     }
 
-    if (currentHourIndex == null) {
-      currentHourIndex = 0;
-    }
+    currentHourIndex ??= 0;
 
     const itemWidth = 200.0 + 12.0;
     final screenWidth = MediaQuery.of(context).size.width;
@@ -323,7 +321,7 @@ class _WeatherForecastBottomSheetState
                 for (int i = 0; i < viewModel.forecastData.length; i++) {
                   try {
                     final timeUtc = DateTime.parse(
-                      viewModel.forecastData[i].time + 'Z',
+                      '${viewModel.forecastData[i].time}Z',
                     ).toUtc();
                     final time = timeUtc.toLocal();
                     if (time.isAfter(now) || time.isAtSameMomentAs(now)) {

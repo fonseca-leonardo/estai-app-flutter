@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
 import 'package:watch_connectivity/watch_connectivity.dart';
 
 class WatchConnectivityService {

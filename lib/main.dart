@@ -3,7 +3,6 @@ import 'package:app_links/app_links.dart';
 import 'package:estai/views/LoginScreen/login_screen.dart';
 import 'package:estai/views/MarinaAccessScreen/marina_access_screen.dart';
 import 'package:estai/widgets/location_init_wrapper.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

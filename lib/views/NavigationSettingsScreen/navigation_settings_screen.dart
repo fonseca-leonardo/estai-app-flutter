@@ -175,7 +175,7 @@ class _NavigationSettingsScreenState extends State<NavigationSettingsScreen>
                                 activeTrackColor: Colors.white,
                                 inactiveTrackColor: const Color(0xFF1F1F1F),
                                 thumbColor: Colors.white,
-                                overlayColor: Colors.white.withOpacity(0.1),
+                                overlayColor: Colors.white.withValues(alpha: 0.1),
                                 valueIndicatorColor: Colors.white,
                                 valueIndicatorTextStyle: const TextStyle(
                                   color: Colors.black,

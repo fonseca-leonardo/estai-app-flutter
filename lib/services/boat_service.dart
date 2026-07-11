@@ -149,11 +149,11 @@ class BoatService {
       final response = await _apiClient.put(
         '/boats/$id',
         body: {
-          if (name != null) 'name': name,
-          if (model != null) 'model': model,
+          'name': ?name,
+          'model': ?model,
           if (type != null) 'type': type.apiValue,
-          if (year != null) 'year': year,
-          if (length != null) 'length': length,
+          'year': ?year,
+          'length': ?length,
         },
       );
 

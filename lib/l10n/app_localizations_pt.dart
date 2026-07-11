@@ -937,6 +937,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get serviceOrderStatusAll => 'Todas';
 
   @override
+  String get filterByStatus => 'Filtrar por status';
+
+  @override
   String get serviceOrderStatusPending => 'Pendente';
 
   @override

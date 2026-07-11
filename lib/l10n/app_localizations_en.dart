@@ -937,6 +937,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get serviceOrderStatusAll => 'All';
 
   @override
+  String get filterByStatus => 'Filter by status';
+
+  @override
   String get serviceOrderStatusPending => 'Pending';
 
   @override

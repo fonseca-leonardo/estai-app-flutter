@@ -136,7 +136,7 @@ class _SaveRouteDialogState extends State<SaveRouteDialog> {
                             : true;
                       });
                     },
-                    activeColor: Colors.blue,
+                    activeThumbColor: Colors.blue,
                   ),
                 ],
               ),

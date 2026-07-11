@@ -129,7 +129,7 @@ class _MapDirectionLineState extends State<MapDirectionLine> {
               Polyline(
                 points: [startPoint, endPoint],
                 strokeWidth: 3.0,
-                color: Colors.blue.withOpacity(0.7),
+                color: Colors.blue.withValues(alpha: 0.7),
               ),
             ],
           );

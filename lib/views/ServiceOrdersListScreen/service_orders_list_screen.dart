@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
+import '../../viewmodels/estai_session_viewmodel.dart';
 import '../../viewmodels/service_order_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
+import '../../widgets/marina_background.dart';
 import 'widgets/service_order_card.dart';
 import 'widgets/service_order_status_filter.dart';
 
@@ -42,29 +46,55 @@ class _ServiceOrdersListScreenState extends State<ServiceOrdersListScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final backgroundFile = context.select<EstaiSessionViewModel, File?>(
+      (vm) => vm.backgroundFile,
+    );
+    final hasBackground = backgroundFile != null;
+    final topInset = hasBackground
+        ? MediaQuery.paddingOf(context).top + kToolbarHeight
+        : 0.0;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.myServiceOrders),
-        backgroundColor: Colors.black.withAlpha(200),
-        foregroundColor: Colors.white,
-      ),
-      backgroundColor: Colors.black,
-      body: Consumer<ServiceOrderViewModel>(
-        builder: (context, viewModel, child) {
-          return Column(
-            children: [
-              const SizedBox(height: 12),
-              ServiceOrderStatusFilter(
-                selected: viewModel.statusFilter,
-                onChanged: viewModel.setStatusFilter,
+    return Consumer<ServiceOrderViewModel>(
+      builder: (context, viewModel, child) {
+        return Scaffold(
+          extendBodyBehindAppBar: hasBackground,
+          appBar: AppBar(
+            title: Text(l10n.myServiceOrders),
+            backgroundColor: hasBackground
+                ? Colors.transparent
+                : Colors.black.withAlpha(200),
+            foregroundColor: Colors.white,
+            elevation: 0,
+            actions: [
+              Builder(
+                builder: (context) => IconButton(
+                  tooltip: l10n.filterByStatus,
+                  icon: Icon(
+                    viewModel.statusFilter == null
+                        ? Icons.filter_list
+                        : Icons.filter_list_alt,
+                  ),
+                  onPressed: () => Scaffold.of(context).openEndDrawer(),
+                ),
               ),
-              const SizedBox(height: 12),
-              Expanded(child: _buildBody(context, l10n, viewModel)),
             ],
-          );
-        },
-      ),
+          ),
+          backgroundColor: Colors.black,
+          endDrawer: ServiceOrderStatusFilterDrawer(
+            selected: viewModel.statusFilter,
+            onChanged: viewModel.setStatusFilter,
+          ),
+          body: MarinaBackground(
+            backgroundFile: backgroundFile,
+            child: Column(
+              children: [
+                SizedBox(height: topInset + 12),
+                Expanded(child: _buildBody(context, l10n, viewModel)),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 

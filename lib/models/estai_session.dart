@@ -58,12 +58,27 @@ class EstaiMarina {
   final String id;
   final String name;
 
-  const EstaiMarina({required this.id, required this.name});
+  /// URL da logo da marina (imagem 64x64) retornada pelo `/me`. Baixada
+  /// localmente para ser exibida no lugar do ícone de âncora no mapa.
+  final String? logoUrl;
+
+  /// URL da imagem de fundo da marina retornada pelo `/me`. Baixada
+  /// localmente para ser usada como background da MarinaHomeScreen.
+  final String? backgroundUrl;
+
+  const EstaiMarina({
+    required this.id,
+    required this.name,
+    this.logoUrl,
+    this.backgroundUrl,
+  });
 
   factory EstaiMarina.fromJson(Map<String, dynamic> json) {
     return EstaiMarina(
       id: json['id'] as String,
       name: json['name'] as String? ?? '',
+      logoUrl: json['logoUrl'] as String?,
+      backgroundUrl: json['backgroundUrl'] as String?,
     );
   }
 }

@@ -338,7 +338,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                                           },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.red[900]
-                                          ?.withOpacity(0.2),
+                                          ?.withValues(alpha: 0.2),
                                       foregroundColor: Colors.red[400],
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 14,
@@ -347,8 +347,8 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(8),
                                         side: BorderSide(
-                                          color: Colors.red[800]!.withOpacity(
-                                            0.3,
+                                          color: Colors.red[800]!.withValues(
+                                            alpha: 0.3,
                                           ),
                                           width: 1,
                                         ),
@@ -469,7 +469,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                                               _showDeleteAccountDialog(context),
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.red[900]
-                                          ?.withOpacity(0.2),
+                                          ?.withValues(alpha: 0.2),
                                       foregroundColor: Colors.red[600],
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 14,
@@ -478,8 +478,8 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(8),
                                         side: BorderSide(
-                                          color: Colors.red[800]!.withOpacity(
-                                            0.3,
+                                          color: Colors.red[800]!.withValues(
+                                            alpha: 0.3,
                                           ),
                                           width: 1,
                                         ),

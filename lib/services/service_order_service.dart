@@ -63,7 +63,7 @@ class ServiceOrderService {
           'page': page,
           'limit': limit,
           if (status != null) 'status': status.apiValue,
-          if (boatId != null) 'boatId': boatId,
+          'boatId': ?boatId,
           if (search != null && search.isNotEmpty) 'search': search,
         },
       );

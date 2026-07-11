@@ -1847,6 +1847,12 @@ abstract class AppLocalizations {
   /// **'All'**
   String get serviceOrderStatusAll;
 
+  /// No description provided for @filterByStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by status'**
+  String get filterByStatus;
+
   /// No description provided for @serviceOrderStatusPending.
   ///
   /// In en, this message translates to:

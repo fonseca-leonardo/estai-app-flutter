@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:estai/views/NavigationPermissionScreen/navigation_permission_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -35,11 +37,11 @@ class MapActionsButtons extends StatelessWidget {
                 backgroundColor: isCameraLocked
                     ? Colors.black.withAlpha(140)
                     : Colors.black.withAlpha(64),
+                tooltip: isCameraLocked ? l10n.unlockCamera : l10n.lockCamera,
                 child: Icon(
                   isCameraLocked ? Icons.near_me : Icons.near_me_outlined,
                   color: Colors.white,
                 ),
-                tooltip: isCameraLocked ? l10n.unlockCamera : l10n.lockCamera,
               );
             },
           ),
@@ -73,12 +75,17 @@ class MapActionsButtons extends StatelessWidget {
             ),
             onPressed: () => WeatherForecastBottomSheet.show(context),
             backgroundColor: Colors.black.withAlpha(140),
-            child: const Icon(Icons.thermostat, color: Colors.white),
             tooltip: 'Previsão do Tempo',
+            child: const Icon(Icons.thermostat, color: Colors.white),
           ),
-          Selector<EstaiSessionViewModel, bool>(
-            selector: (_, viewModel) => viewModel.hasMarina,
-            builder: (context, hasMarina, child) {
+          Selector<EstaiSessionViewModel, ({bool hasMarina, File? logoFile})>(
+            selector: (_, viewModel) => (
+              hasMarina: viewModel.hasMarina,
+              logoFile: viewModel.logoFile,
+            ),
+            builder: (context, state, child) {
+              final hasMarina = state.hasMarina;
+              final logoFile = state.logoFile;
               return FloatingActionButton(
                 heroTag: 'my_boats_button',
                 shape: RoundedRectangleBorder(
@@ -94,10 +101,24 @@ class MapActionsButtons extends StatelessWidget {
                 ),
                 backgroundColor: Colors.black.withAlpha(140),
                 tooltip: hasMarina ? l10n.marinaHubTooltip : l10n.myBoatsTooltip,
-                child: Icon(
-                  hasMarina ? Icons.anchor : Icons.directions_boat,
-                  color: Colors.white,
-                ),
+                child: hasMarina && logoFile != null
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.file(
+                          logoFile,
+                          key: ValueKey(logoFile.path),
+                          width: 56,
+                          height: 56,
+                          fit: BoxFit.cover,
+                          gaplessPlayback: true,
+                          errorBuilder: (context, error, stackTrace) =>
+                              const Icon(Icons.anchor, color: Colors.white),
+                        ),
+                      )
+                    : Icon(
+                        hasMarina ? Icons.anchor : Icons.directions_boat,
+                        color: Colors.white,
+                      ),
               );
             },
           ),

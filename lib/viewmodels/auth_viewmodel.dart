@@ -168,7 +168,7 @@ class AuthViewModel extends ChangeNotifier {
         serverClientId:
             '952848614020-otvqsp6pru3ur4s4tmls2i5u7eg2k6k3.apps.googleusercontent.com',
       );
-      final GoogleSignInAccount? googleUser = await googleSignIn.authenticate();
+      final GoogleSignInAccount googleUser = await googleSignIn.authenticate();
 
       if (googleUser == null) {
         _isLoading = false;
@@ -178,7 +178,7 @@ class AuthViewModel extends ChangeNotifier {
       }
 
       final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+          googleUser.authentication;
 
       if (googleAuth.idToken == null) {
         _isLoading = false;

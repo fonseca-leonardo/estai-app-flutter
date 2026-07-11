@@ -714,6 +714,8 @@
   "@loadServiceOrdersError": {},
   "serviceOrderStatusAll": "All",
   "@serviceOrderStatusAll": {},
+  "filterByStatus": "Filter by status",
+  "@filterByStatus": {},
   "serviceOrderStatusPending": "Pending",
   "@serviceOrderStatusPending": {},
   "serviceOrderStatusScheduled": "Scheduled",

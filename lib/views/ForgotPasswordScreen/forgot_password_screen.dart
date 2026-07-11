@@ -148,10 +148,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                                   child: Container(
                                     padding: const EdgeInsets.all(16),
                                     decoration: BoxDecoration(
-                                      color: Colors.green.withOpacity(0.15),
+                                      color: Colors.green.withValues(alpha: 0.15),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: Colors.green.withOpacity(0.3),
+                                        color: Colors.green.withValues(alpha: 0.3),
                                         width: 1,
                                       ),
                                     ),
@@ -199,10 +199,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                                   child: Container(
                                     padding: const EdgeInsets.all(16),
                                     decoration: BoxDecoration(
-                                      color: Colors.red.withOpacity(0.15),
+                                      color: Colors.red.withValues(alpha: 0.15),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: Colors.red.withOpacity(0.3),
+                                        color: Colors.red.withValues(alpha: 0.3),
                                         width: 1,
                                       ),
                                     ),

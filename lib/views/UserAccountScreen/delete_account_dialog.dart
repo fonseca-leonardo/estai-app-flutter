@@ -128,7 +128,7 @@ class _DeleteAccountDialogState extends State<DeleteAccountDialog> {
                   ? () => Navigator.of(context).pop(true)
                   : null,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red[900]?.withOpacity(0.2),
+                backgroundColor: Colors.red[900]?.withValues(alpha: 0.2),
                 foregroundColor: Colors.red[400],
                 disabledBackgroundColor: Colors.grey[900],
                 disabledForegroundColor: Colors.grey[600],

@@ -53,7 +53,7 @@ class _BoatsListScreenState extends State<BoatsListScreen>
             return const Center(
               child: CircularProgressIndicator(color: Colors.white),
             );
-          }
+          } 
 
           if (viewModel.errorMessage != null) {
             return Center(
@@ -71,6 +71,14 @@ class _BoatsListScreenState extends State<BoatsListScreen>
                     style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.7),
                       fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    viewModel.errorMessage?? '',
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.7),
+                      fontSize: 12,
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -114,6 +122,7 @@ class _BoatsListScreenState extends State<BoatsListScreen>
 
           return RefreshIndicator(
             onRefresh: viewModel.loadBoats,
+            backgroundColor: Colors.black,
             child: ListView.builder(
               padding: const EdgeInsets.all(16),
               itemCount: viewModel.boats.length,

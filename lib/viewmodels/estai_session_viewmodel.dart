@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 
 import '../models/estai_session.dart';
 import '../models/marina.dart';
 import '../services/estai_api_client.dart';
+import '../services/marina_image_storage_service.dart';
 import '../services/marina_storage_service.dart';
 
 /// Orquestra o fluxo de sessão do Estai na camada de UI.
@@ -14,18 +17,39 @@ class EstaiSessionViewModel extends ChangeNotifier {
   EstaiSessionViewModel({
     EstaiApiClient? client,
     MarinaStorageService? marinaStorageService,
+    MarinaImageStorageService? logoStorageService,
+    MarinaImageStorageService? backgroundStorageService,
   }) : _client = client ?? EstaiApiClient.instance,
-       _marinaStorageService = marinaStorageService ?? MarinaStorageService();
+       _marinaStorageService = marinaStorageService ?? MarinaStorageService(),
+       _logoStorageService =
+           logoStorageService ?? MarinaImageStorageService.logo(),
+       _backgroundStorageService =
+           backgroundStorageService ??
+           MarinaImageStorageService.background() {
+    _loadSavedImages();
+  }
 
   final EstaiApiClient _client;
   final MarinaStorageService _marinaStorageService;
+  final MarinaImageStorageService _logoStorageService;
+  final MarinaImageStorageService _backgroundStorageService;
 
   bool _isLoading = false;
   String? _errorMessage;
   Marina? _storedMarina;
+  File? _logoFile;
+  File? _backgroundFile;
 
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
+
+  /// Arquivo local da logo da marina, se já baixada. Usado no mapa no lugar
+  /// do ícone de âncora.
+  File? get logoFile => _logoFile;
+
+  /// Arquivo local da imagem de fundo da marina, se já baixada. Usado como
+  /// background da MarinaHomeScreen.
+  File? get backgroundFile => _backgroundFile;
 
   EstaiSession? get session => _client.session;
   EstaiUser? get user => _client.session?.user;
@@ -72,6 +96,9 @@ class EstaiSessionViewModel extends ChangeNotifier {
       }
       _isLoading = false;
       notifyListeners();
+      // Baixa/atualiza as imagens em background para não atrasar o login.
+      _syncLogo(marina?.logoUrl);
+      _syncBackground(marina?.backgroundUrl);
       return true;
     } catch (e) {
       _isLoading = false;
@@ -86,6 +113,46 @@ class EstaiSessionViewModel extends ChangeNotifier {
     _client.clearSession();
     _storedMarina = null;
     _errorMessage = null;
+    _logoFile = null;
+    _backgroundFile = null;
+    _logoStorageService.clear();
+    _backgroundStorageService.clear();
     notifyListeners();
+  }
+
+  /// Carrega as imagens persistidas localmente (se houver) para exibição
+  /// imediata, inclusive offline, antes de qualquer novo download.
+  Future<void> _loadSavedImages() async {
+    final logo = await _logoStorageService.getSaved();
+    final background = await _backgroundStorageService.getSaved();
+    var changed = false;
+    if (logo != null) {
+      _logoFile = logo;
+      changed = true;
+    }
+    if (background != null) {
+      _backgroundFile = background;
+      changed = true;
+    }
+    if (changed) notifyListeners();
+  }
+
+  /// Baixa/atualiza a logo da marina a partir de [url] e notifica a UI.
+  Future<void> _syncLogo(String? url) async {
+    final file = await _logoStorageService.syncFromUrl(url);
+    if (file?.path != _logoFile?.path) {
+      _logoFile = file;
+      notifyListeners();
+    }
+  }
+
+  /// Baixa/atualiza a imagem de fundo da marina a partir de [url] e notifica
+  /// a UI.
+  Future<void> _syncBackground(String? url) async {
+    final file = await _backgroundStorageService.syncFromUrl(url);
+    if (file?.path != _backgroundFile?.path) {
+      _backgroundFile = file;
+      notifyListeners();
+    }
   }
 }

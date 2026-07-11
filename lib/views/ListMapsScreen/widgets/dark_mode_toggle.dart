@@ -64,7 +64,7 @@ class DarkModeToggle extends StatelessWidget {
                   Switch(
                     value: viewModel.darkMode,
                     onChanged: (_) => viewModel.toggleDarkMode(),
-                    activeColor: Colors.blue,
+                    activeThumbColor: Colors.blue,
                   ),
                 ],
               ),
