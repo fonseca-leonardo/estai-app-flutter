@@ -38,6 +38,7 @@ import 'viewmodels/service_order_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
 import 'viewmodels/signalk_configuration_viewmodel.dart';
 import 'viewmodels/signalk_connection_viewmodel.dart';
+import 'viewmodels/marina_monitoring_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -77,6 +78,15 @@ void main() async {
 
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
+  // Deixa a barra de navegação do Android (voltar, home, recentes) preta
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.black,
+      systemNavigationBarDividerColor: Colors.black,
+      systemNavigationBarIconBrightness: Brightness.light,
+    ),
+  );
+
   await WakelockPlus.enable();
 
   runApp(const MyApp());
@@ -98,6 +108,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final WatchConnectivityViewModel watchConnectivityViewModel;
   late final SignalKConfigurationViewModel signalKConfigurationViewModel;
   late final SignalKConnectionViewModel signalKConnectionViewModel;
+  late final MarinaMonitoringViewModel marinaMonitoringViewModel;
   late final AuthViewModel authViewModel;
 
   final AppLinks _appLinks = AppLinks();
@@ -118,6 +129,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     signalKConfigurationViewModel = SignalKConfigurationViewModel();
     signalKConnectionViewModel = SignalKConnectionViewModel(
       config: signalKConfigurationViewModel,
+      map: mapViewModel,
+    );
+
+    marinaMonitoringViewModel = MarinaMonitoringViewModel(
+      navigation: navigationStatusViewModel,
       map: mapViewModel,
     );
 
@@ -209,6 +225,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
         ChangeNotifierProvider.value(value: signalKConfigurationViewModel),
         ChangeNotifierProvider.value(value: signalKConnectionViewModel),
+        ChangeNotifierProvider.value(value: marinaMonitoringViewModel),
       ],
       child: MaterialApp(
         navigatorKey: navigatorKey,
@@ -230,8 +247,40 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: const [Locale('pt', 'BR'), Locale('en', 'US')],
+        builder: (context, child) => _BlackNavigationBar(child: child),
         home: const LocationInitWrapper(child: LoginScreen()),
       ),
+    );
+  }
+}
+
+/// Reserva o espaço da barra de navegação do Android (voltar, home, recentes)
+/// com uma faixa preta. Necessário porque, a partir do Android 15/16, o
+/// edge-to-edge é forçado e `systemNavigationBarColor` é ignorado, deixando a
+/// barra transparente sobre o fundo branco das telas.
+class _BlackNavigationBar extends StatelessWidget {
+  const _BlackNavigationBar({required this.child});
+
+  final Widget? child;
+
+  @override
+  Widget build(BuildContext context) {
+    final bottomInset = MediaQuery.of(context).viewPadding.bottom;
+    return Column(
+      children: [
+        Expanded(
+          child: MediaQuery.removePadding(
+            context: context,
+            removeBottom: true,
+            child: child ?? const SizedBox.shrink(),
+          ),
+        ),
+        Container(
+          height: bottomInset,
+          width: double.infinity,
+          color: Colors.black,
+        ),
+      ],
     );
   }
 }

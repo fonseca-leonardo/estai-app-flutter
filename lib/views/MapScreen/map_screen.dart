@@ -22,6 +22,7 @@ import 'widgets/navigation_status.dart';
 import 'widgets/weather_pin_addition_mode.dart';
 import 'widgets/add_pin_dialog.dart';
 import 'widgets/tracked_route_line.dart';
+import 'widgets/marina_monitoring_indicator.dart';
 import '../../viewmodels/route_planner_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
@@ -594,7 +595,15 @@ class _MapScreenState extends State<MapScreen>
               const Positioned(
                 top: -14,
                 left: 18,
-                child: SafeArea(child: SignalKStatusIndicator()),
+                child: SafeArea(
+                  child: Row(
+                    children: [
+                      SignalKStatusIndicator(),
+                      SizedBox(width: 8),
+                      MarinaMonitoringIndicator(),
+                    ],
+                  ),
+                ),
               ),
               const Positioned(
                 bottom: 0,

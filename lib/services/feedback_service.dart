@@ -13,6 +13,7 @@ class FeedbackService {
     );
 
     if (response.statusCode != 200 && response.statusCode != 201) {
+      print('Failed to send feedback: ${response.statusCode}');
       throw ApiException(
         'Failed to send feedback: ${response.statusCode}',
         statusCode: response.statusCode,

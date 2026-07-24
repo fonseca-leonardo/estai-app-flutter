@@ -1019,4 +1019,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unitPerMonth => 'month';
+
+  @override
+  String get selectBoatTitle => 'Select your boat';
+
+  @override
+  String get selectBoatSubtitle => 'Your marina will track this boat\'s position during navigation.';
+
+  @override
+  String get startNavigationAction => 'Start navigation';
+
+  @override
+  String get startWithoutMonitoring => 'Start without monitoring';
+
+  @override
+  String get noBoatsMonitoringWarning => 'You have no boats linked to your marina, so it won\'t monitor this trip.';
+
+  @override
+  String get registerBoat => 'Register boat';
+
+  @override
+  String get startAnyway => 'Start anyway';
 }

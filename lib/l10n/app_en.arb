@@ -769,5 +769,19 @@
   "unitPerDay": "day",
   "@unitPerDay": {},
   "unitPerMonth": "month",
-  "@unitPerMonth": {}
+  "@unitPerMonth": {},
+  "selectBoatTitle": "Select your boat",
+  "@selectBoatTitle": {},
+  "selectBoatSubtitle": "Your marina will track this boat's position during navigation.",
+  "@selectBoatSubtitle": {},
+  "startNavigationAction": "Start navigation",
+  "@startNavigationAction": {},
+  "startWithoutMonitoring": "Start without monitoring",
+  "@startWithoutMonitoring": {},
+  "noBoatsMonitoringWarning": "You have no boats linked to your marina, so it won't monitor this trip.",
+  "@noBoatsMonitoringWarning": {},
+  "registerBoat": "Register boat",
+  "@registerBoat": {},
+  "startAnyway": "Start anyway",
+  "@startAnyway": {}
 }

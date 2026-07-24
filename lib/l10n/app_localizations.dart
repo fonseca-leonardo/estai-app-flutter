@@ -2014,6 +2014,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'month'**
   String get unitPerMonth;
+
+  /// No description provided for @selectBoatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your boat'**
+  String get selectBoatTitle;
+
+  /// No description provided for @selectBoatSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your marina will track this boat\'s position during navigation.'**
+  String get selectBoatSubtitle;
+
+  /// No description provided for @startNavigationAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Start navigation'**
+  String get startNavigationAction;
+
+  /// No description provided for @startWithoutMonitoring.
+  ///
+  /// In en, this message translates to:
+  /// **'Start without monitoring'**
+  String get startWithoutMonitoring;
+
+  /// No description provided for @noBoatsMonitoringWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'You have no boats linked to your marina, so it won\'t monitor this trip.'**
+  String get noBoatsMonitoringWarning;
+
+  /// No description provided for @registerBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Register boat'**
+  String get registerBoat;
+
+  /// No description provided for @startAnyway.
+  ///
+  /// In en, this message translates to:
+  /// **'Start anyway'**
+  String get startAnyway;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -3,7 +3,7 @@
 # Script para fazer backup do keystore de release
 # Execute este script após criar o keystore
 
-KEYSTORE_PATH="$HOME/estai-release-key.jks"
+KEYSTORE_PATH="$HOME/estai-upload-key-new.jks"
 BACKUP_DIR="$HOME/estai-keystore-backups"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 

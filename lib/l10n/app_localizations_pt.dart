@@ -1019,4 +1019,25 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get unitPerMonth => 'mês';
+
+  @override
+  String get selectBoatTitle => 'Selecione seu barco';
+
+  @override
+  String get selectBoatSubtitle => 'Sua marina acompanhará a posição deste barco durante a navegação.';
+
+  @override
+  String get startNavigationAction => 'Iniciar navegação';
+
+  @override
+  String get startWithoutMonitoring => 'Iniciar sem monitoria';
+
+  @override
+  String get noBoatsMonitoringWarning => 'Você não tem barcos vinculados à marina, então ela não fará a monitoria desta navegação.';
+
+  @override
+  String get registerBoat => 'Cadastrar barco';
+
+  @override
+  String get startAnyway => 'Iniciar mesmo assim';
 }

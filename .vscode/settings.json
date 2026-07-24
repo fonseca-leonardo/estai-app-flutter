@@ -1,5 +1,8 @@
 {
     "dart.flutterSdkPath": null,
+    "dart.env": {
+        "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    },
     "dart.debugExternalPackageLibraries": false,
     "dart.debugSdkLibraries": false,
     "files.exclude": {

@@ -3,8 +3,8 @@
 # Script para obter chaves SHA do keystore de release
 # Execute este script após criar o keystore
 
-KEYSTORE_PATH="$HOME/estai-release-key.jks"
-ALIAS="estai"
+KEYSTORE_PATH="$HOME/estai-upload-key-new.jks"
+ALIAS="upload"
 
 echo "=========================================="
 echo "Obtendo Chaves SHA do Keystore"

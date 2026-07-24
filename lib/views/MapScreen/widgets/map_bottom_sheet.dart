@@ -13,6 +13,7 @@ import '../../../viewmodels/route_planner_viewmodel.dart';
 import '../../../viewmodels/weather_monitor_pins_viewmodel.dart';
 import '../../../viewmodels/anchor_alarm_viewmodel.dart';
 import '../../../services/anchor_alarm_notification_service.dart';
+import '../../../widgets/start_navigation_flow.dart';
 
 class MapBottomSheet extends StatelessWidget {
   final BuildContext? parentContext;
@@ -89,12 +90,12 @@ class MapBottomSheet extends StatelessWidget {
                                               navigatorContext,
                                               listen: false,
                                             );
-                                        navigationStatusViewModel
-                                            .startNavigation(
-                                              plannedRoute:
-                                                  routePlannerViewModel
-                                                      .routePoints,
-                                            );
+                                        StartNavigationFlow.start(
+                                          navigatorContext,
+                                          plannedRoute:
+                                              routePlannerViewModel
+                                                  .routePoints,
+                                        );
                                       }
                                     }
                                   });

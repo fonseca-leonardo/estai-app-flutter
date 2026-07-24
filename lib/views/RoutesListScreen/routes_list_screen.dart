@@ -10,6 +10,7 @@ import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
+import '../../widgets/start_navigation_flow.dart';
 import '../MapScreen/map_screen.dart';
 
 class RoutesListScreen extends StatefulWidget {
@@ -284,7 +285,7 @@ class _RouteCard extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {
+              onPressed: () async {
                 if (route.points.isEmpty) {
                   return;
                 }
@@ -298,9 +299,12 @@ class _RouteCard extends StatelessWidget {
                 }
                 routePlannerViewModel.confirmRoute();
                 mapViewModel.setIsPlanningRoute(false);
-                navigationStatusViewModel.startNavigation(
+
+                final started = await StartNavigationFlow.start(
+                  context,
                   plannedRoute: routePlannerViewModel.routePoints,
                 );
+                if (!started || !context.mounted) return;
 
                 final routeCenter = _calculateRouteCenter(route.points);
                 Navigator.of(context).push(

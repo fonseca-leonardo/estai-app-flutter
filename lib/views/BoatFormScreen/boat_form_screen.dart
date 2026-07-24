@@ -4,6 +4,7 @@ import '../../l10n/app_localizations.dart';
 import '../../models/boat.dart';
 import '../../models/boat_type.dart';
 import '../../viewmodels/boat_viewmodel.dart';
+import '../../viewmodels/estai_session_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import 'widgets/boat_type_dropdown.dart';
 import 'widgets/marina_access_toggle.dart';
@@ -209,7 +210,8 @@ class _BoatFormScreenState extends State<BoatFormScreen>
                     return null;
                   },
                 ),
-                if (widget.isEditing) ...[
+                if (widget.isEditing &&
+                    context.watch<EstaiSessionViewModel>().hasMarina) ...[
                   const SizedBox(height: 16),
                   Consumer<BoatViewModel>(
                     builder: (context, viewModel, child) {

@@ -28,7 +28,7 @@ class EstaiApiClient {
   static bool enableRequestLogs = true;
 
   static const String baseUrl = kDebugMode
-      ? 'http://192.168.68.109:3333/estai-app'
+      ? 'http://192.168.68.105:3333/estai-app'
       : 'https://api.estai.com.br/estai-app'; // 'https://api.estai.com.br/estai-api';
 
   /// Instância compartilhada usada pelos services da aplicação.

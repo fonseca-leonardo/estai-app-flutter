@@ -1,16 +1,22 @@
 import 'package:flutter/foundation.dart';
 import '../models/boat.dart';
 import '../models/boat_type.dart';
+import '../services/boat_cache_service.dart';
 import '../services/boat_service.dart';
 import '../services/marina_storage_service.dart';
 
 class BoatViewModel extends ChangeNotifier {
-  BoatViewModel({BoatService? boatService, MarinaStorageService? marinaStorageService})
-    : _boatService = boatService ?? BoatService(),
-      _marinaStorageService = marinaStorageService ?? MarinaStorageService();
+  BoatViewModel({
+    BoatService? boatService,
+    MarinaStorageService? marinaStorageService,
+    BoatCacheService? boatCacheService,
+  }) : _boatService = boatService ?? BoatService(),
+       _marinaStorageService = marinaStorageService ?? MarinaStorageService(),
+       _boatCacheService = boatCacheService ?? BoatCacheService();
 
   final BoatService _boatService;
   final MarinaStorageService _marinaStorageService;
+  final BoatCacheService _boatCacheService;
 
   List<Boat> _boats = [];
   bool _isLoading = false;
@@ -22,19 +28,32 @@ class BoatViewModel extends ChangeNotifier {
   bool get isSaving => _isSaving;
   String? get errorMessage => _errorMessage;
 
+  /// Carrega os barcos com estratégia cache-first: o cache local é exibido
+  /// imediatamente e a rede atualiza (e re-salva o cache) em seguida. Falha de
+  /// rede com cache disponível é silenciosa, para a seleção de barco funcionar
+  /// offline.
   Future<void> loadBoats() async {
     _isLoading = true;
     _errorMessage = null;
     notifyListeners();
+
+    final cached = await _boatCacheService.getBoats();
+    if (cached.isNotEmpty) {
+      _boats = cached;
+      notifyListeners();
+    }
 
     try {
       final result = await _boatService.getBoats();
       _boats = result.items;
       _isLoading = false;
       notifyListeners();
+      await _boatCacheService.saveBoats(_boats);
     } catch (e) {
       _isLoading = false;
-      _errorMessage = e.toString();
+      if (_boats.isEmpty) {
+        _errorMessage = e.toString();
+      }
       notifyListeners();
     }
   }
@@ -61,6 +80,7 @@ class BoatViewModel extends ChangeNotifier {
       _boats.insert(0, boat);
       _isSaving = false;
       notifyListeners();
+      await _boatCacheService.saveBoats(_boats);
       return true;
     } catch (e) {
       _isSaving = false;
@@ -97,6 +117,7 @@ class BoatViewModel extends ChangeNotifier {
       }
       _isSaving = false;
       notifyListeners();
+      await _boatCacheService.saveBoats(_boats);
       return true;
     } catch (e) {
       _isSaving = false;
@@ -124,6 +145,7 @@ class BoatViewModel extends ChangeNotifier {
 
     try {
       await _boatService.giveBoatToMarina(boatId: id, access: access);
+      await _boatCacheService.saveBoats(_boats);
       return true;
     } catch (e) {
       if (index != -1) {
@@ -145,6 +167,7 @@ class BoatViewModel extends ChangeNotifier {
 
     try {
       await _boatService.deleteBoat(id);
+      await _boatCacheService.saveBoats(_boats);
       return true;
     } catch (e) {
       _boats.insert(index, removedBoat);
