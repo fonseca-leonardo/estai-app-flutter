@@ -1040,4 +1040,260 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get startAnyway => 'Iniciar mesmo assim';
+
+  @override
+  String get rampTypeLaunch => 'Descida';
+
+  @override
+  String get rampTypeHaul => 'Subida';
+
+  @override
+  String get rampStatusPending => 'Pendente';
+
+  @override
+  String get rampStatusConfirmed => 'Confirmado';
+
+  @override
+  String get rampStatusInProgress => 'Em andamento';
+
+  @override
+  String get rampStatusCompleted => 'Concluído';
+
+  @override
+  String get rampStatusCancelled => 'Cancelado';
+
+  @override
+  String get rampStatusRejected => 'Recusado';
+
+  @override
+  String get rampStatusNoShow => 'Não compareceu';
+
+  @override
+  String get rampBookingTitle => 'Agendar rampa';
+
+  @override
+  String get rampBookingSubtitle => 'Desça ou suba seu barco na rampa da marina';
+
+  @override
+  String get myRampSchedules => 'Meus agendamentos de rampa';
+
+  @override
+  String get myRampSchedulesSubtitle => 'Acompanhe a aprovação dos seus pedidos';
+
+  @override
+  String get upcomingRampSchedules => 'Próximos na rampa';
+
+  @override
+  String get seeAllRampSchedules => 'Ver todos';
+
+  @override
+  String get noUpcomingRampSchedules => 'Nenhum agendamento de rampa por vir';
+
+  @override
+  String get rampStepRamp => 'Rampa';
+
+  @override
+  String get rampStepBoat => 'Barco';
+
+  @override
+  String get rampStepOperation => 'Operação';
+
+  @override
+  String get rampStepSlot => 'Horário';
+
+  @override
+  String get rampStepReturn => 'Retorno';
+
+  @override
+  String get rampStepReview => 'Revisão';
+
+  @override
+  String get rampSelectRampTitle => 'Qual rampa você vai usar?';
+
+  @override
+  String get rampSelectBoatTitle => 'Qual barco?';
+
+  @override
+  String get rampOperationTitle => 'O que você quer fazer?';
+
+  @override
+  String get rampLaunchTitle => 'Descer o barco';
+
+  @override
+  String get rampLaunchDescription => 'Colocar o barco na água';
+
+  @override
+  String get rampHaulTitle => 'Subir o barco';
+
+  @override
+  String get rampHaulDescription => 'Tirar o barco da água';
+
+  @override
+  String get rampSlotTitle => 'Escolha o dia e o horário';
+
+  @override
+  String rampMinAdvanceHint(String value) {
+    return 'Peça com pelo menos $value de antecedência';
+  }
+
+  @override
+  String get rampNoSlotsForDay => 'Nenhum horário neste dia';
+
+  @override
+  String get rampSlotFull => 'Lotado';
+
+  @override
+  String get rampSlotBlocked => 'Bloqueado';
+
+  @override
+  String get rampSlotUnavailable => 'Indisponível';
+
+  @override
+  String rampSlotsLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vagas',
+      one: '1 vaga',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get rampLoadSlotsError => 'Não foi possível carregar os horários.';
+
+  @override
+  String get rampReturnTitle => 'Vai subir o barco depois?';
+
+  @override
+  String get rampReturnToggle => 'Agendar a subida de volta';
+
+  @override
+  String get rampReturnDescription => 'A subida fica reservada junto com a descida, num pedido só.';
+
+  @override
+  String rampReturnAfter(String time) {
+    return 'Horários a partir das $time';
+  }
+
+  @override
+  String get rampReviewTitle => 'Confira seu pedido';
+
+  @override
+  String get rampReviewRamp => 'Rampa';
+
+  @override
+  String get rampReviewBoat => 'Barco';
+
+  @override
+  String get rampReviewOperation => 'Operação';
+
+  @override
+  String get rampReviewWhen => 'Quando';
+
+  @override
+  String get rampReviewReturn => 'Subida de volta';
+
+  @override
+  String get rampAutoConfirmInfo => 'Esta rampa confirma o pedido na hora.';
+
+  @override
+  String get rampPendingInfo => 'A marina vai analisar o pedido. Acompanhe o status em Meus agendamentos de rampa.';
+
+  @override
+  String get rampNotesHint => 'Observações para a marina (opcional)';
+
+  @override
+  String get rampContinue => 'Continuar';
+
+  @override
+  String get rampSubmit => 'Solicitar agendamento';
+
+  @override
+  String get rampBookingConfirmed => 'Agendamento confirmado';
+
+  @override
+  String get rampBookingRequested => 'Pedido enviado. Aguarde a aprovação da marina.';
+
+  @override
+  String get rampConflictError => 'Esse horário acabou de ser ocupado. Escolha outro.';
+
+  @override
+  String get rampCreateError => 'Não foi possível enviar o pedido. Tente novamente.';
+
+  @override
+  String get rampNoMarinaTitle => 'Você ainda não está vinculado a uma marina';
+
+  @override
+  String get rampNoMarinaDescription => 'Peça para sua marina liberar seu acesso no Estai.';
+
+  @override
+  String get rampNoRampsTitle => 'Nenhuma rampa disponível';
+
+  @override
+  String get rampNoRampsDescription => 'Sua marina ainda não liberou o agendamento de rampa pelo app.';
+
+  @override
+  String get rampLoadRampsError => 'Não foi possível carregar as rampas.';
+
+  @override
+  String get rampTabUpcoming => 'Próximos';
+
+  @override
+  String get rampTabHistory => 'Histórico';
+
+  @override
+  String get noRampSchedulesHistory => 'Nenhum agendamento no histórico';
+
+  @override
+  String get loadRampSchedulesError => 'Não foi possível carregar seus agendamentos.';
+
+  @override
+  String get rampReturnBadge => 'Retorno';
+
+  @override
+  String rampRejectionReason(String reason) {
+    return 'Motivo: $reason';
+  }
+
+  @override
+  String get cancelRampSchedule => 'Cancelar agendamento';
+
+  @override
+  String get cancelRampScheduleConfirm => 'Cancelar este agendamento?';
+
+  @override
+  String cancelRampScheduleAlsoReturn(String date) {
+    return 'Cancelar também a subida de volta ($date)';
+  }
+
+  @override
+  String get keepRampSchedule => 'Manter';
+
+  @override
+  String get cancelRampScheduleError => 'Não foi possível cancelar o agendamento. Tente novamente.';
+
+  @override
+  String get rampNewSchedule => 'Novo agendamento';
+
+  @override
+  String get marinaQuickActionsTitle => 'Ações rápidas';
+
+  @override
+  String get marinaActionServiceOrder => 'Pedir serviço';
+
+  @override
+  String get marinaTrackingTitle => 'Acompanhamento';
+
+  @override
+  String get marinaTrackingRamp => 'Rampa';
+
+  @override
+  String get marinaTrackingServices => 'Serviços';
+
+  @override
+  String get marinaSeeAllRampSchedules => 'Ver todos os agendamentos';
+
+  @override
+  String get marinaSeeAllServiceOrders => 'Ver todas as ordens';
 }

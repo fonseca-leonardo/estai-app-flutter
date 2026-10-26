@@ -34,6 +34,7 @@ import 'viewmodels/onboarding_viewmodel.dart';
 import 'viewmodels/boat_viewmodel.dart';
 import 'viewmodels/marina_access_viewmodel.dart';
 import 'viewmodels/estai_session_viewmodel.dart';
+import 'viewmodels/ramp_schedule_viewmodel.dart';
 import 'viewmodels/service_order_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
 import 'viewmodels/signalk_configuration_viewmodel.dart';
@@ -164,7 +165,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void _handleDeepLink(Uri uri) {
     if (uri.scheme != 'estai' || uri.host != 'marina') return;
 
-    final marinaId = uri.pathSegments.isNotEmpty ? uri.pathSegments.first : null;
+    final marinaId = uri.pathSegments.isNotEmpty
+        ? uri.pathSegments.first
+        : null;
     if (marinaId == null || marinaId.isEmpty) return;
 
     if (authViewModel.isAuthenticated) {
@@ -184,9 +187,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   void _openMarinaAccessScreen(String marinaId) {
     navigatorKey.currentState?.push(
-      MaterialPageRoute(
-        builder: (_) => MarinaAccessScreen(marinaId: marinaId),
-      ),
+      MaterialPageRoute(builder: (_) => MarinaAccessScreen(marinaId: marinaId)),
     );
   }
 
@@ -221,6 +222,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => EstaiSessionViewModel()),
         ChangeNotifierProvider(create: (_) => MarinaAccessViewModel()),
         ChangeNotifierProvider(create: (_) => ServiceOrderViewModel()),
+        ChangeNotifierProvider(create: (_) => RampScheduleViewModel()),
         ChangeNotifierProvider.value(value: navigationStatusViewModel),
         ChangeNotifierProvider.value(value: watchConnectivityViewModel),
         ChangeNotifierProvider.value(value: signalKConfigurationViewModel),

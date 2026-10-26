@@ -1,42 +1,51 @@
 import 'package:flutter/material.dart';
 
-class MarinaActionCard extends StatelessWidget {
+/// Card de opção do wizard: ícone, título, descrição e borda de seleção.
+class SelectableCard extends StatelessWidget {
   final IconData icon;
   final String title;
-  final String subtitle;
+  final String? subtitle;
+  final bool selected;
   final VoidCallback onTap;
 
-  const MarinaActionCard({
+  const SelectableCard({
     super.key,
     required this.icon,
     required this.title,
-    required this.subtitle,
+    this.subtitle,
+    required this.selected,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
+        color: Colors.white.withValues(alpha: selected ? 0.1 : 0.05),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.12)),
+        border: Border.all(
+          color: selected
+              ? Colors.white.withValues(alpha: 0.8)
+              : Colors.white.withValues(alpha: 0.12),
+          width: selected ? 1.5 : 1,
+        ),
       ),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(18),
           child: Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Icon(icon, color: Colors.white),
+                child: Icon(icon, color: Colors.white, size: 26),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -51,20 +60,24 @@ class MarinaActionCard extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const SizedBox(height: 4),
-                    Text(
-                      subtitle,
-                      style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.6),
-                        fontSize: 13,
+                    if (subtitle != null) ...[
+                      const SizedBox(height: 4),
+                      Text(
+                        subtitle!,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.6),
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
+                    ],
                   ],
                 ),
               ),
               Icon(
-                Icons.chevron_right,
-                color: Colors.white.withValues(alpha: 0.4),
+                selected ? Icons.check_circle : Icons.chevron_right,
+                color: selected
+                    ? Colors.white
+                    : Colors.white.withValues(alpha: 0.4),
               ),
             ],
           ),

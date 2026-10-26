@@ -2056,6 +2056,486 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Start anyway'**
   String get startAnyway;
+
+  /// No description provided for @rampTypeLaunch.
+  ///
+  /// In en, this message translates to:
+  /// **'Launch'**
+  String get rampTypeLaunch;
+
+  /// No description provided for @rampTypeHaul.
+  ///
+  /// In en, this message translates to:
+  /// **'Haul'**
+  String get rampTypeHaul;
+
+  /// No description provided for @rampStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get rampStatusPending;
+
+  /// No description provided for @rampStatusConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirmed'**
+  String get rampStatusConfirmed;
+
+  /// No description provided for @rampStatusInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get rampStatusInProgress;
+
+  /// No description provided for @rampStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get rampStatusCompleted;
+
+  /// No description provided for @rampStatusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get rampStatusCancelled;
+
+  /// No description provided for @rampStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get rampStatusRejected;
+
+  /// No description provided for @rampStatusNoShow.
+  ///
+  /// In en, this message translates to:
+  /// **'No-show'**
+  String get rampStatusNoShow;
+
+  /// No description provided for @rampBookingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Book the ramp'**
+  String get rampBookingTitle;
+
+  /// No description provided for @rampBookingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Launch or haul your boat at the marina ramp'**
+  String get rampBookingSubtitle;
+
+  /// No description provided for @myRampSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'My ramp bookings'**
+  String get myRampSchedules;
+
+  /// No description provided for @myRampSchedulesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow the approval of your requests'**
+  String get myRampSchedulesSubtitle;
+
+  /// No description provided for @upcomingRampSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'Next at the ramp'**
+  String get upcomingRampSchedules;
+
+  /// No description provided for @seeAllRampSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeAllRampSchedules;
+
+  /// No description provided for @noUpcomingRampSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'No upcoming ramp bookings'**
+  String get noUpcomingRampSchedules;
+
+  /// No description provided for @rampStepRamp.
+  ///
+  /// In en, this message translates to:
+  /// **'Ramp'**
+  String get rampStepRamp;
+
+  /// No description provided for @rampStepBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat'**
+  String get rampStepBoat;
+
+  /// No description provided for @rampStepOperation.
+  ///
+  /// In en, this message translates to:
+  /// **'Operation'**
+  String get rampStepOperation;
+
+  /// No description provided for @rampStepSlot.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get rampStepSlot;
+
+  /// No description provided for @rampStepReturn.
+  ///
+  /// In en, this message translates to:
+  /// **'Return'**
+  String get rampStepReturn;
+
+  /// No description provided for @rampStepReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get rampStepReview;
+
+  /// No description provided for @rampSelectRampTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Which ramp will you use?'**
+  String get rampSelectRampTitle;
+
+  /// No description provided for @rampSelectBoatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Which boat?'**
+  String get rampSelectBoatTitle;
+
+  /// No description provided for @rampOperationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you want to do?'**
+  String get rampOperationTitle;
+
+  /// No description provided for @rampLaunchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Launch the boat'**
+  String get rampLaunchTitle;
+
+  /// No description provided for @rampLaunchDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Put the boat in the water'**
+  String get rampLaunchDescription;
+
+  /// No description provided for @rampHaulTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Haul the boat'**
+  String get rampHaulTitle;
+
+  /// No description provided for @rampHaulDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the boat out of the water'**
+  String get rampHaulDescription;
+
+  /// No description provided for @rampSlotTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the day and time'**
+  String get rampSlotTitle;
+
+  /// No description provided for @rampMinAdvanceHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Book at least {value} in advance'**
+  String rampMinAdvanceHint(String value);
+
+  /// No description provided for @rampNoSlotsForDay.
+  ///
+  /// In en, this message translates to:
+  /// **'No times on this day'**
+  String get rampNoSlotsForDay;
+
+  /// No description provided for @rampSlotFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Full'**
+  String get rampSlotFull;
+
+  /// No description provided for @rampSlotBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Blocked'**
+  String get rampSlotBlocked;
+
+  /// No description provided for @rampSlotUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get rampSlotUnavailable;
+
+  /// No description provided for @rampSlotsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 spot} other{{count} spots}}'**
+  String rampSlotsLeft(int count);
+
+  /// No description provided for @rampLoadSlotsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load the available times.'**
+  String get rampLoadSlotsError;
+
+  /// No description provided for @rampReturnTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Will you haul the boat afterwards?'**
+  String get rampReturnTitle;
+
+  /// No description provided for @rampReturnToggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Book the return haul'**
+  String get rampReturnToggle;
+
+  /// No description provided for @rampReturnDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The haul is booked together with the launch, in a single request.'**
+  String get rampReturnDescription;
+
+  /// No description provided for @rampReturnAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'Times from {time}'**
+  String rampReturnAfter(String time);
+
+  /// No description provided for @rampReviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review your request'**
+  String get rampReviewTitle;
+
+  /// No description provided for @rampReviewRamp.
+  ///
+  /// In en, this message translates to:
+  /// **'Ramp'**
+  String get rampReviewRamp;
+
+  /// No description provided for @rampReviewBoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat'**
+  String get rampReviewBoat;
+
+  /// No description provided for @rampReviewOperation.
+  ///
+  /// In en, this message translates to:
+  /// **'Operation'**
+  String get rampReviewOperation;
+
+  /// No description provided for @rampReviewWhen.
+  ///
+  /// In en, this message translates to:
+  /// **'When'**
+  String get rampReviewWhen;
+
+  /// No description provided for @rampReviewReturn.
+  ///
+  /// In en, this message translates to:
+  /// **'Return haul'**
+  String get rampReviewReturn;
+
+  /// No description provided for @rampAutoConfirmInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'This ramp confirms your request right away.'**
+  String get rampAutoConfirmInfo;
+
+  /// No description provided for @rampPendingInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'The marina will review your request. Follow its status in My ramp bookings.'**
+  String get rampPendingInfo;
+
+  /// No description provided for @rampNotesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes for the marina (optional)'**
+  String get rampNotesHint;
+
+  /// No description provided for @rampContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get rampContinue;
+
+  /// No description provided for @rampSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Request booking'**
+  String get rampSubmit;
+
+  /// No description provided for @rampBookingConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking confirmed'**
+  String get rampBookingConfirmed;
+
+  /// No description provided for @rampBookingRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Request sent. Wait for the marina\'s approval.'**
+  String get rampBookingRequested;
+
+  /// No description provided for @rampConflictError.
+  ///
+  /// In en, this message translates to:
+  /// **'That time was just taken. Please choose another one.'**
+  String get rampConflictError;
+
+  /// No description provided for @rampCreateError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not send the request. Please try again.'**
+  String get rampCreateError;
+
+  /// No description provided for @rampNoMarinaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You are not linked to a marina yet'**
+  String get rampNoMarinaTitle;
+
+  /// No description provided for @rampNoMarinaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask your marina to grant you access on Estai.'**
+  String get rampNoMarinaDescription;
+
+  /// No description provided for @rampNoRampsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No ramps available'**
+  String get rampNoRampsTitle;
+
+  /// No description provided for @rampNoRampsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Your marina has not enabled ramp booking in the app yet.'**
+  String get rampNoRampsDescription;
+
+  /// No description provided for @rampLoadRampsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load the ramps.'**
+  String get rampLoadRampsError;
+
+  /// No description provided for @rampTabUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get rampTabUpcoming;
+
+  /// No description provided for @rampTabHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get rampTabHistory;
+
+  /// No description provided for @noRampSchedulesHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'No bookings in your history'**
+  String get noRampSchedulesHistory;
+
+  /// No description provided for @loadRampSchedulesError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load your bookings.'**
+  String get loadRampSchedulesError;
+
+  /// No description provided for @rampReturnBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Return'**
+  String get rampReturnBadge;
+
+  /// No description provided for @rampRejectionReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason: {reason}'**
+  String rampRejectionReason(String reason);
+
+  /// No description provided for @cancelRampSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel booking'**
+  String get cancelRampSchedule;
+
+  /// No description provided for @cancelRampScheduleConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel this booking?'**
+  String get cancelRampScheduleConfirm;
+
+  /// No description provided for @cancelRampScheduleAlsoReturn.
+  ///
+  /// In en, this message translates to:
+  /// **'Also cancel the return haul ({date})'**
+  String cancelRampScheduleAlsoReturn(String date);
+
+  /// No description provided for @keepRampSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep'**
+  String get keepRampSchedule;
+
+  /// No description provided for @cancelRampScheduleError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not cancel the booking. Please try again.'**
+  String get cancelRampScheduleError;
+
+  /// No description provided for @rampNewSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'New booking'**
+  String get rampNewSchedule;
+
+  /// No description provided for @marinaQuickActionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick actions'**
+  String get marinaQuickActionsTitle;
+
+  /// No description provided for @marinaActionServiceOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Request service'**
+  String get marinaActionServiceOrder;
+
+  /// No description provided for @marinaTrackingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tracking'**
+  String get marinaTrackingTitle;
+
+  /// No description provided for @marinaTrackingRamp.
+  ///
+  /// In en, this message translates to:
+  /// **'Ramp'**
+  String get marinaTrackingRamp;
+
+  /// No description provided for @marinaTrackingServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Services'**
+  String get marinaTrackingServices;
+
+  /// No description provided for @marinaSeeAllRampSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'See all bookings'**
+  String get marinaSeeAllRampSchedules;
+
+  /// No description provided for @marinaSeeAllServiceOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'See all orders'**
+  String get marinaSeeAllServiceOrders;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -151,8 +151,12 @@
   "feedbackMaxCharacters": "{current}/{max}",
   "@feedbackMaxCharacters": {
     "placeholders": {
-      "current": {"type": "String"},
-      "max": {"type": "String"}
+      "current": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
     }
   },
   "addPoint": "Adicionar ponto?",
@@ -516,7 +520,9 @@
   "rasterChartRemoveMessage": "Tem certeza que deseja remover \"{name}\"?",
   "@rasterChartRemoveMessage": {
     "placeholders": {
-      "name": {"type": "String"}
+      "name": {
+        "type": "String"
+      }
     }
   },
   "remove": "Remover",
@@ -524,13 +530,17 @@
   "rasterChartCount": "{count, plural, =1{carta} other{cartas}}",
   "@rasterChartCount": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "rasterChartProjectionWarning": "Projeção {projection} não totalmente suportada — alinhamento aproximado.",
   "@rasterChartProjectionWarning": {
     "placeholders": {
-      "projection": {"type": "String"}
+      "projection": {
+        "type": "String"
+      }
     }
   },
   "anchorAlarm": "Alarme Âncora",
@@ -606,8 +616,12 @@
   "onboardingStepProgress": "{current} de {total}",
   "@onboardingStepProgress": {
     "placeholders": {
-      "current": {"type": "String"},
-      "total": {"type": "String"}
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
     }
   },
   "myBoats": "Meus Barcos",
@@ -673,7 +687,9 @@
   "associationSuccessMessage": "Você agora está associado à {marinaName}.",
   "@associationSuccessMessage": {
     "placeholders": {
-      "marinaName": {"type": "String"}
+      "marinaName": {
+        "type": "String"
+      }
     }
   },
   "backToApp": "Voltar para o app",
@@ -783,5 +799,195 @@
   "registerBoat": "Cadastrar barco",
   "@registerBoat": {},
   "startAnyway": "Iniciar mesmo assim",
-  "@startAnyway": {}
+  "@startAnyway": {},
+  "rampTypeLaunch": "Descida",
+  "@rampTypeLaunch": {},
+  "rampTypeHaul": "Subida",
+  "@rampTypeHaul": {},
+  "rampStatusPending": "Pendente",
+  "@rampStatusPending": {},
+  "rampStatusConfirmed": "Confirmado",
+  "@rampStatusConfirmed": {},
+  "rampStatusInProgress": "Em andamento",
+  "@rampStatusInProgress": {},
+  "rampStatusCompleted": "Concluído",
+  "@rampStatusCompleted": {},
+  "rampStatusCancelled": "Cancelado",
+  "@rampStatusCancelled": {},
+  "rampStatusRejected": "Recusado",
+  "@rampStatusRejected": {},
+  "rampStatusNoShow": "Não compareceu",
+  "@rampStatusNoShow": {},
+  "rampBookingTitle": "Agendar rampa",
+  "@rampBookingTitle": {},
+  "rampBookingSubtitle": "Desça ou suba seu barco na rampa da marina",
+  "@rampBookingSubtitle": {},
+  "myRampSchedules": "Meus agendamentos de rampa",
+  "@myRampSchedules": {},
+  "myRampSchedulesSubtitle": "Acompanhe a aprovação dos seus pedidos",
+  "@myRampSchedulesSubtitle": {},
+  "upcomingRampSchedules": "Próximos na rampa",
+  "@upcomingRampSchedules": {},
+  "seeAllRampSchedules": "Ver todos",
+  "@seeAllRampSchedules": {},
+  "noUpcomingRampSchedules": "Nenhum agendamento de rampa por vir",
+  "@noUpcomingRampSchedules": {},
+  "rampStepRamp": "Rampa",
+  "@rampStepRamp": {},
+  "rampStepBoat": "Barco",
+  "@rampStepBoat": {},
+  "rampStepOperation": "Operação",
+  "@rampStepOperation": {},
+  "rampStepSlot": "Horário",
+  "@rampStepSlot": {},
+  "rampStepReturn": "Retorno",
+  "@rampStepReturn": {},
+  "rampStepReview": "Revisão",
+  "@rampStepReview": {},
+  "rampSelectRampTitle": "Qual rampa você vai usar?",
+  "@rampSelectRampTitle": {},
+  "rampSelectBoatTitle": "Qual barco?",
+  "@rampSelectBoatTitle": {},
+  "rampOperationTitle": "O que você quer fazer?",
+  "@rampOperationTitle": {},
+  "rampLaunchTitle": "Descer o barco",
+  "@rampLaunchTitle": {},
+  "rampLaunchDescription": "Colocar o barco na água",
+  "@rampLaunchDescription": {},
+  "rampHaulTitle": "Subir o barco",
+  "@rampHaulTitle": {},
+  "rampHaulDescription": "Tirar o barco da água",
+  "@rampHaulDescription": {},
+  "rampSlotTitle": "Escolha o dia e o horário",
+  "@rampSlotTitle": {},
+  "rampMinAdvanceHint": "Peça com pelo menos {value} de antecedência",
+  "@rampMinAdvanceHint": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "rampNoSlotsForDay": "Nenhum horário neste dia",
+  "@rampNoSlotsForDay": {},
+  "rampSlotFull": "Lotado",
+  "@rampSlotFull": {},
+  "rampSlotBlocked": "Bloqueado",
+  "@rampSlotBlocked": {},
+  "rampSlotUnavailable": "Indisponível",
+  "@rampSlotUnavailable": {},
+  "rampSlotsLeft": "{count, plural, =1{1 vaga} other{{count} vagas}}",
+  "@rampSlotsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rampLoadSlotsError": "Não foi possível carregar os horários.",
+  "@rampLoadSlotsError": {},
+  "rampReturnTitle": "Vai subir o barco depois?",
+  "@rampReturnTitle": {},
+  "rampReturnToggle": "Agendar a subida de volta",
+  "@rampReturnToggle": {},
+  "rampReturnDescription": "A subida fica reservada junto com a descida, num pedido só.",
+  "@rampReturnDescription": {},
+  "rampReturnAfter": "Horários a partir das {time}",
+  "@rampReturnAfter": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "rampReviewTitle": "Confira seu pedido",
+  "@rampReviewTitle": {},
+  "rampReviewRamp": "Rampa",
+  "@rampReviewRamp": {},
+  "rampReviewBoat": "Barco",
+  "@rampReviewBoat": {},
+  "rampReviewOperation": "Operação",
+  "@rampReviewOperation": {},
+  "rampReviewWhen": "Quando",
+  "@rampReviewWhen": {},
+  "rampReviewReturn": "Subida de volta",
+  "@rampReviewReturn": {},
+  "rampAutoConfirmInfo": "Esta rampa confirma o pedido na hora.",
+  "@rampAutoConfirmInfo": {},
+  "rampPendingInfo": "A marina vai analisar o pedido. Acompanhe o status em Meus agendamentos de rampa.",
+  "@rampPendingInfo": {},
+  "rampNotesHint": "Observações para a marina (opcional)",
+  "@rampNotesHint": {},
+  "rampContinue": "Continuar",
+  "@rampContinue": {},
+  "rampSubmit": "Solicitar agendamento",
+  "@rampSubmit": {},
+  "rampBookingConfirmed": "Agendamento confirmado",
+  "@rampBookingConfirmed": {},
+  "rampBookingRequested": "Pedido enviado. Aguarde a aprovação da marina.",
+  "@rampBookingRequested": {},
+  "rampConflictError": "Esse horário acabou de ser ocupado. Escolha outro.",
+  "@rampConflictError": {},
+  "rampCreateError": "Não foi possível enviar o pedido. Tente novamente.",
+  "@rampCreateError": {},
+  "rampNoMarinaTitle": "Você ainda não está vinculado a uma marina",
+  "@rampNoMarinaTitle": {},
+  "rampNoMarinaDescription": "Peça para sua marina liberar seu acesso no Estai.",
+  "@rampNoMarinaDescription": {},
+  "rampNoRampsTitle": "Nenhuma rampa disponível",
+  "@rampNoRampsTitle": {},
+  "rampNoRampsDescription": "Sua marina ainda não liberou o agendamento de rampa pelo app.",
+  "@rampNoRampsDescription": {},
+  "rampLoadRampsError": "Não foi possível carregar as rampas.",
+  "@rampLoadRampsError": {},
+  "rampTabUpcoming": "Próximos",
+  "@rampTabUpcoming": {},
+  "rampTabHistory": "Histórico",
+  "@rampTabHistory": {},
+  "noRampSchedulesHistory": "Nenhum agendamento no histórico",
+  "@noRampSchedulesHistory": {},
+  "loadRampSchedulesError": "Não foi possível carregar seus agendamentos.",
+  "@loadRampSchedulesError": {},
+  "rampReturnBadge": "Retorno",
+  "@rampReturnBadge": {},
+  "rampRejectionReason": "Motivo: {reason}",
+  "@rampRejectionReason": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "cancelRampSchedule": "Cancelar agendamento",
+  "@cancelRampSchedule": {},
+  "cancelRampScheduleConfirm": "Cancelar este agendamento?",
+  "@cancelRampScheduleConfirm": {},
+  "cancelRampScheduleAlsoReturn": "Cancelar também a subida de volta ({date})",
+  "@cancelRampScheduleAlsoReturn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "keepRampSchedule": "Manter",
+  "@keepRampSchedule": {},
+  "cancelRampScheduleError": "Não foi possível cancelar o agendamento. Tente novamente.",
+  "@cancelRampScheduleError": {},
+  "rampNewSchedule": "Novo agendamento",
+  "@rampNewSchedule": {},
+  "marinaQuickActionsTitle": "Ações rápidas",
+  "@marinaQuickActionsTitle": {},
+  "marinaActionServiceOrder": "Pedir serviço",
+  "@marinaActionServiceOrder": {},
+  "marinaTrackingTitle": "Acompanhamento",
+  "@marinaTrackingTitle": {},
+  "marinaTrackingRamp": "Rampa",
+  "@marinaTrackingRamp": {},
+  "marinaTrackingServices": "Serviços",
+  "@marinaTrackingServices": {},
+  "marinaSeeAllRampSchedules": "Ver todos os agendamentos",
+  "@marinaSeeAllRampSchedules": {},
+  "marinaSeeAllServiceOrders": "Ver todas as ordens",
+  "@marinaSeeAllServiceOrders": {}
 }
