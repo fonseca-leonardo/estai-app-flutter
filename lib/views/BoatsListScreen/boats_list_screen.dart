@@ -4,6 +4,7 @@ import '../../l10n/app_localizations.dart';
 import '../../viewmodels/boat_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../BoatFormScreen/boat_form_screen.dart';
+import '../BoatJournalScreen/boat_journal_screen.dart';
 import 'widgets/boat_card.dart';
 
 class BoatsListScreen extends StatefulWidget {
@@ -26,16 +27,6 @@ class _BoatsListScreenState extends State<BoatsListScreen>
     });
   }
 
-  Future<void> _deleteBoat(String id) async {
-    final viewModel = context.read<BoatViewModel>();
-    final success = await viewModel.removeBoat(id);
-    if (!success && mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(AppLocalizations.of(context)!.deleteBoatError)),
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -53,7 +44,7 @@ class _BoatsListScreenState extends State<BoatsListScreen>
             return const Center(
               child: CircularProgressIndicator(color: Colors.white),
             );
-          } 
+          }
 
           if (viewModel.errorMessage != null) {
             return Center(
@@ -75,7 +66,7 @@ class _BoatsListScreenState extends State<BoatsListScreen>
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    viewModel.errorMessage?? '',
+                    viewModel.errorMessage ?? '',
                     style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.7),
                       fontSize: 12,
@@ -132,10 +123,9 @@ class _BoatsListScreenState extends State<BoatsListScreen>
                   boat: boat,
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => BoatFormScreen(boat: boat),
+                      builder: (_) => BoatJournalScreen(boat: boat),
                     ),
                   ),
-                  onDelete: () => _deleteBoat(boat.id),
                 );
               },
             ),

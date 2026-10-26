@@ -9,6 +9,9 @@ class Boat {
   final double length;
   final String? marinaId;
 
+  /// Última leitura do horímetro do motor, se o usuário já informou.
+  final double? engineHours;
+
   Boat({
     required this.id,
     required this.name,
@@ -17,6 +20,7 @@ class Boat {
     required this.year,
     required this.length,
     this.marinaId,
+    this.engineHours,
   });
 
   bool get hasMarinaAccess => marinaId != null;
@@ -29,6 +33,7 @@ class Boat {
     double? length,
     String? marinaId,
     bool clearMarinaId = false,
+    double? engineHours,
   }) {
     return Boat(
       id: id,
@@ -38,6 +43,7 @@ class Boat {
       year: year ?? this.year,
       length: length ?? this.length,
       marinaId: clearMarinaId ? null : (marinaId ?? this.marinaId),
+      engineHours: engineHours ?? this.engineHours,
     );
   }
 
@@ -50,6 +56,7 @@ class Boat {
       year: json['year'] as int,
       length: (json['length'] as num).toDouble(),
       marinaId: json['marinaId'] as String?,
+      engineHours: (json['engineHours'] as num?)?.toDouble(),
     );
   }
 
@@ -62,6 +69,7 @@ class Boat {
       'year': year,
       'length': length,
       'marinaId': marinaId,
+      'engineHours': engineHours,
     };
   }
 }

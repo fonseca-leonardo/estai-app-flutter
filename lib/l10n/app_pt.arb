@@ -989,5 +989,335 @@
   "marinaSeeAllRampSchedules": "Ver todos os agendamentos",
   "@marinaSeeAllRampSchedules": {},
   "marinaSeeAllServiceOrders": "Ver todas as ordens",
-  "@marinaSeeAllServiceOrders": {}
+  "@marinaSeeAllServiceOrders": {},
+  "reminderChannelName": "Lembretes",
+  "@reminderChannelName": {},
+  "reminderChannelDescription": "Lembretes de manutenção da embarcação",
+  "@reminderChannelDescription": {},
+  "pushPermissionRationaleTitle": "Ativar lembretes",
+  "@pushPermissionRationaleTitle": {},
+  "pushPermissionRationaleBody": "Para avisar quando uma manutenção estiver chegando, o Estai precisa enviar notificações para este aparelho.",
+  "@pushPermissionRationaleBody": {},
+  "pushPermissionBlockedTitle": "Notificações bloqueadas",
+  "@pushPermissionBlockedTitle": {},
+  "pushPermissionBlockedBody": "As notificações do Estai estão desativadas. Ative nas configurações do aparelho para receber os lembretes.",
+  "@pushPermissionBlockedBody": {},
+  "notificationChannelPush": "Push",
+  "@notificationChannelPush": {},
+  "notificationChannelEmail": "E-mail",
+  "@notificationChannelEmail": {},
+  "maintenanceStatusScheduled": "Agendada",
+  "@maintenanceStatusScheduled": {},
+  "maintenanceStatusOverdue": "Atrasada",
+  "@maintenanceStatusOverdue": {},
+  "maintenanceStatusDone": "Concluída",
+  "@maintenanceStatusDone": {},
+  "maintenanceCategoryEngine": "Motor",
+  "@maintenanceCategoryEngine": {},
+  "maintenanceCategoryHull": "Casco",
+  "@maintenanceCategoryHull": {},
+  "maintenanceCategoryElectrical": "Elétrica",
+  "@maintenanceCategoryElectrical": {},
+  "maintenanceCategoryPlumbing": "Hidráulica",
+  "@maintenanceCategoryPlumbing": {},
+  "maintenanceCategorySafety": "Segurança",
+  "@maintenanceCategorySafety": {},
+  "maintenanceCategoryRigging": "Mastreação",
+  "@maintenanceCategoryRigging": {},
+  "maintenanceCategoryElectronics": "Eletrônicos",
+  "@maintenanceCategoryElectronics": {},
+  "maintenanceCategoryOther": "Outros",
+  "@maintenanceCategoryOther": {},
+  "journalTitle": "Diário da embarcação",
+  "@journalTitle": {},
+  "journalEngineHours": "Horímetro",
+  "@journalEngineHours": {},
+  "engineHoursValue": "{hours} h",
+  "@engineHoursValue": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "journalEngineHoursUnknown": "Não informado",
+  "@journalEngineHoursUnknown": {},
+  "journalEngineHoursReadAt": "Atualizado em {date}",
+  "@journalEngineHoursReadAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "journalUpdateEngineHours": "Atualizar",
+  "@journalUpdateEngineHours": {},
+  "journalQuickActionsTitle": "Ações rápidas",
+  "@journalQuickActionsTitle": {},
+  "journalActionMaintenances": "Manutenções",
+  "@journalActionMaintenances": {},
+  "journalUpcomingMaintenancesTitle": "Próximas manutenções",
+  "@journalUpcomingMaintenancesTitle": {},
+  "journalSeeAllMaintenances": "Ver todas as manutenções",
+  "@journalSeeAllMaintenances": {},
+  "journalOverdueAlert": "{count, plural, =1{1 manutenção atrasada} other{{count} manutenções atrasadas}}",
+  "@journalOverdueAlert": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalLoadError": "Não foi possível carregar o diário da embarcação.",
+  "@journalLoadError": {},
+  "engineHoursSheetTitle": "Atualizar horímetro",
+  "@engineHoursSheetTitle": {},
+  "engineHoursSheetHint": "Informe a leitura atual do horímetro do motor.",
+  "@engineHoursSheetHint": {},
+  "engineHoursFieldLabel": "Horas do motor",
+  "@engineHoursFieldLabel": {},
+  "invalidNumber": "Informe um número válido.",
+  "@invalidNumber": {},
+  "engineHoursLowerThanCurrent": "A leitura não pode ser menor que a atual ({hours} h).",
+  "@engineHoursLowerThanCurrent": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "engineHoursSaved": "Horímetro atualizado.",
+  "@engineHoursSaved": {},
+  "engineHoursSaveError": "Não foi possível salvar o horímetro.",
+  "@engineHoursSaveError": {},
+  "maintenancesTitle": "Manutenções",
+  "@maintenancesTitle": {},
+  "maintenanceTabUpcoming": "Próximas",
+  "@maintenanceTabUpcoming": {},
+  "maintenanceTabHistory": "Histórico",
+  "@maintenanceTabHistory": {},
+  "maintenanceNew": "Nova manutenção",
+  "@maintenanceNew": {},
+  "maintenanceEditTitle": "Editar manutenção",
+  "@maintenanceEditTitle": {},
+  "noUpcomingMaintenances": "Nenhuma manutenção agendada.",
+  "@noUpcomingMaintenances": {},
+  "noMaintenancesHistory": "Nenhuma manutenção concluída ainda.",
+  "@noMaintenancesHistory": {},
+  "loadMaintenancesError": "Não foi possível carregar as manutenções.",
+  "@loadMaintenancesError": {},
+  "maintenanceScheduleFirst": "Agendar manutenção",
+  "@maintenanceScheduleFirst": {},
+  "maintenanceDueToday": "Vence hoje",
+  "@maintenanceDueToday": {},
+  "maintenanceDueInDays": "{count, plural, =1{Vence amanhã} other{Vence em {count} dias}}",
+  "@maintenanceDueInDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maintenanceOverdueDays": "{count, plural, =1{Atrasada há 1 dia} other{Atrasada há {count} dias}}",
+  "@maintenanceOverdueDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maintenanceDueInHours": "Faltam {hours} h",
+  "@maintenanceDueInHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceOverdueHours": "Passou {hours} h",
+  "@maintenanceOverdueHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceDueAtHours": "Aos {hours} h",
+  "@maintenanceDueAtHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceCompletedOn": "Concluída em {date}",
+  "@maintenanceCompletedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceRecurringBadge": "Recorrente",
+  "@maintenanceRecurringBadge": {},
+  "maintenanceComplete": "Concluir",
+  "@maintenanceComplete": {},
+  "maintenanceCompleted": "Manutenção concluída.",
+  "@maintenanceCompleted": {},
+  "completeMaintenanceError": "Não foi possível concluir a manutenção.",
+  "@completeMaintenanceError": {},
+  "completeMaintenanceTitle": "Concluir manutenção",
+  "@completeMaintenanceTitle": {},
+  "completeMaintenanceDate": "Data da conclusão",
+  "@completeMaintenanceDate": {},
+  "completeMaintenanceEngineHours": "Horímetro na conclusão (opcional)",
+  "@completeMaintenanceEngineHours": {},
+  "completeMaintenanceCost": "Custo (opcional)",
+  "@completeMaintenanceCost": {},
+  "completeMaintenanceRecurringHint": "Como é recorrente, a próxima ocorrência será agendada automaticamente.",
+  "@completeMaintenanceRecurringHint": {},
+  "maintenanceTitleLabel": "Título",
+  "@maintenanceTitleLabel": {},
+  "maintenanceTitleHint": "Ex.: troca de óleo do motor",
+  "@maintenanceTitleHint": {},
+  "maintenanceTitleRequired": "Informe o título.",
+  "@maintenanceTitleRequired": {},
+  "maintenanceCategoryLabel": "Categoria",
+  "@maintenanceCategoryLabel": {},
+  "maintenanceDescriptionLabel": "Descrição (opcional)",
+  "@maintenanceDescriptionLabel": {},
+  "maintenanceDueSection": "Vencimento",
+  "@maintenanceDueSection": {},
+  "maintenanceDueHint": "Informe uma data, um horímetro ou os dois. Vale o que chegar primeiro.",
+  "@maintenanceDueHint": {},
+  "maintenanceDueDateLabel": "Data",
+  "@maintenanceDueDateLabel": {},
+  "maintenanceDueDateNone": "Sem data",
+  "@maintenanceDueDateNone": {},
+  "maintenanceDueEngineHoursLabel": "Horímetro (h)",
+  "@maintenanceDueEngineHoursLabel": {},
+  "maintenanceMissingDue": "Informe a data ou o horímetro do vencimento.",
+  "@maintenanceMissingDue": {},
+  "maintenanceRecurrenceTitle": "Repetir",
+  "@maintenanceRecurrenceTitle": {},
+  "maintenanceRecurrenceSubtitle": "Ao concluir, a próxima é agendada automaticamente.",
+  "@maintenanceRecurrenceSubtitle": {},
+  "maintenanceRecurrenceMonthsLabel": "A cada (meses)",
+  "@maintenanceRecurrenceMonthsLabel": {},
+  "maintenanceRecurrenceHoursLabel": "A cada (horas)",
+  "@maintenanceRecurrenceHoursLabel": {},
+  "maintenanceRecurrenceRequired": "Informe meses ou horas para repetir.",
+  "@maintenanceRecurrenceRequired": {},
+  "maintenanceProviderLabel": "Oficina ou responsável (opcional)",
+  "@maintenanceProviderLabel": {},
+  "maintenanceSave": "Salvar manutenção",
+  "@maintenanceSave": {},
+  "maintenanceSaved": "Manutenção salva.",
+  "@maintenanceSaved": {},
+  "saveMaintenanceError": "Não foi possível salvar a manutenção.",
+  "@saveMaintenanceError": {},
+  "maintenanceInvalidError": "Confira os dados da manutenção.",
+  "@maintenanceInvalidError": {},
+  "deleteMaintenance": "Excluir manutenção",
+  "@deleteMaintenance": {},
+  "deleteMaintenanceConfirm": "Esta manutenção e seus lembretes serão removidos.",
+  "@deleteMaintenanceConfirm": {},
+  "deleteMaintenanceError": "Não foi possível excluir a manutenção.",
+  "@deleteMaintenanceError": {},
+  "reminderTitle": "Lembrete",
+  "@reminderTitle": {},
+  "reminderSubtitle": "Enviado pela Estai antes do vencimento.",
+  "@reminderSubtitle": {},
+  "reminderDaysBeforeLabel": "Avisar antes",
+  "@reminderDaysBeforeLabel": {},
+  "reminderDaysOption": "{count, plural, =0{No dia} =1{1 dia} other{{count} dias}}",
+  "@reminderDaysOption": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderHoursBeforeLabel": "Avisar antes (horímetro)",
+  "@reminderHoursBeforeLabel": {},
+  "reminderChannelsLabel": "Enviar por",
+  "@reminderChannelsLabel": {},
+  "notificationSettings": "Notificações",
+  "@notificationSettings": {},
+  "notificationPrefsDescription": "Os lembretes de manutenção são enviados pela Estai pelos canais que você ativar.",
+  "@notificationPrefsDescription": {},
+  "notificationPrefsPush": "Notificações push",
+  "@notificationPrefsPush": {},
+  "notificationPrefsPushSubtitle": "No celular, mesmo com o app fechado.",
+  "@notificationPrefsPushSubtitle": {},
+  "notificationPrefsEmail": "E-mail",
+  "@notificationPrefsEmail": {},
+  "notificationPrefsEmailSubtitle": "Enviado para {email}",
+  "@notificationPrefsEmailSubtitle": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPrefsEmailSubtitleNoEmail": "Enviado para o e-mail da sua conta.",
+  "@notificationPrefsEmailSubtitleNoEmail": {},
+  "notificationPrefsSystemBlocked": "As notificações estão desativadas neste aparelho. Permita para receber os lembretes por push.",
+  "@notificationPrefsSystemBlocked": {},
+  "notificationPrefsAllow": "Permitir notificações",
+  "@notificationPrefsAllow": {},
+  "notificationPrefsSendTest": "Enviar notificação de teste",
+  "@notificationPrefsSendTest": {},
+  "notificationPrefsTestSent": "Notificação de teste enviada.",
+  "@notificationPrefsTestSent": {},
+  "notificationPrefsTestError": "Não foi possível enviar a notificação de teste.",
+  "@notificationPrefsTestError": {},
+  "notificationPrefsLoadError": "Não foi possível carregar suas preferências.",
+  "@notificationPrefsLoadError": {},
+  "notificationPrefsSaveError": "Não foi possível salvar suas preferências.",
+  "@notificationPrefsSaveError": {},
+  "maintenanceAlreadyDone": "Já realizada",
+  "@maintenanceAlreadyDone": {},
+  "maintenanceAlreadyDoneSubtitle": "Registre uma manutenção que já foi feita.",
+  "@maintenanceAlreadyDoneSubtitle": {},
+  "maintenanceCompletionSection": "Realização",
+  "@maintenanceCompletionSection": {},
+  "maintenanceRecurrenceSubtitleCompleted": "A próxima é agendada a partir da data de realização.",
+  "@maintenanceRecurrenceSubtitleCompleted": {},
+  "maintenanceDetailsTitle": "Manutenção concluída",
+  "@maintenanceDetailsTitle": {},
+  "maintenanceDetailsInfoSection": "Detalhes",
+  "@maintenanceDetailsInfoSection": {},
+  "maintenanceDetailsEngineHours": "Horímetro na conclusão",
+  "@maintenanceDetailsEngineHours": {},
+  "maintenanceDetailsCost": "Custo",
+  "@maintenanceDetailsCost": {},
+  "maintenanceDetailsNotes": "Observações",
+  "@maintenanceDetailsNotes": {},
+  "maintenanceDetailsProvider": "Oficina ou responsável",
+  "@maintenanceDetailsProvider": {},
+  "maintenanceDetailsDescription": "Descrição",
+  "@maintenanceDetailsDescription": {},
+  "maintenanceDetailsOriginalDue": "Vencimento previsto",
+  "@maintenanceDetailsOriginalDue": {},
+  "maintenanceDetailsRecurrence": "Repetição",
+  "@maintenanceDetailsRecurrence": {},
+  "maintenanceDetailsNotInformed": "Não informado",
+  "@maintenanceDetailsNotInformed": {},
+  "maintenanceRecurrenceEveryMonths": "{count, plural, =1{A cada mês} other{A cada {count} meses}}",
+  "@maintenanceRecurrenceEveryMonths": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maintenanceRecurrenceEveryHours": "A cada {hours} h",
+  "@maintenanceRecurrenceEveryHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  }
 }

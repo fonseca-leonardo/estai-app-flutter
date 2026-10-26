@@ -25,10 +25,8 @@ class BoatTypeDropdown extends StatelessWidget {
       style: const TextStyle(color: Colors.white),
       items: BoatType.values
           .map(
-            (type) => DropdownMenuItem(
-              value: type,
-              child: Text(type.label(l10n)),
-            ),
+            (type) =>
+                DropdownMenuItem(value: type, child: Text(type.label(l10n))),
           )
           .toList(),
       onChanged: (type) {

@@ -2,62 +2,13 @@ import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/boat.dart';
 
+/// Item da lista de embarcações; tocar abre o diário, onde ficam editar e
+/// excluir.
 class BoatCard extends StatelessWidget {
   final Boat boat;
-  final VoidCallback onDelete;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
 
-  const BoatCard({
-    super.key,
-    required this.boat,
-    required this.onDelete,
-    this.onTap,
-  });
-
-  void _confirmDelete(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    showDialog(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        backgroundColor: const Color(0xFF0A0A0A),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-          side: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
-        ),
-        title: Text(
-          l10n.deleteBoat,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        content: Text(
-          l10n.confirmDeleteBoat,
-          style: TextStyle(color: Colors.white.withValues(alpha: 0.7)),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(dialogContext).pop(),
-            child: Text(
-              l10n.cancel,
-              style: TextStyle(color: Colors.white.withValues(alpha: 0.7)),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(dialogContext).pop();
-              onDelete();
-            },
-            child: Text(
-              l10n.deleteBoat,
-              style: const TextStyle(color: Colors.redAccent),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  const BoatCard({super.key, required this.boat, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +17,9 @@ class BoatCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.1),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.2),
-          width: 1,
-        ),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.12)),
       ),
       child: InkWell(
         onTap: onTap,
@@ -79,7 +27,6 @@ class BoatCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: const EdgeInsets.all(10),
@@ -114,19 +61,16 @@ class BoatCard extends StatelessWidget {
                     Text(
                       '${boat.type.label(l10n)} · ${boat.length.toStringAsFixed(1)}',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.7),
-                        fontSize: 14,
+                        color: Colors.white.withValues(alpha: 0.5),
+                        fontSize: 13,
                       ),
                     ),
                   ],
                 ),
               ),
-              IconButton(
-                onPressed: () => _confirmDelete(context),
-                icon: Icon(
-                  Icons.delete_outline,
-                  color: Colors.white.withValues(alpha: 0.7),
-                ),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.white.withValues(alpha: 0.4),
               ),
             ],
           ),

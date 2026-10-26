@@ -1296,4 +1296,432 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get marinaSeeAllServiceOrders => 'Ver todas as ordens';
+
+  @override
+  String get reminderChannelName => 'Lembretes';
+
+  @override
+  String get reminderChannelDescription => 'Lembretes de manutenção da embarcação';
+
+  @override
+  String get pushPermissionRationaleTitle => 'Ativar lembretes';
+
+  @override
+  String get pushPermissionRationaleBody => 'Para avisar quando uma manutenção estiver chegando, o Estai precisa enviar notificações para este aparelho.';
+
+  @override
+  String get pushPermissionBlockedTitle => 'Notificações bloqueadas';
+
+  @override
+  String get pushPermissionBlockedBody => 'As notificações do Estai estão desativadas. Ative nas configurações do aparelho para receber os lembretes.';
+
+  @override
+  String get notificationChannelPush => 'Push';
+
+  @override
+  String get notificationChannelEmail => 'E-mail';
+
+  @override
+  String get maintenanceStatusScheduled => 'Agendada';
+
+  @override
+  String get maintenanceStatusOverdue => 'Atrasada';
+
+  @override
+  String get maintenanceStatusDone => 'Concluída';
+
+  @override
+  String get maintenanceCategoryEngine => 'Motor';
+
+  @override
+  String get maintenanceCategoryHull => 'Casco';
+
+  @override
+  String get maintenanceCategoryElectrical => 'Elétrica';
+
+  @override
+  String get maintenanceCategoryPlumbing => 'Hidráulica';
+
+  @override
+  String get maintenanceCategorySafety => 'Segurança';
+
+  @override
+  String get maintenanceCategoryRigging => 'Mastreação';
+
+  @override
+  String get maintenanceCategoryElectronics => 'Eletrônicos';
+
+  @override
+  String get maintenanceCategoryOther => 'Outros';
+
+  @override
+  String get journalTitle => 'Diário da embarcação';
+
+  @override
+  String get journalEngineHours => 'Horímetro';
+
+  @override
+  String engineHoursValue(String hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get journalEngineHoursUnknown => 'Não informado';
+
+  @override
+  String journalEngineHoursReadAt(String date) {
+    return 'Atualizado em $date';
+  }
+
+  @override
+  String get journalUpdateEngineHours => 'Atualizar';
+
+  @override
+  String get journalQuickActionsTitle => 'Ações rápidas';
+
+  @override
+  String get journalActionMaintenances => 'Manutenções';
+
+  @override
+  String get journalUpcomingMaintenancesTitle => 'Próximas manutenções';
+
+  @override
+  String get journalSeeAllMaintenances => 'Ver todas as manutenções';
+
+  @override
+  String journalOverdueAlert(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count manutenções atrasadas',
+      one: '1 manutenção atrasada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get journalLoadError => 'Não foi possível carregar o diário da embarcação.';
+
+  @override
+  String get engineHoursSheetTitle => 'Atualizar horímetro';
+
+  @override
+  String get engineHoursSheetHint => 'Informe a leitura atual do horímetro do motor.';
+
+  @override
+  String get engineHoursFieldLabel => 'Horas do motor';
+
+  @override
+  String get invalidNumber => 'Informe um número válido.';
+
+  @override
+  String engineHoursLowerThanCurrent(String hours) {
+    return 'A leitura não pode ser menor que a atual ($hours h).';
+  }
+
+  @override
+  String get engineHoursSaved => 'Horímetro atualizado.';
+
+  @override
+  String get engineHoursSaveError => 'Não foi possível salvar o horímetro.';
+
+  @override
+  String get maintenancesTitle => 'Manutenções';
+
+  @override
+  String get maintenanceTabUpcoming => 'Próximas';
+
+  @override
+  String get maintenanceTabHistory => 'Histórico';
+
+  @override
+  String get maintenanceNew => 'Nova manutenção';
+
+  @override
+  String get maintenanceEditTitle => 'Editar manutenção';
+
+  @override
+  String get noUpcomingMaintenances => 'Nenhuma manutenção agendada.';
+
+  @override
+  String get noMaintenancesHistory => 'Nenhuma manutenção concluída ainda.';
+
+  @override
+  String get loadMaintenancesError => 'Não foi possível carregar as manutenções.';
+
+  @override
+  String get maintenanceScheduleFirst => 'Agendar manutenção';
+
+  @override
+  String get maintenanceDueToday => 'Vence hoje';
+
+  @override
+  String maintenanceDueInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Vence em $count dias',
+      one: 'Vence amanhã',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String maintenanceOverdueDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Atrasada há $count dias',
+      one: 'Atrasada há 1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String maintenanceDueInHours(String hours) {
+    return 'Faltam $hours h';
+  }
+
+  @override
+  String maintenanceOverdueHours(String hours) {
+    return 'Passou $hours h';
+  }
+
+  @override
+  String maintenanceDueAtHours(String hours) {
+    return 'Aos $hours h';
+  }
+
+  @override
+  String maintenanceCompletedOn(String date) {
+    return 'Concluída em $date';
+  }
+
+  @override
+  String get maintenanceRecurringBadge => 'Recorrente';
+
+  @override
+  String get maintenanceComplete => 'Concluir';
+
+  @override
+  String get maintenanceCompleted => 'Manutenção concluída.';
+
+  @override
+  String get completeMaintenanceError => 'Não foi possível concluir a manutenção.';
+
+  @override
+  String get completeMaintenanceTitle => 'Concluir manutenção';
+
+  @override
+  String get completeMaintenanceDate => 'Data da conclusão';
+
+  @override
+  String get completeMaintenanceEngineHours => 'Horímetro na conclusão (opcional)';
+
+  @override
+  String get completeMaintenanceCost => 'Custo (opcional)';
+
+  @override
+  String get completeMaintenanceRecurringHint => 'Como é recorrente, a próxima ocorrência será agendada automaticamente.';
+
+  @override
+  String get maintenanceTitleLabel => 'Título';
+
+  @override
+  String get maintenanceTitleHint => 'Ex.: troca de óleo do motor';
+
+  @override
+  String get maintenanceTitleRequired => 'Informe o título.';
+
+  @override
+  String get maintenanceCategoryLabel => 'Categoria';
+
+  @override
+  String get maintenanceDescriptionLabel => 'Descrição (opcional)';
+
+  @override
+  String get maintenanceDueSection => 'Vencimento';
+
+  @override
+  String get maintenanceDueHint => 'Informe uma data, um horímetro ou os dois. Vale o que chegar primeiro.';
+
+  @override
+  String get maintenanceDueDateLabel => 'Data';
+
+  @override
+  String get maintenanceDueDateNone => 'Sem data';
+
+  @override
+  String get maintenanceDueEngineHoursLabel => 'Horímetro (h)';
+
+  @override
+  String get maintenanceMissingDue => 'Informe a data ou o horímetro do vencimento.';
+
+  @override
+  String get maintenanceRecurrenceTitle => 'Repetir';
+
+  @override
+  String get maintenanceRecurrenceSubtitle => 'Ao concluir, a próxima é agendada automaticamente.';
+
+  @override
+  String get maintenanceRecurrenceMonthsLabel => 'A cada (meses)';
+
+  @override
+  String get maintenanceRecurrenceHoursLabel => 'A cada (horas)';
+
+  @override
+  String get maintenanceRecurrenceRequired => 'Informe meses ou horas para repetir.';
+
+  @override
+  String get maintenanceProviderLabel => 'Oficina ou responsável (opcional)';
+
+  @override
+  String get maintenanceSave => 'Salvar manutenção';
+
+  @override
+  String get maintenanceSaved => 'Manutenção salva.';
+
+  @override
+  String get saveMaintenanceError => 'Não foi possível salvar a manutenção.';
+
+  @override
+  String get maintenanceInvalidError => 'Confira os dados da manutenção.';
+
+  @override
+  String get deleteMaintenance => 'Excluir manutenção';
+
+  @override
+  String get deleteMaintenanceConfirm => 'Esta manutenção e seus lembretes serão removidos.';
+
+  @override
+  String get deleteMaintenanceError => 'Não foi possível excluir a manutenção.';
+
+  @override
+  String get reminderTitle => 'Lembrete';
+
+  @override
+  String get reminderSubtitle => 'Enviado pela Estai antes do vencimento.';
+
+  @override
+  String get reminderDaysBeforeLabel => 'Avisar antes';
+
+  @override
+  String reminderDaysOption(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dias',
+      one: '1 dia',
+      zero: 'No dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderHoursBeforeLabel => 'Avisar antes (horímetro)';
+
+  @override
+  String get reminderChannelsLabel => 'Enviar por';
+
+  @override
+  String get notificationSettings => 'Notificações';
+
+  @override
+  String get notificationPrefsDescription => 'Os lembretes de manutenção são enviados pela Estai pelos canais que você ativar.';
+
+  @override
+  String get notificationPrefsPush => 'Notificações push';
+
+  @override
+  String get notificationPrefsPushSubtitle => 'No celular, mesmo com o app fechado.';
+
+  @override
+  String get notificationPrefsEmail => 'E-mail';
+
+  @override
+  String notificationPrefsEmailSubtitle(String email) {
+    return 'Enviado para $email';
+  }
+
+  @override
+  String get notificationPrefsEmailSubtitleNoEmail => 'Enviado para o e-mail da sua conta.';
+
+  @override
+  String get notificationPrefsSystemBlocked => 'As notificações estão desativadas neste aparelho. Permita para receber os lembretes por push.';
+
+  @override
+  String get notificationPrefsAllow => 'Permitir notificações';
+
+  @override
+  String get notificationPrefsSendTest => 'Enviar notificação de teste';
+
+  @override
+  String get notificationPrefsTestSent => 'Notificação de teste enviada.';
+
+  @override
+  String get notificationPrefsTestError => 'Não foi possível enviar a notificação de teste.';
+
+  @override
+  String get notificationPrefsLoadError => 'Não foi possível carregar suas preferências.';
+
+  @override
+  String get notificationPrefsSaveError => 'Não foi possível salvar suas preferências.';
+
+  @override
+  String get maintenanceAlreadyDone => 'Já realizada';
+
+  @override
+  String get maintenanceAlreadyDoneSubtitle => 'Registre uma manutenção que já foi feita.';
+
+  @override
+  String get maintenanceCompletionSection => 'Realização';
+
+  @override
+  String get maintenanceRecurrenceSubtitleCompleted => 'A próxima é agendada a partir da data de realização.';
+
+  @override
+  String get maintenanceDetailsTitle => 'Manutenção concluída';
+
+  @override
+  String get maintenanceDetailsInfoSection => 'Detalhes';
+
+  @override
+  String get maintenanceDetailsEngineHours => 'Horímetro na conclusão';
+
+  @override
+  String get maintenanceDetailsCost => 'Custo';
+
+  @override
+  String get maintenanceDetailsNotes => 'Observações';
+
+  @override
+  String get maintenanceDetailsProvider => 'Oficina ou responsável';
+
+  @override
+  String get maintenanceDetailsDescription => 'Descrição';
+
+  @override
+  String get maintenanceDetailsOriginalDue => 'Vencimento previsto';
+
+  @override
+  String get maintenanceDetailsRecurrence => 'Repetição';
+
+  @override
+  String get maintenanceDetailsNotInformed => 'Não informado';
+
+  @override
+  String maintenanceRecurrenceEveryMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'A cada $count meses',
+      one: 'A cada mês',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String maintenanceRecurrenceEveryHours(String hours) {
+    return 'A cada $hours h';
+  }
 }

@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../services/boat_cache_service.dart';
 import '../services/estai_api_client.dart';
 import '../services/marina_storage_service.dart';
+import '../services/push_notification_service.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -307,6 +308,9 @@ class AuthViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
+      // Antes de limpar a sessão: o backend para de mandar lembretes para
+      // este aparelho.
+      await PushNotificationService.instance.unregister();
       final GoogleSignIn googleSignIn = GoogleSignIn.instance;
       await googleSignIn.signOut();
       await _auth.signOut();

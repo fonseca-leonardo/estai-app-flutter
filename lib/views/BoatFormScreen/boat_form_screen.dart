@@ -4,10 +4,8 @@ import '../../l10n/app_localizations.dart';
 import '../../models/boat.dart';
 import '../../models/boat_type.dart';
 import '../../viewmodels/boat_viewmodel.dart';
-import '../../viewmodels/estai_session_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import 'widgets/boat_type_dropdown.dart';
-import 'widgets/marina_access_toggle.dart';
 
 class BoatFormScreen extends StatefulWidget {
   final Boat? boat;
@@ -36,7 +34,6 @@ class _BoatFormScreenState extends State<BoatFormScreen>
   );
   late BoatType _selectedType = widget.boat?.type ?? BoatType.boat;
   String? _errorMessage;
-  bool _isUpdatingMarinaAccess = false;
 
   @override
   void dispose() {
@@ -108,25 +105,6 @@ class _BoatFormScreenState extends State<BoatFormScreen>
         _errorMessage = AppLocalizations.of(context)!.saveBoatError;
       });
     }
-  }
-
-  Future<void> _toggleMarinaAccess(bool access) async {
-    final boat = widget.boat;
-    if (boat == null) return;
-
-    setState(() => _isUpdatingMarinaAccess = true);
-
-    final viewModel = context.read<BoatViewModel>();
-    final success = await viewModel.setMarinaAccess(boat.id, access);
-
-    if (!mounted) return;
-
-    setState(() {
-      _isUpdatingMarinaAccess = false;
-      if (!success) {
-        _errorMessage = AppLocalizations.of(context)!.marinaAccessToggleError;
-      }
-    });
   }
 
   @override
@@ -210,23 +188,6 @@ class _BoatFormScreenState extends State<BoatFormScreen>
                     return null;
                   },
                 ),
-                if (widget.isEditing &&
-                    context.watch<EstaiSessionViewModel>().hasMarina) ...[
-                  const SizedBox(height: 16),
-                  Consumer<BoatViewModel>(
-                    builder: (context, viewModel, child) {
-                      final currentBoat = viewModel.boats.firstWhere(
-                        (boat) => boat.id == widget.boat!.id,
-                        orElse: () => widget.boat!,
-                      );
-                      return MarinaAccessToggle(
-                        value: currentBoat.hasMarinaAccess,
-                        isUpdating: _isUpdatingMarinaAccess,
-                        onChanged: _toggleMarinaAccess,
-                      );
-                    },
-                  ),
-                ],
                 if (_errorMessage != null) ...[
                   const SizedBox(height: 16),
                   Text(

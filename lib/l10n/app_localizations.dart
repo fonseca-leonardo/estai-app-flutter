@@ -2536,6 +2536,744 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See all orders'**
   String get marinaSeeAllServiceOrders;
+
+  /// No description provided for @reminderChannelName.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get reminderChannelName;
+
+  /// No description provided for @reminderChannelDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat maintenance reminders'**
+  String get reminderChannelDescription;
+
+  /// No description provided for @pushPermissionRationaleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on reminders'**
+  String get pushPermissionRationaleTitle;
+
+  /// No description provided for @pushPermissionRationaleBody.
+  ///
+  /// In en, this message translates to:
+  /// **'To let you know when maintenance is coming up, Estai needs to send notifications to this device.'**
+  String get pushPermissionRationaleBody;
+
+  /// No description provided for @pushPermissionBlockedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications blocked'**
+  String get pushPermissionBlockedTitle;
+
+  /// No description provided for @pushPermissionBlockedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Estai notifications are turned off. Turn them on in your device settings to receive reminders.'**
+  String get pushPermissionBlockedBody;
+
+  /// No description provided for @notificationChannelPush.
+  ///
+  /// In en, this message translates to:
+  /// **'Push'**
+  String get notificationChannelPush;
+
+  /// No description provided for @notificationChannelEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get notificationChannelEmail;
+
+  /// No description provided for @maintenanceStatusScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled'**
+  String get maintenanceStatusScheduled;
+
+  /// No description provided for @maintenanceStatusOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get maintenanceStatusOverdue;
+
+  /// No description provided for @maintenanceStatusDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get maintenanceStatusDone;
+
+  /// No description provided for @maintenanceCategoryEngine.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine'**
+  String get maintenanceCategoryEngine;
+
+  /// No description provided for @maintenanceCategoryHull.
+  ///
+  /// In en, this message translates to:
+  /// **'Hull'**
+  String get maintenanceCategoryHull;
+
+  /// No description provided for @maintenanceCategoryElectrical.
+  ///
+  /// In en, this message translates to:
+  /// **'Electrical'**
+  String get maintenanceCategoryElectrical;
+
+  /// No description provided for @maintenanceCategoryPlumbing.
+  ///
+  /// In en, this message translates to:
+  /// **'Plumbing'**
+  String get maintenanceCategoryPlumbing;
+
+  /// No description provided for @maintenanceCategorySafety.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety'**
+  String get maintenanceCategorySafety;
+
+  /// No description provided for @maintenanceCategoryRigging.
+  ///
+  /// In en, this message translates to:
+  /// **'Rigging'**
+  String get maintenanceCategoryRigging;
+
+  /// No description provided for @maintenanceCategoryElectronics.
+  ///
+  /// In en, this message translates to:
+  /// **'Electronics'**
+  String get maintenanceCategoryElectronics;
+
+  /// No description provided for @maintenanceCategoryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get maintenanceCategoryOther;
+
+  /// No description provided for @journalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat journal'**
+  String get journalTitle;
+
+  /// No description provided for @journalEngineHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours'**
+  String get journalEngineHours;
+
+  /// No description provided for @engineHoursValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h'**
+  String engineHoursValue(String hours);
+
+  /// No description provided for @journalEngineHoursUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get journalEngineHoursUnknown;
+
+  /// No description provided for @journalEngineHoursReadAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated on {date}'**
+  String journalEngineHoursReadAt(String date);
+
+  /// No description provided for @journalUpdateEngineHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get journalUpdateEngineHours;
+
+  /// No description provided for @journalQuickActionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick actions'**
+  String get journalQuickActionsTitle;
+
+  /// No description provided for @journalActionMaintenances.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance'**
+  String get journalActionMaintenances;
+
+  /// No description provided for @journalUpcomingMaintenancesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming maintenance'**
+  String get journalUpcomingMaintenancesTitle;
+
+  /// No description provided for @journalSeeAllMaintenances.
+  ///
+  /// In en, this message translates to:
+  /// **'See all maintenance'**
+  String get journalSeeAllMaintenances;
+
+  /// No description provided for @journalOverdueAlert.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 overdue maintenance} other{{count} overdue maintenance items}}'**
+  String journalOverdueAlert(int count);
+
+  /// No description provided for @journalLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the boat journal.'**
+  String get journalLoadError;
+
+  /// No description provided for @engineHoursSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update engine hours'**
+  String get engineHoursSheetTitle;
+
+  /// No description provided for @engineHoursSheetHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the current engine hour meter reading.'**
+  String get engineHoursSheetHint;
+
+  /// No description provided for @engineHoursFieldLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours'**
+  String get engineHoursFieldLabel;
+
+  /// No description provided for @invalidNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid number.'**
+  String get invalidNumber;
+
+  /// No description provided for @engineHoursLowerThanCurrent.
+  ///
+  /// In en, this message translates to:
+  /// **'The reading can\'t be lower than the current one ({hours} h).'**
+  String engineHoursLowerThanCurrent(String hours);
+
+  /// No description provided for @engineHoursSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours updated.'**
+  String get engineHoursSaved;
+
+  /// No description provided for @engineHoursSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save the engine hours.'**
+  String get engineHoursSaveError;
+
+  /// No description provided for @maintenancesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance'**
+  String get maintenancesTitle;
+
+  /// No description provided for @maintenanceTabUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get maintenanceTabUpcoming;
+
+  /// No description provided for @maintenanceTabHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get maintenanceTabHistory;
+
+  /// No description provided for @maintenanceNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New maintenance'**
+  String get maintenanceNew;
+
+  /// No description provided for @maintenanceEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit maintenance'**
+  String get maintenanceEditTitle;
+
+  /// No description provided for @noUpcomingMaintenances.
+  ///
+  /// In en, this message translates to:
+  /// **'No maintenance scheduled.'**
+  String get noUpcomingMaintenances;
+
+  /// No description provided for @noMaintenancesHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'No completed maintenance yet.'**
+  String get noMaintenancesHistory;
+
+  /// No description provided for @loadMaintenancesError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load maintenance.'**
+  String get loadMaintenancesError;
+
+  /// No description provided for @maintenanceScheduleFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule maintenance'**
+  String get maintenanceScheduleFirst;
+
+  /// No description provided for @maintenanceDueToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Due today'**
+  String get maintenanceDueToday;
+
+  /// No description provided for @maintenanceDueInDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Due tomorrow} other{Due in {count} days}}'**
+  String maintenanceDueInDays(int count);
+
+  /// No description provided for @maintenanceOverdueDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day overdue} other{{count} days overdue}}'**
+  String maintenanceOverdueDays(int count);
+
+  /// No description provided for @maintenanceDueInHours.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h left'**
+  String maintenanceDueInHours(String hours);
+
+  /// No description provided for @maintenanceOverdueHours.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h overdue'**
+  String maintenanceOverdueHours(String hours);
+
+  /// No description provided for @maintenanceDueAtHours.
+  ///
+  /// In en, this message translates to:
+  /// **'At {hours} h'**
+  String maintenanceDueAtHours(String hours);
+
+  /// No description provided for @maintenanceCompletedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed on {date}'**
+  String maintenanceCompletedOn(String date);
+
+  /// No description provided for @maintenanceRecurringBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Recurring'**
+  String get maintenanceRecurringBadge;
+
+  /// No description provided for @maintenanceComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete'**
+  String get maintenanceComplete;
+
+  /// No description provided for @maintenanceCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance completed.'**
+  String get maintenanceCompleted;
+
+  /// No description provided for @completeMaintenanceError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t complete the maintenance.'**
+  String get completeMaintenanceError;
+
+  /// No description provided for @completeMaintenanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete maintenance'**
+  String get completeMaintenanceTitle;
+
+  /// No description provided for @completeMaintenanceDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion date'**
+  String get completeMaintenanceDate;
+
+  /// No description provided for @completeMaintenanceEngineHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours at completion (optional)'**
+  String get completeMaintenanceEngineHours;
+
+  /// No description provided for @completeMaintenanceCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost (optional)'**
+  String get completeMaintenanceCost;
+
+  /// No description provided for @completeMaintenanceRecurringHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Since it\'s recurring, the next one will be scheduled automatically.'**
+  String get completeMaintenanceRecurringHint;
+
+  /// No description provided for @maintenanceTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get maintenanceTitleLabel;
+
+  /// No description provided for @maintenanceTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g. engine oil change'**
+  String get maintenanceTitleHint;
+
+  /// No description provided for @maintenanceTitleRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a title.'**
+  String get maintenanceTitleRequired;
+
+  /// No description provided for @maintenanceCategoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get maintenanceCategoryLabel;
+
+  /// No description provided for @maintenanceDescriptionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (optional)'**
+  String get maintenanceDescriptionLabel;
+
+  /// No description provided for @maintenanceDueSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Due'**
+  String get maintenanceDueSection;
+
+  /// No description provided for @maintenanceDueHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a date, engine hours or both. Whichever comes first applies.'**
+  String get maintenanceDueHint;
+
+  /// No description provided for @maintenanceDueDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get maintenanceDueDateLabel;
+
+  /// No description provided for @maintenanceDueDateNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No date'**
+  String get maintenanceDueDateNone;
+
+  /// No description provided for @maintenanceDueEngineHoursLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours (h)'**
+  String get maintenanceDueEngineHoursLabel;
+
+  /// No description provided for @maintenanceMissingDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the due date or engine hours.'**
+  String get maintenanceMissingDue;
+
+  /// No description provided for @maintenanceRecurrenceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat'**
+  String get maintenanceRecurrenceTitle;
+
+  /// No description provided for @maintenanceRecurrenceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'When completed, the next one is scheduled automatically.'**
+  String get maintenanceRecurrenceSubtitle;
+
+  /// No description provided for @maintenanceRecurrenceMonthsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Every (months)'**
+  String get maintenanceRecurrenceMonthsLabel;
+
+  /// No description provided for @maintenanceRecurrenceHoursLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Every (hours)'**
+  String get maintenanceRecurrenceHoursLabel;
+
+  /// No description provided for @maintenanceRecurrenceRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter months or hours to repeat.'**
+  String get maintenanceRecurrenceRequired;
+
+  /// No description provided for @maintenanceProviderLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop or provider (optional)'**
+  String get maintenanceProviderLabel;
+
+  /// No description provided for @maintenanceSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save maintenance'**
+  String get maintenanceSave;
+
+  /// No description provided for @maintenanceSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance saved.'**
+  String get maintenanceSaved;
+
+  /// No description provided for @saveMaintenanceError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save the maintenance.'**
+  String get saveMaintenanceError;
+
+  /// No description provided for @maintenanceInvalidError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the maintenance details.'**
+  String get maintenanceInvalidError;
+
+  /// No description provided for @deleteMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete maintenance'**
+  String get deleteMaintenance;
+
+  /// No description provided for @deleteMaintenanceConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This maintenance and its reminders will be removed.'**
+  String get deleteMaintenanceConfirm;
+
+  /// No description provided for @deleteMaintenanceError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the maintenance.'**
+  String get deleteMaintenanceError;
+
+  /// No description provided for @reminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder'**
+  String get reminderTitle;
+
+  /// No description provided for @reminderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent by Estai before it\'s due.'**
+  String get reminderSubtitle;
+
+  /// No description provided for @reminderDaysBeforeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me before'**
+  String get reminderDaysBeforeLabel;
+
+  /// No description provided for @reminderDaysOption.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{On the day} =1{1 day} other{{count} days}}'**
+  String reminderDaysOption(int count);
+
+  /// No description provided for @reminderHoursBeforeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me before (engine hours)'**
+  String get reminderHoursBeforeLabel;
+
+  /// No description provided for @reminderChannelsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Send via'**
+  String get reminderChannelsLabel;
+
+  /// No description provided for @notificationSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationSettings;
+
+  /// No description provided for @notificationPrefsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance reminders are sent by Estai through the channels you turn on.'**
+  String get notificationPrefsDescription;
+
+  /// No description provided for @notificationPrefsPush.
+  ///
+  /// In en, this message translates to:
+  /// **'Push notifications'**
+  String get notificationPrefsPush;
+
+  /// No description provided for @notificationPrefsPushSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'On your phone, even with the app closed.'**
+  String get notificationPrefsPushSubtitle;
+
+  /// No description provided for @notificationPrefsEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get notificationPrefsEmail;
+
+  /// No description provided for @notificationPrefsEmailSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent to {email}'**
+  String notificationPrefsEmailSubtitle(String email);
+
+  /// No description provided for @notificationPrefsEmailSubtitleNoEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent to your account email.'**
+  String get notificationPrefsEmailSubtitleNoEmail;
+
+  /// No description provided for @notificationPrefsSystemBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are turned off on this device. Allow them to receive push reminders.'**
+  String get notificationPrefsSystemBlocked;
+
+  /// No description provided for @notificationPrefsAllow.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow notifications'**
+  String get notificationPrefsAllow;
+
+  /// No description provided for @notificationPrefsSendTest.
+  ///
+  /// In en, this message translates to:
+  /// **'Send test notification'**
+  String get notificationPrefsSendTest;
+
+  /// No description provided for @notificationPrefsTestSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Test notification sent.'**
+  String get notificationPrefsTestSent;
+
+  /// No description provided for @notificationPrefsTestError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t send the test notification.'**
+  String get notificationPrefsTestError;
+
+  /// No description provided for @notificationPrefsLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load your preferences.'**
+  String get notificationPrefsLoadError;
+
+  /// No description provided for @notificationPrefsSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save your preferences.'**
+  String get notificationPrefsSaveError;
+
+  /// No description provided for @maintenanceAlreadyDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Already done'**
+  String get maintenanceAlreadyDone;
+
+  /// No description provided for @maintenanceAlreadyDoneSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log maintenance that has already been done.'**
+  String get maintenanceAlreadyDoneSubtitle;
+
+  /// No description provided for @maintenanceCompletionSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion'**
+  String get maintenanceCompletionSection;
+
+  /// No description provided for @maintenanceRecurrenceSubtitleCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'The next one is scheduled from the completion date.'**
+  String get maintenanceRecurrenceSubtitleCompleted;
+
+  /// No description provided for @maintenanceDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed maintenance'**
+  String get maintenanceDetailsTitle;
+
+  /// No description provided for @maintenanceDetailsInfoSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get maintenanceDetailsInfoSection;
+
+  /// No description provided for @maintenanceDetailsEngineHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours at completion'**
+  String get maintenanceDetailsEngineHours;
+
+  /// No description provided for @maintenanceDetailsCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost'**
+  String get maintenanceDetailsCost;
+
+  /// No description provided for @maintenanceDetailsNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get maintenanceDetailsNotes;
+
+  /// No description provided for @maintenanceDetailsProvider.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop or provider'**
+  String get maintenanceDetailsProvider;
+
+  /// No description provided for @maintenanceDetailsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get maintenanceDetailsDescription;
+
+  /// No description provided for @maintenanceDetailsOriginalDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Original due'**
+  String get maintenanceDetailsOriginalDue;
+
+  /// No description provided for @maintenanceDetailsRecurrence.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeats'**
+  String get maintenanceDetailsRecurrence;
+
+  /// No description provided for @maintenanceDetailsNotInformed.
+  ///
+  /// In en, this message translates to:
+  /// **'Not provided'**
+  String get maintenanceDetailsNotInformed;
+
+  /// No description provided for @maintenanceRecurrenceEveryMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Every month} other{Every {count} months}}'**
+  String maintenanceRecurrenceEveryMonths(int count);
+
+  /// No description provided for @maintenanceRecurrenceEveryHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Every {hours} h'**
+  String maintenanceRecurrenceEveryHours(String hours);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

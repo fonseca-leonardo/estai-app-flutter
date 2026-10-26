@@ -989,5 +989,335 @@
   "marinaSeeAllRampSchedules": "See all bookings",
   "@marinaSeeAllRampSchedules": {},
   "marinaSeeAllServiceOrders": "See all orders",
-  "@marinaSeeAllServiceOrders": {}
+  "@marinaSeeAllServiceOrders": {},
+  "reminderChannelName": "Reminders",
+  "@reminderChannelName": {},
+  "reminderChannelDescription": "Boat maintenance reminders",
+  "@reminderChannelDescription": {},
+  "pushPermissionRationaleTitle": "Turn on reminders",
+  "@pushPermissionRationaleTitle": {},
+  "pushPermissionRationaleBody": "To let you know when maintenance is coming up, Estai needs to send notifications to this device.",
+  "@pushPermissionRationaleBody": {},
+  "pushPermissionBlockedTitle": "Notifications blocked",
+  "@pushPermissionBlockedTitle": {},
+  "pushPermissionBlockedBody": "Estai notifications are turned off. Turn them on in your device settings to receive reminders.",
+  "@pushPermissionBlockedBody": {},
+  "notificationChannelPush": "Push",
+  "@notificationChannelPush": {},
+  "notificationChannelEmail": "Email",
+  "@notificationChannelEmail": {},
+  "maintenanceStatusScheduled": "Scheduled",
+  "@maintenanceStatusScheduled": {},
+  "maintenanceStatusOverdue": "Overdue",
+  "@maintenanceStatusOverdue": {},
+  "maintenanceStatusDone": "Done",
+  "@maintenanceStatusDone": {},
+  "maintenanceCategoryEngine": "Engine",
+  "@maintenanceCategoryEngine": {},
+  "maintenanceCategoryHull": "Hull",
+  "@maintenanceCategoryHull": {},
+  "maintenanceCategoryElectrical": "Electrical",
+  "@maintenanceCategoryElectrical": {},
+  "maintenanceCategoryPlumbing": "Plumbing",
+  "@maintenanceCategoryPlumbing": {},
+  "maintenanceCategorySafety": "Safety",
+  "@maintenanceCategorySafety": {},
+  "maintenanceCategoryRigging": "Rigging",
+  "@maintenanceCategoryRigging": {},
+  "maintenanceCategoryElectronics": "Electronics",
+  "@maintenanceCategoryElectronics": {},
+  "maintenanceCategoryOther": "Other",
+  "@maintenanceCategoryOther": {},
+  "journalTitle": "Boat journal",
+  "@journalTitle": {},
+  "journalEngineHours": "Engine hours",
+  "@journalEngineHours": {},
+  "engineHoursValue": "{hours} h",
+  "@engineHoursValue": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "journalEngineHoursUnknown": "Not set",
+  "@journalEngineHoursUnknown": {},
+  "journalEngineHoursReadAt": "Updated on {date}",
+  "@journalEngineHoursReadAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "journalUpdateEngineHours": "Update",
+  "@journalUpdateEngineHours": {},
+  "journalQuickActionsTitle": "Quick actions",
+  "@journalQuickActionsTitle": {},
+  "journalActionMaintenances": "Maintenance",
+  "@journalActionMaintenances": {},
+  "journalUpcomingMaintenancesTitle": "Upcoming maintenance",
+  "@journalUpcomingMaintenancesTitle": {},
+  "journalSeeAllMaintenances": "See all maintenance",
+  "@journalSeeAllMaintenances": {},
+  "journalOverdueAlert": "{count, plural, =1{1 overdue maintenance} other{{count} overdue maintenance items}}",
+  "@journalOverdueAlert": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalLoadError": "Couldn't load the boat journal.",
+  "@journalLoadError": {},
+  "engineHoursSheetTitle": "Update engine hours",
+  "@engineHoursSheetTitle": {},
+  "engineHoursSheetHint": "Enter the current engine hour meter reading.",
+  "@engineHoursSheetHint": {},
+  "engineHoursFieldLabel": "Engine hours",
+  "@engineHoursFieldLabel": {},
+  "invalidNumber": "Enter a valid number.",
+  "@invalidNumber": {},
+  "engineHoursLowerThanCurrent": "The reading can't be lower than the current one ({hours} h).",
+  "@engineHoursLowerThanCurrent": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "engineHoursSaved": "Engine hours updated.",
+  "@engineHoursSaved": {},
+  "engineHoursSaveError": "Couldn't save the engine hours.",
+  "@engineHoursSaveError": {},
+  "maintenancesTitle": "Maintenance",
+  "@maintenancesTitle": {},
+  "maintenanceTabUpcoming": "Upcoming",
+  "@maintenanceTabUpcoming": {},
+  "maintenanceTabHistory": "History",
+  "@maintenanceTabHistory": {},
+  "maintenanceNew": "New maintenance",
+  "@maintenanceNew": {},
+  "maintenanceEditTitle": "Edit maintenance",
+  "@maintenanceEditTitle": {},
+  "noUpcomingMaintenances": "No maintenance scheduled.",
+  "@noUpcomingMaintenances": {},
+  "noMaintenancesHistory": "No completed maintenance yet.",
+  "@noMaintenancesHistory": {},
+  "loadMaintenancesError": "Couldn't load maintenance.",
+  "@loadMaintenancesError": {},
+  "maintenanceScheduleFirst": "Schedule maintenance",
+  "@maintenanceScheduleFirst": {},
+  "maintenanceDueToday": "Due today",
+  "@maintenanceDueToday": {},
+  "maintenanceDueInDays": "{count, plural, =1{Due tomorrow} other{Due in {count} days}}",
+  "@maintenanceDueInDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maintenanceOverdueDays": "{count, plural, =1{1 day overdue} other{{count} days overdue}}",
+  "@maintenanceOverdueDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maintenanceDueInHours": "{hours} h left",
+  "@maintenanceDueInHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceOverdueHours": "{hours} h overdue",
+  "@maintenanceOverdueHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceDueAtHours": "At {hours} h",
+  "@maintenanceDueAtHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceCompletedOn": "Completed on {date}",
+  "@maintenanceCompletedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "maintenanceRecurringBadge": "Recurring",
+  "@maintenanceRecurringBadge": {},
+  "maintenanceComplete": "Complete",
+  "@maintenanceComplete": {},
+  "maintenanceCompleted": "Maintenance completed.",
+  "@maintenanceCompleted": {},
+  "completeMaintenanceError": "Couldn't complete the maintenance.",
+  "@completeMaintenanceError": {},
+  "completeMaintenanceTitle": "Complete maintenance",
+  "@completeMaintenanceTitle": {},
+  "completeMaintenanceDate": "Completion date",
+  "@completeMaintenanceDate": {},
+  "completeMaintenanceEngineHours": "Engine hours at completion (optional)",
+  "@completeMaintenanceEngineHours": {},
+  "completeMaintenanceCost": "Cost (optional)",
+  "@completeMaintenanceCost": {},
+  "completeMaintenanceRecurringHint": "Since it's recurring, the next one will be scheduled automatically.",
+  "@completeMaintenanceRecurringHint": {},
+  "maintenanceTitleLabel": "Title",
+  "@maintenanceTitleLabel": {},
+  "maintenanceTitleHint": "E.g. engine oil change",
+  "@maintenanceTitleHint": {},
+  "maintenanceTitleRequired": "Enter a title.",
+  "@maintenanceTitleRequired": {},
+  "maintenanceCategoryLabel": "Category",
+  "@maintenanceCategoryLabel": {},
+  "maintenanceDescriptionLabel": "Description (optional)",
+  "@maintenanceDescriptionLabel": {},
+  "maintenanceDueSection": "Due",
+  "@maintenanceDueSection": {},
+  "maintenanceDueHint": "Enter a date, engine hours or both. Whichever comes first applies.",
+  "@maintenanceDueHint": {},
+  "maintenanceDueDateLabel": "Date",
+  "@maintenanceDueDateLabel": {},
+  "maintenanceDueDateNone": "No date",
+  "@maintenanceDueDateNone": {},
+  "maintenanceDueEngineHoursLabel": "Engine hours (h)",
+  "@maintenanceDueEngineHoursLabel": {},
+  "maintenanceMissingDue": "Enter the due date or engine hours.",
+  "@maintenanceMissingDue": {},
+  "maintenanceRecurrenceTitle": "Repeat",
+  "@maintenanceRecurrenceTitle": {},
+  "maintenanceRecurrenceSubtitle": "When completed, the next one is scheduled automatically.",
+  "@maintenanceRecurrenceSubtitle": {},
+  "maintenanceRecurrenceMonthsLabel": "Every (months)",
+  "@maintenanceRecurrenceMonthsLabel": {},
+  "maintenanceRecurrenceHoursLabel": "Every (hours)",
+  "@maintenanceRecurrenceHoursLabel": {},
+  "maintenanceRecurrenceRequired": "Enter months or hours to repeat.",
+  "@maintenanceRecurrenceRequired": {},
+  "maintenanceProviderLabel": "Shop or provider (optional)",
+  "@maintenanceProviderLabel": {},
+  "maintenanceSave": "Save maintenance",
+  "@maintenanceSave": {},
+  "maintenanceSaved": "Maintenance saved.",
+  "@maintenanceSaved": {},
+  "saveMaintenanceError": "Couldn't save the maintenance.",
+  "@saveMaintenanceError": {},
+  "maintenanceInvalidError": "Check the maintenance details.",
+  "@maintenanceInvalidError": {},
+  "deleteMaintenance": "Delete maintenance",
+  "@deleteMaintenance": {},
+  "deleteMaintenanceConfirm": "This maintenance and its reminders will be removed.",
+  "@deleteMaintenanceConfirm": {},
+  "deleteMaintenanceError": "Couldn't delete the maintenance.",
+  "@deleteMaintenanceError": {},
+  "reminderTitle": "Reminder",
+  "@reminderTitle": {},
+  "reminderSubtitle": "Sent by Estai before it's due.",
+  "@reminderSubtitle": {},
+  "reminderDaysBeforeLabel": "Remind me before",
+  "@reminderDaysBeforeLabel": {},
+  "reminderDaysOption": "{count, plural, =0{On the day} =1{1 day} other{{count} days}}",
+  "@reminderDaysOption": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderHoursBeforeLabel": "Remind me before (engine hours)",
+  "@reminderHoursBeforeLabel": {},
+  "reminderChannelsLabel": "Send via",
+  "@reminderChannelsLabel": {},
+  "notificationSettings": "Notifications",
+  "@notificationSettings": {},
+  "notificationPrefsDescription": "Maintenance reminders are sent by Estai through the channels you turn on.",
+  "@notificationPrefsDescription": {},
+  "notificationPrefsPush": "Push notifications",
+  "@notificationPrefsPush": {},
+  "notificationPrefsPushSubtitle": "On your phone, even with the app closed.",
+  "@notificationPrefsPushSubtitle": {},
+  "notificationPrefsEmail": "Email",
+  "@notificationPrefsEmail": {},
+  "notificationPrefsEmailSubtitle": "Sent to {email}",
+  "@notificationPrefsEmailSubtitle": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPrefsEmailSubtitleNoEmail": "Sent to your account email.",
+  "@notificationPrefsEmailSubtitleNoEmail": {},
+  "notificationPrefsSystemBlocked": "Notifications are turned off on this device. Allow them to receive push reminders.",
+  "@notificationPrefsSystemBlocked": {},
+  "notificationPrefsAllow": "Allow notifications",
+  "@notificationPrefsAllow": {},
+  "notificationPrefsSendTest": "Send test notification",
+  "@notificationPrefsSendTest": {},
+  "notificationPrefsTestSent": "Test notification sent.",
+  "@notificationPrefsTestSent": {},
+  "notificationPrefsTestError": "Couldn't send the test notification.",
+  "@notificationPrefsTestError": {},
+  "notificationPrefsLoadError": "Couldn't load your preferences.",
+  "@notificationPrefsLoadError": {},
+  "notificationPrefsSaveError": "Couldn't save your preferences.",
+  "@notificationPrefsSaveError": {},
+  "maintenanceAlreadyDone": "Already done",
+  "@maintenanceAlreadyDone": {},
+  "maintenanceAlreadyDoneSubtitle": "Log maintenance that has already been done.",
+  "@maintenanceAlreadyDoneSubtitle": {},
+  "maintenanceCompletionSection": "Completion",
+  "@maintenanceCompletionSection": {},
+  "maintenanceRecurrenceSubtitleCompleted": "The next one is scheduled from the completion date.",
+  "@maintenanceRecurrenceSubtitleCompleted": {},
+  "maintenanceDetailsTitle": "Completed maintenance",
+  "@maintenanceDetailsTitle": {},
+  "maintenanceDetailsInfoSection": "Details",
+  "@maintenanceDetailsInfoSection": {},
+  "maintenanceDetailsEngineHours": "Engine hours at completion",
+  "@maintenanceDetailsEngineHours": {},
+  "maintenanceDetailsCost": "Cost",
+  "@maintenanceDetailsCost": {},
+  "maintenanceDetailsNotes": "Notes",
+  "@maintenanceDetailsNotes": {},
+  "maintenanceDetailsProvider": "Shop or provider",
+  "@maintenanceDetailsProvider": {},
+  "maintenanceDetailsDescription": "Description",
+  "@maintenanceDetailsDescription": {},
+  "maintenanceDetailsOriginalDue": "Original due",
+  "@maintenanceDetailsOriginalDue": {},
+  "maintenanceDetailsRecurrence": "Repeats",
+  "@maintenanceDetailsRecurrence": {},
+  "maintenanceDetailsNotInformed": "Not provided",
+  "@maintenanceDetailsNotInformed": {},
+  "maintenanceRecurrenceEveryMonths": "{count, plural, =1{Every month} other{Every {count} months}}",
+  "@maintenanceRecurrenceEveryMonths": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "maintenanceRecurrenceEveryHours": "Every {hours} h",
+  "@maintenanceRecurrenceEveryHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  }
 }

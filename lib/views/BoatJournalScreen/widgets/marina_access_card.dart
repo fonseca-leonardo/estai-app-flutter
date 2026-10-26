@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 
-class MarinaAccessToggle extends StatelessWidget {
+/// Libera (ou retira) o acesso da marina do usuário a esta embarcação.
+class MarinaAccessCard extends StatelessWidget {
   final bool value;
   final bool isUpdating;
   final ValueChanged<bool> onChanged;
 
-  const MarinaAccessToggle({
+  const MarinaAccessCard({
     super.key,
     required this.value,
     required this.isUpdating,
@@ -18,14 +19,24 @@ class MarinaAccessToggle extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.grey[900],
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey[800]!, width: 1),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.12)),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       child: Row(
         children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Icon(Icons.anchor, color: Colors.white),
+          ),
+          const SizedBox(width: 14),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,10 +49,13 @@ class MarinaAccessToggle extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 2),
                 Text(
                   l10n.marinaAccessToggleDescription,
-                  style: TextStyle(color: Colors.grey[400], fontSize: 14),
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.6),
+                    fontSize: 13,
+                  ),
                 ),
               ],
             ),
@@ -59,7 +73,7 @@ class MarinaAccessToggle extends StatelessWidget {
               : Switch(
                   value: value,
                   onChanged: onChanged,
-                  activeTrackColor: Colors.white.withValues(alpha: 0.9),
+                  activeTrackColor: Colors.white,
                   activeThumbColor: Colors.black,
                 ),
         ],

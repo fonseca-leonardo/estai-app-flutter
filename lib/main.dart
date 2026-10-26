@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:app_links/app_links.dart';
 import 'package:estai/views/LoginScreen/login_screen.dart';
+import 'package:estai/views/MaintenancesScreen/maintenances_screen.dart';
 import 'package:estai/views/MarinaAccessScreen/marina_access_screen.dart';
 import 'package:estai/widgets/location_init_wrapper.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,8 @@ import 'viewmodels/estai_session_viewmodel.dart';
 import 'viewmodels/ramp_schedule_viewmodel.dart';
 import 'viewmodels/service_order_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
+import 'services/push_notification_service.dart';
+import 'models/push_notification_target.dart';
 import 'viewmodels/signalk_configuration_viewmodel.dart';
 import 'viewmodels/signalk_connection_viewmodel.dart';
 import 'viewmodels/marina_monitoring_viewmodel.dart';
@@ -58,6 +61,7 @@ void main() async {
 
   await AnalyticsService.instance.initialize();
   await AnchorAlarmNotificationService.instance.setupChannel();
+  await PushNotificationService.instance.initialize();
 
   // if (kDebugMode) {
   //   await FirebaseAppCheck.instance.activate(
@@ -111,10 +115,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final SignalKConnectionViewModel signalKConnectionViewModel;
   late final MarinaMonitoringViewModel marinaMonitoringViewModel;
   late final AuthViewModel authViewModel;
+  late final EstaiSessionViewModel estaiSessionViewModel;
 
   final AppLinks _appLinks = AppLinks();
   StreamSubscription<Uri>? _linkSubscription;
+  StreamSubscription<PushNotificationTarget>? _pushSubscription;
   String? _pendingMarinaId;
+  PushNotificationTarget? _pendingPushTarget;
+  bool _deviceTokenSynced = false;
 
   @override
   void initState() {
@@ -141,8 +149,12 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     authViewModel = AuthViewModel();
     authViewModel.addListener(_onAuthChanged);
 
+    estaiSessionViewModel = EstaiSessionViewModel();
+    estaiSessionViewModel.addListener(_onEstaiSessionChanged);
+
     _initializeWatchConnectivity();
     _initializeDeepLinks();
+    _initializePushNotifications();
   }
 
   Future<void> _initializeWatchConnectivity() async {
@@ -162,7 +174,21 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     _linkSubscription = _appLinks.uriLinkStream.listen(_handleDeepLink);
   }
 
+  Future<void> _initializePushNotifications() async {
+    final push = PushNotificationService.instance;
+    _pushSubscription = push.openedTargets.listen(_handlePushTarget);
+
+    final initialTarget = await push.getInitialTarget();
+    if (initialTarget != null) _handlePushTarget(initialTarget);
+  }
+
   void _handleDeepLink(Uri uri) {
+    final pushTarget = PushNotificationTarget.fromUri(uri);
+    if (pushTarget != null) {
+      _handlePushTarget(pushTarget);
+      return;
+    }
+
     if (uri.scheme != 'estai' || uri.host != 'marina') return;
 
     final marinaId = uri.pathSegments.isNotEmpty
@@ -178,11 +204,50 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   void _onAuthChanged() {
+    if (!authViewModel.isAuthenticated) _deviceTokenSynced = false;
+
     final marinaId = _pendingMarinaId;
     if (marinaId != null && authViewModel.isAuthenticated) {
       _pendingMarinaId = null;
       _openMarinaAccessScreen(marinaId);
     }
+  }
+
+  /// Push e links do Diário da Embarcação dependem da API do Estai, então só
+  /// abrem depois que a sessão (feita na MapScreen) estiver pronta.
+  void _handlePushTarget(PushNotificationTarget target) {
+    if (estaiSessionViewModel.isAuthenticated) {
+      _openPushTarget(target);
+    } else {
+      _pendingPushTarget = target;
+    }
+  }
+
+  void _onEstaiSessionChanged() {
+    if (!estaiSessionViewModel.isAuthenticated) return;
+
+    if (!_deviceTokenSynced) {
+      _deviceTokenSynced = true;
+      PushNotificationService.instance.syncToken();
+    }
+
+    final target = _pendingPushTarget;
+    if (target != null) {
+      _pendingPushTarget = null;
+      _openPushTarget(target);
+    }
+  }
+
+  void _openPushTarget(PushNotificationTarget target) {
+    if (!target.isMaintenance) return;
+    navigatorKey.currentState?.push(
+      MaterialPageRoute(
+        builder: (_) => MaintenancesScreen(
+          boatId: target.boatId,
+          highlightedId: target.id,
+        ),
+      ),
+    );
   }
 
   void _openMarinaAccessScreen(String marinaId) {
@@ -195,7 +260,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     authViewModel.removeListener(_onAuthChanged);
+    estaiSessionViewModel.removeListener(_onEstaiSessionChanged);
     _linkSubscription?.cancel();
+    _pushSubscription?.cancel();
     super.dispose();
   }
 
@@ -219,7 +286,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => AnchorAlarmViewModel()),
         ChangeNotifierProvider(create: (_) => OnboardingViewModel()),
         ChangeNotifierProvider(create: (_) => BoatViewModel()),
-        ChangeNotifierProvider(create: (_) => EstaiSessionViewModel()),
+        ChangeNotifierProvider.value(value: estaiSessionViewModel),
         ChangeNotifierProvider(create: (_) => MarinaAccessViewModel()),
         ChangeNotifierProvider(create: (_) => ServiceOrderViewModel()),
         ChangeNotifierProvider(create: (_) => RampScheduleViewModel()),
