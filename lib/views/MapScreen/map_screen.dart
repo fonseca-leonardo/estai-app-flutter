@@ -32,6 +32,7 @@ import '../../services/cached_tile_provider.dart';
 import '../../services/tile_cache_service.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
+import '../../widgets/stop_navigation_flow.dart';
 import 'widgets/offline_basemap_layer.dart';
 import 'widgets/raster_charts_layer.dart';
 import 'widgets/chartplotter_layer.dart';
@@ -201,7 +202,10 @@ class _MapScreenState extends State<MapScreen>
 
     if (_navigationStatusViewModel?.isNavigating == true) {
       if (_lastTrackedPoint == null || _lastTrackedPoint != currentLatLng) {
-        _navigationStatusViewModel!.addTrackedPoint(currentLatLng);
+        _navigationStatusViewModel!.addTrackedPoint(
+          currentLatLng,
+          speedMps: position.speed >= 0 ? position.speed : null,
+        );
         _lastTrackedPoint = currentLatLng;
       }
     } else {
@@ -532,22 +536,15 @@ class _MapScreenState extends State<MapScreen>
                                               onPressed: () {
                                                 context
                                                     .read<
-                                                      NavigationStatusViewModel
-                                                    >()
-                                                    .stopNavigation();
-                                                context
-                                                    .read<
-                                                      NavigationStatusViewModel
-                                                    >()
-                                                    .resetNavigation();
-                                                context
-                                                    .read<
                                                       RoutePlannerViewModel
                                                     >()
                                                     .clearRoute();
                                                 Navigator.of(
                                                   dialogContext,
                                                 ).pop();
+                                                StopNavigationFlow.stop(
+                                                  context,
+                                                );
                                               },
                                               child: Text(
                                                 l10n.finish,

@@ -62,7 +62,8 @@ import 'app_localizations_pt.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale)
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -70,7 +71,8 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -82,17 +84,18 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('pt')
+    Locale('pt'),
   ];
 
   /// Application title
@@ -3274,9 +3277,346 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Every {hours} h'**
   String maintenanceRecurrenceEveryHours(String hours);
+
+  /// No description provided for @logbookTypeTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip'**
+  String get logbookTypeTrip;
+
+  /// No description provided for @logbookTypeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get logbookTypeNote;
+
+  /// No description provided for @logbookTypeAnchorage.
+  ///
+  /// In en, this message translates to:
+  /// **'Anchorage'**
+  String get logbookTypeAnchorage;
+
+  /// No description provided for @logbookTypeIncident.
+  ///
+  /// In en, this message translates to:
+  /// **'Incident'**
+  String get logbookTypeIncident;
+
+  /// No description provided for @logbookTypeEvent.
+  ///
+  /// In en, this message translates to:
+  /// **'Event'**
+  String get logbookTypeEvent;
+
+  /// No description provided for @logbookTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Logbook'**
+  String get logbookTitle;
+
+  /// No description provided for @logbookFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get logbookFilterAll;
+
+  /// No description provided for @logbookNewEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'New entry'**
+  String get logbookNewEntry;
+
+  /// No description provided for @logbookEditEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit entry'**
+  String get logbookEditEntry;
+
+  /// No description provided for @noLogbookEntries.
+  ///
+  /// In en, this message translates to:
+  /// **'No logbook entries yet.'**
+  String get noLogbookEntries;
+
+  /// No description provided for @loadLogbookError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the logbook.'**
+  String get loadLogbookError;
+
+  /// No description provided for @logbookTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get logbookTypeLabel;
+
+  /// No description provided for @logbookTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get logbookTitleLabel;
+
+  /// No description provided for @logbookTitleRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a title.'**
+  String get logbookTitleRequired;
+
+  /// No description provided for @logbookDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get logbookDateLabel;
+
+  /// No description provided for @logbookTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get logbookTimeLabel;
+
+  /// No description provided for @logbookUseCurrentPosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Record current position'**
+  String get logbookUseCurrentPosition;
+
+  /// No description provided for @logbookUseCurrentPositionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Saves where the boat is right now.'**
+  String get logbookUseCurrentPositionSubtitle;
+
+  /// No description provided for @logbookPositionUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Current position unavailable. Check the GPS.'**
+  String get logbookPositionUnavailable;
+
+  /// No description provided for @logbookSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save entry'**
+  String get logbookSave;
+
+  /// No description provided for @logbookSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Entry saved.'**
+  String get logbookSaved;
+
+  /// No description provided for @saveLogbookEntryError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save the entry.'**
+  String get saveLogbookEntryError;
+
+  /// No description provided for @logbookInvalidError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the entry details.'**
+  String get logbookInvalidError;
+
+  /// No description provided for @deleteLogbookEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete entry'**
+  String get deleteLogbookEntry;
+
+  /// No description provided for @deleteLogbookEntryConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This entry will be removed from the logbook.'**
+  String get deleteLogbookEntryConfirm;
+
+  /// No description provided for @deleteLogbookEntryError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the entry.'**
+  String get deleteLogbookEntryError;
+
+  /// No description provided for @logbookDetailsInfoSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get logbookDetailsInfoSection;
+
+  /// No description provided for @logbookDetailsTripSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigation'**
+  String get logbookDetailsTripSection;
+
+  /// No description provided for @logbookDetailsDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date and time'**
+  String get logbookDetailsDate;
+
+  /// No description provided for @logbookDetailsDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get logbookDetailsDuration;
+
+  /// No description provided for @logbookDetailsDistance.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance'**
+  String get logbookDetailsDistance;
+
+  /// No description provided for @logbookDetailsAvgSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Average speed'**
+  String get logbookDetailsAvgSpeed;
+
+  /// No description provided for @logbookDetailsMaxSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Top speed'**
+  String get logbookDetailsMaxSpeed;
+
+  /// No description provided for @logbookDetailsEngineHoursEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours at the end'**
+  String get logbookDetailsEngineHoursEnd;
+
+  /// No description provided for @logbookDetailsPassengers.
+  ///
+  /// In en, this message translates to:
+  /// **'Passengers'**
+  String get logbookDetailsPassengers;
+
+  /// No description provided for @logbookDetailsPosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Position'**
+  String get logbookDetailsPosition;
+
+  /// No description provided for @logbookDetailsNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get logbookDetailsNotes;
+
+  /// No description provided for @distanceNmValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} NM'**
+  String distanceNmValue(String value);
+
+  /// No description provided for @speedKnValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} kn'**
+  String speedKnValue(String value);
+
+  /// No description provided for @durationHoursMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h {minutes} min'**
+  String durationHoursMinutes(String hours, String minutes);
+
+  /// No description provided for @durationMinutesValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String durationMinutesValue(String minutes);
+
+  /// No description provided for @logbookTopSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'top {value} kn'**
+  String logbookTopSpeed(String value);
+
+  /// No description provided for @journalRecentLogbookTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest entries'**
+  String get journalRecentLogbookTitle;
+
+  /// No description provided for @journalSeeLogbook.
+  ///
+  /// In en, this message translates to:
+  /// **'See logbook'**
+  String get journalSeeLogbook;
+
+  /// No description provided for @journalNoLogbookEntries.
+  ///
+  /// In en, this message translates to:
+  /// **'Trips you save when finishing a navigation show up here.'**
+  String get journalNoLogbookEntries;
+
+  /// No description provided for @tripSaveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save trip to the logbook'**
+  String get tripSaveTitle;
+
+  /// No description provided for @tripSaveSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log this navigation in the boat\'s logbook.'**
+  String get tripSaveSubtitle;
+
+  /// No description provided for @tripBoatLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat'**
+  String get tripBoatLabel;
+
+  /// No description provided for @tripDefaultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip on {date}'**
+  String tripDefaultTitle(String date);
+
+  /// No description provided for @tripEngineHoursEndLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine hours at the end (optional)'**
+  String get tripEngineHoursEndLabel;
+
+  /// No description provided for @tripPassengersLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Passengers (optional)'**
+  String get tripPassengersLabel;
+
+  /// No description provided for @tripSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save to logbook'**
+  String get tripSave;
+
+  /// No description provided for @tripDiscard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get tripDiscard;
+
+  /// No description provided for @tripSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip saved to the logbook.'**
+  String get tripSaved;
+
+  /// No description provided for @tripQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'No connection. The trip will be sent when you\'re back online.'**
+  String get tripQueued;
+
+  /// No description provided for @tripSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save the trip.'**
+  String get tripSaveError;
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -3285,25 +3625,26 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'pt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['en', 'pt'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return AppLocalizationsEn();
-    case 'pt': return AppLocalizationsPt();
+    case 'en':
+      return AppLocalizationsEn();
+    case 'pt':
+      return AppLocalizationsPt();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
+    'that was used.',
   );
 }

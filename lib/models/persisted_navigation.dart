@@ -7,10 +7,14 @@ class PersistedNavigation {
   final List<LatLng> trackedRoute;
   final List<LatLng> plannedRoute;
 
+  /// Velocidade máxima até o último salvamento, para o resumo da viagem.
+  final double? maxSpeedMps;
+
   const PersistedNavigation({
     required this.startTime,
     required this.trackedRoute,
     required this.plannedRoute,
+    this.maxSpeedMps,
   });
 
   Duration elapsedSince(DateTime now) => now.difference(startTime);

@@ -1319,5 +1319,156 @@
         "type": "String"
       }
     }
-  }
+  },
+  "logbookTypeTrip": "Viagem",
+  "@logbookTypeTrip": {},
+  "logbookTypeNote": "Nota",
+  "@logbookTypeNote": {},
+  "logbookTypeAnchorage": "Fundeio",
+  "@logbookTypeAnchorage": {},
+  "logbookTypeIncident": "Ocorrência",
+  "@logbookTypeIncident": {},
+  "logbookTypeEvent": "Evento",
+  "@logbookTypeEvent": {},
+  "logbookTitle": "Diário de bordo",
+  "@logbookTitle": {},
+  "logbookFilterAll": "Todos",
+  "@logbookFilterAll": {},
+  "logbookNewEntry": "Nova entrada",
+  "@logbookNewEntry": {},
+  "logbookEditEntry": "Editar entrada",
+  "@logbookEditEntry": {},
+  "noLogbookEntries": "Nenhuma entrada no diário de bordo ainda.",
+  "@noLogbookEntries": {},
+  "loadLogbookError": "Não foi possível carregar o diário de bordo.",
+  "@loadLogbookError": {},
+  "logbookTypeLabel": "Tipo",
+  "@logbookTypeLabel": {},
+  "logbookTitleLabel": "Título",
+  "@logbookTitleLabel": {},
+  "logbookTitleRequired": "Informe o título.",
+  "@logbookTitleRequired": {},
+  "logbookDateLabel": "Data",
+  "@logbookDateLabel": {},
+  "logbookTimeLabel": "Hora",
+  "@logbookTimeLabel": {},
+  "logbookUseCurrentPosition": "Registrar posição atual",
+  "@logbookUseCurrentPosition": {},
+  "logbookUseCurrentPositionSubtitle": "Salva onde o barco está agora.",
+  "@logbookUseCurrentPositionSubtitle": {},
+  "logbookPositionUnavailable": "Posição atual indisponível. Verifique o GPS.",
+  "@logbookPositionUnavailable": {},
+  "logbookSave": "Salvar entrada",
+  "@logbookSave": {},
+  "logbookSaved": "Entrada salva.",
+  "@logbookSaved": {},
+  "saveLogbookEntryError": "Não foi possível salvar a entrada.",
+  "@saveLogbookEntryError": {},
+  "logbookInvalidError": "Confira os dados da entrada.",
+  "@logbookInvalidError": {},
+  "deleteLogbookEntry": "Excluir entrada",
+  "@deleteLogbookEntry": {},
+  "deleteLogbookEntryConfirm": "Esta entrada será removida do diário de bordo.",
+  "@deleteLogbookEntryConfirm": {},
+  "deleteLogbookEntryError": "Não foi possível excluir a entrada.",
+  "@deleteLogbookEntryError": {},
+  "logbookDetailsInfoSection": "Detalhes",
+  "@logbookDetailsInfoSection": {},
+  "logbookDetailsTripSection": "Navegação",
+  "@logbookDetailsTripSection": {},
+  "logbookDetailsDate": "Data e hora",
+  "@logbookDetailsDate": {},
+  "logbookDetailsDuration": "Duração",
+  "@logbookDetailsDuration": {},
+  "logbookDetailsDistance": "Distância",
+  "@logbookDetailsDistance": {},
+  "logbookDetailsAvgSpeed": "Velocidade média",
+  "@logbookDetailsAvgSpeed": {},
+  "logbookDetailsMaxSpeed": "Velocidade máxima",
+  "@logbookDetailsMaxSpeed": {},
+  "logbookDetailsEngineHoursEnd": "Horímetro ao final",
+  "@logbookDetailsEngineHoursEnd": {},
+  "logbookDetailsPassengers": "Passageiros",
+  "@logbookDetailsPassengers": {},
+  "logbookDetailsPosition": "Posição",
+  "@logbookDetailsPosition": {},
+  "logbookDetailsNotes": "Observações",
+  "@logbookDetailsNotes": {},
+  "distanceNmValue": "{value} NM",
+  "@distanceNmValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "speedKnValue": "{value} kn",
+  "@speedKnValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} h {minutes} min",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "durationMinutesValue": "{minutes} min",
+  "@durationMinutesValue": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "logbookTopSpeed": "máx {value} kn",
+  "@logbookTopSpeed": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "journalRecentLogbookTitle": "Últimas entradas",
+  "@journalRecentLogbookTitle": {},
+  "journalSeeLogbook": "Ver diário de bordo",
+  "@journalSeeLogbook": {},
+  "journalNoLogbookEntries": "As viagens que você salvar ao encerrar a navegação aparecem aqui.",
+  "@journalNoLogbookEntries": {},
+  "tripSaveTitle": "Salvar viagem no diário",
+  "@tripSaveTitle": {},
+  "tripSaveSubtitle": "Registre esta navegação no diário de bordo da embarcação.",
+  "@tripSaveSubtitle": {},
+  "tripBoatLabel": "Embarcação",
+  "@tripBoatLabel": {},
+  "tripDefaultTitle": "Navegação de {date}",
+  "@tripDefaultTitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "tripEngineHoursEndLabel": "Horímetro ao final (opcional)",
+  "@tripEngineHoursEndLabel": {},
+  "tripPassengersLabel": "Passageiros (opcional)",
+  "@tripPassengersLabel": {},
+  "tripSave": "Salvar no diário",
+  "@tripSave": {},
+  "tripDiscard": "Descartar",
+  "@tripDiscard": {},
+  "tripSaved": "Viagem salva no diário de bordo.",
+  "@tripSaved": {},
+  "tripQueued": "Sem conexão. A viagem será enviada quando houver internet.",
+  "@tripQueued": {},
+  "tripSaveError": "Não foi possível salvar a viagem.",
+  "@tripSaveError": {}
 }

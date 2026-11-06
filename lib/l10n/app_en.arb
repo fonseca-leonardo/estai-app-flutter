@@ -1319,5 +1319,156 @@
         "type": "String"
       }
     }
-  }
+  },
+  "logbookTypeTrip": "Trip",
+  "@logbookTypeTrip": {},
+  "logbookTypeNote": "Note",
+  "@logbookTypeNote": {},
+  "logbookTypeAnchorage": "Anchorage",
+  "@logbookTypeAnchorage": {},
+  "logbookTypeIncident": "Incident",
+  "@logbookTypeIncident": {},
+  "logbookTypeEvent": "Event",
+  "@logbookTypeEvent": {},
+  "logbookTitle": "Logbook",
+  "@logbookTitle": {},
+  "logbookFilterAll": "All",
+  "@logbookFilterAll": {},
+  "logbookNewEntry": "New entry",
+  "@logbookNewEntry": {},
+  "logbookEditEntry": "Edit entry",
+  "@logbookEditEntry": {},
+  "noLogbookEntries": "No logbook entries yet.",
+  "@noLogbookEntries": {},
+  "loadLogbookError": "Couldn't load the logbook.",
+  "@loadLogbookError": {},
+  "logbookTypeLabel": "Type",
+  "@logbookTypeLabel": {},
+  "logbookTitleLabel": "Title",
+  "@logbookTitleLabel": {},
+  "logbookTitleRequired": "Enter a title.",
+  "@logbookTitleRequired": {},
+  "logbookDateLabel": "Date",
+  "@logbookDateLabel": {},
+  "logbookTimeLabel": "Time",
+  "@logbookTimeLabel": {},
+  "logbookUseCurrentPosition": "Record current position",
+  "@logbookUseCurrentPosition": {},
+  "logbookUseCurrentPositionSubtitle": "Saves where the boat is right now.",
+  "@logbookUseCurrentPositionSubtitle": {},
+  "logbookPositionUnavailable": "Current position unavailable. Check the GPS.",
+  "@logbookPositionUnavailable": {},
+  "logbookSave": "Save entry",
+  "@logbookSave": {},
+  "logbookSaved": "Entry saved.",
+  "@logbookSaved": {},
+  "saveLogbookEntryError": "Couldn't save the entry.",
+  "@saveLogbookEntryError": {},
+  "logbookInvalidError": "Check the entry details.",
+  "@logbookInvalidError": {},
+  "deleteLogbookEntry": "Delete entry",
+  "@deleteLogbookEntry": {},
+  "deleteLogbookEntryConfirm": "This entry will be removed from the logbook.",
+  "@deleteLogbookEntryConfirm": {},
+  "deleteLogbookEntryError": "Couldn't delete the entry.",
+  "@deleteLogbookEntryError": {},
+  "logbookDetailsInfoSection": "Details",
+  "@logbookDetailsInfoSection": {},
+  "logbookDetailsTripSection": "Navigation",
+  "@logbookDetailsTripSection": {},
+  "logbookDetailsDate": "Date and time",
+  "@logbookDetailsDate": {},
+  "logbookDetailsDuration": "Duration",
+  "@logbookDetailsDuration": {},
+  "logbookDetailsDistance": "Distance",
+  "@logbookDetailsDistance": {},
+  "logbookDetailsAvgSpeed": "Average speed",
+  "@logbookDetailsAvgSpeed": {},
+  "logbookDetailsMaxSpeed": "Top speed",
+  "@logbookDetailsMaxSpeed": {},
+  "logbookDetailsEngineHoursEnd": "Engine hours at the end",
+  "@logbookDetailsEngineHoursEnd": {},
+  "logbookDetailsPassengers": "Passengers",
+  "@logbookDetailsPassengers": {},
+  "logbookDetailsPosition": "Position",
+  "@logbookDetailsPosition": {},
+  "logbookDetailsNotes": "Notes",
+  "@logbookDetailsNotes": {},
+  "distanceNmValue": "{value} NM",
+  "@distanceNmValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "speedKnValue": "{value} kn",
+  "@speedKnValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} h {minutes} min",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "durationMinutesValue": "{minutes} min",
+  "@durationMinutesValue": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "logbookTopSpeed": "top {value} kn",
+  "@logbookTopSpeed": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "journalRecentLogbookTitle": "Latest entries",
+  "@journalRecentLogbookTitle": {},
+  "journalSeeLogbook": "See logbook",
+  "@journalSeeLogbook": {},
+  "journalNoLogbookEntries": "Trips you save when finishing a navigation show up here.",
+  "@journalNoLogbookEntries": {},
+  "tripSaveTitle": "Save trip to the logbook",
+  "@tripSaveTitle": {},
+  "tripSaveSubtitle": "Log this navigation in the boat's logbook.",
+  "@tripSaveSubtitle": {},
+  "tripBoatLabel": "Boat",
+  "@tripBoatLabel": {},
+  "tripDefaultTitle": "Trip on {date}",
+  "@tripDefaultTitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "tripEngineHoursEndLabel": "Engine hours at the end (optional)",
+  "@tripEngineHoursEndLabel": {},
+  "tripPassengersLabel": "Passengers (optional)",
+  "@tripPassengersLabel": {},
+  "tripSave": "Save to logbook",
+  "@tripSave": {},
+  "tripDiscard": "Discard",
+  "@tripDiscard": {},
+  "tripSaved": "Trip saved to the logbook.",
+  "@tripSaved": {},
+  "tripQueued": "No connection. The trip will be sent when you're back online.",
+  "@tripQueued": {},
+  "tripSaveError": "Couldn't save the trip.",
+  "@tripSaveError": {}
 }

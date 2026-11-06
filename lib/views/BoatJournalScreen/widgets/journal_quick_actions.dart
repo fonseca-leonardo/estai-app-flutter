@@ -6,11 +6,13 @@ import '../../MarinaHomeScreen/widgets/marina_quick_action_tile.dart';
 class JournalQuickActions extends StatelessWidget {
   final VoidCallback onNewMaintenance;
   final VoidCallback onMaintenances;
+  final VoidCallback onLogbook;
 
   const JournalQuickActions({
     super.key,
     required this.onNewMaintenance,
     required this.onMaintenances,
+    required this.onLogbook,
   });
 
   @override
@@ -34,6 +36,14 @@ class JournalQuickActions extends StatelessWidget {
               icon: Icons.build_outlined,
               label: l10n.journalActionMaintenances,
               onTap: onMaintenances,
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: MarinaQuickActionTile(
+              icon: Icons.menu_book_outlined,
+              label: l10n.logbookTitle,
+              onTap: onLogbook,
             ),
           ),
         ],

@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../services/boat_cache_service.dart';
 import '../services/estai_api_client.dart';
 import '../services/marina_storage_service.dart';
+import '../services/pending_trip_queue_service.dart';
 import '../services/push_notification_service.dart';
 
 class AuthViewModel extends ChangeNotifier {
@@ -317,6 +318,7 @@ class AuthViewModel extends ChangeNotifier {
       EstaiApiClient.instance.clearSession();
       await MarinaStorageService().clear();
       await BoatCacheService().clear();
+      await PendingTripQueueService().clear();
       _currentUser = null;
       _isLoading = false;
       _errorMessage = null;

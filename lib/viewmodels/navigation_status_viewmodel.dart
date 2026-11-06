@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/persisted_navigation.dart';
+import '../models/trip_summary.dart';
 import 'settings_viewmodel.dart';
 
 class NavigationStatusViewModel extends ChangeNotifier {
@@ -10,8 +11,18 @@ class NavigationStatusViewModel extends ChangeNotifier {
   static const String _kStartTime = 'nav_start_time';
   static const String _kTrackedRoute = 'nav_tracked_route';
   static const String _kPlannedRoute = 'nav_planned_route';
+  static const String _kMaxSpeed = 'nav_max_speed';
   static const int _trackedSaveEveryNPoints = 5;
   static const Duration _expiration = Duration(hours: 24);
+  static const double _metersPerNauticalMile = 1852.0;
+
+  /// Abaixo disso a navegação não vira viagem no diário de bordo.
+  static const Duration minTripDuration = Duration(minutes: 2);
+  static const double minTripDistanceNm = 0.1;
+
+  /// Leituras de GPS acima disso (~78 kn) são ruído e não contam como
+  /// velocidade máxima.
+  static const double _maxPlausibleSpeedMps = 40;
 
   Timer? _timer;
   Duration _elapsedTime = Duration.zero;
@@ -20,6 +31,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
   List<LatLng> _trackedRoute = [];
   SettingsViewModel? _settingsViewModel;
   int _pointsSinceLastSave = 0;
+  double _maxSpeedMps = 0;
 
   Duration get elapsedTime => _elapsedTime;
   bool get isNavigating => _isNavigating;
@@ -73,9 +85,8 @@ class NavigationStatusViewModel extends ChangeNotifier {
   }
 
   String get formattedDistance {
-    const metersPerNauticalMile = 1852.0;
     final distanceInMeters = _calculateTotalDistance();
-    final nauticalMiles = distanceInMeters / metersPerNauticalMile;
+    final nauticalMiles = distanceInMeters / _metersPerNauticalMile;
     return '${nauticalMiles.toStringAsFixed(2)} NM';
   }
 
@@ -86,6 +97,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
     _startTime = DateTime.now();
     _trackedRoute = [];
     _pointsSinceLastSave = 0;
+    _maxSpeedMps = 0;
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_startTime != null) {
         _elapsedTime = DateTime.now().difference(_startTime!);
@@ -96,8 +108,16 @@ class NavigationStatusViewModel extends ChangeNotifier {
     _persistStart(plannedRoute ?? const []);
   }
 
-  void addTrackedPoint(LatLng point) {
+  /// [speedMps] é a velocidade do GPS nesta leitura; conta para a máxima
+  /// mesmo quando o ponto não entra no trajeto (filtro de distância).
+  void addTrackedPoint(LatLng point, {double? speedMps}) {
     if (!_isNavigating) return;
+
+    if (speedMps != null &&
+        speedMps > _maxSpeedMps &&
+        speedMps <= _maxPlausibleSpeedMps) {
+      _maxSpeedMps = speedMps;
+    }
 
     if (_trackedRoute.isEmpty) {
       _trackedRoute = [point];
@@ -136,8 +156,37 @@ class NavigationStatusViewModel extends ChangeNotifier {
     _startTime = null;
     _trackedRoute = [];
     _pointsSinceLastSave = 0;
+    _maxSpeedMps = 0;
     notifyListeners();
     _clearPersisted();
+  }
+
+  /// Encerra a navegação e devolve o resumo da viagem para o diário de
+  /// bordo, ou `null` se foi curta demais ([minTripDuration],
+  /// [minTripDistanceNm]). O resumo é montado antes de o trajeto ser limpo.
+  TripSummary? finishNavigation({DateTime? now}) {
+    final startedAt = _startTime;
+    final summary = startedAt == null
+        ? null
+        : TripSummary(
+            startedAt: startedAt,
+            endedAt: now ?? DateTime.now(),
+            track: List.of(_trackedRoute),
+            distanceNm: _calculateTotalDistance() / _metersPerNauticalMile,
+            maxSpeedKn: _maxSpeedMps > 0
+                ? _maxSpeedMps * TripSummary.knotsPerMeterPerSecond
+                : null,
+          );
+
+    stopNavigation();
+    resetNavigation();
+
+    if (summary == null ||
+        summary.duration < minTripDuration ||
+        summary.distanceNm < minTripDistanceNm) {
+      return null;
+    }
+    return summary;
   }
 
   Future<PersistedNavigation?> loadPersistedNavigation() async {
@@ -173,6 +222,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
       startTime: startTime,
       trackedRoute: tracked,
       plannedRoute: planned,
+      maxSpeedMps: prefs.getDouble(_kMaxSpeed),
     );
   }
 
@@ -184,6 +234,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
     _trackedRoute = List<LatLng>.from(snapshot.trackedRoute);
     _elapsedTime = DateTime.now().difference(snapshot.startTime);
     _pointsSinceLastSave = 0;
+    _maxSpeedMps = snapshot.maxSpeedMps ?? 0;
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_startTime != null) {
         _elapsedTime = DateTime.now().difference(_startTime!);
@@ -196,9 +247,13 @@ class NavigationStatusViewModel extends ChangeNotifier {
   Future<void> discardPersisted() => _clearPersisted();
 
   Future<void> _persistStart(List<LatLng> plannedRoute) async {
+    final startTime = _startTime;
+    if (startTime == null) return;
     final prefs = await SharedPreferences.getInstance();
+    // Encerrada enquanto o storage abria: não marcar como ativa.
+    if (!_isNavigating) return;
     await prefs.setBool(_kActive, true);
-    await prefs.setString(_kStartTime, _startTime!.toIso8601String());
+    await prefs.setString(_kStartTime, startTime.toIso8601String());
     await prefs.setString(
       _kPlannedRoute,
       PersistedNavigation.encodePoints(plannedRoute),
@@ -219,6 +274,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
       _kTrackedRoute,
       PersistedNavigation.encodePoints(_trackedRoute),
     );
+    await prefs.setDouble(_kMaxSpeed, _maxSpeedMps);
   }
 
   Future<void> flushTrackedRoute() async {
@@ -229,6 +285,7 @@ class NavigationStatusViewModel extends ChangeNotifier {
       _kTrackedRoute,
       PersistedNavigation.encodePoints(_trackedRoute),
     );
+    await prefs.setDouble(_kMaxSpeed, _maxSpeedMps);
   }
 
   Future<void> _clearPersisted() async {
@@ -237,5 +294,6 @@ class NavigationStatusViewModel extends ChangeNotifier {
     await prefs.remove(_kStartTime);
     await prefs.remove(_kTrackedRoute);
     await prefs.remove(_kPlannedRoute);
+    await prefs.remove(_kMaxSpeed);
   }
 }

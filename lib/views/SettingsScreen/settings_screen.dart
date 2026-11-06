@@ -6,6 +6,7 @@ import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
+import '../ListMapsScreen/list_maps_screen.dart';
 import '../NavigationSettingsScreen/navigation_settings_screen.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
 import '../UserAccountScreen/user_account_screen.dart';
@@ -85,6 +86,19 @@ class _SettingsScreenState extends State<SettingsScreen>
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (_) => const NavigationSettingsScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildSettingsTile(
+                        context,
+                        l10n.maps,
+                        Icons.map,
+                        () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const ListMapsScreen(),
                             ),
                           );
                         },

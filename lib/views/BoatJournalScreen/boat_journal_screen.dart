@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../models/boat.dart';
+import '../../models/logbook_entry.dart';
 import '../../models/maintenance.dart';
 import '../../viewmodels/boat_journal_viewmodel.dart';
 import '../../viewmodels/boat_viewmodel.dart';
 import '../../viewmodels/estai_session_viewmodel.dart';
+import '../../viewmodels/trip_log_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../BoatFormScreen/boat_form_screen.dart';
+import '../LogbookEntryDetailScreen/logbook_entry_detail_screen.dart';
+import '../LogbookScreen/logbook_screen.dart';
 import '../MaintenanceFormScreen/maintenance_form_screen.dart';
 import '../MaintenancesScreen/maintenances_screen.dart';
 import '../MarinaHomeScreen/widgets/marina_section_title.dart';
@@ -17,6 +21,7 @@ import 'widgets/journal_header_card.dart';
 import 'widgets/journal_overdue_alert.dart';
 import 'widgets/journal_quick_actions.dart';
 import 'widgets/marina_access_card.dart';
+import 'widgets/recent_logbook_preview.dart';
 import 'widgets/update_engine_hours_sheet.dart';
 import 'widgets/upcoming_maintenances_preview.dart';
 
@@ -46,7 +51,14 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
       boatId: widget.boat.id,
       initialEngineHours: widget.boat.engineHours,
     );
-    WidgetsBinding.instance.addPostFrameCallback((_) => _viewModel.load());
+    WidgetsBinding.instance.addPostFrameCallback((_) => _refresh());
+  }
+
+  /// Envia antes as viagens que ficaram na fila sem conexão, para que já
+  /// apareçam no resumo.
+  Future<void> _refresh() async {
+    await context.read<TripLogViewModel>().flushPending();
+    await _viewModel.load();
   }
 
   @override
@@ -69,6 +81,14 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
         currentEngineHours: _viewModel.engineHours,
       ),
     );
+  }
+
+  void _openLogbook(Boat boat) {
+    _push(LogbookScreen(boatId: boat.id, boatName: boat.name));
+  }
+
+  void _openLogbookEntry(LogbookEntry entry) {
+    _push(LogbookEntryDetailScreen(entry: entry));
   }
 
   void _openMaintenanceForm([Maintenance? maintenance]) {
@@ -176,7 +196,7 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
             final overdueCount = overview?.overdueMaintenancesCount ?? 0;
 
             return RefreshIndicator(
-              onRefresh: viewModel.load,
+              onRefresh: _refresh,
               color: Colors.black,
               backgroundColor: Colors.white,
               child: ListView(
@@ -211,6 +231,7 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
                   JournalQuickActions(
                     onNewMaintenance: _openMaintenanceForm,
                     onMaintenances: () => _openMaintenances(boat),
+                    onLogbook: () => _openLogbook(boat),
                   ),
                   const SizedBox(height: 32),
                   MarinaSectionTitle(
@@ -224,6 +245,14 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
                     onSeeAll: () => _openMaintenances(boat),
                     onCreate: _openMaintenanceForm,
                     onOpen: _openMaintenanceForm,
+                  ),
+                  const SizedBox(height: 32),
+                  MarinaSectionTitle(title: l10n.journalRecentLogbookTitle),
+                  RecentLogbookPreview(
+                    entries: overview?.recentLogbookEntries ?? const [],
+                    isLoading: viewModel.isLoading,
+                    onSeeAll: () => _openLogbook(boat),
+                    onOpen: _openLogbookEntry,
                   ),
                 ],
               ),

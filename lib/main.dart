@@ -37,6 +37,7 @@ import 'viewmodels/marina_access_viewmodel.dart';
 import 'viewmodels/estai_session_viewmodel.dart';
 import 'viewmodels/ramp_schedule_viewmodel.dart';
 import 'viewmodels/service_order_viewmodel.dart';
+import 'viewmodels/trip_log_viewmodel.dart';
 import 'services/anchor_alarm_notification_service.dart';
 import 'services/push_notification_service.dart';
 import 'models/push_notification_target.dart';
@@ -116,6 +117,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late final MarinaMonitoringViewModel marinaMonitoringViewModel;
   late final AuthViewModel authViewModel;
   late final EstaiSessionViewModel estaiSessionViewModel;
+  late final TripLogViewModel tripLogViewModel;
 
   final AppLinks _appLinks = AppLinks();
   StreamSubscription<Uri>? _linkSubscription;
@@ -151,6 +153,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     estaiSessionViewModel = EstaiSessionViewModel();
     estaiSessionViewModel.addListener(_onEstaiSessionChanged);
+    tripLogViewModel = TripLogViewModel();
 
     _initializeWatchConnectivity();
     _initializeDeepLinks();
@@ -229,6 +232,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     if (!_deviceTokenSynced) {
       _deviceTokenSynced = true;
       PushNotificationService.instance.syncToken();
+      // Viagens salvas sem conexão em uma sessão anterior.
+      tripLogViewModel.flushPending();
     }
 
     final target = _pendingPushTarget;
@@ -287,6 +292,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => OnboardingViewModel()),
         ChangeNotifierProvider(create: (_) => BoatViewModel()),
         ChangeNotifierProvider.value(value: estaiSessionViewModel),
+        ChangeNotifierProvider.value(value: tripLogViewModel),
         ChangeNotifierProvider(create: (_) => MarinaAccessViewModel()),
         ChangeNotifierProvider(create: (_) => ServiceOrderViewModel()),
         ChangeNotifierProvider(create: (_) => RampScheduleViewModel()),

@@ -4,7 +4,7 @@ import '../../../l10n/app_localizations.dart';
 import '../../TideScreen/tide_screen.dart';
 import '../../SettingsScreen/settings_screen.dart';
 import '../../RoutesListScreen/routes_list_screen.dart';
-import '../../ListMapsScreen/list_maps_screen.dart';
+import '../../BoatsListScreen/boats_list_screen.dart';
 import '../../NavigationPermissionScreen/navigation_permission_screen.dart';
 import 'feedback_suggestion_dialog.dart';
 import '../../../viewmodels/map_viewmodel.dart';
@@ -14,6 +14,7 @@ import '../../../viewmodels/weather_monitor_pins_viewmodel.dart';
 import '../../../viewmodels/anchor_alarm_viewmodel.dart';
 import '../../../services/anchor_alarm_notification_service.dart';
 import '../../../widgets/start_navigation_flow.dart';
+import '../../../widgets/stop_navigation_flow.dart';
 
 class MapBottomSheet extends StatelessWidget {
   final BuildContext? parentContext;
@@ -80,10 +81,9 @@ class MapBottomSheet extends StatelessWidget {
                                           >(navigatorContext, listen: false);
                                       if (navigationStatusViewModel
                                           .isNavigating) {
-                                        navigationStatusViewModel
-                                            .stopNavigation();
-                                        navigationStatusViewModel
-                                            .resetNavigation();
+                                        StopNavigationFlow.stop(
+                                          navigatorContext,
+                                        );
                                       } else {
                                         final routePlannerViewModel =
                                             Provider.of<RoutePlannerViewModel>(
@@ -165,8 +165,8 @@ class MapBottomSheet extends StatelessWidget {
                           },
                         ),
                         _GridItem(
-                          icon: Icons.map,
-                          title: l10n.maps,
+                          icon: Icons.directions_boat,
+                          title: l10n.myBoats,
                           onTap: () {
                             final navigatorContext = parentContext ?? context;
                             Navigator.pop(context);
@@ -175,7 +175,7 @@ class MapBottomSheet extends StatelessWidget {
                                 Navigator.of(navigatorContext).push(
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const ListMapsScreen(),
+                                        const BoatsListScreen(),
                                   ),
                                 );
                               }

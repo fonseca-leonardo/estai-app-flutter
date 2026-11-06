@@ -72,7 +72,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get forgotPasswordTitle => 'Esqueceu sua senha?';
 
   @override
-  String get forgotPasswordDescription => 'Digite seu email e enviaremos um link para redefinir sua senha.';
+  String get forgotPasswordDescription =>
+      'Digite seu email e enviaremos um link para redefinir sua senha.';
 
   @override
   String get sendEmail => 'Enviar Email';
@@ -81,7 +82,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get backToLogin => 'Voltar para login';
 
   @override
-  String get passwordResetEmailSent => 'Email de recuperação enviado! Verifique sua caixa de entrada.';
+  String get passwordResetEmailSent =>
+      'Email de recuperação enviado! Verifique sua caixa de entrada.';
 
   @override
   String get settings => 'Configurações';
@@ -101,7 +103,8 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get minimumDistanceDescription => 'Define a distância mínima em metros que o usuário precisa percorrer para que um novo ponto seja adicionado à rota rastreada durante a navegação. Valores maiores resultam em rotas com menos pontos, enquanto valores menores criam rotas mais detalhadas.';
+  String get minimumDistanceDescription =>
+      'Define a distância mínima em metros que o usuário precisa percorrer para que um novo ponto seja adicionado à rota rastreada durante a navegação. Valores maiores resultam em rotas com menos pontos, enquanto valores menores criam rotas mais detalhadas.';
 
   @override
   String meters(String value) {
@@ -112,13 +115,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tryAgain => 'Tentar Novamente';
 
   @override
-  String get locationServicesDisabled => 'Serviços de localização estão desabilitados.';
+  String get locationServicesDisabled =>
+      'Serviços de localização estão desabilitados.';
 
   @override
   String get locationPermissionDenied => 'Permissão de localização negada.';
 
   @override
-  String get locationPermissionDeniedForever => 'Permissão de localização negada permanentemente.';
+  String get locationPermissionDeniedForever =>
+      'Permissão de localização negada permanentemente.';
 
   @override
   String errorGettingLocation(String error) {
@@ -134,7 +139,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get finishNavigation => 'Finalizar Navegação';
 
   @override
-  String get finishNavigationQuestion => 'Deseja realmente finalizar a navegação?';
+  String get finishNavigationQuestion =>
+      'Deseja realmente finalizar a navegação?';
 
   @override
   String get cancel => 'Cancelar';
@@ -184,13 +190,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get improvementsAndSuggestions => 'Sugestões';
 
   @override
-  String get feedbackSuggestionPlaceholder => 'Compartilhe sua sugestão ou melhoria (máx. 500 caracteres)';
+  String get feedbackSuggestionPlaceholder =>
+      'Compartilhe sua sugestão ou melhoria (máx. 500 caracteres)';
 
   @override
   String get feedbackSentSuccess => 'Obrigado! Seu feedback foi enviado.';
 
   @override
-  String get feedbackError => 'Não foi possível enviar o feedback. Tente novamente.';
+  String get feedbackError =>
+      'Não foi possível enviar o feedback. Tente novamente.';
 
   @override
   String feedbackMaxCharacters(String current, String max) {
@@ -277,25 +285,29 @@ class AppLocalizationsPt extends AppLocalizations {
   String get navigationSettings => 'Configurações de Navegação';
 
   @override
-  String get navigationSettingsDescription => 'Configure as opções de navegação e rastreamento';
+  String get navigationSettingsDescription =>
+      'Configure as opções de navegação e rastreamento';
 
   @override
   String get navigationPermission => 'Permissões GPS';
 
   @override
-  String get navigationPermissionDescription => 'Veja o status atual da permissão de localização e altere nas configurações do sistema se necessário.';
+  String get navigationPermissionDescription =>
+      'Veja o status atual da permissão de localização e altere nas configurações do sistema se necessário.';
 
   @override
   String get locationPermissionAlways => 'Sempre permitir';
 
   @override
-  String get locationPermissionAlwaysSubtitle => 'Localização disponível em primeiro e segundo plano.';
+  String get locationPermissionAlwaysSubtitle =>
+      'Localização disponível em primeiro e segundo plano.';
 
   @override
   String get locationPermissionWhileInUse => 'Enquanto usa o app';
 
   @override
-  String get locationPermissionWhileInUseSubtitle => 'Ative \"Sempre\" para rastrear durante a navegação.';
+  String get locationPermissionWhileInUseSubtitle =>
+      'Ative \"Sempre\" para rastrear durante a navegação.';
 
   @override
   String get openAppSettings => 'Abrir configurações';
@@ -304,13 +316,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get locationPermissionChecking => 'Verificando...';
 
   @override
-  String get locationPermissionCheckingSubtitle => 'Aguarde enquanto verificamos.';
+  String get locationPermissionCheckingSubtitle =>
+      'Aguarde enquanto verificamos.';
 
   @override
-  String get locationPermissionDeniedSubtitle => 'O app não pode acessar sua localização.';
+  String get locationPermissionDeniedSubtitle =>
+      'O app não pode acessar sua localização.';
 
   @override
-  String get locationPermissionDeniedForeverSubtitle => 'Você negou a permissão. Altere nas configurações do sistema.';
+  String get locationPermissionDeniedForeverSubtitle =>
+      'Você negou a permissão. Altere nas configurações do sistema.';
 
   @override
   String get userAccount => 'Conta do Usuário';
@@ -379,22 +394,26 @@ class AppLocalizationsPt extends AppLocalizations {
   String get maps => 'Mapas';
 
   @override
-  String get mapsSelectionDescription => 'Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.';
+  String get mapsSelectionDescription =>
+      'Selecione os mapas que deseja exibir na tela principal. Os mapas selecionados serão sobrepostos ao mapa base.';
 
   @override
-  String get mapsSelectionPerformanceWarning => 'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo.';
+  String get mapsSelectionPerformanceWarning =>
+      'Atenção: Selecionar muitos mapas pode impactar o desempenho do aplicativo.';
 
   @override
   String get darkMode => 'Modo Escuro';
 
   @override
-  String get darkModeDescription => 'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
+  String get darkModeDescription =>
+      'Ative o modo escuro para mapas customizados para reduzir o cansaço visual em condições de pouca luz.';
 
   @override
   String get saveRouteForReuse => 'Salvar para reutilização';
 
   @override
-  String get saveRouteForReuseDescription => 'Salve esta rota para poder usá-la novamente no futuro';
+  String get saveRouteForReuseDescription =>
+      'Salve esta rota para poder usá-la novamente no futuro';
 
   @override
   String get confirm => 'Confirmar';
@@ -403,7 +422,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get plannedRoute => 'Rota Planejada';
 
   @override
-  String get errorLoadingMaps => 'Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.';
+  String get errorLoadingMaps =>
+      'Não foi possível buscar a lista de mapas agora. Verifique sua conexão com a internet e tente novamente mais tarde.';
 
   @override
   String get signInWithGoogle => 'Continuar com Google';
@@ -425,13 +445,16 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get networkError => 'Erro de rede. Verifique sua conexão com a internet.';
+  String get networkError =>
+      'Erro de rede. Verifique sua conexão com a internet.';
 
   @override
-  String get accountExistsWithDifferentCredential => 'Uma conta já existe com o mesmo endereço de email, mas usando um método de login diferente.';
+  String get accountExistsWithDifferentCredential =>
+      'Uma conta já existe com o mesmo endereço de email, mas usando um método de login diferente.';
 
   @override
-  String get operationNotAllowed => 'Login com Google não está habilitado. Entre em contato com o suporte.';
+  String get operationNotAllowed =>
+      'Login com Google não está habilitado. Entre em contato com o suporte.';
 
   @override
   String get signInWithApple => 'Continuar com Apple';
@@ -450,10 +473,12 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get tideDataDisclaimer => 'Os dados oficiais de maré são de responsabilidade da Marinha do Brasil.';
+  String get tideDataDisclaimer =>
+      'Os dados oficiais de maré são de responsabilidade da Marinha do Brasil.';
 
   @override
-  String get tideExternalBrowserNotice => 'Ao selecionar um das tábuas, você será redirecionado para o site oficial da Marinha do Brasil';
+  String get tideExternalBrowserNotice =>
+      'Ao selecionar um das tábuas, você será redirecionado para o site oficial da Marinha do Brasil';
 
   @override
   String get weatherForecast => 'Previsão do Tempo';
@@ -507,10 +532,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get precipitationProbability => 'Prob. Chuva';
 
   @override
-  String get loginRequiredForForecast => 'Para acessar a previsão do tempo, você precisa estar logado.';
+  String get loginRequiredForForecast =>
+      'Para acessar a previsão do tempo, você precisa estar logado.';
 
   @override
-  String get loginRequiredForAction => 'Para realizar esta ação é preciso estar logado.';
+  String get loginRequiredForAction =>
+      'Para realizar esta ação é preciso estar logado.';
 
   @override
   String get goToLogin => 'Ir para Login';
@@ -557,19 +584,23 @@ class AppLocalizationsPt extends AppLocalizations {
   String get deleteAccount => 'Excluir Conta';
 
   @override
-  String get deleteAccountDescription => 'Excluir permanentemente sua conta e todos os dados associados';
+  String get deleteAccountDescription =>
+      'Excluir permanentemente sua conta e todos os dados associados';
 
   @override
-  String get deleteAccountWarning => 'Esta ação não pode ser desfeita. Todos os seus dados serão perdidos permanentemente.';
+  String get deleteAccountWarning =>
+      'Esta ação não pode ser desfeita. Todos os seus dados serão perdidos permanentemente.';
 
   @override
   String get deleteAccountConfirmTitle => 'Confirmar Exclusão de Conta';
 
   @override
-  String get deleteAccountConfirmMessage => 'Tem certeza que deseja excluir sua conta? Esta ação é irreversível e removerá:';
+  String get deleteAccountConfirmMessage =>
+      'Tem certeza que deseja excluir sua conta? Esta ação é irreversível e removerá:';
 
   @override
-  String get deleteAccountConfirmItems => '• Sua conta de autenticação\n• Todas as rotas salvas\n• Todos os dados associados';
+  String get deleteAccountConfirmItems =>
+      '• Sua conta de autenticação\n• Todas as rotas salvas\n• Todos os dados associados';
 
   @override
   String get deleteAccountSuccess => 'Conta excluída com sucesso';
@@ -580,16 +611,19 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get deleteAccountRequiresRecentLogin => 'Para excluir sua conta, você precisa fazer login novamente por segurança.';
+  String get deleteAccountRequiresRecentLogin =>
+      'Para excluir sua conta, você precisa fazer login novamente por segurança.';
 
   @override
   String get typeDeleteToConfirm => 'Digite EXCLUIR para confirmar';
 
   @override
-  String get backgroundLocationDisclosureTitle => 'Acesso à Localização em Segundo Plano';
+  String get backgroundLocationDisclosureTitle =>
+      'Acesso à Localização em Segundo Plano';
 
   @override
-  String get backgroundLocationDisclosureBody => 'Este aplicativo coleta seus dados de localização para permitir o rastreamento de rotas e navegação mesmo quando o app está em segundo plano ou a tela está desligada.\n\nIsso permite que você:\n• Rastreie sua rota durante a navegação sem manter a tela ligada\n• Receba atualizações de posição precisas continuamente\n\nSeus dados de localização são usados apenas para navegação e não são compartilhados com terceiros.';
+  String get backgroundLocationDisclosureBody =>
+      'Este aplicativo coleta seus dados de localização para permitir o rastreamento de rotas e navegação mesmo quando o app está em segundo plano ou a tela está desligada.\n\nIsso permite que você:\n• Rastreie sua rota durante a navegação sem manter a tela ligada\n• Receba atualizações de posição precisas continuamente\n\nSeus dados de localização são usados apenas para navegação e não são compartilhados com terceiros.';
 
   @override
   String get backgroundLocationAllow => 'Permitir';
@@ -606,7 +640,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get signalKConfiguration => 'Configuração SignalK';
 
   @override
-  String get signalKConfigurationDescription => 'Configure o servidor SignalK local para receber dados de navegação do barco.';
+  String get signalKConfigurationDescription =>
+      'Configure o servidor SignalK local para receber dados de navegação do barco.';
 
   @override
   String get signalKHost => 'Endereço do servidor';
@@ -636,7 +671,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get rasterChartsEmptyTitle => 'Nenhuma carta importada';
 
   @override
-  String get rasterChartsEmptyMessage => 'Importe um .zip de carta raster (BSB/KAP) da Marinha do Brasil para visualizá-la sobre o mapa.';
+  String get rasterChartsEmptyMessage =>
+      'Importe um .zip de carta raster (BSB/KAP) da Marinha do Brasil para visualizá-la sobre o mapa.';
 
   @override
   String get rasterChartImport => 'Importar carta';
@@ -702,7 +738,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get anchorAlarmTriggered => 'Âncora Arrastou!';
 
   @override
-  String get anchorAlarmTriggeredMessage => 'Você saiu do raio de segurança definido para a âncora.';
+  String get anchorAlarmTriggeredMessage =>
+      'Você saiu do raio de segurança definido para a âncora.';
 
   @override
   String get anchorAlarmDisable => 'Desativar Alarme';
@@ -711,16 +748,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get anchorAlarmDismiss => 'Ignorar';
 
   @override
-  String get anchorAlarmNotificationRationaleTitle => 'Permissão de Notificações';
+  String get anchorAlarmNotificationRationaleTitle =>
+      'Permissão de Notificações';
 
   @override
-  String get anchorAlarmNotificationRationaleBody => 'O alarme de âncora precisa enviar notificações para alertá-lo quando a âncora arrastar, mesmo com o app em segundo plano ou a tela desligada.';
+  String get anchorAlarmNotificationRationaleBody =>
+      'O alarme de âncora precisa enviar notificações para alertá-lo quando a âncora arrastar, mesmo com o app em segundo plano ou a tela desligada.';
 
   @override
   String get anchorAlarmNotificationBlockedTitle => 'Notificações Bloqueadas';
 
   @override
-  String get anchorAlarmNotificationBlockedBody => 'As notificações estão bloqueadas para este app. Para receber o alarme de âncora, ative as notificações nas configurações do sistema.';
+  String get anchorAlarmNotificationBlockedBody =>
+      'As notificações estão bloqueadas para este app. Para receber o alarme de âncora, ative as notificações nas configurações do sistema.';
 
   @override
   String get notNow => 'Agora não';
@@ -729,43 +769,50 @@ class AppLocalizationsPt extends AppLocalizations {
   String get onboardingWelcomeTitle => 'Bem-vindo ao Estai';
 
   @override
-  String get onboardingWelcomeDescription => 'Um tour rápido pelas funcionalidades disponíveis na tela do mapa.';
+  String get onboardingWelcomeDescription =>
+      'Um tour rápido pelas funcionalidades disponíveis na tela do mapa.';
 
   @override
   String get onboardingRoutesTitle => 'Planeje suas rotas';
 
   @override
-  String get onboardingRoutesDescription => 'Inicie uma nova rota pelo menu de ações, segure no mapa para adicionar pontos e salve para reutilizar em outras viagens.';
+  String get onboardingRoutesDescription =>
+      'Inicie uma nova rota pelo menu de ações, segure no mapa para adicionar pontos e salve para reutilizar em outras viagens.';
 
   @override
   String get onboardingNavigationTitle => 'Inicie a navegação';
 
   @override
-  String get onboardingNavigationDescription => 'Inicie a navegação para acompanhar o andamento da viagem em tempo real: mantenha o rumo, veja distância, velocidade e o trajeto percorrido no mapa.';
+  String get onboardingNavigationDescription =>
+      'Inicie a navegação para acompanhar o andamento da viagem em tempo real: mantenha o rumo, veja distância, velocidade e o trajeto percorrido no mapa.';
 
   @override
   String get onboardingRasterChartsTitle => 'Cartas raster da Marinha';
 
   @override
-  String get onboardingRasterChartsDescription => 'Importe as cartas oficiais BSB/KAP da Marinha do Brasil e sobreponha no mapa para uma navegação mais precisa.';
+  String get onboardingRasterChartsDescription =>
+      'Importe as cartas oficiais BSB/KAP da Marinha do Brasil e sobreponha no mapa para uma navegação mais precisa.';
 
   @override
   String get onboardingWeatherTitle => 'Previsão do tempo';
 
   @override
-  String get onboardingWeatherDescription => 'Adicione pins de clima ao longo do trajeto e acompanhe previsão marinha, vento, ondas e chuva com antecedência.';
+  String get onboardingWeatherDescription =>
+      'Adicione pins de clima ao longo do trajeto e acompanhe previsão marinha, vento, ondas e chuva com antecedência.';
 
   @override
   String get onboardingAnchorAlarmTitle => 'Alarme de âncora';
 
   @override
-  String get onboardingAnchorAlarmDescription => 'Defina um raio de segurança após ancorar e receba um alerta caso o barco saia desse raio, mesmo com a tela desligada.';
+  String get onboardingAnchorAlarmDescription =>
+      'Defina um raio de segurança após ancorar e receba um alerta caso o barco saia desse raio, mesmo com a tela desligada.';
 
   @override
   String get onboardingMapsTitle => 'Mapas personalizados';
 
   @override
-  String get onboardingMapsDescription => 'Escolha camadas adicionais no catálogo de mapas e baixe-as para uso offline durante seus passeios.';
+  String get onboardingMapsDescription =>
+      'Escolha camadas adicionais no catálogo de mapas e baixe-as para uso offline durante seus passeios.';
 
   @override
   String get onboardingSkip => 'Pular';
@@ -821,7 +868,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get pleaseEnterValidYear => 'Por favor, insira um ano válido';
 
   @override
-  String get pleaseEnterValidLength => 'Por favor, insira um comprimento válido';
+  String get pleaseEnterValidLength =>
+      'Por favor, insira um comprimento válido';
 
   @override
   String get deleteBoat => 'Excluir Barco';
@@ -848,25 +896,30 @@ class AppLocalizationsPt extends AppLocalizations {
   String get loadBoatsError => 'Não foi possível carregar seus barcos.';
 
   @override
-  String get saveBoatError => 'Não foi possível salvar o barco. Tente novamente.';
+  String get saveBoatError =>
+      'Não foi possível salvar o barco. Tente novamente.';
 
   @override
-  String get deleteBoatError => 'Não foi possível excluir o barco. Tente novamente.';
+  String get deleteBoatError =>
+      'Não foi possível excluir o barco. Tente novamente.';
 
   @override
-  String get signalKIosLocalNetworkNotice => 'Na primeira conexão, o iOS solicitará permissão de acesso à rede local. Permita para que o app possa se comunicar com o servidor SignalK.';
+  String get signalKIosLocalNetworkNotice =>
+      'Na primeira conexão, o iOS solicitará permissão de acesso à rede local. Permita para que o app possa se comunicar com o servidor SignalK.';
 
   @override
   String get marinaAccessTitle => 'Associar à Marina';
 
   @override
-  String get marinaAccessInviteMessage => 'Você foi convidado a se associar a esta marina. Selecione as embarcações que deseja vincular.';
+  String get marinaAccessInviteMessage =>
+      'Você foi convidado a se associar a esta marina. Selecione as embarcações que deseja vincular.';
 
   @override
   String get selectBoatsToAssociate => 'Selecione as embarcações';
 
   @override
-  String get noBoatsAvailable => 'Você ainda não possui embarcações cadastradas. É possível continuar sem selecionar nenhuma.';
+  String get noBoatsAvailable =>
+      'Você ainda não possui embarcações cadastradas. É possível continuar sem selecionar nenhuma.';
 
   @override
   String get confirmAssociation => 'Confirmar associação';
@@ -886,16 +939,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get loadMarinaError => 'Não foi possível carregar os dados da marina.';
 
   @override
-  String get associationError => 'Não foi possível concluir a associação. Tente novamente.';
+  String get associationError =>
+      'Não foi possível concluir a associação. Tente novamente.';
 
   @override
   String get marinaAccessToggleLabel => 'Acesso da marina';
 
   @override
-  String get marinaAccessToggleDescription => 'Permita que a marina visualize e gerencie esta embarcação.';
+  String get marinaAccessToggleDescription =>
+      'Permita que a marina visualize e gerencie esta embarcação.';
 
   @override
-  String get marinaAccessToggleError => 'Não foi possível atualizar o acesso da marina. Tente novamente.';
+  String get marinaAccessToggleError =>
+      'Não foi possível atualizar o acesso da marina. Tente novamente.';
 
   @override
   String get marinaHubTooltip => 'Minha marina';
@@ -928,10 +984,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noServiceOrders => 'Nenhuma ordem de serviço ainda';
 
   @override
-  String get noServiceOrdersWithFilter => 'Nenhuma ordem de serviço com esse status';
+  String get noServiceOrdersWithFilter =>
+      'Nenhuma ordem de serviço com esse status';
 
   @override
-  String get loadServiceOrdersError => 'Não foi possível carregar suas ordens de serviço.';
+  String get loadServiceOrdersError =>
+      'Não foi possível carregar suas ordens de serviço.';
 
   @override
   String get serviceOrderStatusAll => 'Todas';
@@ -979,13 +1037,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get serviceOrderCreated => 'Ordem de serviço criada';
 
   @override
-  String get createServiceOrderError => 'Não foi possível criar a ordem de serviço. Tente novamente.';
+  String get createServiceOrderError =>
+      'Não foi possível criar a ordem de serviço. Tente novamente.';
 
   @override
   String get noMarinaBoats => 'Nenhum barco vinculado à marina';
 
   @override
-  String get noMarinaBoatsDescription => 'Vincule um barco à marina para poder solicitar serviços.';
+  String get noMarinaBoatsDescription =>
+      'Vincule um barco à marina para poder solicitar serviços.';
 
   @override
   String get manageBoatsCta => 'Gerenciar meus barcos';
@@ -994,7 +1054,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get emptyServiceCatalog => 'A marina ainda não cadastrou serviços';
 
   @override
-  String get loadPriceItemsError => 'Não foi possível carregar os serviços disponíveis.';
+  String get loadPriceItemsError =>
+      'Não foi possível carregar os serviços disponíveis.';
 
   @override
   String get cancelServiceOrder => 'Cancelar ordem';
@@ -1003,7 +1064,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get cancelServiceOrderConfirm => 'Cancelar esta ordem de serviço?';
 
   @override
-  String get cancelServiceOrderError => 'Não foi possível cancelar a ordem de serviço. Tente novamente.';
+  String get cancelServiceOrderError =>
+      'Não foi possível cancelar a ordem de serviço. Tente novamente.';
 
   @override
   String get keepOrder => 'Manter';
@@ -1024,7 +1086,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get selectBoatTitle => 'Selecione seu barco';
 
   @override
-  String get selectBoatSubtitle => 'Sua marina acompanhará a posição deste barco durante a navegação.';
+  String get selectBoatSubtitle =>
+      'Sua marina acompanhará a posição deste barco durante a navegação.';
 
   @override
   String get startNavigationAction => 'Iniciar navegação';
@@ -1033,7 +1096,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get startWithoutMonitoring => 'Iniciar sem monitoria';
 
   @override
-  String get noBoatsMonitoringWarning => 'Você não tem barcos vinculados à marina, então ela não fará a monitoria desta navegação.';
+  String get noBoatsMonitoringWarning =>
+      'Você não tem barcos vinculados à marina, então ela não fará a monitoria desta navegação.';
 
   @override
   String get registerBoat => 'Cadastrar barco';
@@ -1072,13 +1136,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get rampBookingTitle => 'Agendar rampa';
 
   @override
-  String get rampBookingSubtitle => 'Desça ou suba seu barco na rampa da marina';
+  String get rampBookingSubtitle =>
+      'Desça ou suba seu barco na rampa da marina';
 
   @override
   String get myRampSchedules => 'Meus agendamentos de rampa';
 
   @override
-  String get myRampSchedulesSubtitle => 'Acompanhe a aprovação dos seus pedidos';
+  String get myRampSchedulesSubtitle =>
+      'Acompanhe a aprovação dos seus pedidos';
 
   @override
   String get upcomingRampSchedules => 'Próximos na rampa';
@@ -1169,7 +1235,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get rampReturnToggle => 'Agendar a subida de volta';
 
   @override
-  String get rampReturnDescription => 'A subida fica reservada junto com a descida, num pedido só.';
+  String get rampReturnDescription =>
+      'A subida fica reservada junto com a descida, num pedido só.';
 
   @override
   String rampReturnAfter(String time) {
@@ -1198,7 +1265,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get rampAutoConfirmInfo => 'Esta rampa confirma o pedido na hora.';
 
   @override
-  String get rampPendingInfo => 'A marina vai analisar o pedido. Acompanhe o status em Meus agendamentos de rampa.';
+  String get rampPendingInfo =>
+      'A marina vai analisar o pedido. Acompanhe o status em Meus agendamentos de rampa.';
 
   @override
   String get rampNotesHint => 'Observações para a marina (opcional)';
@@ -1213,25 +1281,30 @@ class AppLocalizationsPt extends AppLocalizations {
   String get rampBookingConfirmed => 'Agendamento confirmado';
 
   @override
-  String get rampBookingRequested => 'Pedido enviado. Aguarde a aprovação da marina.';
+  String get rampBookingRequested =>
+      'Pedido enviado. Aguarde a aprovação da marina.';
 
   @override
-  String get rampConflictError => 'Esse horário acabou de ser ocupado. Escolha outro.';
+  String get rampConflictError =>
+      'Esse horário acabou de ser ocupado. Escolha outro.';
 
   @override
-  String get rampCreateError => 'Não foi possível enviar o pedido. Tente novamente.';
+  String get rampCreateError =>
+      'Não foi possível enviar o pedido. Tente novamente.';
 
   @override
   String get rampNoMarinaTitle => 'Você ainda não está vinculado a uma marina';
 
   @override
-  String get rampNoMarinaDescription => 'Peça para sua marina liberar seu acesso no Estai.';
+  String get rampNoMarinaDescription =>
+      'Peça para sua marina liberar seu acesso no Estai.';
 
   @override
   String get rampNoRampsTitle => 'Nenhuma rampa disponível';
 
   @override
-  String get rampNoRampsDescription => 'Sua marina ainda não liberou o agendamento de rampa pelo app.';
+  String get rampNoRampsDescription =>
+      'Sua marina ainda não liberou o agendamento de rampa pelo app.';
 
   @override
   String get rampLoadRampsError => 'Não foi possível carregar as rampas.';
@@ -1246,7 +1319,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noRampSchedulesHistory => 'Nenhum agendamento no histórico';
 
   @override
-  String get loadRampSchedulesError => 'Não foi possível carregar seus agendamentos.';
+  String get loadRampSchedulesError =>
+      'Não foi possível carregar seus agendamentos.';
 
   @override
   String get rampReturnBadge => 'Retorno';
@@ -1271,7 +1345,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get keepRampSchedule => 'Manter';
 
   @override
-  String get cancelRampScheduleError => 'Não foi possível cancelar o agendamento. Tente novamente.';
+  String get cancelRampScheduleError =>
+      'Não foi possível cancelar o agendamento. Tente novamente.';
 
   @override
   String get rampNewSchedule => 'Novo agendamento';
@@ -1301,19 +1376,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get reminderChannelName => 'Lembretes';
 
   @override
-  String get reminderChannelDescription => 'Lembretes de manutenção da embarcação';
+  String get reminderChannelDescription =>
+      'Lembretes de manutenção da embarcação';
 
   @override
   String get pushPermissionRationaleTitle => 'Ativar lembretes';
 
   @override
-  String get pushPermissionRationaleBody => 'Para avisar quando uma manutenção estiver chegando, o Estai precisa enviar notificações para este aparelho.';
+  String get pushPermissionRationaleBody =>
+      'Para avisar quando uma manutenção estiver chegando, o Estai precisa enviar notificações para este aparelho.';
 
   @override
   String get pushPermissionBlockedTitle => 'Notificações bloqueadas';
 
   @override
-  String get pushPermissionBlockedBody => 'As notificações do Estai estão desativadas. Ative nas configurações do aparelho para receber os lembretes.';
+  String get pushPermissionBlockedBody =>
+      'As notificações do Estai estão desativadas. Ative nas configurações do aparelho para receber os lembretes.';
 
   @override
   String get notificationChannelPush => 'Push';
@@ -1400,13 +1478,15 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get journalLoadError => 'Não foi possível carregar o diário da embarcação.';
+  String get journalLoadError =>
+      'Não foi possível carregar o diário da embarcação.';
 
   @override
   String get engineHoursSheetTitle => 'Atualizar horímetro';
 
   @override
-  String get engineHoursSheetHint => 'Informe a leitura atual do horímetro do motor.';
+  String get engineHoursSheetHint =>
+      'Informe a leitura atual do horímetro do motor.';
 
   @override
   String get engineHoursFieldLabel => 'Horas do motor';
@@ -1447,7 +1527,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noMaintenancesHistory => 'Nenhuma manutenção concluída ainda.';
 
   @override
-  String get loadMaintenancesError => 'Não foi possível carregar as manutenções.';
+  String get loadMaintenancesError =>
+      'Não foi possível carregar as manutenções.';
 
   @override
   String get maintenanceScheduleFirst => 'Agendar manutenção';
@@ -1507,7 +1588,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get maintenanceCompleted => 'Manutenção concluída.';
 
   @override
-  String get completeMaintenanceError => 'Não foi possível concluir a manutenção.';
+  String get completeMaintenanceError =>
+      'Não foi possível concluir a manutenção.';
 
   @override
   String get completeMaintenanceTitle => 'Concluir manutenção';
@@ -1516,13 +1598,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get completeMaintenanceDate => 'Data da conclusão';
 
   @override
-  String get completeMaintenanceEngineHours => 'Horímetro na conclusão (opcional)';
+  String get completeMaintenanceEngineHours =>
+      'Horímetro na conclusão (opcional)';
 
   @override
   String get completeMaintenanceCost => 'Custo (opcional)';
 
   @override
-  String get completeMaintenanceRecurringHint => 'Como é recorrente, a próxima ocorrência será agendada automaticamente.';
+  String get completeMaintenanceRecurringHint =>
+      'Como é recorrente, a próxima ocorrência será agendada automaticamente.';
 
   @override
   String get maintenanceTitleLabel => 'Título';
@@ -1543,7 +1627,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get maintenanceDueSection => 'Vencimento';
 
   @override
-  String get maintenanceDueHint => 'Informe uma data, um horímetro ou os dois. Vale o que chegar primeiro.';
+  String get maintenanceDueHint =>
+      'Informe uma data, um horímetro ou os dois. Vale o que chegar primeiro.';
 
   @override
   String get maintenanceDueDateLabel => 'Data';
@@ -1555,13 +1640,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get maintenanceDueEngineHoursLabel => 'Horímetro (h)';
 
   @override
-  String get maintenanceMissingDue => 'Informe a data ou o horímetro do vencimento.';
+  String get maintenanceMissingDue =>
+      'Informe a data ou o horímetro do vencimento.';
 
   @override
   String get maintenanceRecurrenceTitle => 'Repetir';
 
   @override
-  String get maintenanceRecurrenceSubtitle => 'Ao concluir, a próxima é agendada automaticamente.';
+  String get maintenanceRecurrenceSubtitle =>
+      'Ao concluir, a próxima é agendada automaticamente.';
 
   @override
   String get maintenanceRecurrenceMonthsLabel => 'A cada (meses)';
@@ -1570,7 +1657,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get maintenanceRecurrenceHoursLabel => 'A cada (horas)';
 
   @override
-  String get maintenanceRecurrenceRequired => 'Informe meses ou horas para repetir.';
+  String get maintenanceRecurrenceRequired =>
+      'Informe meses ou horas para repetir.';
 
   @override
   String get maintenanceProviderLabel => 'Oficina ou responsável (opcional)';
@@ -1591,7 +1679,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get deleteMaintenance => 'Excluir manutenção';
 
   @override
-  String get deleteMaintenanceConfirm => 'Esta manutenção e seus lembretes serão removidos.';
+  String get deleteMaintenanceConfirm =>
+      'Esta manutenção e seus lembretes serão removidos.';
 
   @override
   String get deleteMaintenanceError => 'Não foi possível excluir a manutenção.';
@@ -1627,13 +1716,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get notificationSettings => 'Notificações';
 
   @override
-  String get notificationPrefsDescription => 'Os lembretes de manutenção são enviados pela Estai pelos canais que você ativar.';
+  String get notificationPrefsDescription =>
+      'Os lembretes de manutenção são enviados pela Estai pelos canais que você ativar.';
 
   @override
   String get notificationPrefsPush => 'Notificações push';
 
   @override
-  String get notificationPrefsPushSubtitle => 'No celular, mesmo com o app fechado.';
+  String get notificationPrefsPushSubtitle =>
+      'No celular, mesmo com o app fechado.';
 
   @override
   String get notificationPrefsEmail => 'E-mail';
@@ -1644,10 +1735,12 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get notificationPrefsEmailSubtitleNoEmail => 'Enviado para o e-mail da sua conta.';
+  String get notificationPrefsEmailSubtitleNoEmail =>
+      'Enviado para o e-mail da sua conta.';
 
   @override
-  String get notificationPrefsSystemBlocked => 'As notificações estão desativadas neste aparelho. Permita para receber os lembretes por push.';
+  String get notificationPrefsSystemBlocked =>
+      'As notificações estão desativadas neste aparelho. Permita para receber os lembretes por push.';
 
   @override
   String get notificationPrefsAllow => 'Permitir notificações';
@@ -1659,25 +1752,30 @@ class AppLocalizationsPt extends AppLocalizations {
   String get notificationPrefsTestSent => 'Notificação de teste enviada.';
 
   @override
-  String get notificationPrefsTestError => 'Não foi possível enviar a notificação de teste.';
+  String get notificationPrefsTestError =>
+      'Não foi possível enviar a notificação de teste.';
 
   @override
-  String get notificationPrefsLoadError => 'Não foi possível carregar suas preferências.';
+  String get notificationPrefsLoadError =>
+      'Não foi possível carregar suas preferências.';
 
   @override
-  String get notificationPrefsSaveError => 'Não foi possível salvar suas preferências.';
+  String get notificationPrefsSaveError =>
+      'Não foi possível salvar suas preferências.';
 
   @override
   String get maintenanceAlreadyDone => 'Já realizada';
 
   @override
-  String get maintenanceAlreadyDoneSubtitle => 'Registre uma manutenção que já foi feita.';
+  String get maintenanceAlreadyDoneSubtitle =>
+      'Registre uma manutenção que já foi feita.';
 
   @override
   String get maintenanceCompletionSection => 'Realização';
 
   @override
-  String get maintenanceRecurrenceSubtitleCompleted => 'A próxima é agendada a partir da data de realização.';
+  String get maintenanceRecurrenceSubtitleCompleted =>
+      'A próxima é agendada a partir da data de realização.';
 
   @override
   String get maintenanceDetailsTitle => 'Manutenção concluída';
@@ -1724,4 +1822,190 @@ class AppLocalizationsPt extends AppLocalizations {
   String maintenanceRecurrenceEveryHours(String hours) {
     return 'A cada $hours h';
   }
+
+  @override
+  String get logbookTypeTrip => 'Viagem';
+
+  @override
+  String get logbookTypeNote => 'Nota';
+
+  @override
+  String get logbookTypeAnchorage => 'Fundeio';
+
+  @override
+  String get logbookTypeIncident => 'Ocorrência';
+
+  @override
+  String get logbookTypeEvent => 'Evento';
+
+  @override
+  String get logbookTitle => 'Diário de bordo';
+
+  @override
+  String get logbookFilterAll => 'Todos';
+
+  @override
+  String get logbookNewEntry => 'Nova entrada';
+
+  @override
+  String get logbookEditEntry => 'Editar entrada';
+
+  @override
+  String get noLogbookEntries => 'Nenhuma entrada no diário de bordo ainda.';
+
+  @override
+  String get loadLogbookError => 'Não foi possível carregar o diário de bordo.';
+
+  @override
+  String get logbookTypeLabel => 'Tipo';
+
+  @override
+  String get logbookTitleLabel => 'Título';
+
+  @override
+  String get logbookTitleRequired => 'Informe o título.';
+
+  @override
+  String get logbookDateLabel => 'Data';
+
+  @override
+  String get logbookTimeLabel => 'Hora';
+
+  @override
+  String get logbookUseCurrentPosition => 'Registrar posição atual';
+
+  @override
+  String get logbookUseCurrentPositionSubtitle =>
+      'Salva onde o barco está agora.';
+
+  @override
+  String get logbookPositionUnavailable =>
+      'Posição atual indisponível. Verifique o GPS.';
+
+  @override
+  String get logbookSave => 'Salvar entrada';
+
+  @override
+  String get logbookSaved => 'Entrada salva.';
+
+  @override
+  String get saveLogbookEntryError => 'Não foi possível salvar a entrada.';
+
+  @override
+  String get logbookInvalidError => 'Confira os dados da entrada.';
+
+  @override
+  String get deleteLogbookEntry => 'Excluir entrada';
+
+  @override
+  String get deleteLogbookEntryConfirm =>
+      'Esta entrada será removida do diário de bordo.';
+
+  @override
+  String get deleteLogbookEntryError => 'Não foi possível excluir a entrada.';
+
+  @override
+  String get logbookDetailsInfoSection => 'Detalhes';
+
+  @override
+  String get logbookDetailsTripSection => 'Navegação';
+
+  @override
+  String get logbookDetailsDate => 'Data e hora';
+
+  @override
+  String get logbookDetailsDuration => 'Duração';
+
+  @override
+  String get logbookDetailsDistance => 'Distância';
+
+  @override
+  String get logbookDetailsAvgSpeed => 'Velocidade média';
+
+  @override
+  String get logbookDetailsMaxSpeed => 'Velocidade máxima';
+
+  @override
+  String get logbookDetailsEngineHoursEnd => 'Horímetro ao final';
+
+  @override
+  String get logbookDetailsPassengers => 'Passageiros';
+
+  @override
+  String get logbookDetailsPosition => 'Posição';
+
+  @override
+  String get logbookDetailsNotes => 'Observações';
+
+  @override
+  String distanceNmValue(String value) {
+    return '$value NM';
+  }
+
+  @override
+  String speedKnValue(String value) {
+    return '$value kn';
+  }
+
+  @override
+  String durationHoursMinutes(String hours, String minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String durationMinutesValue(String minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String logbookTopSpeed(String value) {
+    return 'máx $value kn';
+  }
+
+  @override
+  String get journalRecentLogbookTitle => 'Últimas entradas';
+
+  @override
+  String get journalSeeLogbook => 'Ver diário de bordo';
+
+  @override
+  String get journalNoLogbookEntries =>
+      'As viagens que você salvar ao encerrar a navegação aparecem aqui.';
+
+  @override
+  String get tripSaveTitle => 'Salvar viagem no diário';
+
+  @override
+  String get tripSaveSubtitle =>
+      'Registre esta navegação no diário de bordo da embarcação.';
+
+  @override
+  String get tripBoatLabel => 'Embarcação';
+
+  @override
+  String tripDefaultTitle(String date) {
+    return 'Navegação de $date';
+  }
+
+  @override
+  String get tripEngineHoursEndLabel => 'Horímetro ao final (opcional)';
+
+  @override
+  String get tripPassengersLabel => 'Passageiros (opcional)';
+
+  @override
+  String get tripSave => 'Salvar no diário';
+
+  @override
+  String get tripDiscard => 'Descartar';
+
+  @override
+  String get tripSaved => 'Viagem salva no diário de bordo.';
+
+  @override
+  String get tripQueued =>
+      'Sem conexão. A viagem será enviada quando houver internet.';
+
+  @override
+  String get tripSaveError => 'Não foi possível salvar a viagem.';
 }

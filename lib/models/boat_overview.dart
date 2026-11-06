@@ -1,3 +1,4 @@
+import 'logbook_entry.dart';
 import 'maintenance.dart';
 
 /// Resumo do Diário da Embarcação (`GET /boats/{id}/overview`).
@@ -7,6 +8,7 @@ class BoatOverview {
   final DateTime? engineHoursReadAt;
   final int overdueMaintenancesCount;
   final List<Maintenance> upcomingMaintenances;
+  final List<LogbookEntry> recentLogbookEntries;
 
   BoatOverview({
     required this.boatId,
@@ -14,6 +16,7 @@ class BoatOverview {
     this.engineHoursReadAt,
     required this.overdueMaintenancesCount,
     required this.upcomingMaintenances,
+    required this.recentLogbookEntries,
   });
 
   BoatOverview copyWith({double? engineHours, DateTime? engineHoursReadAt}) {
@@ -23,6 +26,7 @@ class BoatOverview {
       engineHoursReadAt: engineHoursReadAt ?? this.engineHoursReadAt,
       overdueMaintenancesCount: overdueMaintenancesCount,
       upcomingMaintenances: upcomingMaintenances,
+      recentLogbookEntries: recentLogbookEntries,
     );
   }
 
@@ -38,6 +42,12 @@ class BoatOverview {
       upcomingMaintenances:
           (json['upcomingMaintenances'] as List<dynamic>? ?? [])
               .map((item) => Maintenance.fromJson(item as Map<String, dynamic>))
+              .toList(),
+      recentLogbookEntries:
+          (json['recentLogbookEntries'] as List<dynamic>? ?? [])
+              .map(
+                (item) => LogbookEntry.fromJson(item as Map<String, dynamic>),
+              )
               .toList(),
     );
   }
