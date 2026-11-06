@@ -1,3 +1,6 @@
+import '../../widgets/ui/empty_state.dart';
+import '../../widgets/ui/error_state.dart';
+import '../../widgets/ui/skeleton_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -34,103 +37,26 @@ class _BoatsListScreenState extends State<BoatsListScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.myBoats),
-        backgroundColor: Colors.black.withAlpha(200),
+        backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
       backgroundColor: Colors.black,
       body: Consumer<BoatViewModel>(
-        builder: (context, viewModel, child) {
-          if (viewModel.isLoading && viewModel.boats.isEmpty) {
-            return const Center(
-              child: CircularProgressIndicator(color: Colors.white),
-            );
-          }
-
-          if (viewModel.errorMessage != null) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.error_outline,
-                    size: 64,
-                    color: Colors.white.withValues(alpha: 0.5),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    l10n.loadBoatsError,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 16,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    viewModel.errorMessage ?? '',
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 12,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  OutlinedButton(
-                    onPressed: () => viewModel.loadBoats(),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      side: BorderSide(
-                        color: Colors.white.withValues(alpha: 0.4),
-                      ),
-                    ),
-                    child: Text(l10n.tryAgain),
-                  ),
-                ],
-              ),
-            );
-          }
-
-          if (viewModel.boats.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.directions_boat_outlined,
-                    size: 64,
-                    color: Colors.white.withValues(alpha: 0.5),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    l10n.noBoatsFound,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-            );
-          }
-
-          return RefreshIndicator(
-            onRefresh: viewModel.loadBoats,
-            backgroundColor: Colors.black,
-            child: ListView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: viewModel.boats.length,
-              itemBuilder: (context, index) {
-                final boat = viewModel.boats[index];
-                return BoatCard(
-                  boat: boat,
-                  onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => BoatJournalScreen(boat: boat),
-                    ),
-                  ),
-                );
-              },
+        builder: (context, viewModel, child) => AnimatedSwitcher(
+          duration: const Duration(milliseconds: 250),
+          child: KeyedSubtree(
+            key: ValueKey(
+              viewModel.isLoading && viewModel.boats.isEmpty
+                  ? 'loading'
+                  : viewModel.errorMessage != null
+                  ? 'error'
+                  : viewModel.boats.isEmpty
+                  ? 'empty'
+                  : 'list',
             ),
-          );
-        },
+            child: _buildBody(context, viewModel, l10n),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
@@ -140,6 +66,54 @@ class _BoatsListScreenState extends State<BoatsListScreen>
           context,
         ).push(MaterialPageRoute(builder: (_) => const BoatFormScreen())),
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  Widget _buildBody(
+    BuildContext context,
+    BoatViewModel viewModel,
+    AppLocalizations l10n,
+  ) {
+    if (viewModel.isLoading && viewModel.boats.isEmpty) {
+      return const SkeletonList(itemHeight: 92);
+    }
+
+    if (viewModel.errorMessage != null) {
+      return ErrorState(
+        message: l10n.loadBoatsError,
+        onRetry: viewModel.loadBoats,
+      );
+    }
+
+    if (viewModel.boats.isEmpty) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: EmptyState(
+            icon: Icons.directions_boat_outlined,
+            message: l10n.noBoatsFound,
+            bordered: false,
+          ),
+        ),
+      );
+    }
+
+    return RefreshIndicator(
+      onRefresh: viewModel.loadBoats,
+      backgroundColor: Colors.black,
+      child: ListView.builder(
+        padding: const EdgeInsets.all(16),
+        itemCount: viewModel.boats.length,
+        itemBuilder: (context, index) {
+          final boat = viewModel.boats[index];
+          return BoatCard(
+            boat: boat,
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => BoatJournalScreen(boat: boat)),
+            ),
+          );
+        },
       ),
     );
   }

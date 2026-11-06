@@ -83,7 +83,7 @@ class _LogbookScreenState extends State<LogbookScreen>
               ),
           ],
         ),
-        backgroundColor: Colors.black.withAlpha(200),
+        backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
         elevation: 0,
       ),

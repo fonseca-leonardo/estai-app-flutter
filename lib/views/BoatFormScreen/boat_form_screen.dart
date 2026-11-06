@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -57,7 +58,7 @@ class _BoatFormScreenState extends State<BoatFormScreen>
         borderRadius: BorderRadius.circular(8),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.redAccent),
+        borderSide: const BorderSide(color: AppColors.danger),
         borderRadius: BorderRadius.circular(8),
       ),
       filled: true,
@@ -115,7 +116,7 @@ class _BoatFormScreenState extends State<BoatFormScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.isEditing ? l10n.editBoat : l10n.addBoat),
-        backgroundColor: Colors.black.withAlpha(200),
+        backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
       backgroundColor: Colors.black,
@@ -192,7 +193,7 @@ class _BoatFormScreenState extends State<BoatFormScreen>
                   const SizedBox(height: 16),
                   Text(
                     _errorMessage!,
-                    style: const TextStyle(color: Colors.redAccent),
+                    style: const TextStyle(color: AppColors.danger),
                   ),
                 ],
                 const SizedBox(height: 24),

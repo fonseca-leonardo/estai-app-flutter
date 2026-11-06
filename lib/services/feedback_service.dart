@@ -4,7 +4,7 @@ class FeedbackService {
   final MapsApiClient _apiClient;
 
   FeedbackService({MapsApiClient? apiClient})
-      : _apiClient = apiClient ?? MapsApiClient();
+    : _apiClient = apiClient ?? MapsApiClient();
 
   Future<void> sendFeedback(String feedback) async {
     final response = await _apiClient.post(

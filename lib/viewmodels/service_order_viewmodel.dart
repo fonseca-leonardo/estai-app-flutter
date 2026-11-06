@@ -62,9 +62,7 @@ class ServiceOrderViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final result = await _serviceOrderService.getPriceItems(
-        boatId: boatId,
-      );
+      final result = await _serviceOrderService.getPriceItems(boatId: boatId);
       _priceItems = result.items;
       _isLoadingPriceItems = false;
       notifyListeners();

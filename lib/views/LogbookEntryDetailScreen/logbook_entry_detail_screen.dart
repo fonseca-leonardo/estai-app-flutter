@@ -13,7 +13,9 @@ import '../MarinaHomeScreen/widgets/marina_section_title.dart';
 import '../RampBookingScreen/widgets/summary_row.dart';
 import 'widgets/delete_logbook_entry_dialog.dart';
 import 'widgets/logbook_entry_header.dart';
-import 'widgets/trip_track_map.dart';
+import 'widgets/expandable_trip_track_map.dart';
+import 'widgets/trip_metric_tile.dart';
+import 'widgets/trip_metrics_grid.dart';
 
 /// Detalhe de uma entrada do diário de bordo. Numa viagem mostra o trajeto
 /// no mapa e as métricas. Volta `true` se a entrada foi editada ou excluída.
@@ -37,7 +39,7 @@ class _LogbookEntryDetailScreenState extends State<LogbookEntryDetailScreen>
   @override
   void initState() {
     super.initState();
-    _viewModel = LogbookEntryDetailViewModel(entry: widget.entry);
+    _viewModel = LogbookEntryDetailViewModel(entry: widget.entry)..loadTrack();
   }
 
   @override
@@ -90,31 +92,31 @@ class _LogbookEntryDetailScreenState extends State<LogbookEntryDetailScreen>
     final passengers = entry.passengers;
     return [
       if (minutes != null)
-        SummaryRow(
+        TripMetricTile(
           icon: Icons.timer_outlined,
           label: l10n.logbookDetailsDuration,
           value: TripFormat.duration(l10n, minutes),
         ),
       if (distance != null)
-        SummaryRow(
+        TripMetricTile(
           icon: Icons.straighten,
           label: l10n.logbookDetailsDistance,
           value: TripFormat.distance(l10n, distance, locale),
         ),
       if (avgSpeed != null)
-        SummaryRow(
+        TripMetricTile(
           icon: Icons.speed_outlined,
           label: l10n.logbookDetailsAvgSpeed,
           value: TripFormat.speed(l10n, avgSpeed, locale),
         ),
       if (maxSpeed != null)
-        SummaryRow(
+        TripMetricTile(
           icon: Icons.bolt_outlined,
           label: l10n.logbookDetailsMaxSpeed,
           value: TripFormat.speed(l10n, maxSpeed, locale),
         ),
       if (engineHours != null)
-        SummaryRow(
+        TripMetricTile(
           icon: Icons.settings_outlined,
           label: l10n.logbookDetailsEngineHoursEnd,
           value: l10n.engineHoursValue(
@@ -122,7 +124,7 @@ class _LogbookEntryDetailScreenState extends State<LogbookEntryDetailScreen>
           ),
         ),
       if (passengers != null)
-        SummaryRow(
+        TripMetricTile(
           icon: Icons.people_outline,
           label: l10n.logbookDetailsPassengers,
           value: passengers.toString(),
@@ -154,7 +156,7 @@ class _LogbookEntryDetailScreenState extends State<LogbookEntryDetailScreen>
             child: Scaffold(
               appBar: AppBar(
                 title: Text(entry.type.label(l10n)),
-                backgroundColor: Colors.black.withAlpha(200),
+                backgroundColor: Colors.black.withValues(alpha: 0.78),
                 foregroundColor: Colors.white,
                 elevation: 0,
                 actions: [
@@ -177,16 +179,16 @@ class _LogbookEntryDetailScreenState extends State<LogbookEntryDetailScreen>
                   LogbookEntryHeader(entry: entry),
                   if (entry.isTrip && entry.trackPoints.isNotEmpty) ...[
                     const SizedBox(height: 16),
-                    TripTrackMap(track: entry.trackPoints),
+                    ExpandableTripTrackMap(track: entry.trackPoints),
                   ],
                   if (position != null) ...[
                     const SizedBox(height: 16),
-                    TripTrackMap(singlePoint: position),
+                    ExpandableTripTrackMap(singlePoint: position),
                   ],
                   if (tripRows.isNotEmpty) ...[
                     const SizedBox(height: 28),
                     MarinaSectionTitle(title: l10n.logbookDetailsTripSection),
-                    DetailsSectionCard(rows: tripRows),
+                    TripMetricsGrid(children: tripRows),
                   ],
                   if (position != null || notes.isNotEmpty) ...[
                     const SizedBox(height: 28),

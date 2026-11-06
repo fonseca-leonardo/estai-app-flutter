@@ -56,7 +56,7 @@ class _MarinaHomeScreenState extends State<MarinaHomeScreen>
         title: Text(l10n.marinaHomeTitle),
         backgroundColor: hasBackground
             ? Colors.transparent
-            : Colors.black.withAlpha(200),
+            : Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
         elevation: 0,
       ),

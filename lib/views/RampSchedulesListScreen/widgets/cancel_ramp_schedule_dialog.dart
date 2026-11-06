@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/ramp_schedule.dart';
@@ -17,11 +18,6 @@ Future<bool?> showCancelRampScheduleDialog({
     context: context,
     builder: (dialogContext) => StatefulBuilder(
       builder: (context, setState) => AlertDialog(
-        backgroundColor: const Color(0xFF0A0A0A),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-          side: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
-        ),
         title: Text(
           l10n.cancelRampSchedule,
           style: const TextStyle(
@@ -72,7 +68,7 @@ Future<bool?> showCancelRampScheduleDialog({
             onPressed: () => Navigator.of(dialogContext).pop(alsoCancelReturn),
             child: Text(
               l10n.cancelRampSchedule,
-              style: const TextStyle(color: Colors.redAccent),
+              style: const TextStyle(color: AppColors.danger),
             ),
           ),
         ],

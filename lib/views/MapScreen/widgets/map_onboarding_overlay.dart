@@ -68,9 +68,9 @@ class _MapOnboardingOverlayState extends State<MapOnboardingOverlay> {
         description: l10n.onboardingAnchorAlarmDescription,
       ),
       _OnboardingStepData(
-        icon: Icons.layers,
-        title: l10n.onboardingMapsTitle,
-        description: l10n.onboardingMapsDescription,
+        icon: Icons.directions_boat_rounded,
+        title: l10n.onboardingBoatsTitle,
+        description: l10n.onboardingBoatsDescription,
       ),
     ];
   }

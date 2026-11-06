@@ -89,7 +89,7 @@ class _RampSchedulesListScreenState extends State<RampSchedulesListScreen>
           title: Text(l10n.myRampSchedules),
           backgroundColor: hasBackground
               ? Colors.transparent
-              : Colors.black.withAlpha(200),
+              : Colors.black.withValues(alpha: 0.78),
           foregroundColor: Colors.white,
           elevation: 0,
           bottom: TabBar(

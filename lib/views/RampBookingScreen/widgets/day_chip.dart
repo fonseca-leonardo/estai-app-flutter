@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -95,7 +96,7 @@ class DayChip extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: loaded && hasAvailability
-                      ? (selected ? Colors.black : Colors.greenAccent)
+                      ? (selected ? Colors.black : AppColors.success)
                       : Colors.transparent,
                 ),
               ),

@@ -145,7 +145,7 @@ class _MaintenancesScreenState extends State<MaintenancesScreen>
                 ),
             ],
           ),
-          backgroundColor: Colors.black.withAlpha(200),
+          backgroundColor: Colors.black.withValues(alpha: 0.78),
           foregroundColor: Colors.white,
           elevation: 0,
           bottom: TabBar(

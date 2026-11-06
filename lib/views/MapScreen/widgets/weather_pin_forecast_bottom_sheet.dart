@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -215,7 +216,7 @@ class _WeatherPinForecastBottomSheetState
                     child: Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: Colors.red.withValues(alpha: 0.39),
+                        color: AppColors.danger.withValues(alpha: 0.39),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
@@ -340,7 +341,7 @@ class _WeatherPinForecastBottomSheetState
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red.withValues(alpha: 0.8),
+                  backgroundColor: AppColors.danger.withValues(alpha: 0.8),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 24,
                     vertical: 16,

@@ -35,7 +35,7 @@ class PlannedRouteLine extends StatelessWidget {
                   points: data.points,
                   strokeWidth: 5.0,
                   borderStrokeWidth: 4,
-                  color: Colors.purple.withAlpha(200),
+                  color: Colors.purple.withValues(alpha: 0.78),
                   borderColor: Colors.white,
                 ),
               ],

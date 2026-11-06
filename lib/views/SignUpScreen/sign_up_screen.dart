@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -16,8 +17,7 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen>
-    with AnalyticsScreenMixin {
+class _SignUpScreenState extends State<SignUpScreen> with AnalyticsScreenMixin {
   @override
   String get analyticsScreenName => 'SignUpScreen';
 
@@ -27,6 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen>
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
   AuthViewModel? _authViewModel;
+  bool _hasNavigated = false;
 
   @override
   void didChangeDependencies() {
@@ -37,16 +38,19 @@ class _SignUpScreenState extends State<SignUpScreen>
     }
   }
 
+  /// Único ponto que abre o mapa após autenticar (e-mail, Google ou Apple).
+  /// O listener dispara a cada notificação do AuthViewModel; só navega uma
+  /// vez e só se esta tela estiver no topo.
   void _onAuthChanged() {
-    if (mounted) {
-      setState(() {});
-      if (_authViewModel!.isAuthenticated) {
-        Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (_) => const MapScreen()),
-          (route) => false,
-        );
-      }
-    }
+    if (!mounted) return;
+    setState(() {});
+    if (_hasNavigated || !_authViewModel!.isAuthenticated) return;
+    if (!(ModalRoute.of(context)?.isCurrent ?? true)) return;
+    _hasNavigated = true;
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (_) => const MapScreen()),
+      (route) => false,
+    );
   }
 
   @override
@@ -61,18 +65,11 @@ class _SignUpScreenState extends State<SignUpScreen>
   Future<void> _handleSignUp() async {
     if (_formKey.currentState!.validate()) {
       _authViewModel?.clearError();
-      final success = await _authViewModel?.signUp(
+      await _authViewModel?.signUp(
         _nameController.text,
         _emailController.text,
         _passwordController.text,
       );
-
-      if (success == true && mounted) {
-        Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (_) => const MapScreen()),
-          (route) => false,
-        );
-      }
     }
   }
 
@@ -136,11 +133,15 @@ class _SignUpScreenState extends State<SignUpScreen>
                               borderRadius: BorderRadius.circular(8),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             filled: true,
@@ -176,11 +177,15 @@ class _SignUpScreenState extends State<SignUpScreen>
                               borderRadius: BorderRadius.circular(8),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             filled: true,
@@ -216,11 +221,15 @@ class _SignUpScreenState extends State<SignUpScreen>
                               borderRadius: BorderRadius.circular(8),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             filled: true,
@@ -319,10 +328,12 @@ class _SignUpScreenState extends State<SignUpScreen>
                                   child: Container(
                                     padding: const EdgeInsets.all(16),
                                     decoration: BoxDecoration(
-                                      color: Colors.red.withValues(alpha: 0.15),
+                                      color: AppColors.danger.withValues(
+                                        alpha: 0.15,
+                                      ),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: Colors.red.withValues(
+                                        color: AppColors.danger.withValues(
                                           alpha: 0.3,
                                         ),
                                         width: 1,
@@ -331,7 +342,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                                     child: Text(
                                       errorText,
                                       style: const TextStyle(
-                                        color: Colors.red,
+                                        color: AppColors.danger,
                                         fontSize: 14,
                                       ),
                                       textAlign: TextAlign.center,
@@ -383,7 +394,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                     Row(
                       children: [
                         Expanded(
-                          child: Divider(color: Colors.grey[800], thickness: 1),
+                          child: Divider(color: AppColors.border, thickness: 1),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -396,7 +407,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                           ),
                         ),
                         Expanded(
-                          child: Divider(color: Colors.grey[800], thickness: 1),
+                          child: Divider(color: AppColors.border, thickness: 1),
                         ),
                       ],
                     ),

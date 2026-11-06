@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
@@ -16,8 +17,8 @@ class SignalKConfigurationScreen extends StatefulWidget {
       _SignalKConfigurationScreenState();
 }
 
-class _SignalKConfigurationScreenState
-    extends State<SignalKConfigurationScreen> with AnalyticsScreenMixin {
+class _SignalKConfigurationScreenState extends State<SignalKConfigurationScreen>
+    with AnalyticsScreenMixin {
   @override
   String get analyticsScreenName => 'SignalKConfigurationScreen';
 
@@ -67,12 +68,9 @@ class _SignalKConfigurationScreenState
     );
     if (!mounted) return;
     FocusScope.of(context).unfocus();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.signalKConfigurationSaved),
-        backgroundColor: Colors.grey[900],
-      ),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(l10n.signalKConfigurationSaved)));
   }
 
   @override
@@ -221,7 +219,7 @@ class _SignalKConfigurationScreenState
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF0A0A0A),
+        color: AppColors.surfaceElevated,
         border: Border.all(color: const Color(0xFF1F1F1F), width: 1),
         borderRadius: BorderRadius.circular(12),
       ),
@@ -280,7 +278,7 @@ class _SignalKConfigurationScreenState
         hintText: hintText,
         hintStyle: TextStyle(color: Colors.grey[600], fontSize: 15),
         filled: true,
-        fillColor: const Color(0xFF0A0A0A),
+        fillColor: AppColors.surfaceElevated,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 14,
@@ -295,13 +293,13 @@ class _SignalKConfigurationScreenState
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Colors.redAccent, width: 1),
+          borderSide: const BorderSide(color: AppColors.danger, width: 1),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Colors.redAccent, width: 1),
+          borderSide: const BorderSide(color: AppColors.danger, width: 1),
         ),
-        errorStyle: const TextStyle(color: Colors.redAccent, fontSize: 13),
+        errorStyle: const TextStyle(color: AppColors.danger, fontSize: 13),
       ),
     );
   }

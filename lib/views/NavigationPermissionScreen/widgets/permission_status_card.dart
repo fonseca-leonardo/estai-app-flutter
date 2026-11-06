@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import '../../../l10n/app_localizations.dart';
@@ -7,8 +8,8 @@ class PermissionStatusCard extends StatelessWidget {
 
   final LocationPermission? permission;
 
-  static const Color _green = Color(0xFF22C55E);
-  static const Color _red = Color(0xFFEF4444);
+  static const Color _green = AppColors.success;
+  static const Color _red = AppColors.danger;
   static const Color _amber = Color(0xFFEAB308);
 
   Color _statusColor() {
@@ -68,7 +69,7 @@ class PermissionStatusCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF0A0A0A),
+        color: AppColors.surfaceElevated,
         border: Border.all(color: statusColor, width: 1),
         borderRadius: BorderRadius.circular(12),
       ),
@@ -81,11 +82,7 @@ class PermissionStatusCard extends StatelessWidget {
               color: statusColor.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Icon(
-              statusIcon,
-              color: statusColor,
-              size: 24,
-            ),
+            child: Icon(statusIcon, color: statusColor, size: 24),
           ),
           const SizedBox(width: 12),
           Expanded(

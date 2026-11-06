@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -57,7 +58,7 @@ class FeedbackSuggestionDialog {
                     onPressed: () => Navigator.of(dialogContext).pop(),
                     child: Text(
                       l10n.cancel,
-                      style: const TextStyle(color: Colors.redAccent),
+                      style: const TextStyle(color: AppColors.danger),
                     ),
                   ),
                 ],
@@ -65,122 +66,122 @@ class FeedbackSuggestionDialog {
             }
 
             return StatefulBuilder(
-          builder: (context, setState) {
-            final length = textController.text.length;
-            return AlertDialog(
-              backgroundColor: Colors.black.withValues(alpha: 0.9),
-              title: Text(
-                l10n.improvementsAndSuggestions,
-                style: const TextStyle(color: Colors.white),
-              ),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  TextField(
-                    controller: textController,
+              builder: (context, setState) {
+                final length = textController.text.length;
+                return AlertDialog(
+                  backgroundColor: Colors.black.withValues(alpha: 0.9),
+                  title: Text(
+                    l10n.improvementsAndSuggestions,
                     style: const TextStyle(color: Colors.white),
-                    maxLength: _maxCharacters,
-                    maxLines: 4,
-                    autofocus: true,
-                    onChanged: (_) => setState(() {}),
-                    decoration: InputDecoration(
-                      hintText: l10n.feedbackSuggestionPlaceholder,
-                      hintStyle: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.5),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                        vertical: 8,
-                      ),
-                      counterText: '',
-                      counterStyle: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.7),
-                        fontSize: 12,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: Colors.white.withValues(alpha: 0.75),
+                  ),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      TextField(
+                        controller: textController,
+                        style: const TextStyle(color: Colors.white),
+                        maxLength: _maxCharacters,
+                        maxLines: 4,
+                        autofocus: true,
+                        onChanged: (_) => setState(() {}),
+                        decoration: InputDecoration(
+                          hintText: l10n.feedbackSuggestionPlaceholder,
+                          hintStyle: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.5),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 8,
+                          ),
+                          counterText: '',
+                          counterStyle: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.7),
+                            fontSize: 12,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(
+                              color: Colors.white.withValues(alpha: 0.75),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(
+                              color: Colors.white.withValues(alpha: 0.75),
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: Colors.white.withValues(alpha: 0.75),
+                      const SizedBox(height: 8),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          l10n.feedbackMaxCharacters(
+                            length.toString(),
+                            _maxCharacters.toString(),
+                          ),
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.7),
+                            fontSize: 12,
+                          ),
                         ),
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                    ],
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.of(dialogContext).pop(),
+                      child: Text(
+                        l10n.cancel,
+                        style: const TextStyle(color: AppColors.danger),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 8),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      l10n.feedbackMaxCharacters(
-                        length.toString(),
-                        _maxCharacters.toString(),
-                      ),
-                      style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.7),
-                        fontSize: 12,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.of(dialogContext).pop(),
-                  child: Text(
-                    l10n.cancel,
-                    style: const TextStyle(color: Colors.redAccent),
-                  ),
-                ),
-                TextButton(
-                  onPressed: textController.text.trim().isEmpty
-                      ? null
-                      : () async {
-                          final text = textController.text.trim();
-                          if (text.isEmpty) return;
+                    TextButton(
+                      onPressed: textController.text.trim().isEmpty
+                          ? null
+                          : () async {
+                              final text = textController.text.trim();
+                              if (text.isEmpty) return;
 
-                          final scaffoldContext = context;
-                          try {
-                            await feedbackService.sendFeedback(text);
-                            if (dialogContext.mounted) {
-                              Navigator.of(dialogContext).pop();
-                              if (scaffoldContext.mounted) {
-                                ScaffoldMessenger.of(
-                                  scaffoldContext,
-                                ).showSnackBar(
-                                  SnackBar(
-                                    content: Text(l10n.feedbackSentSuccess),
-                                  ),
-                                );
+                              final scaffoldContext = context;
+                              try {
+                                await feedbackService.sendFeedback(text);
+                                if (dialogContext.mounted) {
+                                  Navigator.of(dialogContext).pop();
+                                  if (scaffoldContext.mounted) {
+                                    ScaffoldMessenger.of(
+                                      scaffoldContext,
+                                    ).showSnackBar(
+                                      SnackBar(
+                                        content: Text(l10n.feedbackSentSuccess),
+                                      ),
+                                    );
+                                  }
+                                }
+                              } catch (_) {
+                                if (dialogContext.mounted &&
+                                    scaffoldContext.mounted) {
+                                  ScaffoldMessenger.of(
+                                    scaffoldContext,
+                                  ).showSnackBar(
+                                    SnackBar(content: Text(l10n.feedbackError)),
+                                  );
+                                }
                               }
-                            }
-                          } catch (_) {
-                            if (dialogContext.mounted &&
-                                scaffoldContext.mounted) {
-                              ScaffoldMessenger.of(
-                                scaffoldContext,
-                              ).showSnackBar(
-                                SnackBar(content: Text(l10n.feedbackError)),
-                              );
-                            }
-                          }
-                        },
-                  child: Text(
-                    l10n.confirm,
-                    style: const TextStyle(color: Colors.lightGreen),
-                  ),
-                ),
-              ],
+                            },
+                      child: Text(
+                        l10n.confirm,
+                        style: const TextStyle(color: Colors.lightGreen),
+                      ),
+                    ),
+                  ],
+                );
+              },
             );
-          },
-        );
           },
         );
       },

@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../l10n/app_localizations.dart';
@@ -40,7 +41,7 @@ class MaintenanceDueCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: showMissingDueError
-              ? Colors.redAccent.withValues(alpha: 0.6)
+              ? AppColors.danger.withValues(alpha: 0.6)
               : Colors.white.withValues(alpha: 0.12),
         ),
       ),
@@ -118,7 +119,7 @@ class MaintenanceDueCard extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               l10n.maintenanceMissingDue,
-              style: const TextStyle(color: Colors.redAccent, fontSize: 13),
+              style: const TextStyle(color: AppColors.danger, fontSize: 13),
             ),
           ],
         ],

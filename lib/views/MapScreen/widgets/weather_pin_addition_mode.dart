@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -31,7 +32,7 @@ class WeatherPinAdditionMode extends StatelessWidget {
                       vertical: 8,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.black.withAlpha(140),
+                      color: Colors.black.withValues(alpha: 0.55),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
@@ -45,11 +46,11 @@ class WeatherPinAdditionMode extends StatelessWidget {
                   const SizedBox(height: 4),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.black.withAlpha(140),
+                      color: Colors.black.withValues(alpha: 0.55),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: IconButton(
-                      icon: const Icon(Icons.close, color: Colors.red),
+                      icon: const Icon(Icons.close, color: AppColors.danger),
                       onPressed: () {
                         pinsViewModel.setAddingPinMode(false);
                       },

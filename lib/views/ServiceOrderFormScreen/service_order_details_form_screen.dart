@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -88,7 +89,7 @@ class _ServiceOrderDetailsFormScreenState
         borderRadius: BorderRadius.circular(8),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.redAccent),
+        borderSide: const BorderSide(color: AppColors.danger),
         borderRadius: BorderRadius.circular(8),
       ),
       filled: true,
@@ -115,7 +116,7 @@ class _ServiceOrderDetailsFormScreenState
         title: Text(l10n.newServiceOrder),
         backgroundColor: hasBackground
             ? Colors.transparent
-            : Colors.black.withAlpha(200),
+            : Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
         elevation: 0,
       ),
@@ -184,7 +185,7 @@ class _ServiceOrderDetailsFormScreenState
                         const SizedBox(height: 16),
                         Text(
                           _errorMessage!,
-                          style: const TextStyle(color: Colors.redAccent),
+                          style: const TextStyle(color: AppColors.danger),
                         ),
                       ],
                     ],

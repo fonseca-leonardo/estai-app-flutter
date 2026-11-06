@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +43,8 @@ class _MarinaAccessScreenState extends State<MarinaAccessScreen>
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (_) => MarinaSuccessScreen(marina: viewModel.associationResult!),
+          builder: (_) =>
+              MarinaSuccessScreen(marina: viewModel.associationResult!),
         ),
       );
     } else {
@@ -104,8 +106,7 @@ class _MarinaAccessScreenState extends State<MarinaAccessScreen>
                         ),
                         const SizedBox(height: 16),
                         OutlinedButton(
-                          onPressed: () =>
-                              viewModel.loadData(widget.marinaId),
+                          onPressed: () => viewModel.loadData(widget.marinaId),
                           style: OutlinedButton.styleFrom(
                             foregroundColor: Colors.white,
                             side: BorderSide(
@@ -128,9 +129,9 @@ class _MarinaAccessScreenState extends State<MarinaAccessScreen>
                     Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.grey[900],
+                        color: AppColors.surface,
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: Colors.grey[800]!, width: 1),
+                        border: Border.all(color: AppColors.border, width: 1),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,13 +157,19 @@ class _MarinaAccessScreenState extends State<MarinaAccessScreen>
                             Text(
                               '${viewModel.marina!.location!.street}, ${viewModel.marina!.location!.number} · '
                               '${viewModel.marina!.location!.city}/${viewModel.marina!.location!.state}',
-                              style: TextStyle(color: Colors.grey[400], fontSize: 14),
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                                fontSize: 14,
+                              ),
                             ),
                           ],
                           const SizedBox(height: 12),
                           Text(
                             l10n.marinaAccessInviteMessage,
-                            style: TextStyle(color: Colors.grey[300], fontSize: 14),
+                            style: TextStyle(
+                              color: Colors.grey[300],
+                              fontSize: 14,
+                            ),
                           ),
                         ],
                       ),
@@ -182,7 +189,10 @@ class _MarinaAccessScreenState extends State<MarinaAccessScreen>
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         child: Text(
                           l10n.noBoatsAvailable,
-                          style: TextStyle(color: Colors.grey[400], fontSize: 14),
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
+                          ),
                         ),
                       )
                     else

@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -118,11 +119,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                               borderRadius: BorderRadius.circular(8),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(
+                                color: AppColors.danger,
+                              ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             filled: true,
@@ -148,17 +153,21 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                                   child: Container(
                                     padding: const EdgeInsets.all(16),
                                     decoration: BoxDecoration(
-                                      color: Colors.green.withValues(alpha: 0.15),
+                                      color: AppColors.success.withValues(
+                                        alpha: 0.15,
+                                      ),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: Colors.green.withValues(alpha: 0.3),
+                                        color: AppColors.success.withValues(
+                                          alpha: 0.3,
+                                        ),
                                         width: 1,
                                       ),
                                     ),
                                     child: Text(
                                       l10n.passwordResetEmailSent,
                                       style: const TextStyle(
-                                        color: Colors.green,
+                                        color: AppColors.success,
                                         fontSize: 14,
                                       ),
                                       textAlign: TextAlign.center,
@@ -199,17 +208,21 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                                   child: Container(
                                     padding: const EdgeInsets.all(16),
                                     decoration: BoxDecoration(
-                                      color: Colors.red.withValues(alpha: 0.15),
+                                      color: AppColors.danger.withValues(
+                                        alpha: 0.15,
+                                      ),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: Colors.red.withValues(alpha: 0.3),
+                                        color: AppColors.danger.withValues(
+                                          alpha: 0.3,
+                                        ),
                                         width: 1,
                                       ),
                                     ),
                                     child: Text(
                                       errorText,
                                       style: const TextStyle(
-                                        color: Colors.red,
+                                        color: AppColors.danger,
                                         fontSize: 14,
                                       ),
                                       textAlign: TextAlign.center,

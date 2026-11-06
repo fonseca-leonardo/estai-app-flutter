@@ -194,6 +194,27 @@ class LogbookService {
     }
   }
 
+  /// Entrada completa, com o trajeto (a listagem não o traz).
+  Future<LogbookEntry> getEntry(String id) async {
+    try {
+      final response = await _apiClient.get('/logbook/$id');
+
+      if (response.statusCode == 200) {
+        return LogbookEntry.fromJson(_readData(response.body));
+      } else {
+        throw ApiException(
+          _extractErrorMessage(response.body) ??
+              'Failed to load logbook entry: ${response.statusCode}',
+          statusCode: response.statusCode,
+        );
+      }
+    } on ApiException {
+      rethrow;
+    } catch (e) {
+      throw ApiException('Error loading logbook entry: $e');
+    }
+  }
+
   Future<LogbookEntry> createEntry({
     required String boatId,
     required LogbookEntryInput input,

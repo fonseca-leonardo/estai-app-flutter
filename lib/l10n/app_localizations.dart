@@ -62,8 +62,7 @@ import 'app_localizations_pt.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,18 +82,17 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('pt'),
+    Locale('pt')
   ];
 
   /// Application title
@@ -1508,17 +1505,17 @@ abstract class AppLocalizations {
   /// **'Define a safety radius after anchoring and get notified if the boat drifts beyond it, even with the screen off.'**
   String get onboardingAnchorAlarmDescription;
 
-  /// No description provided for @onboardingMapsTitle.
+  /// No description provided for @onboardingBoatsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Custom maps'**
-  String get onboardingMapsTitle;
+  /// **'My boats'**
+  String get onboardingBoatsTitle;
 
-  /// No description provided for @onboardingMapsDescription.
+  /// No description provided for @onboardingBoatsDescription.
   ///
   /// In en, this message translates to:
-  /// **'Pick additional map layers from the catalog and download them for offline use during your trips.'**
-  String get onboardingMapsDescription;
+  /// **'Register your boats and keep track of everything in one place: a logbook with your saved trips, maintenance, engine hours and reminders by push or email.'**
+  String get onboardingBoatsDescription;
 
   /// No description provided for @onboardingSkip.
   ///
@@ -3446,6 +3443,18 @@ abstract class AppLocalizations {
   /// **'Navigation'**
   String get logbookDetailsTripSection;
 
+  /// No description provided for @logbookTripMapExpand.
+  ///
+  /// In en, this message translates to:
+  /// **'Expand map'**
+  String get logbookTripMapExpand;
+
+  /// No description provided for @logbookTripMapTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Route'**
+  String get logbookTripMapTitle;
+
   /// No description provided for @logbookDetailsDate.
   ///
   /// In en, this message translates to:
@@ -3613,10 +3622,27 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn\'t save the trip.'**
   String get tripSaveError;
+
+  /// No description provided for @settingsSectionNavigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigation'**
+  String get settingsSectionNavigation;
+
+  /// No description provided for @settingsSectionMaps.
+  ///
+  /// In en, this message translates to:
+  /// **'Maps and charts'**
+  String get settingsSectionMaps;
+
+  /// No description provided for @settingsSectionAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get settingsSectionAccount;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -3625,26 +3651,25 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'pt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'pt'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en':
-      return AppLocalizationsEn();
-    case 'pt':
-      return AppLocalizationsPt();
+    case 'en': return AppLocalizationsEn();
+    case 'pt': return AppLocalizationsPt();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
+    'that was used.'
   );
 }

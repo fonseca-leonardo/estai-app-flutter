@@ -66,7 +66,7 @@ class _ServiceOrderFormScreenState extends State<ServiceOrderFormScreen>
         title: Text(l10n.selectBoat),
         backgroundColor: hasBackground
             ? Colors.transparent
-            : Colors.black.withAlpha(200),
+            : Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
         elevation: 0,
       ),

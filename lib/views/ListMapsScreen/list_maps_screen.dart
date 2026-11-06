@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -28,7 +29,7 @@ class _ListMapsScreenState extends State<ListMapsScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.maps),
-        backgroundColor: Colors.black.withAlpha(200),
+        backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
       backgroundColor: Colors.black,
@@ -49,7 +50,7 @@ class _ListMapsScreenState extends State<ListMapsScreen>
                     Icon(
                       Icons.error_outline,
                       size: 64,
-                      color: Colors.red.withValues(alpha: 0.7),
+                      color: AppColors.danger.withValues(alpha: 0.7),
                     ),
                     const SizedBox(height: 16),
                     Text(
@@ -70,8 +71,8 @@ class _ListMapsScreenState extends State<ListMapsScreen>
                           horizontal: 32,
                           vertical: 12,
                         ),
-                        side: const BorderSide(color: Colors.redAccent),
-                        foregroundColor: Colors.redAccent,
+                        side: const BorderSide(color: AppColors.danger),
+                        foregroundColor: AppColors.danger,
                       ),
                       child: Text(l10n.tryAgain),
                     ),
@@ -125,7 +126,7 @@ class _ListMapsScreenState extends State<ListMapsScreen>
                       children: [
                         Icon(
                           Icons.star,
-                          color: Colors.amber.withValues(alpha: 0.9),
+                          color: AppColors.warning.withValues(alpha: 0.9),
                           size: 20,
                         ),
                         const SizedBox(width: 8),
@@ -147,10 +148,8 @@ class _ListMapsScreenState extends State<ListMapsScreen>
                       isCached: viewModel.isMapCached(mapItem.id),
                       onToggleSelection: () =>
                           viewModel.toggleMapSelection(mapItem.id),
-                      onToggleCache: () =>
-                          viewModel.toggleMapCache(mapItem.id),
-                      onClearCache: () =>
-                          viewModel.clearMapCache(mapItem.id),
+                      onToggleCache: () => viewModel.toggleMapCache(mapItem.id),
+                      onClearCache: () => viewModel.clearMapCache(mapItem.id),
                     ),
                   ),
                   if (optionalMaps.isNotEmpty) const SizedBox(height: 16),
@@ -184,10 +183,8 @@ class _ListMapsScreenState extends State<ListMapsScreen>
                       isCached: viewModel.isMapCached(mapItem.id),
                       onToggleSelection: () =>
                           viewModel.toggleMapSelection(mapItem.id),
-                      onToggleCache: () =>
-                          viewModel.toggleMapCache(mapItem.id),
-                      onClearCache: () =>
-                          viewModel.clearMapCache(mapItem.id),
+                      onToggleCache: () => viewModel.toggleMapCache(mapItem.id),
+                      onClearCache: () => viewModel.clearMapCache(mapItem.id),
                     ),
                   ),
                 ],

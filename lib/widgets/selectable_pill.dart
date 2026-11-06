@@ -1,10 +1,11 @@
+import '../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// Pílula de seleção (categoria, antecedência, canal). Selecionada ganha a
 /// cor de destaque, borda cheia e um check; não selecionada fica neutra e
 /// mais apagada, para a diferença ser óbvia no fundo escuro.
 class SelectablePill extends StatelessWidget {
-  static const Color accentColor = Color(0xFF38BDF8);
+  static const Color accentColor = AppColors.accent;
 
   final String label;
   final IconData? icon;

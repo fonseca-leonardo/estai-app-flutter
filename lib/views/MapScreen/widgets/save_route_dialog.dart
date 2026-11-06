@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -57,7 +58,7 @@ class _SaveRouteDialogState extends State<SaveRouteDialog> {
       child: Container(
         constraints: const BoxConstraints(maxWidth: 400),
         decoration: BoxDecoration(
-          color: const Color(0xFF0A0A0A).withValues(alpha: 0.85),
+          color: AppColors.surfaceElevated.withValues(alpha: 0.85),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: const Color(0xFF1F1F1F), width: 1),
         ),
@@ -161,7 +162,7 @@ class _SaveRouteDialogState extends State<SaveRouteDialog> {
                     child: Text(
                       l10n.cancel,
                       style: const TextStyle(
-                        color: Colors.red,
+                        color: AppColors.danger,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
@@ -195,7 +196,7 @@ class _SaveRouteDialogState extends State<SaveRouteDialog> {
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         color: _isNameValid
-                            ? Colors.green
+                            ? AppColors.success
                             : Colors.grey.withValues(alpha: 0.5),
                       ),
                     ),

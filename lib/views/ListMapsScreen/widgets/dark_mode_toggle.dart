@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/list_maps_viewmodel.dart';
@@ -33,7 +34,7 @@ class DarkModeToggle extends StatelessWidget {
                     viewModel.darkMode ? Icons.dark_mode : Icons.light_mode,
                     color: viewModel.darkMode
                         ? Colors.blue.withValues(alpha: 0.9)
-                        : Colors.amber.withValues(alpha: 0.9),
+                        : AppColors.warning.withValues(alpha: 0.9),
                     size: 24,
                   ),
                   const SizedBox(width: 12),

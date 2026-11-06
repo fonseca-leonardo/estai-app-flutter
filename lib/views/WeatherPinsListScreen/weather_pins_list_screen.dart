@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:estai/widgets/ad_banner_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -76,7 +77,8 @@ class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
                   final pin = pinsViewModel.pins[index];
                   return _PinCard(
                     pin: pin,
-                    onEdit: () => _showEditPinDialog(context, pin, pinsViewModel),
+                    onEdit: () =>
+                        _showEditPinDialog(context, pin, pinsViewModel),
                     onDelete: () =>
                         _showDeleteConfirmation(context, pin, pinsViewModel),
                     onNavigateToMap: () => _navigateToMap(context, pin),
@@ -110,26 +112,22 @@ class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
               color: Colors.transparent,
               child: IconButton(
                 onPressed: () {
-                  final pinsViewModel = Provider.of<WeatherMonitorPinsViewModel>(
-                    context,
-                    listen: false,
-                  );
+                  final pinsViewModel =
+                      Provider.of<WeatherMonitorPinsViewModel>(
+                        context,
+                        listen: false,
+                      );
                   final mapViewModel = Provider.of<MapViewModel>(
                     context,
                     listen: false,
                   );
                   if (mapViewModel.isPlanningRoute) return;
                   pinsViewModel.setAddingPinMode(true);
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => const MapScreen(),
-                    ),
-                  );
+                  Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute(builder: (_) => const MapScreen()));
                 },
-                icon: const Icon(
-                  Icons.add_location_alt,
-                  color: Colors.white,
-                ),
+                icon: const Icon(Icons.add_location_alt, color: Colors.white),
                 tooltip: l10n.addWeatherPin,
               ),
             ),
@@ -151,7 +149,6 @@ class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
     showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        backgroundColor: Colors.grey[900],
         title: Text(
           l10n.editPinName,
           style: const TextStyle(color: Colors.white),
@@ -176,7 +173,7 @@ class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
             onPressed: () => Navigator.of(dialogContext).pop(),
             child: Text(
               l10n.cancel,
-              style: const TextStyle(color: Colors.redAccent),
+              style: const TextStyle(color: AppColors.danger),
             ),
           ),
           TextButton(
@@ -207,7 +204,6 @@ class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
     showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        backgroundColor: Colors.grey[900],
         title: Text(
           l10n.deletePin,
           style: const TextStyle(color: Colors.white),
@@ -231,7 +227,7 @@ class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
             },
             child: Text(
               l10n.deletePin,
-              style: const TextStyle(color: Colors.red),
+              style: const TextStyle(color: AppColors.danger),
             ),
           ),
         ],
@@ -269,9 +265,9 @@ class _PinCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: Colors.grey[900],
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey[800]!, width: 1),
+        border: Border.all(color: AppColors.border, width: 1),
       ),
       child: InkWell(
         onTap: onNavigateToMap,
@@ -331,7 +327,9 @@ class _PinCard extends StatelessWidget {
                     onPressed: onDelete,
                     icon: const Icon(Icons.delete, size: 18),
                     label: Text(l10n.deletePin),
-                    style: TextButton.styleFrom(foregroundColor: Colors.red),
+                    style: TextButton.styleFrom(
+                      foregroundColor: AppColors.danger,
+                    ),
                   ),
                   const SizedBox(width: 8),
                   TextButton.icon(

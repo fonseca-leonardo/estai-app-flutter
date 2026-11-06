@@ -1,3 +1,4 @@
+import 'ui/app_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -31,14 +32,9 @@ class BoatSelectionSheet extends StatefulWidget {
     BuildContext context, {
     required String marinaId,
   }) {
-    return showModalBottomSheet<BoatSelectionResult>(
-      context: context,
-      backgroundColor: const Color(0xFF0A0A0A),
-      isScrollControlled: true,
-      useSafeArea: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
+    return AppSheet.show<BoatSelectionResult>(
+      context,
+      padded: false,
       builder: (_) => BoatSelectionSheet(marinaId: marinaId),
     );
   }
@@ -88,9 +84,9 @@ class _BoatSelectionSheetState extends State<BoatSelectionSheet> {
   }
 
   void _openBoatForm() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const BoatFormScreen()),
-    );
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => const BoatFormScreen()));
   }
 
   @override

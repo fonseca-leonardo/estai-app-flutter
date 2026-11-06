@@ -37,4 +37,3 @@ class AdBannerViewModel extends ChangeNotifier {
     notifyListeners();
   }
 }
-

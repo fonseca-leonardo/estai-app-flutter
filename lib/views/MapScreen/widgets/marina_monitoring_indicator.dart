@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,9 +22,9 @@ class MarinaMonitoringIndicator extends StatelessWidget {
 
         final color = switch (state) {
           MarinaMonitoringState.connected => const Color(0xFF3B82F6),
-          MarinaMonitoringState.connecting => const Color(0xFFF59E0B),
-          MarinaMonitoringState.reconnecting => const Color(0xFFF59E0B),
-          MarinaMonitoringState.failed => const Color(0xFFEF4444),
+          MarinaMonitoringState.connecting => AppColors.warning,
+          MarinaMonitoringState.reconnecting => AppColors.warning,
+          MarinaMonitoringState.failed => AppColors.danger,
           MarinaMonitoringState.disabled => Colors.transparent,
         };
 

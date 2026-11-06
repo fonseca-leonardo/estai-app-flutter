@@ -1,3 +1,4 @@
+import '../../../widgets/ui/app_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../l10n/app_localizations.dart';
@@ -26,14 +27,10 @@ Future<CompleteMaintenanceFormResult?> showCompleteMaintenanceSheet({
   required Maintenance maintenance,
   double? currentEngineHours,
 }) {
-  return showModalBottomSheet<CompleteMaintenanceFormResult>(
-    context: context,
-    isScrollControlled: true,
-    backgroundColor: const Color(0xFF0A0A0A),
-    shape: RoundedRectangleBorder(
-      borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-      side: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
-    ),
+  return AppSheet.show<CompleteMaintenanceFormResult>(
+    context,
+    padded: false,
+    useSafeArea: false,
     builder: (_) => CompleteMaintenanceSheet(
       maintenance: maintenance,
       currentEngineHours: currentEngineHours,

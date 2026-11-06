@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -12,9 +13,9 @@ class PlannedRouteMarkers extends StatelessWidget {
 
   Color _getMarkerColor(int index, int totalPoints) {
     if (index == 0) {
-      return Colors.red;
+      return AppColors.danger;
     } else if (index == totalPoints - 1) {
-      return Colors.green;
+      return AppColors.success;
     } else {
       return Colors.purple;
     }

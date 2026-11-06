@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../models/map_item.dart';
 import '../../../services/tile_cache_service.dart';
@@ -153,7 +154,7 @@ class _CacheRow extends StatelessWidget {
               isCached ? Icons.download_done : Icons.download_outlined,
               size: 16,
               color: isCached
-                  ? Colors.greenAccent.withValues(alpha: 0.9)
+                  ? AppColors.success.withValues(alpha: 0.9)
                   : Colors.white.withValues(alpha: 0.5),
             ),
             const SizedBox(width: 4),
@@ -161,7 +162,7 @@ class _CacheRow extends StatelessWidget {
               'Armazenamento local',
               style: TextStyle(
                 color: isCached
-                    ? Colors.greenAccent.withValues(alpha: 0.9)
+                    ? AppColors.success.withValues(alpha: 0.9)
                     : Colors.white.withValues(alpha: 0.5),
                 fontSize: 13,
               ),
@@ -172,7 +173,7 @@ class _CacheRow extends StatelessWidget {
               child: Switch(
                 value: isCached,
                 onChanged: (_) => onToggle(),
-                activeThumbColor: Colors.greenAccent,
+                activeThumbColor: AppColors.success,
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
             ),
@@ -200,10 +201,10 @@ class _CacheRow extends StatelessWidget {
                     child: Text(
                       'Limpar',
                       style: TextStyle(
-                        color: Colors.redAccent.withValues(alpha: 0.8),
+                        color: AppColors.danger.withValues(alpha: 0.8),
                         fontSize: 12,
                         decoration: TextDecoration.underline,
-                        decorationColor: Colors.redAccent.withValues(
+                        decorationColor: AppColors.danger.withValues(
                           alpha: 0.8,
                         ),
                       ),

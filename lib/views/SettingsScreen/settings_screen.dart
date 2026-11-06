@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -6,6 +7,8 @@ import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
+import '../../widgets/ui/app_tile.dart';
+import '../../widgets/ui/section_label.dart';
 import '../ListMapsScreen/list_maps_screen.dart';
 import '../NavigationSettingsScreen/navigation_settings_screen.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
@@ -63,12 +66,7 @@ class _SettingsScreenState extends State<SettingsScreen>
       ),
       sized: false,
       child: Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(
-          title: Text(l10n.settings),
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white,
-        ),
+        appBar: AppBar(title: Text(l10n.settings)),
         body: SafeArea(
           child: Consumer<AuthViewModel>(
             builder: (context, authViewModel, child) {
@@ -78,115 +76,91 @@ class _SettingsScreenState extends State<SettingsScreen>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      _buildSettingsTile(
-                        context,
-                        l10n.navigationSettings,
-                        Icons.navigation,
-                        () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const NavigationSettingsScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildSettingsTile(
-                        context,
-                        l10n.maps,
-                        Icons.map,
-                        () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const ListMapsScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildSettingsTile(
-                        context,
-                        l10n.navigationPermission,
-                        Icons.location_on,
-                        () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) =>
-                                  const NavigationPermissionScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildSettingsTile(
-                        context,
-                        l10n.weatherPinsList,
-                        Icons.thermostat,
-                        () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const WeatherPinsListScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildSettingsTile(
-                        context,
-                        l10n.rasterCharts,
-                        Icons.layers_outlined,
-                        () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const RasterChartsScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                      _buildSettingsTile(
-                        context,
-                        l10n.signalKConfiguration,
-                        Icons.layers_outlined,
-                        () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) =>
-                                  const SignalKConfigurationScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      if (authViewModel.isAuthenticated) ...[
-                        const SizedBox(height: 16),
-                        _buildSettingsTile(
-                          context,
-                          l10n.notificationSettings,
-                          Icons.notifications_outlined,
-                          () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) =>
-                                    const NotificationSettingsScreen(),
-                              ),
-                            );
-                          },
+                      SectionLabel(l10n.settingsSectionNavigation),
+                      AppTile(
+                        title: l10n.navigationSettings,
+                        icon: Icons.navigation,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const NavigationSettingsScreen(),
+                          ),
                         ),
-                        const SizedBox(height: 16),
-                        _buildSettingsTile(
-                          context,
-                          l10n.userAccount,
-                          Icons.person,
-                          () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => const UserAccountScreen(),
-                              ),
-                            );
-                          },
+                      ),
+                      const SizedBox(height: 12),
+                      AppTile(
+                        title: l10n.navigationPermission,
+                        icon: Icons.location_on,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const NavigationPermissionScreen(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      AppTile(
+                        title: l10n.weatherPinsList,
+                        icon: Icons.thermostat,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const WeatherPinsListScreen(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      SectionLabel(l10n.settingsSectionMaps),
+                      AppTile(
+                        title: l10n.maps,
+                        icon: Icons.map,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const ListMapsScreen(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      AppTile(
+                        title: l10n.rasterCharts,
+                        icon: Icons.layers_outlined,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const RasterChartsScreen(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      AppTile(
+                        title: l10n.signalKConfiguration,
+                        icon: Icons.sensors,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const SignalKConfigurationScreen(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      SectionLabel(l10n.settingsSectionAccount),
+                      if (authViewModel.isAuthenticated) ...[
+                        AppTile(
+                          title: l10n.notificationSettings,
+                          icon: Icons.notifications_outlined,
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  const NotificationSettingsScreen(),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        AppTile(
+                          title: l10n.userAccount,
+                          icon: Icons.person_outline,
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const UserAccountScreen(),
+                            ),
+                          ),
                         ),
                       ] else ...[
-                        const SizedBox(height: 16),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(
@@ -218,7 +192,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.grey[800],
+                            backgroundColor: AppColors.surfaceStrong,
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(
                               vertical: 16,
@@ -257,43 +231,6 @@ class _SettingsScreenState extends State<SettingsScreen>
           ),
         ),
         bottomNavigationBar: const AdBannerWidget(),
-      ),
-    );
-  }
-
-  Widget _buildSettingsTile(
-    BuildContext context,
-    String title,
-    IconData icon,
-    VoidCallback onTap,
-  ) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: Colors.grey[900],
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.grey[800]!, width: 1),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.white, size: 24),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Icon(Icons.chevron_right, color: Colors.grey[400]),
-          ],
-        ),
       ),
     );
   }

@@ -39,13 +39,13 @@ class _MapUserMarkerState extends State<MapUserMarker> {
 
   void _handlePositionUpdate() {
     if (!mounted) return;
-    
+
     final position = _mapViewModel?.currentPosition;
     final isCameraLocked = _mapViewModel?.isCameraLocked ?? false;
-    
+
     if (position != null && isCameraLocked) {
-      if (_lastPosition == null || 
-          _lastPosition != position || 
+      if (_lastPosition == null ||
+          _lastPosition != position ||
           _lastCameraLocked != isCameraLocked) {
         _lastPosition = position;
         _lastCameraLocked = isCameraLocked;
@@ -55,7 +55,7 @@ class _MapUserMarkerState extends State<MapUserMarker> {
       _lastPosition = position;
       _lastCameraLocked = isCameraLocked;
     }
-    
+
     if (mounted) {
       setState(() {});
     }
@@ -79,10 +79,7 @@ class _MapUserMarkerState extends State<MapUserMarker> {
           return MarkerLayer(
             markers: [
               Marker(
-                point: LatLng(
-                  position.latitude,
-                  position.longitude,
-                ),
+                point: LatLng(position.latitude, position.longitude),
                 width: 20,
                 height: 20,
                 child: Container(

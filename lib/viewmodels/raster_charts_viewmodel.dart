@@ -71,8 +71,7 @@ class RasterChartsViewModel extends ChangeNotifier {
             return (set: set, chart: chart);
           }
         }
-        if (targetName.isNotEmpty &&
-            _normalizeName(chart.name) == targetName) {
+        if (targetName.isNotEmpty && _normalizeName(chart.name) == targetName) {
           return (set: set, chart: chart);
         }
       }
@@ -80,8 +79,7 @@ class RasterChartsViewModel extends ChangeNotifier {
     return null;
   }
 
-  static String _digits(String value) =>
-      value.replaceAll(RegExp(r'\D'), '');
+  static String _digits(String value) => value.replaceAll(RegExp(r'\D'), '');
 
   static int? _firstInt(String value) {
     final match = RegExp(r'\d+').firstMatch(value);
@@ -103,9 +101,10 @@ class RasterChartsViewModel extends ChangeNotifier {
         .whereType<RasterChartSet>()
         .toList();
     final rest = _sets.where((s) => !_renderOrder.contains(s.id)).toList();
-    return [...rest, ...inOrder]
-        .expand((s) => s.charts.where((c) => c.visible))
-        .toList();
+    return [
+      ...rest,
+      ...inOrder,
+    ].expand((s) => s.charts.where((c) => c.visible)).toList();
   }
 
   Future<void> loadAll() async {
@@ -130,9 +129,9 @@ class RasterChartsViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final visibleSets = _sets.where(
-        (s) => s.charts.any((c) => c.visible),
-      ).toList();
+      final visibleSets = _sets
+          .where((s) => s.charts.any((c) => c.visible))
+          .toList();
       if (visibleSets.length >= maxSets) {
         await setSetVisibility(visibleSets.last.id, false);
       }

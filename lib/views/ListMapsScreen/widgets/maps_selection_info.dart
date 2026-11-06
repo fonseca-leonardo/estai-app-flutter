@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -49,7 +50,7 @@ class MapsSelectionInfo extends StatelessWidget {
               children: [
                 Icon(
                   Icons.warning_amber_rounded,
-                  color: Colors.orange.withValues(alpha: 0.8),
+                  color: AppColors.warning.withValues(alpha: 0.8),
                   size: 20,
                 ),
                 const SizedBox(width: 8),
@@ -57,7 +58,7 @@ class MapsSelectionInfo extends StatelessWidget {
                   child: Text(
                     l10n.mapsSelectionPerformanceWarning,
                     style: TextStyle(
-                      color: Colors.orange.withValues(alpha: 0.9),
+                      color: AppColors.warning.withValues(alpha: 0.9),
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                       height: 1.4,

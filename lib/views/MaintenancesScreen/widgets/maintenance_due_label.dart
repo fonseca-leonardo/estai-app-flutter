@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/maintenance.dart';
@@ -55,9 +56,9 @@ class MaintenanceDueLabel extends StatelessWidget {
         (days != null && days <= _soonDays) ||
         (hours != null && hours <= _soonHours);
     final color = overdue
-        ? Colors.redAccent
+        ? AppColors.danger
         : soon
-        ? Colors.amber
+        ? AppColors.warning
         : Colors.white.withValues(alpha: 0.75);
 
     return Row(

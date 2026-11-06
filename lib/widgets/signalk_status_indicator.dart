@@ -1,3 +1,4 @@
+import '../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,10 +18,10 @@ class SignalKStatusIndicator extends StatelessWidget {
         }
 
         final color = switch (state) {
-          SignalKConnectionState.connected => const Color(0xFF22C55E),
-          SignalKConnectionState.connecting => const Color(0xFFF59E0B),
-          SignalKConnectionState.reconnecting => const Color(0xFFF59E0B),
-          SignalKConnectionState.failed => const Color(0xFFEF4444),
+          SignalKConnectionState.connected => AppColors.success,
+          SignalKConnectionState.connecting => AppColors.warning,
+          SignalKConnectionState.reconnecting => AppColors.warning,
+          SignalKConnectionState.failed => AppColors.danger,
           SignalKConnectionState.disabled => Colors.transparent,
         };
 

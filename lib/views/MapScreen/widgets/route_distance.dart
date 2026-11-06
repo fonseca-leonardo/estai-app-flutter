@@ -70,7 +70,10 @@ class RouteDistance extends StatelessWidget {
               right: 20,
               child: NavigationData(
                 data: [
-                  NavigationDataItem(title: l10n.distance, data: formattedDistance),
+                  NavigationDataItem(
+                    title: l10n.distance,
+                    data: formattedDistance,
+                  ),
                 ],
               ),
             );

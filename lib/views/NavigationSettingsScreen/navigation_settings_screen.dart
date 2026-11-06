@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -97,7 +98,7 @@ class _NavigationSettingsScreenState extends State<NavigationSettingsScreen>
                       Container(
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF0A0A0A),
+                          color: AppColors.surfaceElevated,
                           border: Border.all(
                             color: const Color(0xFF1F1F1F),
                             width: 1,
@@ -175,7 +176,9 @@ class _NavigationSettingsScreenState extends State<NavigationSettingsScreen>
                                 activeTrackColor: Colors.white,
                                 inactiveTrackColor: const Color(0xFF1F1F1F),
                                 thumbColor: Colors.white,
-                                overlayColor: Colors.white.withValues(alpha: 0.1),
+                                overlayColor: Colors.white.withValues(
+                                  alpha: 0.1,
+                                ),
                                 valueIndicatorColor: Colors.white,
                                 valueIndicatorTextStyle: const TextStyle(
                                   color: Colors.black,

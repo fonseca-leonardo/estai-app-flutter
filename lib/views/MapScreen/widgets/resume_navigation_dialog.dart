@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/persisted_navigation.dart';
@@ -54,14 +55,14 @@ class ResumeNavigationDialog extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(false),
           child: Text(
             l10n.discard,
-            style: const TextStyle(color: Colors.redAccent),
+            style: const TextStyle(color: AppColors.danger),
           ),
         ),
         TextButton(
           onPressed: () => Navigator.of(context).pop(true),
           child: Text(
             l10n.resume,
-            style: const TextStyle(color: Colors.greenAccent),
+            style: const TextStyle(color: AppColors.success),
           ),
         ),
       ],

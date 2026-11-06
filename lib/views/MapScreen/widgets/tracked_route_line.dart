@@ -22,7 +22,7 @@ class TrackedRouteLine extends StatelessWidget {
               strokeWidth: 4.0,
               borderStrokeWidth: 4,
               color: Colors.pink,
-              borderColor: Colors.grey.withAlpha(10),
+              borderColor: Colors.grey.withValues(alpha: 0.04),
             ),
           ],
         );

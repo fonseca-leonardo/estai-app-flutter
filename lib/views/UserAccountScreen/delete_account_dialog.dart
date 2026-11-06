@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -36,7 +37,7 @@ class _DeleteAccountDialogState extends State<DeleteAccountDialog> {
         final isConfirmTextValid = currentText == requiredText;
 
         return AlertDialog(
-          backgroundColor: const Color(0xFF0A0A0A),
+          backgroundColor: AppColors.surfaceElevated,
           title: Text(
             widget.l10n.deleteAccountConfirmTitle,
             style: const TextStyle(
@@ -86,23 +87,23 @@ class _DeleteAccountDialogState extends State<DeleteAccountDialog> {
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide(
                         color: isConfirmTextValid
-                            ? Colors.green
-                            : Colors.grey[800]!,
+                            ? AppColors.success
+                            : AppColors.border,
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide(
                         color: isConfirmTextValid
-                            ? Colors.green
-                            : Colors.grey[800]!,
+                            ? AppColors.success
+                            : AppColors.border,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide(
                         color: isConfirmTextValid
-                            ? Colors.green
+                            ? AppColors.success
                             : Colors.red[400]!,
                         width: 2,
                       ),
@@ -130,7 +131,7 @@ class _DeleteAccountDialogState extends State<DeleteAccountDialog> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red[900]?.withValues(alpha: 0.2),
                 foregroundColor: Colors.red[400],
-                disabledBackgroundColor: Colors.grey[900],
+                disabledBackgroundColor: AppColors.surface,
                 disabledForegroundColor: Colors.grey[600],
               ),
               child: Text(widget.l10n.deleteAccount),

@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -49,7 +50,7 @@ class _SelectedChartsContent extends StatelessWidget {
                     height: 4,
                     margin: const EdgeInsets.only(bottom: 12),
                     decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(80),
+                      color: Colors.white.withValues(alpha: 0.31),
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
@@ -79,7 +80,7 @@ class _SelectedChartsContent extends StatelessWidget {
                       shrinkWrap: true,
                       itemCount: charts.length,
                       separatorBuilder: (_, _) => Divider(
-                        color: Colors.white.withAlpha(30),
+                        color: Colors.white.withValues(alpha: 0.12),
                         height: 1,
                       ),
                       itemBuilder: (context, index) =>
@@ -113,7 +114,7 @@ class _ImportZipButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.white,
               foregroundColor: Colors.black,
-              disabledBackgroundColor: Colors.white.withAlpha(80),
+              disabledBackgroundColor: Colors.white.withValues(alpha: 0.31),
               padding: const EdgeInsets.symmetric(vertical: 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -156,14 +157,14 @@ class _ImportZipButton extends StatelessWidget {
     if (imported != null) {
       messenger.showSnackBar(
         SnackBar(
-          backgroundColor: Colors.green.withAlpha(220),
+          backgroundColor: AppColors.success.withValues(alpha: 0.86),
           content: Text(l10n.rasterChartImportSuccess),
         ),
       );
     } else if (viewModel.errorMessage != null) {
       messenger.showSnackBar(
         SnackBar(
-          backgroundColor: Colors.red.withAlpha(220),
+          backgroundColor: AppColors.danger.withValues(alpha: 0.86),
           content: Text(viewModel.errorMessage!),
         ),
       );
@@ -251,7 +252,7 @@ class _ImportedChartActions extends StatelessWidget {
         ),
         IconButton(
           tooltip: 'Excluir carta importada',
-          icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
+          icon: const Icon(Icons.delete_outline, color: AppColors.danger),
           onPressed: () => _confirmDelete(context),
         ),
       ],
@@ -264,7 +265,7 @@ class _ImportedChartActions extends StatelessWidget {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        backgroundColor: Colors.black.withAlpha(220),
+        backgroundColor: Colors.black.withValues(alpha: 0.86),
         title: Text(
           l10n.rasterChartRemoveTitle,
           style: const TextStyle(color: Colors.white),
@@ -285,7 +286,7 @@ class _ImportedChartActions extends StatelessWidget {
             onPressed: () => Navigator.of(dialogContext).pop(true),
             child: Text(
               l10n.remove,
-              style: const TextStyle(color: Colors.red),
+              style: const TextStyle(color: AppColors.danger),
             ),
           ),
         ],

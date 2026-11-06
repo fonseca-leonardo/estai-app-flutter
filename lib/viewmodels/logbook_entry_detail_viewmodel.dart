@@ -23,6 +23,17 @@ class LogbookEntryDetailViewModel extends ChangeNotifier {
   /// Se a entrada foi editada ou excluída; a lista recarrega ao voltar.
   bool get changed => _changed;
 
+  /// A listagem não traz o trajeto; busca a entrada completa para o mapa.
+  /// Se falhar, o detalhe segue sem o mapa.
+  Future<void> loadTrack() async {
+    if (!_entry.isTrip || _entry.trackPoints.isNotEmpty) return;
+    try {
+      final full = await _logbookService.getEntry(_entry.id);
+      _entry = full;
+      notifyListeners();
+    } catch (_) {}
+  }
+
   void update(LogbookEntry entry) {
     _entry = entry;
     _changed = true;

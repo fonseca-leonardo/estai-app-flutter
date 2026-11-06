@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -246,7 +247,7 @@ class _WeatherForecastBottomSheetState
                     child: Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: Colors.red.withValues(alpha: 0.39),
+                        color: AppColors.danger.withValues(alpha: 0.39),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(

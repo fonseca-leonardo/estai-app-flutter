@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -214,7 +215,7 @@ class _MaintenanceFormScreenState extends State<MaintenanceFormScreen>
                     ? l10n.maintenanceEditTitle
                     : l10n.maintenanceNew,
               ),
-              backgroundColor: Colors.black.withAlpha(200),
+              backgroundColor: Colors.black.withValues(alpha: 0.78),
               foregroundColor: Colors.white,
               elevation: 0,
               actions: [
@@ -349,7 +350,7 @@ class _MaintenanceFormScreenState extends State<MaintenanceFormScreen>
                             const SizedBox(height: 8),
                             Text(
                               errorText,
-                              style: const TextStyle(color: Colors.redAccent),
+                              style: const TextStyle(color: AppColors.danger),
                             ),
                           ],
                         ],

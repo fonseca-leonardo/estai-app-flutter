@@ -36,7 +36,7 @@ class _CrosshairPainter extends CustomPainter {
       ..strokeWidth = 1
       ..style = PaintingStyle.stroke;
     final shadow = Paint()
-      ..color = Colors.black.withAlpha(160)
+      ..color = Colors.black.withValues(alpha: 0.63)
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke;
 

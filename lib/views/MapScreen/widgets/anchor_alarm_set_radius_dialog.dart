@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:latlong2/latlong.dart';
@@ -110,10 +111,12 @@ class _AnchorAlarmSetRadiusDialogState
               errorText: _error,
               labelStyle: TextStyle(color: Colors.white.withValues(alpha: 0.6)),
               hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.3)),
-              errorStyle: const TextStyle(color: Colors.redAccent),
+              errorStyle: const TextStyle(color: AppColors.danger),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.2)),
+                borderSide: BorderSide(
+                  color: Colors.white.withValues(alpha: 0.2),
+                ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -121,14 +124,16 @@ class _AnchorAlarmSetRadiusDialogState
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: Colors.redAccent),
+                borderSide: const BorderSide(color: AppColors.danger),
               ),
               focusedErrorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: Colors.redAccent),
+                borderSide: const BorderSide(color: AppColors.danger),
               ),
               suffixText: 'm',
-              suffixStyle: TextStyle(color: Colors.white.withValues(alpha: 0.5)),
+              suffixStyle: TextStyle(
+                color: Colors.white.withValues(alpha: 0.5),
+              ),
             ),
             onSubmitted: (_) => _confirm(),
           ),
@@ -147,7 +152,9 @@ class _AnchorAlarmSetRadiusDialogState
           style: FilledButton.styleFrom(
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
           child: Text(l10n.confirm),
         ),

@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/maintenance_status.dart';
@@ -7,9 +8,9 @@ Color maintenanceStatusColor(MaintenanceStatus status) {
     case MaintenanceStatus.scheduled:
       return Colors.lightBlueAccent;
     case MaintenanceStatus.overdue:
-      return Colors.redAccent;
+      return AppColors.danger;
     case MaintenanceStatus.done:
-      return Colors.greenAccent;
+      return AppColors.success;
   }
 }
 

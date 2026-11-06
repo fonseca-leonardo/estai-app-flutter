@@ -76,7 +76,8 @@ class MarinaService {
       final body = json.decode(response.body) as Map<String, dynamic>;
       final message = body['message'];
       if (message is String) return message;
-      if (message is List && message.isNotEmpty) return message.first.toString();
+      if (message is List && message.isNotEmpty)
+        return message.first.toString();
     } catch (_) {
       // corpo não é um JSON com `message`, ignora e usa mensagem genérica
     }

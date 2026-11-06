@@ -15,6 +15,8 @@ import '../../../viewmodels/anchor_alarm_viewmodel.dart';
 import '../../../services/anchor_alarm_notification_service.dart';
 import '../../../widgets/start_navigation_flow.dart';
 import '../../../widgets/stop_navigation_flow.dart';
+import '../../../theme/app_colors.dart';
+import '../../../theme/app_radius.dart';
 
 class MapBottomSheet extends StatelessWidget {
   final BuildContext? parentContext;
@@ -25,9 +27,10 @@ class MapBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(164, 0, 0, 0),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      decoration: BoxDecoration(
+        color: Colors.black.withValues(alpha: 0.65),
+        borderRadius: AppRadius.sheetTop,
+        border: Border(top: BorderSide(color: AppColors.border)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -41,7 +44,7 @@ class MapBottomSheet extends StatelessWidget {
                 height: 4,
                 margin: const EdgeInsets.only(bottom: 20),
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: Colors.white.withValues(alpha: 0.3),
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -58,8 +61,8 @@ class MapBottomSheet extends StatelessWidget {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount: 3,
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 12,
+                      mainAxisSpacing: 12,
                       childAspectRatio: 0.8,
                       children: [
                         _GridItem(
@@ -93,8 +96,7 @@ class MapBottomSheet extends StatelessWidget {
                                         StartNavigationFlow.start(
                                           navigatorContext,
                                           plannedRoute:
-                                              routePlannerViewModel
-                                                  .routePoints,
+                                              routePlannerViewModel.routePoints,
                                         );
                                       }
                                     }
@@ -226,15 +228,16 @@ class MapBottomSheet extends StatelessWidget {
                                 final navigatorContext =
                                     parentContext ?? context;
                                 Navigator.pop(context);
-                                WidgetsBinding.instance
-                                    .addPostFrameCallback((_) async {
+                                WidgetsBinding.instance.addPostFrameCallback((
+                                  _,
+                                ) async {
                                   if (!navigatorContext.mounted) return;
                                   if (isActive) {
                                     anchorVm.clearAlarm();
                                   } else {
-                                    await AnchorAlarmNotificationService
-                                        .requestPermissionIfNeeded(
-                                            navigatorContext);
+                                    await AnchorAlarmNotificationService.requestPermissionIfNeeded(
+                                      navigatorContext,
+                                    );
                                     if (navigatorContext.mounted) {
                                       anchorVm.setSettingAnchorMode(true);
                                     }
@@ -306,26 +309,29 @@ class _GridItem extends StatelessWidget {
     final isDisabled = onTap == null;
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: AppRadius.mdAll,
       child: Opacity(
-        opacity: isDisabled ? 0.5 : 1.0,
+        opacity: isDisabled ? 0.4 : 1.0,
         child: Container(
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isHighlighted
-                ? Colors.white.withValues(alpha: 0.2)
-                : Colors.white.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(12),
-            border: isHighlighted
-                ? Border.all(color: Colors.white.withValues(alpha: 0.6))
-                : null,
+            color: isHighlighted ? AppColors.surfaceStrong : AppColors.surface,
+            borderRadius: AppRadius.mdAll,
+            border: Border.all(
+              color: isHighlighted
+                  ? Colors.white.withValues(alpha: 0.6)
+                  : AppColors.border,
+            ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, color: Colors.white, size: 32),
-              const SizedBox(height: 8),
+              Icon(icon, color: Colors.white, size: 28),
+              const SizedBox(height: 10),
               Text(
                 title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 12,

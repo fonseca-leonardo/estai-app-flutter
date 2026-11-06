@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ChartplotterActionButton extends StatelessWidget {
@@ -17,10 +18,10 @@ class ChartplotterActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final button = Material(
-      color: Colors.black.withAlpha(140),
+      color: Colors.black.withValues(alpha: 0.55),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(color: Colors.white.withAlpha(64)),
+        side: BorderSide(color: Colors.white.withValues(alpha: 0.25)),
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
@@ -45,7 +46,7 @@ class ChartplotterActionButton extends StatelessWidget {
                       minHeight: 18,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.greenAccent,
+                      color: AppColors.success,
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: Colors.black, width: 1),
                     ),

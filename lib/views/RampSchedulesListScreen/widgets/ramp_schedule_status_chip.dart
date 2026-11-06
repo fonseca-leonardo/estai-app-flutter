@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/ramp_schedule_status.dart';
@@ -5,19 +6,19 @@ import '../../../models/ramp_schedule_status.dart';
 Color rampScheduleStatusColor(RampScheduleStatus status) {
   switch (status) {
     case RampScheduleStatus.pending:
-      return Colors.amber;
+      return AppColors.warning;
     case RampScheduleStatus.confirmed:
       return Colors.lightBlueAccent;
     case RampScheduleStatus.inProgress:
       return Colors.purpleAccent;
     case RampScheduleStatus.completed:
-      return Colors.greenAccent;
+      return AppColors.success;
     case RampScheduleStatus.cancelled:
       return Colors.grey;
     case RampScheduleStatus.rejected:
-      return Colors.redAccent;
+      return AppColors.danger;
     case RampScheduleStatus.noShow:
-      return Colors.orangeAccent;
+      return AppColors.warning;
   }
 }
 

@@ -58,6 +58,15 @@ class BoatViewModel extends ChangeNotifier {
     }
   }
 
+  /// Descarta os barcos em memória (usar no logout, junto do cache local).
+  void clear() {
+    _boats = [];
+    _isLoading = false;
+    _isSaving = false;
+    _errorMessage = null;
+    notifyListeners();
+  }
+
   Future<bool> addBoat({
     required String name,
     required String model,

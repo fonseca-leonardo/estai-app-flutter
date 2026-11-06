@@ -9,6 +9,7 @@ import '../services/estai_api_client.dart';
 import '../services/marina_storage_service.dart';
 import '../services/pending_trip_queue_service.dart';
 import '../services/push_notification_service.dart';
+import 'onboarding_viewmodel.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -180,8 +181,7 @@ class AuthViewModel extends ChangeNotifier {
         return false;
       }
 
-      final GoogleSignInAuthentication googleAuth =
-          googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
 
       if (googleAuth.idToken == null) {
         _isLoading = false;
@@ -319,6 +319,7 @@ class AuthViewModel extends ChangeNotifier {
       await MarinaStorageService().clear();
       await BoatCacheService().clear();
       await PendingTripQueueService().clear();
+      await OnboardingViewModel.clearPersisted();
       _currentUser = null;
       _isLoading = false;
       _errorMessage = null;
@@ -361,7 +362,7 @@ class AuthViewModel extends ChangeNotifier {
             .collection('estai')
             .doc(userId)
             .collection('routes');
-        
+
         final routesSnapshot = await routesCollection.get();
         final batch = firestore.batch();
         for (final doc in routesSnapshot.docs) {

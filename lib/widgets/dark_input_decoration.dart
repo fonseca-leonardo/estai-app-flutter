@@ -1,3 +1,4 @@
+import '../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// Campo de formulário no tema escuro (borda sutil, branca ao focar), igual
@@ -23,11 +24,11 @@ InputDecoration darkInputDecoration(
       borderRadius: BorderRadius.circular(8),
     ),
     errorBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.redAccent),
+      borderSide: const BorderSide(color: AppColors.danger),
       borderRadius: BorderRadius.circular(8),
     ),
     focusedErrorBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.redAccent, width: 1.5),
+      borderSide: const BorderSide(color: AppColors.danger, width: 1.5),
       borderRadius: BorderRadius.circular(8),
     ),
     filled: true,

@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../RampBookingScreen/widgets/inline_alert.dart';
@@ -21,7 +22,7 @@ class SystemPermissionAlert extends StatelessWidget {
           InlineAlert(
             icon: Icons.notifications_off_outlined,
             message: l10n.notificationPrefsSystemBlocked,
-            color: Colors.amber,
+            color: AppColors.warning,
           ),
           const SizedBox(height: 10),
           OutlinedButton(

@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'dart:io';
 
 import 'package:estai/views/NavigationPermissionScreen/navigation_permission_screen.dart';
@@ -8,6 +9,7 @@ import '../../../viewmodels/estai_session_viewmodel.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../BoatsListScreen/boats_list_screen.dart';
 import '../../MarinaHomeScreen/marina_home_screen.dart';
+import '../../../widgets/ui/glass_fab.dart';
 import './weather_forecast_bottom_sheet.dart';
 
 class MapActionsButtons extends StatelessWidget {
@@ -26,17 +28,11 @@ class MapActionsButtons extends StatelessWidget {
           Selector<MapViewModel, bool>(
             selector: (_, viewModel) => viewModel.isCameraLocked,
             builder: (context, isCameraLocked, child) {
-              return FloatingActionButton(
+              return GlassFab(
                 heroTag: 'camera_lock_button',
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.white.withAlpha(64)),
-                ),
                 onPressed: () =>
                     context.read<MapViewModel>().toggleCameraLock(),
-                backgroundColor: isCameraLocked
-                    ? Colors.black.withAlpha(140)
-                    : Colors.black.withAlpha(64),
+                emphasized: isCameraLocked,
                 tooltip: isCameraLocked ? l10n.unlockCamera : l10n.lockCamera,
                 child: Icon(
                   isCameraLocked ? Icons.near_me : Icons.near_me_outlined,
@@ -48,17 +44,11 @@ class MapActionsButtons extends StatelessWidget {
           Selector<MapViewModel, bool>(
             selector: (_, viewModel) => viewModel.isChartplotterMode,
             builder: (context, isChartplotterMode, child) {
-              return FloatingActionButton(
+              return GlassFab(
                 heroTag: 'chartplotter_mode_button',
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.white.withAlpha(64)),
-                ),
                 onPressed: () =>
                     context.read<MapViewModel>().toggleChartplotterMode(),
-                backgroundColor: isChartplotterMode
-                    ? Colors.black.withAlpha(140)
-                    : Colors.black.withAlpha(64),
+                emphasized: isChartplotterMode,
                 tooltip: 'Modo Chartplotter',
                 child: Icon(
                   isChartplotterMode ? Icons.grid_on : Icons.grid_off,
@@ -67,31 +57,20 @@ class MapActionsButtons extends StatelessWidget {
               );
             },
           ),
-          FloatingActionButton(
+          GlassFab(
             heroTag: 'weather_forecast_button',
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-              side: BorderSide(color: Colors.white.withAlpha(64)),
-            ),
             onPressed: () => WeatherForecastBottomSheet.show(context),
-            backgroundColor: Colors.black.withAlpha(140),
             tooltip: 'Previsão do Tempo',
             child: const Icon(Icons.thermostat, color: Colors.white),
           ),
           Selector<EstaiSessionViewModel, ({bool hasMarina, File? logoFile})>(
-            selector: (_, viewModel) => (
-              hasMarina: viewModel.hasMarina,
-              logoFile: viewModel.logoFile,
-            ),
+            selector: (_, viewModel) =>
+                (hasMarina: viewModel.hasMarina, logoFile: viewModel.logoFile),
             builder: (context, state, child) {
               final hasMarina = state.hasMarina;
               final logoFile = state.logoFile;
-              return FloatingActionButton(
+              return GlassFab(
                 heroTag: 'my_boats_button',
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.white.withAlpha(64)),
-                ),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => hasMarina
@@ -99,8 +78,9 @@ class MapActionsButtons extends StatelessWidget {
                         : const BoatsListScreen(),
                   ),
                 ),
-                backgroundColor: Colors.black.withAlpha(140),
-                tooltip: hasMarina ? l10n.marinaHubTooltip : l10n.myBoatsTooltip,
+                tooltip: hasMarina
+                    ? l10n.marinaHubTooltip
+                    : l10n.myBoatsTooltip,
                 child: hasMarina && logoFile != null
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(10),
@@ -133,13 +113,9 @@ class MapActionsButtons extends StatelessWidget {
               if (!isLocationPermissionDenied) {
                 return const SizedBox.shrink();
               }
-              return FloatingActionButton(
+              return GlassFab(
                 heroTag: 'gps_availability_button',
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.white.withAlpha(64)),
-                ),
-                backgroundColor: Colors.redAccent.withAlpha(140),
+                tint: AppColors.danger.withValues(alpha: 0.55),
                 tooltip: 'Disponibilidade do GPS',
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(

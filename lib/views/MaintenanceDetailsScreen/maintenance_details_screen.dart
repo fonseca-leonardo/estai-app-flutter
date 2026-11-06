@@ -100,7 +100,7 @@ class _MaintenanceDetailsScreenState extends State<MaintenanceDetailsScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.maintenanceDetailsTitle),
-        backgroundColor: Colors.black.withAlpha(200),
+        backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
         elevation: 0,
         actions: [

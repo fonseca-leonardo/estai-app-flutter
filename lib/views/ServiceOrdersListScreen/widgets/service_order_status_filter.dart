@@ -91,13 +91,15 @@ class _StatusFilterTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    final label = status == null ? l10n.serviceOrderStatusAll : status!.label(l10n);
-    final color = status == null ? Colors.white : serviceOrderStatusColor(status!);
+    final label = status == null
+        ? l10n.serviceOrderStatusAll
+        : status!.label(l10n);
+    final color = status == null
+        ? Colors.white
+        : serviceOrderStatusColor(status!);
 
     return Material(
-      color: isSelected
-          ? color.withValues(alpha: 0.15)
-          : Colors.transparent,
+      color: isSelected ? color.withValues(alpha: 0.15) : Colors.transparent,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
@@ -115,10 +117,7 @@ class _StatusFilterTile extends StatelessWidget {
               Container(
                 width: 10,
                 height: 10,
-                decoration: BoxDecoration(
-                  color: color,
-                  shape: BoxShape.circle,
-                ),
+                decoration: BoxDecoration(color: color, shape: BoxShape.circle),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -127,13 +126,13 @@ class _StatusFilterTile extends StatelessWidget {
                   style: TextStyle(
                     color: color,
                     fontSize: 15,
-                    fontWeight:
-                        isSelected ? FontWeight.w600 : FontWeight.normal,
+                    fontWeight: isSelected
+                        ? FontWeight.w600
+                        : FontWeight.normal,
                   ),
                 ),
               ),
-              if (isSelected)
-                Icon(Icons.check, size: 18, color: color),
+              if (isSelected) Icon(Icons.check, size: 18, color: color),
             ],
           ),
         ),

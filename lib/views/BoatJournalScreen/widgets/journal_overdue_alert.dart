@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../RampBookingScreen/widgets/inline_alert.dart';
@@ -23,7 +24,7 @@ class JournalOverdueAlert extends StatelessWidget {
       child: InlineAlert(
         icon: Icons.error_outline,
         message: l10n.journalOverdueAlert(count),
-        color: Colors.redAccent,
+        color: AppColors.danger,
       ),
     );
   }

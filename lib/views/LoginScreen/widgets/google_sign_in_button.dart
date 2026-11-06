@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/auth_viewmodel.dart';
-import '../../MapScreen/map_screen.dart';
 
 class GoogleSignInButton extends StatelessWidget {
   const GoogleSignInButton({super.key});
@@ -20,14 +19,9 @@ class GoogleSignInButton extends StatelessWidget {
             onPressed: authViewModel.isLoading
                 ? null
                 : () async {
+                    // A tela de login/cadastro navega ao autenticar.
                     authViewModel.clearError();
-                    final success = await authViewModel.signInWithGoogle();
-                    if (success == true && context.mounted) {
-                      Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (_) => const MapScreen()),
-                        (route) => false,
-                      );
-                    }
+                    await authViewModel.signInWithGoogle();
                   },
             style: OutlinedButton.styleFrom(
               backgroundColor: Colors.white,

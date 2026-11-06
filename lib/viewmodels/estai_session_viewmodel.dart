@@ -24,8 +24,7 @@ class EstaiSessionViewModel extends ChangeNotifier {
        _logoStorageService =
            logoStorageService ?? MarinaImageStorageService.logo(),
        _backgroundStorageService =
-           backgroundStorageService ??
-           MarinaImageStorageService.background() {
+           backgroundStorageService ?? MarinaImageStorageService.background() {
     _loadSavedImages();
   }
 

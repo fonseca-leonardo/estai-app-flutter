@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../models/map_item.dart';
 import '../../../services/tile_cache_service.dart';
@@ -63,12 +64,12 @@ class _PrimaryMapCardState extends State<PrimaryMapCard> {
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
           color: selected
-              ? Colors.green.withValues(alpha: 0.1)
+              ? AppColors.success.withValues(alpha: 0.1)
               : Colors.white.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: selected
-                ? Colors.green.withValues(alpha: 0.5)
+                ? AppColors.success.withValues(alpha: 0.5)
                 : Colors.white.withValues(alpha: 0.2),
             width: selected ? 2 : 1,
           ),
@@ -82,7 +83,7 @@ class _PrimaryMapCardState extends State<PrimaryMapCard> {
                 children: [
                   Icon(
                     Icons.star,
-                    color: Colors.amber.withValues(alpha: 0.9),
+                    color: AppColors.warning.withValues(alpha: 0.9),
                     size: 24,
                   ),
                   const SizedBox(width: 12),
@@ -99,30 +100,30 @@ class _PrimaryMapCardState extends State<PrimaryMapCard> {
                   Checkbox(
                     value: selected,
                     onChanged: (_) => widget.onToggleSelection(),
-                    activeColor: Colors.green,
+                    activeColor: AppColors.success,
                     checkColor: Colors.white,
                   ),
                 ],
               ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Icon(
-                  Icons.zoom_in,
-                  size: 16,
-                  color: Colors.white.withValues(alpha: 0.7),
-                ),
-                const SizedBox(width: 4),
-                Text(
-                  'Zoom: ${widget.mapItem.minZoom} - ${widget.mapItem.maxZoom}',
-                  style: TextStyle(
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Icon(
+                    Icons.zoom_in,
+                    size: 16,
                     color: Colors.white.withValues(alpha: 0.7),
-                    fontSize: 14,
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
+                  const SizedBox(width: 4),
+                  Text(
+                    'Zoom: ${widget.mapItem.minZoom} - ${widget.mapItem.maxZoom}',
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.7),
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
               _CacheRow(
                 isCached: widget.isCached,
                 cacheSizeFuture: _cacheSizeFuture,
@@ -161,7 +162,7 @@ class _CacheRow extends StatelessWidget {
               isCached ? Icons.download_done : Icons.download_outlined,
               size: 16,
               color: isCached
-                  ? Colors.greenAccent.withValues(alpha: 0.9)
+                  ? AppColors.success.withValues(alpha: 0.9)
                   : Colors.white.withValues(alpha: 0.5),
             ),
             const SizedBox(width: 4),
@@ -169,7 +170,7 @@ class _CacheRow extends StatelessWidget {
               'Armazenamento local',
               style: TextStyle(
                 color: isCached
-                    ? Colors.greenAccent.withValues(alpha: 0.9)
+                    ? AppColors.success.withValues(alpha: 0.9)
                     : Colors.white.withValues(alpha: 0.5),
                 fontSize: 13,
               ),
@@ -178,7 +179,7 @@ class _CacheRow extends StatelessWidget {
             Switch(
               value: isCached,
               onChanged: (_) => onToggle(),
-              activeThumbColor: Colors.greenAccent,
+              activeThumbColor: AppColors.success,
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
           ],
@@ -205,10 +206,10 @@ class _CacheRow extends StatelessWidget {
                     child: Text(
                       'Limpar',
                       style: TextStyle(
-                        color: Colors.redAccent.withValues(alpha: 0.8),
+                        color: AppColors.danger.withValues(alpha: 0.8),
                         fontSize: 12,
                         decoration: TextDecoration.underline,
-                        decorationColor: Colors.redAccent.withValues(
+                        decorationColor: AppColors.danger.withValues(
                           alpha: 0.8,
                         ),
                       ),

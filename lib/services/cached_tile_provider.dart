@@ -42,8 +42,7 @@ class CachedTileProvider extends TileProvider {
 }
 
 @immutable
-class _CachedTileImageProvider
-    extends ImageProvider<_CachedTileImageProvider> {
+class _CachedTileImageProvider extends ImageProvider<_CachedTileImageProvider> {
   final String url;
   final String mapId;
   final int z, x, y;
@@ -63,14 +62,15 @@ class _CachedTileImageProvider
   });
 
   @override
-  Future<_CachedTileImageProvider> obtainKey(
-      ImageConfiguration configuration) {
+  Future<_CachedTileImageProvider> obtainKey(ImageConfiguration configuration) {
     return SynchronousFuture(this);
   }
 
   @override
   ImageStreamCompleter loadImage(
-      _CachedTileImageProvider key, ImageDecoderCallback decode) {
+    _CachedTileImageProvider key,
+    ImageDecoderCallback decode,
+  ) {
     return MultiFrameImageStreamCompleter(
       codec: _loadAsync(decode),
       scale: 1.0,
@@ -79,8 +79,7 @@ class _CachedTileImageProvider
   }
 
   Future<ui.Codec> _loadAsync(ImageDecoderCallback decode) async {
-    final cachedFile =
-        await cacheService.getTileFile(mapId, z, x, y, darkMode);
+    final cachedFile = await cacheService.getTileFile(mapId, z, x, y, darkMode);
     if (cachedFile != null) {
       try {
         final bytes = await cachedFile.readAsBytes();
@@ -95,15 +94,15 @@ class _CachedTileImageProvider
 
     final response = await client.get(Uri.parse(url));
     if (response.statusCode == 200 && response.bodyBytes.isNotEmpty) {
-      await cacheService.saveTile(
-          mapId, z, x, y, darkMode, response.bodyBytes);
-      final buffer =
-          await ui.ImmutableBuffer.fromUint8List(response.bodyBytes);
+      await cacheService.saveTile(mapId, z, x, y, darkMode, response.bodyBytes);
+      final buffer = await ui.ImmutableBuffer.fromUint8List(response.bodyBytes);
       return decode(buffer);
     }
 
     throw NetworkImageLoadException(
-        statusCode: response.statusCode, uri: Uri.parse(url));
+      statusCode: response.statusCode,
+      uri: Uri.parse(url),
+    );
   }
 
   @override

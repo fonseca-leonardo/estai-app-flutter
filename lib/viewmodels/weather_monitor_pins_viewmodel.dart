@@ -38,9 +38,10 @@ class WeatherMonitorPinsViewModel extends ChangeNotifier {
 
       final List<dynamic> pinsList = json.decode(localPinsJson);
       _pins = pinsList
-          .map((pinMap) => WeatherMonitorPin.fromMap(
-                pinMap as Map<String, dynamic>,
-              ))
+          .map(
+            (pinMap) =>
+                WeatherMonitorPin.fromMap(pinMap as Map<String, dynamic>),
+          )
           .toList();
 
       _pins.sort((a, b) => b.createdAt.compareTo(a.createdAt));

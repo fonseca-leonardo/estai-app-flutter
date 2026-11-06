@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:estai/widgets/signalk_status_indicator.dart';
@@ -28,12 +29,11 @@ import '../../viewmodels/navigation_status_viewmodel.dart';
 import '../../viewmodels/list_maps_viewmodel.dart';
 import '../../viewmodels/ad_banner_viewmodel.dart';
 import '../../viewmodels/weather_monitor_pins_viewmodel.dart';
-import '../../services/cached_tile_provider.dart';
-import '../../services/tile_cache_service.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../../widgets/stop_navigation_flow.dart';
 import 'widgets/offline_basemap_layer.dart';
+import 'widgets/selected_map_tile_layers.dart';
 import 'widgets/raster_charts_layer.dart';
 import 'widgets/chartplotter_layer.dart';
 import 'widgets/chartplotter_crosshair.dart';
@@ -153,8 +153,12 @@ class _MapScreenState extends State<MapScreen>
     final onboardingViewModel = context.read<OnboardingViewModel>();
     await onboardingViewModel.loadMapOnboardingState();
     if (!mounted) return;
-    if (onboardingViewModel.shouldShowMapOnboarding) {
-      await MapOnboardingOverlay.show(context);
+    if (onboardingViewModel.beginMapOnboarding()) {
+      try {
+        await MapOnboardingOverlay.show(context);
+      } finally {
+        onboardingViewModel.endMapOnboarding();
+      }
     }
     if (!mounted) return;
     await _maybeResumeNavigation();
@@ -331,34 +335,10 @@ class _MapScreenState extends State<MapScreen>
                       builder: (context, draggingIndex, child) {
                         return Consumer2<MapViewModel, ListMapsViewModel>(
                           builder: (context, mapViewModel, mapsViewModel, _) {
-                            final customTileLayers =
-                                mapViewModel.showCustomTiles
-                                ? mapsViewModel.selectedMaps
-                                      .map(
-                                        (mapItem) => TileLayer(
-                                          urlTemplate:
-                                              '${mapItem.path}${mapsViewModel.darkMode ? '?dark=true' : ''}',
-                                          userAgentPackageName: 'com.br.estai',
-                                          maxZoom: mapItem.maxZoom.toDouble(),
-                                          minZoom: mapItem.minZoom.toDouble(),
-                                          tileProvider:
-                                              mapsViewModel.isMapCached(
-                                                mapItem.id,
-                                              )
-                                              ? CachedTileProvider(
-                                                  mapId: mapItem.id,
-                                                  darkMode:
-                                                      mapsViewModel.darkMode,
-                                                  cacheService:
-                                                      TileCacheService.instance,
-                                                )
-                                              : NetworkTileProvider(),
-                                          errorTileCallback:
-                                              (tile, error, stackTrace) {},
-                                        ),
-                                      )
-                                      .toList()
-                                : <Widget>[];
+                            final customTileLayers = buildSelectedMapTileLayers(
+                              mapViewModel,
+                              mapsViewModel,
+                            );
 
                             return FlutterMap(
                               key: const ValueKey('map'),
@@ -505,7 +485,7 @@ class _MapScreenState extends State<MapScreen>
                                         )!;
                                         return AlertDialog(
                                           backgroundColor: Colors.black
-                                              .withAlpha(180),
+                                              .withValues(alpha: 0.71),
                                           title: Text(
                                             l10n.finishNavigation,
                                             style: const TextStyle(
@@ -549,7 +529,7 @@ class _MapScreenState extends State<MapScreen>
                                               child: Text(
                                                 l10n.finish,
                                                 style: const TextStyle(
-                                                  color: Colors.red,
+                                                  color: AppColors.danger,
                                                 ),
                                               ),
                                             ),
@@ -558,7 +538,9 @@ class _MapScreenState extends State<MapScreen>
                                       },
                                     );
                                   },
-                                  backgroundColor: Colors.orange.withAlpha(200),
+                                  backgroundColor: AppColors.warning.withValues(
+                                    alpha: 0.78,
+                                  ),
                                   child: const Icon(
                                     Icons.square,
                                     color: Colors.white,
@@ -569,11 +551,13 @@ class _MapScreenState extends State<MapScreen>
                             FloatingActionButton(
                               heroTag: 'map_bottom_sheet_button',
                               onPressed: () => MapBottomSheet.show(context),
-                              backgroundColor: Colors.black.withAlpha(140),
+                              backgroundColor: Colors.black.withValues(
+                                alpha: 0.55,
+                              ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                                 side: BorderSide(
-                                  color: Colors.white.withAlpha(64),
+                                  color: Colors.white.withValues(alpha: 0.25),
                                 ),
                               ),
                               child: const Icon(

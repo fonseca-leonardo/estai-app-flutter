@@ -1,3 +1,4 @@
+import 'ui/app_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -18,16 +19,12 @@ Future<void> showSaveTripSheet({
   required List<Boat> boats,
   String? initialBoatId,
 }) {
-  return showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
+  return AppSheet.show<void>(
+    context,
+    padded: false,
+    useSafeArea: false,
     isDismissible: false,
     enableDrag: false,
-    backgroundColor: const Color(0xFF0A0A0A),
-    shape: RoundedRectangleBorder(
-      borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-      side: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
-    ),
     builder: (_) => SaveTripSheet(
       summary: summary,
       boats: boats,

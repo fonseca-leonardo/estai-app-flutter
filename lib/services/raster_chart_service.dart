@@ -125,10 +125,7 @@ class RasterChartService {
         index++;
         final kapName = entry.key;
         final kapPath = entry.value;
-        onProgress?.call(
-          (index - 1) / total,
-          'Decodificando $kapName...',
-        );
+        onProgress?.call((index - 1) / total, 'Decodificando $kapName...');
 
         final catEntry = catalog.entries.firstWhere(
           (e) => e.fileName.toUpperCase() == kapName,
@@ -281,7 +278,9 @@ class RasterChartService {
   _KapHeader _parseKapHeader(Uint8List bytes) {
     final headerEnd = _findHeaderEnd(bytes);
     if (headerEnd < 0) {
-      throw RasterChartImportException('Separador de header KAP não encontrado');
+      throw RasterChartImportException(
+        'Separador de header KAP não encontrado',
+      );
     }
     final headerText = latin1.decode(bytes.sublist(0, headerEnd - 2));
     final lines = _foldLogicalLines(headerText);
@@ -362,8 +361,7 @@ class RasterChartService {
       if (line.isEmpty) continue;
       if (line.startsWith(' ') || line.startsWith('\t')) {
         if (logical.isNotEmpty) {
-          logical[logical.length - 1] =
-              '${logical.last}${line.trimLeft()}';
+          logical[logical.length - 1] = '${logical.last}${line.trimLeft()}';
         }
       } else {
         logical.add(line);
@@ -410,10 +408,7 @@ class RasterChartService {
     final g = int.tryParse(parts[2].trim());
     final b = int.tryParse(parts[3].trim());
     if (i == null || r == null || g == null || b == null) return null;
-    return _RgbEntry(
-      index: i,
-      argb: 0xFF000000 | (r << 16) | (g << 8) | b,
-    );
+    return _RgbEntry(index: i, argb: 0xFF000000 | (r << 16) | (g << 8) | b);
   }
 
   LatLng? _parsePly(String body) {
@@ -441,8 +436,7 @@ class RasterChartService {
 
     LatLng cornerAt(double px, double py) {
       final lon = lonCoeffs[0] + lonCoeffs[1] * px + lonCoeffs[2] * py;
-      final mercY =
-          mercYCoeffs[0] + mercYCoeffs[1] * px + mercYCoeffs[2] * py;
+      final mercY = mercYCoeffs[0] + mercYCoeffs[1] * px + mercYCoeffs[2] * py;
       return LatLng(_mercatorYToLat(mercY), lon);
     }
 

@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
@@ -65,13 +66,15 @@ class AnchorAlarmSelectionBanner extends StatelessWidget {
                         icon: Icons.my_location,
                         color: Colors.white,
                         onTap: () {
-                          final position =
-                              context.read<MapViewModel>().currentPosition;
+                          final position = context
+                              .read<MapViewModel>()
+                              .currentPosition;
                           if (position == null) return;
-                          final anchorVm =
-                              context.read<AnchorAlarmViewModel>();
-                          final point =
-                              LatLng(position.latitude, position.longitude);
+                          final anchorVm = context.read<AnchorAlarmViewModel>();
+                          final point = LatLng(
+                            position.latitude,
+                            position.longitude,
+                          );
                           AnchorAlarmSetRadiusDialog.show(context, point, (r) {
                             anchorVm.setAlarm(point, r);
                           });
@@ -80,7 +83,7 @@ class AnchorAlarmSelectionBanner extends StatelessWidget {
                       _BannerButton(
                         label: l10n.cancel,
                         icon: Icons.close,
-                        color: Colors.redAccent,
+                        color: AppColors.danger,
                         onTap: () => context
                             .read<AnchorAlarmViewModel>()
                             .setSettingAnchorMode(false),

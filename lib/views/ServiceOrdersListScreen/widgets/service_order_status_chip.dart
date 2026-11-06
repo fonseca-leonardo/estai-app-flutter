@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/service_order_status.dart';
@@ -5,13 +6,13 @@ import '../../../models/service_order_status.dart';
 Color serviceOrderStatusColor(ServiceOrderStatus status) {
   switch (status) {
     case ServiceOrderStatus.pending:
-      return Colors.amber;
+      return AppColors.warning;
     case ServiceOrderStatus.scheduled:
       return Colors.lightBlueAccent;
     case ServiceOrderStatus.inProgress:
       return Colors.purpleAccent;
     case ServiceOrderStatus.completed:
-      return Colors.greenAccent;
+      return AppColors.success;
     case ServiceOrderStatus.cancelled:
       return Colors.grey;
   }

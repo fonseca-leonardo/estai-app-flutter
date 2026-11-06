@@ -1,8 +1,11 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../viewmodels/auth_viewmodel.dart';
+import '../../viewmodels/boat_viewmodel.dart';
+import '../../viewmodels/estai_session_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../LoginScreen/login_screen.dart';
 import 'delete_account_dialog.dart';
@@ -64,6 +67,13 @@ class _UserAccountScreenState extends State<UserAccountScreen>
     }
   }
 
+  /// Zera o estado em memória do usuário que saiu (marina e barcos), para que
+  /// nada dele apareça no próximo login.
+  void _clearUserState(BuildContext context) {
+    context.read<EstaiSessionViewModel>().clear();
+    context.read<BoatViewModel>().clear();
+  }
+
   Future<void> _handleDeleteAccount(BuildContext context, String userId) async {
     final l10n = AppLocalizations.of(context)!;
     final authViewModel = _authViewModel;
@@ -75,6 +85,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
     if (!mounted) return;
 
     if (success) {
+      _clearUserState(context);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(l10n.deleteAccountSuccess),
@@ -99,7 +110,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          backgroundColor: const Color(0xFF0A0A0A),
+          backgroundColor: AppColors.surfaceElevated,
           title: Text(
             l10n.deleteAccount,
             style: const TextStyle(color: Colors.white),
@@ -144,7 +155,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF0A0A0A),
+        color: AppColors.surfaceElevated,
         border: Border.all(color: const Color(0xFF1F1F1F), width: 1),
         borderRadius: BorderRadius.circular(12),
       ),
@@ -263,7 +274,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                               Container(
                                 padding: const EdgeInsets.all(16),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF0A0A0A),
+                                  color: AppColors.surfaceElevated,
                                   borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(12),
                                     topRight: Radius.circular(12),
@@ -312,7 +323,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                               Container(
                                 padding: const EdgeInsets.all(16),
                                 decoration: const BoxDecoration(
-                                  color: Color(0xFF0A0A0A),
+                                  color: AppColors.surfaceElevated,
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(12),
                                     bottomRight: Radius.circular(12),
@@ -325,16 +336,22 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                                         ? null
                                         : () async {
                                             await authViewModel.logout();
-                                            if (context.mounted) {
-                                              Navigator.of(
-                                                context,
-                                              ).pushReplacement(
-                                                MaterialPageRoute(
-                                                  builder: (_) =>
-                                                      const LoginScreen(),
-                                                ),
-                                              );
+                                            if (!context.mounted) return;
+                                            // Só segue se o logout deu certo.
+                                            if (authViewModel.errorMessage !=
+                                                null) {
+                                              return;
                                             }
+                                            _clearUserState(context);
+                                            Navigator.of(
+                                              context,
+                                            ).pushAndRemoveUntil(
+                                              MaterialPageRoute(
+                                                builder: (_) =>
+                                                    const LoginScreen(),
+                                              ),
+                                              (route) => false,
+                                            );
                                           },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.red[900]
@@ -405,7 +422,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                               Container(
                                 padding: const EdgeInsets.all(16),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF0A0A0A),
+                                  color: AppColors.surfaceElevated,
                                   borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(12),
                                     topRight: Radius.circular(12),
@@ -454,7 +471,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                               Container(
                                 padding: const EdgeInsets.all(16),
                                 decoration: const BoxDecoration(
-                                  color: Color(0xFF0A0A0A),
+                                  color: AppColors.surfaceElevated,
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(12),
                                     bottomRight: Radius.circular(12),
@@ -550,7 +567,7 @@ class _UserAccountScreenState extends State<UserAccountScreen>
                       Container(
                         padding: const EdgeInsets.all(24),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF0A0A0A),
+                          color: AppColors.surfaceElevated,
                           border: Border.all(
                             color: const Color(0xFF1F1F1F),
                             width: 1,

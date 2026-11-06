@@ -143,7 +143,9 @@ class EstaiApiClient {
 
   void _logRequest(String method, Uri uri, {Object? body}) {
     if (!enableRequestLogs) return;
-    debugPrint('[EstaiApiClient] → $method $uri${body != null ? ' | body: $body' : ''}');
+    debugPrint(
+      '[EstaiApiClient] → $method $uri${body != null ? ' | body: $body' : ''}',
+    );
   }
 
   void _logResponse(String method, Uri uri, http.Response response) {

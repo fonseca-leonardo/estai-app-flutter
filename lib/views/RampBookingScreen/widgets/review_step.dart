@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -29,7 +30,7 @@ class ReviewStep extends StatelessWidget {
           message: autoConfirm
               ? l10n.rampAutoConfirmInfo
               : l10n.rampPendingInfo,
-          color: autoConfirm ? Colors.greenAccent : Colors.amber,
+          color: autoConfirm ? AppColors.success : AppColors.warning,
         ),
         const SizedBox(height: 20),
         TextField(
@@ -75,7 +76,7 @@ class ReviewStep extends StatelessWidget {
                     viewModel.submitErrorMessage != null
                 ? viewModel.submitErrorMessage!
                 : l10n.rampCreateError,
-            color: Colors.redAccent,
+            color: AppColors.danger,
           ),
         ],
       ],

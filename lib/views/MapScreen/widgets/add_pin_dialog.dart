@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import '../../../l10n/app_localizations.dart';
@@ -46,7 +47,7 @@ class AddPinDialog {
               },
               child: Text(
                 l10n.cancel,
-                style: const TextStyle(color: Colors.redAccent),
+                style: const TextStyle(color: AppColors.danger),
               ),
             ),
             TextButton(

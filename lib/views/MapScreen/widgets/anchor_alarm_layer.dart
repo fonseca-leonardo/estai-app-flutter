@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -31,7 +32,7 @@ class AnchorAlarmLayer extends StatelessWidget {
                   point: center,
                   radius: data.radius!,
                   useRadiusInMeter: true,
-                  color: Colors.green.withValues(alpha: 0.25),
+                  color: AppColors.success.withValues(alpha: 0.25),
                   borderColor: Colors.purple,
                   borderStrokeWidth: 2,
                 ),

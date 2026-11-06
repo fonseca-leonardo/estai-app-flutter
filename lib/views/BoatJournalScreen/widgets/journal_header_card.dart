@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/boat.dart';
 import '../../../utils/engine_hours_format.dart';
+import '../../../widgets/ui/icon_chip.dart';
 
 /// Barco e horímetro atual, com o atalho para atualizar a leitura.
 class JournalHeaderCard extends StatelessWidget {
@@ -41,18 +42,12 @@ class JournalHeaderCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                width: 52,
-                height: 52,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.08),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Icon(
-                  Icons.directions_boat,
-                  color: Colors.white,
-                  size: 28,
+              Hero(
+                tag: 'boat-icon-${boat.id}',
+                child: const IconChip(
+                  icon: Icons.directions_boat,
+                  size: 52,
+                  iconSize: 28,
                 ),
               ),
               const SizedBox(width: 16),

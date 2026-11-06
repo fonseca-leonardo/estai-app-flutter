@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
@@ -32,7 +33,7 @@ class _RoutesListScreenState extends State<RoutesListScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.myRoutes),
-        backgroundColor: Colors.black.withAlpha(200),
+        backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
       backgroundColor: Colors.black,
@@ -95,7 +96,10 @@ class _RouteCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.2),
+          width: 1,
+        ),
       ),
       child: InkWell(
         onTap: () => _loadRoute(context),
@@ -120,7 +124,7 @@ class _RouteCard extends StatelessWidget {
                   ),
                   PopupMenuButton<String>(
                     icon: const Icon(Icons.more_vert, color: Colors.white70),
-                    color: Colors.black.withAlpha(240),
+                    color: Colors.black.withValues(alpha: 0.94),
                     onSelected: (value) {
                       if (value == 'edit') {
                         _editRouteName(context);
@@ -152,13 +156,13 @@ class _RouteCard extends StatelessWidget {
                           children: [
                             const Icon(
                               Icons.delete,
-                              color: Colors.red,
+                              color: AppColors.danger,
                               size: 20,
                             ),
                             const SizedBox(width: 8),
                             Text(
                               l10n.deleteRoute,
-                              style: const TextStyle(color: Colors.red),
+                              style: const TextStyle(color: AppColors.danger),
                             ),
                           ],
                         ),
@@ -219,7 +223,7 @@ class _RouteCard extends StatelessWidget {
       context: context,
       builder: (dialogContext) {
         return AlertDialog(
-          backgroundColor: Colors.black.withAlpha(240),
+          backgroundColor: Colors.black.withValues(alpha: 0.94),
           title: Text(
             l10n.routeDetails,
             style: const TextStyle(color: Colors.white),
@@ -281,7 +285,7 @@ class _RouteCard extends StatelessWidget {
               },
               child: Text(
                 l10n.cancel,
-                style: const TextStyle(color: Colors.redAccent),
+                style: const TextStyle(color: AppColors.danger),
               ),
             ),
             TextButton(
@@ -315,7 +319,7 @@ class _RouteCard extends StatelessWidget {
               },
               child: Text(
                 l10n.startNavigationWithRoute,
-                style: const TextStyle(color: Colors.greenAccent),
+                style: const TextStyle(color: AppColors.success),
               ),
             ),
           ],
@@ -370,7 +374,7 @@ class _RouteCard extends StatelessWidget {
       context: context,
       builder: (dialogContext) {
         return AlertDialog(
-          backgroundColor: Colors.black.withAlpha(240),
+          backgroundColor: Colors.black.withValues(alpha: 0.94),
           title: Text(
             l10n.editRouteName,
             style: const TextStyle(color: Colors.white),
@@ -397,7 +401,7 @@ class _RouteCard extends StatelessWidget {
               },
               child: Text(
                 l10n.cancel,
-                style: const TextStyle(color: Colors.redAccent),
+                style: const TextStyle(color: AppColors.danger),
               ),
             ),
             TextButton(
@@ -412,7 +416,7 @@ class _RouteCard extends StatelessWidget {
               },
               child: Text(
                 l10n.confirm,
-                style: TextStyle(color: Colors.greenAccent),
+                style: TextStyle(color: AppColors.success),
               ),
             ),
           ],
@@ -429,7 +433,7 @@ class _RouteCard extends StatelessWidget {
       context: context,
       builder: (dialogContext) {
         return AlertDialog(
-          backgroundColor: Colors.black.withAlpha(240),
+          backgroundColor: Colors.black.withValues(alpha: 0.94),
           title: Text(
             l10n.deleteRoute,
             style: const TextStyle(color: Colors.white),
@@ -453,7 +457,10 @@ class _RouteCard extends StatelessWidget {
                 routesViewModel.deleteRoute(route.id);
                 Navigator.of(dialogContext).pop();
               },
-              child: const Text('Delete', style: TextStyle(color: Colors.red)),
+              child: const Text(
+                'Delete',
+                style: TextStyle(color: AppColors.danger),
+              ),
             ),
           ],
         );

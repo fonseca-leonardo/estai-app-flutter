@@ -5,6 +5,7 @@ import 'package:estai/views/MaintenancesScreen/maintenances_screen.dart';
 import 'package:estai/views/MarinaAccessScreen/marina_access_screen.dart';
 import 'package:estai/widgets/location_init_wrapper.dart';
 import 'package:flutter/material.dart';
+import 'theme/app_theme.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -247,10 +248,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     if (!target.isMaintenance) return;
     navigatorKey.currentState?.push(
       MaterialPageRoute(
-        builder: (_) => MaintenancesScreen(
-          boatId: target.boatId,
-          highlightedId: target.id,
-        ),
+        builder: (_) =>
+            MaintenancesScreen(boatId: target.boatId, highlightedId: target.id),
       ),
     );
   }
@@ -305,16 +304,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       child: MaterialApp(
         navigatorKey: navigatorKey,
         title: 'Estai - Mapa',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.white,
-            primary: Colors.white,
-          ),
-          useMaterial3: true,
-          progressIndicatorTheme: const ProgressIndicatorThemeData(
-            color: Colors.white,
-          ),
-        ),
+        theme: AppTheme.dark(),
+        darkTheme: AppTheme.dark(),
+        themeMode: ThemeMode.dark,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,

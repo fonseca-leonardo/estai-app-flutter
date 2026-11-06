@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
@@ -157,7 +158,7 @@ class _LogbookEntryFormScreenState extends State<LogbookEntryFormScreen>
                     ? l10n.logbookEditEntry
                     : l10n.logbookNewEntry,
               ),
-              backgroundColor: Colors.black.withAlpha(200),
+              backgroundColor: Colors.black.withValues(alpha: 0.78),
               foregroundColor: Colors.white,
               elevation: 0,
             ),
@@ -221,7 +222,7 @@ class _LogbookEntryFormScreenState extends State<LogbookEntryFormScreen>
                             const SizedBox(height: 8),
                             Text(
                               errorText,
-                              style: const TextStyle(color: Colors.redAccent),
+                              style: TextStyle(color: AppColors.danger),
                             ),
                           ],
                         ],

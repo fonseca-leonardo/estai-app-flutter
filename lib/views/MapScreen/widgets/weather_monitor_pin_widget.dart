@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 class WeatherMonitorPinWidget extends StatelessWidget {
   final bool isSelected;
 
-  const WeatherMonitorPinWidget({
-    super.key,
-    this.isSelected = false,
-  });
+  const WeatherMonitorPinWidget({super.key, this.isSelected = false});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +21,7 @@ class WeatherMonitorPinWidget extends StatelessWidget {
             Colors.teal.shade400,
           ],
         ),
-        border: Border.all(
-          color: Colors.white,
-          width: 2.5,
-        ),
+        border: Border.all(color: Colors.white, width: 2.5),
         boxShadow: isSelected
             ? [
                 BoxShadow(
@@ -45,11 +39,7 @@ class WeatherMonitorPinWidget extends StatelessWidget {
               ],
       ),
       child: Center(
-        child: Icon(
-          Icons.thermostat,
-          size: 16,
-          color: Colors.white,
-        ),
+        child: Icon(Icons.thermostat, size: 16, color: Colors.white),
       ),
     );
   }

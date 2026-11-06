@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -47,7 +48,7 @@ class SlotSelectionStep extends StatelessWidget {
             child: InlineAlert(
               icon: Icons.error_outline,
               message: l10n.rampConflictError,
-              color: Colors.redAccent,
+              color: AppColors.danger,
             ),
           ),
         DayStrip(

@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -82,7 +83,7 @@ class _TideScreenState extends State<TideScreen> with AnalyticsScreenMixin {
                         children: [
                           Text(
                             errorText,
-                            style: const TextStyle(color: Colors.red),
+                            style: const TextStyle(color: AppColors.danger),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 16),

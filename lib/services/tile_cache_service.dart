@@ -16,14 +16,25 @@ class TileCacheService {
       darkMode ? '${z}_${x}_${y}_dark.png' : '${z}_${x}_$y.png';
 
   Future<File?> getTileFile(
-      String mapId, int z, int x, int y, bool darkMode) async {
+    String mapId,
+    int z,
+    int x,
+    int y,
+    bool darkMode,
+  ) async {
     final dir = await _mapDir(mapId);
     final file = File('${dir.path}/${_filename(z, x, y, darkMode)}');
     return file.existsSync() ? file : null;
   }
 
   Future<void> saveTile(
-      String mapId, int z, int x, int y, bool darkMode, List<int> bytes) async {
+    String mapId,
+    int z,
+    int x,
+    int y,
+    bool darkMode,
+    List<int> bytes,
+  ) async {
     try {
       final dir = await _mapDir(mapId);
       final file = File('${dir.path}/${_filename(z, x, y, darkMode)}');

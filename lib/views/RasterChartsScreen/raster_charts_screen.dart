@@ -1,3 +1,4 @@
+import '../../theme/app_colors.dart';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -41,14 +42,14 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
     if (imported != null) {
       messenger.showSnackBar(
         SnackBar(
-          backgroundColor: Colors.green.withAlpha(220),
+          backgroundColor: AppColors.success.withValues(alpha: 0.86),
           content: Text(l10n.rasterChartImportSuccess),
         ),
       );
     } else if (viewModel.errorMessage != null) {
       messenger.showSnackBar(
         SnackBar(
-          backgroundColor: Colors.red.withAlpha(220),
+          backgroundColor: AppColors.danger.withValues(alpha: 0.86),
           content: Text(viewModel.errorMessage!),
         ),
       );
@@ -56,17 +57,14 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
     }
   }
 
-  Future<void> _confirmDelete(
-    BuildContext context,
-    RasterChartSet set,
-  ) async {
+  Future<void> _confirmDelete(BuildContext context, RasterChartSet set) async {
     final l10n = AppLocalizations.of(context)!;
     final viewModel = context.read<RasterChartsViewModel>();
 
     final confirm = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        backgroundColor: Colors.black.withAlpha(220),
+        backgroundColor: Colors.black.withValues(alpha: 0.86),
         title: Text(
           l10n.rasterChartRemoveTitle,
           style: const TextStyle(color: Colors.white),
@@ -87,7 +85,7 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
             onPressed: () => Navigator.of(dialogContext).pop(true),
             child: Text(
               l10n.remove,
-              style: const TextStyle(color: Colors.red),
+              style: const TextStyle(color: AppColors.danger),
             ),
           ),
         ],
@@ -173,11 +171,7 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
-              Icons.layers_outlined,
-              color: Colors.white54,
-              size: 64,
-            ),
+            const Icon(Icons.layers_outlined, color: Colors.white54, size: 64),
             const SizedBox(height: 16),
             Text(
               l10n.rasterChartsEmptyTitle,
@@ -210,10 +204,10 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
-      color: Colors.white.withAlpha(20),
+      color: Colors.white.withValues(alpha: 0.08),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: Colors.white.withAlpha(40)),
+        side: BorderSide(color: Colors.white.withValues(alpha: 0.16)),
       ),
       child: Theme(
         data: Theme.of(context).copyWith(
@@ -241,15 +235,11 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
             children: [
               Switch(
                 value: anyVisible,
-                onChanged: (value) =>
-                    viewModel.setSetVisibility(set.id, value),
-                activeThumbColor: Colors.green,
+                onChanged: (value) => viewModel.setSetVisibility(set.id, value),
+                activeThumbColor: AppColors.success,
               ),
               IconButton(
-                icon: const Icon(
-                  Icons.delete_outline,
-                  color: Colors.redAccent,
-                ),
+                icon: const Icon(Icons.delete_outline, color: AppColors.danger),
                 onPressed: () => _confirmDelete(context, set),
               ),
             ],
@@ -280,8 +270,8 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
             decoration: BoxDecoration(
               color: chart.type == 'Base'
-                  ? Colors.blueAccent.withAlpha(80)
-                  : Colors.orangeAccent.withAlpha(80),
+                  ? Colors.blueAccent.withValues(alpha: 0.31)
+                  : AppColors.warning.withValues(alpha: 0.31),
               borderRadius: BorderRadius.circular(4),
             ),
             child: Text(
@@ -300,7 +290,7 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
               message: l10n.rasterChartProjectionWarning(chart.projection),
               child: const Icon(
                 Icons.warning_amber_rounded,
-                color: Colors.amber,
+                color: AppColors.warning,
                 size: 16,
               ),
             ),
@@ -310,7 +300,7 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
       trailing: Switch(
         value: chart.visible,
         onChanged: (_) => viewModel.toggleChartVisibility(set.id, chart.id),
-        activeThumbColor: Colors.green,
+        activeThumbColor: AppColors.success,
       ),
     );
   }
@@ -321,15 +311,15 @@ class _RasterChartsScreenState extends State<RasterChartsScreen>
   ) {
     return Positioned.fill(
       child: Container(
-        color: Colors.black.withAlpha(180),
+        color: Colors.black.withValues(alpha: 0.71),
         child: Center(
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 32),
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: Colors.white.withAlpha(20),
+              color: Colors.white.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.white.withAlpha(60)),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.24)),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,

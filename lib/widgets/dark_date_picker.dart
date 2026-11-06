@@ -1,3 +1,4 @@
+import '../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 ThemeData _darkPickerTheme() {
@@ -5,10 +6,12 @@ ThemeData _darkPickerTheme() {
     colorScheme: const ColorScheme.dark(
       primary: Colors.white,
       onPrimary: Colors.black,
-      surface: Color(0xFF0A0A0A),
+      surface: AppColors.surfaceElevated,
       onSurface: Colors.white,
     ),
-    dialogTheme: const DialogThemeData(backgroundColor: Color(0xFF0A0A0A)),
+    dialogTheme: const DialogThemeData(
+      backgroundColor: AppColors.surfaceElevated,
+    ),
   );
 }
 

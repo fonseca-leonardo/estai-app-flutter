@@ -178,7 +178,10 @@ class ListMapsViewModel extends ChangeNotifier {
   Future<void> _saveCachedMapIds() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setString(_cachedMapIdsKey, jsonEncode(_cachedMapIds.toList()));
+      await prefs.setString(
+        _cachedMapIdsKey,
+        jsonEncode(_cachedMapIds.toList()),
+      );
     } catch (_) {}
   }
 
@@ -221,5 +224,4 @@ class ListMapsViewModel extends ChangeNotifier {
     notifyListeners();
     await _saveDarkModePreference();
   }
-
 }

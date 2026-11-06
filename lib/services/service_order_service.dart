@@ -121,8 +121,7 @@ class ServiceOrderService {
 
         final items = (data['items'] as List<dynamic>)
             .map(
-              (item) =>
-                  ServicePriceItem.fromJson(item as Map<String, dynamic>),
+              (item) => ServicePriceItem.fromJson(item as Map<String, dynamic>),
             )
             .toList();
 

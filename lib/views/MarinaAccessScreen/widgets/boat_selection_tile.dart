@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/boat.dart';
@@ -21,10 +22,10 @@ class BoatSelectionTile extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: Colors.grey[900],
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: selected ? Colors.white : Colors.grey[800]!,
+          color: selected ? Colors.white : AppColors.border,
           width: 1,
         ),
       ),
@@ -55,10 +56,7 @@ class BoatSelectionTile extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       '${boat.type.label(l10n)} · ${boat.model}',
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 14,
-                      ),
+                      style: TextStyle(color: Colors.grey[400], fontSize: 14),
                     ),
                   ],
                 ),

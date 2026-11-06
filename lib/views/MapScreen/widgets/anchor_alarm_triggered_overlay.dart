@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -48,7 +49,7 @@ class _AnchorAlarmTriggeredOverlayState
             animation: _pulseAnimation,
             builder: (context, child) {
               return Container(
-                color: Colors.red.withValues(
+                color: AppColors.danger.withValues(
                   alpha: _pulseAnimation.value * 0.75,
                 ),
                 child: child,
@@ -108,7 +109,7 @@ class _AnchorAlarmTriggeredOverlayState
                             context.read<AnchorAlarmViewModel>().clearAlarm(),
                         style: FilledButton.styleFrom(
                           backgroundColor: Colors.white,
-                          foregroundColor: Colors.red,
+                          foregroundColor: AppColors.danger,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 20,
                             vertical: 12,

@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../l10n/app_localizations.dart';
@@ -142,8 +143,8 @@ class _ServiceOrderCardState extends State<ServiceOrderCard> {
                         onConfirm: widget.onCancel,
                       ),
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: Colors.redAccent,
-                        side: const BorderSide(color: Colors.redAccent),
+                        foregroundColor: AppColors.danger,
+                        side: const BorderSide(color: AppColors.danger),
                       ),
                       child: Text(l10n.cancelServiceOrder),
                     ),

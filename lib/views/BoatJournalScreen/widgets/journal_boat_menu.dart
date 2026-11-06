@@ -1,3 +1,4 @@
+import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -20,7 +21,7 @@ class JournalBoatMenu extends StatelessWidget {
 
     return PopupMenuButton<_BoatMenuAction>(
       icon: const Icon(Icons.more_vert),
-      color: const Color(0xFF0A0A0A),
+      color: AppColors.surfaceElevated,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
@@ -50,14 +51,11 @@ class JournalBoatMenu extends StatelessWidget {
             children: [
               const Icon(
                 Icons.delete_outline,
-                color: Colors.redAccent,
+                color: AppColors.danger,
                 size: 20,
               ),
               const SizedBox(width: 12),
-              Text(
-                l10n.deleteBoat,
-                style: const TextStyle(color: Colors.redAccent),
-              ),
+              Text(l10n.deleteBoat, style: TextStyle(color: AppColors.danger)),
             ],
           ),
         ),

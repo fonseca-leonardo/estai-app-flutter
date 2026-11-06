@@ -40,8 +40,11 @@ class RoutePlannerViewModel extends ChangeNotifier {
     if (_routePoints.length < 2) {
       return;
     }
-    
-    final routesViewModel = Provider.of<RoutesViewModel>(context, listen: false);
+
+    final routesViewModel = Provider.of<RoutesViewModel>(
+      context,
+      listen: false,
+    );
     await routesViewModel.saveRoute(name, _routePoints);
   }
 
