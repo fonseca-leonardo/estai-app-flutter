@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -67,7 +68,7 @@ class _LogbookScreenState extends State<LogbookScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +88,6 @@ class _LogbookScreenState extends State<LogbookScreen>
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      backgroundColor: Colors.black,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _openNew,
         backgroundColor: Colors.white,

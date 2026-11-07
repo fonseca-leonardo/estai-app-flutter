@@ -1,7 +1,9 @@
+import '../../widgets/ui/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../models/boat.dart';
+import '../../models/boat_reminder.dart';
 import '../../models/logbook_entry.dart';
 import '../../models/maintenance.dart';
 import '../../viewmodels/boat_journal_viewmodel.dart';
@@ -10,23 +12,28 @@ import '../../viewmodels/estai_session_viewmodel.dart';
 import '../../viewmodels/trip_log_viewmodel.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../BoatFormScreen/boat_form_screen.dart';
+import '../BoatReminderFormScreen/boat_reminder_form_screen.dart';
+import '../BoatRemindersScreen/boat_reminders_screen.dart';
+import '../DocumentsScreen/documents_screen.dart';
 import '../LogbookEntryDetailScreen/logbook_entry_detail_screen.dart';
 import '../LogbookScreen/logbook_screen.dart';
 import '../MaintenanceFormScreen/maintenance_form_screen.dart';
 import '../MaintenancesScreen/maintenances_screen.dart';
 import '../MarinaHomeScreen/widgets/marina_section_title.dart';
 import 'widgets/delete_boat_dialog.dart';
+import 'widgets/journal_documents_alert.dart';
 import 'widgets/journal_boat_menu.dart';
 import 'widgets/journal_header_card.dart';
 import 'widgets/journal_overdue_alert.dart';
 import 'widgets/journal_quick_actions.dart';
+import 'widgets/journal_upcoming_reminders_preview.dart';
 import 'widgets/marina_access_card.dart';
 import 'widgets/recent_logbook_preview.dart';
 import 'widgets/update_engine_hours_sheet.dart';
 import 'widgets/upcoming_maintenances_preview.dart';
 
-/// Diário da Embarcação: o hub que acompanha a vida do barco (horímetro e
-/// manutenções nesta fase).
+/// Diário da Embarcação: o hub que acompanha a vida do barco (horímetro,
+/// manutenções, diário de bordo, lembretes e documentos).
 class BoatJournalScreen extends StatefulWidget {
   final Boat boat;
 
@@ -89,6 +96,18 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
 
   void _openLogbookEntry(LogbookEntry entry) {
     _push(LogbookEntryDetailScreen(entry: entry));
+  }
+
+  void _openReminders(Boat boat) {
+    _push(BoatRemindersScreen(boatId: boat.id, boatName: boat.name));
+  }
+
+  void _openReminderForm([BoatReminder? reminder]) {
+    _push(BoatReminderFormScreen(boatId: widget.boat.id, reminder: reminder));
+  }
+
+  void _openDocuments(Boat boat) {
+    _push(DocumentsScreen(boatId: boat.id, boatName: boat.name));
   }
 
   void _openMaintenanceForm([Maintenance? maintenance]) {
@@ -177,7 +196,7 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
       (vm) => vm.hasMarina,
     );
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.journalTitle),
         backgroundColor: Colors.black.withValues(alpha: 0.78),
@@ -187,13 +206,14 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
           JournalBoatMenu(onEdit: () => _editBoat(boat), onDelete: _deleteBoat),
         ],
       ),
-      backgroundColor: Colors.black,
       body: ChangeNotifierProvider.value(
         value: _viewModel,
         child: Consumer<BoatJournalViewModel>(
           builder: (context, viewModel, child) {
             final overview = viewModel.overview;
             final overdueCount = overview?.overdueMaintenancesCount ?? 0;
+            final expiringDocumentsCount =
+                overview?.expiringDocumentsCount ?? 0;
 
             return RefreshIndicator(
               onRefresh: _refresh,
@@ -226,12 +246,21 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
                       onTap: () => _openMaintenances(boat),
                     ),
                   ],
+                  if (expiringDocumentsCount > 0) ...[
+                    SizedBox(height: overdueCount > 0 ? 10 : 16),
+                    JournalDocumentsAlert(
+                      count: expiringDocumentsCount,
+                      onTap: () => _openDocuments(boat),
+                    ),
+                  ],
                   const SizedBox(height: 28),
                   MarinaSectionTitle(title: l10n.journalQuickActionsTitle),
                   JournalQuickActions(
                     onNewMaintenance: _openMaintenanceForm,
                     onMaintenances: () => _openMaintenances(boat),
                     onLogbook: () => _openLogbook(boat),
+                    onReminders: () => _openReminders(boat),
+                    onDocuments: () => _openDocuments(boat),
                   ),
                   const SizedBox(height: 32),
                   MarinaSectionTitle(
@@ -245,6 +274,15 @@ class _BoatJournalScreenState extends State<BoatJournalScreen>
                     onSeeAll: () => _openMaintenances(boat),
                     onCreate: _openMaintenanceForm,
                     onOpen: _openMaintenanceForm,
+                  ),
+                  const SizedBox(height: 32),
+                  MarinaSectionTitle(title: l10n.journalRemindersTitle),
+                  JournalUpcomingRemindersPreview(
+                    reminders: overview?.upcomingReminders ?? const [],
+                    isLoading: viewModel.isLoading,
+                    onSeeAll: () => _openReminders(boat),
+                    onCreate: _openReminderForm,
+                    onOpen: _openReminderForm,
                   ),
                   const SizedBox(height: 32),
                   MarinaSectionTitle(title: l10n.journalRecentLogbookTitle),

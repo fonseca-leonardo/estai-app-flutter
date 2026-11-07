@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -113,13 +114,12 @@ class _BoatFormScreenState extends State<BoatFormScreen>
     final l10n = AppLocalizations.of(context)!;
     final currentYear = DateTime.now().year;
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text(widget.isEditing ? l10n.editBoat : l10n.addBoat),
         backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
-      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Container(

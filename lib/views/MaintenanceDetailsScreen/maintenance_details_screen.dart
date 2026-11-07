@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../l10n/app_localizations.dart';
@@ -97,7 +98,7 @@ class _MaintenanceDetailsScreenState extends State<MaintenanceDetailsScreen>
         ),
     ];
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.maintenanceDetailsTitle),
         backgroundColor: Colors.black.withValues(alpha: 0.78),
@@ -111,7 +112,6 @@ class _MaintenanceDetailsScreenState extends State<MaintenanceDetailsScreen>
           ),
         ],
       ),
-      backgroundColor: Colors.black,
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
         children: [

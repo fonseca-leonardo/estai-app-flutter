@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:estai/widgets/ad_banner_widget.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,10 @@ class _WeatherPinsListScreenState extends State<WeatherPinsListScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
-      backgroundColor: Colors.black,
+    return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.weatherPinsList),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
       body: Consumer<AuthViewModel>(

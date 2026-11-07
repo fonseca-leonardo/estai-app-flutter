@@ -33,6 +33,7 @@ import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../../widgets/stop_navigation_flow.dart';
 import 'widgets/offline_basemap_layer.dart';
+import '../../widgets/ui/glass_fab.dart';
 import 'widgets/selected_map_tile_layers.dart';
 import 'widgets/raster_charts_layer.dart';
 import 'widgets/chartplotter_layer.dart';
@@ -548,18 +549,9 @@ class _MapScreenState extends State<MapScreen>
                                 );
                               },
                             ),
-                            FloatingActionButton(
+                            GlassFab(
                               heroTag: 'map_bottom_sheet_button',
                               onPressed: () => MapBottomSheet.show(context),
-                              backgroundColor: Colors.black.withValues(
-                                alpha: 0.55,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                side: BorderSide(
-                                  color: Colors.white.withValues(alpha: 0.25),
-                                ),
-                              ),
                               child: const Icon(
                                 Icons.keyboard_arrow_up,
                                 color: Colors.white,

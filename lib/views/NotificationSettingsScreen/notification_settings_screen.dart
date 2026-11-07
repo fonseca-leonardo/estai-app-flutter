@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -98,14 +99,13 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.notificationSettings),
         backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      backgroundColor: Colors.black,
       body: ChangeNotifierProvider.value(
         value: _viewModel,
         child: Consumer<NotificationPreferencesViewModel>(

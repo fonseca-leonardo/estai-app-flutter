@@ -3,6 +3,9 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import '../../../theme/app_glass.dart';
+import '../../../theme/app_radius.dart';
+import '../../../widgets/ui/glass_surface.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,13 +21,15 @@ class ChartplotterSelectedChartsBottomSheet {
   static Future<void> show(BuildContext context) {
     return showModalBottomSheet<void>(
       context: context,
-      backgroundColor: Colors.black.withValues(alpha: 0.85),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       isScrollControlled: true,
       useSafeArea: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      builder: (_) => GlassSurface(
+        borderRadius: AppRadius.sheetTop,
+        border: Border(top: BorderSide(color: AppGlass.border)),
+        child: const _SelectedChartsContent(),
       ),
-      builder: (_) => const _SelectedChartsContent(),
     );
   }
 }

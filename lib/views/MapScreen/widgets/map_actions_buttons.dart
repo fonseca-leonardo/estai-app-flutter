@@ -32,11 +32,10 @@ class MapActionsButtons extends StatelessWidget {
                 heroTag: 'camera_lock_button',
                 onPressed: () =>
                     context.read<MapViewModel>().toggleCameraLock(),
-                emphasized: isCameraLocked,
+                selected: isCameraLocked,
                 tooltip: isCameraLocked ? l10n.unlockCamera : l10n.lockCamera,
                 child: Icon(
                   isCameraLocked ? Icons.near_me : Icons.near_me_outlined,
-                  color: Colors.white,
                 ),
               );
             },
@@ -48,11 +47,10 @@ class MapActionsButtons extends StatelessWidget {
                 heroTag: 'chartplotter_mode_button',
                 onPressed: () =>
                     context.read<MapViewModel>().toggleChartplotterMode(),
-                emphasized: isChartplotterMode,
+                selected: isChartplotterMode,
                 tooltip: 'Modo Chartplotter',
                 child: Icon(
                   isChartplotterMode ? Icons.grid_on : Icons.grid_off,
-                  color: Colors.white,
                 ),
               );
             },

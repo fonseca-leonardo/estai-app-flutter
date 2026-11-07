@@ -15,8 +15,10 @@ import '../../../viewmodels/anchor_alarm_viewmodel.dart';
 import '../../../services/anchor_alarm_notification_service.dart';
 import '../../../widgets/start_navigation_flow.dart';
 import '../../../widgets/stop_navigation_flow.dart';
-import '../../../theme/app_colors.dart';
+import '../../../theme/app_glass.dart';
 import '../../../theme/app_radius.dart';
+import '../../../widgets/ui/app_dialog.dart';
+import '../../../widgets/ui/glass_surface.dart';
 
 class MapBottomSheet extends StatelessWidget {
   final BuildContext? parentContext;
@@ -26,12 +28,10 @@ class MapBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.65),
-        borderRadius: AppRadius.sheetTop,
-        border: Border(top: BorderSide(color: AppColors.border)),
-      ),
+    // O blur só aparece com o fundo do sheet transparente (ver show).
+    return GlassSurface(
+      borderRadius: AppRadius.sheetTop,
+      border: Border(top: BorderSide(color: AppGlass.border)),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -233,7 +233,16 @@ class MapBottomSheet extends StatelessWidget {
                                 ) async {
                                   if (!navigatorContext.mounted) return;
                                   if (isActive) {
-                                    anchorVm.clearAlarm();
+                                    final confirmed = await AppDialog.confirm(
+                                      navigatorContext,
+                                      title:
+                                          l10n.anchorAlarmDisableConfirmTitle,
+                                      message:
+                                          l10n.anchorAlarmDisableConfirmMessage,
+                                      confirmLabel: l10n.anchorAlarmDisable,
+                                      destructive: true,
+                                    );
+                                    if (confirmed) anchorVm.clearAlarm();
                                   } else {
                                     await AnchorAlarmNotificationService.requestPermissionIfNeeded(
                                       navigatorContext,
@@ -281,7 +290,8 @@ class MapBottomSheet extends StatelessWidget {
   static void show(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.black.withValues(alpha: 0.65),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       isScrollControlled: true,
       useRootNavigator: false,
       enableDrag: true,
@@ -315,18 +325,24 @@ class _GridItem extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isHighlighted ? AppColors.surfaceStrong : AppColors.surface,
+            color: isHighlighted ? AppGlass.selectedTint : AppGlass.itemFill,
             borderRadius: AppRadius.mdAll,
             border: Border.all(
               color: isHighlighted
-                  ? Colors.white.withValues(alpha: 0.6)
-                  : AppColors.border,
+                  ? AppGlass.selectedBorder
+                  : AppGlass.itemBorder,
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, color: Colors.white, size: 28),
+              Icon(
+                icon,
+                color: isHighlighted
+                    ? AppGlass.selectedIconColor
+                    : Colors.white,
+                size: 28,
+              ),
               const SizedBox(height: 10),
               Text(
                 title,

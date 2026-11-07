@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/app_colors.dart';
+import '../../theme/app_glass.dart';
 import '../../theme/app_radius.dart';
 import '../../theme/app_spacing.dart';
+import 'glass_surface.dart';
 
 /// Bottom sheet padrão: handle, cantos superiores arredondados, borda sutil e
 /// espaço para o teclado.
@@ -26,39 +27,40 @@ class AppSheet {
       isDismissible: isDismissible,
       enableDrag: enableDrag,
       useRootNavigator: useRootNavigator,
-      backgroundColor: AppColors.surfaceElevated,
-      shape: RoundedRectangleBorder(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      builder: (sheetContext) => GlassSurface(
         borderRadius: AppRadius.sheetTop,
-        side: BorderSide(color: AppColors.border),
-      ),
-      builder: (sheetContext) => !padded
-          ? builder(sheetContext)
-          : Padding(
-              padding: EdgeInsets.fromLTRB(
-                AppSpacing.xl,
-                AppSpacing.md,
-                AppSpacing.xl,
-                AppSpacing.xl + MediaQuery.of(sheetContext).viewInsets.bottom,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                    child: Container(
-                      width: 40,
-                      height: 4,
-                      margin: const EdgeInsets.only(bottom: AppSpacing.lg),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.3),
-                        borderRadius: BorderRadius.circular(2),
+        border: Border(top: BorderSide(color: AppGlass.border)),
+        child: !padded
+            ? builder(sheetContext)
+            : Padding(
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.xl,
+                  AppSpacing.md,
+                  AppSpacing.xl,
+                  AppSpacing.xl + MediaQuery.of(sheetContext).viewInsets.bottom,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 40,
+                        height: 4,
+                        margin: const EdgeInsets.only(bottom: AppSpacing.lg),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.3),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
                       ),
                     ),
-                  ),
-                  Flexible(child: builder(sheetContext)),
-                ],
+                    Flexible(child: builder(sheetContext)),
+                  ],
+                ),
               ),
-            ),
+      ),
     );
   }
 }

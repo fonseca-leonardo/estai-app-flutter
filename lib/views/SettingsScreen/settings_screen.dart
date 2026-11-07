@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +13,7 @@ import '../../widgets/ui/section_label.dart';
 import '../ListMapsScreen/list_maps_screen.dart';
 import '../NavigationSettingsScreen/navigation_settings_screen.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
+import '../DocumentsScreen/documents_screen.dart';
 import '../UserAccountScreen/user_account_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 import '../LoginScreen/login_screen.dart';
@@ -65,8 +67,11 @@ class _SettingsScreenState extends State<SettingsScreen>
         statusBarBrightness: Brightness.dark,
       ),
       sized: false,
-      child: Scaffold(
-        appBar: AppBar(title: Text(l10n.settings)),
+      child: AppScaffold(
+        appBar: AppBar(
+          title: Text(l10n.settings),
+          backgroundColor: Colors.black.withValues(alpha: 0.78),
+        ),
         body: SafeArea(
           child: Consumer<AuthViewModel>(
             builder: (context, authViewModel, child) {
@@ -147,6 +152,17 @@ class _SettingsScreenState extends State<SettingsScreen>
                             MaterialPageRoute(
                               builder: (_) =>
                                   const NotificationSettingsScreen(),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        AppTile(
+                          title: l10n.myDocumentsTitle,
+                          subtitle: l10n.myDocumentsSubtitle,
+                          icon: Icons.badge_outlined,
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const DocumentsScreen(),
                             ),
                           ),
                         ),

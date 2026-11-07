@@ -565,6 +565,10 @@
   "@anchorAlarmTriggeredMessage": {},
   "anchorAlarmDisable": "Disable Alarm",
   "@anchorAlarmDisable": {},
+  "anchorAlarmDisableConfirmTitle": "Disable the anchor alarm?",
+  "@anchorAlarmDisableConfirmTitle": {},
+  "anchorAlarmDisableConfirmMessage": "You will no longer be warned if the anchor drags.",
+  "@anchorAlarmDisableConfirmMessage": {},
   "anchorAlarmDismiss": "Dismiss",
   "@anchorAlarmDismiss": {},
   "anchorAlarmNotificationRationaleTitle": "Notification Permission",
@@ -1480,5 +1484,301 @@
   "settingsSectionMaps": "Maps and charts",
   "@settingsSectionMaps": {},
   "settingsSectionAccount": "Account",
-  "@settingsSectionAccount": {}
+  "@settingsSectionAccount": {},
+  "boatRemindersTitle": "Reminders",
+  "@boatRemindersTitle": {},
+  "boatReminderNew": "New reminder",
+  "@boatReminderNew": {},
+  "boatReminderEditTitle": "Edit reminder",
+  "@boatReminderEditTitle": {},
+  "boatReminderTabPending": "Pending",
+  "@boatReminderTabPending": {},
+  "boatReminderTabDone": "Done",
+  "@boatReminderTabDone": {},
+  "boatReminderStatusPending": "Pending",
+  "@boatReminderStatusPending": {},
+  "boatReminderStatusDone": "Done",
+  "@boatReminderStatusDone": {},
+  "noPendingBoatReminders": "No pending reminders.",
+  "@noPendingBoatReminders": {},
+  "noDoneBoatReminders": "No completed reminders yet.",
+  "@noDoneBoatReminders": {},
+  "loadBoatRemindersError": "Couldn't load the reminders.",
+  "@loadBoatRemindersError": {},
+  "boatReminderTitleLabel": "Title",
+  "@boatReminderTitleLabel": {},
+  "boatReminderTitleHint": "E.g. Renew the marina berth",
+  "@boatReminderTitleHint": {},
+  "boatReminderTitleRequired": "Enter a title",
+  "@boatReminderTitleRequired": {},
+  "boatReminderDateLabel": "Date",
+  "@boatReminderDateLabel": {},
+  "boatReminderDatePlaceholder": "Pick a date",
+  "@boatReminderDatePlaceholder": {},
+  "boatReminderDateRequired": "Pick the reminder date",
+  "@boatReminderDateRequired": {},
+  "boatReminderDoneAtLabel": "Done on",
+  "@boatReminderDoneAtLabel": {},
+  "boatReminderNotesLabel": "Notes",
+  "@boatReminderNotesLabel": {},
+  "boatReminderDoneOn": "Done on {date}",
+  "@boatReminderDoneOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "boatReminderDueToday": "Today",
+  "@boatReminderDueToday": {},
+  "boatReminderDueInDays": "{count, plural, =1{Tomorrow} other{In {count} days}}",
+  "@boatReminderDueInDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderOverdueDays": "{count, plural, =1{1 day overdue} other{{count} days overdue}}",
+  "@boatReminderOverdueDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderEveryMonths": "{count, plural, =1{Repeats every month} other{Repeats every {count} months}}",
+  "@boatReminderEveryMonths": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderRecurrenceTitle": "Repeat",
+  "@boatReminderRecurrenceTitle": {},
+  "boatReminderRecurrenceSubtitle": "When marked as done, the next one is created automatically",
+  "@boatReminderRecurrenceSubtitle": {},
+  "boatReminderRecurrenceMonthsLabel": "Every how many months",
+  "@boatReminderRecurrenceMonthsLabel": {},
+  "boatReminderMarkDone": "Mark as done",
+  "@boatReminderMarkDone": {},
+  "boatReminderMarkDoneConfirm": "The reminder will move to Done.",
+  "@boatReminderMarkDoneConfirm": {},
+  "boatReminderMarkDoneRecurringConfirm": "{count, plural, =1{The reminder will move to Done and the next one is created 1 month after this one's date.} other{The reminder will move to Done and the next one is created {count} months after this one's date.}}",
+  "@boatReminderMarkDoneRecurringConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderMarkedDone": "Reminder marked as done",
+  "@boatReminderMarkedDone": {},
+  "markBoatReminderDoneError": "Couldn't mark the reminder as done.",
+  "@markBoatReminderDoneError": {},
+  "boatReminderSave": "Save reminder",
+  "@boatReminderSave": {},
+  "boatReminderSaved": "Reminder saved",
+  "@boatReminderSaved": {},
+  "boatReminderInvalidError": "Check the reminder details.",
+  "@boatReminderInvalidError": {},
+  "saveBoatReminderError": "Couldn't save the reminder. Try again.",
+  "@saveBoatReminderError": {},
+  "deleteBoatReminder": "Delete reminder",
+  "@deleteBoatReminder": {},
+  "deleteBoatReminderConfirm": "The reminder and its scheduled notifications will be deleted.",
+  "@deleteBoatReminderConfirm": {},
+  "deleteBoatReminderError": "Couldn't delete the reminder.",
+  "@deleteBoatReminderError": {},
+  "documentStatusExpired": "Expired",
+  "@documentStatusExpired": {},
+  "documentStatusExpiringSoon": "Expiring soon",
+  "@documentStatusExpiringSoon": {},
+  "documentStatusValid": "Valid",
+  "@documentStatusValid": {},
+  "documentStatusNoExpiry": "No expiry",
+  "@documentStatusNoExpiry": {},
+  "documentTypeRegistration": "Registration",
+  "@documentTypeRegistration": {},
+  "documentTypeInsurance": "Insurance",
+  "@documentTypeInsurance": {},
+  "documentTypeInspection": "Inspection",
+  "@documentTypeInspection": {},
+  "documentTypeRadioLicense": "Radio license",
+  "@documentTypeRadioLicense": {},
+  "documentTypeFireExtinguisher": "Fire extinguisher",
+  "@documentTypeFireExtinguisher": {},
+  "documentTypeFlares": "Flares",
+  "@documentTypeFlares": {},
+  "documentTypeLifeJackets": "Life jackets",
+  "@documentTypeLifeJackets": {},
+  "documentTypeLifeRaft": "Life raft",
+  "@documentTypeLifeRaft": {},
+  "documentTypeOther": "Other",
+  "@documentTypeOther": {},
+  "documentTypeNauticalLicense": "Boating license",
+  "@documentTypeNauticalLicense": {},
+  "documentTypeRadioOperatorCertificate": "Radio operator certificate",
+  "@documentTypeRadioOperatorCertificate": {},
+  "documentsTitle": "Documents",
+  "@documentsTitle": {},
+  "myDocumentsTitle": "My documents",
+  "@myDocumentsTitle": {},
+  "myDocumentsSubtitle": "Boating license and certificates",
+  "@myDocumentsSubtitle": {},
+  "documentNew": "New document",
+  "@documentNew": {},
+  "documentEditTitle": "Edit document",
+  "@documentEditTitle": {},
+  "documentDetailsTitle": "Document",
+  "@documentDetailsTitle": {},
+  "documentsAttentionSection": "Needs attention",
+  "@documentsAttentionSection": {},
+  "documentsOthersSection": "Other documents",
+  "@documentsOthersSection": {},
+  "noBoatDocuments": "No documents yet. Keep your registration, insurance, inspection and safety items with expiry dates here.",
+  "@noBoatDocuments": {},
+  "noPersonalDocuments": "No documents yet. Keep your boating license and certificates here.",
+  "@noPersonalDocuments": {},
+  "loadDocumentsError": "Couldn't load the documents.",
+  "@loadDocumentsError": {},
+  "loadDocumentError": "Couldn't load the document.",
+  "@loadDocumentError": {},
+  "documentTypeLabel": "Type",
+  "@documentTypeLabel": {},
+  "documentTitleLabel": "Name (optional)",
+  "@documentTitleLabel": {},
+  "documentNumberLabel": "Number",
+  "@documentNumberLabel": {},
+  "documentIssuerLabel": "Issuer",
+  "@documentIssuerLabel": {},
+  "documentIssuerHint": "E.g. maritime authority, insurer",
+  "@documentIssuerHint": {},
+  "documentDatesSection": "Validity",
+  "@documentDatesSection": {},
+  "documentExpiresAtLabel": "Expires on",
+  "@documentExpiresAtLabel": {},
+  "documentIssuedAtLabel": "Issued on",
+  "@documentIssuedAtLabel": {},
+  "documentNoExpiryLabel": "No expiry",
+  "@documentNoExpiryLabel": {},
+  "documentDateNotInformed": "Not provided",
+  "@documentDateNotInformed": {},
+  "documentInvalidDatesError": "Expiry can't be before the issue date",
+  "@documentInvalidDatesError": {},
+  "documentExpiresOn": "Expires on {date}",
+  "@documentExpiresOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "documentExpiresToday": "expires today",
+  "@documentExpiresToday": {},
+  "documentExpiresInDays": "{count, plural, =1{1 day left} other{{count} days left}}",
+  "@documentExpiresInDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "documentExpiredDaysAgo": "{count, plural, =1{expired 1 day ago} other{expired {count} days ago}}",
+  "@documentExpiredDaysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "documentReminderLabel": "Reminder",
+  "@documentReminderLabel": {},
+  "documentReminderDaysBefore": "{days} days before",
+  "@documentReminderDaysBefore": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "documentReminderOff": "Off",
+  "@documentReminderOff": {},
+  "documentDetailsInfoSection": "Details",
+  "@documentDetailsInfoSection": {},
+  "documentNotesSection": "Notes",
+  "@documentNotesSection": {},
+  "documentAttachmentsSection": "Attachments",
+  "@documentAttachmentsSection": {},
+  "documentSave": "Save document",
+  "@documentSave": {},
+  "documentSaved": "Document saved",
+  "@documentSaved": {},
+  "documentInvalidError": "Check the document details.",
+  "@documentInvalidError": {},
+  "saveDocumentError": "Couldn't save the document. Try again.",
+  "@saveDocumentError": {},
+  "documentAttachmentsFailed": "The document was saved, but some attachments weren't uploaded. Tap Try again.",
+  "@documentAttachmentsFailed": {},
+  "deleteDocument": "Delete document",
+  "@deleteDocument": {},
+  "deleteDocumentConfirm": "The document, its attachments and scheduled reminders will be deleted.",
+  "@deleteDocumentConfirm": {},
+  "deleteDocumentError": "Couldn't delete the document.",
+  "@deleteDocumentError": {},
+  "attachmentAdd": "Add",
+  "@attachmentAdd": {},
+  "attachmentAddTitle": "Add attachment",
+  "@attachmentAddTitle": {},
+  "attachmentSourceCamera": "Take photo",
+  "@attachmentSourceCamera": {},
+  "attachmentSourceGallery": "Choose from gallery",
+  "@attachmentSourceGallery": {},
+  "attachmentSourcePdf": "PDF file",
+  "@attachmentSourcePdf": {},
+  "attachmentsHint": "Photos or PDF, up to {count} files of {size} MB.",
+  "@attachmentsHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "attachmentLimitReached": "Attachment limit reached.",
+  "@attachmentLimitReached": {},
+  "attachmentTooLarge": "File is larger than the limit.",
+  "@attachmentTooLarge": {},
+  "attachmentUnsupported": "File type not supported. Use a photo or PDF.",
+  "@attachmentUnsupported": {},
+  "attachmentUploadingProgress": "Uploading attachment {current} of {total}…",
+  "@attachmentUploadingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attachmentOpenError": "Couldn't open the attachment.",
+  "@attachmentOpenError": {},
+  "journalRemindersTitle": "Reminders",
+  "@journalRemindersTitle": {},
+  "journalNoReminders": "No pending reminders.",
+  "@journalNoReminders": {},
+  "journalSeeReminders": "See reminders",
+  "@journalSeeReminders": {},
+  "journalDocumentsAlert": "{count, plural, =1{1 document expired or expiring soon} other{{count} documents expired or expiring soon}}",
+  "@journalDocumentsAlert": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

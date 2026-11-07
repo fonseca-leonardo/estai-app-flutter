@@ -1,3 +1,4 @@
+import 'boat_reminder.dart';
 import 'logbook_entry.dart';
 import 'maintenance.dart';
 
@@ -9,6 +10,10 @@ class BoatOverview {
   final int overdueMaintenancesCount;
   final List<Maintenance> upcomingMaintenances;
   final List<LogbookEntry> recentLogbookEntries;
+  final List<BoatReminder> upcomingReminders;
+
+  /// Documentos do barco vencidos ou vencendo (≤ 30 dias).
+  final int expiringDocumentsCount;
 
   BoatOverview({
     required this.boatId,
@@ -17,6 +22,8 @@ class BoatOverview {
     required this.overdueMaintenancesCount,
     required this.upcomingMaintenances,
     required this.recentLogbookEntries,
+    this.upcomingReminders = const [],
+    this.expiringDocumentsCount = 0,
   });
 
   BoatOverview copyWith({double? engineHours, DateTime? engineHoursReadAt}) {
@@ -27,6 +34,8 @@ class BoatOverview {
       overdueMaintenancesCount: overdueMaintenancesCount,
       upcomingMaintenances: upcomingMaintenances,
       recentLogbookEntries: recentLogbookEntries,
+      upcomingReminders: upcomingReminders,
+      expiringDocumentsCount: expiringDocumentsCount,
     );
   }
 
@@ -49,6 +58,11 @@ class BoatOverview {
                 (item) => LogbookEntry.fromJson(item as Map<String, dynamic>),
               )
               .toList(),
+      upcomingReminders: (json['upcomingReminders'] as List<dynamic>? ?? [])
+          .map((item) => BoatReminder.fromJson(item as Map<String, dynamic>))
+          .toList(),
+      expiringDocumentsCount:
+          (json['expiringDocumentsCount'] as num?)?.toInt() ?? 0,
     );
   }
 }

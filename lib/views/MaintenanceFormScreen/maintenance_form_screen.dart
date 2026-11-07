@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -208,7 +209,7 @@ class _MaintenanceFormScreenState extends State<MaintenanceFormScreen>
         builder: (context, viewModel, child) {
           final errorText = _errorText(l10n, viewModel.error);
 
-          return Scaffold(
+          return AppScaffold(
             appBar: AppBar(
               title: Text(
                 viewModel.isEditing
@@ -227,7 +228,6 @@ class _MaintenanceFormScreenState extends State<MaintenanceFormScreen>
                   ),
               ],
             ),
-            backgroundColor: Colors.black,
             body: Column(
               children: [
                 Expanded(

@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:app_links/app_links.dart';
 import 'package:estai/views/LoginScreen/login_screen.dart';
+import 'package:estai/views/BoatRemindersScreen/boat_reminders_screen.dart';
+import 'package:estai/views/DocumentDetailScreen/document_detail_screen.dart';
 import 'package:estai/views/MaintenancesScreen/maintenances_screen.dart';
 import 'package:estai/views/MarinaAccessScreen/marina_access_screen.dart';
 import 'package:estai/widgets/location_init_wrapper.dart';
@@ -245,13 +247,19 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   void _openPushTarget(PushNotificationTarget target) {
-    if (!target.isMaintenance) return;
-    navigatorKey.currentState?.push(
-      MaterialPageRoute(
-        builder: (_) =>
-            MaintenancesScreen(boatId: target.boatId, highlightedId: target.id),
-      ),
-    );
+    final boatId = target.boatId;
+    final id = target.id;
+    final Widget screen;
+    if (target.isMaintenance && boatId != null) {
+      screen = MaintenancesScreen(boatId: boatId, highlightedId: id);
+    } else if (target.isReminder && boatId != null) {
+      screen = BoatRemindersScreen(boatId: boatId, highlightedId: id);
+    } else if (target.isDocument && id != null) {
+      screen = DocumentDetailScreen(documentId: id);
+    } else {
+      return;
+    }
+    navigatorKey.currentState?.push(MaterialPageRoute(builder: (_) => screen));
   }
 
   void _openMarinaAccessScreen(String marinaId) {

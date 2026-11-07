@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../widgets/ui/empty_state.dart';
 import '../../widgets/ui/error_state.dart';
 import '../../widgets/ui/skeleton_list.dart';
@@ -34,13 +35,12 @@ class _BoatsListScreenState extends State<BoatsListScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.myBoats),
         backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
-      backgroundColor: Colors.black,
       body: Consumer<BoatViewModel>(
         builder: (context, viewModel, child) => AnimatedSwitcher(
           duration: const Duration(milliseconds: 250),

@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -71,11 +72,10 @@ class _NavigationPermissionScreenState extends State<NavigationPermissionScreen>
         statusBarBrightness: Brightness.dark,
       ),
       sized: false,
-      child: Scaffold(
-        backgroundColor: Colors.black,
+      child: AppScaffold(
         appBar: AppBar(
           title: Text(l10n.navigationPermission),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.black.withValues(alpha: 0.78),
           foregroundColor: Colors.white,
           elevation: 0,
         ),

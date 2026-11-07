@@ -1,5 +1,8 @@
 import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import '../../../theme/app_glass.dart';
+import '../../../theme/app_radius.dart';
+import '../../../widgets/ui/glass_surface.dart';
 import 'package:provider/provider.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../viewmodels/auth_viewmodel.dart';
@@ -37,7 +40,8 @@ class WeatherForecastBottomSheet extends StatefulWidget {
 
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.black.withValues(alpha: 0.65),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       isScrollControlled: true,
       useRootNavigator: false,
       enableDrag: true,
@@ -144,11 +148,9 @@ class _WeatherForecastBottomSheetState
     final l10n = AppLocalizations.of(context)!;
     final mapViewModel = Provider.of<MapViewModel>(context, listen: false);
 
-    return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(164, 0, 0, 0),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
+    return GlassSurface(
+      borderRadius: AppRadius.sheetTop,
+      border: Border(top: BorderSide(color: AppGlass.border)),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

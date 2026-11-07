@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -30,13 +31,12 @@ class _RoutesListScreenState extends State<RoutesListScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.myRoutes),
         backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
-      backgroundColor: Colors.black,
       body: Consumer<RoutesViewModel>(
         builder: (context, viewModel, child) {
           if (viewModel.isLoading && viewModel.routes.isEmpty) {

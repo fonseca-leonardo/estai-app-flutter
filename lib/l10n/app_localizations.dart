@@ -1397,6 +1397,18 @@ abstract class AppLocalizations {
   /// **'Disable Alarm'**
   String get anchorAlarmDisable;
 
+  /// No description provided for @anchorAlarmDisableConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable the anchor alarm?'**
+  String get anchorAlarmDisableConfirmTitle;
+
+  /// No description provided for @anchorAlarmDisableConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You will no longer be warned if the anchor drags.'**
+  String get anchorAlarmDisableConfirmMessage;
+
   /// No description provided for @anchorAlarmDismiss.
   ///
   /// In en, this message translates to:
@@ -3640,6 +3652,660 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account'**
   String get settingsSectionAccount;
+
+  /// No description provided for @boatRemindersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get boatRemindersTitle;
+
+  /// No description provided for @boatReminderNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New reminder'**
+  String get boatReminderNew;
+
+  /// No description provided for @boatReminderEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit reminder'**
+  String get boatReminderEditTitle;
+
+  /// No description provided for @boatReminderTabPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get boatReminderTabPending;
+
+  /// No description provided for @boatReminderTabDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get boatReminderTabDone;
+
+  /// No description provided for @boatReminderStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get boatReminderStatusPending;
+
+  /// No description provided for @boatReminderStatusDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get boatReminderStatusDone;
+
+  /// No description provided for @noPendingBoatReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'No pending reminders.'**
+  String get noPendingBoatReminders;
+
+  /// No description provided for @noDoneBoatReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'No completed reminders yet.'**
+  String get noDoneBoatReminders;
+
+  /// No description provided for @loadBoatRemindersError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the reminders.'**
+  String get loadBoatRemindersError;
+
+  /// No description provided for @boatReminderTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get boatReminderTitleLabel;
+
+  /// No description provided for @boatReminderTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g. Renew the marina berth'**
+  String get boatReminderTitleHint;
+
+  /// No description provided for @boatReminderTitleRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a title'**
+  String get boatReminderTitleRequired;
+
+  /// No description provided for @boatReminderDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get boatReminderDateLabel;
+
+  /// No description provided for @boatReminderDatePlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a date'**
+  String get boatReminderDatePlaceholder;
+
+  /// No description provided for @boatReminderDateRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick the reminder date'**
+  String get boatReminderDateRequired;
+
+  /// No description provided for @boatReminderDoneAtLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Done on'**
+  String get boatReminderDoneAtLabel;
+
+  /// No description provided for @boatReminderNotesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get boatReminderNotesLabel;
+
+  /// No description provided for @boatReminderDoneOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Done on {date}'**
+  String boatReminderDoneOn(String date);
+
+  /// No description provided for @boatReminderDueToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get boatReminderDueToday;
+
+  /// No description provided for @boatReminderDueInDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Tomorrow} other{In {count} days}}'**
+  String boatReminderDueInDays(int count);
+
+  /// No description provided for @boatReminderOverdueDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day overdue} other{{count} days overdue}}'**
+  String boatReminderOverdueDays(int count);
+
+  /// No description provided for @boatReminderEveryMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Repeats every month} other{Repeats every {count} months}}'**
+  String boatReminderEveryMonths(int count);
+
+  /// No description provided for @boatReminderRecurrenceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat'**
+  String get boatReminderRecurrenceTitle;
+
+  /// No description provided for @boatReminderRecurrenceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'When marked as done, the next one is created automatically'**
+  String get boatReminderRecurrenceSubtitle;
+
+  /// No description provided for @boatReminderRecurrenceMonthsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Every how many months'**
+  String get boatReminderRecurrenceMonthsLabel;
+
+  /// No description provided for @boatReminderMarkDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as done'**
+  String get boatReminderMarkDone;
+
+  /// No description provided for @boatReminderMarkDoneConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'The reminder will move to Done.'**
+  String get boatReminderMarkDoneConfirm;
+
+  /// No description provided for @boatReminderMarkDoneRecurringConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{The reminder will move to Done and the next one is created 1 month after this one\'s date.} other{The reminder will move to Done and the next one is created {count} months after this one\'s date.}}'**
+  String boatReminderMarkDoneRecurringConfirm(int count);
+
+  /// No description provided for @boatReminderMarkedDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder marked as done'**
+  String get boatReminderMarkedDone;
+
+  /// No description provided for @markBoatReminderDoneError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t mark the reminder as done.'**
+  String get markBoatReminderDoneError;
+
+  /// No description provided for @boatReminderSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save reminder'**
+  String get boatReminderSave;
+
+  /// No description provided for @boatReminderSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder saved'**
+  String get boatReminderSaved;
+
+  /// No description provided for @boatReminderInvalidError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the reminder details.'**
+  String get boatReminderInvalidError;
+
+  /// No description provided for @saveBoatReminderError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save the reminder. Try again.'**
+  String get saveBoatReminderError;
+
+  /// No description provided for @deleteBoatReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete reminder'**
+  String get deleteBoatReminder;
+
+  /// No description provided for @deleteBoatReminderConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'The reminder and its scheduled notifications will be deleted.'**
+  String get deleteBoatReminderConfirm;
+
+  /// No description provided for @deleteBoatReminderError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the reminder.'**
+  String get deleteBoatReminderError;
+
+  /// No description provided for @documentStatusExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get documentStatusExpired;
+
+  /// No description provided for @documentStatusExpiringSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiring soon'**
+  String get documentStatusExpiringSoon;
+
+  /// No description provided for @documentStatusValid.
+  ///
+  /// In en, this message translates to:
+  /// **'Valid'**
+  String get documentStatusValid;
+
+  /// No description provided for @documentStatusNoExpiry.
+  ///
+  /// In en, this message translates to:
+  /// **'No expiry'**
+  String get documentStatusNoExpiry;
+
+  /// No description provided for @documentTypeRegistration.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration'**
+  String get documentTypeRegistration;
+
+  /// No description provided for @documentTypeInsurance.
+  ///
+  /// In en, this message translates to:
+  /// **'Insurance'**
+  String get documentTypeInsurance;
+
+  /// No description provided for @documentTypeInspection.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspection'**
+  String get documentTypeInspection;
+
+  /// No description provided for @documentTypeRadioLicense.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio license'**
+  String get documentTypeRadioLicense;
+
+  /// No description provided for @documentTypeFireExtinguisher.
+  ///
+  /// In en, this message translates to:
+  /// **'Fire extinguisher'**
+  String get documentTypeFireExtinguisher;
+
+  /// No description provided for @documentTypeFlares.
+  ///
+  /// In en, this message translates to:
+  /// **'Flares'**
+  String get documentTypeFlares;
+
+  /// No description provided for @documentTypeLifeJackets.
+  ///
+  /// In en, this message translates to:
+  /// **'Life jackets'**
+  String get documentTypeLifeJackets;
+
+  /// No description provided for @documentTypeLifeRaft.
+  ///
+  /// In en, this message translates to:
+  /// **'Life raft'**
+  String get documentTypeLifeRaft;
+
+  /// No description provided for @documentTypeOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get documentTypeOther;
+
+  /// No description provided for @documentTypeNauticalLicense.
+  ///
+  /// In en, this message translates to:
+  /// **'Boating license'**
+  String get documentTypeNauticalLicense;
+
+  /// No description provided for @documentTypeRadioOperatorCertificate.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio operator certificate'**
+  String get documentTypeRadioOperatorCertificate;
+
+  /// No description provided for @documentsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents'**
+  String get documentsTitle;
+
+  /// No description provided for @myDocumentsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My documents'**
+  String get myDocumentsTitle;
+
+  /// No description provided for @myDocumentsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Boating license and certificates'**
+  String get myDocumentsSubtitle;
+
+  /// No description provided for @documentNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New document'**
+  String get documentNew;
+
+  /// No description provided for @documentEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit document'**
+  String get documentEditTitle;
+
+  /// No description provided for @documentDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Document'**
+  String get documentDetailsTitle;
+
+  /// No description provided for @documentsAttentionSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs attention'**
+  String get documentsAttentionSection;
+
+  /// No description provided for @documentsOthersSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Other documents'**
+  String get documentsOthersSection;
+
+  /// No description provided for @noBoatDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'No documents yet. Keep your registration, insurance, inspection and safety items with expiry dates here.'**
+  String get noBoatDocuments;
+
+  /// No description provided for @noPersonalDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'No documents yet. Keep your boating license and certificates here.'**
+  String get noPersonalDocuments;
+
+  /// No description provided for @loadDocumentsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the documents.'**
+  String get loadDocumentsError;
+
+  /// No description provided for @loadDocumentError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the document.'**
+  String get loadDocumentError;
+
+  /// No description provided for @documentTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get documentTypeLabel;
+
+  /// No description provided for @documentTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (optional)'**
+  String get documentTitleLabel;
+
+  /// No description provided for @documentNumberLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Number'**
+  String get documentNumberLabel;
+
+  /// No description provided for @documentIssuerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Issuer'**
+  String get documentIssuerLabel;
+
+  /// No description provided for @documentIssuerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g. maritime authority, insurer'**
+  String get documentIssuerHint;
+
+  /// No description provided for @documentDatesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Validity'**
+  String get documentDatesSection;
+
+  /// No description provided for @documentExpiresAtLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires on'**
+  String get documentExpiresAtLabel;
+
+  /// No description provided for @documentIssuedAtLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Issued on'**
+  String get documentIssuedAtLabel;
+
+  /// No description provided for @documentNoExpiryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'No expiry'**
+  String get documentNoExpiryLabel;
+
+  /// No description provided for @documentDateNotInformed.
+  ///
+  /// In en, this message translates to:
+  /// **'Not provided'**
+  String get documentDateNotInformed;
+
+  /// No description provided for @documentInvalidDatesError.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry can\'t be before the issue date'**
+  String get documentInvalidDatesError;
+
+  /// No description provided for @documentExpiresOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires on {date}'**
+  String documentExpiresOn(String date);
+
+  /// No description provided for @documentExpiresToday.
+  ///
+  /// In en, this message translates to:
+  /// **'expires today'**
+  String get documentExpiresToday;
+
+  /// No description provided for @documentExpiresInDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day left} other{{count} days left}}'**
+  String documentExpiresInDays(int count);
+
+  /// No description provided for @documentExpiredDaysAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{expired 1 day ago} other{expired {count} days ago}}'**
+  String documentExpiredDaysAgo(int count);
+
+  /// No description provided for @documentReminderLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder'**
+  String get documentReminderLabel;
+
+  /// No description provided for @documentReminderDaysBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days before'**
+  String documentReminderDaysBefore(String days);
+
+  /// No description provided for @documentReminderOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get documentReminderOff;
+
+  /// No description provided for @documentDetailsInfoSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get documentDetailsInfoSection;
+
+  /// No description provided for @documentNotesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get documentNotesSection;
+
+  /// No description provided for @documentAttachmentsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Attachments'**
+  String get documentAttachmentsSection;
+
+  /// No description provided for @documentSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save document'**
+  String get documentSave;
+
+  /// No description provided for @documentSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Document saved'**
+  String get documentSaved;
+
+  /// No description provided for @documentInvalidError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the document details.'**
+  String get documentInvalidError;
+
+  /// No description provided for @saveDocumentError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save the document. Try again.'**
+  String get saveDocumentError;
+
+  /// No description provided for @documentAttachmentsFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The document was saved, but some attachments weren\'t uploaded. Tap Try again.'**
+  String get documentAttachmentsFailed;
+
+  /// No description provided for @deleteDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete document'**
+  String get deleteDocument;
+
+  /// No description provided for @deleteDocumentConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'The document, its attachments and scheduled reminders will be deleted.'**
+  String get deleteDocumentConfirm;
+
+  /// No description provided for @deleteDocumentError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the document.'**
+  String get deleteDocumentError;
+
+  /// No description provided for @attachmentAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get attachmentAdd;
+
+  /// No description provided for @attachmentAddTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add attachment'**
+  String get attachmentAddTitle;
+
+  /// No description provided for @attachmentSourceCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Take photo'**
+  String get attachmentSourceCamera;
+
+  /// No description provided for @attachmentSourceGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from gallery'**
+  String get attachmentSourceGallery;
+
+  /// No description provided for @attachmentSourcePdf.
+  ///
+  /// In en, this message translates to:
+  /// **'PDF file'**
+  String get attachmentSourcePdf;
+
+  /// No description provided for @attachmentsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Photos or PDF, up to {count} files of {size} MB.'**
+  String attachmentsHint(int count, int size);
+
+  /// No description provided for @attachmentLimitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Attachment limit reached.'**
+  String get attachmentLimitReached;
+
+  /// No description provided for @attachmentTooLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'File is larger than the limit.'**
+  String get attachmentTooLarge;
+
+  /// No description provided for @attachmentUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'File type not supported. Use a photo or PDF.'**
+  String get attachmentUnsupported;
+
+  /// No description provided for @attachmentUploadingProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading attachment {current} of {total}…'**
+  String attachmentUploadingProgress(int current, int total);
+
+  /// No description provided for @attachmentOpenError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the attachment.'**
+  String get attachmentOpenError;
+
+  /// No description provided for @journalRemindersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get journalRemindersTitle;
+
+  /// No description provided for @journalNoReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'No pending reminders.'**
+  String get journalNoReminders;
+
+  /// No description provided for @journalSeeReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'See reminders'**
+  String get journalSeeReminders;
+
+  /// No description provided for @journalDocumentsAlert.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 document expired or expiring soon} other{{count} documents expired or expiring soon}}'**
+  String journalDocumentsAlert(int count);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

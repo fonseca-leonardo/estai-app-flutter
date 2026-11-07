@@ -565,6 +565,10 @@
   "@anchorAlarmTriggeredMessage": {},
   "anchorAlarmDisable": "Desativar Alarme",
   "@anchorAlarmDisable": {},
+  "anchorAlarmDisableConfirmTitle": "Desativar o alarme de âncora?",
+  "@anchorAlarmDisableConfirmTitle": {},
+  "anchorAlarmDisableConfirmMessage": "Você deixará de ser avisado se a âncora arrastar.",
+  "@anchorAlarmDisableConfirmMessage": {},
   "anchorAlarmDismiss": "Ignorar",
   "@anchorAlarmDismiss": {},
   "anchorAlarmNotificationRationaleTitle": "Permissão de Notificações",
@@ -1480,5 +1484,301 @@
   "settingsSectionMaps": "Mapas e cartas",
   "@settingsSectionMaps": {},
   "settingsSectionAccount": "Conta",
-  "@settingsSectionAccount": {}
+  "@settingsSectionAccount": {},
+  "boatRemindersTitle": "Lembretes",
+  "@boatRemindersTitle": {},
+  "boatReminderNew": "Novo lembrete",
+  "@boatReminderNew": {},
+  "boatReminderEditTitle": "Editar lembrete",
+  "@boatReminderEditTitle": {},
+  "boatReminderTabPending": "Pendentes",
+  "@boatReminderTabPending": {},
+  "boatReminderTabDone": "Feitos",
+  "@boatReminderTabDone": {},
+  "boatReminderStatusPending": "Pendente",
+  "@boatReminderStatusPending": {},
+  "boatReminderStatusDone": "Feito",
+  "@boatReminderStatusDone": {},
+  "noPendingBoatReminders": "Nenhum lembrete pendente.",
+  "@noPendingBoatReminders": {},
+  "noDoneBoatReminders": "Nenhum lembrete feito ainda.",
+  "@noDoneBoatReminders": {},
+  "loadBoatRemindersError": "Não foi possível carregar os lembretes.",
+  "@loadBoatRemindersError": {},
+  "boatReminderTitleLabel": "Título",
+  "@boatReminderTitleLabel": {},
+  "boatReminderTitleHint": "Ex.: Renovar a vaga na marina",
+  "@boatReminderTitleHint": {},
+  "boatReminderTitleRequired": "Informe o título",
+  "@boatReminderTitleRequired": {},
+  "boatReminderDateLabel": "Data",
+  "@boatReminderDateLabel": {},
+  "boatReminderDatePlaceholder": "Escolher data",
+  "@boatReminderDatePlaceholder": {},
+  "boatReminderDateRequired": "Escolha a data do lembrete",
+  "@boatReminderDateRequired": {},
+  "boatReminderDoneAtLabel": "Feito em",
+  "@boatReminderDoneAtLabel": {},
+  "boatReminderNotesLabel": "Observações",
+  "@boatReminderNotesLabel": {},
+  "boatReminderDoneOn": "Feito em {date}",
+  "@boatReminderDoneOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "boatReminderDueToday": "Hoje",
+  "@boatReminderDueToday": {},
+  "boatReminderDueInDays": "{count, plural, =1{Amanhã} other{Em {count} dias}}",
+  "@boatReminderDueInDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderOverdueDays": "{count, plural, =1{Atrasado há 1 dia} other{Atrasado há {count} dias}}",
+  "@boatReminderOverdueDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderEveryMonths": "{count, plural, =1{Repete todo mês} other{Repete a cada {count} meses}}",
+  "@boatReminderEveryMonths": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderRecurrenceTitle": "Repetir",
+  "@boatReminderRecurrenceTitle": {},
+  "boatReminderRecurrenceSubtitle": "Ao marcar como feito, o próximo é criado automaticamente",
+  "@boatReminderRecurrenceSubtitle": {},
+  "boatReminderRecurrenceMonthsLabel": "A cada quantos meses",
+  "@boatReminderRecurrenceMonthsLabel": {},
+  "boatReminderMarkDone": "Marcar como feito",
+  "@boatReminderMarkDone": {},
+  "boatReminderMarkDoneConfirm": "O lembrete vai para Feitos.",
+  "@boatReminderMarkDoneConfirm": {},
+  "boatReminderMarkDoneRecurringConfirm": "{count, plural, =1{O lembrete vai para Feitos e o próximo é criado 1 mês depois da data deste.} other{O lembrete vai para Feitos e o próximo é criado {count} meses depois da data deste.}}",
+  "@boatReminderMarkDoneRecurringConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boatReminderMarkedDone": "Lembrete marcado como feito",
+  "@boatReminderMarkedDone": {},
+  "markBoatReminderDoneError": "Não foi possível marcar o lembrete como feito.",
+  "@markBoatReminderDoneError": {},
+  "boatReminderSave": "Salvar lembrete",
+  "@boatReminderSave": {},
+  "boatReminderSaved": "Lembrete salvo",
+  "@boatReminderSaved": {},
+  "boatReminderInvalidError": "Confira os dados do lembrete.",
+  "@boatReminderInvalidError": {},
+  "saveBoatReminderError": "Não foi possível salvar o lembrete. Tente novamente.",
+  "@saveBoatReminderError": {},
+  "deleteBoatReminder": "Excluir lembrete",
+  "@deleteBoatReminder": {},
+  "deleteBoatReminderConfirm": "O lembrete e os avisos programados serão excluídos.",
+  "@deleteBoatReminderConfirm": {},
+  "deleteBoatReminderError": "Não foi possível excluir o lembrete.",
+  "@deleteBoatReminderError": {},
+  "documentStatusExpired": "Vencido",
+  "@documentStatusExpired": {},
+  "documentStatusExpiringSoon": "Vencendo",
+  "@documentStatusExpiringSoon": {},
+  "documentStatusValid": "Em dia",
+  "@documentStatusValid": {},
+  "documentStatusNoExpiry": "Sem validade",
+  "@documentStatusNoExpiry": {},
+  "documentTypeRegistration": "Inscrição (TIE/TIEM)",
+  "@documentTypeRegistration": {},
+  "documentTypeInsurance": "Seguro",
+  "@documentTypeInsurance": {},
+  "documentTypeInspection": "Vistoria",
+  "@documentTypeInspection": {},
+  "documentTypeRadioLicense": "Licença de rádio",
+  "@documentTypeRadioLicense": {},
+  "documentTypeFireExtinguisher": "Extintor",
+  "@documentTypeFireExtinguisher": {},
+  "documentTypeFlares": "Sinalizadores",
+  "@documentTypeFlares": {},
+  "documentTypeLifeJackets": "Coletes salva-vidas",
+  "@documentTypeLifeJackets": {},
+  "documentTypeLifeRaft": "Balsa salva-vidas",
+  "@documentTypeLifeRaft": {},
+  "documentTypeOther": "Outro",
+  "@documentTypeOther": {},
+  "documentTypeNauticalLicense": "Habilitação náutica (CHA)",
+  "@documentTypeNauticalLicense": {},
+  "documentTypeRadioOperatorCertificate": "Certificado de operador de rádio",
+  "@documentTypeRadioOperatorCertificate": {},
+  "documentsTitle": "Documentos",
+  "@documentsTitle": {},
+  "myDocumentsTitle": "Meus documentos",
+  "@myDocumentsTitle": {},
+  "myDocumentsSubtitle": "Habilitação náutica e certificados",
+  "@myDocumentsSubtitle": {},
+  "documentNew": "Novo documento",
+  "@documentNew": {},
+  "documentEditTitle": "Editar documento",
+  "@documentEditTitle": {},
+  "documentDetailsTitle": "Documento",
+  "@documentDetailsTitle": {},
+  "documentsAttentionSection": "Atenção",
+  "@documentsAttentionSection": {},
+  "documentsOthersSection": "Demais documentos",
+  "@documentsOthersSection": {},
+  "noBoatDocuments": "Nenhum documento cadastrado. Guarde aqui TIE, seguro, vistoria e itens de segurança com validade.",
+  "@noBoatDocuments": {},
+  "noPersonalDocuments": "Nenhum documento cadastrado. Guarde aqui sua habilitação náutica e certificados.",
+  "@noPersonalDocuments": {},
+  "loadDocumentsError": "Não foi possível carregar os documentos.",
+  "@loadDocumentsError": {},
+  "loadDocumentError": "Não foi possível carregar o documento.",
+  "@loadDocumentError": {},
+  "documentTypeLabel": "Tipo",
+  "@documentTypeLabel": {},
+  "documentTitleLabel": "Nome (opcional)",
+  "@documentTitleLabel": {},
+  "documentNumberLabel": "Número",
+  "@documentNumberLabel": {},
+  "documentIssuerLabel": "Emissor",
+  "@documentIssuerLabel": {},
+  "documentIssuerHint": "Ex.: Capitania dos Portos, seguradora",
+  "@documentIssuerHint": {},
+  "documentDatesSection": "Validade",
+  "@documentDatesSection": {},
+  "documentExpiresAtLabel": "Vence em",
+  "@documentExpiresAtLabel": {},
+  "documentIssuedAtLabel": "Emitido em",
+  "@documentIssuedAtLabel": {},
+  "documentNoExpiryLabel": "Sem validade",
+  "@documentNoExpiryLabel": {},
+  "documentDateNotInformed": "Não informado",
+  "@documentDateNotInformed": {},
+  "documentInvalidDatesError": "A validade não pode ser antes da emissão",
+  "@documentInvalidDatesError": {},
+  "documentExpiresOn": "Vence em {date}",
+  "@documentExpiresOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "documentExpiresToday": "vence hoje",
+  "@documentExpiresToday": {},
+  "documentExpiresInDays": "{count, plural, =1{falta 1 dia} other{faltam {count} dias}}",
+  "@documentExpiresInDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "documentExpiredDaysAgo": "{count, plural, =1{vencido há 1 dia} other{vencido há {count} dias}}",
+  "@documentExpiredDaysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "documentReminderLabel": "Aviso",
+  "@documentReminderLabel": {},
+  "documentReminderDaysBefore": "{days} dias antes",
+  "@documentReminderDaysBefore": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "documentReminderOff": "Desligado",
+  "@documentReminderOff": {},
+  "documentDetailsInfoSection": "Dados",
+  "@documentDetailsInfoSection": {},
+  "documentNotesSection": "Observações",
+  "@documentNotesSection": {},
+  "documentAttachmentsSection": "Anexos",
+  "@documentAttachmentsSection": {},
+  "documentSave": "Salvar documento",
+  "@documentSave": {},
+  "documentSaved": "Documento salvo",
+  "@documentSaved": {},
+  "documentInvalidError": "Confira os dados do documento.",
+  "@documentInvalidError": {},
+  "saveDocumentError": "Não foi possível salvar o documento. Tente novamente.",
+  "@saveDocumentError": {},
+  "documentAttachmentsFailed": "O documento foi salvo, mas alguns anexos não foram enviados. Toque em Tentar novamente.",
+  "@documentAttachmentsFailed": {},
+  "deleteDocument": "Excluir documento",
+  "@deleteDocument": {},
+  "deleteDocumentConfirm": "O documento, os anexos e os avisos programados serão excluídos.",
+  "@deleteDocumentConfirm": {},
+  "deleteDocumentError": "Não foi possível excluir o documento.",
+  "@deleteDocumentError": {},
+  "attachmentAdd": "Adicionar",
+  "@attachmentAdd": {},
+  "attachmentAddTitle": "Adicionar anexo",
+  "@attachmentAddTitle": {},
+  "attachmentSourceCamera": "Tirar foto",
+  "@attachmentSourceCamera": {},
+  "attachmentSourceGallery": "Escolher da galeria",
+  "@attachmentSourceGallery": {},
+  "attachmentSourcePdf": "Arquivo PDF",
+  "@attachmentSourcePdf": {},
+  "attachmentsHint": "Fotos ou PDF, até {count} arquivos de {size} MB.",
+  "@attachmentsHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "attachmentLimitReached": "Limite de anexos atingido.",
+  "@attachmentLimitReached": {},
+  "attachmentTooLarge": "Arquivo maior que o limite.",
+  "@attachmentTooLarge": {},
+  "attachmentUnsupported": "Tipo de arquivo não aceito. Use foto ou PDF.",
+  "@attachmentUnsupported": {},
+  "attachmentUploadingProgress": "Enviando anexo {current} de {total}…",
+  "@attachmentUploadingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attachmentOpenError": "Não foi possível abrir o anexo.",
+  "@attachmentOpenError": {},
+  "journalRemindersTitle": "Lembretes",
+  "@journalRemindersTitle": {},
+  "journalNoReminders": "Nenhum lembrete pendente.",
+  "@journalNoReminders": {},
+  "journalSeeReminders": "Ver lembretes",
+  "@journalSeeReminders": {},
+  "journalDocumentsAlert": "{count, plural, =1{1 documento vencido ou vencendo} other{{count} documentos vencidos ou vencendo}}",
+  "@journalDocumentsAlert": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

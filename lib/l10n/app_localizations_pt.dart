@@ -708,6 +708,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get anchorAlarmDisable => 'Desativar Alarme';
 
   @override
+  String get anchorAlarmDisableConfirmTitle => 'Desativar o alarme de âncora?';
+
+  @override
+  String get anchorAlarmDisableConfirmMessage => 'Você deixará de ser avisado se a âncora arrastar.';
+
+  @override
   String get anchorAlarmDismiss => 'Ignorar';
 
   @override
@@ -1919,4 +1925,397 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get settingsSectionAccount => 'Conta';
+
+  @override
+  String get boatRemindersTitle => 'Lembretes';
+
+  @override
+  String get boatReminderNew => 'Novo lembrete';
+
+  @override
+  String get boatReminderEditTitle => 'Editar lembrete';
+
+  @override
+  String get boatReminderTabPending => 'Pendentes';
+
+  @override
+  String get boatReminderTabDone => 'Feitos';
+
+  @override
+  String get boatReminderStatusPending => 'Pendente';
+
+  @override
+  String get boatReminderStatusDone => 'Feito';
+
+  @override
+  String get noPendingBoatReminders => 'Nenhum lembrete pendente.';
+
+  @override
+  String get noDoneBoatReminders => 'Nenhum lembrete feito ainda.';
+
+  @override
+  String get loadBoatRemindersError => 'Não foi possível carregar os lembretes.';
+
+  @override
+  String get boatReminderTitleLabel => 'Título';
+
+  @override
+  String get boatReminderTitleHint => 'Ex.: Renovar a vaga na marina';
+
+  @override
+  String get boatReminderTitleRequired => 'Informe o título';
+
+  @override
+  String get boatReminderDateLabel => 'Data';
+
+  @override
+  String get boatReminderDatePlaceholder => 'Escolher data';
+
+  @override
+  String get boatReminderDateRequired => 'Escolha a data do lembrete';
+
+  @override
+  String get boatReminderDoneAtLabel => 'Feito em';
+
+  @override
+  String get boatReminderNotesLabel => 'Observações';
+
+  @override
+  String boatReminderDoneOn(String date) {
+    return 'Feito em $date';
+  }
+
+  @override
+  String get boatReminderDueToday => 'Hoje';
+
+  @override
+  String boatReminderDueInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Em $count dias',
+      one: 'Amanhã',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String boatReminderOverdueDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Atrasado há $count dias',
+      one: 'Atrasado há 1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String boatReminderEveryMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Repete a cada $count meses',
+      one: 'Repete todo mês',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get boatReminderRecurrenceTitle => 'Repetir';
+
+  @override
+  String get boatReminderRecurrenceSubtitle => 'Ao marcar como feito, o próximo é criado automaticamente';
+
+  @override
+  String get boatReminderRecurrenceMonthsLabel => 'A cada quantos meses';
+
+  @override
+  String get boatReminderMarkDone => 'Marcar como feito';
+
+  @override
+  String get boatReminderMarkDoneConfirm => 'O lembrete vai para Feitos.';
+
+  @override
+  String boatReminderMarkDoneRecurringConfirm(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'O lembrete vai para Feitos e o próximo é criado $count meses depois da data deste.',
+      one: 'O lembrete vai para Feitos e o próximo é criado 1 mês depois da data deste.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get boatReminderMarkedDone => 'Lembrete marcado como feito';
+
+  @override
+  String get markBoatReminderDoneError => 'Não foi possível marcar o lembrete como feito.';
+
+  @override
+  String get boatReminderSave => 'Salvar lembrete';
+
+  @override
+  String get boatReminderSaved => 'Lembrete salvo';
+
+  @override
+  String get boatReminderInvalidError => 'Confira os dados do lembrete.';
+
+  @override
+  String get saveBoatReminderError => 'Não foi possível salvar o lembrete. Tente novamente.';
+
+  @override
+  String get deleteBoatReminder => 'Excluir lembrete';
+
+  @override
+  String get deleteBoatReminderConfirm => 'O lembrete e os avisos programados serão excluídos.';
+
+  @override
+  String get deleteBoatReminderError => 'Não foi possível excluir o lembrete.';
+
+  @override
+  String get documentStatusExpired => 'Vencido';
+
+  @override
+  String get documentStatusExpiringSoon => 'Vencendo';
+
+  @override
+  String get documentStatusValid => 'Em dia';
+
+  @override
+  String get documentStatusNoExpiry => 'Sem validade';
+
+  @override
+  String get documentTypeRegistration => 'Inscrição (TIE/TIEM)';
+
+  @override
+  String get documentTypeInsurance => 'Seguro';
+
+  @override
+  String get documentTypeInspection => 'Vistoria';
+
+  @override
+  String get documentTypeRadioLicense => 'Licença de rádio';
+
+  @override
+  String get documentTypeFireExtinguisher => 'Extintor';
+
+  @override
+  String get documentTypeFlares => 'Sinalizadores';
+
+  @override
+  String get documentTypeLifeJackets => 'Coletes salva-vidas';
+
+  @override
+  String get documentTypeLifeRaft => 'Balsa salva-vidas';
+
+  @override
+  String get documentTypeOther => 'Outro';
+
+  @override
+  String get documentTypeNauticalLicense => 'Habilitação náutica (CHA)';
+
+  @override
+  String get documentTypeRadioOperatorCertificate => 'Certificado de operador de rádio';
+
+  @override
+  String get documentsTitle => 'Documentos';
+
+  @override
+  String get myDocumentsTitle => 'Meus documentos';
+
+  @override
+  String get myDocumentsSubtitle => 'Habilitação náutica e certificados';
+
+  @override
+  String get documentNew => 'Novo documento';
+
+  @override
+  String get documentEditTitle => 'Editar documento';
+
+  @override
+  String get documentDetailsTitle => 'Documento';
+
+  @override
+  String get documentsAttentionSection => 'Atenção';
+
+  @override
+  String get documentsOthersSection => 'Demais documentos';
+
+  @override
+  String get noBoatDocuments => 'Nenhum documento cadastrado. Guarde aqui TIE, seguro, vistoria e itens de segurança com validade.';
+
+  @override
+  String get noPersonalDocuments => 'Nenhum documento cadastrado. Guarde aqui sua habilitação náutica e certificados.';
+
+  @override
+  String get loadDocumentsError => 'Não foi possível carregar os documentos.';
+
+  @override
+  String get loadDocumentError => 'Não foi possível carregar o documento.';
+
+  @override
+  String get documentTypeLabel => 'Tipo';
+
+  @override
+  String get documentTitleLabel => 'Nome (opcional)';
+
+  @override
+  String get documentNumberLabel => 'Número';
+
+  @override
+  String get documentIssuerLabel => 'Emissor';
+
+  @override
+  String get documentIssuerHint => 'Ex.: Capitania dos Portos, seguradora';
+
+  @override
+  String get documentDatesSection => 'Validade';
+
+  @override
+  String get documentExpiresAtLabel => 'Vence em';
+
+  @override
+  String get documentIssuedAtLabel => 'Emitido em';
+
+  @override
+  String get documentNoExpiryLabel => 'Sem validade';
+
+  @override
+  String get documentDateNotInformed => 'Não informado';
+
+  @override
+  String get documentInvalidDatesError => 'A validade não pode ser antes da emissão';
+
+  @override
+  String documentExpiresOn(String date) {
+    return 'Vence em $date';
+  }
+
+  @override
+  String get documentExpiresToday => 'vence hoje';
+
+  @override
+  String documentExpiresInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'faltam $count dias',
+      one: 'falta 1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String documentExpiredDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'vencido há $count dias',
+      one: 'vencido há 1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get documentReminderLabel => 'Aviso';
+
+  @override
+  String documentReminderDaysBefore(String days) {
+    return '$days dias antes';
+  }
+
+  @override
+  String get documentReminderOff => 'Desligado';
+
+  @override
+  String get documentDetailsInfoSection => 'Dados';
+
+  @override
+  String get documentNotesSection => 'Observações';
+
+  @override
+  String get documentAttachmentsSection => 'Anexos';
+
+  @override
+  String get documentSave => 'Salvar documento';
+
+  @override
+  String get documentSaved => 'Documento salvo';
+
+  @override
+  String get documentInvalidError => 'Confira os dados do documento.';
+
+  @override
+  String get saveDocumentError => 'Não foi possível salvar o documento. Tente novamente.';
+
+  @override
+  String get documentAttachmentsFailed => 'O documento foi salvo, mas alguns anexos não foram enviados. Toque em Tentar novamente.';
+
+  @override
+  String get deleteDocument => 'Excluir documento';
+
+  @override
+  String get deleteDocumentConfirm => 'O documento, os anexos e os avisos programados serão excluídos.';
+
+  @override
+  String get deleteDocumentError => 'Não foi possível excluir o documento.';
+
+  @override
+  String get attachmentAdd => 'Adicionar';
+
+  @override
+  String get attachmentAddTitle => 'Adicionar anexo';
+
+  @override
+  String get attachmentSourceCamera => 'Tirar foto';
+
+  @override
+  String get attachmentSourceGallery => 'Escolher da galeria';
+
+  @override
+  String get attachmentSourcePdf => 'Arquivo PDF';
+
+  @override
+  String attachmentsHint(int count, int size) {
+    return 'Fotos ou PDF, até $count arquivos de $size MB.';
+  }
+
+  @override
+  String get attachmentLimitReached => 'Limite de anexos atingido.';
+
+  @override
+  String get attachmentTooLarge => 'Arquivo maior que o limite.';
+
+  @override
+  String get attachmentUnsupported => 'Tipo de arquivo não aceito. Use foto ou PDF.';
+
+  @override
+  String attachmentUploadingProgress(int current, int total) {
+    return 'Enviando anexo $current de $total…';
+  }
+
+  @override
+  String get attachmentOpenError => 'Não foi possível abrir o anexo.';
+
+  @override
+  String get journalRemindersTitle => 'Lembretes';
+
+  @override
+  String get journalNoReminders => 'Nenhum lembrete pendente.';
+
+  @override
+  String get journalSeeReminders => 'Ver lembretes';
+
+  @override
+  String journalDocumentsAlert(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count documentos vencidos ou vencendo',
+      one: '1 documento vencido ou vencendo',
+    );
+    return '$_temp0';
+  }
 }

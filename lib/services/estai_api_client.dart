@@ -28,7 +28,7 @@ class EstaiApiClient {
   static bool enableRequestLogs = true;
 
   static const String baseUrl = kDebugMode
-      ? 'http://192.168.68.118:3333/estai-app'
+      ? 'http://192.168.68.119:3333/estai-app'
       : 'https://api.estai.com.br/estai-app'; // 'https://api.estai.com.br/estai-api';
 
   /// Instância compartilhada usada pelos services da aplicação.
@@ -257,6 +257,38 @@ class EstaiApiClient {
       return response;
     } catch (e) {
       _logError('DELETE', uri, e);
+      throw ApiException('Network error: $e', uri: uri);
+    }
+  }
+
+  /// Envio `multipart/form-data` (upload de anexos). Usa só o
+  /// `Authorization` dos headers padrão: o `Content-Type` com o boundary é
+  /// montado pelo [http.MultipartRequest].
+  Future<http.Response> multipart(
+    String endpoint, {
+    required List<http.MultipartFile> files,
+    Map<String, String>? fields,
+    String method = 'POST',
+  }) async {
+    final uri = _uri(endpoint);
+    _logRequest(
+      '$method multipart',
+      uri,
+      body: files.map((file) => '${file.filename} (${file.length} B)').toList(),
+    );
+    try {
+      final headers = _buildHeaders(null)..remove('Content-Type');
+      final request = http.MultipartRequest(method, uri)
+        ..headers.addAll(headers)
+        ..files.addAll(files);
+      if (fields != null) request.fields.addAll(fields);
+      final response = await http.Response.fromStream(
+        await _client.send(request),
+      );
+      _logResponse(method, uri, response);
+      return response;
+    } catch (e) {
+      _logError(method, uri, e);
       throw ApiException('Network error: $e', uri: uri);
     }
   }

@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,13 +27,12 @@ class _ListMapsScreenState extends State<ListMapsScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.maps),
         backgroundColor: Colors.black.withValues(alpha: 0.78),
         foregroundColor: Colors.white,
       ),
-      backgroundColor: Colors.black,
       body: Consumer<ListMapsViewModel>(
         builder: (context, viewModel, child) {
           if (viewModel.isLoading && viewModel.maps.isEmpty) {

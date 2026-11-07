@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
@@ -151,7 +152,7 @@ class _LogbookEntryFormScreenState extends State<LogbookEntryFormScreen>
         builder: (context, viewModel, child) {
           final errorText = _errorText(l10n, viewModel.error);
 
-          return Scaffold(
+          return AppScaffold(
             appBar: AppBar(
               title: Text(
                 viewModel.isEditing
@@ -162,7 +163,6 @@ class _LogbookEntryFormScreenState extends State<LogbookEntryFormScreen>
               foregroundColor: Colors.white,
               elevation: 0,
             ),
-            backgroundColor: Colors.black,
             body: Column(
               children: [
                 Expanded(

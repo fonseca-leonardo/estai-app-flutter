@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../theme/app_glass.dart';
 import '../../theme/app_radius.dart';
+import 'glass_surface.dart';
 
-/// Botão flutuante translúcido usado sobre o mapa.
+/// Botão flutuante de vidro fosco usado sobre o mapa.
 class GlassFab extends StatelessWidget {
   final String heroTag;
   final String? tooltip;
   final VoidCallback? onPressed;
   final Widget child;
-  final bool emphasized;
+
+  /// Botão com estado (ligado/desligado): acende o vidro e o ícone.
+  final bool selected;
   final Color? tint;
 
   const GlassFab({
@@ -18,30 +22,36 @@ class GlassFab extends StatelessWidget {
     required this.child,
     this.tooltip,
     this.onPressed,
-    this.emphasized = true,
+    this.selected = false,
     this.tint,
   });
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      heroTag: heroTag,
-      elevation: 0,
-      highlightElevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        side: BorderSide(color: Colors.white.withValues(alpha: 0.25)),
+    return Semantics(
+      selected: selected,
+      child: GlassSurface(
+        tint: tint,
+        selected: selected,
+        child: FloatingActionButton(
+          foregroundColor: selected ? AppGlass.selectedIconColor : Colors.white,
+          heroTag: heroTag,
+          elevation: 0,
+          highlightElevation: 0,
+          hoverElevation: 0,
+          focusElevation: 0,
+          shape: RoundedRectangleBorder(borderRadius: AppRadius.mdAll),
+          backgroundColor: Colors.transparent,
+          tooltip: tooltip,
+          onPressed: onPressed == null
+              ? null
+              : () {
+                  HapticFeedback.lightImpact();
+                  onPressed!();
+                },
+          child: child,
+        ),
       ),
-      backgroundColor:
-          tint ?? Colors.black.withValues(alpha: emphasized ? 0.55 : 0.25),
-      tooltip: tooltip,
-      onPressed: onPressed == null
-          ? null
-          : () {
-              HapticFeedback.lightImpact();
-              onPressed!();
-            },
-      child: child,
     );
   }
 }

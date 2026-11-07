@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -153,7 +154,7 @@ class _LogbookEntryDetailScreenState extends State<LogbookEntryDetailScreen>
             onPopInvokedWithResult: (didPop, result) {
               if (!didPop) Navigator.of(context).pop(viewModel.changed);
             },
-            child: Scaffold(
+            child: AppScaffold(
               appBar: AppBar(
                 title: Text(entry.type.label(l10n)),
                 backgroundColor: Colors.black.withValues(alpha: 0.78),
@@ -172,7 +173,6 @@ class _LogbookEntryDetailScreenState extends State<LogbookEntryDetailScreen>
                   ),
                 ],
               ),
-              backgroundColor: Colors.black,
               body: ListView(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
                 children: [

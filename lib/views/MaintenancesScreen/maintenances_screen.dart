@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
@@ -129,7 +130,7 @@ class _MaintenancesScreenState extends State<MaintenancesScreen>
 
     return DefaultTabController(
       length: 2,
-      child: Scaffold(
+      child: AppScaffold(
         appBar: AppBar(
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +160,6 @@ class _MaintenancesScreenState extends State<MaintenancesScreen>
             ],
           ),
         ),
-        backgroundColor: Colors.black,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: _openForm,
           backgroundColor: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/ui/glass_surface.dart';
 
 class NavigationDataItem {
   final String title;
@@ -58,16 +59,12 @@ class NavigationData extends StatelessWidget {
       content = const SizedBox.shrink();
     }
 
-    return Container(
+    return SizedBox(
       width: 164,
-
-      decoration: BoxDecoration(
-        color: Colors.black.withAlpha(140),
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
-        border: Border.all(color: Colors.white.withAlpha(64), width: 1),
+      child: GlassSurface(
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        child: content,
       ),
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-      child: content,
     );
   }
 }

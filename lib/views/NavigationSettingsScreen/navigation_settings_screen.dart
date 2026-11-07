@@ -1,3 +1,4 @@
+import '../../widgets/ui/app_scaffold.dart';
 import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +56,10 @@ class _NavigationSettingsScreenState extends State<NavigationSettingsScreen>
         statusBarBrightness: Brightness.dark,
       ),
       sized: false,
-      child: Scaffold(
-        backgroundColor: Colors.black,
+      child: AppScaffold(
         appBar: AppBar(
           title: Text(l10n.navigationSettings),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.black.withValues(alpha: 0.78),
           foregroundColor: Colors.white,
           elevation: 0,
         ),

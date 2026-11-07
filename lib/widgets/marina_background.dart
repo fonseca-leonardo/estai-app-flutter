@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import 'ui/background_scrim.dart';
+
 /// Preenche a tela com a imagem de fundo da marina (quando disponível) e
 /// aplica um scrim escuro por cima para manter textos/cartões brancos
 /// legíveis. Quando [backgroundFile] é `null`, apenas renderiza o [child]
@@ -37,21 +39,7 @@ class MarinaBackground extends StatelessWidget {
                   const SizedBox.shrink(),
             ),
           ),
-          // Scrim para manter os textos brancos legíveis sobre a imagem.
-          Positioned.fill(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.black.withValues(alpha: 0.55),
-                    Colors.black.withValues(alpha: 0.8),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          const Positioned.fill(child: BackgroundScrim()),
         ],
         child,
       ],

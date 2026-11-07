@@ -63,7 +63,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Este app precisa da sua localização para mostrar sua posição no mapa.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Este app pode acessar seus arquivos para importar cartas náuticas no formato .zip.</string>
+	<string>Este app acessa suas fotos e arquivos para anexar documentos da embarcação e importar cartas náuticas.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Este app usa a câmera para fotografar documentos da embarcação, como o TIE e a apólice de seguro.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
