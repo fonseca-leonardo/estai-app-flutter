@@ -1915,5 +1915,162 @@
         "type": "String"
       }
     }
-  }
+  },
+  "forecastNow": "Agora",
+  "@forecastNow": {},
+  "forecastEvolution": "Evolução",
+  "@forecastEvolution": {},
+  "forecastNextDays": "Próximos dias",
+  "@forecastNextDays": {},
+  "forecastToday": "Hoje",
+  "@forecastToday": {},
+  "forecastTomorrow": "Amanhã",
+  "@forecastTomorrow": {},
+  "forecastMoreDetails": "Mais detalhes",
+  "@forecastMoreDetails": {},
+  "forecastMoreDetailsAt": "Mais detalhes · {time}",
+  "@forecastMoreDetailsAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastMetricWind": "Vento",
+  "@forecastMetricWind": {},
+  "forecastMetricWaves": "Ondas",
+  "@forecastMetricWaves": {},
+  "forecastMetricTemperature": "Temperatura",
+  "@forecastMetricTemperature": {},
+  "forecastMetricRain": "Chuva",
+  "@forecastMetricRain": {},
+  "forecastMetricPressure": "Pressão",
+  "@forecastMetricPressure": {},
+  "forecastChartRainTitle": "Chance de chuva",
+  "@forecastChartRainTitle": {},
+  "forecastChartWindLegend": "Linha cheia: vento médio · tracejada: rajadas",
+  "@forecastChartWindLegend": {},
+  "forecastMinMax": "mín {min} · máx {max}",
+  "@forecastMinMax": {
+    "placeholders": {
+      "min": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastTrendRising": "Subindo",
+  "@forecastTrendRising": {},
+  "forecastTrendFalling": "Caindo",
+  "@forecastTrendFalling": {},
+  "forecastTrendSteady": "Estável",
+  "@forecastTrendSteady": {},
+  "forecastTrendTo": "{value} às {time}",
+  "@forecastTrendTo": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastHeadlineSteady": "Condições estáveis nas próximas horas",
+  "@forecastHeadlineSteady": {},
+  "forecastHeadlineWindRising": "Vento aumenta para {value} por volta das {time}",
+  "@forecastHeadlineWindRising": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastHeadlineWindFalling": "Vento diminui para {value} até {time}",
+  "@forecastHeadlineWindFalling": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastHeadlineWavesRising": "Ondas aumentam para {value} por volta das {time}",
+  "@forecastHeadlineWavesRising": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastHeadlineWavesFalling": "Ondas diminuem para {value} até {time}",
+  "@forecastHeadlineWavesFalling": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastHeadlineRain": "Chance de chuva de {value} a partir das {time}",
+  "@forecastHeadlineRain": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastHeadlineTemperatureRising": "Temperatura sobe para {value} até {time}",
+  "@forecastHeadlineTemperatureRising": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forecastHeadlineTemperatureFalling": "Temperatura cai para {value} até {time}",
+  "@forecastHeadlineTemperatureFalling": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "cardinalN": "N",
+  "@cardinalN": {},
+  "cardinalNE": "NE",
+  "@cardinalNE": {},
+  "cardinalE": "L",
+  "@cardinalE": {},
+  "cardinalSE": "SE",
+  "@cardinalSE": {},
+  "cardinalS": "S",
+  "@cardinalS": {},
+  "cardinalSW": "SO",
+  "@cardinalSW": {},
+  "cardinalW": "O",
+  "@cardinalW": {},
+  "cardinalNW": "NO",
+  "@cardinalNW": {}
 }

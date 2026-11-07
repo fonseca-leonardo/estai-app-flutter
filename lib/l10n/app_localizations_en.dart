@@ -2500,4 +2500,129 @@ class AppLocalizationsEn extends AppLocalizations {
   String deleteRouteConfirm(String name) {
     return 'The route \"$name\" will be deleted. Continue?';
   }
+
+  @override
+  String get forecastNow => 'Now';
+
+  @override
+  String get forecastEvolution => 'Trend';
+
+  @override
+  String get forecastNextDays => 'Next days';
+
+  @override
+  String get forecastToday => 'Today';
+
+  @override
+  String get forecastTomorrow => 'Tomorrow';
+
+  @override
+  String get forecastMoreDetails => 'More details';
+
+  @override
+  String forecastMoreDetailsAt(String time) {
+    return 'More details · $time';
+  }
+
+  @override
+  String get forecastMetricWind => 'Wind';
+
+  @override
+  String get forecastMetricWaves => 'Waves';
+
+  @override
+  String get forecastMetricTemperature => 'Temperature';
+
+  @override
+  String get forecastMetricRain => 'Rain';
+
+  @override
+  String get forecastMetricPressure => 'Pressure';
+
+  @override
+  String get forecastChartRainTitle => 'Chance of rain';
+
+  @override
+  String get forecastChartWindLegend => 'Solid line: average wind · dashed: gusts';
+
+  @override
+  String forecastMinMax(String min, String max) {
+    return 'min $min · max $max';
+  }
+
+  @override
+  String get forecastTrendRising => 'Rising';
+
+  @override
+  String get forecastTrendFalling => 'Falling';
+
+  @override
+  String get forecastTrendSteady => 'Steady';
+
+  @override
+  String forecastTrendTo(String value, String time) {
+    return '$value at $time';
+  }
+
+  @override
+  String get forecastHeadlineSteady => 'Steady conditions over the next hours';
+
+  @override
+  String forecastHeadlineWindRising(String value, String time) {
+    return 'Wind picks up to $value around $time';
+  }
+
+  @override
+  String forecastHeadlineWindFalling(String value, String time) {
+    return 'Wind eases to $value by $time';
+  }
+
+  @override
+  String forecastHeadlineWavesRising(String value, String time) {
+    return 'Waves build to $value around $time';
+  }
+
+  @override
+  String forecastHeadlineWavesFalling(String value, String time) {
+    return 'Waves drop to $value by $time';
+  }
+
+  @override
+  String forecastHeadlineRain(String value, String time) {
+    return '$value chance of rain from $time';
+  }
+
+  @override
+  String forecastHeadlineTemperatureRising(String value, String time) {
+    return 'Temperature rises to $value by $time';
+  }
+
+  @override
+  String forecastHeadlineTemperatureFalling(String value, String time) {
+    return 'Temperature drops to $value by $time';
+  }
+
+  @override
+  String get cardinalN => 'N';
+
+  @override
+  String get cardinalNE => 'NE';
+
+  @override
+  String get cardinalE => 'E';
+
+  @override
+  String get cardinalSE => 'SE';
+
+  @override
+  String get cardinalS => 'S';
+
+  @override
+  String get cardinalSW => 'SW';
+
+  @override
+  String get cardinalW => 'W';
+
+  @override
+  String get cardinalNW => 'NW';
 }

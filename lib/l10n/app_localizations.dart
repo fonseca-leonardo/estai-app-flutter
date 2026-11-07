@@ -4630,6 +4630,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The route \"{name}\" will be deleted. Continue?'**
   String deleteRouteConfirm(String name);
+
+  /// No description provided for @forecastNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Now'**
+  String get forecastNow;
+
+  /// No description provided for @forecastEvolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Trend'**
+  String get forecastEvolution;
+
+  /// No description provided for @forecastNextDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Next days'**
+  String get forecastNextDays;
+
+  /// No description provided for @forecastToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get forecastToday;
+
+  /// No description provided for @forecastTomorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow'**
+  String get forecastTomorrow;
+
+  /// No description provided for @forecastMoreDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'More details'**
+  String get forecastMoreDetails;
+
+  /// No description provided for @forecastMoreDetailsAt.
+  ///
+  /// In en, this message translates to:
+  /// **'More details · {time}'**
+  String forecastMoreDetailsAt(String time);
+
+  /// No description provided for @forecastMetricWind.
+  ///
+  /// In en, this message translates to:
+  /// **'Wind'**
+  String get forecastMetricWind;
+
+  /// No description provided for @forecastMetricWaves.
+  ///
+  /// In en, this message translates to:
+  /// **'Waves'**
+  String get forecastMetricWaves;
+
+  /// No description provided for @forecastMetricTemperature.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature'**
+  String get forecastMetricTemperature;
+
+  /// No description provided for @forecastMetricRain.
+  ///
+  /// In en, this message translates to:
+  /// **'Rain'**
+  String get forecastMetricRain;
+
+  /// No description provided for @forecastMetricPressure.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure'**
+  String get forecastMetricPressure;
+
+  /// No description provided for @forecastChartRainTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chance of rain'**
+  String get forecastChartRainTitle;
+
+  /// No description provided for @forecastChartWindLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Solid line: average wind · dashed: gusts'**
+  String get forecastChartWindLegend;
+
+  /// No description provided for @forecastMinMax.
+  ///
+  /// In en, this message translates to:
+  /// **'min {min} · max {max}'**
+  String forecastMinMax(String min, String max);
+
+  /// No description provided for @forecastTrendRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Rising'**
+  String get forecastTrendRising;
+
+  /// No description provided for @forecastTrendFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Falling'**
+  String get forecastTrendFalling;
+
+  /// No description provided for @forecastTrendSteady.
+  ///
+  /// In en, this message translates to:
+  /// **'Steady'**
+  String get forecastTrendSteady;
+
+  /// No description provided for @forecastTrendTo.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} at {time}'**
+  String forecastTrendTo(String value, String time);
+
+  /// No description provided for @forecastHeadlineSteady.
+  ///
+  /// In en, this message translates to:
+  /// **'Steady conditions over the next hours'**
+  String get forecastHeadlineSteady;
+
+  /// No description provided for @forecastHeadlineWindRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Wind picks up to {value} around {time}'**
+  String forecastHeadlineWindRising(String value, String time);
+
+  /// No description provided for @forecastHeadlineWindFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Wind eases to {value} by {time}'**
+  String forecastHeadlineWindFalling(String value, String time);
+
+  /// No description provided for @forecastHeadlineWavesRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Waves build to {value} around {time}'**
+  String forecastHeadlineWavesRising(String value, String time);
+
+  /// No description provided for @forecastHeadlineWavesFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Waves drop to {value} by {time}'**
+  String forecastHeadlineWavesFalling(String value, String time);
+
+  /// No description provided for @forecastHeadlineRain.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} chance of rain from {time}'**
+  String forecastHeadlineRain(String value, String time);
+
+  /// No description provided for @forecastHeadlineTemperatureRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature rises to {value} by {time}'**
+  String forecastHeadlineTemperatureRising(String value, String time);
+
+  /// No description provided for @forecastHeadlineTemperatureFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature drops to {value} by {time}'**
+  String forecastHeadlineTemperatureFalling(String value, String time);
+
+  /// No description provided for @cardinalN.
+  ///
+  /// In en, this message translates to:
+  /// **'N'**
+  String get cardinalN;
+
+  /// No description provided for @cardinalNE.
+  ///
+  /// In en, this message translates to:
+  /// **'NE'**
+  String get cardinalNE;
+
+  /// No description provided for @cardinalE.
+  ///
+  /// In en, this message translates to:
+  /// **'E'**
+  String get cardinalE;
+
+  /// No description provided for @cardinalSE.
+  ///
+  /// In en, this message translates to:
+  /// **'SE'**
+  String get cardinalSE;
+
+  /// No description provided for @cardinalS.
+  ///
+  /// In en, this message translates to:
+  /// **'S'**
+  String get cardinalS;
+
+  /// No description provided for @cardinalSW.
+  ///
+  /// In en, this message translates to:
+  /// **'SW'**
+  String get cardinalSW;
+
+  /// No description provided for @cardinalW.
+  ///
+  /// In en, this message translates to:
+  /// **'W'**
+  String get cardinalW;
+
+  /// No description provided for @cardinalNW.
+  ///
+  /// In en, this message translates to:
+  /// **'NW'**
+  String get cardinalNW;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

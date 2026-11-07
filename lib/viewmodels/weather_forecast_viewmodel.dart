@@ -1,16 +1,31 @@
 import 'package:flutter/foundation.dart';
 import 'package:latlong2/latlong.dart';
+import '../models/forecast_metric.dart';
 import '../models/marine_forecast.dart';
 import '../models/weather_forecast.dart';
 import '../services/meteo_service.dart';
 import '../services/maps_api_client.dart';
+import '../utils/forecast_analysis.dart';
 
 class ForecastHourData {
+  /// Hora como veio da API (UTC, sem fuso).
   final String time;
+
+  /// [time] já convertido para o horário do aparelho.
+  final DateTime timeLocal;
   final MarineHourlyData? marine;
   final WeatherHourlyData? weather;
 
-  ForecastHourData({required this.time, this.marine, this.weather});
+  ForecastHourData({
+    required this.time,
+    DateTime? timeLocal,
+    this.marine,
+    this.weather,
+  }) : timeLocal = timeLocal ?? parseApiTime(time);
+
+  /// A API manda as horas em UTC sem o "Z".
+  static DateTime parseApiTime(String value) =>
+      DateTime.parse('${value}Z').toUtc().toLocal();
 }
 
 class MarineHourlyData {
@@ -51,6 +66,7 @@ class WeatherHourlyData {
 
 class WeatherForecastViewModel extends ChangeNotifier {
   final MeteoService _meteoService;
+  final DateTime Function() _clock;
 
   MarineForecast? _marineForecast;
   WeatherForecast? _weatherForecast;
@@ -60,8 +76,18 @@ class WeatherForecastViewModel extends ChangeNotifier {
   double? _lastFetchLatitude;
   double? _lastFetchLongitude;
 
-  WeatherForecastViewModel({MeteoService? meteoService})
-    : _meteoService = meteoService ?? MeteoService();
+  ForecastHourData? _currentHour;
+  Map<ForecastMetric, ForecastTrend> _trends = {};
+  ForecastHeadline? _headline;
+  List<DailyForecastSummary> _dailySummaries = [];
+  ForecastMetric _selectedMetric = ForecastMetric.wind;
+  DateTime? _selectedTime;
+
+  WeatherForecastViewModel({
+    MeteoService? meteoService,
+    DateTime Function()? clock,
+  }) : _meteoService = meteoService ?? MeteoService(),
+       _clock = clock ?? DateTime.now;
 
   MarineForecast? get marineForecast => _marineForecast;
   WeatherForecast? get weatherForecast => _weatherForecast;
@@ -71,9 +97,78 @@ class WeatherForecastViewModel extends ChangeNotifier {
   double? get lastFetchLatitude => _lastFetchLatitude;
   double? get lastFetchLongitude => _lastFetchLongitude;
 
+  /// Hora vigente da previsão (base do "Agora").
+  ForecastHourData? get currentHour => _currentHour;
+  ForecastTrend trendFor(ForecastMetric metric) =>
+      _trends[metric] ?? ForecastTrend.unknown;
+
+  /// Fato mais relevante das próximas 12 h; `null` = condições estáveis.
+  ForecastHeadline? get headline => _headline;
+  List<DailyForecastSummary> get dailySummaries => _dailySummaries;
+
+  ForecastMetric get selectedMetric => _selectedMetric;
+
+  /// Hora tocada no gráfico; sem toque, vale a hora vigente.
+  DateTime? get selectedTime => _selectedTime;
+  ForecastHourData? get selectedHour {
+    final time = _selectedTime;
+    if (time == null) return _currentHour;
+    for (final hour in _forecastData) {
+      if (hour.timeLocal == time) return hour;
+    }
+    return _currentHour;
+  }
+
+  String get windUnit =>
+      _unit(_weatherForecast?.hourlyUnits.windSpeed10m, 'kn');
+  String get waveUnit => _unit(_marineForecast?.hourlyUnits.waveHeight, 'm');
+  String get wavePeriodUnit =>
+      _unit(_marineForecast?.hourlyUnits.wavePeriod, 's');
+  String get temperatureUnit =>
+      _unit(_weatherForecast?.hourlyUnits.temperature2m, '°C');
+  String get pressureUnit =>
+      _unit(_weatherForecast?.hourlyUnits.pressureMsl, 'hPa');
+  String get precipitationUnit =>
+      _unit(_weatherForecast?.hourlyUnits.precipitation, 'mm');
+
+  String unitFor(ForecastMetric metric) {
+    switch (metric) {
+      case ForecastMetric.wind:
+        return windUnit;
+      case ForecastMetric.waves:
+        return waveUnit;
+      case ForecastMetric.temperature:
+        return temperatureUnit;
+      case ForecastMetric.rain:
+        return '%';
+      case ForecastMetric.pressure:
+        return pressureUnit;
+    }
+  }
+
+  /// O Open-Meteo manda "kn" para nós; o resto já vem legível.
+  static String _unit(String? value, String fallback) {
+    final trimmed = value?.trim() ?? '';
+    return trimmed.isEmpty ? fallback : trimmed;
+  }
+
+  void selectMetric(ForecastMetric metric) {
+    if (_selectedMetric == metric) return;
+    _selectedMetric = metric;
+    notifyListeners();
+  }
+
+  void selectTime(DateTime? time) {
+    if (_selectedTime == time) return;
+    _selectedTime = time;
+    notifyListeners();
+  }
+
   Future<void> fetchForecasts(double latitude, double longitude) async {
     _isLoading = true;
     _errorMessage = null;
+    _selectedMetric = ForecastMetric.wind;
+    _selectedTime = null;
     notifyListeners();
 
     try {
@@ -128,14 +223,13 @@ class WeatherForecastViewModel extends ChangeNotifier {
 
     final sortedTimes = allTimes.toList()..sort();
 
-    final now = DateTime.now();
+    final now = _clock();
     final minTime = now.subtract(const Duration(hours: 1));
     final maxTime = now.add(const Duration(hours: 72));
 
     for (final timeStr in sortedTimes) {
       try {
-        final timeUtc = DateTime.parse('${timeStr}Z').toUtc();
-        final time = timeUtc.toLocal();
+        final time = ForecastHourData.parseApiTime(timeStr);
         if (time.isBefore(minTime) || time.isAfter(maxTime)) {
           continue;
         }
@@ -188,6 +282,7 @@ class WeatherForecastViewModel extends ChangeNotifier {
           _forecastData.add(
             ForecastHourData(
               time: timeStr,
+              timeLocal: time,
               marine: marineData,
               weather: weatherData,
             ),
@@ -199,6 +294,29 @@ class WeatherForecastViewModel extends ChangeNotifier {
     }
 
     _forecastData.sort((a, b) => a.time.compareTo(b.time));
+    _analyze();
+  }
+
+  /// Calcula uma vez o que a tela mostra: hora vigente, tendências, frase
+  /// de resumo e resumo por dia.
+  void _analyze() {
+    final now = _clock();
+    _currentHour = ForecastAnalysis.currentHour(_forecastData, now);
+    _trends = {
+      for (final metric in ForecastMetric.values)
+        metric: ForecastAnalysis.trend(
+          _forecastData,
+          metric,
+          now: now,
+          unit: metric == ForecastMetric.wind ? windUnit : null,
+        ),
+    };
+    _headline = ForecastAnalysis.headline(
+      _forecastData,
+      now: now,
+      windUnit: windUnit,
+    );
+    _dailySummaries = ForecastAnalysis.dailySummaries(_forecastData, now: now);
   }
 
   bool shouldFetchForecasts(double latitude, double longitude) {
@@ -220,6 +338,11 @@ class WeatherForecastViewModel extends ChangeNotifier {
     _marineForecast = null;
     _weatherForecast = null;
     _forecastData = [];
+    _currentHour = null;
+    _trends = {};
+    _headline = null;
+    _dailySummaries = [];
+    _selectedTime = null;
     _errorMessage = null;
     _lastFetchLatitude = null;
     _lastFetchLongitude = null;
