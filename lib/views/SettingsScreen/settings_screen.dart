@@ -14,6 +14,7 @@ import '../ListMapsScreen/list_maps_screen.dart';
 import '../NavigationSettingsScreen/navigation_settings_screen.dart';
 import '../NavigationPermissionScreen/navigation_permission_screen.dart';
 import '../DocumentsScreen/documents_screen.dart';
+import '../ChecklistsScreen/checklists_screen.dart';
 import '../UserAccountScreen/user_account_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 import '../LoginScreen/login_screen.dart';
@@ -88,6 +89,17 @@ class _SettingsScreenState extends State<SettingsScreen>
                         onTap: () => Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (_) => const NavigationSettingsScreen(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      AppTile(
+                        title: l10n.checklistsTitle,
+                        subtitle: l10n.checklistsSubtitle,
+                        icon: Icons.checklist_rounded,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const ChecklistsScreen(),
                           ),
                         ),
                       ),

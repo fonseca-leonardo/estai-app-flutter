@@ -5,7 +5,7 @@ import '../../TideScreen/tide_screen.dart';
 import '../../SettingsScreen/settings_screen.dart';
 import '../../RoutesListScreen/routes_list_screen.dart';
 import '../../BoatsListScreen/boats_list_screen.dart';
-import '../../NavigationPermissionScreen/navigation_permission_screen.dart';
+import '../../ChecklistsScreen/checklists_screen.dart';
 import 'feedback_suggestion_dialog.dart';
 import '../../../viewmodels/map_viewmodel.dart';
 import '../../../viewmodels/navigation_status_viewmodel.dart';
@@ -257,8 +257,8 @@ class MapBottomSheet extends StatelessWidget {
                           },
                         ),
                         _GridItem(
-                          icon: Icons.location_on,
-                          title: l10n.navigationPermission,
+                          icon: Icons.checklist_rounded,
+                          title: l10n.checklistsTitle,
                           onTap: () {
                             final navigatorContext = parentContext ?? context;
                             Navigator.pop(context);
@@ -267,7 +267,7 @@ class MapBottomSheet extends StatelessWidget {
                                 Navigator.of(navigatorContext).push(
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const NavigationPermissionScreen(),
+                                        const ChecklistsScreen(),
                                   ),
                                 );
                               }

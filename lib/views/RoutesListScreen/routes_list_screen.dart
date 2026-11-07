@@ -1,19 +1,23 @@
-import '../../widgets/ui/app_scaffold.dart';
-import '../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../models/route.dart' as route_model;
-import '../../viewmodels/routes_viewmodel.dart';
-import '../../viewmodels/route_planner_viewmodel.dart';
+import '../../utils/route_geometry.dart';
 import '../../viewmodels/map_viewmodel.dart';
 import '../../viewmodels/navigation_status_viewmodel.dart';
+import '../../viewmodels/route_planner_viewmodel.dart';
+import '../../viewmodels/routes_viewmodel.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/analytics_screen_mixin.dart';
 import '../../widgets/start_navigation_flow.dart';
+import '../../widgets/ui/app_scaffold.dart';
+import '../../widgets/ui/empty_state.dart';
+import '../../widgets/ui/glass_bar_background.dart';
 import '../MapScreen/map_screen.dart';
+import 'widgets/delete_route_dialog.dart';
+import 'widgets/edit_route_name_dialog.dart';
+import 'widgets/route_card.dart';
+import 'widgets/route_details_dialog.dart';
 
 class RoutesListScreen extends StatefulWidget {
   const RoutesListScreen({super.key});
@@ -27,6 +31,55 @@ class _RoutesListScreenState extends State<RoutesListScreen>
   @override
   String get analyticsScreenName => 'RoutesListScreen';
 
+  /// Carrega a rota no planejador e inicia a navegação com ela.
+  Future<void> _openRoute(route_model.Route route) async {
+    final routePlanner = context.read<RoutePlannerViewModel>();
+    final mapViewModel = context.read<MapViewModel>();
+    final navigationStatus = context.read<NavigationStatusViewModel>();
+
+    final navigate = await showRouteDetailsDialog(context, route);
+    if (!navigate || !mounted || route.points.isEmpty) return;
+
+    navigationStatus.resetNavigation();
+    routePlanner.clearRoute();
+    for (final point in route.points) {
+      routePlanner.addRoutePoint(point);
+    }
+    routePlanner.confirmRoute();
+    mapViewModel.setIsPlanningRoute(false);
+
+    final started = await StartNavigationFlow.start(
+      context,
+      plannedRoute: routePlanner.routePoints,
+    );
+    if (!started || !mounted) return;
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) =>
+            MapScreen(initialLocation: RouteGeometry.center(route.points)),
+      ),
+    );
+  }
+
+  Future<void> _editName(route_model.Route route) async {
+    final routes = context.read<RoutesViewModel>();
+    final name = await showEditRouteNameDialog(
+      context,
+      currentName: route.name,
+    );
+    if (name != null) routes.updateRoute(route.id, name);
+  }
+
+  Future<void> _delete(route_model.Route route) async {
+    final routes = context.read<RoutesViewModel>();
+    final confirmed = await showDeleteRouteDialog(
+      context,
+      routeName: route.name,
+    );
+    if (confirmed) routes.deleteRoute(route.id);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -34,34 +87,27 @@ class _RoutesListScreenState extends State<RoutesListScreen>
     return AppScaffold(
       appBar: AppBar(
         title: Text(l10n.myRoutes),
-        backgroundColor: Colors.black.withValues(alpha: 0.78),
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         foregroundColor: Colors.white,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        flexibleSpace: const GlassBarBackground(),
       ),
       body: Consumer<RoutesViewModel>(
         builder: (context, viewModel, child) {
           if (viewModel.isLoading && viewModel.routes.isEmpty) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+              child: CircularProgressIndicator(color: Colors.white),
+            );
           }
 
           if (viewModel.routes.isEmpty) {
             return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.route,
-                    size: 64,
-                    color: Colors.white.withValues(alpha: 0.5),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    l10n.noRoutesFound,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
+              child: EmptyState(
+                icon: Icons.route,
+                message: l10n.noRoutesFound,
+                bordered: false,
               ),
             );
           }
@@ -71,400 +117,17 @@ class _RoutesListScreenState extends State<RoutesListScreen>
             itemCount: viewModel.routes.length,
             itemBuilder: (context, index) {
               final route = viewModel.routes[index];
-              return _RouteCard(route: route);
+              return RouteCard(
+                route: route,
+                onTap: () => _openRoute(route),
+                onEdit: () => _editName(route),
+                onDelete: () => _delete(route),
+              );
             },
           );
         },
       ),
       bottomNavigationBar: const AdBannerWidget(),
-    );
-  }
-}
-
-class _RouteCard extends StatelessWidget {
-  final route_model.Route route;
-
-  const _RouteCard({required this.route});
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final dateFormat = DateFormat('dd/MM/yyyy HH:mm');
-
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.2),
-          width: 1,
-        ),
-      ),
-      child: InkWell(
-        onTap: () => _loadRoute(context),
-        borderRadius: BorderRadius.circular(12),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Text(
-                      route.name,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  PopupMenuButton<String>(
-                    icon: const Icon(Icons.more_vert, color: Colors.white70),
-                    color: Colors.black.withValues(alpha: 0.94),
-                    onSelected: (value) {
-                      if (value == 'edit') {
-                        _editRouteName(context);
-                      } else if (value == 'delete') {
-                        _deleteRoute(context);
-                      }
-                    },
-                    itemBuilder: (context) => [
-                      PopupMenuItem(
-                        value: 'edit',
-                        child: Row(
-                          children: [
-                            const Icon(
-                              Icons.edit,
-                              color: Colors.white70,
-                              size: 20,
-                            ),
-                            const SizedBox(width: 8),
-                            Text(
-                              l10n.editRouteName,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      ),
-                      PopupMenuItem(
-                        value: 'delete',
-                        child: Row(
-                          children: [
-                            const Icon(
-                              Icons.delete,
-                              color: AppColors.danger,
-                              size: 20,
-                            ),
-                            const SizedBox(width: 8),
-                            Text(
-                              l10n.deleteRoute,
-                              style: const TextStyle(color: AppColors.danger),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Icon(
-                    Icons.location_on,
-                    size: 16,
-                    color: Colors.white.withValues(alpha: 0.7),
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${route.points.length} ${l10n.points}',
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 14,
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Icon(
-                    Icons.calendar_today,
-                    size: 16,
-                    color: Colors.white.withValues(alpha: 0.7),
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    dateFormat.format(route.createdAt),
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  void _loadRoute(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final routePlannerViewModel = context.read<RoutePlannerViewModel>();
-    final mapViewModel = context.read<MapViewModel>();
-    final navigationStatusViewModel = context.read<NavigationStatusViewModel>();
-
-    final totalDistance = _calculateTotalDistance(route.points);
-    final distanceText = _formatDistanceInNauticalMiles(totalDistance);
-
-    showDialog(
-      context: context,
-      builder: (dialogContext) {
-        return AlertDialog(
-          backgroundColor: Colors.black.withValues(alpha: 0.94),
-          title: Text(
-            l10n.routeDetails,
-            style: const TextStyle(color: Colors.white),
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                route.name,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  Icon(
-                    Icons.location_on,
-                    size: 16,
-                    color: Colors.white.withValues(alpha: 0.7),
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${route.points.length} ${l10n.points}',
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Icon(
-                    Icons.straighten,
-                    size: 16,
-                    color: Colors.white.withValues(alpha: 0.7),
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${l10n.totalDistance}: $distanceText',
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(dialogContext).pop();
-              },
-              child: Text(
-                l10n.cancel,
-                style: const TextStyle(color: AppColors.danger),
-              ),
-            ),
-            TextButton(
-              onPressed: () async {
-                if (route.points.isEmpty) {
-                  return;
-                }
-
-                Navigator.of(dialogContext).pop();
-
-                navigationStatusViewModel.resetNavigation();
-                routePlannerViewModel.clearRoute();
-                for (final point in route.points) {
-                  routePlannerViewModel.addRoutePoint(point);
-                }
-                routePlannerViewModel.confirmRoute();
-                mapViewModel.setIsPlanningRoute(false);
-
-                final started = await StartNavigationFlow.start(
-                  context,
-                  plannedRoute: routePlannerViewModel.routePoints,
-                );
-                if (!started || !context.mounted) return;
-
-                final routeCenter = _calculateRouteCenter(route.points);
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => MapScreen(initialLocation: routeCenter),
-                  ),
-                );
-              },
-              child: Text(
-                l10n.startNavigationWithRoute,
-                style: const TextStyle(color: AppColors.success),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  double _calculateTotalDistance(List<LatLng> points) {
-    if (points.length < 2) {
-      return 0.0;
-    }
-
-    const distance = Distance();
-    double totalDistance = 0.0;
-
-    for (int i = 0; i < points.length - 1; i++) {
-      totalDistance += distance.as(LengthUnit.Meter, points[i], points[i + 1]);
-    }
-
-    return totalDistance;
-  }
-
-  String _formatDistanceInNauticalMiles(double distanceInMeters) {
-    const metersPerNauticalMile = 1852.0;
-    final nauticalMiles = distanceInMeters / metersPerNauticalMile;
-    return '${nauticalMiles.toStringAsFixed(2)} NM';
-  }
-
-  LatLng _calculateRouteCenter(List<LatLng> points) {
-    if (points.length == 1) {
-      return points.first;
-    }
-
-    double sumLat = 0.0;
-    double sumLng = 0.0;
-
-    for (final point in points) {
-      sumLat += point.latitude;
-      sumLng += point.longitude;
-    }
-
-    return LatLng(sumLat / points.length, sumLng / points.length);
-  }
-
-  void _editRouteName(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final routesViewModel = context.read<RoutesViewModel>();
-    final nameController = TextEditingController(text: route.name);
-
-    showDialog(
-      context: context,
-      builder: (dialogContext) {
-        return AlertDialog(
-          backgroundColor: Colors.black.withValues(alpha: 0.94),
-          title: Text(
-            l10n.editRouteName,
-            style: const TextStyle(color: Colors.white),
-          ),
-          content: TextField(
-            controller: nameController,
-            style: const TextStyle(color: Colors.white),
-            decoration: InputDecoration(
-              labelText: l10n.routeName,
-              labelStyle: const TextStyle(color: Colors.white70),
-              enabledBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.white70),
-              ),
-              focusedBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.white),
-              ),
-            ),
-            autofocus: true,
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(dialogContext).pop();
-              },
-              child: Text(
-                l10n.cancel,
-                style: const TextStyle(color: AppColors.danger),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                if (nameController.text.trim().isNotEmpty) {
-                  routesViewModel.updateRoute(
-                    route.id,
-                    nameController.text.trim(),
-                  );
-                  Navigator.of(dialogContext).pop();
-                }
-              },
-              child: Text(
-                l10n.confirm,
-                style: TextStyle(color: AppColors.success),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  void _deleteRoute(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final routesViewModel = context.read<RoutesViewModel>();
-
-    showDialog(
-      context: context,
-      builder: (dialogContext) {
-        return AlertDialog(
-          backgroundColor: Colors.black.withValues(alpha: 0.94),
-          title: Text(
-            l10n.deleteRoute,
-            style: const TextStyle(color: Colors.white),
-          ),
-          content: Text(
-            'Are you sure you want to delete "${route.name}"?',
-            style: const TextStyle(color: Colors.white70),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(dialogContext).pop();
-              },
-              child: Text(
-                l10n.cancel,
-                style: const TextStyle(color: Colors.white70),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                routesViewModel.deleteRoute(route.id);
-                Navigator.of(dialogContext).pop();
-              },
-              child: const Text(
-                'Delete',
-                style: TextStyle(color: AppColors.danger),
-              ),
-            ),
-          ],
-        );
-      },
     );
   }
 }

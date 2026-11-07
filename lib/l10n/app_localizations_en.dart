@@ -1633,7 +1633,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notificationSettings => 'Notifications';
 
   @override
-  String get notificationPrefsDescription => 'Maintenance reminders are sent by Estai through the channels you turn on.';
+  String get notificationPrefsDescription => 'Maintenance reminders and alerts are sent by Estai through the channels you turn on.';
 
   @override
   String get notificationPrefsPush => 'Push notifications';
@@ -2317,5 +2317,187 @@ class AppLocalizationsEn extends AppLocalizations {
       one: '1 document expired or expiring soon',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get checklistsTitle => 'Checklists';
+
+  @override
+  String get checklistsSubtitle => 'Before and after navigating';
+
+  @override
+  String get checklistsEmpty => 'No checklists yet. Create one to check the boat before leaving or when you return.';
+
+  @override
+  String get checklistNew => 'New checklist';
+
+  @override
+  String get checklistEdit => 'Edit checklist';
+
+  @override
+  String get checklistSave => 'Save checklist';
+
+  @override
+  String get checklistSaved => 'Checklist saved';
+
+  @override
+  String get checklistSaveError => 'Could not save the checklist. Please try again.';
+
+  @override
+  String get checklistDelete => 'Delete checklist';
+
+  @override
+  String get checklistDeleteConfirm => 'This checklist will be deleted from this device. Continue?';
+
+  @override
+  String get checklistNameLabel => 'Name';
+
+  @override
+  String get checklistNameHint => 'E.g. Before leaving';
+
+  @override
+  String get checklistNameRequired => 'Enter a name';
+
+  @override
+  String get checklistTriggerLabel => 'When it shows up';
+
+  @override
+  String get checklistTriggerBefore => 'Before navigating';
+
+  @override
+  String get checklistTriggerAfter => 'After navigating';
+
+  @override
+  String get checklistTriggerNone => 'Not linked';
+
+  @override
+  String get checklistTriggerBeforeDescription => 'Opens automatically when you tap Navigate, before navigation starts.';
+
+  @override
+  String get checklistTriggerAfterDescription => 'Opens automatically when you finish navigating.';
+
+  @override
+  String get checklistTriggerNoneDescription => 'Never opens on its own. Run it whenever you want from this screen.';
+
+  @override
+  String get checklistItemsSection => 'Items';
+
+  @override
+  String get checklistItemHint => 'Describe the item';
+
+  @override
+  String get checklistAddItem => 'Add item';
+
+  @override
+  String get checklistRemoveItem => 'Remove item';
+
+  @override
+  String get checklistItemsLimit => 'Item limit reached';
+
+  @override
+  String get checklistNoItemsError => 'Add at least one item.';
+
+  @override
+  String checklistItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get checklistRunBeforeTitle => 'Before navigating';
+
+  @override
+  String get checklistRunAfterTitle => 'After navigating';
+
+  @override
+  String checklistRunProgress(int checked, int total) {
+    return '$checked of $total';
+  }
+
+  @override
+  String get checklistRunComplete => 'All checked';
+
+  @override
+  String get checklistUncheckAll => 'Uncheck all';
+
+  @override
+  String get checklistStartNavigation => 'Start navigation';
+
+  @override
+  String get checklistSkip => 'Skip checklist';
+
+  @override
+  String get checklistDone => 'Done';
+
+  @override
+  String get checklistMissingItemsTitle => 'Unchecked items';
+
+  @override
+  String checklistMissingItemsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items are unchecked. Start navigation anyway?',
+      one: '1 item is unchecked. Start navigation anyway?',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get checklistDefaultBeforeName => 'Before leaving';
+
+  @override
+  String get checklistDefaultBeforeFuel => 'Enough fuel for the trip';
+
+  @override
+  String get checklistDefaultBeforeOil => 'Engine oil level';
+
+  @override
+  String get checklistDefaultBeforeDrainPlug => 'Hull drain plug in place';
+
+  @override
+  String get checklistDefaultBeforeBattery => 'Battery and navigation lights';
+
+  @override
+  String get checklistDefaultBeforeLifeJackets => 'Life jackets for everyone on board';
+
+  @override
+  String get checklistDefaultBeforeSafety => 'Fire extinguisher and flares';
+
+  @override
+  String get checklistDefaultBeforeWeather => 'Weather and sea forecast checked';
+
+  @override
+  String get checklistDefaultBeforeFloatPlan => 'Tell someone your float plan';
+
+  @override
+  String get checklistDefaultAfterName => 'When back';
+
+  @override
+  String get checklistDefaultAfterFlushEngine => 'Flush the engine with fresh water';
+
+  @override
+  String get checklistDefaultAfterFuelValve => 'Close the fuel valve';
+
+  @override
+  String get checklistDefaultAfterMainSwitch => 'Turn off the battery switch';
+
+  @override
+  String get checklistDefaultAfterTrash => 'Take the trash off the boat';
+
+  @override
+  String get checklistDefaultAfterLines => 'Check lines and fenders';
+
+  @override
+  String get checklistDefaultAfterCover => 'Put the cover on';
+
+  @override
+  String deleteRouteConfirm(String name) {
+    return 'The route \"$name\" will be deleted. Continue?';
   }
 }

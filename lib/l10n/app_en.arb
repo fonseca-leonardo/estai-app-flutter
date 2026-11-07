@@ -1248,7 +1248,7 @@
   "@reminderChannelsLabel": {},
   "notificationSettings": "Notifications",
   "@notificationSettings": {},
-  "notificationPrefsDescription": "Maintenance reminders are sent by Estai through the channels you turn on.",
+  "notificationPrefsDescription": "Maintenance reminders and alerts are sent by Estai through the channels you turn on.",
   "@notificationPrefsDescription": {},
   "notificationPrefsPush": "Push notifications",
   "@notificationPrefsPush": {},
@@ -1778,6 +1778,141 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "checklistsTitle": "Checklists",
+  "@checklistsTitle": {},
+  "checklistsSubtitle": "Before and after navigating",
+  "@checklistsSubtitle": {},
+  "checklistsEmpty": "No checklists yet. Create one to check the boat before leaving or when you return.",
+  "@checklistsEmpty": {},
+  "checklistNew": "New checklist",
+  "@checklistNew": {},
+  "checklistEdit": "Edit checklist",
+  "@checklistEdit": {},
+  "checklistSave": "Save checklist",
+  "@checklistSave": {},
+  "checklistSaved": "Checklist saved",
+  "@checklistSaved": {},
+  "checklistSaveError": "Could not save the checklist. Please try again.",
+  "@checklistSaveError": {},
+  "checklistDelete": "Delete checklist",
+  "@checklistDelete": {},
+  "checklistDeleteConfirm": "This checklist will be deleted from this device. Continue?",
+  "@checklistDeleteConfirm": {},
+  "checklistNameLabel": "Name",
+  "@checklistNameLabel": {},
+  "checklistNameHint": "E.g. Before leaving",
+  "@checklistNameHint": {},
+  "checklistNameRequired": "Enter a name",
+  "@checklistNameRequired": {},
+  "checklistTriggerLabel": "When it shows up",
+  "@checklistTriggerLabel": {},
+  "checklistTriggerBefore": "Before navigating",
+  "@checklistTriggerBefore": {},
+  "checklistTriggerAfter": "After navigating",
+  "@checklistTriggerAfter": {},
+  "checklistTriggerNone": "Not linked",
+  "@checklistTriggerNone": {},
+  "checklistTriggerBeforeDescription": "Opens automatically when you tap Navigate, before navigation starts.",
+  "@checklistTriggerBeforeDescription": {},
+  "checklistTriggerAfterDescription": "Opens automatically when you finish navigating.",
+  "@checklistTriggerAfterDescription": {},
+  "checklistTriggerNoneDescription": "Never opens on its own. Run it whenever you want from this screen.",
+  "@checklistTriggerNoneDescription": {},
+  "checklistItemsSection": "Items",
+  "@checklistItemsSection": {},
+  "checklistItemHint": "Describe the item",
+  "@checklistItemHint": {},
+  "checklistAddItem": "Add item",
+  "@checklistAddItem": {},
+  "checklistRemoveItem": "Remove item",
+  "@checklistRemoveItem": {},
+  "checklistItemsLimit": "Item limit reached",
+  "@checklistItemsLimit": {},
+  "checklistNoItemsError": "Add at least one item.",
+  "@checklistNoItemsError": {},
+  "checklistItemsCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@checklistItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistRunBeforeTitle": "Before navigating",
+  "@checklistRunBeforeTitle": {},
+  "checklistRunAfterTitle": "After navigating",
+  "@checklistRunAfterTitle": {},
+  "checklistRunProgress": "{checked} of {total}",
+  "@checklistRunProgress": {
+    "placeholders": {
+      "checked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistRunComplete": "All checked",
+  "@checklistRunComplete": {},
+  "checklistUncheckAll": "Uncheck all",
+  "@checklistUncheckAll": {},
+  "checklistStartNavigation": "Start navigation",
+  "@checklistStartNavigation": {},
+  "checklistSkip": "Skip checklist",
+  "@checklistSkip": {},
+  "checklistDone": "Done",
+  "@checklistDone": {},
+  "checklistMissingItemsTitle": "Unchecked items",
+  "@checklistMissingItemsTitle": {},
+  "checklistMissingItemsMessage": "{count, plural, =1{1 item is unchecked. Start navigation anyway?} other{{count} items are unchecked. Start navigation anyway?}}",
+  "@checklistMissingItemsMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistDefaultBeforeName": "Before leaving",
+  "@checklistDefaultBeforeName": {},
+  "checklistDefaultBeforeFuel": "Enough fuel for the trip",
+  "@checklistDefaultBeforeFuel": {},
+  "checklistDefaultBeforeOil": "Engine oil level",
+  "@checklistDefaultBeforeOil": {},
+  "checklistDefaultBeforeDrainPlug": "Hull drain plug in place",
+  "@checklistDefaultBeforeDrainPlug": {},
+  "checklistDefaultBeforeBattery": "Battery and navigation lights",
+  "@checklistDefaultBeforeBattery": {},
+  "checklistDefaultBeforeLifeJackets": "Life jackets for everyone on board",
+  "@checklistDefaultBeforeLifeJackets": {},
+  "checklistDefaultBeforeSafety": "Fire extinguisher and flares",
+  "@checklistDefaultBeforeSafety": {},
+  "checklistDefaultBeforeWeather": "Weather and sea forecast checked",
+  "@checklistDefaultBeforeWeather": {},
+  "checklistDefaultBeforeFloatPlan": "Tell someone your float plan",
+  "@checklistDefaultBeforeFloatPlan": {},
+  "checklistDefaultAfterName": "When back",
+  "@checklistDefaultAfterName": {},
+  "checklistDefaultAfterFlushEngine": "Flush the engine with fresh water",
+  "@checklistDefaultAfterFlushEngine": {},
+  "checklistDefaultAfterFuelValve": "Close the fuel valve",
+  "@checklistDefaultAfterFuelValve": {},
+  "checklistDefaultAfterMainSwitch": "Turn off the battery switch",
+  "@checklistDefaultAfterMainSwitch": {},
+  "checklistDefaultAfterTrash": "Take the trash off the boat",
+  "@checklistDefaultAfterTrash": {},
+  "checklistDefaultAfterLines": "Check lines and fenders",
+  "@checklistDefaultAfterLines": {},
+  "checklistDefaultAfterCover": "Put the cover on",
+  "@checklistDefaultAfterCover": {},
+  "deleteRouteConfirm": "The route \"{name}\" will be deleted. Continue?",
+  "@deleteRouteConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   }

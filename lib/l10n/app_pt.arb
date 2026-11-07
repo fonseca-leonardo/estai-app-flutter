@@ -1248,7 +1248,7 @@
   "@reminderChannelsLabel": {},
   "notificationSettings": "Notificações",
   "@notificationSettings": {},
-  "notificationPrefsDescription": "Os lembretes de manutenção são enviados pela Estai pelos canais que você ativar.",
+  "notificationPrefsDescription": "Os lembretes de manutenção e alertas são enviados pela Estai pelos canais que você ativar.",
   "@notificationPrefsDescription": {},
   "notificationPrefsPush": "Notificações push",
   "@notificationPrefsPush": {},
@@ -1778,6 +1778,141 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "checklistsTitle": "Checklists",
+  "@checklistsTitle": {},
+  "checklistsSubtitle": "Antes e depois de navegar",
+  "@checklistsSubtitle": {},
+  "checklistsEmpty": "Nenhum checklist ainda. Crie um para conferir o barco antes de sair ou ao voltar.",
+  "@checklistsEmpty": {},
+  "checklistNew": "Novo checklist",
+  "@checklistNew": {},
+  "checklistEdit": "Editar checklist",
+  "@checklistEdit": {},
+  "checklistSave": "Salvar checklist",
+  "@checklistSave": {},
+  "checklistSaved": "Checklist salvo",
+  "@checklistSaved": {},
+  "checklistSaveError": "Não foi possível salvar o checklist. Tente novamente.",
+  "@checklistSaveError": {},
+  "checklistDelete": "Excluir checklist",
+  "@checklistDelete": {},
+  "checklistDeleteConfirm": "Este checklist será excluído do aparelho. Deseja continuar?",
+  "@checklistDeleteConfirm": {},
+  "checklistNameLabel": "Nome",
+  "@checklistNameLabel": {},
+  "checklistNameHint": "Ex.: Antes de sair",
+  "@checklistNameHint": {},
+  "checklistNameRequired": "Informe um nome",
+  "@checklistNameRequired": {},
+  "checklistTriggerLabel": "Quando aparece",
+  "@checklistTriggerLabel": {},
+  "checklistTriggerBefore": "Antes de navegar",
+  "@checklistTriggerBefore": {},
+  "checklistTriggerAfter": "Depois de navegar",
+  "@checklistTriggerAfter": {},
+  "checklistTriggerNone": "Sem vínculo",
+  "@checklistTriggerNone": {},
+  "checklistTriggerBeforeDescription": "Abre sozinho quando você toca em Navegar, antes de a navegação começar.",
+  "@checklistTriggerBeforeDescription": {},
+  "checklistTriggerAfterDescription": "Abre sozinho quando você finaliza a navegação.",
+  "@checklistTriggerAfterDescription": {},
+  "checklistTriggerNoneDescription": "Não abre sozinho. Use quando quiser, por esta tela.",
+  "@checklistTriggerNoneDescription": {},
+  "checklistItemsSection": "Itens",
+  "@checklistItemsSection": {},
+  "checklistItemHint": "Descreva o item",
+  "@checklistItemHint": {},
+  "checklistAddItem": "Adicionar item",
+  "@checklistAddItem": {},
+  "checklistRemoveItem": "Remover item",
+  "@checklistRemoveItem": {},
+  "checklistItemsLimit": "Limite de itens atingido",
+  "@checklistItemsLimit": {},
+  "checklistNoItemsError": "Adicione pelo menos um item.",
+  "@checklistNoItemsError": {},
+  "checklistItemsCount": "{count, plural, =1{1 item} other{{count} itens}}",
+  "@checklistItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistRunBeforeTitle": "Antes de navegar",
+  "@checklistRunBeforeTitle": {},
+  "checklistRunAfterTitle": "Depois de navegar",
+  "@checklistRunAfterTitle": {},
+  "checklistRunProgress": "{checked} de {total}",
+  "@checklistRunProgress": {
+    "placeholders": {
+      "checked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistRunComplete": "Tudo conferido",
+  "@checklistRunComplete": {},
+  "checklistUncheckAll": "Desmarcar tudo",
+  "@checklistUncheckAll": {},
+  "checklistStartNavigation": "Iniciar navegação",
+  "@checklistStartNavigation": {},
+  "checklistSkip": "Pular checklist",
+  "@checklistSkip": {},
+  "checklistDone": "Concluir",
+  "@checklistDone": {},
+  "checklistMissingItemsTitle": "Itens não conferidos",
+  "@checklistMissingItemsTitle": {},
+  "checklistMissingItemsMessage": "{count, plural, =1{Falta 1 item. Iniciar a navegação mesmo assim?} other{Faltam {count} itens. Iniciar a navegação mesmo assim?}}",
+  "@checklistMissingItemsMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistDefaultBeforeName": "Antes de sair",
+  "@checklistDefaultBeforeName": {},
+  "checklistDefaultBeforeFuel": "Combustível suficiente para a saída",
+  "@checklistDefaultBeforeFuel": {},
+  "checklistDefaultBeforeOil": "Nível de óleo do motor",
+  "@checklistDefaultBeforeOil": {},
+  "checklistDefaultBeforeDrainPlug": "Bujão do casco colocado",
+  "@checklistDefaultBeforeDrainPlug": {},
+  "checklistDefaultBeforeBattery": "Bateria e luzes de navegação",
+  "@checklistDefaultBeforeBattery": {},
+  "checklistDefaultBeforeLifeJackets": "Coletes salva-vidas para todos a bordo",
+  "@checklistDefaultBeforeLifeJackets": {},
+  "checklistDefaultBeforeSafety": "Extintor e sinalizadores",
+  "@checklistDefaultBeforeSafety": {},
+  "checklistDefaultBeforeWeather": "Previsão do tempo e do mar conferida",
+  "@checklistDefaultBeforeWeather": {},
+  "checklistDefaultBeforeFloatPlan": "Avisar alguém do plano de navegação",
+  "@checklistDefaultBeforeFloatPlan": {},
+  "checklistDefaultAfterName": "Ao voltar",
+  "@checklistDefaultAfterName": {},
+  "checklistDefaultAfterFlushEngine": "Lavar o motor com água doce",
+  "@checklistDefaultAfterFlushEngine": {},
+  "checklistDefaultAfterFuelValve": "Fechar o registro de combustível",
+  "@checklistDefaultAfterFuelValve": {},
+  "checklistDefaultAfterMainSwitch": "Desligar a chave geral",
+  "@checklistDefaultAfterMainSwitch": {},
+  "checklistDefaultAfterTrash": "Levar o lixo de bordo",
+  "@checklistDefaultAfterTrash": {},
+  "checklistDefaultAfterLines": "Conferir cabos e defensas",
+  "@checklistDefaultAfterLines": {},
+  "checklistDefaultAfterCover": "Colocar a capa",
+  "@checklistDefaultAfterCover": {},
+  "deleteRouteConfirm": "A rota \"{name}\" será apagada. Deseja continuar?",
+  "@deleteRouteConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   }

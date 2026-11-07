@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 
+import '../models/checklist.dart';
+import '../models/checklist_trigger.dart';
 import '../models/marina.dart';
 import '../services/boat_cache_service.dart';
+import '../services/checklist_storage_service.dart';
 import '../services/marina_storage_service.dart';
 import '../viewmodels/boat_viewmodel.dart';
 import '../viewmodels/navigation_status_viewmodel.dart';
+import '../views/ChecklistRunScreen/checklist_run_screen.dart';
 import 'boat_selection_sheet.dart';
 
 /// Ponto único de entrada para iniciar uma navegação. Usuários com marina
@@ -26,6 +30,18 @@ abstract final class StartNavigationFlow {
       listen: false,
     );
     if (navigationViewModel.isNavigating) return false;
+
+    // Checklists "antes de navegar": voltar da tela cancela o início.
+    final checklists = await _checklistsFor(ChecklistTrigger.beforeNavigation);
+    if (!context.mounted) return false;
+    if (checklists.isNotEmpty) {
+      final proceed = await ChecklistRunScreen.open(
+        context,
+        checklists: checklists,
+        mode: ChecklistRunMode.beforeNavigation,
+      );
+      if (!proceed || !context.mounted) return false;
+    }
 
     Marina? marina;
     try {
@@ -63,5 +79,16 @@ abstract final class StartNavigationFlow {
 
     navigationViewModel.startNavigation(plannedRoute: plannedRoute);
     return true;
+  }
+
+  /// Falha de storage nunca impede a navegação: sem checklist, segue.
+  static Future<List<Checklist>> _checklistsFor(
+    ChecklistTrigger trigger,
+  ) async {
+    try {
+      return await ChecklistStorageService().getByTrigger(trigger);
+    } catch (_) {
+      return const [];
+    }
   }
 }

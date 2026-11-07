@@ -1633,7 +1633,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get notificationSettings => 'Notificações';
 
   @override
-  String get notificationPrefsDescription => 'Os lembretes de manutenção são enviados pela Estai pelos canais que você ativar.';
+  String get notificationPrefsDescription => 'Os lembretes de manutenção e alertas são enviados pela Estai pelos canais que você ativar.';
 
   @override
   String get notificationPrefsPush => 'Notificações push';
@@ -2317,5 +2317,187 @@ class AppLocalizationsPt extends AppLocalizations {
       one: '1 documento vencido ou vencendo',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get checklistsTitle => 'Checklists';
+
+  @override
+  String get checklistsSubtitle => 'Antes e depois de navegar';
+
+  @override
+  String get checklistsEmpty => 'Nenhum checklist ainda. Crie um para conferir o barco antes de sair ou ao voltar.';
+
+  @override
+  String get checklistNew => 'Novo checklist';
+
+  @override
+  String get checklistEdit => 'Editar checklist';
+
+  @override
+  String get checklistSave => 'Salvar checklist';
+
+  @override
+  String get checklistSaved => 'Checklist salvo';
+
+  @override
+  String get checklistSaveError => 'Não foi possível salvar o checklist. Tente novamente.';
+
+  @override
+  String get checklistDelete => 'Excluir checklist';
+
+  @override
+  String get checklistDeleteConfirm => 'Este checklist será excluído do aparelho. Deseja continuar?';
+
+  @override
+  String get checklistNameLabel => 'Nome';
+
+  @override
+  String get checklistNameHint => 'Ex.: Antes de sair';
+
+  @override
+  String get checklistNameRequired => 'Informe um nome';
+
+  @override
+  String get checklistTriggerLabel => 'Quando aparece';
+
+  @override
+  String get checklistTriggerBefore => 'Antes de navegar';
+
+  @override
+  String get checklistTriggerAfter => 'Depois de navegar';
+
+  @override
+  String get checklistTriggerNone => 'Sem vínculo';
+
+  @override
+  String get checklistTriggerBeforeDescription => 'Abre sozinho quando você toca em Navegar, antes de a navegação começar.';
+
+  @override
+  String get checklistTriggerAfterDescription => 'Abre sozinho quando você finaliza a navegação.';
+
+  @override
+  String get checklistTriggerNoneDescription => 'Não abre sozinho. Use quando quiser, por esta tela.';
+
+  @override
+  String get checklistItemsSection => 'Itens';
+
+  @override
+  String get checklistItemHint => 'Descreva o item';
+
+  @override
+  String get checklistAddItem => 'Adicionar item';
+
+  @override
+  String get checklistRemoveItem => 'Remover item';
+
+  @override
+  String get checklistItemsLimit => 'Limite de itens atingido';
+
+  @override
+  String get checklistNoItemsError => 'Adicione pelo menos um item.';
+
+  @override
+  String checklistItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count itens',
+      one: '1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get checklistRunBeforeTitle => 'Antes de navegar';
+
+  @override
+  String get checklistRunAfterTitle => 'Depois de navegar';
+
+  @override
+  String checklistRunProgress(int checked, int total) {
+    return '$checked de $total';
+  }
+
+  @override
+  String get checklistRunComplete => 'Tudo conferido';
+
+  @override
+  String get checklistUncheckAll => 'Desmarcar tudo';
+
+  @override
+  String get checklistStartNavigation => 'Iniciar navegação';
+
+  @override
+  String get checklistSkip => 'Pular checklist';
+
+  @override
+  String get checklistDone => 'Concluir';
+
+  @override
+  String get checklistMissingItemsTitle => 'Itens não conferidos';
+
+  @override
+  String checklistMissingItemsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Faltam $count itens. Iniciar a navegação mesmo assim?',
+      one: 'Falta 1 item. Iniciar a navegação mesmo assim?',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get checklistDefaultBeforeName => 'Antes de sair';
+
+  @override
+  String get checklistDefaultBeforeFuel => 'Combustível suficiente para a saída';
+
+  @override
+  String get checklistDefaultBeforeOil => 'Nível de óleo do motor';
+
+  @override
+  String get checklistDefaultBeforeDrainPlug => 'Bujão do casco colocado';
+
+  @override
+  String get checklistDefaultBeforeBattery => 'Bateria e luzes de navegação';
+
+  @override
+  String get checklistDefaultBeforeLifeJackets => 'Coletes salva-vidas para todos a bordo';
+
+  @override
+  String get checklistDefaultBeforeSafety => 'Extintor e sinalizadores';
+
+  @override
+  String get checklistDefaultBeforeWeather => 'Previsão do tempo e do mar conferida';
+
+  @override
+  String get checklistDefaultBeforeFloatPlan => 'Avisar alguém do plano de navegação';
+
+  @override
+  String get checklistDefaultAfterName => 'Ao voltar';
+
+  @override
+  String get checklistDefaultAfterFlushEngine => 'Lavar o motor com água doce';
+
+  @override
+  String get checklistDefaultAfterFuelValve => 'Fechar o registro de combustível';
+
+  @override
+  String get checklistDefaultAfterMainSwitch => 'Desligar a chave geral';
+
+  @override
+  String get checklistDefaultAfterTrash => 'Levar o lixo de bordo';
+
+  @override
+  String get checklistDefaultAfterLines => 'Conferir cabos e defensas';
+
+  @override
+  String get checklistDefaultAfterCover => 'Colocar a capa';
+
+  @override
+  String deleteRouteConfirm(String name) {
+    return 'A rota \"$name\" será apagada. Deseja continuar?';
   }
 }

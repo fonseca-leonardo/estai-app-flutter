@@ -3116,7 +3116,7 @@ abstract class AppLocalizations {
   /// No description provided for @notificationPrefsDescription.
   ///
   /// In en, this message translates to:
-  /// **'Maintenance reminders are sent by Estai through the channels you turn on.'**
+  /// **'Maintenance reminders and alerts are sent by Estai through the channels you turn on.'**
   String get notificationPrefsDescription;
 
   /// No description provided for @notificationPrefsPush.
@@ -4306,6 +4306,330 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =1{1 document expired or expiring soon} other{{count} documents expired or expiring soon}}'**
   String journalDocumentsAlert(int count);
+
+  /// No description provided for @checklistsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Checklists'**
+  String get checklistsTitle;
+
+  /// No description provided for @checklistsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before and after navigating'**
+  String get checklistsSubtitle;
+
+  /// No description provided for @checklistsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No checklists yet. Create one to check the boat before leaving or when you return.'**
+  String get checklistsEmpty;
+
+  /// No description provided for @checklistNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New checklist'**
+  String get checklistNew;
+
+  /// No description provided for @checklistEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit checklist'**
+  String get checklistEdit;
+
+  /// No description provided for @checklistSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save checklist'**
+  String get checklistSave;
+
+  /// No description provided for @checklistSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Checklist saved'**
+  String get checklistSaved;
+
+  /// No description provided for @checklistSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save the checklist. Please try again.'**
+  String get checklistSaveError;
+
+  /// No description provided for @checklistDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete checklist'**
+  String get checklistDelete;
+
+  /// No description provided for @checklistDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This checklist will be deleted from this device. Continue?'**
+  String get checklistDeleteConfirm;
+
+  /// No description provided for @checklistNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get checklistNameLabel;
+
+  /// No description provided for @checklistNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g. Before leaving'**
+  String get checklistNameHint;
+
+  /// No description provided for @checklistNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a name'**
+  String get checklistNameRequired;
+
+  /// No description provided for @checklistTriggerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'When it shows up'**
+  String get checklistTriggerLabel;
+
+  /// No description provided for @checklistTriggerBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'Before navigating'**
+  String get checklistTriggerBefore;
+
+  /// No description provided for @checklistTriggerAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'After navigating'**
+  String get checklistTriggerAfter;
+
+  /// No description provided for @checklistTriggerNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Not linked'**
+  String get checklistTriggerNone;
+
+  /// No description provided for @checklistTriggerBeforeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens automatically when you tap Navigate, before navigation starts.'**
+  String get checklistTriggerBeforeDescription;
+
+  /// No description provided for @checklistTriggerAfterDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens automatically when you finish navigating.'**
+  String get checklistTriggerAfterDescription;
+
+  /// No description provided for @checklistTriggerNoneDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Never opens on its own. Run it whenever you want from this screen.'**
+  String get checklistTriggerNoneDescription;
+
+  /// No description provided for @checklistItemsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Items'**
+  String get checklistItemsSection;
+
+  /// No description provided for @checklistItemHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe the item'**
+  String get checklistItemHint;
+
+  /// No description provided for @checklistAddItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add item'**
+  String get checklistAddItem;
+
+  /// No description provided for @checklistRemoveItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove item'**
+  String get checklistRemoveItem;
+
+  /// No description provided for @checklistItemsLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Item limit reached'**
+  String get checklistItemsLimit;
+
+  /// No description provided for @checklistNoItemsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Add at least one item.'**
+  String get checklistNoItemsError;
+
+  /// No description provided for @checklistItemsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 item} other{{count} items}}'**
+  String checklistItemsCount(int count);
+
+  /// No description provided for @checklistRunBeforeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before navigating'**
+  String get checklistRunBeforeTitle;
+
+  /// No description provided for @checklistRunAfterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'After navigating'**
+  String get checklistRunAfterTitle;
+
+  /// No description provided for @checklistRunProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{checked} of {total}'**
+  String checklistRunProgress(int checked, int total);
+
+  /// No description provided for @checklistRunComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'All checked'**
+  String get checklistRunComplete;
+
+  /// No description provided for @checklistUncheckAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Uncheck all'**
+  String get checklistUncheckAll;
+
+  /// No description provided for @checklistStartNavigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Start navigation'**
+  String get checklistStartNavigation;
+
+  /// No description provided for @checklistSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip checklist'**
+  String get checklistSkip;
+
+  /// No description provided for @checklistDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get checklistDone;
+
+  /// No description provided for @checklistMissingItemsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unchecked items'**
+  String get checklistMissingItemsTitle;
+
+  /// No description provided for @checklistMissingItemsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 item is unchecked. Start navigation anyway?} other{{count} items are unchecked. Start navigation anyway?}}'**
+  String checklistMissingItemsMessage(int count);
+
+  /// No description provided for @checklistDefaultBeforeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Before leaving'**
+  String get checklistDefaultBeforeName;
+
+  /// No description provided for @checklistDefaultBeforeFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Enough fuel for the trip'**
+  String get checklistDefaultBeforeFuel;
+
+  /// No description provided for @checklistDefaultBeforeOil.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine oil level'**
+  String get checklistDefaultBeforeOil;
+
+  /// No description provided for @checklistDefaultBeforeDrainPlug.
+  ///
+  /// In en, this message translates to:
+  /// **'Hull drain plug in place'**
+  String get checklistDefaultBeforeDrainPlug;
+
+  /// No description provided for @checklistDefaultBeforeBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery and navigation lights'**
+  String get checklistDefaultBeforeBattery;
+
+  /// No description provided for @checklistDefaultBeforeLifeJackets.
+  ///
+  /// In en, this message translates to:
+  /// **'Life jackets for everyone on board'**
+  String get checklistDefaultBeforeLifeJackets;
+
+  /// No description provided for @checklistDefaultBeforeSafety.
+  ///
+  /// In en, this message translates to:
+  /// **'Fire extinguisher and flares'**
+  String get checklistDefaultBeforeSafety;
+
+  /// No description provided for @checklistDefaultBeforeWeather.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather and sea forecast checked'**
+  String get checklistDefaultBeforeWeather;
+
+  /// No description provided for @checklistDefaultBeforeFloatPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell someone your float plan'**
+  String get checklistDefaultBeforeFloatPlan;
+
+  /// No description provided for @checklistDefaultAfterName.
+  ///
+  /// In en, this message translates to:
+  /// **'When back'**
+  String get checklistDefaultAfterName;
+
+  /// No description provided for @checklistDefaultAfterFlushEngine.
+  ///
+  /// In en, this message translates to:
+  /// **'Flush the engine with fresh water'**
+  String get checklistDefaultAfterFlushEngine;
+
+  /// No description provided for @checklistDefaultAfterFuelValve.
+  ///
+  /// In en, this message translates to:
+  /// **'Close the fuel valve'**
+  String get checklistDefaultAfterFuelValve;
+
+  /// No description provided for @checklistDefaultAfterMainSwitch.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off the battery switch'**
+  String get checklistDefaultAfterMainSwitch;
+
+  /// No description provided for @checklistDefaultAfterTrash.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the trash off the boat'**
+  String get checklistDefaultAfterTrash;
+
+  /// No description provided for @checklistDefaultAfterLines.
+  ///
+  /// In en, this message translates to:
+  /// **'Check lines and fenders'**
+  String get checklistDefaultAfterLines;
+
+  /// No description provided for @checklistDefaultAfterCover.
+  ///
+  /// In en, this message translates to:
+  /// **'Put the cover on'**
+  String get checklistDefaultAfterCover;
+
+  /// No description provided for @deleteRouteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'The route \"{name}\" will be deleted. Continue?'**
+  String deleteRouteConfirm(String name);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

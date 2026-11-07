@@ -1,6 +1,8 @@
 import '../../../theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../../widgets/dark_input_decoration.dart';
+import '../../../widgets/ui/glass_dialog.dart';
 
 class SaveRouteDialogResult {
   final String routeName;
@@ -53,160 +55,83 @@ class _SaveRouteDialogState extends State<SaveRouteDialog> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Dialog(
-      backgroundColor: Colors.transparent,
-      child: Container(
-        constraints: const BoxConstraints(maxWidth: 400),
-        decoration: BoxDecoration(
-          color: AppColors.surfaceElevated.withValues(alpha: 0.85),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: const Color(0xFF1F1F1F), width: 1),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
-              child: Text(
-                l10n.plannedRoute,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+    return GlassDialog(
+      title: l10n.plannedRoute,
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (_saveForReuse) ...[
+            TextField(
+              controller: _nameController,
+              autofocus: true,
+              textCapitalization: TextCapitalization.sentences,
+              style: const TextStyle(color: Colors.white, fontSize: 16),
+              decoration: darkInputDecoration(l10n.routeName),
             ),
-            if (_saveForReuse) ...[
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: TextField(
-                  controller: _nameController,
-                  style: const TextStyle(color: Colors.white, fontSize: 16),
-                  decoration: InputDecoration(
-                    labelText: l10n.routeName,
-                    labelStyle: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 14,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(
-                        color: Colors.white.withValues(alpha: 0.2),
-                        width: 1,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        width: 1.5,
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: const Color(0xFF1A1A1A),
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
-                    ),
-                  ),
-                  autofocus: true,
-                ),
-              ),
-              const SizedBox(height: 16),
-            ],
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Row(
-                children: [
-                  Text(
-                    l10n.saveRouteForReuse,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.9),
-                      fontSize: 14,
-                    ),
-                  ),
-                  const Spacer(),
-                  Switch(
-                    value: _saveForReuse,
-                    onChanged: (value) {
-                      setState(() {
-                        _saveForReuse = value;
-                        _isNameValid = value
-                            ? _nameController.text.trim().isNotEmpty
-                            : true;
-                      });
-                    },
-                    activeThumbColor: Colors.blue,
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 24),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                spacing: 12,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                    ),
-                    child: Text(
-                      l10n.cancel,
-                      style: const TextStyle(
-                        color: AppColors.danger,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: _isNameValid
-                        ? () {
-                            Navigator.of(context).pop(
-                              SaveRouteDialogResult(
-                                routeName: _saveForReuse
-                                    ? _nameController.text.trim()
-                                    : '',
-                                saveForReuse: _saveForReuse,
-                              ),
-                            );
-                          }
-                        : null,
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: Text(
-                      l10n.confirm,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: _isNameValid
-                            ? AppColors.success
-                            : Colors.grey.withValues(alpha: 0.5),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const SizedBox(height: 12),
           ],
-        ),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  l10n.saveRouteForReuse,
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.9),
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+              Switch(
+                value: _saveForReuse,
+                onChanged: (value) {
+                  setState(() {
+                    _saveForReuse = value;
+                    _isNameValid = value
+                        ? _nameController.text.trim().isNotEmpty
+                        : true;
+                  });
+                },
+                activeThumbColor: AppColors.accent,
+              ),
+            ],
+          ),
+        ],
       ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+            Navigator.of(context).pop();
+          },
+          child: Text(
+            l10n.cancel,
+            style: TextStyle(color: AppColors.textSecondary),
+          ),
+        ),
+        TextButton(
+          onPressed: _isNameValid
+              ? () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                  Navigator.of(context).pop(
+                    SaveRouteDialogResult(
+                      routeName: _saveForReuse
+                          ? _nameController.text.trim()
+                          : '',
+                      saveForReuse: _saveForReuse,
+                    ),
+                  );
+                }
+              : null,
+          child: Text(
+            l10n.confirm,
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: _isNameValid ? AppColors.success : AppColors.textTertiary,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
